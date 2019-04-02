@@ -81,5 +81,5 @@ CREATE TABLE CALL_HISTORY(
   incall_type varchar(100),
   teleoperator_solution varchar(255),
   primary key(id)
-    hello
+    La casa era amarilla
 );
