@@ -35,6 +35,50 @@ CREATE TABLE PERSONAL_CARD(
   FOREIGN key (id_user) REFERENCES users(id)
 );
 
+CREATE TABLE CAP(
+  id int not null auto_increment,
+  name varchar(255),
+  gender_doctor varchar(10),
+  doctor_name varchar(255),
+  health_insurance_id int,
+  primary key(id),
+  FOREIGN key (health_insurance_id) REFERENCES HEALTH_INSURANCE(id)
+);
+
 CREATE TABLE HEALTH_INSURANCE(
-  id int not null auto_increment
-)
+  id int not null auto_increment,
+  insurance_name varchar(255),
+  description varchar(255),
+  primary key (id)
+);
+
+CREATE TABLE STA(
+  id int not null auto_increment,
+  actual_situation varchar(50),
+  hiring_date date,
+  contracted_services varchar(255),
+  primary key (id)
+  );
+
+CREATE TABLE RESPONSIBLE(
+  id int not null auto_increment,
+  user_vinculation_id int not null,
+  name_surname varchar(255),
+  post_code varchar(8),
+  contact_phone varchar(20),
+  preferable_hour varchar(255),
+  date_responsible date,
+  reason varchar(255),
+  primary key (id),
+  FOREIGN key (user_vinculation_id) REFERENCES PERSONAL_CARD(id)
+);
+
+CREATE TABLE CALL_HISTORY(
+  id int not null auto_increment,
+  call_date date not null,
+  call_type varchar(100),
+  outcall_type varchar(100),
+  incall_type varchar(100),
+  teleoperator_solution varchar(255),
+  primary key(id)
+);
