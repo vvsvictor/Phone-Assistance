@@ -5,11 +5,12 @@ CREATE TABLE USERS(
   username varchar(255) unique,
   password char(64),
   usertype int,
+  FOREIGN key (usertype) REFERENCES TYPE_USER(id);
   primary key(id)
 );
 
 CREATE TABLE TYPE_USER(
-  id int not null auto_increment,
+  id int not null,
   name varchar(255),
   primary key(id)
 );
