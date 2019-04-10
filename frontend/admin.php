@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta content="text/html">
         <title>User Page</title>
-        <script src="index.js"></script>
+        <script src="./js/index.js"></script>
         </head>
         <?php
         session_start();
