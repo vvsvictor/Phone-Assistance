@@ -187,3 +187,7 @@ CREATE TABLE CALL_HISTORY(
   FOREIGN key (incall_type) REFERENCES INCALL_TYPE(id),
   FOREIGN key (call_state) REFERENCES CALL_STATE(id)
 );
+
+/*Insert type users by default*/
+INSERT into type_user VALUES (0,"admin")
+INSERT into type_user VALUES (1,"normal_user")
