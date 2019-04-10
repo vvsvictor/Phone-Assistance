@@ -1,5 +1,12 @@
 CREATE DATABASE phoneA;
 use phoneA;
+
+CREATE TABLE TYPE_USER(
+  id int not null,
+  name varchar(255),
+  primary key(id)
+);
+
 CREATE TABLE USERS(
   id int not null auto_increment,
   username varchar(255) unique,
@@ -7,12 +14,6 @@ CREATE TABLE USERS(
   usertype int,
   primary key(id),
   FOREIGN key (usertype) REFERENCES TYPE_USER(id)
-);
-
-CREATE TABLE TYPE_USER(
-  id int not null,
-  name varchar(255),
-  primary key(id)
 );
 
 /***********************************************/
