@@ -1,13 +1,5 @@
 CREATE DATABASE phoneA;
 use phoneA;
-CREATE TABLE USERS(
-  id int not null auto_increment,
-  username varchar(255) unique,
-  password char(64),
-  usertype int,
-  primary key(id),
-  FOREIGN key (usertype) REFERENCES TYPE_USER(id)
-);
 
 CREATE TABLE TYPE_USER(
   id int not null,
@@ -15,42 +7,51 @@ CREATE TABLE TYPE_USER(
   primary key(id)
 );
 
+CREATE TABLE USERS(
+  id int not null auto_increment,
+  username varchar(255) unique,
+  password char(64),
+  usertype int, /*Table TYPE_USER*/
+  primary key(id),
+  FOREIGN key (usertype) REFERENCES TYPE_USER(id)
+);
+
 /***********************************************/
 CREATE TABLE LANGUAGES (
 	id int not null auto_increment,
 	language_name varchar(255) unique,
 	primary key (id)
-)
+);
 
 CREATE TABLE SIGN_LANGUAGES (
 	id int not null auto_increment,
 	language_name varchar(255) unique,
 	primary key (id)
-)
+);
 
 CREATE TABLE PROVINCES (
 	id int not null auto_increment,
 	prov_name varchar(255) unique,
 	primary key (id)
-)
+);
 
 CREATE TABLE COMARCAS (
 	id int not null auto_increment,
 	comar_name varchar(255) unique,
 	primary key (id)
-)
+);
 
 CREATE TABLE MUNISIPALITYS (
 	id int not null auto_increment,
 	muni_name varchar(255) unique,
 	primary key (id)
-)
+);
 
 CREATE TABLE OWNERSHIPS(
 	id int not null auto_increment,
 	owner_type varchar(50),
 	primary key (id)
-)
+);
 /***********************************************/
 
 CREATE TABLE PERSONAL_CARD(
@@ -94,7 +95,7 @@ CREATE TABLE MED_SPECIALIZATION(
 	id int not null auto_increment,
 	med_specialization varchar(255) unique,
 	primary key (id)
-)
+);
 /*******************************************/
 
 CREATE TABLE DOCTORS(
@@ -103,10 +104,10 @@ CREATE TABLE DOCTORS(
   surname varchar(255),
   gender varchar(10),
   specialization_id int, /*Table MED_SPECIALIZATION*/
-  id_cap int not null,
+  id_cap int not null, /*Table CAP*/
   primary key(id),
+  FOREIGN key (specialization_id) REFERENCES MED_SPECIALIZATION(id),
   FOREIGN key (id_cap) REFERENCES CAP(id)
-  FOREIGN key (specialization_id) REFERENCES MED_SPECIALIZATION(id)
 );
 
 CREATE TABLE HEALTH_INSURANCE(
@@ -132,7 +133,7 @@ CREATE TABLE STA(
 CREATE TABLE RESPONSIBLE(
   id int not null auto_increment,
   user_vinculation_id int not null,
-  user_dninif not null varchar(255),
+  user_dninif varchar(255) not null,
   priority varchar(50) not null,
   name varchar(255),
   surname varchar(255),
@@ -141,7 +142,7 @@ CREATE TABLE RESPONSIBLE(
   contact_phone varchar(20),
   preferable_hour varchar(255),
   date_responsible date,
-  reason varchar(max),
+  reason text,
   primary key (id),
   FOREIGN key (user_vinculation_id) REFERENCES PERSONAL_CARD(id)
 );
@@ -151,25 +152,25 @@ CREATE TABLE CALL_TYPE(
 	id int not null auto_increment,
 	call_type varchar(50) unique,
 	primary key (id)
-)
+);
 
 CREATE TABLE INCALL_TYPE(
 	id int not null auto_increment,
 	incall_type varchar(50) unique,
 	primary key (id)
-)
+);
 
 CREATE TABLE OUTCALL_TYPE(
 	id int not null auto_increment,
 	outcall_type varchar(50) unique,
 	primary key (id)
-)
+);
 
 CREATE TABLE CALL_STATE (
 	id int not null auto_increment,
 	call_type varchar(50) unique,
 	primary key (id)
-)
+);
 /*******************************************/
 
 CREATE TABLE CALL_HISTORY(
@@ -179,7 +180,7 @@ CREATE TABLE CALL_HISTORY(
   outcall_type int, /*Table OUTCALL_TYPE*/
   incall_type int, /*Table INCALL_TYPE*/
   call_state int, /*Table CALL_STATE*/
-  teleoperator_solution varchar(max),
+  teleoperator_solution text,
   primary key(id),
   FOREIGN key (call_type) REFERENCES CALL_TYPE(id),
   FOREIGN key (outcall_type) REFERENCES OUTCALL_TYPE(id),
