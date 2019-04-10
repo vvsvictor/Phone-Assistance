@@ -189,5 +189,5 @@ CREATE TABLE CALL_HISTORY(
 );
 
 /*Insert type users by default*/
-INSERT into type_user VALUES (0,"admin")
-INSERT into type_user VALUES (1,"normal_user")
+INSERT into type_user VALUES (0,"admin");
+INSERT into type_user VALUES (1,"normal_user");
