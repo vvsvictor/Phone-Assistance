@@ -2,7 +2,7 @@ CREATE DATABASE phoneA;
 use phoneA;
 
 CREATE TABLE TYPE_USER(
-  id int not null,
+  id int not null unique,
   name varchar(255),
   primary key(id)
 );
