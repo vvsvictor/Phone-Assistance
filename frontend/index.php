@@ -34,11 +34,10 @@
 <?php
 session_start();
 
-if(isset($_SESSION['usuario'])){
-  echo $_SESSION['inputUser1']['usertype'];
-  if($_SESSION['inputUser1']['usertype'] == 0){
+if(isset($_SESSION['user'])){
+  if($_SESSION['user']['usertype'] == 0){
     header('Location: admin.php');
-  }elseif($_SESSION['inputUser1']['usertype'] == 1){
+  }elseif($_SESSION['user']['usertype'] == 1){
     header('Location: user.php');
     }
   }

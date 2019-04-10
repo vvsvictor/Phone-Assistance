@@ -5,14 +5,14 @@ function pdLogin(){
     data: $('#formLg').serialize(),
     cache: false,
     success: function(response){
+      let myJSON = JSON.parse(response);
       if (!response.error) {
-        var myJSON = JSON.parse(response);
-        if (parseInt(myJSON.tipo) == 0) {
-                location.href = 'admin.php';
-             } else if (parseInt(myJSON.tipo) == 1) {
-                location.href = 'user.php';
-            }
+          if (parseInt(myJSON.type) == 0) {
+                  location.href = 'admin.php';
+          } else if (parseInt(myJSON.type) == 1) {
+            location.href = 'user.php';
           }
+        }
     },
     error: function(){
       alert("Error en la consulta");
@@ -21,6 +21,7 @@ function pdLogin(){
 }
 
 $( document ).ready(function() {
+
     $('#submit').click(function(){
         pdLogin();
     });

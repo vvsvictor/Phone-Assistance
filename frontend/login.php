@@ -8,14 +8,11 @@
 
     if ($usuarios->num_rows==1){
         $datos= $usuarios->fetch_assoc();
-        echo json_encode(array('error'=>false,'tipo'=>$datos['usertype']));
-        $_SESSION['inputUser1'] = $datos;
-    }
-    else{
+        echo json_encode(array('error'=>false,'type'=>$datos['usertype'], 'username'=>$datos['username']));
+        $_SESSION['user'] = $datos;
+    }else{
         echo json_encode(array('error'=>true));
     }
-
-
 
     $mysqli->close();
  ?>
