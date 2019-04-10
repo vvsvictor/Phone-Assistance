@@ -10,10 +10,10 @@
         session_start();
         if(isset($_SESSION['inputUser1'])){
            if($_SESSION['inputUser1']['usertype'] != 0){
-               header("Location: index.html");
+               header("Location: index.php");
            }
         }elseif(!isset($_SESSION['inputUser1'])){
-             header("Location: index.html");
+             header("Location: index.php");
         }
 
          $message= '"Welcome, admin."';
