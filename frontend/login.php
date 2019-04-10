@@ -1,8 +1,8 @@
 <?php
     require('connect.php');
     session_start();
-    $usu=$_POST['inputUser1'];
-    $pass=$_POST['inputPassword1'];
+    $usu=$_GET['inputUser1'];
+    $pass=$_GET['inputPassword1'];
     $sql="Select username, password, usertype From USERS Where username='".$usu."' AND password='".$pass."'";
     $usuarios=$mysqli->query($sql);
 
