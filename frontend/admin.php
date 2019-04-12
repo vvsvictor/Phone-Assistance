@@ -13,11 +13,11 @@
 </hmtl>
         <?php
         session_start();
-        if(isset($_SESSION['inputUser1'])){
-           if($_SESSION['inputUser1']['usertype'] != 0){
+        if(isset($_SESSION['user'])){
+           if($_SESSION['user']['usertype'] != 0){
                header("Location: index.php");
            }
-        }elseif(!isset($_SESSION['inputUser1'])){
+        }elseif(!isset($_SESSION['user'])){
              header("Location: index.php");
         }
 
