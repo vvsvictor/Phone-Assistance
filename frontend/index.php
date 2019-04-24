@@ -16,9 +16,9 @@
     </div>
   	<div class="container col-xl-6 col-md-8 col-sm-10">
   		<h1>BENVINGUT</h1>
-  		<form class="form">
-  			<input type="text" id="userInput" placeholder="Usuari">
-  			<input type="password" id="passwordInput" placeholder="Contrasenya">
+  		<form class="form" id="formLg">
+  			<input type="text" name="userInput" id="userInput" placeholder="Usuari">
+  			<input type="password" name="passwordInput" id="passwordInput" placeholder="Contrasenya">
   			<div id="loginInput" class="button">Connectar-se</div>
   		</form>
   	</div>

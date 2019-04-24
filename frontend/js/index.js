@@ -36,7 +36,7 @@ $("#passwordInput").keyup(function(event) {
   }
 });
 
-$('#submit').click(function() {
+$('#loginInput').click(function() {
   pdLogin();
 });
 
