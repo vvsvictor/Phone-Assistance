@@ -1,67 +1,95 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta content="text/html; charset=utf-8" />
-    <title>First Grid</title>
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Just simple local grid</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="jqGrid/css/ui.jqgrid.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans" />
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
-    <link rel="stylesheet" type="text/css" href="css/jqgrid.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-    <script src="jqGrid/js/jquery.jqgrid.min.js"></script>
-    <script>
-      $(document).ready(function(){
-        var grid_selector = "#grid-table";
-        var pager_selector = "#grid-pager";
 
-        jQuery(grid_selector).jqGrid({
-          url:'http://jsonplaceholder.typicode.com/posts',
-          datatype: "json",
-          height: 450,
-          colNames:['ID', 'User ID','Title','Body'],
-          colModel:[
-            {name:'id',index:'id', width:55},
-            {name:'userId',index:'userId', width:95},
-            {name:'title',index:'title', width:300},
-            {name:'body',index:'body', width:400, sortable:false}
-          ],
-          loadonce: true,
-          rowNum:10,
-          rowList:[10,20,30],
-          pager : pager_selector,
-          altRows: true,
-          multiselect: true,
-          multiboxonly: true,
-          caption: "jqGrid with listing",
-          loadComplete : function() {
-          		var table = this;
-          		setTimeout(function(){
-          					updatePagerIcons(table);
-          		}, 0);
-          }
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/free-jqgrid/4.15.5/css/ui.jqgrid.css" />
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.1/jquery.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/free-jqgrid/4.15.5/jquery.jqgrid.src.js"></script>
+
+    <script type="text/javascript">
+        //<![CDATA[
+        $(document).ready(function () {
+            var myData = [
+                    { id: "1", invdate: "2007-10-01", name: "test", note: "note", amount: "200.00", tax: "10.00", closed: true, ship_via: "TN", total: "210.00" },
+                    { id: "2", invdate: "2007-10-02", name: "test2", note: "note2", amount: "300.00", tax: "20.00", closed: false, ship_via: "FE", total: "320.00" },
+                    { id: "3", invdate: "2007-09-01", name: "test3", note: "note3", amount: "400.00", tax: "30.00", closed: false, ship_via: "FE", total: "430.00" },
+                    { id: "4", invdate: "2007-10-04", name: "test4", note: "note4", amount: "200.00", tax: "10.00", closed: true, ship_via: "TN", total: "210.00" },
+                    { id: "5", invdate: "2007-10-31", name: "test5", note: "note5", amount: "300.00", tax: "20.00", closed: false, ship_via: "FE", total: "320.00" },
+                    { id: "6", invdate: "2007-09-06", name: "test6", note: "note6", amount: "400.00", tax: "30.00", closed: false, ship_via: "FE", total: "430.00" },
+                    { id: "7", invdate: "2007-10-04", name: "test7", note: "note7", amount: "200.00", tax: "10.00", closed: true, ship_via: "TN", total: "210.00" },
+                    { id: "8", invdate: "2007-10-03", name: "test8", note: "note8", amount: "300.00", tax: "20.00", closed: false, ship_via: "FE", total: "320.00" },
+                    { id: "9", invdate: "2007-09-01", name: "test9", note: "note9", amount: "400.00", tax: "30.00", closed: false, ship_via: "TN", total: "430.00" },
+                    { id: "10", invdate: "2007-09-08", name: "test10", note: "note10", amount: "500.00", tax: "30.00", closed: true, ship_via: "TN", total: "530.00" },
+                    { id: "11", invdate: "2007-09-08", name: "test11", note: "note11", amount: "500.00", tax: "30.00", closed: false, ship_via: "FE", total: "530.00" },
+                    { id: "12", invdate: "2007-09-10", name: "test12", note: "note12", amount: "500.00", tax: "30.00", closed: false, ship_via: "FE", total: "530.00" }
+            ],
+                myGrid = $("#list");
+
+            myGrid.jqGrid({
+                datatype: 'local',
+                data: myData,
+                colNames: ['Inv No', 'Date', 'Client', 'Amount', 'Tax', 'Total', 'Closed', 'Shipped via', 'Notes'],
+                colModel: [
+                    { name: 'id', index: 'id', width: 70, align: 'center', sorttype: 'int' },
+                    {
+                        name: 'invdate', index: 'invdate', width: 80, align: 'center', sorttype: 'date',
+                        formatter: 'date', formatoptions: { newformat: 'd-M-Y' }, datefmt: 'd-M-Y'
+                    },
+                    { name: 'name', index: 'name', width: 70 },
+                    { name: 'amount', index: 'amount', width: 100, formatter: 'number', align: 'right' },
+                    { name: 'tax', index: 'tax', width: 70, formatter: 'number', align: 'right' },
+                    { name: 'total', index: 'total', width: 120, formatter: 'number', align: 'right' },
+                    {
+                        name: 'closed', index: 'closed', width: 110, align: 'center', formatter: 'checkbox',
+                        edittype: 'checkbox', editoptions: { value: 'Yes:No', defaultValue: 'Yes' },
+                        stype: 'select', searchoptions: { sopt: ['eq', 'ne'], value: ':All;true:Yes;false:No' }
+                    },
+                    {
+                        name: 'ship_via', index: 'ship_via', width: 120, align: 'center', formatter: 'select',
+                        edittype: 'select', editoptions: { value: 'FE:FedEx;TN:TNT;IN:Intim', defaultValue: 'Intime' },
+                        stype: 'select', searchoptions: { value: ':All;FE:FedEx;TN:TNT;IN:Intim' }
+                    },
+                    { name: 'note', index: 'note', width: 100, sortable: false }
+                ],
+                rowNum: 10,
+                rowList: [5, 10, 20],
+                //pager: '#pager',
+                gridview: true,
+                ignoreCase: true,
+                rownumbers: false,
+                sortname: 'invdate',
+                viewrecords: true,
+                sortorder: 'desc',
+                //caption: 'Just simple local grid',
+                height: '100%'
+            });
+            myGrid.jqGrid('filterToolbar', { stringResult: true, searchOnEnter: false, defaultSearch: "cn" });
+
+            myGrid.jqGrid('setGroupHeaders', {
+                useColSpanStyle: true, groupHeaders:
+                    [
+                        { startColumnName: 'invdate', numberOfColumns: 5, titleText: "Group column 1" },
+                        { startColumnName: 'closed', numberOfColumns: 3, titleText: "Group column 2" },
+                    ]
+            });
+            myGrid.jqGrid('setGroupHeaders', {
+                useColSpanStyle: true, groupHeaders:
+                  [
+                        { startColumnName: 'amount', numberOfColumns: 3, titleText: "Group column 3" },
+                    ]
+            });
+            $("#list_invdate,#list_closed,#list_ship_via,#list_note,#list_name").attr("rowspan", "2")
         });
-      });
-
-      function updatePagerIcons(table) {
-        var replacement =
-        {
-          'ui-icon-seek-first' : 'ace-icon fa fa-angle-double-left bigger-140',
-          'ui-icon-seek-prev' : 'ace-icon fa fa-angle-left bigger-140',
-          'ui-icon-seek-next' : 'ace-icon fa fa-angle-right bigger-140',
-          'ui-icon-seek-end' : 'ace-icon fa fa-angle-double-right bigger-140'
-        };
-        $('.ui-pg-table:not(.navtable) > tbody > tr > .ui-pg-button > .ui-icon').each(function(){
-          var icon = $(this);
-          var $class = $.trim(icon.attr('class').replace('ui-icon', ''));
-          if($class in replacement) icon.attr('class', 'ui-icon '+replacement[$class]);
-        })
-      }
-
     </script>
-  </head>
-  <body>
-    <table id="grid-table"></table>
-	  <div id="grid-pager"></div>
-  </body>
+
+</head>
+<body>
+    <table id="list"><tr></tr></table>
+    <div id="pager"></div>
+</body>
 </html>
