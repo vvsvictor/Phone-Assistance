@@ -23,14 +23,14 @@ function pdLogin() {
 }
 
 
-$("#userInput").keyup(function(event) {
+$("#userInput").keyup(function() {
   if (event.keyCode === 13) {
     $("#loginInput").click();
 
   }
 });
 
-$("#passwordInput").keyup(function(event) {
+$("#passwordInput").keyup(function() {
   if (event.keyCode === 13) {
     $("#loginInput").click();
   }
