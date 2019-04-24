@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=utf-8" />
+    <title>First Grid</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="jqGrid/css/ui.jqgrid.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/jqgrid.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="jqGrid/js/jquery.jqgrid.min.js"></script>
+    <script>
+      $(document).ready(function(){
+        var grid_selector = "#grid-table";
+        var pager_selector = "#grid-pager";
+
+        jQuery(grid_selector).jqGrid({
+          url:'http://jsonplaceholder.typicode.com/posts',
+          datatype: "json",
+          height: 450,
+          colNames:['ID', 'User ID','Title','Body'],
+          colModel:[
+            {name:'id',index:'id', width:55},
+            {name:'userId',index:'userId', width:95},
+            {name:'title',index:'title', width:300},
+            {name:'body',index:'body', width:400, sortable:false}
+          ],
+          loadonce: true,
+          rowNum:10,
+          rowList:[10,20,30],
+          pager : pager_selector,
+          altRows: true,
+          multiselect: true,
+          multiboxonly: true,
+          caption: "jqGrid with listing",
+          loadComplete : function() {
+          		var table = this;
+          		setTimeout(function(){
+          					updatePagerIcons(table);
+          		}, 0);
+          }
+        });
+      });
+
+      function updatePagerIcons(table) {
+        var replacement =
+        {
+          'ui-icon-seek-first' : 'ace-icon fa fa-angle-double-left bigger-140',
+          'ui-icon-seek-prev' : 'ace-icon fa fa-angle-left bigger-140',
+          'ui-icon-seek-next' : 'ace-icon fa fa-angle-right bigger-140',
+          'ui-icon-seek-end' : 'ace-icon fa fa-angle-double-right bigger-140'
+        };
+        $('.ui-pg-table:not(.navtable) > tbody > tr > .ui-pg-button > .ui-icon').each(function(){
+          var icon = $(this);
+          var $class = $.trim(icon.attr('class').replace('ui-icon', ''));
+          if($class in replacement) icon.attr('class', 'ui-icon '+replacement[$class]);
+        })
+      }
+
+    </script>
+  </head>
+  <body>
+    <table id="grid-table"></table>
+	  <div id="grid-pager"></div>
+  </body>
+</html>
