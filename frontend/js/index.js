@@ -1,28 +1,47 @@
-function pdLogin(){
+function pdLogin() {
   $.ajax({
     url: "login.php",
     type: "GET",
     data: $('#formLg').serialize(),
     cache: false,
-    success: function(response){
+    success: function(response) {
       let myJSON = JSON.parse(response);
       if (!response.error) {
-          if (parseInt(myJSON.type) == 0) {
-                  location.href = 'admin.php';
-          } else if (parseInt(myJSON.type) == 1) {
-            location.href = 'user.php';
-          }
+        if (parseInt(myJSON.type) == 0) {
+          location.href = 'admin.php';
+        } else if (parseInt(myJSON.type) == 1) {
+          location.href = 'user.php';
         }
+      }
     },
-    error: function(){
+    error: function() {
       alert("Error en la consulta");
     }
   });
 }
 
-$( document ).ready(function() {
 
-    $('#submit').click(function(){
-        pdLogin();
-    });
+$("#userInput").keyup(function(event) {
+  if (event.keyCode === 13) {
+    $("#loginInput").click();
+
+  }
+});
+
+$("#passwordInput").keyup(function(event) {
+  if (event.keyCode === 13) {
+    $("#loginInput").click();
+  }
+});
+
+$('#submit').click(function() {
+  pdLogin();
+});
+
+
+
+$("#logButton").click(function(event) {
+  event.preventDefault();
+  $('form').fadeOut(500);
+  $('.wrapper').addClass('form-success');
 });
