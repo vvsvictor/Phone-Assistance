@@ -1,3 +1,5 @@
+
+//Funcion que corrobora los datos introducidos y redirige a la pagina establecida siempre que todo este correcto.
 function pdLogin() {
   $.ajax({
     url: "login.php",
@@ -34,7 +36,7 @@ $("#passwordInput").keyup(function(event) {
   }
 });
 
-$('#submit').click(function() {
+$('#loginInput').click(function() {
   pdLogin();
 });
 
