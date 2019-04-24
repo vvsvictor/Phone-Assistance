@@ -4,7 +4,6 @@
         <meta charset="utf-8">
         <meta content="text/html">
         <title>Admin Page</title>
-        <script src="./js/index.js"></script>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
         <link rel="stylesheet" href="index.css">
@@ -21,6 +20,9 @@
              <a class="nav-link" href="#">Inici <span class="sr-only">(current)</span></a>
            </li>
            <li class="nav-item">
+             <a class="nav-link" href="#">Usuaris</a>
+           </li>
+           <li class="nav-item">
              <a class="nav-link" href="#">Fitxa personal</a>
            </li>
            <li class="nav-item">
@@ -33,13 +35,21 @@
              <a class="nav-link" href="#">Historial de trucades</a>
            </li>
            <li class="nav-item">
-             <button type="button" class="btn btn-outline-primary" href="exitLogin.php">Logout</button>
+             <a href="exitLogin.php" class="btn btn-primary" role="button">Logout</a>
            </li>
          </ul>
        </div>
      </nav>
      <div class="container text-center">
        <div class="row noselect vertical-center">
+         <div class="col">
+           <div class="card" style="width: 16rem;">
+             <i class="material-icons" style="font-size:120px;">face</i>
+             <div class="card-body">
+               <h5>Usuaris</h5>
+             </div>
+           </div>
+         </div>
          <div class="col">
            <div class="card" style="width: 16rem;">
              <i class="material-icons" style="font-size:120px;">person_pin</i>
@@ -76,7 +86,7 @@
      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-
+     <script src="./js/index.js"></script>
    </body>
 </html>
         <?php
@@ -89,7 +99,4 @@
         }elseif(!isset($_SESSION['user'])){
              header("Location: index.php");
         }
-
-         $message= '"Welcome, admin."';
-         echo "<script type='text/javascript'>alert('$message');</script>";
         ?>
