@@ -16,9 +16,9 @@
     </div>
   	<div class="container col-xl-6 col-md-8 col-sm-10">
   		<h1>BENVINGUT</h1>
-  		<form class="form">
-  			<input type="text" id="userInput" placeholder="Usuari">
-  			<input type="password" id="passwordInput" placeholder="Contrasenya">
+  		<form class="form" id="formLg">
+  			<input type="text" name="userInput" id="userInput" placeholder="Usuari">
+  			<input type="password" name="passwordInput" id="passwordInput" placeholder="Contrasenya">
   			<div id="loginInput" class="button">Connectar-se</div>
   		</form>
   	</div>
@@ -30,6 +30,7 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
 <?php
+//Abro sesión y mando la sesión del usuario ya logueado a la pagina establecida en el codigo.
 session_start();
 
 if(isset($_SESSION['user'])){

@@ -1,4 +1,5 @@
 <?php
+// Coge el usuario y el password que el usuario ha introducido, hace la consulta sobre si existen esos datos y dan la información requerida.
     require('connect.php');
     session_start();
     $usu=$_GET['userInput'];
