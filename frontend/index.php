@@ -12,7 +12,8 @@
 </head>
 <body>
   <div class="wrapper row">
-    <div class="annex-container col-xl-6 col-md-4 col-sm-2">
+    <div class="annex-container col-xl-6 col-md-4 col-sm-2 text-center">
+        <img src="images/PA-Logo.png" class="logo"></img>
     </div>
   	<div class="container col-xl-6 col-md-8 col-sm-10">
   		<h1>BENVINGUT</h1>
