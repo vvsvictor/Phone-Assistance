@@ -191,3 +191,17 @@ CREATE TABLE CALL_HISTORY(
 /*Insert type users by default*/
 INSERT into type_user VALUES (0,"admin");
 INSERT into type_user VALUES (1,"normal_user");
+
+/*Insert CAP*/
+
+INSERT INTO cap (name, address, phone, schedule) VALUES ("Consultori local Alàs","CR MAJOR, S/N
+25718 ALÀS I CERC", 973360645, "Truqueu al 061 CatSalut Respon" );
+
+INSERT INTO cap (name, address, phone, schedule) VALUES ("Consultori local Arsèguel","CR ÚNIC, S/N
+25722 ARSÈGUEL", 973387314 , "Truqueu al 061 CatSalut Respon" );
+
+INSERT INTO cap (name, address, phone, schedule) VALUES ("Consultori local Ogern","CT SOLSONA, S/N
+25289 BASSELLA  ", 973462779  , "Truqueu al 061 CatSalut Respon" );
+
+INSERT INTO cap (name, address, phone, schedule) VALUES ("Consultori local Coll de Nargó","PL AJUNTAMENT, S/N
+25793 COLL DE NARGÓ  ", 973383552   , "Dl., de 16 a 20h; dt., de 9 a 13h; dc., de 8 a 13h; dj., de 8 a 12h i dv., de 15 a 21h. Fora d'aquest horari truqueu al 061 CatSalut Respon" );

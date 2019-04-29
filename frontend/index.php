@@ -46,6 +46,7 @@ if(isset($_SESSION['user'])){
     if($_SESSION['user']['usertype'] == 0){
       header('Location: users.php');
     }
+  }
 ?>
 
 </html>
