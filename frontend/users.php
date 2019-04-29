@@ -1,3 +1,14 @@
+<?php
+  //Obliga al usuario a ser un determinado tipo de usuario para poder entrar en la pagina.En caso de no ser posible por no estar logueado o no ser el tipo de usuario permitido, redirige a la pagina de login.
+  session_start();
+  if(isset($_SESSION['user'])){
+     if($_SESSION['user']['usertype'] != 0){
+         header("Location: index.php");
+     }
+  }elseif(!isset($_SESSION['user'])){
+     header("Location: index.php");
+  }
+?>
 <!doctype html>
 <html lang="es">
   <head>
@@ -7,9 +18,6 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
         <link rel="stylesheet" href="index.css">
-
-
-
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap-theme.min.css">
         <link rel="stylesheet" href="./js/jqGrid/css/ui.jqgrid.css">
@@ -106,14 +114,3 @@
     <!-- JQGrid table Finish here -->
   </body>
 </html>
-<?php
-  //Obliga al usuario a ser un determinado tipo de usuario para poder entrar en la pagina.En caso de no ser posible por no estar logueado o no ser el tipo de usuario permitido, redirige a la pagina de login.
-  session_start();
-  if(isset($_SESSION['user'])){
-     if($_SESSION['user']['usertype'] != 0){
-         header("Location: index.php");
-     }
-  }elseif(!isset($_SESSION['user'])){
-     header("Location: index.php");
-  }
-?>
