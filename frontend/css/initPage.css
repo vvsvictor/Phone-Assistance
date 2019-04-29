@@ -1,5 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Libre+Baskerville:400,700');
-
+body{
+  background-color:rgba(17, 153, 158, 0.5);
+  color: #e4f9f5;
+}
 .btn-default{
   background:#006EFF; width: 100%; color:#fff; font-weight:700; text-shadow:1px 1px 0 rgba(0,0,0,0.2); font-size:14px;
 }
