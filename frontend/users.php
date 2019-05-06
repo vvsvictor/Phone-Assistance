@@ -15,18 +15,21 @@
         <meta charset="utf-8">
         <meta content="text/html">
         <title>Users Page</title>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
         <link rel="stylesheet" href="index.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap-theme.min.css">
+
         <link rel="stylesheet" href="./js/jqGrid/css/ui.jqgrid.css">
         <link rel="stylesheet" href="./js/jqGrid/css/ui.jqgrid.min.css">
+        <link rel="stylesheet" href="./css/jqgridCustom.css">
+        <!--
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/themes/redmond/jquery-ui.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/free-jqgrid/4.15.5/css/ui.jqgrid.min.css">
+        -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <script src="./js/index.js"></script>
         <script src="./js/jqGrid/js/jquery.jqgrid.min.js"></script>
-
 
         <script>
           $(document).ready(function () {
@@ -38,39 +41,61 @@
               { id: "5", user: "test5", password: "password5", level: "1"},
               { id: "6", user: "test6", password: "password6", level: "1"}
             ];
-            var myGrid = "#list";
 
-            jQuery(myGrid).jqGrid({
-                datatype: 'local',
-                data: myData,
-                colusers: ['ID', 'User', 'Password', 'Access Level'],
-                colModel: [
-                    { name: 'id', index: 'id', width: 70, align: 'center', sorttype: 'int' },
-                    { name: 'user', index: 'user', width: 70 },
-                    { name: 'password', index: 'password', width: 100 },
-                    {
-                        name: 'level', index: 'level', width: 120, align: 'center', formatter: 'select',
-                        edittype: 'select', editoptions: { value: '0:Admin;1:Tech' },
-                        stype: 'select', searchoptions: { value: ':All;0:Admin;1:Tech' }
-                    }
-                ],
-                rowNum: 10,
-                rowList: [5, 10, 20],
-                pager: '#pager',
-                gridview: true,
-                ignoreCase: true,
-                rownumbers: true,
-                sortname: 'invdate',
-                viewrecords: true,
-                sortorder: 'desc',
-                guiStyle: "bootstrap",
-                iconSet: "fontAwesome",
-                idPrefix: "gb1_",
-                //caption: "The grid, which uses predefined formatters and templates" <-- Minimizado de tabla completa
-            });
-            jQuery(myGrid).jqGrid('filterToolbar', { stringResult: true, searchOnEnter: false, defaultSearch: "cn" });
+            pdJqGrid(myData);
+          });
 
-        });
+          function pdJqGrid(myData) {
+          var myGrid = "#list";
+
+          jQuery(myGrid).jqGrid({
+              datatype: 'local',
+              data: myData,
+              width: 600,
+              colusers: ['ID', 'User', 'Password', 'Access Level'],
+              colModel: [
+                  { name: 'user', index: 'user', editable: true},
+                  { name: 'password', index: 'password', editable: true},
+                  {
+                      name: 'level', index: 'level', align: 'center', formatter: 'select', editable: true,
+                      edittype: 'select', editoptions: { value: '0:Admin;1:Tech' },
+                      stype: 'select', searchoptions: { value: ':All;0:Admin;1:Tech' }
+                  }
+              ],
+              guiStyle: "bootstrap",
+              iconSet: "fontAwesome",
+              pager: '#pager',
+              gridview: true,
+              ignoreCase: true,
+              rownumbers: true,
+              sortname: 'invdate',
+              viewrecords: true,
+              sortorder: 'desc',
+              rowNum: 10,
+              rowList: [5, 10, 20],
+              //caption: "The grid, which uses predefined formatters and templates" <-- Minimizado de tabla completa
+          });
+
+          jQuery(myGrid).jqGrid('navGrid', {
+            edit: true,
+            //edittext: 'Edit',
+            add: true,
+            //addtext: 'Add',
+            del: true,
+            //deltext: 'Del',
+            search: false,
+            view: true,
+            //viewtext: 'View',
+            refresh: true,
+            //refreshtext: 'Refresh'
+          });
+
+          jQuery(myGrid).jqGrid('filterToolbar', {
+            stringResult: true,
+            searchOnEnter: false,
+            defaultSearch: "cn"
+          });
+        }
         </script>
    </head>
 
@@ -108,7 +133,6 @@
     </nav>
     <!-- JQGrid table Start here -->
       <table id="list"><tr></tr></table>
-      <div style="margin-left: 25%">
       <div id="pager"></div>
     <div>
     <!-- JQGrid table Finish here -->

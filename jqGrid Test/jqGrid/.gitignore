@@ -1,6 +1,0 @@
-node_modules
-bower_components
-.DS_Store
-.tscache
-.baseDir.ts
-.vscode

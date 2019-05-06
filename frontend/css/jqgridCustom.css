@@ -1,0 +1,6 @@
+.ui-state-highlight, .ui-widget-content .ui-state-highlight, .ui-widget-header .ui-state-highlight
+{
+    border: 1px solid red !important; // Desirable border color
+    background: none !important; // Desirable background color
+    color: black !important; // Desirable text color
+}
