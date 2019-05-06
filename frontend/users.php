@@ -16,21 +16,13 @@
         <meta content="text/html">
         <title>Users Page</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-        <link rel="stylesheet" href="index.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-        <link rel="stylesheet" href="./js/jqGrid/css/ui.jqgrid.css">
-        <link rel="stylesheet" href="./js/jqGrid/css/ui.jqgrid.min.css">
-        <link rel="stylesheet" href="./css/jqgridCustom.css">
-        <!--
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/themes/redmond/jquery-ui.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/free-jqgrid/4.15.5/css/ui.jqgrid.min.css">
-        -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-        <script src="./js/index.js"></script>
-        <script src="./js/jqGrid/js/jquery.jqgrid.min.js"></script>
 
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/free-jqgrid/4.15.5/jquery.jqgrid.min.js"></script>
+        
         <script>
           $(document).ready(function () {
             var myData = [
@@ -62,7 +54,6 @@
                       stype: 'select', searchoptions: { value: ':All;0:Admin;1:Tech' }
                   }
               ],
-              guiStyle: "bootstrap",
               iconSet: "fontAwesome",
               pager: '#pager',
               gridview: true,
