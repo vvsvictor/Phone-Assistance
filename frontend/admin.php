@@ -46,8 +46,19 @@ if(isset($_SESSION['user'])){
            <li class="nav-item">
              <a class="nav-link" href="#" style="color: #e4f9f5;">Historial de trucades</a>
            </li>
+         </ul>
+         <ul class="navbar-nav ml-auto">
            <li class="nav-item">
-             <a href="exitLogin.php" class="btn btn-outline-light" role="button">Logout</a>
+             <p class="navbar-text paddingr paddingRight" style="color: #e4f9f5;">
+               <?php
+               echo 'Hola, '.$_SESSION['user']['username'];
+               ?>
+             </p>
+           </li>
+           <li class="nav-item">
+             <form class="form-inline my-2 my-lg-0">
+               <a href="exitLogin.php" class="btn btn-outline-light" role="button">Logout</a>
+             </form>
            </li>
          </ul>
        </div>
