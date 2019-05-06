@@ -15,7 +15,7 @@
     <div class="annex-container col-xl-6 col-md-4 col-sm-2 text-center">
         <img src="images/PA-Logo.png" class="logo"></img>
     </div>
-  	<div class="container col-xl-6 col-md-8 col-sm-10">
+  	<div class="container col-xl-6 col-md-8 col-sm-10 rounded-left">
   		<h1>BENVINGUT</h1>
   		<form class="form" id="formLg">
   			<input type="text" name="userInput" id="userInput" placeholder="Usuari">
