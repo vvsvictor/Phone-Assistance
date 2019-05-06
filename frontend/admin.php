@@ -1,4 +1,15 @@
 <!doctype html>
+<?php
+//Obliga al usuario a ser un determinado tipo de usuario para poder entrar en la pagina.En caso de no ser posible por no estar logueado o no ser el tipo de usuario permitido, redirige a la pagina de login.
+session_start();
+if(isset($_SESSION['user'])){
+   if($_SESSION['user']['usertype'] != 0){
+       header("Location: index.php");
+   }
+}elseif(!isset($_SESSION['user'])){
+     header("Location: index.php");
+}
+?>
 <html lang="es">
   <head>
         <meta charset="utf-8">
@@ -95,14 +106,3 @@
      <script src="./js/index.js"></script>
    </body>
 </html>
-        <?php
-        //Obliga al usuario a ser un determinado tipo de usuario para poder entrar en la pagina.En caso de no ser posible por no estar logueado o no ser el tipo de usuario permitido, redirige a la pagina de login.
-        session_start();
-        if(isset($_SESSION['user'])){
-           if($_SESSION['user']['usertype'] != 0){
-               header("Location: index.php");
-           }
-        }elseif(!isset($_SESSION['user'])){
-             header("Location: index.php");
-        }
-        ?>
