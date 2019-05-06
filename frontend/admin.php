@@ -1,4 +1,15 @@
 <!doctype html>
+<?php
+//Obliga al usuario a ser un determinado tipo de usuario para poder entrar en la pagina.En caso de no ser posible por no estar logueado o no ser el tipo de usuario permitido, redirige a la pagina de login.
+session_start();
+if(isset($_SESSION['user'])){
+   if($_SESSION['user']['usertype'] != 0){
+       header("Location: index.php");
+   }
+}elseif(!isset($_SESSION['user'])){
+     header("Location: index.php");
+}
+?>
 <html lang="es">
   <head>
         <meta charset="utf-8">
@@ -7,79 +18,85 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
         <link rel="stylesheet" href="index.css">
+        <link rel="stylesheet" href="css/admin.css">
    </head>
    <body>
-     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-       <a class="navbar-brand" href="#">Phone Assistence</a>
+     <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #11999E;">
+       <a class="navbar-brand" href="#"><img src="images/PA-Mini.png"></a>
        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
          <span class="navbar-toggler-icon"></span>
        </button>
        <div class="collapse navbar-collapse" id="navbarNav">
          <ul class="navbar-nav">
            <li class="nav-item active">
-             <a class="nav-link" href="#">Inici <span class="sr-only">(current)</span></a>
+             <a class="nav-link" href="#" style="color: #e4f9f5;">Inici <span class="sr-only">(current)</span></a>
            </li>
            <li class="nav-item">
-             <a class="nav-link" href="#">Usuaris</a>
+             <a class="nav-link" href="#" style="color: #e4f9f5;">Usuaris</a>
            </li>
            <li class="nav-item">
-             <a class="nav-link" href="#">Fitxa personal</a>
+             <a class="nav-link" href="#" style="color: #e4f9f5;">Fitxa personal</a>
            </li>
            <li class="nav-item">
-             <a class="nav-link" href="#">CAP - Mútues</a>
+             <a class="nav-link" href="#" style="color: #e4f9f5;">CAP - Mútues</a>
            </li>
            <li class="nav-item">
-             <a class="nav-link" href="#">STA - Responsables</a>
+             <a class="nav-link" href="#" style="color: #e4f9f5;">STA - Responsables</a>
            </li>
            <li class="nav-item">
-             <a class="nav-link" href="#">Historial de trucades</a>
+             <a class="nav-link" href="#" style="color: #e4f9f5;">Historial de trucades</a>
            </li>
            <li class="nav-item">
-             <a href="exitLogin.php" class="btn btn-primary" role="button">Logout</a>
+             <a href="exitLogin.php" class="btn btn-outline-light" role="button">Logout</a>
            </li>
          </ul>
        </div>
      </nav>
      <div class="container text-center">
-       <div class="row noselect vertical-center">
+       <div class="row">
          <div class="col">
-           <div class="card" style="width: 16rem;">
-             <i class="material-icons" style="font-size:120px;">face</i>
-             <div class="card-body">
-               <h5>Usuaris</h5>
+           <div class="card card-01 height-fix">
+             <img class="card-img-top" src="images/operator.jpeg" alt="Card image cap">
+             <div class="card-img-overlay">
+               <h4 class="card-title"><strong>Usuaris</strong></h4>
              </div>
            </div>
          </div>
          <div class="col">
-           <div class="card" style="width: 16rem;">
-             <i class="material-icons" style="font-size:120px;">person_pin</i>
-             <div class="card-body">
-               <h5>Fitxa personal</h5>
-             </div>
-           </div>
-           <div class="card" style="width: 16rem;">
-             <i class="material-icons" style="font-size:120px;">wifi</i>
-             <div class="card-body">
-               <h5>STA - Responsables</h5>
+           <div class="card card-01 height-fix">
+             <img class="card-img-top" src="images/personal-sheet.jpg" alt="Card image cap">
+             <div class="card-img-overlay">
+               <h4 class="card-title"><strong>Fitxa Personal</strong></h4>
              </div>
            </div>
          </div>
          <div class="col">
-           <div class="card" style="width: 16rem;">
-             <i class="material-icons" style="font-size:120px;">local_hospital</i>
-             <div class="card-body">
-               <h5>CAP - Mútues</h5>
-             </div>
-           </div>
-           <div class="card" style="width: 16rem;">
-             <i class="material-icons" style="font-size:120px;">phone</i>
-             <div class="card-body">
-               <h5>Historial de trucades</h5>
+           <div class="card card-01 height-fix">
+             <img class="card-img-top" src="images/cap-image.jpg" alt="Card image cap">
+             <div class="card-img-overlay">
+               <h4 class="card-title"><strong>CAP - Mútues</strong></h4>
              </div>
            </div>
          </div>
        </div>
-
+       <div class="row">
+         <div class="col">
+           <div class="card card-01 height-fix">
+             <img class="card-img-top" src="images/responsable.jpg" alt="Card image cap">
+             <div class="card-img-overlay">
+               <h4 class="card-title"><strong>STA- Responsables</strong></h4>
+             </div>
+           </div>
+         </div>
+         <div class="col">
+           <div class="card card-01 height-fix">
+             <img class="card-img-top" src="images/phone-history.jpg" alt="Card image cap">
+             <div class="card-img-overlay">
+               <h4 class="card-title"><strong>Historial Trucades</strong></h4>
+             </div>
+           </div>
+         </div>
+       </div>
      </div>
 
 
@@ -89,14 +106,3 @@
      <script src="./js/index.js"></script>
    </body>
 </html>
-        <?php
-        //Obliga al usuario a ser un determinado tipo de usuario para poder entrar en la pagina.En caso de no ser posible por no estar logueado o no ser el tipo de usuario permitido, redirige a la pagina de login.
-        session_start();
-        if(isset($_SESSION['user'])){
-           if($_SESSION['user']['usertype'] != 0){
-               header("Location: index.php");
-           }
-        }elseif(!isset($_SESSION['user'])){
-             header("Location: index.php");
-        }
-        ?>
