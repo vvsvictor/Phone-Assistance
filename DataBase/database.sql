@@ -191,3 +191,69 @@ CREATE TABLE CALL_HISTORY(
 /*Insert type users by default*/
 INSERT into type_user VALUES (0,"admin");
 INSERT into type_user VALUES (1,"normal_user");
+
+/*Insert type users by default*/
+INSERT into users VALUES ("admin","bemen3",0);
+INSERT into users VALUES ("normal_user","bemen3",1);
+
+/*Insert languages by default*/
+INSERT into languages VALUES ("Català");
+INSERT into languages VALUES ("Castellano");
+INSERT into languages VALUES ("English");
+INSERT into languages VALUES ("日本語");
+
+/*Insert sign_languages by default*/
+INSERT into sign_languages VALUES ("Català");
+INSERT into sign_languages VALUES ("Castellano");
+INSERT into sign_languages VALUES ("English");
+INSERT into sign_languages VALUES ("日本語");
+
+/*Insert provinces by default*/
+INSERT into provinces VALUES ("Barcelona");
+INSERT into provinces VALUES ("Lleida");
+INSERT into provinces VALUES ("Tarragona");
+INSERT into provinces VALUES ("Girona");
+
+/*Insert comarcas by default*/
+INSERT into comarcas VALUES ("Alt Camp");
+INSERT into comarcas VALUES ("Alt Empordà");
+INSERT into comarcas VALUES ("Alt Penedès");
+INSERT into comarcas VALUES ("Alt Urgell");
+INSERT into comarcas VALUES ("Alta Ribagorça");
+INSERT into comarcas VALUES ("Anoia");
+INSERT into comarcas VALUES ("Aran");
+INSERT into comarcas VALUES ("Bages");
+INSERT into comarcas VALUES ("Baix Camp");
+INSERT into comarcas VALUES ("Baix Ebre");
+INSERT into comarcas VALUES ("Baix Empordà");
+INSERT into comarcas VALUES ("Baix Llobregat");
+INSERT into comarcas VALUES ("Baix Penedès");
+INSERT into comarcas VALUES ("Barcelonès");
+INSERT into comarcas VALUES ("Berguedà");
+INSERT into comarcas VALUES ("Cerdanya");
+INSERT into comarcas VALUES ("Conca de Barberà");
+INSERT into comarcas VALUES ("Garraf");
+INSERT into comarcas VALUES ("Garrigues");
+INSERT into comarcas VALUES ("Garrotxa");
+INSERT into comarcas VALUES ("Gironès");
+INSERT into comarcas VALUES ("Maresme");
+INSERT into comarcas VALUES ("Moianès");
+INSERT into comarcas VALUES ("Montsià");
+INSERT into comarcas VALUES ("Noguera");
+INSERT into comarcas VALUES ("Osona");
+INSERT into comarcas VALUES ("Pallars Jussà");
+INSERT into comarcas VALUES ("Pallars Sobirà");
+INSERT into comarcas VALUES ("Pla d'Urgell");
+INSERT into comarcas VALUES ("Pla de l'Estany");
+INSERT into comarcas VALUES ("Priorat");
+INSERT into comarcas VALUES ("Ribera d'Ebre");
+INSERT into comarcas VALUES ("Ripollès");
+INSERT into comarcas VALUES ("Segarra");
+INSERT into comarcas VALUES ("Sagrià");
+INSERT into comarcas VALUES ("Selva");
+INSERT into comarcas VALUES ("Solsonès");
+INSERT into comarcas VALUES ("Tarragonès");
+INSERT into comarcas VALUES ("Terra Alta");
+INSERT into comarcas VALUES ("Urgell");
+INSERT into comarcas VALUES ("Vallès Occidental");
+INSERT into comarcas VALUES ("Vallès Oriental");
