@@ -26,15 +26,26 @@ $("#getaddress").click(function() {
     type: "GET",
     cache: false,
     success: function(response) {
-      //let myJSON = JSON.parse(response);
       console.log(response);
-      // for (var i = 0; i < myJSON.length; i++) {
-      //   let id = myJSON[i].id;
-      //   let name = myJSON[i].nom;
-      //   let surname = myJSON[i].cognoms;
-      //   let address = myJSON[i].direccio;
-      //
-      // }
+      let myJSON = JSON.parse(response);
+      let address = $('#address').val();
+      let minkm=1000;
+      for (let i = 0; i < myJSON.length; i++) {
+        myJSON[i].address;
+        $.ajax({
+          url: "https://eu1.locationiq.com/v1/search.php?key=31908d669a0b74&q=" + address + "&format=json",
+          success: function(result) {
+            latitude = result[0]["lat"];
+            longitude = result[0]["lon"];
+            let distance = getDistanceFromLatLonInKm(caplatitude, caplongitude, latitude, longitude);
+            console.log(latitude);
+            console.log(longitude);
+            console.log("Distancia entre cap horta i punt: " + distance + " km");
+          }
+        });
+      }
+
+
 
     },
     error: function() {
@@ -46,17 +57,7 @@ $("#getaddress").click(function() {
 
 
 
-  let address = $('#address').val();
-  // $.ajax({
-  //   url: "https://eu1.locationiq.com/v1/search.php?key=31908d669a0b74&q=" + address + "&format=json",
-  //   success: function(result) {
-  //     latitude = result[0]["lat"];
-  //     longitude = result[0]["lon"];
-  //     let distance = getDistanceFromLatLonInKm(caplatitude, caplongitude, latitude, longitude);
-  //
-  //     console.log("Distancia entre cap horta i punt: " + distance + " km");
-  //   }
-  // });
+
 
 
 });

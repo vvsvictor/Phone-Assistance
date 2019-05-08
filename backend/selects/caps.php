@@ -1,49 +1,26 @@
 <?php
 
-  // $conexion = mysqli_connect("localhost", "root", "");
-  // $baseDeDatos=mysqli_select_db($conexion, "phonea");
-  //
-  //
-  // mysqli_close($conexion);
-  //
-  // $query = "SELECT * FROM cap where id=489";
-  //
-  // $stmt = $DBcon->prepare($query);
-  // $stmt->execute();
+$conexion = mysqli_connect("localhost", "root", "");
+$baseDeDatos=mysqli_select_db($conexion, "phonea");
 
+  $consulta = "SELECT * FROM cap";
 
+  $result = mysqli_query($conexion, $consulta);
 
-  // Initialize variable for database credentials
-  $dbhost = 'localhost';
-  $dbuser = 'root';
-  $dbpass = '';
-  $dbname = 'phonea';
-
-  //Create database connection
-    $dblink = new mysqli($dbhost, $dbuser, $dbpass, $dbname);
-
-  //Check connection was successful
-    if ($dblink->connect_errno) {
-       printf("Failed to connect to database");
-       exit();
+  $sJSON='[';
+  if (mysqli_num_rows($result) > 0) {
+    // output data of each row
+    while($row = mysqli_fetch_assoc($result)) {
+      $sJSON .= '{"id":'. $row["id"].',"name":"'. $row["name"].'", "schedule":"'. $row["schedule"].'", "address":"'. $row["address"].'", "phone":"'. $row["phone"].'"},'  ;
     }
-
-  //Fetch 3 rows from actor table
-    $result = $dblink->query("SELECT * FROM cap where id=489");
-
-  //Initialize array variable
-    $dbdata = array();
-
-  //Fetch into associative array
-    while ( $row = $result->fetch_assoc())  {
-  	$dbdata[]=$row;
-    }
-
-  //Print array in JSON format
-   echo json_encode($dbdata);
+  }
+  $sJSON = rtrim($sJSON,",");
+  $sJSON.=']';
 
 
 
+  echo utf8_encode($sJSON);
 
+  mysqli_close($conexion);
 
  ?>
