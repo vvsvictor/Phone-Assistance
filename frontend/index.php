@@ -18,8 +18,8 @@
   	<div class="container col-xl-6 col-md-8 col-sm-10 rounded-left">
   		<h1>BENVINGUT</h1>
   		<form class="form" id="formLg">
-  			<input type="text" name="userInput" id="userInput" placeholder="Usuari">
-  			<input type="password" name="passwordInput" id="passwordInput" placeholder="Contrasenya">
+  			<input type="text" name="userInput" id="userInput" placeholder="Usuari" required>
+  			<input type="password" name="passwordInput" id="passwordInput" placeholder="Contrasenya" required>
   			<div id="loginInput" class="button">Connectar-se</div>
   		</form>
   	</div>
