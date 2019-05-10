@@ -7,7 +7,7 @@ $(document).ready(function () {
 
 function showTable(){
   $.ajax({
-    url: "../backend/selects/getFitxaPersonal.php",
+    url: "../backend/selects/getUsers.php",
     type: "GET",
     cache: false,
     success: function(response) {
@@ -15,13 +15,11 @@ function showTable(){
       $("#fitxaPersonalTable").html("");
       for (var i = 0; i < myJSON.length; i++) {
         let id = myJSON[i].id;
-        let name = myJSON[i].name;
         let surname = myJSON[i].surname;
-        let dninie = myJSON[i].dninie;
-        let province = myJSON[i].province;
+        let usertpe = myJSON[i].usertpe;
         showFitxaPersonal(id, name, surname,dninie, province);
       }
-      $('#dtFitxaPersonal').DataTable();
+      $('#dtUsers').DataTable();
     },
     error: function() {
       console.log('No hi han clients');

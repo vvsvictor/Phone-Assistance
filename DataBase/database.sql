@@ -60,7 +60,7 @@ CREATE TABLE PERSONAL_CARD(
   surname varchar(255),
   gender varchar(255),
   language int, /*Table LANGUAGES*/
-  sign_langauge int, /*Table SIGN_LANGUAGES*/
+  sign_language int, /*Table SIGN_LANGUAGES*/
   birthdate date,
   dninie varchar(50) unique,
   province int, /*Table PROVINCES*/
