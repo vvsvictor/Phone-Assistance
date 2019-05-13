@@ -74,7 +74,7 @@ CREATE TABLE PERSONAL_CARD(
   work_phone varchar(50),
   primary key(id),
   FOREIGN key (language) REFERENCES LANGUAGES(id),
-  FOREIGN key (sign_langauge) REFERENCES SIGN_LANGUAGES(id),
+  FOREIGN key (sign_language) REFERENCES SIGN_LANGUAGES(id),
   FOREIGN key (province) REFERENCES PROVINCES(id),
   FOREIGN key (comarca) REFERENCES COMARCAS(id),
   FOREIGN key (municipality) REFERENCES MUNISIPALITYS(id),
