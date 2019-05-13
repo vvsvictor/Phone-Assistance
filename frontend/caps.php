@@ -38,11 +38,11 @@
           }
            ?>
 
-          <li class="nav-item active">
-            <a class="nav-link" href="#" style="color: #e4f9f5;">Fitxa personal<span class="sr-only">(current)</span></a>
-          </li>
           <li class="nav-item">
-            <a class="nav-link" href="#" style="color: #e4f9f5;">CAP - Mútues</a>
+            <a class="nav-link" href="#" style="color: #e4f9f5;">Fitxa personal</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="#" style="color: #e4f9f5;">CAP - Mútues<span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#" style="color: #e4f9f5;">STA - Responsables</a>
@@ -70,25 +70,25 @@
       </div>
     </nav>
     <div class="container">
-      <table id="dtFitxaPersonal" class="table table-striped table-bordered" cellspacing="0" width="100%">
+      <table id="dtCap" class="table table-striped table-bordered" cellspacing="0" width="100%">
         <thead>
           <tr>
             <th class="th-sm">Id</th>
             <th class="th-sm">Nom</th>
-            <th class="th-sm">Cognom</th>
-            <th class="th-sm">DNI</th>
-            <th class="th-sm">Provincia</th>
+            <th class="th-sm">Direcció</th>
+            <th class="th-sm">Telèfon</th>
+            <th class="th-sm">Direcció</th>
             <th class="th-sm"></th>
           </tr>
         </thead>
-        <tbody id="fitxaPersonalTable"></tbody>
+        <tbody id="capTable"></tbody>
         <tfoot>
           <tr>
             <th>Id</th>
             <th>Nom</th>
-            <th>Cognom</th>
-            <th>DNI</th>
-            <th>Provincia</th>
+            <th>Direcció</th>
+            <th>Telèfon</th>
+            <th>Direcció</th>
             <th></th>
           </tr>
         </tfoot>
@@ -107,6 +107,6 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.0/js/mdb.min.js"></script>
     <script type="text/javascript" src="js/jquery.dataTables.min.js"></script>
     <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
-    <script src="js/fitxaPersonal.js" type="text/javascript"></script>
+    <script src="js/caps.js" type="text/javascript"></script>
   </body>
 </html>
