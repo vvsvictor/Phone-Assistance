@@ -70,25 +70,23 @@
       </div>
     </nav>
     <div class="container">
-      <table id="dtFitxaPersonal" class="table table-striped table-bordered" cellspacing="0" width="100%">
+      <table id="dtHistocalls" class="table table-striped table-bordered" cellspacing="0" width="100%">
         <thead>
           <tr>
-            <th class="th-sm">Id</th>
-            <th class="th-sm">Nom</th>
-            <th class="th-sm">Cognom</th>
             <th class="th-sm">DNI</th>
-            <th class="th-sm">Provincia</th>
+            <th class="th-sm">Nom</th>
+            <th class="th-sm">Data</th>
+            <th class="th-sm">Estat de la trucada</th>
             <th class="th-sm"></th>
           </tr>
         </thead>
-        <tbody id="fitxaPersonalTable"></tbody>
+        <tbody id="HistocallsTable"></tbody>
         <tfoot>
           <tr>
-            <th>Id</th>
-            <th>Nom</th>
-            <th>Cognom</th>
             <th>DNI</th>
-            <th>Provincia</th>
+            <th>Nom</th>
+            <th>Data</th>
+            <th>Estat de la trucada</th>
             <th></th>
           </tr>
         </tfoot>
