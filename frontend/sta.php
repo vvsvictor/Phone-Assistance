@@ -70,7 +70,7 @@
       </div>
     </nav>
     <div class="container">
-      <table id="dtFitxaPersonal" class="table table-striped table-bordered" cellspacing="0" width="100%">
+      <table id="dtSta" class="table table-striped table-bordered" cellspacing="0" width="100%">
         <thead>
           <tr>
             <th class="th-sm">Id</th>
@@ -81,7 +81,7 @@
             <th class="th-sm"></th>
           </tr>
         </thead>
-        <tbody id="fitxaPersonalTable"></tbody>
+        <tbody id="staTable"></tbody>
         <tfoot>
           <tr>
             <th>Id</th>
