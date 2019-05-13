@@ -25,7 +25,7 @@ include '..\backend\includeAdmin.php';
        <div class="collapse navbar-collapse" id="navbarNav">
          <ul class="navbar-nav">
            <li class="nav-item active">
-             <a class="nav-link" href="#" style="color: #e4f9f5;">Inici <span class="sr-only">(current)</span></a>
+             <a class="nav-link" href="index.php" style="color: #e4f9f5;">Inici <span class="sr-only">(current)</span></a>
            </li>
            <li class="nav-item">
              <a class="nav-link" href="users.php" style="color: #e4f9f5;">Usuaris</a>
@@ -37,10 +37,10 @@ include '..\backend\includeAdmin.php';
              <a class="nav-link" href="#" style="color: #e4f9f5;">CAP - Mútues</a>
            </li>
            <li class="nav-item">
-             <a class="nav-link" href="#" style="color: #e4f9f5;">STA - Responsables</a>
+             <a class="nav-link" href="sta.php" style="color: #e4f9f5;">STA - Responsables</a>
            </li>
            <li class="nav-item">
-             <a class="nav-link" href="#" style="color: #e4f9f5;">Historial de trucades</a>
+             <a class="nav-link" href="histocalls.php" style="color: #e4f9f5;">Historial de trucades</a>
            </li>
          </ul>
          <ul class="navbar-nav ml-auto">
@@ -69,7 +69,9 @@ include '..\backend\includeAdmin.php';
                <img class="card-img-top" src="images/operator.jpeg" alt="Card image cap">
              </a>
              <div class="card-img-overlay">
+              <a href="users.php">
                <h4 class="card-title"><strong>Usuaris</strong></h4>
+              </a>
              </div>
            </div>
          </div>
@@ -79,7 +81,9 @@ include '..\backend\includeAdmin.php';
                <img class="card-img-top" src="images/personal-sheet.jpg" alt="Card image cap"/>
              </a>
              <div class="card-img-overlay">
-               <h4 class="card-title"><strong>Fitxa Personal</strong></h4>
+               <a href="fitxaPersonal.php">
+                 <h4 class="card-title"><strong>Fitxa Personal</strong></h4>
+               </a>
              </div>
            </div>
          </div>
@@ -95,17 +99,25 @@ include '..\backend\includeAdmin.php';
        <div class="row">
          <div class="col">
            <div class="card card-01 height-fix">
-             <img class="card-img-top" src="images/responsable.jpg" alt="Card image cap">
+             <a href="sta.php">
+               <img class="card-img-top" src="images/responsable.jpg" alt="Card image cap">
+             </a>
              <div class="card-img-overlay">
-               <h4 class="card-title"><strong>STA- Responsables</strong></h4>
+               <a href="sta.php">
+                 <h4 class="card-title"><strong>STA- Responsables</strong></h4>
+               </a>
              </div>
            </div>
          </div>
          <div class="col">
            <div class="card card-01 height-fix">
-             <img class="card-img-top" src="images/phone-history.jpg" alt="Card image cap">
+             <a href="histocalls.php">
+               <img class="card-img-top" src="images/phone-history.jpg" alt="Card image cap">
+             </a>
              <div class="card-img-overlay">
-               <h4 class="card-title"><strong>Historial Trucades</strong></h4>
+               <a href="histocalls.php">
+                 <h4 class="card-title"><strong>Historial Trucades</strong></h4>
+               </a>
              </div>
            </div>
          </div>

@@ -21,7 +21,7 @@
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #11999E;">
-      <a class="navbar-brand" href="#"><img src="images/PA-Mini.png"/></a>
+      <a class="navbar-brand" href="index.php"><img src="images/PA-Mini.png"/></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -39,16 +39,16 @@
            ?>
 
           <li class="nav-item active">
-            <a class="nav-link" href="#" style="color: #e4f9f5;">Fitxa personal<span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="fitxaPersonal.php" style="color: #e4f9f5;">Fitxa personal<span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#" style="color: #e4f9f5;">CAP - Mútues</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#" style="color: #e4f9f5;">STA - Responsables</a>
+            <a class="nav-link" href="sta.php" style="color: #e4f9f5;">STA - Responsables</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#" style="color: #e4f9f5;">Historial de trucades</a>
+            <a class="nav-link" href="histocalls.php" style="color: #e4f9f5;">Historial de trucades</a>
           </li>
         </ul>
         <ul class="navbar-nav ml-auto">
