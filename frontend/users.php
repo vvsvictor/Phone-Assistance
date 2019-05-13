@@ -30,7 +30,7 @@ include '..\backend\includeAdmin.php';
             <a class="nav-link" href="index.php" style="color: #e4f9f5;">Inici </a>
           </li>
           <li class="nav-item active">
-            <a class="nav-link" href="#" style="color: #e4f9f5;">Fitxa personal<span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="fitxaPersonal.php" style="color: #e4f9f5;">Fitxa personal<span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#" style="color: #e4f9f5;">CAP - Mútues</a>
