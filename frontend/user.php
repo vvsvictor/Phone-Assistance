@@ -30,7 +30,7 @@
             <a class="nav-link" href="fitxaPersonal.php" style="color: #e4f9f5;">Fitxa personal</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#" style="color: #e4f9f5;">CAP - Mútues</a>
+            <a class="nav-link" href="capsmutues.php" style="color: #e4f9f5;">CAP - Mútues</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="sta.php" style="color: #e4f9f5;">STA - Responsables</a>
@@ -73,9 +73,13 @@
         </div>
         <div class="col">
           <div class="card card-01 height-fix">
-            <img class="card-img-top" src="images/cap-image.jpg" alt="Card image cap">
+            <a href="capsmutues.php">
+              <img class="card-img-top" src="images/cap-image.jpg" alt="Card image cap">
+            </a>
             <div class="card-img-overlay">
-              <h4 class="card-title"><strong>CAP - Mútues</strong></h4>
+              <a href="capsmutues.php">
+                <h4 class="card-title"><strong>CAP - Mútues</strong></h4>
+              </a>
             </div>
           </div>
         </div>
