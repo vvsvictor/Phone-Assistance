@@ -30,6 +30,9 @@
           <li class="nav-item">
             <a class="nav-link" href="index.php" style="color: #e4f9f5;">Inici </a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="users.php" style="color: #e4f9f5;">Usuaris</a>
+          </li>
           <li class="nav-item active">
             <a class="nav-link" href="#" style="color: #e4f9f5;">Fitxa personal<span class="sr-only">(current)</span></a>
           </li>
