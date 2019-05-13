@@ -8,7 +8,7 @@
 <html lang="es" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Phone Assistence</title>
+    <title>STA-Responsables</title>
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -74,10 +74,9 @@
         <thead>
           <tr>
             <th class="th-sm">Id</th>
-            <th class="th-sm">Nom</th>
-            <th class="th-sm">Cognom</th>
             <th class="th-sm">DNI</th>
-            <th class="th-sm">Provincia</th>
+            <th class="th-sm">Situació</th>
+            <th class="th-sm">Data</th>
             <th class="th-sm"></th>
           </tr>
         </thead>
@@ -85,10 +84,9 @@
         <tfoot>
           <tr>
             <th>Id</th>
-            <th>Nom</th>
-            <th>Cognom</th>
             <th>DNI</th>
-            <th>Provincia</th>
+            <th>Situació</th>
+            <th>Data</th>
             <th></th>
           </tr>
         </tfoot>
