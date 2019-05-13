@@ -18,7 +18,7 @@ include '..\backend\includeAdmin.php';
    </head>
    <body>
      <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #11999E;">
-       <a class="navbar-brand" href="#"><img src="images/PA-Mini.png"></a>
+       <a class="navbar-brand" href="index.php"><img src="images/PA-Mini.png"></a>
        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
          <span class="navbar-toggler-icon"></span>
        </button>
@@ -28,10 +28,10 @@ include '..\backend\includeAdmin.php';
              <a class="nav-link" href="#" style="color: #e4f9f5;">Inici <span class="sr-only">(current)</span></a>
            </li>
            <li class="nav-item">
-             <a class="nav-link" href="#" style="color: #e4f9f5;">Usuaris</a>
+             <a class="nav-link" href="users.php" style="color: #e4f9f5;">Usuaris</a>
            </li>
            <li class="nav-item">
-             <a class="nav-link" href="#" style="color: #e4f9f5;">Fitxa personal</a>
+             <a class="nav-link" href="fitxaPersonal.php" style="color: #e4f9f5;">Fitxa personal</a>
            </li>
            <li class="nav-item">
              <a class="nav-link" href="#" style="color: #e4f9f5;">CAP - Mútues</a>
@@ -65,7 +65,9 @@ include '..\backend\includeAdmin.php';
        <div class="row">
          <div class="col">
            <div class="card card-01 height-fix">
-             <img class="card-img-top" src="images/operator.jpeg" alt="Card image cap">
+             <a href="users.php">
+               <img class="card-img-top" src="images/operator.jpeg" alt="Card image cap">
+             </a>
              <div class="card-img-overlay">
                <h4 class="card-title"><strong>Usuaris</strong></h4>
              </div>
@@ -73,7 +75,9 @@ include '..\backend\includeAdmin.php';
          </div>
          <div class="col">
            <div class="card card-01 height-fix">
-             <img class="card-img-top" src="images/personal-sheet.jpg" alt="Card image cap">
+             <a href="fitxaPersonal.php">
+               <img class="card-img-top" src="images/personal-sheet.jpg" alt="Card image cap"/>
+             </a>
              <div class="card-img-overlay">
                <h4 class="card-title"><strong>Fitxa Personal</strong></h4>
              </div>

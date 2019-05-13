@@ -1,7 +1,7 @@
 <!doctype html>
 <?php
         include '..\backend\include.php';
-        include '..\backend\includeUser.php';
+        include '..\backend\includeAll.php';
         //Obliga al usuario a ser un determinado tipo de usuario para poder entrar en la pagina.En caso de no ser posible por no estar logueado o no ser el tipo de usuario permitido, redirige a la pagina de login.
 
 ?>
@@ -27,7 +27,7 @@
             <a class="nav-link" href="#" style="color: #e4f9f5;">Inici <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#" style="color: #e4f9f5;">Fitxa personal</a>
+            <a class="nav-link" href="fitxaPersonal.php" style="color: #e4f9f5;">Fitxa personal</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#" style="color: #e4f9f5;">CAP - Mútues</a>
@@ -63,7 +63,9 @@
           <div class="card card-01 height-fix">
             <img class="card-img-top" src="images/personal-sheet.jpg" alt="Card image cap">
             <div class="card-img-overlay">
-              <h4 class="card-title"><strong>Fitxa Personal</strong></h4>
+              <a href="fitxaPersonal.php">
+                <h4 class="card-title"><strong>Fitxa Personal</strong></h4>
+              </a>
             </div>
           </div>
         </div>
