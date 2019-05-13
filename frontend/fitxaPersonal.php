@@ -42,7 +42,7 @@
             <a class="nav-link" href="#" style="color: #e4f9f5;">Fitxa personal<span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#" style="color: #e4f9f5;">CAP - Mútues</a>
+            <a class="nav-link" href="capsmutues.php" style="color: #e4f9f5;">CAP - Mútues</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="sta.php" style="color: #e4f9f5;">STA - Responsables</a>
