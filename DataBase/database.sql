@@ -255,3 +255,9 @@ INSERT into comarcas (comar_name) VALUES ("Terra Alta");
 INSERT into comarcas (comar_name) VALUES ("Urgell");
 INSERT into comarcas (comar_name) VALUES ("Vallès Occidental");
 INSERT into comarcas (comar_name) VALUES ("Vallès Oriental");
+
+INSERT into STA VALUES ("Pare","12-09-2018",0,1,1,0,1,1,1);
+INSERT into STA VALUES ("Mare","22-05-2018",0,0,1,0,1,0,1);
+INSERT into STA VALUES ("Germana","15-11-2018",1,1,1,0,1,1,1);
+INSERT into STA VALUES ("Parella","02-04-2019",0,0,1,0,1,1,0);
+INSERT into STA VALUES ("Avi","30-07-2018",1,1,0,0,1,1,1);
