@@ -29,14 +29,9 @@ include '..\backend\includeAdmin.php';
           <li class="nav-item">
             <a class="nav-link" href="index.php" style="color: #e4f9f5;">Inici </a>
           </li>
-
-
           <li class="nav-item">
             <a class="nav-link" href="users.php" style="color: #e4f9f5;">Usuaris</a>
           </li>
-
-
-
           <li class="nav-item active">
             <a class="nav-link" href="fitxaPersonal.php" style="color: #e4f9f5;">Fitxa personal<span class="sr-only">(current)</span></a>
           </li>
@@ -70,20 +65,20 @@ include '..\backend\includeAdmin.php';
     </nav>
 
     <div class="container">
-      <table id="dtFitxaPersonal" class="table table-striped table-bordered" cellspacing="0" width="100%">
+      <table id="dtUsuaris" class="table table-striped table-bordered" cellspacing="0" width="100%">
         <thead>
           <tr>
             <th class="th-sm">Id</th>
             <th class="th-sm">Usuari</th>
-            <th class="th-sm">Contrasenya</th>
+            <th class="th-sm">Tipus d'usuari</th>
           </tr>
         </thead>
-        <tbody id="fitxaPersonalTable"></tbody>
+        <tbody id="usuarisTable"></tbody>
         <tfoot>
           <tr>
             <th>Id</th>
             <th>Usuari</th>
-            <th>Contrasenya</th>
+            <th>Tipus d'usuari</th>
           </tr>
         </tfoot>
       </table>
@@ -95,6 +90,6 @@ include '..\backend\includeAdmin.php';
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.0/js/mdb.min.js"></script>
     <script type="text/javascript" src="js/jquery.dataTables.min.js"></script>
     <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
-    <script src="js/fitxaPersonal.js" type="text/javascript"></script>
+    <script src="js/users.js" type="text/javascript"></script>
   </body>
 </html>

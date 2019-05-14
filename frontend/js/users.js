@@ -12,14 +12,14 @@ function showTable(){
     cache: false,
     success: function(response) {
       let myJSON = JSON.parse(response);
-      $("#fitxaPersonalTable").html("");
+      $("#usuarisTable").html("");
       for (var i = 0; i < myJSON.length; i++) {
         let id = myJSON[i].id;
-        let surname = myJSON[i].surname;
-        let usertpe = myJSON[i].usertpe;
-        showFitxaPersonal(id, name, surname,dninie, province);
+        let username = myJSON[i].username;
+        let usertype = myJSON[i].usertype;
+        showUser(id, username,usertype);
       }
-      $('#dtUsers').DataTable();
+      $('#dtUsuaris').DataTable();
     },
     error: function() {
       console.log('No hi han clients');
@@ -29,7 +29,13 @@ function showTable(){
 }
 
 
-function showFitxaPersonal(id, name, surname,dninie, province){
-  let html="<tr><td>"+id+"</td><td>"+name+"</td><td>"+surname+"</td><td>"+dninie+"</td><td>"+province+"</td><td><button id='fitxaPersonal"+id+"' type='button' class='btn btn-info'>Fitxa Completa</button></td></tr>";
-  $("#fitxaPersonalTable").append(html);
+function showUser(id, username,usertype){
+  let html;
+  if (usertype==0){
+    html="<tr><td>"+id+"</td><td>"+username+"</td><td>Professor</td></tr>";
+  }else{
+    html="<tr><td>"+id+"</td><td>"+username+"</td><td>Alumne</td></tr>";
+  }
+
+  $("#usuarisTable").append(html);
 }

@@ -38,8 +38,8 @@
           }
            ?>
 
-          <li class="nav-item active">
-            <a class="nav-link" href="fitxaPersonal.php" style="color: #e4f9f5;">Fitxa personal<span class="sr-only">(current)</span></a>
+          <li class="nav-item">
+            <a class="nav-link" href="fitxaPersonal.php" style="color: #e4f9f5;">Fitxa personal</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="capsmutues.php" style="color: #e4f9f5;">CAP - Mútues</a>
@@ -47,8 +47,8 @@
           <li class="nav-item">
             <a class="nav-link" href="sta.php" style="color: #e4f9f5;">STA - Responsables</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="histocalls.php" style="color: #e4f9f5;">Historial de trucades</a>
+          <li class="nav-item active">
+            <a class="nav-link" href="histocalls.php" style="color: #e4f9f5;">Historial de trucades<span class="sr-only">(current)</span></a>
           </li>
         </ul>
         <ul class="navbar-nav ml-auto">
@@ -80,7 +80,7 @@
             <th class="th-sm"></th>
           </tr>
         </thead>
-        <tbody id="HistocallsTable"></tbody>
+        <tbody id="histoCallsTable"></tbody>
         <tfoot>
           <tr>
             <th>DNI</th>
