@@ -197,8 +197,8 @@
                 <div class="direccion">
                   <h1 class="heading"> CAP</h1>
                   <div class="info">
-                    <p class="sub-heading">Provincia</p>
-                    <p class="duration">Barcelona</p>
+                    <p class="sub-heading">Nom</p>
+                    <p class="duration">Nom_CAP</p>
                     <p></p>
                   </div>
                   <div class="info">
@@ -207,13 +207,18 @@
                     <p></p>
                   </div>
                   <div class="info">
-                    <p class="sub-heading">Municipi</p>
-                    <p class="duration">Barcelona</p>
+                    <p class="sub-heading">Adreça</p>
+                    <p class="duration">Carrer Alcudia nº 23 3º 1ª</p>
                     <p></p>
                   </div>
                   <div class="info">
-                    <p class="sub-heading">Carrer</p>
-                    <p class="duration">Alcudia nº 23 3º 1ª</p>
+                    <p class="sub-heading">Telèfon</p>
+                    <p class="duration">93 458 669 72</p>
+                    <p></p>
+                  </div>
+                  <div class="info">
+                    <p class="sub-heading">Horari</p>
+                    <p class="duration">9h - 21h</p>
                     <p></p>
                   </div>
                 </div>
@@ -221,20 +226,25 @@
 
               <div class="content2a">
                 <div class="contacto">
-                  <h1 class="heading">Metge/ssa de capçalera</h1>
+                  <h1 class="heading">Doctor/a</h1>
                   <div class="info">
-                    <p class="sub-heading">Telèfon fixe</p>
-                    <p class="duration">937764012</p>
+                    <p class="sub-heading">Nom</p>
+                    <p class="duration">Pedro</p>
                     <p></p>
                   </div>
                   <div class="info">
-                    <p class="sub-heading">Telèfon móvil</p>
-                    <p class="duration">672750032</p>
+                    <p class="sub-heading">Cognoms</p>
+                    <p class="duration">Hernandez Torres</p>
                     <p></p>
                   </div>
                   <div class="info">
-                    <p class="sub-heading">Telèfon treball</p>
-                    <p class="duration">903412653</p>
+                    <p class="sub-heading">Sexe</p>
+                    <p class="duration">Home</p>
+                    <p></p>
+                  </div>
+                  <div class="info">
+                    <p class="sub-heading">Especialització</p>
+                    <p class="duration">Capçalera</p>
                     <p></p>
                   </div>
                 </div>
@@ -256,23 +266,23 @@
                 <div class="direccion">
                   <h1 class="heading"> Dades</h1>
                   <div class="info">
-                    <p class="sub-heading">Provincia</p>
-                    <p class="duration">Barcelona</p>
+                    <p class="sub-heading">Nom</p>
+                    <p class="duration">Nati</p>
                     <p></p>
                   </div>
                   <div class="info">
-                    <p class="sub-heading">Comarca</p>
-                    <p class="duration">Barcelonès</p>
-                    <p></p>
-                  </div>
-                  <div class="info">
-                    <p class="sub-heading">Municipi</p>
-                    <p class="duration">Barcelona</p>
+                    <p class="sub-heading">Cognoms</p>
+                    <p class="duration">Novo</p>
                     <p></p>
                   </div>
                   <div class="info">
                     <p class="sub-heading">Carrer</p>
                     <p class="duration">Alcudia nº 23 3º 1ª</p>
+                    <p></p>
+                  </div>
+                  <div class="info">
+                    <p class="sub-heading">Codí Postal</p>
+                    <p class="duration">08029</p>
                     <p></p>
                   </div>
                 </div>
@@ -282,55 +292,33 @@
                 <div class="contacto">
                   <h1 class="heading">Contacte</h1>
                   <div class="info">
-                    <p class="sub-heading">Telèfon fixe</p>
+                    <p class="sub-heading">Telèfon</p>
                     <p class="duration">937764012</p>
                     <p></p>
                   </div>
                   <div class="info">
-                    <p class="sub-heading">Telèfon móvil</p>
-                    <p class="duration">672750032</p>
+                    <p class="sub-heading">Horari</p>
+                    <p class="duration">8h - 14h</p>
                     <p></p>
                   </div>
                   <div class="info">
-                    <p class="sub-heading">Telèfon treball</p>
-                    <p class="duration">903412653</p>
+                    <p class="sub-heading">Data</p>
+                    <p class="duration">01-04-2017</p>
+                    <p></p>
+                  </div>
+                  <div class="info">
+                    <p class="sub-heading">Prioritat</p>
+                    <p class="duration">Alta</p>
                     <p></p>
                   </div>
                 </div>
               </div>
 
-              <div class="content2">
-                <div class="direccion">
-                  <h1 class="heading"> Horari</h1>
-                  <div class="info">
-                    <p class="sub-heading">Provincia</p>
-                    <p class="duration">Barcelona</p>
-                    <p></p>
-                  </div>
-                  <div class="info">
-                    <p class="sub-heading">Comarca</p>
-                    <p class="duration">Barcelonès</p>
-                    <p></p>
-                  </div>
-                  <div class="info">
-                    <p class="sub-heading">Municipi</p>
-                    <p class="duration">Barcelona</p>
-                    <p></p>
-                  </div>
-                  <div class="info">
-                    <p class="sub-heading">Carrer</p>
-                    <p class="duration">Alcudia nº 23 3º 1ª</p>
-                    <p></p>
-                  </div>
-                </div>
-              </div>
-
-              <div class="content2a">
+              <div class="content3">
                 <div class="contacto">
                   <h1 class="heading">Raó</h1>
                   <div class="info">
-                    <p class="sub-heading">Telèfon fixe</p>
-                    <p class="duration">937764012</p>
+                    <p class="duration">Familiar de primer grau</p>
                     <p></p>
                   </div>
                 </div>
