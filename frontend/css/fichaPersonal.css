@@ -1,5 +1,5 @@
 .sidebar {
-			width:30%;
+			width:18%;
 			display: inline-block;
 			margin-left: 10%;
 			background: #40514E;
@@ -7,7 +7,10 @@
 		}
 
 		img {
-			width: 100%;
+			min-width: 100%;
+			min-height: 50%;
+			max-width: 100%;
+			max-height: 50%;
 		}
 
 		.sidebar-top { position: relative; }
@@ -24,18 +27,14 @@
 		}
 
 		 .profile-info p{
-			margin-left: 10px;
 			display: inline-block;
 			vertical-align: top;
 		}
 
 		.profile-info .key{
+			font-size: 15px;
 			font-weight: bold;
 		}
-
-		.profile-info .value{
-		}
-
 
 		.content {
 			width: 48%;
@@ -46,7 +45,7 @@
 
 		.direccion, .contacto {
 			margin-bottom: 30px;
-			padding: 10% 2% 5% 2%;
+			padding: 2% 2% 5% 2%;
 			background: #40514E;
       color: #E4F9F5;
 			box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
@@ -63,7 +62,6 @@
     }
     .heading{
       color: #E4F9F5;
-      box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
     }
 
 		.duration {
@@ -133,240 +131,4 @@
      bottom: -10px;
 
      transition: all 0.5s ease-out;
-   }
-.cv {padding:20px;}
-.cv aside {margin-bottom:60px;}
-.cv aside img {display:block;margin:0 auto;}
-.cv aside h2, .cv h1, .cv h3, .cv h4 {font-family: 'Montserrat', sans-serif;}
-.cv aside h2 {text-align:center;}
-.cv aside h2>span {color:#ff5335;}
-.cv aside h2:after {
-  display:block;
-  content:'---';
-  color:#ff5335;
-  transform-origin: center;
-  font-size:80px;
-  font-weight:normal;
-}
-.cv aside ul.info{margin-top:30px;}
-.cv aside ul.info a {
-  color:#333;
-  font-family:'Montserrat',sans-serif;
-  margin-bottom:10px;
-  display:block;
-  letter-spacing:-0.1em;
-}
-.cv aside ul.info a:hover {text-decoration:none;}
-.cv aside ul.info a:hover i {background:#B83C26;}
-.cv aside ul.info a>i {
-  background:#ff5335;
-  color:#fff;
-  width:35px;
-  height:35px;
-  border-radius:35px;
-  text-align:center;
-  line-height:35px;
-  margin-right:15px;
-  -webkit-transition:all 200ms linear;
-  -moz-transition:all 200ms linear;
-  -o-transition:all 200ms linear;
-  transition:all 200ms linear;
-}
-.cv section {margin-bottom:30px;}
-.cv p {font-family:'Open Sans',sans-serif;}
-.cv h1, .cv h3, .cv h4 {
-  text-transform:uppercase;
-  font-weight:bold;
-}
-.cv h1:nth-child(1){margin-top:0;}
-.cv h1 {margin:60px 0 30px 0;}
-.cv h3 {font-size:18px;line-height:22px;}
-.cv h4 {font-size:14px;line-height:14px;}
-.cv .skills section {overflow:auto;margin-bottom:0;}
-.cv .skills section p {
-  float:left;
-  max-width:50%;
-  word-break:break-word;
-}
-.cv .skills section span {
-  display:inline-block;
-  width:15px;
-  height:15px;
-  background:#bbb;
-  border-radius:15px;
-  float:right;
-  margin:0 1px;
-}
-.cv .skills section span.full {background:#ff5335;}
-
-   .content_STA{
-     background: #40514E;
-     display: flex;
-     font-family: 'Raleway', sans-serif;
-     height: 100%;
-   }
-
-   .esquerda{
-     width: 60vw;
-   }
-
-   header{
-     padding: 15px 25px;
-   }
-
-   header h1{
-     align-item: center;
-     display: flex;
-     font-size: 1.3rem;
-     font-weight: 500;
-     text-transform: uppercase;
-   }
-
-   header h1 > i{
-     margin-right: 0.4rem;
-   }
-
-   #nome{
-     font-size: 2rem;
-     font-weight: 900;
-     text-align: right;
-     text-transform: uppercase;
-     color: #E4F9F5;
-   }
-
-   #formacao{
-     color: #30E3CA;
-     font-size: 1.5rem;
-     font-weight: 700;
-     text-align: right;
-     text-transform: uppercase;
-   }
-
-   #informacoes-principais{
-     margin: 40px 0;
-   }
-
-   .secao{
-     border-top: solid 1px #40514E ;
-     margin-top: 2rem;
-     text-align: right;
-   }
-
-   .secao > h1{
-     background: #EEE;
-     font-size: 1rem;
-     font-weight: 700;
-     padding: 5px 20px;
-     margin-bottom: 2rem;
-     text-align: right;
-     text-transform: uppercase;
-   }
-
-   .container-experiencia{
-     text-align: right;
-   }
-
-   #informacoes-pessoais p{
-     line-height: 1.3rem;
-     padding: 10px 20px 15px 25px;
-   }
-
-   #experiencia p{
-     line-height: 1;
-   }
-
-   #informacoes-pessoais p,
-   #experiencia p{
-     font-size: 0.8rem;
-     padding-right: 20px;
-   }
-
-   .titulo-experiencia{
-     font-size: 1rem;
-     font-weight: 700;
-     padding-right: 20px;
-   }
-
-   .cargo-experiencia{
-     color: rgba(150, 0, 0, 0.9);
-     text-transform: uppercase;
-   }
-
-   .data-experiencia{
-     color: rgba(0,0,0,0.9);
-     margin-bottom: 1rem;
-   }
-
-   .descricao-experiencia{
-     padding-left: 25px;
-   }
-
-   .container-experiencia{
-     margin-bottom: 2rem;
-   }
-
-   /* Aside */
-
-   aside{
-     background: #EDEDED;
-     box-shadow: -3px 0 15px rgba(0,0,0,0.5);
-     width: 40vw;
-   }
-
-   .imagem-perfil{
-     display: flex;
-     width: 100%;
-   }
-
-   .imagem-perfil img{
-     width: 100%;
-     height: 100%;
-   }
-
-   /* Informações gerais - após a foto */
-
-   .info-line{
-     align-items: stretch;
-     color: rgba(255,255,255,0.8);
-     display: flex;
-     height: 3rem;
-   }
-
-   .info-line i{
-     line-height: 3rem;
-     padding-left: 1rem;
-     padding-right: 1rem;
-   }
-
-   .info-line > span{
-     flex: 1;
-     line-height: 3rem;
-     padding-left: 1rem;
-   }
-
-   #info-endereco i{
-     background: #11999E;
-     box-shadow: -10px 0 20px -10px rgba(0,0,0,0.8) inset;
-   }
-
-   #info-endereco span{
-     background: #11999E;
-   }
-
-   #info-telefone i{
-     background: #11999E;
-     box-shadow: -10px 0 20px -10px rgba(0,0,0,0.8) inset;
-   }
-
-   #info-telefone span{
-     background: #11999E;
-   }
-
-   #info-mail i{
-     background: #11999E;
-     box-shadow: -10px 0 20px -10px rgba(0,0,0,0.8) inset;
-   }
-
-   #info-mail span{
-     background: #11999E;
    }
