@@ -6,13 +6,6 @@
 			color: #E4F9F5;
 		}
 
-		img {
-			min-width: 100%;
-			min-height: 50%;
-			max-width: 100%;
-			max-height: 50%;
-		}
-
 		.sidebar-top { position: relative; }
 
 		.profile-basic {
@@ -39,7 +32,7 @@
 		}
 
 		.content {
-			width: 48%;
+			width: 20%;
 			margin-left: 2%;
 			display: inline-block;
 			vertical-align: top;

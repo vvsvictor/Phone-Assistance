@@ -20,7 +20,6 @@
 
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="css/initPage.css">
-    <link rel="stylesheet/sass" style="text/css" href="css/fichaPersonal.sass">
     <link rel="stylesheet" href="css/fichaPersonal.css">
     <link rel="stylesheet" href="css/dataTable.css">
   </head>
@@ -110,7 +109,7 @@
               <a href="#" class="c-tabs-nav__link">Trucades</a>
               <div class="c-tab-nav-marker"></div>
       </div>
-      <!-- Ficha Personal-->
+      <!-- FICHA PERSONAL-->
       <div class="c-tab is-active">
           <div class="c-tab__content">
             <div class="container_ficha">
@@ -128,6 +127,10 @@
                 <div class="profile-info">
                   <h4 class="key">Cognoms</h4>
                   <p class="value">del Carmen Ortega</p>
+                </div>
+                <div class="profile-info">
+                  <h4 class="key">DNI</h4>
+                  <p class="value">37406321F</p>
                 </div>
                 <div class="profile-info">
                   <h4 class="key">Sexe</h4>
