@@ -15,3 +15,14 @@ div.well{
   max-width: 600px;
   padding: 40px;
 }
+
+.badLogin{
+  border-color: red;
+  color: red;
+
+}
+
+
+.badLogin::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: red;
+}

@@ -9,17 +9,22 @@
   <head>
     <meta charset="utf-8">
     <title>Phone Assistence</title>
-
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,300" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.0/css/mdb.min.css" rel="stylesheet"> -->
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css">
     <!-- <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css"> -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
 
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="css/initPage.css">
+    <link rel="stylesheet/sass" style="text/css" href="css/fichaPersonal.sass">
+    <link rel="stylesheet" href="css/fichaPersonal.css">
+    <link rel="stylesheet" href="css/dataTable.css">
   </head>
-  <body>
+  <body class="addFont">
     <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #11999E;">
       <a class="navbar-brand" href="index.php"><img src="images/PA-Mini.png"/></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -28,12 +33,12 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link" href="index.php" style="color: #e4f9f5;">Inici </a>
+            <a class="nav-link" href="index.php" style="color: #40514e;">Inici </a>
           </li>
           <?php
           if ($_SESSION['user']['usertype'] == 0) {
             echo '<li class="nav-item">
-              <a class="nav-link" href="users.php" style="color: #e4f9f5;">Usuaris</a>
+              <a class="nav-link" href="users.php" style="color: #40514e;">Usuaris</a>
             </li>';
           }
            ?>
@@ -42,13 +47,13 @@
             <a class="nav-link" href="#" style="color: #e4f9f5;">Fitxa personal<span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="capsmutues.php" style="color: #e4f9f5;">CAP - Mútues</a>
+            <a class="nav-link" href="capsmutues.php" style="color: #40514e;">CAP - Mútues</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="sta.php" style="color: #e4f9f5;">STA - Responsables</a>
+            <a class="nav-link" href="sta.php" style="color: #40514e;">STA - Responsables</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="histocalls.php" style="color: #e4f9f5;">Historial de trucades</a>
+            <a class="nav-link" href="histocalls.php" style="color: #40514e;">Historial de trucades</a>
           </li>
         </ul>
         <ul class="navbar-nav ml-auto">
@@ -94,12 +99,218 @@
         </tfoot>
       </table>
     </div>
+    <br><br>
+    <section id="page">
+    <div id="tabs" class="c-tabs">
+      <div class="c-tabs-nav">
+              <a href="#" class="c-tabs-nav__link is-active">Fitxa Personal</a>
+              <a href="#" class="c-tabs-nav__link">CAPS</a>
+                <a href="#" class="c-tabs-nav__link">Responsable</a>
+              <a href="#" class="c-tabs-nav__link">STA</a>
+              <a href="#" class="c-tabs-nav__link">Trucades</a>
+              <div class="c-tab-nav-marker"></div>
+      </div>
+      <!-- Ficha Personal-->
+      <div class="c-tab is-active">
+          <div class="c-tab__content">
+            <div class="container_ficha">
+              <div class="container">
+              <div class="sidebar">
+                <div class="sidebar-top">
+                    <i class="material-icons md-48">face</i>
+                </div>
+                <div class="profile-info">
+                  <h4 class="key">Nom</h4>
+                  <p class="value">Gimena</p>
+                  <h4 class="key">DNI</h4>
+                  <p class="value">435343L</p>
+                </div>
+                <div class="profile-info">
+                  <h4 class="key">Cognoms</h4>
+                  <p class="value">del Carmen Ortega</p>
+                </div>
+                <div class="profile-info">
+                  <h4 class="key">Sexe</h4>
+                  <p class="value">Femeni</p>
+                </div>
 
-    <div class="container">
+                <div class="profile-info">
+                  <h4 class="key">Data de naixement</h4>
+                  <p class="value" >10-04-1912</p>
+                </div>
+              </div>
 
-    </div>
+              <div class="content">
+                <div class="direccion">
+                  <h1 class="heading"> Direcció</h1>
+                  <div class="info">
+                    <p class="sub-heading">Provincia</p>
+                    <p class="duration">Barcelona</p>
+                    <p></p>
+                  </div>
+                  <div class="info">
+                    <p class="sub-heading">Comarca</p>
+                    <p class="duration">Barcelonès</p>
+                    <p></p>
+                  </div>
+                  <div class="info">
+                    <p class="sub-heading">Municipi</p>
+                    <p class="duration">Barcelona</p>
+                    <p></p>
+                  </div>
+                  <div class="info">
+                    <p class="sub-heading">Carrer</p>
+                    <p class="duration">Alcudia nº 23 3º 1ª</p>
+                    <p></p>
+                  </div>
+                </div>
+                <div class="contacto">
+                  <h1 class="heading">Contacte</h1>
+                  <div class="info">
+                    <p class="sub-heading">Telèfon fixe</p>
+                    <p class="duration">937764012</p>
+                    <p></p>
+                  </div>
+                  <div class="info">
+                    <p class="sub-heading">Telèfon móvil</p>
+                    <p class="duration">672750032</p>
+                    <p></p>
+                  </div>
+                  <div class="info">
+                    <p class="sub-heading">Telèfon treball</p>
+                    <p class="duration">903412653</p>
+                    <p></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            </div>
+          </div>
+      </div>
+      <!-- CAPS -->
+      <div class="c-tab">
+          <div class="c-tab__content">
+            <div class="container_ficha">
+              <div class="container">
+                <div class="content">
+                <div class="direccion">
+                  <h1 class="heading"> Direcció</h1>
+                  <div class="info">
+                    <p class="sub-heading">Provincia</p>
+                    <p class="duration">Barcelona</p>
+                    <p></p>
+                  </div>
+                  <div class="info">
+                    <p class="sub-heading">Comarca</p>
+                    <p class="duration">Barcelonès</p>
+                    <p></p>
+                  </div>
+                  <div class="info">
+                    <p class="sub-heading">Municipi</p>
+                    <p class="duration">Barcelona</p>
+                    <p></p>
+                  </div>
+                  <div class="info">
+                    <p class="sub-heading">Carrer</p>
+                    <p class="duration">Alcudia nº 23 3º 1ª</p>
+                    <p></p>
+                  </div>
+                </div>
+                <div class="contacto">
+                  <h1 class="heading">Contacte</h1>
+                  <div class="info">
+                    <p class="sub-heading">Telèfon fixe</p>
+                    <p class="duration">937764012</p>
+                    <p></p>
+                  </div>
+                  <div class="info">
+                    <p class="sub-heading">Telèfon móvil</p>
+                    <p class="duration">672750032</p>
+                    <p></p>
+                  </div>
+                  <div class="info">
+                    <p class="sub-heading">Telèfon treball</p>
+                    <p class="duration">903412653</p>
+                    <p></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            </div>
+          </div>
+      </div>
+      <!-- RESPONSABLE -->
+      <div class="c-tab">
+          <div class="c-tab__content">
+            <div class="container_ficha">
+              <div class="container">
+              <div class="sidebar">
+                <div class="sidebar-top">
+                  <img class="profile-image" src="https://images.pexels.com/photos/2269739/pexels-photo-2269739.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" />
+                  <div class="profile-basic">
+                    <h4 class="name" style="font-size:20px">Gimena del Carmen Ortega</h4>
+                    <h6 class="designation">31451552F</h6>
+                  </div>
+                </div>
+                <div class="profile-info">
+                  <h4 class="key">Nom</h4>
+                  <p class="value">Gimena</p>
+                </div>
+                <div class="profile-info">
+                  <h4 class="key">Cognoms</h4>
+                  <p class="value">del Carmen Ortega</p>
+                </div>
+                <div class="profile-info">
+                  <h4 class="key">Sexe</h4>
+                  <p class="value">Femeni</p>
+                </div>
 
+                <div class="profile-info">
+                  <h4 class="key">Data de naixement</h4>
+                  <p class="value" >10-04-1912</p>
+                </div>
+              </div>
+              <div class="content">
+                <div class="direccion">
+                  <h1 class="heading"> Direcció</h1>
+                  <div class="info">
+                    <p class="sub-heading">Provincia</p>
+                    <p class="duration">Barcelona</p>
+                    <p></p>
+                  </div>
+                  <div class="info">
+                    <p class="sub-heading">Comarca</p>
+                    <p class="duration">Barcelonès</p>
+                    <p></p>
+                  </div>
+                  <div class="info">
+                    <p class="sub-heading">Municipi</p>
+                    <p class="duration">Barcelona</p>
+                    <p></p>
+                  </div>
+                  <div class="info">
+                    <p class="sub-heading">Carrer</p>
+                    <p class="duration">Alcudia nº 23 3º 1ª</p>
+                    <p></p>
+                  </div>
+                </div>
+              </div>
+          </div>
+      </div>
+      <!-- STA -->
+      <div class="c-tab">
+          <div class="c-tab__content">
 
+          </div>
+      </div>
+      <!-- LLAMADAS -->
+      <div class="c-tab">
+          <div class="c-tab__content">
+
+          </div>
+      </div>
+  </div>
+</section>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
@@ -108,5 +319,6 @@
     <script type="text/javascript" src="js/jquery.dataTables.min.js"></script>
     <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
     <script src="js/fitxaPersonal.js" type="text/javascript"></script>
+    <script src="js/fitchaPersonal.js" type="text/javascript"></script>
   </body>
 </html>

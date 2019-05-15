@@ -8,8 +8,8 @@
 <html lang="es" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Phone Assistence</title>
-
+    <title>STA-Responsables</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,300" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.0/css/mdb.min.css" rel="stylesheet"> -->
@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="css/initPage.css">
   </head>
-  <body>
+  <body class="addFont">
     <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #11999E;">
       <a class="navbar-brand" href="index.php"><img src="images/PA-Mini.png"/></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -28,27 +28,27 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link" href="index.php" style="color: #e4f9f5;">Inici </a>
+            <a class="nav-link" href="index.php" style="color: #40514e;">Inici </a>
           </li>
           <?php
           if ($_SESSION['user']['usertype'] == 0) {
             echo '<li class="nav-item">
-              <a class="nav-link" href="users.php" style="color: #e4f9f5;">Usuaris</a>
+              <a class="nav-link" href="users.php" style="color: #40514e;">Usuaris</a>
             </li>';
           }
            ?>
 
+          <li class="nav-item">
+            <a class="nav-link" href="fitxaPersonal.php" style="color: #40514e;">Fitxa personal</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="capsmutues.php" style="color: #40514e;">CAP - Mútues</a>
+          </li>
           <li class="nav-item active">
-            <a class="nav-link" href="fitxaPersonal.php" style="color: #e4f9f5;">Fitxa personal<span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="#" style="color: #e4f9f5;">STA - Responsables<span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="capsmutues.php" style="color: #e4f9f5;">CAP - Mútues</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#" style="color: #e4f9f5;">STA - Responsables</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="histocalls.php" style="color: #e4f9f5;">Historial de trucades</a>
+            <a class="nav-link" href="histocalls.php" style="color: #40514e;">Historial de trucades</a>
           </li>
         </ul>
         <ul class="navbar-nav ml-auto">
@@ -74,10 +74,9 @@
         <thead>
           <tr>
             <th class="th-sm">Id</th>
-            <th class="th-sm">Nom</th>
-            <th class="th-sm">Cognom</th>
             <th class="th-sm">DNI</th>
-            <th class="th-sm">Provincia</th>
+            <th class="th-sm">Situació</th>
+            <th class="th-sm">Data</th>
             <th class="th-sm"></th>
           </tr>
         </thead>
@@ -85,10 +84,9 @@
         <tfoot>
           <tr>
             <th>Id</th>
-            <th>Nom</th>
-            <th>Cognom</th>
             <th>DNI</th>
-            <th>Provincia</th>
+            <th>Situació</th>
+            <th>Data</th>
             <th></th>
           </tr>
         </tfoot>

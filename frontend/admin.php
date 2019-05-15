@@ -11,12 +11,13 @@ include '..\backend\includeAdmin.php';
         <meta charset="utf-8">
         <meta content="text/html">
         <title>Admin Page</title>
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,300" rel="stylesheet" type="text/css">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
         <link rel="stylesheet" href="index.css">
         <link rel="stylesheet" href="css/admin.css">
    </head>
-   <body>
+   <body class="addFont">
      <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #11999E;">
        <a class="navbar-brand" href="index.php"><img src="images/PA-Mini.png"></a>
        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -28,19 +29,19 @@ include '..\backend\includeAdmin.php';
              <a class="nav-link" href="index.php" style="color: #e4f9f5;">Inici <span class="sr-only">(current)</span></a>
            </li>
            <li class="nav-item">
-             <a class="nav-link" href="users.php" style="color: #e4f9f5;">Usuaris</a>
+             <a class="nav-link" href="users.php" style="color: #40514e;">Usuaris</a>
            </li>
            <li class="nav-item">
-             <a class="nav-link" href="fitxaPersonal.php" style="color: #e4f9f5;">Fitxa personal</a>
+             <a class="nav-link" href="fitxaPersonal.php" style="color: #40514e;">Fitxa personal</a>
            </li>
            <li class="nav-item">
-             <a class="nav-link" href="capsmutues.php" style="color: #e4f9f5;">CAP - Mútues</a>
+             <a class="nav-link" href="capsmutues.php" style="color: #40514e;">CAP - Mútues</a>
            </li>
            <li class="nav-item">
-             <a class="nav-link" href="sta.php" style="color: #e4f9f5;">STA - Responsables</a>
+             <a class="nav-link" href="sta.php" style="color: #40514e;">STA - Responsables</a>
            </li>
            <li class="nav-item">
-             <a class="nav-link" href="histocalls.php" style="color: #e4f9f5;">Historial de trucades</a>
+             <a class="nav-link" href="histocalls.php" style="color: #40514e;">Historial de trucades</a>
            </li>
          </ul>
          <ul class="navbar-nav ml-auto">
@@ -69,7 +70,7 @@ include '..\backend\includeAdmin.php';
                <img class="card-img-top" src="images/operator.jpeg" alt="Card image cap">
              </a>
              <div class="card-img-overlay">
-              <a href="users.php">
+              <a class="nohyperlinkcss" href="users.php">
                <h4 class="card-title"><strong>Usuaris</strong></h4>
               </a>
              </div>
@@ -81,7 +82,7 @@ include '..\backend\includeAdmin.php';
                <img class="card-img-top" src="images/personal-sheet.jpg" alt="Card image cap"/>
              </a>
              <div class="card-img-overlay">
-               <a href="fitxaPersonal.php">
+               <a class="nohyperlinkcss" href="fitxaPersonal.php">
                  <h4 class="card-title"><strong>Fitxa Personal</strong></h4>
                </a>
              </div>
@@ -93,7 +94,7 @@ include '..\backend\includeAdmin.php';
                <img class="card-img-top" src="images/cap-image.jpg" alt="Card image cap">
              </a>
              <div class="card-img-overlay">
-               <a href="capsmutues.php">
+               <a class="nohyperlinkcss" href="capsmutues.php">
                  <h4 class="card-title"><strong>CAP - Mútues</strong></h4>
                </a>
              </div>
@@ -107,7 +108,7 @@ include '..\backend\includeAdmin.php';
                <img class="card-img-top" src="images/responsable.jpg" alt="Card image cap">
              </a>
              <div class="card-img-overlay">
-               <a href="sta.php">
+               <a class="nohyperlinkcss" href="sta.php">
                  <h4 class="card-title"><strong>STA- Responsables</strong></h4>
                </a>
              </div>
@@ -119,7 +120,7 @@ include '..\backend\includeAdmin.php';
                <img class="card-img-top" src="images/phone-history.jpg" alt="Card image cap">
              </a>
              <div class="card-img-overlay">
-               <a href="histocalls.php">
+               <a class="nohyperlinkcss" href="histocalls.php">
                  <h4 class="card-title"><strong>Historial Trucades</strong></h4>
                </a>
              </div>
