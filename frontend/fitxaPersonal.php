@@ -114,75 +114,78 @@
           <div class="c-tab__content">
             <div class="container_ficha">
               <div class="container">
-              <div class="sidebar">
-                <h1 class="heading"> Dades</h1>
-                <div class="profile-info">
-                  <h4 class="key">Nom</h4>
-                  <p class="value">Gimena</p>
-                </div>
-                <div class="profile-info">
-                  <h4 class="key">Cognoms</h4>
-                  <p class="value">del Carmen Ortega</p>
-                </div>
-                <div class="profile-info">
-                  <h4 class="key">DNI</h4>
-                  <p class="value">37406321F</p>
-                </div>
-                <div class="profile-info">
-                  <h4 class="key">Sexe</h4>
-                  <p class="value">Femeni</p>
+                <div class="content">
+                  <h1 class="heading">Dades</h1>
+                  <div class="profile-info">
+                    <h4 class="key">Nom</h4>
+                    <p class="value">Gimena</p>
+                  </div>
+                  <div class="profile-info">
+                    <h4 class="key">Cognoms</h4>
+                    <p class="value">del Carmen Ortega</p>
+                  </div>
+                  <div class="profile-info">
+                    <h4 class="key">DNI</h4>
+                    <p class="value">37406321F</p>
+                  </div>
+                  <div class="profile-info">
+                    <h4 class="key">Sexe</h4>
+                    <p class="value">Femeni</p>
+                  </div>
+
+                  <div class="profile-info">
+                    <h4 class="key">Data de naixement</h4>
+                    <p class="value" >10-04-1912</p>
+                  </div>
                 </div>
 
-                <div class="profile-info">
-                  <h4 class="key">Data de naixement</h4>
-                  <p class="value" >10-04-1912</p>
+                <div class="content">
+                  <div class="direccion">
+                    <h1 class="heading"> Direcció</h1>
+                    <div class="info">
+                      <p class="sub-heading">Provincia</p>
+                      <p class="duration">Barcelona</p>
+                      <p></p>
+                    </div>
+                    <div class="info">
+                      <p class="sub-heading">Comarca</p>
+                      <p class="duration">Barcelonès</p>
+                      <p></p>
+                    </div>
+                    <div class="info">
+                      <p class="sub-heading">Municipi</p>
+                      <p class="duration">Barcelona</p>
+                      <p></p>
+                    </div>
+                    <div class="info">
+                      <p class="sub-heading">Carrer</p>
+                      <p class="duration">Alcudia nº 23 3º 1ª</p>
+                      <p></p>
+                    </div>
+                  </div>
                 </div>
-              </div>
 
-              <div class="content">
-                <div class="direccion">
-                  <h1 class="heading"> Direcció</h1>
-                  <div class="info">
-                    <p class="sub-heading">Provincia</p>
-                    <p class="duration">Barcelona</p>
-                    <p></p>
-                  </div>
-                  <div class="info">
-                    <p class="sub-heading">Comarca</p>
-                    <p class="duration">Barcelonès</p>
-                    <p></p>
-                  </div>
-                  <div class="info">
-                    <p class="sub-heading">Municipi</p>
-                    <p class="duration">Barcelona</p>
-                    <p></p>
-                  </div>
-                  <div class="info">
-                    <p class="sub-heading">Carrer</p>
-                    <p class="duration">Alcudia nº 23 3º 1ª</p>
-                    <p></p>
-                  </div>
-                </div>
-                <div class="contacto">
-                  <h1 class="heading">Contacte</h1>
-                  <div class="info">
-                    <p class="sub-heading">Telèfon fixe</p>
-                    <p class="duration">937764012</p>
-                    <p></p>
-                  </div>
-                  <div class="info">
-                    <p class="sub-heading">Telèfon móvil</p>
-                    <p class="duration">672750032</p>
-                    <p></p>
-                  </div>
-                  <div class="info">
-                    <p class="sub-heading">Telèfon treball</p>
-                    <p class="duration">903412653</p>
-                    <p></p>
+                <div class="content">
+                  <div class="contacto">
+                    <h1 class="heading">Contacte</h1>
+                    <div class="info">
+                      <p class="sub-heading">Telèfon fixe</p>
+                      <p class="duration">937764012</p>
+                      <p></p>
+                    </div>
+                    <div class="info">
+                      <p class="sub-heading">Telèfon móvil</p>
+                      <p class="duration">672750032</p>
+                      <p></p>
+                    </div>
+                    <div class="info">
+                      <p class="sub-heading">Telèfon treball</p>
+                      <p class="duration">903412653</p>
+                      <p></p>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
             </div>
           </div>
       </div>
