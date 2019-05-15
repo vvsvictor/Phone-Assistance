@@ -112,28 +112,28 @@
               <div class="container">
               <div class="sidebar">
                 <div class="sidebar-top">
-                  <img class="profile-image" src="https://scontent-mad1-1.cdninstagram.com/vp/c51e2d5e387be48dae7ce40f7302a4a1/5D64BCD9/t51.2885-15/e35/40752940_357343971473397_8462569125670117364_n.jpg?_nc_ht=scontent-mad1-1.cdninstagram.com" />
+                  <img class="profile-image" src="https://images.pexels.com/photos/2269739/pexels-photo-2269739.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" />
                   <div class="profile-basic">
-                    <h4 class="name">Eduardo Torres Arànega</h4>
-                    <h6 class="designation">39441061V</h6>
+                    <h4 class="name">Gimena del Carmen Ortega</h4>
+                    <h6 class="designation">31451552F</h6>
                   </div>
                 </div>
                 <div class="profile-info">
                   <h4 class="key">Nom</h4>
-                  <p class="value">Eduardo</p>
+                  <p class="value">Gimena</p>
                 </div>
                 <div class="profile-info">
                   <h4 class="key">Cognoms</h4>
-                  <p class="value">Torres Arànega</p>
+                  <p class="value">del Carmen Ortega</p>
                 </div>
                 <div class="profile-info">
                   <h4 class="key">Sexe</h4>
-                  <p class="value">Masculi</p>
+                  <p class="value">Femeni</p>
                 </div>
 
                 <div class="profile-info">
                   <h4 class="key">Data de naixement</h4>
-                  <p class="value" >15-08-1993</p>
+                  <p class="value" >10-04-1912</p>
                 </div>
               </div>
 
@@ -157,7 +157,7 @@
                   </div>
                   <div class="info">
                     <p class="sub-heading">Carrer</p>
-                    <p class="duration">Castor nº18 2n 4a</p>
+                    <p class="duration">Alcudia nº 23 3º 1ª</p>
                     <p></p>
                   </div>
                 </div>
@@ -165,12 +165,12 @@
                   <h1 class="heading">Contacte</h1>
                   <div class="info">
                     <p class="sub-heading">Telèfon fixe</p>
-                    <p class="duration">933539821</p>
+                    <p class="duration">937764012</p>
                     <p></p>
                   </div>
                   <div class="info">
                     <p class="sub-heading">Telèfon móvil</p>
-                    <p class="duration">649396374</p>
+                    <p class="duration">672750032</p>
                     <p></p>
                   </div>
                   <div class="info">
@@ -192,10 +192,62 @@
 
       <div class="c-tab">
           <div class="c-tab__content">
+            <div class="content_STA">
+            <div class="esquerda">
+              <header>
+                <h1 style="color: #30E3CA"><i class="material-icons">account_box</i> Responsable</h1>
 
+                <div id="informacoes-principais">
+                  <p id="nome">Carles Moreno Serrano</p>
+                  <p id="formacao">Tele Asistente</p>
+                </div>
+              </header>
+
+              <main>
+                <section id="informacoes-pessoais" class="secao">
+                  <h1>Informació Personal</h1>
+                </section>
+
+                <section id="informacoes-pessoais" class="secao">
+                  <h1>Horari de Treball</h1>
+
+                </section>
+
+                <section id="experiencia" class="secao">
+                  <h1>Raó</h1>
+
+                </section>
+
+              </main>
+            </div>
+
+            <aside>
+              <div id="informacoes-contato">
+                <div class="imagem-perfil">
+                  <img src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="Imagem de perfil">
+                </div>
+
+                <div id="informacoes-gerais">
+                  <div class="info-line" id="info-endereco">
+                    <i class="material-icons">location_on</i>
+                    <span class="texto-item">Carrer Verdi 28 1º 2ª</span>
+                  </div>
+
+                  <div class="info-line" id="info-telefone">
+                    <i class="material-icons">phone</i>
+                    <span class="texto-item">657423095</span>
+                  </div>
+
+                  <div class="info-line" id="info-mail">
+                    <i class="material-icons">mail</i>
+                    <span class="texto-item">08032</span>
+                  </div>
+                </div>
+              </div>
+            </aside>
           </div>
+        </div>
       </div>
-
       <div class="c-tab">
           <div class="c-tab__content">
 
