@@ -15,6 +15,7 @@
     <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.0/css/mdb.min.css" rel="stylesheet"> -->
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css">
     <!-- <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css"> -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
 
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="css/initPage.css">
@@ -186,7 +187,30 @@
       </div>
       <div class="c-tab">
           <div class="c-tab__content">
+            <div class="cv container">
+  <div class="row">
+    <aside class="col-md-4">
+      <h2><span>CAP Guineueta</span></h2>
+      <ul class="info">
+        <li><a href="#"><i class="fa fa-building"></i>CAP Guineueta</a></li>
+        <li><a href="#"><i class="fa fa-map-marker"></i>Pg. Valldaura 30</a></li>
+        <li><a href="#"><i class="fa fa-phone"></i>904322188</a></li>
+        <li><a href="#"><i class="fa fa-clock"></i>8:00 - 20:00</a></li>
+      </ul>
+    </aside>
+    <div class="col-md-8">
+      <h1>Metge/ssa de Capçalera</h1>
+      <div class="row skills">
+        <div class="col-md-4">
+          <section>
+          </section>
+        </div>
+      </div>
+      <h1>Ubicació</h1>
 
+    </div>
+  </div>
+</div>
           </div>
       </div>
 
