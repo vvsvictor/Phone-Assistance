@@ -2,7 +2,7 @@
 
   include ("../inc/usarBD.php");
 
-  $consulta = "SELECT * FROM MUNISIPALITYS";
+  $consulta = "SELECT * FROM OWNERSHIPS";
 
   $result = mysqli_query($conexion, $consulta);
 

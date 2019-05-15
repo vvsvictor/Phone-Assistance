@@ -24,6 +24,8 @@
 		.profile-info {
 			padding: 20px 10px;
 			border-bottom: 1px solid #30E3CA;
+			padding-top: 3px;
+			padding-bottom: 3px;
 		}
 
 		 .profile-info p{
@@ -73,7 +75,7 @@
       width: 75%;
       margin: 0 auto;
       min-height: 100vh;
-      background-color: #11999E;
+      background-color: #E4F9F5;
     }
 
    #tabs {
@@ -96,12 +98,12 @@
    }
    .c-tabs-nav__link:hover{
      text-decoration: none;
-     color: #E4F9F5;
+     color: #11999e;
    }
 
    .c-tabs-nav__link.is-active {
      opacity: 1;
-     color: #E4F9F5;
+     color: #11999e;
    }
 
    .c-tab {

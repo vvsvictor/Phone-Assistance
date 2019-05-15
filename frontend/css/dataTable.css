@@ -1,0 +1,43 @@
+.page-item.active .page-link {
+    background-color: #11999e;
+    border-color: #30e3ca;
+}
+
+.page-link {
+
+    color: #11999e;
+
+}
+
+.table-bordered {
+    border: 1px solid #30e3ca;
+}
+
+.table-bordered {
+    border: 1px solid #e4f9f5;
+}
+.table-bordered td {
+    border: 1px solid #30e3ca;
+    background-color: #40514e;
+    color: #e4f9f5;
+}
+.table-bordered th{
+  background-color: #11999e;
+  color: #e4f9f5;
+}
+
+.table thead th {
+    vertical-align: bottom;
+    border-bottom: 2px solid #11999e;
+}
+
+.btn-info {
+    color: #fff;
+    background-color: #11999e;
+    border-color: #11999e;
+}
+.btn-info:hover {
+    color: #fff;
+    background-color: #30e3ca;
+    border-color: #30e3ca;
+}
