@@ -2,7 +2,7 @@
 
   include ("../inc/usarBD.php");
 
-  $consulta = "SELECT * FROM users";
+  $consulta = "SELECT * FROM CALL_STATE";
 
   $result = mysqli_query($conexion, $consulta);
 
@@ -10,7 +10,7 @@
   if (mysqli_num_rows($result) > 0) {
     // output data of each row
     while($row = mysqli_fetch_assoc($result)) {
-      $sJSON .= '{"id":'. $row["id"].',"username":"'. $row["username"].'","usertype":'. $row["usertype"].'},'  ;
+      $sJSON .= '{"id":'. $row["id"].',"call_type":"'. $row["call_type"].'"},'  ;
     }
   }
   $sJSON = rtrim($sJSON,",");
