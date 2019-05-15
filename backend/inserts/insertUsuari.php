@@ -1,14 +1,18 @@
 <?php
 
   include ("../inc/usarBD.php");
-  $id = $_GET["id"];
+
+  $sUsername = $_GET["sUsername"];
+  $sPassword = $_GET["sPassword"];
+  $iUserType = $_GET["iUserType"];
 
 
-  $consulta="DELETE FROM PERSONAL_CARD WHERE id=".$id;
+  $consulta="INSERT INTO users (username, password, usertype) VALUES ('".$sUsername."','".$sPassword."','".$iUserType."')";
   $hacerConsulta=mysqli_query($conexion, $consulta);
 
 
-  $sJSON = "[{";
+  $sJSON = "";
+  $sJSON .= "{";
 
   if ($hacerConsulta){
 	  $sJSON .= '"codigoError": 0,';
@@ -20,7 +24,7 @@
 	  $sJSON .= '"observaciones": "KO!"';
   }
 
-  $sJSON .= "}]";
+  $sJSON .= "}";
 
   echo $sJSON;
 
