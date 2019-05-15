@@ -65,7 +65,7 @@
               <img class="card-img-top" src="images/personal-sheet.jpg" alt="Card image cap">
             </a>
             <div class="card-img-overlay">
-              <a href="fitxaPersonal.php">
+              <a class="nohyperlinkcss" href="fitxaPersonal.php">
                 <h4 class="card-title"><strong>Fitxa Personal</strong></h4>
               </a>
             </div>
@@ -77,7 +77,7 @@
               <img class="card-img-top" src="images/cap-image.jpg" alt="Card image cap">
             </a>
             <div class="card-img-overlay">
-              <a href="capsmutues.php">
+              <a class="nohyperlinkcss" href="capsmutues.php">
                 <h4 class="card-title"><strong>CAP - Mútues</strong></h4>
               </a>
             </div>
@@ -91,7 +91,7 @@
               <img class="card-img-top" src="images/responsable.jpg" alt="Card image cap">
             </a>
             <div class="card-img-overlay">
-              <a href="sta.php">
+              <a class="nohyperlinkcss" href="sta.php">
                 <h4 class="card-title"><strong>STA- Responsables</strong></h4>
               </a>
             </div>
@@ -103,7 +103,7 @@
               <img class="card-img-top" src="images/phone-history.jpg" alt="Card image cap">
             </a>
             <div class="card-img-overlay">
-              <a href="histocalls.php">
+              <a class="nohyperlinkcss" href="histocalls.php">
                 <h4 class="card-title"><strong>Historial Trucades</strong></h4>
               </a>
             </div>
