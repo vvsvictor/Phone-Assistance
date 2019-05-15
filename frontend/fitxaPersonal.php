@@ -19,7 +19,6 @@
 
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="css/initPage.css">
-    <link rel="stylesheet/sass" style="text/css" href="css/fichaPersonal.sass">
     <link rel="stylesheet" href="css/fichaPersonal.css">
   </head>
   <body>
@@ -108,19 +107,13 @@
               <a href="#" class="c-tabs-nav__link">Trucades</a>
               <div class="c-tab-nav-marker"></div>
       </div>
-      <!-- Ficha Personal-->
+      <!-- FICHA PERSONAL-->
       <div class="c-tab is-active">
           <div class="c-tab__content">
             <div class="container_ficha">
               <div class="container">
               <div class="sidebar">
-                <div class="sidebar-top">
-                  <img class="profile-image" src="https://images.pexels.com/photos/2269739/pexels-photo-2269739.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" />
-                  <div class="profile-basic">
-                    <h4 class="name" style="font-size:20px">Gimena del Carmen Ortega</h4>
-                    <h6 class="designation">31451552F</h6>
-                  </div>
-                </div>
+                <h1 class="heading">Dades</h1>
                 <div class="profile-info">
                   <h4 class="key">Nom</h4>
                   <p class="value">Gimena</p>
@@ -128,6 +121,10 @@
                 <div class="profile-info">
                   <h4 class="key">Cognoms</h4>
                   <p class="value">del Carmen Ortega</p>
+                </div>
+                <div class="profile-info">
+                  <h4 class="key">DNI</h4>
+                  <p class="value">37406321F</p>
                 </div>
                 <div class="profile-info">
                   <h4 class="key">Sexe</h4>
