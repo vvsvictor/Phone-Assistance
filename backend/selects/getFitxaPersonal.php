@@ -1,29 +1,23 @@
 <?php
 
   include ("../inc/usarBD.php");
-  $id = $_GET["id"];
 
-  $consulta="DELETE FROM personal_card WHERE id=".$id;
+  $consulta = "SELECT * FROM personal_card";
 
   $result = mysqli_query($conexion, $consulta);
 
-  $sJSON = "[{";
+  $sJSON='[';
+  if (mysqli_num_rows($result) > 0) {
+    // output data of each row
+    while($row = mysqli_fetch_assoc($result)) {
+      $sJSON .= '{"id":'. $row["id"].',"name":"'. $row["name"].'","surname":"'. $row["surname"].'","gender":"'. $row["gender"].'","language":"'. $row["language"].'","sign_language":"'. $row["sign_language"].'","birthdate":"'. $row["birthdate"].'","dninie":"'. $row["dninie"].'","province":"'. $row["province"].'","comarca":"'. $row["comarca"].'","municipality":"'. $row["municipality"].'", "address":"'. $row["address"].'", "type_house":"'. $row["type_house"].'", "ownership":"'. $row["ownership"].'", "phone":"'. $row["phone"].'", "mobile_phone":"'. $row["mobile_phone"].'", "work_phone":"'. $row["work_phone"].'"},'  ;
+    }
 
-  if ($hacerConsulta){
-	  $sJSON .= '"codigoError": 0,';
-	  $sJSON .= '"descError": "",';
-	  $sJSON .= '"observaciones": "Todo OK"';
-  } else {
-	  $sJSON .= '"codigoError": -1,';
-	  $sJSON .= '"descError": "Error en la consulta",';
-	  $sJSON .= '"observaciones": "KO!"';
-  }
-
-  $sJSON .= "}]";
+    $sJSON = rtrim($sJSON,",");
+    $sJSON.=']';
 
   echo $sJSON;
 
-  @mysqli_free_result ($hacerConsulta);
-  mysqli_close ($conexion);
+  mysqli_close($conexion);
 
  ?>
