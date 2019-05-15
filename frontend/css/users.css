@@ -1,0 +1,32 @@
+/**
+  Component
+**/
+
+label {
+    width: 100%;
+    padding-top: 10px;
+}
+.panel-body{
+
+  background-color: #e4f9f5;
+  padding: 10px;
+  border-radius: 5px;
+}
+.card-input-element {
+    display: none;
+
+}
+
+.card-input {
+    padding: 00px;
+
+}
+
+.card-input:hover {
+    cursor: pointer;
+}
+
+.card-input-element:checked + .card-input {
+     box-shadow: 0 0 3px 3px #11999e;
+     border-radius: 5px;
+ }

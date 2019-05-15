@@ -18,6 +18,7 @@ include '..\backend\includeAdmin.php';
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="css/initPage.css">
     <link rel="stylesheet" href="css/dataTable.css">
+    <link rel="stylesheet" href="css/users.css">
   </head>
   <body class="addFont">
     <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #11999E;">
@@ -88,36 +89,45 @@ include '..\backend\includeAdmin.php';
 
     <div class="container" id="addUser">
       <form>
-        <div class="form-group row">
-          <label for="username" class="col-sm-2 col-form-label">Nom d'usuari</label>
-          <div class="col-sm-10">
-            <input type="email" class="form-control" id="username" placeholder="Email">
-          </div>
+        <div class="form-group">
+          <label for="username">Nom d'usuari</label>
+          <input type="email" class="form-control" id="username" placeholder="Email">
         </div>
-        <div class="form-group row">
-          <label for="password" class="col-sm-2 col-form-label">Contrasenya</label>
-          <div class="col-sm-10">
-            <input type="password" class="form-control" id="password" placeholder="Password">
-          </div>
+        <div class="form-group">
+          <label for="password">Contrasenya</label>
+          <input type="password" class="form-control" id="password" placeholder="Contrasenya">
         </div>
         <fieldset class="form-group">
+          Tipus d'usuari
           <div class="row">
-            <legend class="col-form-label col-sm-2 pt-0">Tipus d'usuari</legend>
-            <div class="col-sm-10">
-              <div class="form-check">
-                <input class="form-check-input" type="radio" name="gridRadios" id="professor" value="option1" checked>
-                <label class="form-check-label" for="professor">
-                  Professor
-                </label>
-              </div>
-              <div class="form-check">
-                <input class="form-check-input" type="radio" name="gridRadios" id="estudiant" value="option2">
-                <label class="form-check-label" for="estudiant">
-                  Estudiant
-                </label>
-              </div>
+            <div class="col-md-4 col-lg-4 col-sm-4">
+
+              <label>
+                <input type="radio" name="product" class="card-input-element" checked/>
+
+                  <div class="panel panel-default card-input">
+                    <div class="panel-body">
+                      Docent
+                    </div>
+                  </div>
+
+              </label>
+
             </div>
-          </div>
+            <div class="col-md-4 col-lg-4 col-sm-4">
+
+              <label>
+                <input type="radio" name="product" class="card-input-element" />
+
+                  <div class="panel panel-default card-input">
+                    <div class="panel-body">
+                      Alumne
+                    </div>
+                  </div>
+              </label>
+
+            </div>
+        </div>
         </fieldset>
 
         <div class="form-group row">
