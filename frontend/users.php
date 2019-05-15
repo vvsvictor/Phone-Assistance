@@ -65,15 +65,17 @@ include '..\backend\includeAdmin.php';
         </ul>
       </div>
     </nav>
-    <button type="button" class="btn btn-primary">Afegir</button>
+
 
     <div class="container" id="usersList">
+      <button id="showFormBtn" type="button" class="btn btn-primary">Afegir</button>
       <table id="dtUsuaris" class="table table-striped table-bordered" cellspacing="0" width="100%">
         <thead>
           <tr>
             <th class="th-sm">Id</th>
             <th class="th-sm">Usuari</th>
             <th class="th-sm">Tipus d'usuari</th>
+            <th class="th-sm"></th>
           </tr>
         </thead>
         <tbody id="usuarisTable"></tbody>
@@ -82,6 +84,7 @@ include '..\backend\includeAdmin.php';
             <th>Id</th>
             <th>Usuari</th>
             <th>Tipus d'usuari</th>
+            <th></th>
           </tr>
         </tfoot>
       </table>
@@ -89,10 +92,11 @@ include '..\backend\includeAdmin.php';
     </div>
 
     <div class="container" id="addUser">
-      <form>
+      <button id="showListBtn" type="button" class="btn btn-primary">Tornar a la llista</button>
+      <form id="formUser">
         <div class="form-group">
           <label for="username">Nom d'usuari</label>
-          <input type="email" class="form-control" id="username" placeholder="Email">
+          <input type="email" class="form-control" id="username" placeholder="Nom d'usuari">
         </div>
         <div class="form-group">
           <label for="password">Contrasenya</label>
@@ -102,41 +106,56 @@ include '..\backend\includeAdmin.php';
           Tipus d'usuari
           <div class="row">
             <div class="col-md-4 col-lg-4 col-sm-4">
-
               <label>
-                <input type="radio" name="product" class="card-input-element" checked/>
-
+                <input value="0" type="radio" name="usertype" class="card-input-element" checked/>
                   <div class="panel panel-default card-input">
                     <div class="panel-body">
                       Docent
                     </div>
                   </div>
-
               </label>
-
             </div>
             <div class="col-md-4 col-lg-4 col-sm-4">
-
               <label>
-                <input type="radio" name="product" class="card-input-element" />
-
+                <input value="1" type="radio" name="usertype" class="card-input-element" />
                   <div class="panel panel-default card-input">
                     <div class="panel-body">
                       Alumne
                     </div>
                   </div>
               </label>
-
             </div>
         </div>
         </fieldset>
 
         <div class="form-group row">
           <div class="col-sm-10">
-            <button type="submit" class="btn btn-primary">Afegir usuari</button>
+            <button id="addUserBtn" type="button" class="btn btn-primary">Afegir usuari</button>
           </div>
         </div>
       </form>
+    </div>
+
+
+    <!--Modal Delete product-->
+    <div class="modal fade" id="deleteproductmodal" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Eliminar usuari</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>Vols eliminar el usuari?</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" id="deleteUserDef" class="btn btn-danger" data-dismiss="modal">Eliminar</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Tancar</button>
+          </div>
+        </div>
+      </div>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
