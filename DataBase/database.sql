@@ -196,8 +196,8 @@ INSERT into type_user VALUES (0,"admin");
 INSERT into type_user VALUES (1,"normal_user");
 
 /*Insert type users by default*/
-INSERT into users VALUES ("admin","bemen3",0);
-INSERT into users VALUES ("normal_user","bemen3",1);
+INSERT into users (username,password,usertype) VALUES ("admin","bemen3",0);
+INSERT into users (username,password,usertype) VALUES ("normal_user","bemen3",1);
 
 /*Insert languages by default*/
 INSERT into languages (language_name) VALUES ("Català");
@@ -259,8 +259,16 @@ INSERT into comarcas (comar_name) VALUES ("Urgell");
 INSERT into comarcas (comar_name) VALUES ("Vallès Occidental");
 INSERT into comarcas (comar_name) VALUES ("Vallès Oriental");
 
-INSERT into STA VALUES ("Pare","12-09-2018",0,1,1,0,1,1,1);
-INSERT into STA VALUES ("Mare","22-05-2018",0,0,1,0,1,0,1);
-INSERT into STA VALUES ("Germana","15-11-2018",1,1,1,0,1,1,1);
-INSERT into STA VALUES ("Parella","02-04-2019",0,0,1,0,1,1,0);
-INSERT into STA VALUES ("Avi","30-07-2018",1,1,0,0,1,1,1);
+/*Insert type ownership type by default*/
+INSERT into OWNERSHIPS (owner_type) VALUES ("Propietari");
+INSERT into OWNERSHIPS (owner_type) VALUES ("Arrendatari");
+
+/*Insert client by default*/
+INSERT into PERSONAL_CARD (name,surname,gender,language,birthdate,dninie,province,comarca,address,type_house,ownership,phone,mobile_phone) VALUES ("Jordi","Martinez Garcia","Home",2,"17-05-1992","68951118Q",1,14,"carrer fals 123","casa",2,"9345625538","622856794");
+
+/*Insert STA for the client by default*/
+INSERT into STA (user_dninif, actual_situation, hiring_date, tf_service, tcr_service, cc_service, tm_service, tam_service, gps_service, umt_service) VALUES ("68951118Q","Pare","12-09-2018",0,1,1,0,1,1,1);
+INSERT into STA (user_dninif, actual_situation, hiring_date, tf_service, tcr_service, cc_service, tm_service, tam_service, gps_service, umt_service) VALUES ("68951118Q","Mare","22-05-2018",0,0,1,0,1,0,1);
+INSERT into STA (user_dninif, actual_situation, hiring_date, tf_service, tcr_service, cc_service, tm_service, tam_service, gps_service, umt_service) VALUES ("68951118Q","Germana","15-11-2018",1,1,1,0,1,1,1);
+INSERT into STA (user_dninif, actual_situation, hiring_date, tf_service, tcr_service, cc_service, tm_service, tam_service, gps_service, umt_service) VALUES ("68951118Q","Parella","02-04-2019",0,0,1,0,1,1,0);
+INSERT into STA (user_dninif, actual_situation, hiring_date, tf_service, tcr_service, cc_service, tm_service, tam_service, gps_service, umt_service) VALUES ("68951118Q","Avi","30-07-2018",1,1,0,0,1,1,1);

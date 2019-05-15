@@ -37,6 +37,24 @@
 			display: inline-block;
 			vertical-align: top;
 		}
+		.content2 {
+			width: 40%;
+			margin-left: 7%;
+			display: inline-block;
+			vertical-align: top;
+		}
+		.content2a {
+			width: 40%;
+			margin-left: 5%;
+			display: inline-block;
+			vertical-align: top;
+		}
+		.content3 {
+			width: 85%;
+			margin-left: 7%;
+			display: inline-block;
+			vertical-align: top;
+		}
 
 		.direccion, .contacto {
 			margin-bottom: 30px;
@@ -57,6 +75,7 @@
     }
     .heading{
       color: #E4F9F5;
+			text-align: center;
     }
 
 		.duration {

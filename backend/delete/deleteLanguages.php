@@ -4,7 +4,7 @@
   $id = $_GET["id"];
 
 
-  $consulta="DELETE FROM PERSONAL_CARD WHERE id=".$id;
+  $consulta="DELETE FROM LANGUAGES WHERE id=".$id;
   $hacerConsulta=mysqli_query($conexion, $consulta);
 
 

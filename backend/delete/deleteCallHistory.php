@@ -4,7 +4,7 @@
   $id = $_GET["id"];
 
 
-  $consulta="DELETE FROM PERSONAL_CARD WHERE id=".$id;
+  $consulta="DELETE FROM CALL_HISTORY WHERE id=".$id;
   $hacerConsulta=mysqli_query($conexion, $consulta);
 
 
