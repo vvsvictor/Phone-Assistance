@@ -10,7 +10,7 @@
   if (mysqli_num_rows($result) > 0) {
     // output data of each row
     while($row = mysqli_fetch_assoc($result)) {
-      $sJSON .= '{"id":'. $row["id"].',"call_date":"'. $row["call_date"].'","call_type":'. $row["call_type"].'"outcall_type":'. $row["outcall_type"].'"incall_type":'. $row["incall_type"].'"call_state":'. $row["call_state"].'},'  ;
+      $sJSON .= '{"id":'. $row["id"].',"user_dninif":"'. $row["user_dninif"].'","call_date":"'. $row["call_date"].'","call_type":'. $row["call_type"].'"outcall_type":'. $row["outcall_type"].'"incall_type":'. $row["incall_type"].'"call_state":'. $row["call_state"].'},'  ;
     }
   }
   $sJSON = rtrim($sJSON,",");
