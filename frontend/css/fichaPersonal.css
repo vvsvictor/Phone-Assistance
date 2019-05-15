@@ -1,0 +1,137 @@
+.sidebar {
+			width:30%;
+			display: inline-block;
+			margin-left: 10%;
+			background: #40514E;
+			color: #E4F9F5;
+		}
+
+		img {
+			width: 100%;
+		}
+
+		.sidebar-top { position: relative; }
+
+		.profile-basic {
+			position: absolute;
+			bottom: 0px;
+			left: 50px;
+		}
+
+		.profile-info {
+			padding: 20px 10px;
+			border-bottom: 1px solid #30E3CA;
+		}
+
+		 .profile-info p{
+			margin-left: 10px;
+			display: inline-block;
+			vertical-align: top;
+		}
+
+		.profile-info .key{
+			font-weight: bold;
+		}
+
+		.profile-info .value{
+		}
+
+
+		.content {
+			width: 48%;
+			margin-left: 2%;
+			display: inline-block;
+			vertical-align: top;
+		}
+
+		.direccion, .contacto {
+			margin-bottom: 30px;
+			padding: 5% 2% 5% 10%;
+			background: #40514E;
+      color: #E4F9F5;
+			box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
+		}
+
+		.info {
+			padding: 2% 1%;
+			border-bottom: 1px solid #30E3CA;
+		}
+
+
+		.sub-heading {
+      font-weight: bold;
+    }
+    .heading{
+      background: #E4F9F5;
+      color: #11999E;
+      box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
+    }
+
+		.duration {
+			color: #E4F9F5;
+			font-size:15px;
+		}
+    #page {
+
+      width: 75%;
+      margin: 0 auto;
+      min-height: 100vh;
+      background-color: #11999E;
+    }
+
+   #tabs {
+     padding-top: 40px;
+   }
+
+   .c-tabs-nav {
+     list-style: none;
+     padding: 0;
+     position: relative;
+     margin-bottom: 10px;
+   }
+
+   .c-tabs-nav__link {
+     text-decoration: none;
+     color: #40514E;
+     margin-right: 25px;
+     padding: 20px 25px;
+     font-weight: bold;
+   }
+   .c-tabs-nav__link:hover{
+     text-decoration: none;
+     color: #E4F9F5;
+   }
+
+   .c-tabs-nav__link.is-active {
+     opacity: 1;
+     color: #E4F9F5;
+   }
+
+   .c-tab {
+     display: none;
+     border-top: 1px solid rgba(255,255,255,0.5);
+   }
+
+   .c-tab.is-active {
+     display: block;
+   }
+
+   .c-tab__content {
+     padding: 20px;
+     position: relative;
+     animation: showTab 300ms ease-in-out both;
+   }
+
+   @keyframes showTab{
+     from {opacity: 0; top: 5px}
+     to {opacity: 1; top: 0;}
+   }
+
+   .c-tab-nav-marker {
+     min-height: 4px;
+     background-color: #40514E;
+     position: absolute;
+     bottom: -10px;
+
+     transition: all 0.5s ease-out;
+   }

@@ -18,6 +18,8 @@
 
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="css/initPage.css">
+    <link rel="stylesheet/sass" style="text/css" href="css/fichaPersonal.sass">
+    <link rel="stylesheet" href="css/fichaPersonal.css">
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #11999E;">
@@ -94,12 +96,113 @@
         </tfoot>
       </table>
     </div>
+    <br><br>
+    <section id="page">
+    <div id="tabs" class="c-tabs">
+      <div class="c-tabs-nav">
+              <a href="#" class="c-tabs-nav__link is-active">Fitxa Personal</a>
+              <a href="#" class="c-tabs-nav__link">CAPS</a>
+              <a href="#" class="c-tabs-nav__link">STA</a>
+              <a href="#" class="c-tabs-nav__link">Trucades</a>
+              <div class="c-tab-nav-marker"></div>
+      </div>
+      <div class="c-tab is-active">
+          <div class="c-tab__content">
+            <div class="container_ficha">
+              <div class="container">
+              <div class="sidebar">
+                <div class="sidebar-top">
+                  <img class="profile-image" src="https://scontent-mad1-1.cdninstagram.com/vp/c51e2d5e387be48dae7ce40f7302a4a1/5D64BCD9/t51.2885-15/e35/40752940_357343971473397_8462569125670117364_n.jpg?_nc_ht=scontent-mad1-1.cdninstagram.com" />
+                  <div class="profile-basic">
+                    <h4 class="name">Eduardo Torres Arànega</h4>
+                    <h6 class="designation">39441061V</h6>
+                  </div>
+                </div>
+                <div class="profile-info">
+                  <h4 class="key">Nom</h4>
+                  <p class="value">Eduardo</p>
+                </div>
+                <div class="profile-info">
+                  <h4 class="key">Cognoms</h4>
+                  <p class="value">Torres Arànega</p>
+                </div>
+                <div class="profile-info">
+                  <h4 class="key">Sexe</h4>
+                  <p class="value">Masculi</p>
+                </div>
 
-    <div class="container">
+                <div class="profile-info">
+                  <h4 class="key">Data de naixement</h4>
+                  <p class="value" >15-08-1993</p>
+                </div>
+              </div>
 
-    </div>
+              <div class="content">
+                <div class="direccion">
+                  <h1 class="heading"> Direcció</h1>
+                  <div class="info">
+                    <p class="sub-heading">Provincia</p>
+                    <p class="duration">Barcelona</p>
+                    <p></p>
+                  </div>
+                  <div class="info">
+                    <p class="sub-heading">Comarca</p>
+                    <p class="duration">Barcelonès</p>
+                    <p></p>
+                  </div>
+                  <div class="info">
+                    <p class="sub-heading">Municipi</p>
+                    <p class="duration">Barcelona</p>
+                    <p></p>
+                  </div>
+                  <div class="info">
+                    <p class="sub-heading">Carrer</p>
+                    <p class="duration">Castor nº18 2n 4a</p>
+                    <p></p>
+                  </div>
+                </div>
+                <div class="contacto">
+                  <h1 class="heading">Contacte</h1>
+                  <div class="info">
+                    <p class="sub-heading">Telèfon fixe</p>
+                    <p class="duration">933539821</p>
+                    <p></p>
+                  </div>
+                  <div class="info">
+                    <p class="sub-heading">Telèfon móvil</p>
+                    <p class="duration">649396374</p>
+                    <p></p>
+                  </div>
+                  <div class="info">
+                    <p class="sub-heading">Telèfon treball</p>
+                    <p class="duration">903412653</p>
+                    <p></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            </div>
+          </div>
+      </div>
+      <div class="c-tab">
+          <div class="c-tab__content">
 
+          </div>
+      </div>
 
+      <div class="c-tab">
+          <div class="c-tab__content">
+
+          </div>
+      </div>
+
+      <div class="c-tab">
+          <div class="c-tab__content">
+
+          </div>
+        </div>
+  </div>
+</section>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
@@ -108,5 +211,6 @@
     <script type="text/javascript" src="js/jquery.dataTables.min.js"></script>
     <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
     <script src="js/fitxaPersonal.js" type="text/javascript"></script>
+    <script src="js/fitchaPersonal.js" type="text/javascript"></script>
   </body>
 </html>
