@@ -334,8 +334,38 @@
                 <div class="contacto">
                   <h1 class="heading">Serveis Contractats</h1>
                   <div class="info">
-                    <p class="sub-heading">Telèfon fixe</p>
-                    <p class="duration">937764012</p>
+                    <p class="sub-heading">Telèfon Fixe</p>
+                    <p class="duration">Alta</p>
+                    <p></p>
+                  </div>
+                  <div class="info">
+                    <p class="sub-heading">Terminal de Control Remot</p>
+                    <p class="duration">Baixa</p>
+                    <p></p>
+                  </div>
+                  <div class="info">
+                    <p class="sub-heading">Custòdia de Claus</p>
+                    <p class="duration">Baixa Temporal</p>
+                    <p></p>
+                  </div>
+                  <div class="info">
+                    <p class="sub-heading">Terminal Mòbil</p>
+                    <p class="duration">Alta</p>
+                    <p></p>
+                  </div>
+                  <div class="info">
+                    <p class="sub-heading">Teleassistència Mòbil</p>
+                    <p class="duration">Alta</p>
+                    <p></p>
+                  </div>
+                  <div class="info">
+                    <p class="sub-heading">GPS</p>
+                    <p class="duration">Alta</p>
+                    <p></p>
+                  </div>
+                  <div class="info">
+                    <p class="sub-heading">UMT</p>
+                    <p class="duration">Baixa</p>
                     <p></p>
                   </div>
                 </div>
