@@ -27,22 +27,22 @@ include '..\backend\includeAdmin.php';
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link" href="index.php" style="color: #e4f9f5;">Inici </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="users.php" style="color: #e4f9f5;">Usuaris</a>
+            <a class="nav-link" href="index.php" style="color: #40514e;">Inici </a>
           </li>
           <li class="nav-item active">
-            <a class="nav-link" href="fitxaPersonal.php" style="color: #e4f9f5;">Fitxa personal<span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="users.php" style="color: #e4f9f5;">Usuaris<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="fitxaPersonal.php" style="color: #40514e;">Fitxa personal</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="capsmutues.php" style="color: #e4f9f5;">CAP - Mútues</a>
+            <a class="nav-link" href="capsmutues.php" style="color: #40514e;">CAP - Mútues</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="sta.php" style="color: #e4f9f5;">STA - Responsables</a>
+            <a class="nav-link" href="sta.php" style="color: #40514e;">STA - Responsables</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="histocalls.php" style="color: #e4f9f5;">Historial de trucades</a>
+            <a class="nav-link" href="histocalls.php" style="color: #40514e;">Historial de trucades</a>
           </li>
         </ul>
         <ul class="navbar-nav ml-auto">
@@ -82,7 +82,7 @@ include '..\backend\includeAdmin.php';
           </tr>
         </tfoot>
       </table>
-      
+
     </div>
 
     <div class="container" id="addUser">
