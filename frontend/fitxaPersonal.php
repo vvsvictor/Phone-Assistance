@@ -103,10 +103,12 @@
       <div class="c-tabs-nav">
               <a href="#" class="c-tabs-nav__link is-active">Fitxa Personal</a>
               <a href="#" class="c-tabs-nav__link">CAPS</a>
+                <a href="#" class="c-tabs-nav__link">Responsable</a>
               <a href="#" class="c-tabs-nav__link">STA</a>
               <a href="#" class="c-tabs-nav__link">Trucades</a>
               <div class="c-tab-nav-marker"></div>
       </div>
+      <!-- Ficha Personal-->
       <div class="c-tab is-active">
           <div class="c-tab__content">
             <div class="container_ficha">
@@ -115,7 +117,7 @@
                 <div class="sidebar-top">
                   <img class="profile-image" src="https://images.pexels.com/photos/2269739/pexels-photo-2269739.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" />
                   <div class="profile-basic">
-                    <h4 class="name">Gimena del Carmen Ortega</h4>
+                    <h4 class="name" style="font-size:20px">Gimena del Carmen Ortega</h4>
                     <h6 class="designation">31451552F</h6>
                   </div>
                 </div>
@@ -185,98 +187,128 @@
             </div>
           </div>
       </div>
+      <!-- CAPS -->
       <div class="c-tab">
           <div class="c-tab__content">
-            <div class="cv container">
-  <div class="row">
-    <aside class="col-md-4">
-      <h2><span>CAP Guineueta</span></h2>
-      <ul class="info">
-        <li><a href="#"><i class="fa fa-building"></i>CAP Guineueta</a></li>
-        <li><a href="#"><i class="fa fa-map-marker"></i>Pg. Valldaura 30</a></li>
-        <li><a href="#"><i class="fa fa-phone"></i>904322188</a></li>
-        <li><a href="#"><i class="fa fa-clock"></i>8:00 - 20:00</a></li>
-      </ul>
-    </aside>
-    <div class="col-md-8">
-      <h1>Metge/ssa de Capçalera</h1>
-      <div class="row skills">
-        <div class="col-md-4">
-          <section>
-          </section>
-        </div>
-      </div>
-      <h1>Ubicació</h1>
-
-    </div>
-  </div>
-</div>
-          </div>
-      </div>
-
-      <div class="c-tab">
-          <div class="c-tab__content">
-            <div class="content_STA">
-            <div class="esquerda">
-              <header>
-                <h1 style="color: #30E3CA"><i class="material-icons">account_box</i> Responsable</h1>
-
-                <div id="informacoes-principais">
-                  <p id="nome">Carles Moreno Serrano</p>
-                  <p id="formacao">Tele Asistente</p>
-                </div>
-              </header>
-
-              <main>
-                <section id="informacoes-pessoais" class="secao">
-                  <h1>Informació Personal</h1>
-                </section>
-
-                <section id="informacoes-pessoais" class="secao">
-                  <h1>Horari de Treball</h1>
-
-                </section>
-
-                <section id="experiencia" class="secao">
-                  <h1>Raó</h1>
-
-                </section>
-
-              </main>
-            </div>
-
-            <aside>
-              <div id="informacoes-contato">
-                <div class="imagem-perfil">
-                  <img src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="Imagem de perfil">
-                </div>
-
-                <div id="informacoes-gerais">
-                  <div class="info-line" id="info-endereco">
-                    <i class="material-icons">location_on</i>
-                    <span class="texto-item">Carrer Verdi 28 1º 2ª</span>
+            <div class="container_ficha">
+              <div class="container">
+                <div class="content">
+                <div class="direccion">
+                  <h1 class="heading"> Direcció</h1>
+                  <div class="info">
+                    <p class="sub-heading">Provincia</p>
+                    <p class="duration">Barcelona</p>
+                    <p></p>
                   </div>
-
-                  <div class="info-line" id="info-telefone">
-                    <i class="material-icons">phone</i>
-                    <span class="texto-item">657423095</span>
+                  <div class="info">
+                    <p class="sub-heading">Comarca</p>
+                    <p class="duration">Barcelonès</p>
+                    <p></p>
                   </div>
-
-                  <div class="info-line" id="info-mail">
-                    <i class="material-icons">mail</i>
-                    <span class="texto-item">08032</span>
+                  <div class="info">
+                    <p class="sub-heading">Municipi</p>
+                    <p class="duration">Barcelona</p>
+                    <p></p>
+                  </div>
+                  <div class="info">
+                    <p class="sub-heading">Carrer</p>
+                    <p class="duration">Alcudia nº 23 3º 1ª</p>
+                    <p></p>
+                  </div>
+                </div>
+                <div class="contacto">
+                  <h1 class="heading">Contacte</h1>
+                  <div class="info">
+                    <p class="sub-heading">Telèfon fixe</p>
+                    <p class="duration">937764012</p>
+                    <p></p>
+                  </div>
+                  <div class="info">
+                    <p class="sub-heading">Telèfon móvil</p>
+                    <p class="duration">672750032</p>
+                    <p></p>
+                  </div>
+                  <div class="info">
+                    <p class="sub-heading">Telèfon treball</p>
+                    <p class="duration">903412653</p>
+                    <p></p>
                   </div>
                 </div>
               </div>
-            </aside>
+            </div>
+            </div>
           </div>
-        </div>
       </div>
+      <!-- RESPONSABLE -->
+      <div class="c-tab">
+          <div class="c-tab__content">
+            <div class="container_ficha">
+              <div class="container">
+              <div class="sidebar">
+                <div class="sidebar-top">
+                  <img class="profile-image" src="https://images.pexels.com/photos/2269739/pexels-photo-2269739.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" />
+                  <div class="profile-basic">
+                    <h4 class="name" style="font-size:20px">Gimena del Carmen Ortega</h4>
+                    <h6 class="designation">31451552F</h6>
+                  </div>
+                </div>
+                <div class="profile-info">
+                  <h4 class="key">Nom</h4>
+                  <p class="value">Gimena</p>
+                </div>
+                <div class="profile-info">
+                  <h4 class="key">Cognoms</h4>
+                  <p class="value">del Carmen Ortega</p>
+                </div>
+                <div class="profile-info">
+                  <h4 class="key">Sexe</h4>
+                  <p class="value">Femeni</p>
+                </div>
+
+                <div class="profile-info">
+                  <h4 class="key">Data de naixement</h4>
+                  <p class="value" >10-04-1912</p>
+                </div>
+              </div>
+              <div class="content">
+                <div class="direccion">
+                  <h1 class="heading"> Direcció</h1>
+                  <div class="info">
+                    <p class="sub-heading">Provincia</p>
+                    <p class="duration">Barcelona</p>
+                    <p></p>
+                  </div>
+                  <div class="info">
+                    <p class="sub-heading">Comarca</p>
+                    <p class="duration">Barcelonès</p>
+                    <p></p>
+                  </div>
+                  <div class="info">
+                    <p class="sub-heading">Municipi</p>
+                    <p class="duration">Barcelona</p>
+                    <p></p>
+                  </div>
+                  <div class="info">
+                    <p class="sub-heading">Carrer</p>
+                    <p class="duration">Alcudia nº 23 3º 1ª</p>
+                    <p></p>
+                  </div>
+                </div>
+              </div>
+          </div>
+      </div>
+      <!-- STA -->
       <div class="c-tab">
           <div class="c-tab__content">
 
           </div>
-        </div>
+      </div>
+      <!-- LLAMADAS -->
+      <div class="c-tab">
+          <div class="c-tab__content">
+
+          </div>
+      </div>
   </div>
 </section>
 
