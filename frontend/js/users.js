@@ -1,5 +1,5 @@
 $(document).ready(function () {
-  $('#addUser').hide();
+  //$('#addUser').hide();
   $('.dataTables_length').addClass('bs-select');
   showTable();
 
