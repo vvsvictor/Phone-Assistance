@@ -389,6 +389,6 @@
     <script type="text/javascript" src="js/jquery.dataTables.min.js"></script>
     <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
     <script src="js/fitxaPersonal.js" type="text/javascript"></script>
-    <script src="js/fitchaPersonal.js" type="text/javascript"></script>
+    <script src="js/fitxaPersonal.js" type="text/javascript"></script>
   </body>
 </html>
