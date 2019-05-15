@@ -26,3 +26,6 @@
   display: flex;
   align-items: center;
 }
+.addFont{
+  font-family: Open Sans; 
+}

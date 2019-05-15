@@ -9,7 +9,8 @@
   <head>
     <meta charset="utf-8">
     <title>Phone Assistence</title>
-
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,300" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.0/css/mdb.min.css" rel="stylesheet"> -->
@@ -21,8 +22,9 @@
     <link rel="stylesheet" href="css/initPage.css">
     <link rel="stylesheet/sass" style="text/css" href="css/fichaPersonal.sass">
     <link rel="stylesheet" href="css/fichaPersonal.css">
+    <link rel="stylesheet" href="css/dataTable.css">
   </head>
-  <body>
+  <body class="addFont">
     <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #11999E;">
       <a class="navbar-brand" href="index.php"><img src="images/PA-Mini.png"/></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -115,15 +117,13 @@
               <div class="container">
               <div class="sidebar">
                 <div class="sidebar-top">
-                  <img class="profile-image" src="https://images.pexels.com/photos/2269739/pexels-photo-2269739.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" />
-                  <div class="profile-basic">
-                    <h4 class="name" style="font-size:20px">Gimena del Carmen Ortega</h4>
-                    <h6 class="designation">31451552F</h6>
-                  </div>
+                    <i class="material-icons md-48">face</i>
                 </div>
                 <div class="profile-info">
                   <h4 class="key">Nom</h4>
                   <p class="value">Gimena</p>
+                  <h4 class="key">DNI</h4>
+                  <p class="value">435343L</p>
                 </div>
                 <div class="profile-info">
                   <h4 class="key">Cognoms</h4>
