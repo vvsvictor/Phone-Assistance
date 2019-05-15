@@ -3,9 +3,10 @@
   include ("../inc/usarBD.php");
   $id = $_GET["id"];
 
-  $consulta="DELETE FROM personal_card WHERE id=".$id;
 
-  $result = mysqli_query($conexion, $consulta);
+  $consulta="DELETE FROM clients WHERE id=".$id;
+  $hacerConsulta=mysqli_query($conexion, $consulta);
+
 
   $sJSON = "[{";
 
@@ -25,5 +26,4 @@
 
   @mysqli_free_result ($hacerConsulta);
   mysqli_close ($conexion);
-
- ?>
+?>
