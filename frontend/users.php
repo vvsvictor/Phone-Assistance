@@ -65,6 +65,7 @@ include '..\backend\includeAdmin.php';
         </ul>
       </div>
     </nav>
+    <button type="button" class="btn btn-primary">Afegir</button>
 
     <div class="container" id="usersList">
       <table id="dtUsuaris" class="table table-striped table-bordered" cellspacing="0" width="100%">
