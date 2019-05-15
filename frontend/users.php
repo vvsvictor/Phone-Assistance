@@ -64,7 +64,7 @@ include '..\backend\includeAdmin.php';
       </div>
     </nav>
 
-    <div class="container">
+    <div class="container" id="usersList">
       <table id="dtUsuaris" class="table table-striped table-bordered" cellspacing="0" width="100%">
         <thead>
           <tr>
@@ -82,6 +82,49 @@ include '..\backend\includeAdmin.php';
           </tr>
         </tfoot>
       </table>
+      
+    </div>
+
+    <div class="container" id="addUser">
+      <form>
+        <div class="form-group row">
+          <label for="username" class="col-sm-2 col-form-label">Nom d'usuari</label>
+          <div class="col-sm-10">
+            <input type="email" class="form-control" id="username" placeholder="Email">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="password" class="col-sm-2 col-form-label">Contrasenya</label>
+          <div class="col-sm-10">
+            <input type="password" class="form-control" id="password" placeholder="Password">
+          </div>
+        </div>
+        <fieldset class="form-group">
+          <div class="row">
+            <legend class="col-form-label col-sm-2 pt-0">Tipus d'usuari</legend>
+            <div class="col-sm-10">
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="gridRadios" id="professor" value="option1" checked>
+                <label class="form-check-label" for="professor">
+                  Professor
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="gridRadios" id="estudiant" value="option2">
+                <label class="form-check-label" for="estudiant">
+                  Estudiant
+                </label>
+              </div>
+            </div>
+          </div>
+        </fieldset>
+
+        <div class="form-group row">
+          <div class="col-sm-10">
+            <button type="submit" class="btn btn-primary">Afegir usuari</button>
+          </div>
+        </div>
+      </form>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
