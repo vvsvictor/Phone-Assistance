@@ -118,6 +118,7 @@ CREATE TABLE HEALTH_INSURANCE(
 
 CREATE TABLE STA(
   id int not null auto_increment,
+  user_dninif varchar(255) not null, /*Table PERSONAL_CARD*/
   actual_situation varchar(50),
   hiring_date date,
   tf_service bit,
@@ -127,13 +128,13 @@ CREATE TABLE STA(
   tam_service bit,
   gps_service bit,
   umt_service bit,
-  primary key (id)
+  primary key (id),
+  FOREIGN key (user_dninif) REFERENCES PERSONAL_CARD(dninie)
 );
 
 CREATE TABLE RESPONSIBLE(
   id int not null auto_increment,
-  user_vinculation_id int not null,
-  user_dninif varchar(255) not null,
+  user_dninif varchar(255) not null, /*Table PERSONAL_CARD*/
   priority varchar(50) not null,
   name varchar(255),
   surname varchar(255),
@@ -144,7 +145,7 @@ CREATE TABLE RESPONSIBLE(
   date_responsible date,
   reason text,
   primary key (id),
-  FOREIGN key (user_vinculation_id) REFERENCES PERSONAL_CARD(id)
+  FOREIGN key (user_dninif) REFERENCES PERSONAL_CARD(dninie)
 );
 
 /*******************************************/
@@ -175,6 +176,7 @@ CREATE TABLE CALL_STATE (
 
 CREATE TABLE CALL_HISTORY(
   id int not null auto_increment,
+  user_dninif varchar(255) not null, /*Table PERSONAL_CARD*/
   call_date date not null,
   call_type int, /*Table CALL_TYPE*/
   outcall_type int, /*Table OUTCALL_TYPE*/
@@ -182,6 +184,7 @@ CREATE TABLE CALL_HISTORY(
   call_state int, /*Table CALL_STATE*/
   teleoperator_solution text,
   primary key(id),
+  FOREIGN key (user_dninif) REFERENCES PERSONAL_CARD(dninie),
   FOREIGN key (call_type) REFERENCES CALL_TYPE(id),
   FOREIGN key (outcall_type) REFERENCES OUTCALL_TYPE(id),
   FOREIGN key (incall_type) REFERENCES INCALL_TYPE(id),

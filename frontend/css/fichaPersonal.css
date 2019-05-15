@@ -17,6 +17,8 @@
 		.profile-info {
 			padding: 20px 10px;
 			border-bottom: 1px solid #30E3CA;
+			padding-top: 3px;
+			padding-bottom: 3px;
 		}
 
 		 .profile-info p{
