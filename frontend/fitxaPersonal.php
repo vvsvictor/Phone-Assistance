@@ -115,14 +115,10 @@
             <div class="container_ficha">
               <div class="container">
               <div class="sidebar">
-                <div class="sidebar-top">
-                    <i class="material-icons md-48">face</i>
-                </div>
+                <h1 class="heading"> Dades</h1>
                 <div class="profile-info">
                   <h4 class="key">Nom</h4>
                   <p class="value">Gimena</p>
-                  <h4 class="key">DNI</h4>
-                  <p class="value">435343L</p>
                 </div>
                 <div class="profile-info">
                   <h4 class="key">Cognoms</h4>
