@@ -27,22 +27,22 @@ include '..\backend\includeAdmin.php';
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link" href="index.php" style="color: #e4f9f5;">Inici </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="users.php" style="color: #e4f9f5;">Usuaris</a>
+            <a class="nav-link" href="index.php" style="color: #40514e;">Inici </a>
           </li>
           <li class="nav-item active">
-            <a class="nav-link" href="fitxaPersonal.php" style="color: #e4f9f5;">Fitxa personal<span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="users.php" style="color: #e4f9f5;">Usuaris<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="fitxaPersonal.php" style="color: #40514e;">Fitxa personal</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="capsmutues.php" style="color: #e4f9f5;">CAP - Mútues</a>
+            <a class="nav-link" href="capsmutues.php" style="color: #40514e;">CAP - Mútues</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="sta.php" style="color: #e4f9f5;">STA - Responsables</a>
+            <a class="nav-link" href="sta.php" style="color: #40514e;">STA - Responsables</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="histocalls.php" style="color: #e4f9f5;">Historial de trucades</a>
+            <a class="nav-link" href="histocalls.php" style="color: #40514e;">Historial de trucades</a>
           </li>
         </ul>
         <ul class="navbar-nav ml-auto">
@@ -64,7 +64,7 @@ include '..\backend\includeAdmin.php';
       </div>
     </nav>
 
-    <div class="container">
+    <div class="container" id="usersList">
       <table id="dtUsuaris" class="table table-striped table-bordered" cellspacing="0" width="100%">
         <thead>
           <tr>
@@ -82,6 +82,49 @@ include '..\backend\includeAdmin.php';
           </tr>
         </tfoot>
       </table>
+
+    </div>
+
+    <div class="container" id="addUser">
+      <form>
+        <div class="form-group row">
+          <label for="username" class="col-sm-2 col-form-label">Nom d'usuari</label>
+          <div class="col-sm-10">
+            <input type="email" class="form-control" id="username" placeholder="Email">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="password" class="col-sm-2 col-form-label">Contrasenya</label>
+          <div class="col-sm-10">
+            <input type="password" class="form-control" id="password" placeholder="Password">
+          </div>
+        </div>
+        <fieldset class="form-group">
+          <div class="row">
+            <legend class="col-form-label col-sm-2 pt-0">Tipus d'usuari</legend>
+            <div class="col-sm-10">
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="gridRadios" id="professor" value="option1" checked>
+                <label class="form-check-label" for="professor">
+                  Professor
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="gridRadios" id="estudiant" value="option2">
+                <label class="form-check-label" for="estudiant">
+                  Estudiant
+                </label>
+              </div>
+            </div>
+          </div>
+        </fieldset>
+
+        <div class="form-group row">
+          <div class="col-sm-10">
+            <button type="submit" class="btn btn-primary">Afegir usuari</button>
+          </div>
+        </div>
+      </form>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>

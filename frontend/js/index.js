@@ -8,12 +8,20 @@ function pdLogin() {
     cache: false,
     success: function(response) {
       let myJSON = JSON.parse(response);
-      if (!response.error) {
+      if (!myJSON.error) {
         if (parseInt(myJSON.type) == 0) {
           location.href = 'admin.php';
         } else if (parseInt(myJSON.type) == 1) {
           location.href = 'user.php';
         }
+      }else{
+        $("#userInput").addClass("badLogin");
+        $("#alertBadLogin").show();
+        setTimeout(
+            function() {
+              $("#alertBadLogin").hide();
+            }, 5000);
+        
       }
     },
     error: function() {
@@ -22,6 +30,7 @@ function pdLogin() {
   });
 }
 
+$("#alertBadLogin").hide();
 
 $("#userInput").keyup(function() {
   if (event.keyCode === 13) {
@@ -39,6 +48,11 @@ $("#passwordInput").keyup(function() {
 $('#loginInput').click(function() {
   pdLogin();
 });
+
+$('#userInput').click(function() {
+  $("#userInput").removeClass("badLogin");
+});
+
 
 
 
