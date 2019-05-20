@@ -73,6 +73,10 @@
         </ul>
       </div>
     </nav>
+    <button id="showFormPF" type="button" class="btn btn-primary"><i class="fa fa-plus"></i></button>
+    <div class="container_add">
+      <button id="returnPF" type="button" class="btn btn-primary"><i class="fa fa-reply"></i></button>
+    </div>
     <div class="container">
       <table id="dtFitxaPersonal" class="table table-striped table-bordered" cellspacing="0" width="100%">
         <thead>
@@ -112,7 +116,6 @@
       <!-- FICHA PERSONAL-->
       <div class="c-tab is-active">
           <div class="c-tab__content">
-            <button id="showFormPF" type="button" class="btn btn-primary"><i class="fa fa-plus"></i></button>
             <div class="container_ficha">
               <div class="container">
                 <div class="content">
@@ -381,10 +384,9 @@
           </div>
       </div>
   </div>
-  <div class=".container_addfile">
-    <button id="returnPF" type="button" class="btn btn-primary"><i class="fa fa-reply"></i></button>
-  </div>
 </section>
+
+
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
