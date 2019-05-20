@@ -112,6 +112,7 @@
       <!-- FICHA PERSONAL-->
       <div class="c-tab is-active">
           <div class="c-tab__content">
+            <button id="showFormPF" type="button" class="btn btn-primary">Afegir</button>
             <div class="container_ficha">
               <div class="container">
                 <div class="content">
@@ -192,7 +193,7 @@
       <!-- CAPS -->
       <div class="c-tab">
           <div class="c-tab__content">
-            <div class="container_ficha">
+            <div class="container_caps">
               <div class="content2">
                 <div class="direccion">
                   <h1 class="heading"> CAP</h1>
@@ -261,7 +262,7 @@
       <!-- RESPONSABLE -->
       <div class="c-tab">
           <div class="c-tab__content">
-            <div class="container_ficha">
+            <div class="container_responsible">
               <div class="content2">
                 <div class="direccion">
                   <h1 class="heading"> Dades</h1>
@@ -329,7 +330,7 @@
       <!-- STA -->
       <div class="c-tab">
           <div class="c-tab__content">
-            <div class="container_ficha">
+            <div class="container_sta">
               <div class="content3">
                 <div class="contacto">
                   <h1 class="heading">Serveis Contractats</h1>
@@ -379,6 +380,9 @@
 
           </div>
       </div>
+  </div>
+  <div class=".container_addfile">
+    <button id="returnPF" type="button" class="btn btn-primary">Tornar enrere</button>
   </div>
 </section>
 

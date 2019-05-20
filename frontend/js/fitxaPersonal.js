@@ -1,7 +1,23 @@
 $(document).ready(function () {
-
   $('.dataTables_length').addClass('bs-select');
+  $('#addPF').hide();
+  $(".container_addfile").hide();
+  $("#returnPF").hide();
   showTable();
+  $( "#showFormPF" ).click(function() {
+    $( ".container_ficha" ).hide();
+    $("#showFormPF").hide();
+    $('#addPF').show();
+    $(".container_addfile").show();
+    $("#returnPF").show();
+  });
+  $( "#returnPF" ).click(function() {
+    $( ".container_ficha" ).show();
+    $("#showFormPF").show();
+    $('#addPF').hide();
+    $(".container_addfile").hide();
+    $("#returnPF").hide();
+  });
 });
 function Tabs(options){
 
