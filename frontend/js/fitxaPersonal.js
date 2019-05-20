@@ -107,6 +107,39 @@ function showTable(){
 
 
 function showFitxaPersonal(id, name, surname,dninie, province){
-  let html="<tr><td>"+id+"</td><td>"+name+"</td><td>"+surname+"</td><td>"+dninie+"</td><td>"+province+"</td><td><button id='fitxaPersonal"+id+"' type='button' class='btn btn-info'>Fitxa Completa</button></td></tr>";
+  let html="<tr><td>"+id+"</td><td>"+name+"</td><td>"+surname+"</td><td>"+dninie+"</td><td>"+province+"</td><td><button id='fitxaPersonal"+id+"' type='button' class='btn btn-info'>Fitxa Completa</button><button type='button' id='deleteCardId"+id+"' class='deletecard btn btn-danger' data-toggle='modal' data-target='#deleteproductmodal'>Eliminar</button></td></tr>";
   $("#fitxaPersonalTable").append(html);
+}
+
+
+function eliminarCardListener() {
+  let idCard;
+  $(".deletecard").click(function(event) {
+    idCard = this.id;
+    idCard = idCard.replace("deleteCardId", "");
+    $("#deleteCardDef").click(function(event) {
+      deleteCard(idCard);
+    });
+  });
+}
+
+
+function deleteCard(idCard){
+  $.ajax({
+    url: "../backend/delete/deleteFitxaPersonal.php",
+    data: {
+      id: idCard
+    },
+    type: "GET",
+    cache: false,
+    success: function(response) {
+      var myJSON = JSON.parse(response);
+      if (parseInt(myJSON.codigoError) != 0) {
+        showTable();
+      }
+    },
+    error: function() {
+      alert("Error en la consulta");
+    }
+  });
 }
