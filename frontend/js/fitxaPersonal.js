@@ -3,18 +3,22 @@ $(document).ready(function () {
   $('#addPF').hide();
   $("#page").hide();
   $("#returnPF").hide();
+  $(".container_add").hide();
   showTable();
   $( "#showFormPF" ).click(function() {
     $( ".container_ficha" ).hide();
     $("#showFormPF").hide();
+    $("#dtFitxaPersonal_wrapper").hide();
     $('#addP').show();
     $("#returnPF").show();
+    $(".container_add").show();
   });
   $( "#returnPF" ).click(function() {
     $( ".container_ficha" ).show();
     $("#showFormPF").show();
+    $("#dtFitxaPersonal_wrapper").show();
     $('#addPF').hide();
-    $(".container_addfile").hide();
+    $(".container_add").hide();
     $("#returnPF").hide();
   });
 });
