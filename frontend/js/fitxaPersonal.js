@@ -112,6 +112,7 @@ function showTable(){
         showFitxaPersonal(id, name, surname,dninie, province);
       }
       $('#dtFitxaPersonal').DataTable();
+      eliminarCardListener();
     },
     error: function() {
       console.log('No hi han clients');
@@ -132,6 +133,7 @@ function eliminarCardListener() {
   $(".deletecard").click(function(event) {
     idCard = this.id;
     idCard = idCard.replace("deleteCardId", "");
+    console.log("The id card is: " + idCard);
     $("#deleteCardDef").click(function(event) {
       deleteCard(idCard);
     });
