@@ -73,6 +73,10 @@
         </ul>
       </div>
     </nav>
+    <button id="showFormPF" type="button" class="btn btn-primary"><i class="fa fa-plus"></i></button>
+    <div class="container_add">
+      <button id="returnPF" type="button" class="btn btn-primary"><i class="fa fa-reply"></i></button>
+    </div>
     <div class="container">
       <table id="dtFitxaPersonal" class="table table-striped table-bordered" cellspacing="0" width="100%">
         <thead>
@@ -192,7 +196,7 @@
       <!-- CAPS -->
       <div class="c-tab">
           <div class="c-tab__content">
-            <div class="container_ficha">
+            <div class="container_caps">
               <div class="content2">
                 <div class="direccion">
                   <h1 class="heading"> CAP</h1>
@@ -261,7 +265,7 @@
       <!-- RESPONSABLE -->
       <div class="c-tab">
           <div class="c-tab__content">
-            <div class="container_ficha">
+            <div class="container_responsible">
               <div class="content2">
                 <div class="direccion">
                   <h1 class="heading"> Dades</h1>
@@ -329,7 +333,7 @@
       <!-- STA -->
       <div class="c-tab">
           <div class="c-tab__content">
-            <div class="container_ficha">
+            <div class="container_sta">
               <div class="content3">
                 <div class="contacto">
                   <h1 class="heading">Serveis Contractats</h1>
@@ -381,6 +385,8 @@
       </div>
   </div>
 </section>
+
+
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
