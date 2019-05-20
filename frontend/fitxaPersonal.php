@@ -112,7 +112,7 @@
       <!-- FICHA PERSONAL-->
       <div class="c-tab is-active">
           <div class="c-tab__content">
-            <button id="showFormPF" type="button" class="btn btn-primary">Afegir</button>
+            <button id="showFormPF" type="button" class="btn btn-primary"><i class="fa fa-plus"></i></button>
             <div class="container_ficha">
               <div class="container">
                 <div class="content">
@@ -382,7 +382,7 @@
       </div>
   </div>
   <div class=".container_addfile">
-    <button id="returnPF" type="button" class="btn btn-primary">Tornar enrere</button>
+    <button id="returnPF" type="button" class="btn btn-primary"><i class="fa fa-reply"></i></button>
   </div>
 </section>
 
