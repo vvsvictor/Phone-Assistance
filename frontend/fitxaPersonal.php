@@ -73,11 +73,20 @@
         </ul>
       </div>
     </nav>
-    <button id="showFormPF" type="button" class="btn btn-primary"><i class="fa fa-plus"></i></button>
-    <div class="container_add">
-      <button id="returnPF" type="button" class="btn btn-primary"><i class="fa fa-reply"></i></button>
-    </div>
     <div class="container">
+      <button id="showFormPF" type="button" class="btn btn-primary"><i class="fa fa-plus"></i></button>
+      <div class="container_add">
+        <button id="returnPF" type="button" class="btn btn-primary"><i class="fa fa-reply"></i></button>
+        <div class="widget">
+          <legend>Select a Location: </legend>
+          <label for="radio-1">New York</label>
+          <input type="radio" name="radio-1" id="radio-1">
+          <label for="radio-2">Paris</label>
+          <input type="radio" name="radio-1" id="radio-2">
+          <label for="radio-3">London</label>
+          <input type="radio" name="radio-1" id="radio-3">
+        </div>
+      </div>
       <table id="dtFitxaPersonal" class="table table-striped table-bordered" cellspacing="0" width="100%">
         <thead>
           <tr>
