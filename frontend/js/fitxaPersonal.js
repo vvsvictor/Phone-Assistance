@@ -22,6 +22,9 @@ $(document).ready(function () {
     $("#returnPF").hide();
   });
 });
+$( function() {
+  $( "input" ).checkboxradio();
+});
 function Tabs(options){
 
 	var tabs = document.querySelector(options.el);
