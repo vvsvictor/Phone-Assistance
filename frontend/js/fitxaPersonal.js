@@ -142,6 +142,7 @@ function eliminarCardListener() {
 
 
 function deleteCard(idCard){
+  console.log(idCard);
   $.ajax({
     url: "../backend/delete/deleteFitxaPersonal.php",
     data: {
