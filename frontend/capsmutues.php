@@ -78,7 +78,7 @@
             <th class="th-sm">Nom</th>
             <th class="th-sm">Direcció</th>
             <th class="th-sm">Telèfon</th>
-            <th class="th-sm">Direcció</th>
+            <th class="th-sm">Horari</th>
             <th class="th-sm"></th>
           </tr>
         </thead>
@@ -89,7 +89,7 @@
             <th>Nom</th>
             <th>Direcció</th>
             <th>Telèfon</th>
-            <th>Direcció</th>
+            <th>Horari</th>
             <th></th>
           </tr>
         </tfoot>
@@ -108,6 +108,6 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.0/js/mdb.min.js"></script>
     <script type="text/javascript" src="js/jquery.dataTables.min.js"></script>
     <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
-    <script src="js/caps.js" type="text/javascript"></script>
+    <script src="js/cap.js" type="text/javascript"></script>
   </body>
 </html>

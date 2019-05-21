@@ -19,6 +19,7 @@ include '..\backend\includeAdmin.php';
     <link rel="stylesheet" href="css/initPage.css">
     <link rel="stylesheet" href="css/dataTable.css">
     <link rel="stylesheet" href="css/users.css">
+
   </head>
   <body class="addFont">
     <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #11999E;">
@@ -76,6 +77,7 @@ include '..\backend\includeAdmin.php';
             <th class="th-sm">Usuari</th>
             <th class="th-sm">Tipus d'usuari</th>
             <th class="th-sm"></th>
+            <th class="th-sm"></th>
           </tr>
         </thead>
         <tbody id="usuarisTable"></tbody>
@@ -85,12 +87,14 @@ include '..\backend\includeAdmin.php';
             <th>Usuari</th>
             <th>Tipus d'usuari</th>
             <th></th>
+            <th></th>
           </tr>
         </tfoot>
       </table>
 
     </div>
 
+    <!-- Div afegir usuari -->
     <div class="container" id="addUser">
       <button id="showListBtn" type="button" class="btn btn-primary">Tornar a la llista</button>
       <form id="formUser">
@@ -131,6 +135,57 @@ include '..\backend\includeAdmin.php';
         <div class="form-group row">
           <div class="col-sm-10">
             <button id="addUserBtn" type="button" class="btn btn-primary">Afegir usuari</button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+
+    <!-- Div modificar usuari -->
+    <div class="container" id="modUserDiv">
+      <button id="showListBtnMod" type="button" class="btn btn-primary">Tornar a la llista</button>
+      <form id="formModUser">
+        <div class="form-group">
+          <label for="modId">ID</label>
+          <input type="text" class="form-control" id="modId" placeholder="Id" disabled>
+        </div>
+        <div class="form-group">
+          <label for="username">Nom d'usuari</label>
+          <input type="email" class="form-control" id="modUsername" placeholder="Nom d'usuari">
+        </div>
+        <div class="form-group">
+          <label for="password">Contrasenya</label>
+          <input type="password" class="form-control" id="modPassword" placeholder="Contrasenya">
+        </div>
+        <fieldset class="form-group">
+          Tipus d'usuari
+          <div class="row">
+            <div class="col-md-4 col-lg-4 col-sm-4">
+              <label>
+                <input value="0" type="radio" name="modUsertype" class="card-input-element"/>
+                  <div class="panel panel-default card-input">
+                    <div class="panel-body">
+                      Docent
+                    </div>
+                  </div>
+              </label>
+            </div>
+            <div class="col-md-4 col-lg-4 col-sm-4">
+              <label>
+                <input value="1" type="radio" name="modUsertype" class="card-input-element" />
+                  <div class="panel panel-default card-input">
+                    <div class="panel-body">
+                      Alumne
+                    </div>
+                  </div>
+              </label>
+            </div>
+        </div>
+        </fieldset>
+
+        <div class="form-group row">
+          <div class="col-sm-10">
+            <button id="modUserBtn" type="button" class="btn btn-primary">Modificar usuari</button>
           </div>
         </div>
       </form>
