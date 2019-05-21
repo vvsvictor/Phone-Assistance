@@ -117,6 +117,7 @@ function showTable(){
       }
       $('#dtFitxaPersonal').DataTable();
       eliminarCardListener();
+      mostrarCardListener();
     },
     error: function() {
       console.log('No hi han clients');
@@ -127,10 +128,71 @@ function showTable(){
 
 
 function showFitxaPersonal(id, name, surname,dninie, province){
-  let html="<tr><td>"+id+"</td><td>"+name+"</td><td>"+surname+"</td><td>"+dninie+"</td><td>"+province+"</td><td><button id='fitxaPersonal"+id+"' type='button' class='btn btn-info'>Fitxa Completa</button><button type='button' id='deleteCardId"+id+"' class='deletecard btn btn-danger' data-toggle='modal' data-target='#deletecardmodal'>Eliminar</button></td></tr>";
+  let html="<tr><td>"+id+"</td><td>"+name+"</td><td>"+surname+"</td><td>"+dninie+"</td><td>"+province+"</td><td><button id='fitxaPersonal"+id+"' type='button' class='fitxaPersonal btn btn-info'>Fitxa Completa</button><button type='button' id='deleteCardId"+id+"' class='deletecard btn btn-danger' data-toggle='modal' data-target='#deletecardmodal'>Eliminar</button></td></tr>";
   $("#fitxaPersonalTable").append(html);
 }
 
+function mostrarCardListener(){
+  $(".fitxaPersonal").click(function(event) {
+    let id = this.id;
+    $.ajax({
+      url: "../backend/selects/getFitxaPersonal.php",
+      type: "GET",
+      cache: false,
+      success: function(response) {
+        let myJSON = JSON.parse(response);
+        $("#fpname").html("");
+        $("#fpsurname").html("");
+        $("#fpdninie").html("");
+        $("#fpbirthdate").html("");
+        $("#fpprovince").html("");
+        $("#fpcomarca").html("");
+        $("#fpmunicipality").html("");
+        $("#fpaddress").html("");
+        $("#fpphone").html("");
+        $("#fpmobile_phone").html("");
+        $("#fpwork_phone").html("");
+        for (var i = 0; i < myJSON.length; i++) {
+          let id = myJSON[i].id;
+          let name = myJSON[i].name;
+          let surname = myJSON[i].surname;
+          let dninie = myJSON[i].dninie;
+          let birthdate = myJSON[i].birthdate;
+          let province = myJSON[i].province;
+          let comarca = myJSON[i].comarca;
+          let municipality = myJSON[i].municipality;
+          let address = myJSON[i].address;
+          let phone = myJSON[i].phone;
+          let mobile_phone = myJSON[i].mobile_phone;
+          let work_phone = myJSON[i].work_phone;
+          $("#fpname").html(name);
+          $("#fpsurname").html(surname);
+          $("#fpdninie").html(dninie);
+          $("#fpbirthdate").html(birthdate);
+          $("#fpprovince").html(province);
+          $("#fpcomarca").html(comarca);
+          $("#fpmunicipality").html(municipality);
+          $("#fpaddress").html(address);
+          $("#fpphone").html(phone);
+          $("#fpmobile_phone").html(mobile_phone);
+          $("#fpwork_phone").html(mobile_phone);
+          $('#addPF').hide();
+          $("#page").show();
+          $("#dtFitxaPersonal_wrapper").hide();
+          $("#returnPF").hide();
+          $(".container_add").hide();
+          $("#showFormPF").hide();
+
+        }
+
+      },
+      error: function() {
+        console.log('No hi han clients');
+      }
+    });
+
+  });
+}
 
 function eliminarCardListener() {
   let idCard;

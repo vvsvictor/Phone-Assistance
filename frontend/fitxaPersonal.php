@@ -132,22 +132,22 @@
                       <h1 class="heading"> Dades</h1>
                       <div class="info">
                         <p class="sub-heading">Nom</p>
-                        <p class="duration">Gimena</p>
+                        <p id="fpname" class="duration">Gimena</p>
                         <p></p>
                       </div>
                       <div class="info">
                         <p class="sub-heading">Cognoms</p>
-                        <p class="duration">del Carmen Ortega</p>
+                        <p id="fpsurname" class="duration">del Carmen Ortega</p>
                         <p></p>
                       </div>
                       <div class="info">
                         <p class="sub-heading">DNI</p>
-                        <p class="duration">30762309F</p>
+                        <p id="fpdninie" class="duration">30762309F</p>
                         <p></p>
                       </div>
                       <div class="info">
                         <p class="sub-heading">Data de naixement</p>
-                        <p class="duration">10-04-1912</p>
+                        <p id="fpbirthdate" class="duration">10-04-1912</p>
                         <p></p>
                       </div>
                     </div>
@@ -157,22 +157,22 @@
                       <h1 class="heading"> Direcció</h1>
                       <div class="info">
                         <p class="sub-heading">Provincia</p>
-                        <p class="duration">Barcelona</p>
+                        <p id="fpprovince" class="duration">Barcelona</p>
                         <p></p>
                       </div>
                       <div class="info">
                         <p class="sub-heading">Comarca</p>
-                        <p class="duration">Barcelonès</p>
+                        <p id="fpcomarca" class="duration">Barcelonès</p>
                         <p></p>
                       </div>
                       <div class="info">
                         <p class="sub-heading">Municipi</p>
-                        <p class="duration">Barcelona</p>
+                        <p id="fpmunicipality" class="duration">Barcelona</p>
                         <p></p>
                       </div>
                       <div class="info">
                         <p class="sub-heading">Carrer</p>
-                        <p class="duration">Alcudia nº 23 3º 1ª</p>
+                        <p id="fpaddress" class="duration">Alcudia nº 23 3º 1ª</p>
                         <p></p>
                       </div>
                     </div>
@@ -183,17 +183,17 @@
                       <h1 class="heading">Contacte</h1>
                       <div class="info">
                         <p class="sub-heading">Telèfon fixe</p>
-                        <p class="duration">937764012</p>
+                        <p id="fpphone" class="duration">937764012</p>
                         <p></p>
                       </div>
                       <div class="info">
                         <p class="sub-heading">Telèfon móvil</p>
-                        <p class="duration">672750032</p>
+                        <p id="fpmobile_phone" class="duration">672750032</p>
                         <p></p>
                       </div>
                       <div class="info">
                         <p class="sub-heading">Telèfon treball</p>
-                        <p class="duration">903412653</p>
+                        <p id="fpwork_phone" class="duration">903412653</p>
                         <p></p>
                       </div>
                     </div>
