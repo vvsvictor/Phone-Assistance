@@ -3,13 +3,13 @@
   include ("../inc/usarBD.php");
   $id = $_GET["id"];
 
-  $consulta="DELETE FROM CALL_HISTORY WHERE id=".$id;
+  $consulta="DELETE FROM CALL_HISTORY WHERE user_dninif=(SELECT dninie FROM PERSONAL_CARD WHERE id='".$id."')";
   $hacerConsulta=mysqli_query($conexion, $consulta);
 
-  $consulta="DELETE FROM RESPONSIBLE WHERE id=".$id;
+  $consulta="DELETE FROM RESPONSIBLE WHERE user_dninif=(SELECT dninie FROM PERSONAL_CARD WHERE id='".$id."')";
   $hacerConsulta=mysqli_query($conexion, $consulta);
 
-  $consulta="DELETE FROM STA WHERE id=".$id;
+  $consulta="DELETE FROM STA WHERE user_dninif=(SELECT dninie FROM PERSONAL_CARD WHERE id='".$id."')";
   $hacerConsulta=mysqli_query($conexion, $consulta);
 
   $consulta="DELETE FROM PERSONAL_CARD WHERE id=".$id;
