@@ -41,6 +41,7 @@ $(document).ready(function () {
     });
   });
 
+});
   */
 
 
@@ -84,7 +85,7 @@ function showSta(id, dni,situation, date){
 }
 
 function eliminarStaListener() {
-  let idUser;
+  let idSta;
   $(".deleteSta").click(function(event) {
     idSta = this.id;
     idSta = idSta.replace("deleteStaId", "");

@@ -2,13 +2,12 @@
 
   include ("../inc/usarBD.php");
   $id = $_GET["id"];
+  $sUsername = $_GET["sUsername"];
+  $sPassword = $_GET["sPassword"];
+  $iUserType = $_GET["iUserType"];
 
-  $consulta="DELETE FROM PERSONAL_CARD WHERE dninie=(SELECT user_dninif FROM STA WHERE user_dninif='".$id."')";
+  $consulta="UPDATE users SET username='".$sUsername."', usertype='".$iUserType."', password='".$sPassword."' WHERE id=".$id;
   $hacerConsulta=mysqli_query($conexion, $consulta);
-
-  $consulta="DELETE FROM STA WHERE id=".$id;
-  $hacerConsulta=mysqli_query($conexion, $consulta);
-
 
   $sJSON = "[{";
 

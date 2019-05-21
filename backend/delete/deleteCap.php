@@ -3,6 +3,9 @@
   include ("../inc/usarBD.php");
   $id = $_GET["id"];
 
+  include ("./deleteDoctors.php");
+  $consulta="DELETE FROM DOCTORS WHERE id_cap=".$id;
+  $hacerConsulta=mysqli_query($conexion, $consulta);
 
   $consulta="DELETE FROM CAP WHERE id=".$id;
   $hacerConsulta=mysqli_query($conexion, $consulta);
