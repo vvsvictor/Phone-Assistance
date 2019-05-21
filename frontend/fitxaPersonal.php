@@ -17,7 +17,8 @@
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css">
     <!-- <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css"> -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="css/initPage.css">
     <link rel="stylesheet" href="css/fichaPersonal.css">
@@ -77,14 +78,59 @@
       <button id="showFormPF" type="button" class="btn btn-primary"><i class="fa fa-plus"></i></button>
       <div class="container_add">
         <button id="returnPF" type="button" class="btn btn-primary"><i class="fa fa-reply"></i></button>
-        <div class="widget">
-          <legend>Select a Location: </legend>
-          <label for="radio-1">New York</label>
-          <input type="radio" name="radio-1" id="radio-1">
-          <label for="radio-2">Paris</label>
-          <input type="radio" name="radio-1" id="radio-2">
-          <label for="radio-3">London</label>
-          <input type="radio" name="radio-1" id="radio-3">
+        <br>
+        <div class="row">
+          <div class="col-lg-6">
+            <label for="nom">NOM</label>
+          </div>
+          <div class="col lg-6">
+            <label for="cognom">COGNOM</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-6">
+            <input type="text" class="form-control" name="nom"/>
+          </div>
+          <div class="col lg-6">
+            <input type="text" class="form-control" name="cognom"/>
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="col-lg-6">
+            <label for="dni">DNI</label>
+          </div>
+          <div class="col lg-6">
+            <label for="genere">GENERE</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-6">
+            <input type="text" class="form-control" name="dni"/>
+          </div>
+          <div class="col lg-6">
+            <input type="text" class="form-control" name="genere"/>
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="col-lg-6">
+            <label for="dni">IDIOMA</label>
+          </div>
+          <div class="col lg-6">
+            <label for="genere">IDIOMA DE SIGNES</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-6">
+            <label for="radio-1">Català</label>
+            <input type="radio" name="radio-1" id="radio-1">
+            <label for="radio-2">Castellà</label>
+            <input type="radio" name="radio-1" id="radio-2">
+            <label for="radio-3">Anglès</label>
+            <input type="radio" name="radio-1" id="radio-3">
+          </div>
+          <div class="col lg-6"><input type="text" class="form-control" name="genere"/></div>
         </div>
       </div>
       <table id="dtFitxaPersonal" class="table table-striped table-bordered" cellspacing="0" width="100%">
@@ -414,7 +460,8 @@
         </div>
       </div>
     </div>
-
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>

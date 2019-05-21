@@ -4,7 +4,7 @@
   $id = $_GET["id"];
 
 
-  $consulta="DELETE FROM medic_specialization WHERE id=(SELECT dninie FROM PERSONAL_CARD WHERE specialization_id='".$id."')";
+  $consulta="DELETE FROM med_specialization WHERE id=(SELECT dninie FROM PERSONAL_CARD WHERE specialization_id='".$id."')";
   $hacerConsulta=mysqli_query($conexion, $consulta);
 
   $consulta="DELETE FROM DOCTORS WHERE id=".$id;

@@ -3,6 +3,8 @@
   include ("../inc/usarBD.php");
   $id = $_GET["id"];
 
+  $consulta="DELETE FROM PERSONAL_CARD WHERE dninie=(SELECT user_dninif FROM STA WHERE user_dninif='".$id."')";
+  $hacerConsulta=mysqli_query($conexion, $consulta);
 
   $consulta="DELETE FROM STA WHERE id=".$id;
   $hacerConsulta=mysqli_query($conexion, $consulta);
