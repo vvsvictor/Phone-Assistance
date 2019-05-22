@@ -71,7 +71,6 @@
         </ul>
       </div>
     </nav>
-<<<<<<< HEAD
     <div class="container">
       <button id="showFormCAP" type="button" class="btn btn-primary"><i class="fa fa-plus"></i></button>
       <button id="showFormDoctor" type="button" class="btn btn-primary"><i class="fa fa-plus"></i></button>
@@ -181,10 +180,6 @@
           </div>
         </div>
       </div>
-=======
-    <div class="container" id="capList">
-      <button id="showFormBtn" type="button" class="btn btn-primary">Afegir</button>
->>>>>>> fe02fcc30620d04244520378e97158fccacfc471
       <table id="dtCap" class="table table-striped table-bordered" cellspacing="0" width="100%">
         <thead>
           <tr>
