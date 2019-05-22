@@ -80,7 +80,7 @@ function showTable(){
 
 
 function showSta(id, dni,situation, date){
-  let html="<tr><td>"+id+"</td><td>"+dni+"</td><td>"+situation+"</td><td>"+date+"</td><td><button id='sta"+id+"' type='button' class='btn btn-info'>Fitxa Completa</button><button type='button' id='deleteStaId"+id+"' class='deleteuser btn btn-danger' data-toggle='modal' data-target='#deleteStamodal'>Eliminar</button></td></tr>";
+  let html="<tr><td>"+id+"</td><td>"+dni+"</td><td>"+situation+"</td><td>"+date+"</td><td><button id='sta"+id+"' type='button' class='btn btn-info'>Fitxa Completa</button><button type='button' id='deleteStaId"+id+"' class='deleteSta btn btn-danger' data-toggle='modal' data-target='#deleteStamodal'>Eliminar</button></td></tr>";
   $("#staTable").append(html);
 }
 
@@ -89,6 +89,7 @@ function eliminarStaListener() {
   $(".deleteSta").click(function(event) {
     idSta = this.id;
     idSta = idSta.replace("deleteStaId", "");
+    console.log("The id sta is: " + idSta);
     $("#deleteStaDef").click(function(event) {
       deleteSta(idSta);
     });
@@ -96,6 +97,7 @@ function eliminarStaListener() {
 }
 
 function deleteSta(idSta){
+  console.log("The id2 sta is: " + idSta);
   $.ajax({
     url: "../backend/delete/deleteSta.php",
     data: {
