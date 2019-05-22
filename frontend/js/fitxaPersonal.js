@@ -174,7 +174,7 @@ function showTable(){
         let surname = myJSON[i].surname;
         let dninie = myJSON[i].dninie;
         let province = myJSON[i].province;
-        showFitxaPersonal(id, name, surname,dninie, province);
+        showFitxaPersonal(id, name, surname, dninie, province);
       }
       $('#dtFitxaPersonal').DataTable();
       eliminarCardListener();

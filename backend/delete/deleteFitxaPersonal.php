@@ -12,6 +12,9 @@
   $consulta="DELETE FROM STA WHERE user_dninif=(SELECT dninie FROM PERSONAL_CARD WHERE id='".$id."')";
   $hacerConsulta=mysqli_query($conexion, $consulta);
 
+  $consulta="DELETE FROM HEALTH_INSURANCE WHERE user_dninif=(SELECT dninie FROM PERSONAL_CARD WHERE id='".$id."')";
+  $hacerConsulta=mysqli_query($conexion, $consulta);
+
   $consulta="DELETE FROM PERSONAL_CARD WHERE id=".$id;
   $hacerConsulta=mysqli_query($conexion, $consulta);
 
