@@ -1,39 +1,51 @@
-$(document).ready(function () {
+$(document).ready(function() {
+  //Multiselect
+  var required = $("#required").kendoMultiSelect().data("kendoMultiSelect");
+  var optional = $("#optional").kendoMultiSelect({
+    autoClose: false
+  }).data("kendoMultiSelect");
+
+  $("#get").click(function() {
+    alert("Attendees:\n\nRequired: " + required.value() + "\nOptional: " + optional.value());
+  });
+
+
   goToCapList();
   $('.dataTables_length').addClass('bs-select');
   showTable();
   addCapListener();
-  $( "#showFormCAP" ).click(function() {
+  $("#showFormCAP").click(function() {
     goToAddCap();
   });
-  $( "#showFormDoctor" ).click(function() {
+  $("#showFormDoctor").click(function() {
     goToAddDoctor();
   });
-  $( "#returnCAP" ).click(function() {
+  $("#returnCAP").click(function() {
     goToCapList();
   });
-  $( "#returnDoctor" ).click(function() {
+  $("#returnDoctor").click(function() {
     goToCapList();
   });
-  });
+});
 
-  function gotoModCap() {
-    $('#modCapDiv').show();
-    $('#addCap').hide();
-    $("#capList").hide();
-  }
+function gotoModCap() {
+  $('#modCapDiv').show();
+  $('#addCap').hide();
+  $("#capList").hide();
+}
 
-  function goToAddCap(){
-    $("#tableCaps").hide();
-    $("#addCap").show();
-  }
-  function goToAddDoctor(){
-    $("#tableCaps").hide();
-    $("#addDoctor").show();
-  }
+function goToAddCap() {
+  $("#tableCaps").hide();
+  $("#addCap").show();
+}
+
+function goToAddDoctor() {
+  $("#tableCaps").hide();
+  $("#addDoctor").show();
+}
 
 function addCapListener() {
-  $( "#showFormBtn" ).click(function() {
+  $("#showFormBtn").click(function() {
     $("#name").val('')
     $("#address").val('');
     $("#phone").val('');
@@ -46,14 +58,14 @@ function addCapListener() {
   });
 
 
-  $( "#addCapBtn" ).click(function() {
+  $("#addCapBtn").click(function() {
     $.ajax({
       url: "../backend/inserts/insertCap.php",
       data: {
-        sName:$("#name").val(''),
-        sAddress:$("#address").val(''),
-        iPhone:$("#phone").val(''),
-        sSchedule:$("#schedule").val('')
+        sName: $("#name").val(''),
+        sAddress: $("#address").val(''),
+        iPhone: $("#phone").val(''),
+        sSchedule: $("#schedule").val('')
       },
       type: "GET",
       cache: false,
@@ -61,7 +73,7 @@ function addCapListener() {
         var myJSON = JSON.parse(response);
         showTable();
         $('#addCap').hide();
-        $( "#capList" ).show();
+        $("#capList").show();
 
         if (parseInt(myJSON.codigoError) != 0) {
           console.log(myJSON.observaciones + " - " + myJSON.codigoError + " - " + myJSON.descError);
@@ -74,7 +86,7 @@ function addCapListener() {
   });
 }
 
-function goToCapList(){
+function goToCapList() {
   $('#modCapDiv').hide();
   $('#addCap').hide();
   $("#capList").show();
@@ -107,35 +119,35 @@ function modCapListener() {
             $("#modPhone").val(phone);
             $("#modSchedule").val(schedule);
           }
-            gotoModCap();
-            //Botó tornar enrrere
-            $("#showListBtnMod").click(function() {
-              goToCapList();
+          gotoModCap();
+          //Botó tornar enrrere
+          $("#showListBtnMod").click(function() {
+            goToCapList();
+          });
+          //Click al botó modificar usuari
+          $("#modCapBtn").click(function() {
+            $.ajax({
+              url: "../backend/updates/capsmutues.php",
+              data: {
+                sName: $("#name").val(''),
+                sAddress: $("#address").val(''),
+                iPhone: $("#phone").val(''),
+                sSchedule: $("#schedule").val('')
+              },
+              type: "GET",
+              cache: false,
+              success: function(response) {
+                let myJSON = JSON.parse(response);
+                //reload users
+                showTable();
+                goToCapList();
+              },
+              error: function() {
+                alert("Error en la consulta");
+              }
             });
-            //Click al botó modificar usuari
-            $("#modCapBtn").click(function() {
-              $.ajax({
-                url: "../backend/updates/capsmutues.php",
-                data: {
-                  sName:$("#name").val(''),
-                  sAddress:$("#address").val(''),
-                  iPhone:$("#phone").val(''),
-                  sSchedule:$("#schedule").val('')
-                },
-                type: "GET",
-                cache: false,
-                success: function(response) {
-                  let myJSON = JSON.parse(response);
-                  //reload users
-                  showTable();
-                  goToCapList();
-                },
-                error: function() {
-                  alert("Error en la consulta");
-                }
-              });
-            });
-          }
+          });
+        }
       },
       error: function() {
         console.log('No hi han clients');
@@ -147,7 +159,7 @@ function modCapListener() {
 
 }
 
-function showTable(){
+function showTable() {
   $.ajax({
     url: "../backend/selects/getCap.php",
     type: "GET",
@@ -175,9 +187,9 @@ function showTable(){
 }
 
 
-function showCap(id, name, address, phone, schedule){
+function showCap(id, name, address, phone, schedule) {
   let html;
-  html = "<tr><td>" + id + "</td><td>" + name + "</td><td>" + address + "</td><td>" + phone + "</td><td>" + schedule + "</td><td><button type='button' id='deleteCapId"+id+"' class='deletecap btn btn-danger' data-toggle='modal' data-target='#deletecapmodal'>Eliminar</button></td></tr>";
+  html = "<tr><td>" + id + "</td><td>" + name + "</td><td>" + address + "</td><td>" + phone + "</td><td>" + schedule + "</td><td><button type='button' id='deleteCapId" + id + "' class='deletecap btn btn-danger' data-toggle='modal' data-target='#deletecapmodal'>Eliminar</button></td></tr>";
   $("#capTable").append(html);
 }
 
@@ -194,7 +206,7 @@ function eliminarCapListener() {
 }
 
 
-function deleteUser(idCap){
+function deleteUser(idCap) {
   $.ajax({
     url: "../backend/delete/deleteCap.php",
     data: {
