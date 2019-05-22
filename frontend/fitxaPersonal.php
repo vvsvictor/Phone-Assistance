@@ -79,6 +79,7 @@
       <div class="container_add">
         <button id="returnPF" type="button" class="btn btn-primary"><i class="fa fa-reply"></i></button>
         <br>
+        <br>
         <div class="row">
           <div class="col-lg-6">
             <label for="nom">NOM</label>
@@ -115,22 +116,125 @@
         <br>
         <div class="row">
           <div class="col-lg-6">
-            <label for="dni">IDIOMA</label>
+            <label for="idioma">IDIOMA</label>
           </div>
           <div class="col lg-6">
-            <label for="genere">IDIOMA DE SIGNES</label>
+            <label for="idioma_signes">IDIOMA DE SIGNES</label>
           </div>
         </div>
         <div class="row">
           <div class="col-lg-6">
-            <label for="radio-1">Català</label>
-            <input type="radio" name="radio-1" id="radio-1">
-            <label for="radio-2">Castellà</label>
-            <input type="radio" name="radio-1" id="radio-2">
-            <label for="radio-3">Anglès</label>
-            <input type="radio" name="radio-1" id="radio-3">
+            <label for="catala_i">Català</label>
+            <input type="radio" class="opciones" name="idioma" id="catala_i">
+            <label for="castella_i">Castellà</label>
+            <input type="radio" class="opciones" name="idioma" id="castella_i">
+            <label for="angles_i">Anglès</label>
+            <input type="radio" class="opciones" name="idioma" id="angles_i">
           </div>
-          <div class="col lg-6"><input type="text" class="form-control" name="genere"/></div>
+          <div class="col-lg-6">
+            <label for="catala_is">Català</label>
+            <input type="radio" class="opciones" name="idioma_s" id="catala_is">
+            <label for="castella_is">Castellà</label>
+            <input type="radio" class="opciones" name="idioma_s" id="castella_is">
+            <label for="angles_is">Anglès</label>
+            <input type="radio" class="opciones" name="idioma_s" id="angles_is">
+            <label for="no_is">No</label>
+            <input type="radio" class="opciones" name="idioma_s" id="no_is">
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="col-lg-6">
+            <label for="data_naixament">DATA DE NAIXEMENT</label>
+          </div>
+          <div class="col lg-6">
+            <label for="adresa">ADREÇA</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-6">
+            <input type="text" id="datepicker"/>
+          </div>
+          <div class="col lg-6">
+            <input type="text" class="form-control" name="adresa"/>
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="col-lg-6">
+            <label for="tipus_habitatge">TIPUS D'HABITATGE</label>
+          </div>
+          <div class="col lg-6">
+            <label for="titularitat">TITULARITAT DE L'HABITATGE</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-6">
+            <input type="text" class="form-control" name="adresa"/>
+          </div>
+          <div class="col lg-6">
+            <label for="propietari">Propietari</label>
+            <input type="radio" class="opciones" name="titularitat" id="propietari">
+            <label for="arrendatari">Arrendatari</label>
+            <input type="radio" class="opciones" name="titularitat" id="arrendatari">
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="col-lg-6">
+            <label for="provincias">PROVINCIA</label>
+          </div>
+          <div class="col lg-6">
+            <label for="comarcas">COMARCA</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="ui-widget">
+              <input id="provincias"/>
+            </div>
+          </div>
+          <div class="col lg-6">
+            <div class="ui-widget">
+              <input id="comarcas"/>
+            </div>
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="col-lg-6">
+            <label for="municipios">MUNICIPIS</label>
+          </div>
+          <div class="col lg-6">
+            <label for="tel_fijo">TELÈFON FIXE</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="ui-widget">
+              <input id="municipios"/>
+            </div>
+          </div>
+          <div class="col lg-6">
+            <input type="text" class="form-control" name="tel_fijo"/>
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="col-lg-6">
+            <label for="movil">TELÈFON MÓVIL</label>
+          </div>
+          <div class="col lg-6">
+            <label for="tel_treball">TELÈFON TREBALL</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-6">
+            <input type="text" class="form-control" name="movil"/>
+          </div>
+          <div class="col lg-6">
+            <input type="text" class="form-control" name="tel_treball"/>
+          </div>
         </div>
       </div>
       <table id="dtFitxaPersonal" class="table table-striped table-bordered" cellspacing="0" width="100%">
@@ -163,7 +267,7 @@
         <div class="c-tabs-nav">
                 <a href="#" class="c-tabs-nav__link is-active">Fitxa Personal</a>
                 <a href="#" class="c-tabs-nav__link">CAPS</a>
-                  <a href="#" class="c-tabs-nav__link">Responsable</a>
+                <a href="#" class="c-tabs-nav__link">Responsable</a>
                 <a href="#" class="c-tabs-nav__link">STA</a>
                 <a href="#" class="c-tabs-nav__link">Trucades</a>
                 <div class="c-tab-nav-marker"></div>
@@ -460,9 +564,9 @@
         </div>
       </div>
     </div>
-    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.0/js/mdb.min.js"></script>
