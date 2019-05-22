@@ -15,7 +15,8 @@
     <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.0/css/mdb.min.css" rel="stylesheet"> -->
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css">
     <!-- <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css"> -->
-
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="css/initPage.css">
     <link rel="stylesheet" href="css/dataTable.css">
@@ -70,8 +71,115 @@
         </ul>
       </div>
     </nav>
-    <div class="container" id="capList">
-      <button id="showFormBtn" type="button" class="btn btn-primary">Afegir</button>
+    <div class="container">
+      <button id="showFormCAP" type="button" class="btn btn-primary"><i class="fa fa-plus"></i></button>
+      <button id="showFormDoctor" type="button" class="btn btn-primary"><i class="fa fa-plus"></i></button>
+      <!-- Formulario Añadir CAPS -->
+      <div class="container_add">
+        <button id="returnCAP" type="button" class="btn btn-primary"><i class="fa fa-reply"></i></button>
+        <br>
+        <br>
+        <div class="row">
+          <div class="col-lg-6">
+            <label for="nom_cap">NOM DEL CAP</label>
+          </div>
+          <div class="col lg-6">
+            <label for="direccio_cap">DIRECCIÓ</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-6">
+            <input type="text" class="form-control" name="nom_cap"/>
+          </div>
+          <div class="col lg-6">
+            <input type="text" class="form-control" name="direccio_cap"/>
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="col-lg-6">
+            <label for="tel_cap">TELÈFON</label>
+          </div>
+          <div class="col lg-6">
+            <label for="horari_cap">HORARI</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-6">
+            <input type="text" class="form-control" name="tel_cap"/>
+          </div>
+          <div class="col lg-6">
+            <input type="text" class="form-control" name="horari_cap"/>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-6">
+            <label for="mutues">MUTUES</label>
+          </div>
+          <div class="col lg-6">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-6">
+            <input id="mutues"/>
+          </div>
+          <div class="col lg-6">
+          </div>
+        </div>
+      </div>
+      <!--Formulario Añadir Doctores -->
+      <div class="container_add">
+        <button id="returnDoctor" type="button" class="btn btn-primary"><i class="fa fa-reply"></i></button>
+        <br>
+        <br>
+        <div class="row">
+          <div class="col-lg-6">
+            <label for="nom_cap">NOM DEL DOCTOR</label>
+          </div>
+          <div class="col lg-6">
+            <label for="direccio_cap">COGNOMS DEL DOCTOR</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-6">
+            <input type="text" class="form-control" name="nom_doctor"/>
+          </div>
+          <div class="col lg-6">
+            <input type="text" class="form-control" name="direccio_doctor"/>
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="col-lg-6">
+            <label for="genere_doc">GENERE</label>
+          </div>
+          <div class="col lg-6">
+            <label for="especialització">ESPECIALITZACIÓ</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-6">
+            <input type="text" class="form-control" name="genere"/>
+          </div>
+          <div class="col lg-6">
+            <input id="especialitzacions"/>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-6">
+            <label for="mutues">CAP</label>
+          </div>
+          <div class="col lg-6">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-6">
+            <input id="caps"/>
+          </div>
+          <div class="col lg-6">
+          </div>
+        </div>
+      </div>
       <table id="dtCap" class="table table-striped table-bordered" cellspacing="0" width="100%">
         <thead>
           <tr>
@@ -97,6 +205,8 @@
       </table>
     </div>
 
+<<<<<<< HEAD
+=======
     <!-- Div afegir  cap -->
     <div class="container" id="addCap">
       <button id="showListBtn" type="button" class="btn btn-primary">Tornar a la llista</button>
@@ -176,6 +286,7 @@
 
 
 
+>>>>>>> fe02fcc30620d04244520378e97158fccacfc471
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
