@@ -163,7 +163,7 @@ function showComarcas(){
 
 function showMunisipalitys(){
   $.ajax({
-    url: "../backend/selects/getMunisipality.php",
+    url: "../backend/selects/getMunisipalitys.php",
     type: "GET",
     cache: false,
     success: function(response) {

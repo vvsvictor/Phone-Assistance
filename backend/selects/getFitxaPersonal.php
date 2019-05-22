@@ -21,7 +21,7 @@
       $resultLlenguatgeSignes = mysqli_query($conexion, $consultaLlenguatgeSignes);
       if (mysqli_num_rows($resultLlenguatgeSignes) > 0) {
         while ($rowLlenguatgeSignes = mysqli_fetch_assoc($resultLlenguatgeSignes)) {
-          $sJSON .= '"sign_language":"'. $rowLlenguatgeSignes["language_name"].'", ';
+          $sJSON .= '"sign_language":"'. $rowLlenguatgeSignes["signlanguage_name"].'", ';
         }
       }
 
