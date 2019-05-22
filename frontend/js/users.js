@@ -73,8 +73,6 @@ function modUserListener() {
           let username = myJSON[i].username;
           let password = myJSON[i].password;
           let usertype = myJSON[i].usertype;
-          console.log(id);
-          console.log(idUser);
           if ("modUserId" + id == idUser) {
             $("#modId").val(id);
             $("#modUsername").val(username);
