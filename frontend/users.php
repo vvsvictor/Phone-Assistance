@@ -104,7 +104,7 @@ include '..\backend\includeAdmin.php';
         </div>
         <div class="form-group">
           <label for="password">Contrasenya</label>
-          <input type="password" class="form-control" id="password" placeholder="Contrasenya">
+          <input type="password" class="form-control" id="password" placeholder="Contrasenya" autocomplete="password">
         </div>
         <fieldset class="form-group">
           Tipus d'usuari
@@ -155,7 +155,7 @@ include '..\backend\includeAdmin.php';
         </div>
         <div class="form-group">
           <label for="password">Contrasenya</label>
-          <input type="password" class="form-control" id="modPassword" placeholder="Contrasenya">
+          <input type="password" class="form-control" id="modPassword" placeholder="Contrasenya" autocomplete="password">
         </div>
         <fieldset class="form-group">
           Tipus d'usuari
