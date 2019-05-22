@@ -72,10 +72,8 @@
       </div>
     </nav>
     <div class="container">
-      <button id="showFormCAP" type="button" class="btn btn-primary"><i class="fa fa-plus"></i></button>
-      <button id="showFormDoctor" type="button" class="btn btn-primary"><i class="fa fa-plus"></i></button>
       <!-- Formulario Añadir CAPS -->
-      <div class="container_add">
+      <div id="addCap" class="container_add">
         <button id="returnCAP" type="button" class="btn btn-primary"><i class="fa fa-reply"></i></button>
         <br>
         <br>
@@ -128,7 +126,7 @@
         </div>
       </div>
       <!--Formulario Añadir Doctores -->
-      <div class="container_add">
+      <div id="addDoctor" class="container_add">
         <button id="returnDoctor" type="button" class="btn btn-primary"><i class="fa fa-reply"></i></button>
         <br>
         <br>
@@ -180,31 +178,34 @@
           </div>
         </div>
       </div>
-      <table id="dtCap" class="table table-striped table-bordered" cellspacing="0" width="100%">
-        <thead>
-          <tr>
-            <th class="th-sm">Id</th>
-            <th class="th-sm">Nom</th>
-            <th class="th-sm">Direcció</th>
-            <th class="th-sm">Telèfon</th>
-            <th class="th-sm">Horari</th>
-            <th class="th-sm"></th>
-          </tr>
-        </thead>
-        <tbody id="capTable"></tbody>
-        <tfoot>
-          <tr>
-            <th>Id</th>
-            <th>Nom</th>
-            <th>Direcció</th>
-            <th>Telèfon</th>
-            <th>Horari</th>
-            <th></th>
-          </tr>
-        </tfoot>
-      </table>
+      <div id="tableCaps">
+        <button id="showFormCAP" type="button" class="btn btn-primary"><i class="fa fa-plus"></i></button>
+        <button id="showFormDoctor" type="button" class="btn btn-primary"><i class="fa fa-plus"></i></button>
+        <table id="dtCap" class="table table-striped table-bordered" cellspacing="0" width="100%">
+          <thead>
+            <tr>
+              <th class="th-sm">Id</th>
+              <th class="th-sm">Nom</th>
+              <th class="th-sm">Direcció</th>
+              <th class="th-sm">Telèfon</th>
+              <th class="th-sm">Horari</th>
+              <th class="th-sm"></th>
+            </tr>
+          </thead>
+          <tbody id="capTable"></tbody>
+          <tfoot>
+            <tr>
+              <th>Id</th>
+              <th>Nom</th>
+              <th>Direcció</th>
+              <th>Telèfon</th>
+              <th>Horari</th>
+              <th></th>
+            </tr>
+          </tfoot>
+        </table>
     </div>
-
+  </div>
 <<<<<<< HEAD
 =======
     <!-- Div afegir  cap -->
