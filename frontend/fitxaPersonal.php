@@ -263,88 +263,229 @@ include '..\backend\include.php';
 
   </div>
   <br><br>
-  <section id="page">
-    <div id="tabs" class="c-tabs">
-      <div class="c-tabs-nav">
-        <a href="#" class="c-tabs-nav__link is-active">Fitxa Personal</a>
-        <a href="#" class="c-tabs-nav__link">CAPS</a>
-        <a href="#" class="c-tabs-nav__link">Responsable</a>
-        <a href="#" class="c-tabs-nav__link">STA</a>
-        <a href="#" class="c-tabs-nav__link">Trucades</a>
-        <div class="c-tab-nav-marker"></div>
-      </div>
-      <!-- FICHA PERSONAL-->
-      <div class="c-tab is-active">
-        <div class="c-tab__content">
-          <div class="container_ficha">
-            <div class="container">
-              <div class="content">
-                <div class="direccion">
-                  <h1 class="heading"> Dades</h1>
-                  <div class="info">
-                    <p class="sub-heading">Nom</p>
-                    <p id="fpname" class="duration">Gimena</p>
-                    <p></p>
+  <div id="pageFp">
+
+    <section id="page">
+      <button id="returnPF" type="button" class="btn btn-primary"><i class="fa fa-reply"></i></button>
+      <div id="tabs" class="c-tabs">
+        <div class="c-tabs-nav">
+          <a href="#" class="c-tabs-nav__link is-active">Fitxa Personal</a>
+          <a href="#" class="c-tabs-nav__link">CAPS</a>
+          <a href="#" class="c-tabs-nav__link">Responsable</a>
+          <a href="#" class="c-tabs-nav__link">STA</a>
+          <a href="#" class="c-tabs-nav__link">Trucades</a>
+          <div class="c-tab-nav-marker"></div>
+        </div>
+        <!-- FICHA PERSONAL-->
+        <div class="c-tab is-active">
+          <div class="c-tab__content">
+            <div class="container_ficha">
+              <div class="container">
+                <div class="content">
+                  <div class="direccion">
+                    <h1 class="heading"> Dades</h1>
+                    <div class="info">
+                      <p class="sub-heading">Nom</p>
+                      <p id="fpname" class="duration">Gimena</p>
+                      <p></p>
+                    </div>
+                    <div class="info">
+                      <p class="sub-heading">Cognoms</p>
+                      <p id="fpsurname" class="duration">del Carmen Ortega</p>
+                      <p></p>
+                    </div>
+                    <div class="info">
+                      <p class="sub-heading">DNI</p>
+                      <p id="fpdninie" class="duration">30762309F</p>
+                      <p></p>
+                    </div>
+                    <div class="info">
+                      <p class="sub-heading">Data de naixement</p>
+                      <p id="fpbirthdate" class="duration">10-04-1912</p>
+                      <p></p>
+                    </div>
                   </div>
-                  <div class="info">
-                    <p class="sub-heading">Cognoms</p>
-                    <p id="fpsurname" class="duration">del Carmen Ortega</p>
-                    <p></p>
+                </div>
+                <div class="content">
+                  <div class="direccion">
+                    <h1 class="heading"> Direcció</h1>
+                    <div class="info">
+                      <p class="sub-heading">Provincia</p>
+                      <p id="fpprovince" class="duration">Barcelona</p>
+                      <p></p>
+                    </div>
+                    <div class="info">
+                      <p class="sub-heading">Comarca</p>
+                      <p id="fpcomarca" class="duration">Barcelonès</p>
+                      <p></p>
+                    </div>
+                    <div class="info">
+                      <p class="sub-heading">Municipi</p>
+                      <p id="fpmunicipality" class="duration">Barcelona</p>
+                      <p></p>
+                    </div>
+                    <div class="info">
+                      <p class="sub-heading">Carrer</p>
+                      <p id="fpaddress" class="duration">Alcudia nº 23 3º 1ª</p>
+                      <p></p>
+                    </div>
                   </div>
-                  <div class="info">
-                    <p class="sub-heading">DNI</p>
-                    <p id="fpdninie" class="duration">30762309F</p>
-                    <p></p>
-                  </div>
-                  <div class="info">
-                    <p class="sub-heading">Data de naixement</p>
-                    <p id="fpbirthdate" class="duration">10-04-1912</p>
-                    <p></p>
+                </div>
+
+                <div class="content">
+                  <div class="contacto">
+                    <h1 class="heading">Contacte</h1>
+                    <div class="info">
+                      <p class="sub-heading">Telèfon fixe</p>
+                      <p id="fpphone" class="duration">937764012</p>
+                      <p></p>
+                    </div>
+                    <div class="info">
+                      <p class="sub-heading">Telèfon móvil</p>
+                      <p id="fpmobile_phone" class="duration">672750032</p>
+                      <p></p>
+                    </div>
+                    <div class="info">
+                      <p class="sub-heading">Telèfon treball</p>
+                      <p id="fpwork_phone" class="duration">903412653</p>
+                      <p></p>
+                    </div>
                   </div>
                 </div>
               </div>
-              <div class="content">
+            </div>
+          </div>
+        </div>
+        <!-- CAPS -->
+        <div class="c-tab">
+          <div class="c-tab__content">
+            <div class="container_caps">
+              <div class="content2">
                 <div class="direccion">
-                  <h1 class="heading"> Direcció</h1>
+                  <h1 class="heading"> CAP</h1>
                   <div class="info">
-                    <p class="sub-heading">Provincia</p>
-                    <p id="fpprovince" class="duration">Barcelona</p>
+                    <p class="sub-heading">Nom</p>
+                    <p class="duration">Nom_CAP</p>
                     <p></p>
                   </div>
                   <div class="info">
                     <p class="sub-heading">Comarca</p>
-                    <p id="fpcomarca" class="duration">Barcelonès</p>
+                    <p class="duration">Barcelonès</p>
                     <p></p>
                   </div>
                   <div class="info">
-                    <p class="sub-heading">Municipi</p>
-                    <p id="fpmunicipality" class="duration">Barcelona</p>
+                    <p class="sub-heading">Adreça</p>
+                    <p class="duration">Carrer Alcudia nº 23 3º 1ª</p>
+                    <p></p>
+                  </div>
+                  <div class="info">
+                    <p class="sub-heading">Telèfon</p>
+                    <p class="duration">93 458 669 72</p>
+                    <p></p>
+                  </div>
+                  <div class="info">
+                    <p class="sub-heading">Horari</p>
+                    <p class="duration">9h - 21h</p>
+                    <p></p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="content2a">
+                <div class="contacto">
+                  <h1 class="heading">Doctor/a</h1>
+                  <div class="info">
+                    <p class="sub-heading">Nom</p>
+                    <p class="duration">Pedro</p>
+                    <p></p>
+                  </div>
+                  <div class="info">
+                    <p class="sub-heading">Cognoms</p>
+                    <p class="duration">Hernandez Torres</p>
+                    <p></p>
+                  </div>
+                  <div class="info">
+                    <p class="sub-heading">Sexe</p>
+                    <p class="duration">Home</p>
+                    <p></p>
+                  </div>
+                  <div class="info">
+                    <p class="sub-heading">Especialització</p>
+                    <p class="duration">Capçalera</p>
+                    <p></p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="content3">
+                <div class="contacto">
+                  <h1 class="heading">Ubicació</h1>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- RESPONSABLE -->
+        <div class="c-tab">
+          <div class="c-tab__content">
+            <div class="container_responsible">
+              <div class="content2">
+                <div class="direccion">
+                  <h1 class="heading"> Dades</h1>
+                  <div class="info">
+                    <p class="sub-heading">Nom</p>
+                    <p class="duration">Nati</p>
+                    <p></p>
+                  </div>
+                  <div class="info">
+                    <p class="sub-heading">Cognoms</p>
+                    <p class="duration">Novo</p>
                     <p></p>
                   </div>
                   <div class="info">
                     <p class="sub-heading">Carrer</p>
-                    <p id="fpaddress" class="duration">Alcudia nº 23 3º 1ª</p>
+                    <p class="duration">Alcudia nº 23 3º 1ª</p>
+                    <p></p>
+                  </div>
+                  <div class="info">
+                    <p class="sub-heading">Codí Postal</p>
+                    <p class="duration">08029</p>
                     <p></p>
                   </div>
                 </div>
               </div>
 
-              <div class="content">
+              <div class="content2a">
                 <div class="contacto">
                   <h1 class="heading">Contacte</h1>
                   <div class="info">
-                    <p class="sub-heading">Telèfon fixe</p>
-                    <p id="fpphone" class="duration">937764012</p>
+                    <p class="sub-heading">Telèfon</p>
+                    <p class="duration">937764012</p>
                     <p></p>
                   </div>
                   <div class="info">
-                    <p class="sub-heading">Telèfon móvil</p>
-                    <p id="fpmobile_phone" class="duration">672750032</p>
+                    <p class="sub-heading">Horari</p>
+                    <p class="duration">8h - 14h</p>
                     <p></p>
                   </div>
                   <div class="info">
-                    <p class="sub-heading">Telèfon treball</p>
-                    <p id="fpwork_phone" class="duration">903412653</p>
+                    <p class="sub-heading">Data</p>
+                    <p class="duration">01-04-2017</p>
+                    <p></p>
+                  </div>
+                  <div class="info">
+                    <p class="sub-heading">Prioritat</p>
+                    <p class="duration">Alta</p>
+                    <p></p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="content3">
+                <div class="contacto">
+                  <h1 class="heading">Raó</h1>
+                  <div class="info">
+                    <p class="duration">Familiar de primer grau</p>
                     <p></p>
                   </div>
                 </div>
@@ -352,198 +493,62 @@ include '..\backend\include.php';
             </div>
           </div>
         </div>
-      </div>
-      <!-- CAPS -->
-      <div class="c-tab">
-        <div class="c-tab__content">
-          <div class="container_caps">
-            <div class="content2">
-              <div class="direccion">
-                <h1 class="heading"> CAP</h1>
-                <div class="info">
-                  <p class="sub-heading">Nom</p>
-                  <p class="duration">Nom_CAP</p>
-                  <p></p>
-                </div>
-                <div class="info">
-                  <p class="sub-heading">Comarca</p>
-                  <p class="duration">Barcelonès</p>
-                  <p></p>
-                </div>
-                <div class="info">
-                  <p class="sub-heading">Adreça</p>
-                  <p class="duration">Carrer Alcudia nº 23 3º 1ª</p>
-                  <p></p>
-                </div>
-                <div class="info">
-                  <p class="sub-heading">Telèfon</p>
-                  <p class="duration">93 458 669 72</p>
-                  <p></p>
-                </div>
-                <div class="info">
-                  <p class="sub-heading">Horari</p>
-                  <p class="duration">9h - 21h</p>
-                  <p></p>
-                </div>
-              </div>
-            </div>
-
-            <div class="content2a">
-              <div class="contacto">
-                <h1 class="heading">Doctor/a</h1>
-                <div class="info">
-                  <p class="sub-heading">Nom</p>
-                  <p class="duration">Pedro</p>
-                  <p></p>
-                </div>
-                <div class="info">
-                  <p class="sub-heading">Cognoms</p>
-                  <p class="duration">Hernandez Torres</p>
-                  <p></p>
-                </div>
-                <div class="info">
-                  <p class="sub-heading">Sexe</p>
-                  <p class="duration">Home</p>
-                  <p></p>
-                </div>
-                <div class="info">
-                  <p class="sub-heading">Especialització</p>
-                  <p class="duration">Capçalera</p>
-                  <p></p>
-                </div>
-              </div>
-            </div>
-
-            <div class="content3">
-              <div class="contacto">
-                <h1 class="heading">Ubicació</h1>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- RESPONSABLE -->
-      <div class="c-tab">
-        <div class="c-tab__content">
-          <div class="container_responsible">
-            <div class="content2">
-              <div class="direccion">
-                <h1 class="heading"> Dades</h1>
-                <div class="info">
-                  <p class="sub-heading">Nom</p>
-                  <p class="duration">Nati</p>
-                  <p></p>
-                </div>
-                <div class="info">
-                  <p class="sub-heading">Cognoms</p>
-                  <p class="duration">Novo</p>
-                  <p></p>
-                </div>
-                <div class="info">
-                  <p class="sub-heading">Carrer</p>
-                  <p class="duration">Alcudia nº 23 3º 1ª</p>
-                  <p></p>
-                </div>
-                <div class="info">
-                  <p class="sub-heading">Codí Postal</p>
-                  <p class="duration">08029</p>
-                  <p></p>
-                </div>
-              </div>
-            </div>
-
-            <div class="content2a">
-              <div class="contacto">
-                <h1 class="heading">Contacte</h1>
-                <div class="info">
-                  <p class="sub-heading">Telèfon</p>
-                  <p class="duration">937764012</p>
-                  <p></p>
-                </div>
-                <div class="info">
-                  <p class="sub-heading">Horari</p>
-                  <p class="duration">8h - 14h</p>
-                  <p></p>
-                </div>
-                <div class="info">
-                  <p class="sub-heading">Data</p>
-                  <p class="duration">01-04-2017</p>
-                  <p></p>
-                </div>
-                <div class="info">
-                  <p class="sub-heading">Prioritat</p>
-                  <p class="duration">Alta</p>
-                  <p></p>
-                </div>
-              </div>
-            </div>
-
-            <div class="content3">
-              <div class="contacto">
-                <h1 class="heading">Raó</h1>
-                <div class="info">
-                  <p class="duration">Familiar de primer grau</p>
-                  <p></p>
+        <!-- STA -->
+        <div class="c-tab">
+          <div class="c-tab__content">
+            <div class="container_sta">
+              <div class="content3">
+                <div class="contacto">
+                  <h1 class="heading">Serveis Contractats</h1>
+                  <div class="info">
+                    <p class="sub-heading">Telèfon Fixe</p>
+                    <p class="duration">Alta</p>
+                    <p></p>
+                  </div>
+                  <div class="info">
+                    <p class="sub-heading">Terminal de Control Remot</p>
+                    <p class="duration">Baixa</p>
+                    <p></p>
+                  </div>
+                  <div class="info">
+                    <p class="sub-heading">Custòdia de Claus</p>
+                    <p class="duration">Baixa Temporal</p>
+                    <p></p>
+                  </div>
+                  <div class="info">
+                    <p class="sub-heading">Terminal Mòbil</p>
+                    <p class="duration">Alta</p>
+                    <p></p>
+                  </div>
+                  <div class="info">
+                    <p class="sub-heading">Teleassistència Mòbil</p>
+                    <p class="duration">Alta</p>
+                    <p></p>
+                  </div>
+                  <div class="info">
+                    <p class="sub-heading">GPS</p>
+                    <p class="duration">Alta</p>
+                    <p></p>
+                  </div>
+                  <div class="info">
+                    <p class="sub-heading">UMT</p>
+                    <p class="duration">Baixa</p>
+                    <p></p>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-      <!-- STA -->
-      <div class="c-tab">
-        <div class="c-tab__content">
-          <div class="container_sta">
-            <div class="content3">
-              <div class="contacto">
-                <h1 class="heading">Serveis Contractats</h1>
-                <div class="info">
-                  <p class="sub-heading">Telèfon Fixe</p>
-                  <p class="duration">Alta</p>
-                  <p></p>
-                </div>
-                <div class="info">
-                  <p class="sub-heading">Terminal de Control Remot</p>
-                  <p class="duration">Baixa</p>
-                  <p></p>
-                </div>
-                <div class="info">
-                  <p class="sub-heading">Custòdia de Claus</p>
-                  <p class="duration">Baixa Temporal</p>
-                  <p></p>
-                </div>
-                <div class="info">
-                  <p class="sub-heading">Terminal Mòbil</p>
-                  <p class="duration">Alta</p>
-                  <p></p>
-                </div>
-                <div class="info">
-                  <p class="sub-heading">Teleassistència Mòbil</p>
-                  <p class="duration">Alta</p>
-                  <p></p>
-                </div>
-                <div class="info">
-                  <p class="sub-heading">GPS</p>
-                  <p class="duration">Alta</p>
-                  <p></p>
-                </div>
-                <div class="info">
-                  <p class="sub-heading">UMT</p>
-                  <p class="duration">Baixa</p>
-                  <p></p>
-                </div>
-              </div>
-            </div>
+        <!-- LLAMADAS -->
+        <div class="c-tab">
+          <div class="c-tab__content">
           </div>
         </div>
       </div>
-      <!-- LLAMADAS -->
-      <div class="c-tab">
-        <div class="c-tab__content">
-        </div>
-      </div>
-    </div>
-  </section>
+    </section>
+  </div>
+
 
   <!--Modal Delete product-->
   <div class="modal fade" id="deletecardmodal" tabindex="-1" role="dialog">

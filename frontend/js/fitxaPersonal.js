@@ -4,6 +4,7 @@ $(document).ready(function () {
   $( "#showFormPF" ).click(function() {
     console.log("entra goto");
     goToAddFp();
+
   });
   $( "#returnPF" ).click(function() {
     goToFpList();
@@ -187,7 +188,7 @@ function showMunisipalitys(){
 
 function goToFpList(){
   showTable();
-  $("#page").hide();
+  $("#pageFp").hide();
   $("#tableFitxaPersonal").show();
   $("#addFp").hide();
 }
@@ -196,9 +197,15 @@ function goToAddFp(){
   showComarcas();
   showProvinces();
   showMunisipalitys();
-  $("#page").hide();
+  $("#pageFp").hide();
   $("#tableFitxaPersonal").hide();
   $("#addFp").show();
+}
+
+function goToFp(){
+  $("#pageFp").show();
+  $("#tableFitxaPersonal").hide();
+  $("#addFp").hide();
 }
 
 
@@ -251,6 +258,7 @@ function mostrarCardListener(){
           $("#fpphone").html(phone);
           $("#fpmobile_phone").html(mobile_phone);
           $("#fpwork_phone").html(mobile_phone);
+          goToFp();
 
 
         }
