@@ -1,87 +1,17 @@
 $(document).ready(function () {
   $('.dataTables_length').addClass('bs-select');
-  $('#addPF').hide();
-  $("#page").hide();
-  $("#returnPF").hide();
-  $(".container_add").hide();
-  showTable();
+  goToFpList();
   $( "#showFormPF" ).click(function() {
-    $( ".container_ficha" ).hide();
-    $("#showFormPF").hide();
-    $("#dtFitxaPersonal_wrapper").hide();
-    $('#addP').show();
-    $("#returnPF").show();
-    $(".container_add").show();
+    console.log("entra goto");
+    goToAddFp();
   });
   $( "#returnPF" ).click(function() {
-    $( ".container_ficha" ).show();
-    $("#showFormPF").show();
-    $("#dtFitxaPersonal_wrapper").show();
-    $('#addPF').hide();
-    $(".container_add").hide();
-    $("#returnPF").hide();
+    goToFpList();
   });
-});
-$( function() {
+  //jquery functions
   $( ".opciones" ).checkboxradio();
-  $( "#datepicker" ).datepicker();
+  $( ".datepicker" ).datepicker();
 });
-$( function() {
-  var provincias = [
-    "Barcelona",
-    "Tarragona",
-    "Lleida",
-    "Girona"
-  ];
-  $( "#provincias" ).autocomplete({
-    source: provincias
-  });
-} );
-$( function() {
-  var comarcas = [
-    "Alt Penedès",
-    "Anoia",
-    "Bages",
-    "Baix Llobregat",
-    "Barcelonès",
-    "Berguedà",
-    "Garraf Maresme",
-    "Moianès",
-    "Osona",
-    "Vallès Occidental",
-    "Vallès Oriental"
-  ];
-  $( "#comarcas" ).autocomplete({
-    source: comarcas
-  });
-} );
-$( function() {
-  var municipios = [
-    "Barcelona",
-    "L'Hospitalet de Llobregat",
-    "Badalona",
-    "Terrassa",
-    "Sabadell",
-    "Mataró",
-    "Santa Coloma de Gramanet",
-    "Sant Cugat del Vallès",
-    "Cornellà de Llobregat",
-    "Sant Boi de Llobregat",
-    "Rubí",
-    "Manresa",
-    "Vilanova i la Geltru",
-    "Vildecans",
-    "Castelldefels",
-    "El Prat de Llobregat",
-    "Granollers",
-    "Cerdanyola del Vallès",
-    "Esplugues de Llobregat",
-    "Sant Feliu de Llobregat"
-  ];
-  $( "#municipios" ).autocomplete({
-    source: municipios
-  });
-} );
 
 function Tabs(options){
 
@@ -184,7 +114,91 @@ function showTable(){
       console.log('No hi han clients');
     }
   });
+}
 
+function showProvinces(){
+  $.ajax({
+    url: "../backend/selects/getProvinces.php",
+    type: "GET",
+    cache: false,
+    success: function(response) {
+      let myJSON = JSON.parse(response);
+      let provincias = [];
+      for (var i = 0; i < myJSON.length; i++) {
+        let province = myJSON[i].prov_name;
+        provincias.push(province);
+      }
+      $( "#provincias" ).autocomplete({
+        source: provincias
+      });
+    },
+    error: function() {
+      console.log('No hi han provincies');
+    }
+  });
+}
+
+function showComarcas(){
+  $.ajax({
+    url: "../backend/selects/getComarcas.php",
+    type: "GET",
+    cache: false,
+    success: function(response) {
+      let myJSON = JSON.parse(response);
+      let comarcas = [];
+      for (var i = 0; i < myJSON.length; i++) {
+        let comarca = myJSON[i].comar_name;
+        comarcas.push(comarca);
+      }
+      $( "#comarcas" ).autocomplete({
+        source: comarcas
+      });
+    },
+    error: function() {
+      console.log('No hi han comarques');
+    }
+  });
+}
+
+function showMunisipalitys(){
+  $.ajax({
+    url: "../backend/selects/getMunisipality.php",
+    type: "GET",
+    cache: false,
+    success: function(response) {
+      let myJSON = JSON.parse(response);
+      let munisipalitys = [];
+      for (var i = 0; i < myJSON.length; i++) {
+        let munisipality = myJSON[i].muni_name;
+        munisipalitys.push(munisipality);
+      }
+      $( "#municipios" ).autocomplete({
+        source: munisipalitys
+      });
+    },
+    error: function() {
+      console.log('No hi han municipis');
+    }
+  });
+}
+
+
+
+
+function goToFpList(){
+  showTable();
+  $("#page").hide();
+  $("#tableFitxaPersonal").show();
+  $("#addFp").hide();
+}
+
+function goToAddFp(){
+  showComarcas();
+  showProvinces();
+  showMunisipalitys();
+  $("#page").hide();
+  $("#tableFitxaPersonal").hide();
+  $("#addFp").show();
 }
 
 
@@ -237,12 +251,7 @@ function mostrarCardListener(){
           $("#fpphone").html(phone);
           $("#fpmobile_phone").html(mobile_phone);
           $("#fpwork_phone").html(mobile_phone);
-          $('#addPF').hide();
-          $("#page").show();
-          $("#dtFitxaPersonal_wrapper").hide();
-          $("#returnPF").hide();
-          $(".container_add").hide();
-          $("#showFormPF").hide();
+
 
         }
 

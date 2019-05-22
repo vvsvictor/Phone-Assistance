@@ -73,8 +73,7 @@ include '..\backend\include.php';
     </div>
   </nav>
   <div class="container">
-    <button id="showFormPF" type="button" class="btn btn-primary"><i class="fa fa-plus"></i></button>
-    <div class="container_add">
+    <div id="addFp" class="container_add">
       <button id="returnPF" type="button" class="btn btn-primary"><i class="fa fa-reply"></i></button>
       <br>
       <br>
@@ -151,7 +150,7 @@ include '..\backend\include.php';
       </div>
       <div class="row">
         <div class="col-lg-6">
-          <input type="text" id="datepicker"/>
+          <input type="text" class="datepicker"/>
         </div>
         <div class="col lg-6">
           <input type="text" class="form-control" name="adresa"/>
@@ -235,29 +234,33 @@ include '..\backend\include.php';
         </div>
       </div>
     </div>
-    <table id="dtFitxaPersonal" class="table table-striped table-bordered" cellspacing="0" width="100%">
-      <thead>
-        <tr>
-          <th class="th-sm">Id</th>
-          <th class="th-sm">Nom</th>
-          <th class="th-sm">Cognom</th>
-          <th class="th-sm">DNI</th>
-          <th class="th-sm">Provincia</th>
-          <th class="th-sm"></th>
-        </tr>
-      </thead>
-      <tbody id="fitxaPersonalTable"></tbody>
-      <tfoot>
-        <tr>
-          <th>Id</th>
-          <th>Nom</th>
-          <th>Cognom</th>
-          <th>DNI</th>
-          <th>Provincia</th>
-          <th></th>
-        </tr>
-      </tfoot>
-    </table>
+    <div id="tableFitxaPersonal">
+      <button id="showFormPF" type="button" class="btn btn-primary"><i class="fas fa-plus-circle"></i></button>
+      <table id="dtFitxaPersonal" class="table table-striped table-bordered" cellspacing="0" width="100%">
+        <thead>
+          <tr>
+            <th class="th-sm">Id</th>
+            <th class="th-sm">Nom</th>
+            <th class="th-sm">Cognom</th>
+            <th class="th-sm">DNI</th>
+            <th class="th-sm">Provincia</th>
+            <th class="th-sm"></th>
+          </tr>
+        </thead>
+        <tbody id="fitxaPersonalTable"></tbody>
+        <tfoot>
+          <tr>
+            <th>Id</th>
+            <th>Nom</th>
+            <th>Cognom</th>
+            <th>DNI</th>
+            <th>Provincia</th>
+            <th></th>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+
   </div>
   <br><br>
   <section id="page">
