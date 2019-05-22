@@ -1,5 +1,4 @@
 $(document).ready(function() {
-
   $('.dataTables_length').addClass('bs-select');
   showTable();
 });
@@ -29,7 +28,6 @@ function showTable() {
   });
 
 }
-
 
 function showCap(id, name, address, phone, schedule) {
   let html = "<tr><td>" + id + "</td><td>" + name + "</td><td>" + address + "</td><td>" + phone + "</td><td>" + schedule + "</td><td><button id='fitxaPersonal" + id + "' type='button' class='btn btn-info'>Fitxa Completa</button></td></tr>";
