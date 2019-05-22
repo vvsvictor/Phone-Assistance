@@ -261,6 +261,11 @@ INSERT into comarcas (comar_name) VALUES ("Urgell");
 INSERT into comarcas (comar_name) VALUES ("Vallès Occidental");
 INSERT into comarcas (comar_name) VALUES ("Vallès Oriental");
 
+/*Insert type municipality type by default*/
+INSERT into municipality (muni_name) VALUES ("Barcelona");
+INSERT into municipality (muni_name) VALUES ("Badalona");
+INSERT into municipality (muni_name) VALUES ("Sant Adrià del Besós");
+
 /*Insert type ownership type by default*/
 INSERT into OWNERSHIPS (owner_type) VALUES ("Propietari");
 INSERT into OWNERSHIPS (owner_type) VALUES ("Arrendatari");
