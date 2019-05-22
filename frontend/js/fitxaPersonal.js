@@ -23,8 +23,66 @@ $(document).ready(function () {
   });
 });
 $( function() {
-  $( "input" ).checkboxradio();
+  $( ".opciones" ).checkboxradio();
+  $( "#datepicker" ).datepicker();
 });
+$( function() {
+  var provincias = [
+    "Barcelona",
+    "Tarragona",
+    "Lleida",
+    "Girona"
+  ];
+  $( "#provincias" ).autocomplete({
+    source: provincias
+  });
+} );
+$( function() {
+  var comarcas = [
+    "Alt Penedès",
+    "Anoia",
+    "Bages",
+    "Baix Llobregat",
+    "Barcelonès",
+    "Berguedà",
+    "Garraf Maresme",
+    "Moianès",
+    "Osona",
+    "Vallès Occidental",
+    "Vallès Oriental"
+  ];
+  $( "#comarcas" ).autocomplete({
+    source: comarcas
+  });
+} );
+$( function() {
+  var municipios = [
+    "Barcelona",
+    "L'Hospitalet de Llobregat",
+    "Badalona",
+    "Terrassa",
+    "Sabadell",
+    "Mataró",
+    "Santa Coloma de Gramanet",
+    "Sant Cugat del Vallès",
+    "Cornellà de Llobregat",
+    "Sant Boi de Llobregat",
+    "Rubí",
+    "Manresa",
+    "Vilanova i la Geltru",
+    "Vildecans",
+    "Castelldefels",
+    "El Prat de Llobregat",
+    "Granollers",
+    "Cerdanyola del Vallès",
+    "Esplugues de Llobregat",
+    "Sant Feliu de Llobregat"
+  ];
+  $( "#municipios" ).autocomplete({
+    source: municipios
+  });
+} );
+
 function Tabs(options){
 
 	var tabs = document.querySelector(options.el);
