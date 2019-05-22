@@ -79,7 +79,7 @@ CREATE TABLE PERSONAL_CARD(
   FOREIGN key (comarca) REFERENCES COMARCAS(id),
   FOREIGN key (municipality) REFERENCES MUNISIPALITYS(id),
   FOREIGN key (ownership) REFERENCES OWNERSHIPS(id)
-);
+  );
 
 CREATE TABLE CAP(
   id int not null auto_increment,
@@ -112,8 +112,10 @@ CREATE TABLE DOCTORS(
 
 CREATE TABLE HEALTH_INSURANCE(
   id int not null auto_increment,
+  user_dninif varchar(255) not null, /*Table PERSONAL_CARD*/
   insurance_name varchar(255),
-  primary key (id)
+  primary key (id),
+  FOREIGN key (user_dninif) REFERENCES PERSONAL_CARD(dninie)
 );
 
 CREATE TABLE STA(
