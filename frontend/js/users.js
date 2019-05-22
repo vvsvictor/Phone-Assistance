@@ -144,7 +144,7 @@ function showTable() {
         showUser(id, username, usertype);
       }
       $('#dtUsuaris').DataTable();
-      modUserListener()
+      modUserListener();
       eliminarUsuariListener();
 
     },
