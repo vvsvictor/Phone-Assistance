@@ -61,7 +61,7 @@ CREATE TABLE PERSONAL_CARD(
   gender varchar(255),
   language int, /*Table LANGUAGES*/
   sign_language int, /*Table SIGN_LANGUAGES*/
-  birthdate date,
+  birthdate varchar(255),
   dninie varchar(50) unique,
   province int, /*Table PROVINCES*/
   comarca int, /*Table COMARCAS*/
@@ -120,9 +120,9 @@ CREATE TABLE HEALTH_INSURANCE(
 
 CREATE TABLE STA(
   id int not null auto_increment,
-  user_dninif varchar(255) not null, /*Table PERSONAL_CARD*/
+  user_dninif varchar(255) not null unique, /*Table PERSONAL_CARD*/
   actual_situation varchar(50),
-  hiring_date date,
+  hiring_date varchar(255),
   tf_service bit,
   tcr_service bit,
   cc_service bit,
@@ -144,7 +144,7 @@ CREATE TABLE RESPONSIBLE(
   post_code varchar(8),
   contact_phone varchar(20),
   preferable_hour varchar(255),
-  date_responsible date,
+  date_responsible varchar(255),
   reason text,
   primary key (id),
   FOREIGN key (user_dninif) REFERENCES PERSONAL_CARD(dninie)
@@ -179,7 +179,7 @@ CREATE TABLE CALL_STATE (
 CREATE TABLE CALL_HISTORY(
   id int not null auto_increment,
   user_dninif varchar(255) not null, /*Table PERSONAL_CARD*/
-  call_date date not null,
+  call_date varchar(255) not null,
   call_type int, /*Table CALL_TYPE*/
   outcall_type int, /*Table OUTCALL_TYPE*/
   incall_type int, /*Table INCALL_TYPE*/
@@ -269,8 +269,7 @@ INSERT into OWNERSHIPS (owner_type) VALUES ("Arrendatari");
 INSERT into PERSONAL_CARD (name,surname,gender,language,birthdate,dninie,province,comarca,address,type_house,ownership,phone,mobile_phone) VALUES ("Jordi","Martinez Garcia","Home",2,"17-05-1992","68951118Q",1,14,"carrer fals 123","casa",2,"9345625538","622856794");
 
 /*Insert STA for the client by default*/
-INSERT into STA (user_dninif, actual_situation, hiring_date, tf_service, tcr_service, cc_service, tm_service, tam_service, gps_service, umt_service) VALUES ("68951118Q","Pare","12-09-2018",0,1,1,0,1,1,1);
-INSERT into STA (user_dninif, actual_situation, hiring_date, tf_service, tcr_service, cc_service, tm_service, tam_service, gps_service, umt_service) VALUES ("68951118Q","Mare","22-05-2018",0,0,1,0,1,0,1);
-INSERT into STA (user_dninif, actual_situation, hiring_date, tf_service, tcr_service, cc_service, tm_service, tam_service, gps_service, umt_service) VALUES ("68951118Q","Germana","15-11-2018",1,1,1,0,1,1,1);
-INSERT into STA (user_dninif, actual_situation, hiring_date, tf_service, tcr_service, cc_service, tm_service, tam_service, gps_service, umt_service) VALUES ("68951118Q","Parella","02-04-2019",0,0,1,0,1,1,0);
-INSERT into STA (user_dninif, actual_situation, hiring_date, tf_service, tcr_service, cc_service, tm_service, tam_service, gps_service, umt_service) VALUES ("68951118Q","Avi","30-07-2018",1,1,0,0,1,1,1);
+INSERT into STA (user_dninif, actual_situation, hiring_date, tf_service, tcr_service, cc_service, tm_service, tam_service, gps_service, umt_service) VALUES ("68951118Q","ALTA","12-09-2018",0,1,1,0,1,1,1);
+
+/*Insert RESPONSIBLE for the client by default*/
+INSERT into RESPONSIBLE (user_dninif, priority, name, surname, address, post_code, contact_phone, preferable_hour, date_responsible, reason) VALUES ("68951118Q", "ALTA", "TEST", "TESTED", "calle falsa 559", "15667", "987654125", "17:10h - 21h", "22-05-2019", "porque si");
