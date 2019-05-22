@@ -3,12 +3,33 @@ $(document).ready(function () {
   $('.dataTables_length').addClass('bs-select');
   showTable();
   addCapListener();
+  $( "#showFormCAP" ).click(function() {
+    goToAddCap();
+  });
+  $( "#showFormDoctor" ).click(function() {
+    goToAddDoctor();
+  });
+  $( "#returnCAP" ).click(function() {
+    goToCapList();
+  });
+  $( "#returnDoctor" ).click(function() {
+    goToCapList();
+  });
   });
 
   function gotoModCap() {
     $('#modCapDiv').show();
     $('#addCap').hide();
     $("#capList").hide();
+  }
+
+  function goToAddCap(){
+    $("#tableCaps").hide();
+    $("#addCap").show();
+  }
+  function goToAddDoctor(){
+    $("#tableCaps").hide();
+    $("#addDoctor").show();
   }
 
 function addCapListener() {
@@ -57,6 +78,9 @@ function goToCapList(){
   $('#modCapDiv').hide();
   $('#addCap').hide();
   $("#capList").show();
+  $("#tableCaps").show();
+  $("#addCap").hide();
+  $("#addDoctor").hide();
 }
 
 function modCapListener() {

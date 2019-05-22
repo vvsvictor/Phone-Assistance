@@ -72,10 +72,8 @@
       </div>
     </nav>
     <div class="container">
-      <button id="showFormCAP" type="button" class="btn btn-primary"><i class="fa fa-plus"></i></button>
-      <button id="showFormDoctor" type="button" class="btn btn-primary"><i class="fa fa-plus"></i></button>
       <!-- Formulario Añadir CAPS -->
-      <div class="container_add">
+      <div id="addCap" class="container_add">
         <button id="returnCAP" type="button" class="btn btn-primary"><i class="fa fa-reply"></i></button>
         <br>
         <br>
@@ -128,7 +126,7 @@
         </div>
       </div>
       <!--Formulario Añadir Doctores -->
-      <div class="container_add">
+      <div id="addDoctor" class="container_add">
         <button id="returnDoctor" type="button" class="btn btn-primary"><i class="fa fa-reply"></i></button>
         <br>
         <br>
@@ -180,33 +178,34 @@
           </div>
         </div>
       </div>
-      <table id="dtCap" class="table table-striped table-bordered" cellspacing="0" width="100%">
-        <thead>
-          <tr>
-            <th class="th-sm">Id</th>
-            <th class="th-sm">Nom</th>
-            <th class="th-sm">Direcció</th>
-            <th class="th-sm">Telèfon</th>
-            <th class="th-sm">Horari</th>
-            <th class="th-sm"></th>
-          </tr>
-        </thead>
-        <tbody id="capTable"></tbody>
-        <tfoot>
-          <tr>
-            <th>Id</th>
-            <th>Nom</th>
-            <th>Direcció</th>
-            <th>Telèfon</th>
-            <th>Horari</th>
-            <th></th>
-          </tr>
-        </tfoot>
-      </table>
+      <div id="tableCaps">
+        <button id="showFormCAP" type="button" class="btn btn-primary"><i class="fa fa-plus"></i></button>
+        <button id="showFormDoctor" type="button" class="btn btn-primary"><i class="fa fa-plus"></i></button>
+        <table id="dtCap" class="table table-striped table-bordered" cellspacing="0" width="100%">
+          <thead>
+            <tr>
+              <th class="th-sm">Id</th>
+              <th class="th-sm">Nom</th>
+              <th class="th-sm">Direcció</th>
+              <th class="th-sm">Telèfon</th>
+              <th class="th-sm">Horari</th>
+              <th class="th-sm"></th>
+            </tr>
+          </thead>
+          <tbody id="capTable"></tbody>
+          <tfoot>
+            <tr>
+              <th>Id</th>
+              <th>Nom</th>
+              <th>Direcció</th>
+              <th>Telèfon</th>
+              <th>Horari</th>
+              <th></th>
+            </tr>
+          </tfoot>
+        </table>
     </div>
-
-<<<<<<< HEAD
-=======
+  </div>
     <!-- Div afegir  cap -->
     <div class="container" id="addCap">
       <button id="showListBtn" type="button" class="btn btn-primary">Tornar a la llista</button>
@@ -236,7 +235,7 @@
     </div>
 
     <!-- Div modificar usuari -->
-    <div class="container" id="modCapDiv">
+    <!-- <div class="container" id="modCapDiv">
       <button id="showListBtnMod" type="button" class="btn btn-primary">Tornar a la llista</button>
       <form id="formModCap">
         <div class="form-group">
@@ -261,7 +260,7 @@
           </div>
         </div>
       </form>
-    </div>
+    </div> -->
 
     <!--Modal Delete cap-->
     <div class="modal fade" id="deletecapmodal" tabindex="-1" role="dialog">
@@ -286,7 +285,6 @@
 
 
 
->>>>>>> fe02fcc30620d04244520378e97158fccacfc471
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
