@@ -1,7 +1,43 @@
 $(document).ready(function () {
-
+  $(".datepicker").kendoDatePicker();
   $('.dataTables_length').addClass('bs-select');
+  goToSTAList();
   showTable();
+  $("#showFormSTA").click(function() {
+    goToAddSTA();
+  $("#mail-switch").kendoSwitch({
+            messages: {
+                checked: "SI",
+                unchecked: "NO"
+            }
+        });
+  });
+  $("#showFormResponsible").click(function() {
+    goToAddResponsible();
+  });
+  $("#returnSTA").click(function() {
+    goToSTAList();
+  });
+  $("#returnResponsible").click(function() {
+    goToSTAList();
+  });
+
+  function goToSTAList() {
+    $('#addSTA').hide();
+    $("#tableSTA").show();
+    $("#addResponsible").hide();
+  }
+
+  function goToAddSTA() {
+    $("#tableSTA").hide();
+    $("#addSTA").show();
+  }
+
+  function goToAddResponsible() {
+    $("#tableSTA").hide();
+    $("#addResponsible").show();
+  }
+
   //$( "#showFormBtn" ).click(function() {
     //$("#username").val('')
     //$("#password").val('');
