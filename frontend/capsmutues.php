@@ -34,12 +34,12 @@
             <a class="nav-link" href="index.php" style="color: #40514e;">Inici </a>
           </li>
           <?php
-          if ($_SESSION['user']['usertype'] == 0) {
-            echo '<li class="nav-item">
-              <a class="nav-link" href="users.php" style="color: #40514e;">Usuaris</a>
-            </li>';
-          }
-           ?>
+            if ($_SESSION['user']['usertype'] == 0) {
+              echo '<li class="nav-item">
+                <a class="nav-link" href="users.php" style="color: #40514e;">Usuaris</a>
+              </li>';
+            }
+          ?>
 
           <li class="nav-item">
             <a class="nav-link" href="fitxaPersonal.php" style="color: #40514e;">Fitxa personal</a>
