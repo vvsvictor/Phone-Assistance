@@ -6,6 +6,7 @@
   $sSurname = $_GET["sSurname"];
   $sGender = $_GET["sGender"];
   $iLanguage = $_GET["iLanguage"];
+  //Falta LLenguatge de signes !!
   $sBirthdate = $_GET["sBirthdate"];
   $sDninie = $_GET["sDninie"];
   $iProvince = $_GET["iProvince"];
