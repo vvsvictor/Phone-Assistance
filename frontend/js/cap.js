@@ -199,14 +199,16 @@ function eliminarCapListener() {
   $(".deletecap").click(function(event) {
     idCap = this.id;
     idCap = idCap.replace("deleteCapId", "");
+    console.log("The id cap is: " + idCap);
     $("#deleteCapDef").click(function(event) {
-      deleteUser(idCap);
+      deleteCap(idCap);
     });
   });
 }
 
 
-function deleteUser(idCap) {
+function deleteCap(idCap) {
+  console.log("The id cap2 is: " + idCap);
   $.ajax({
     url: "../backend/delete/deleteCap.php",
     data: {
@@ -216,6 +218,7 @@ function deleteUser(idCap) {
     cache: false,
     success: function(response) {
       var myJSON = JSON.parse(response);
+      console.log("Success JSON" + myJSON.codigoError);
       if (parseInt(myJSON.codigoError) != 0) {
         showTable();
       }
