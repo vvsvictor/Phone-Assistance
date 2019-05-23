@@ -17,8 +17,11 @@ include '..\backend\include.php';
   <!-- <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css"> -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
   <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <!-- <link rel="stylesheet" href="http://kendo.cdn.telerik.com/2019.2.514/styles/kendo.common.min.css" /> -->
+  <!-- <link rel="stylesheet" href="http://kendo.cdn.telerik.com/2019.2.514/styles/kendo.blueopal.min.css" /> -->
   <link rel="stylesheet" href="index.css">
   <link rel="stylesheet" href="css/initPage.css">
+  <link rel="stylesheet" href="css/kendoTheme.css">
   <link rel="stylesheet" href="css/fichaPersonal.css">
   <link rel="stylesheet" href="css/dataTable.css">
 </head>
@@ -578,6 +581,7 @@ include '..\backend\include.php';
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.0/js/mdb.min.js"></script>
   <script type="text/javascript" src="js/jquery.dataTables.min.js"></script>
   <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
+  <script src="http://kendo.cdn.telerik.com/2019.2.514/js/kendo.all.min.js"></script>
   <script src="js/fitxaPersonal.js" type="text/javascript"></script>
 </body>
 </html>

@@ -11,7 +11,7 @@ $(document).ready(function () {
   });
   //jquery functions
   $( ".opciones" ).checkboxradio();
-  $( ".datepicker" ).datepicker();
+  $(".datepicker").kendoDatePicker();
 });
 
 function Tabs(options){
