@@ -90,10 +90,10 @@ include '..\backend\include.php';
       </div>
       <div class="row">
         <div class="col-lg-6">
-          <input type="text" class="form-control" name="nom"/>
+          <input id="addNom" type="text" class="form-control" name="nom"/>
         </div>
         <div class="col lg-6">
-          <input type="text" class="form-control" name="cognom"/>
+          <input id="addCognom" type="text" class="form-control" name="cognom"/>
         </div>
       </div>
       <br>
@@ -107,10 +107,10 @@ include '..\backend\include.php';
       </div>
       <div class="row">
         <div class="col-lg-6">
-          <input type="text" class="form-control" name="dni"/>
+          <input id="addDni" type="text" class="form-control" name="dni"/>
         </div>
         <div class="col lg-6">
-          <input type="text" class="form-control" name="genere"/>
+          <input id="addGenere" type="text" class="form-control" name="genere"/>
         </div>
       </div>
       <br>
@@ -125,21 +125,21 @@ include '..\backend\include.php';
       <div class="row">
         <div class="col-lg-6">
           <label for="catala_i">Català</label>
-          <input type="radio" class="opciones" name="idioma" id="catala_i">
+          <input value="1" type="radio" class="opciones" name="idioma" id="catala_i">
           <label for="castella_i">Castellà</label>
-          <input type="radio" class="opciones" name="idioma" id="castella_i">
+          <input value="2" type="radio" class="opciones" name="idioma" id="castella_i">
           <label for="angles_i">Anglès</label>
-          <input type="radio" class="opciones" name="idioma" id="angles_i">
+          <input value="3" type="radio" class="opciones" name="idioma" id="angles_i">
         </div>
         <div class="col-lg-6">
           <label for="catala_is">Català</label>
-          <input type="radio" class="opciones" name="idioma_s" id="catala_is">
+          <input value="1" type="radio" class="opciones" name="idioma_s" id="catala_is">
           <label for="castella_is">Castellà</label>
-          <input type="radio" class="opciones" name="idioma_s" id="castella_is">
+          <input value="2" type="radio" class="opciones" name="idioma_s" id="castella_is">
           <label for="angles_is">Anglès</label>
-          <input type="radio" class="opciones" name="idioma_s" id="angles_is">
+          <input value="3" type="radio" class="opciones" name="idioma_s" id="angles_is">
           <label for="no_is">No</label>
-          <input type="radio" class="opciones" name="idioma_s" id="no_is">
+          <input value="0" type="radio" class="opciones" name="idioma_s" id="no_is">
         </div>
       </div>
       <br>
@@ -153,10 +153,10 @@ include '..\backend\include.php';
       </div>
       <div class="row">
         <div class="col-lg-6">
-          <input type="text" class="datepicker"/>
+          <input id="addDataNaixement" type="text" class="datepicker"/>
         </div>
         <div class="col lg-6">
-          <input type="text" class="form-control" name="adresa"/>
+          <input id="addAdreca" type="text" class="form-control" name="adreça"/>
         </div>
       </div>
       <br>
@@ -170,13 +170,13 @@ include '..\backend\include.php';
       </div>
       <div class="row">
         <div class="col-lg-6">
-          <input type="text" class="form-control" name="adresa"/>
+          <input id="addTipus_habitatge" type="text" class="form-control" name="tipus_habitatge"/>
         </div>
         <div class="col lg-6">
           <label for="propietari">Propietari</label>
-          <input type="radio" class="opciones" name="titularitat" id="propietari">
+          <input value="1" type="radio" class="opciones" name="titularitat" id="propietari">
           <label for="arrendatari">Arrendatari</label>
-          <input type="radio" class="opciones" name="titularitat" id="arrendatari">
+          <input value="2" type="radio" class="opciones" name="titularitat" id="arrendatari">
         </div>
       </div>
       <br>
@@ -216,7 +216,7 @@ include '..\backend\include.php';
           </div>
         </div>
         <div class="col lg-6">
-          <input type="text" class="form-control" name="tel_fijo"/>
+          <input id="addTel_fijo" type="text" class="form-control" name="tel_fijo"/>
         </div>
       </div>
       <br>
@@ -230,10 +230,15 @@ include '..\backend\include.php';
       </div>
       <div class="row">
         <div class="col-lg-6">
-          <input type="text" class="form-control" name="movil"/>
+          <input id="addMovil" type="text" class="form-control" name="movil"/>
         </div>
         <div class="col lg-6">
-          <input type="text" class="form-control" name="tel_treball"/>
+          <input id="addTelTreball" type="text" class="form-control" name="tel_treball"/>
+        </div>
+      </div><br>
+      <div class="row">
+        <div class="col">
+          <button id="addPersonalCard" type="button" class="btn btn-primary">Insertar Fitxa Personal</button>
         </div>
       </div>
     </div>

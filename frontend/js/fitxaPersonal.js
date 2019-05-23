@@ -1,97 +1,97 @@
-$(document).ready(function () {
+$(document).ready(function() {
   $('.dataTables_length').addClass('bs-select');
   goToFpList();
-  $( "#showFormPF" ).click(function() {
+  $("#showFormPF").click(function() {
     console.log("entra goto");
     goToAddFp();
 
   });
-  $( "#returnPF" ).click(function() {
+  $("#returnPF").click(function() {
     goToFpList();
   });
   //jquery functions
-  $( ".opciones" ).checkboxradio();
+  $(".opciones").checkboxradio();
   $(".datepicker").kendoDatePicker();
 });
 
-function Tabs(options){
+function Tabs(options) {
 
-	var tabs = document.querySelector(options.el);
-	var initCalled = false;
-	var tabNavigation = tabs.querySelector(".c-tabs-nav");
-	var tabNavigationLinks = tabs.querySelectorAll(".c-tabs-nav__link");
-	var tabContentContainers = tabs.querySelectorAll(".c-tab");
+  var tabs = document.querySelector(options.el);
+  var initCalled = false;
+  var tabNavigation = tabs.querySelector(".c-tabs-nav");
+  var tabNavigationLinks = tabs.querySelectorAll(".c-tabs-nav__link");
+  var tabContentContainers = tabs.querySelectorAll(".c-tab");
 
-	var marker = options.marker ? createNavMarker() : false;
+  var marker = options.marker ? createNavMarker() : false;
 
-	var activeIndex = 0;
+  var activeIndex = 0;
 
-  function init(){
-		if (!initCalled){
-			initCalled = true;
+  function init() {
+    if (!initCalled) {
+      initCalled = true;
 
-			for (var i = 0; i < tabNavigationLinks.length; i++){
-    			var link = tabNavigationLinks[i];
-    			clickHandlerSetup(link, i)
-    		}
+      for (var i = 0; i < tabNavigationLinks.length; i++) {
+        var link = tabNavigationLinks[i];
+        clickHandlerSetup(link, i)
+      }
 
-    		if (marker){
-    			setMarker(tabNavigationLinks[activeIndex]);
-    		}
-		}
-	}
-
-	function clickHandlerSetup(link, index){
-    	link.addEventListener("click", function(e){
-    		e.preventDefault();
-    		goToTab(index);
-    	})
+      if (marker) {
+        setMarker(tabNavigationLinks[activeIndex]);
+      }
     }
+  }
 
-    function goToTab(index){
-    	if (index >= 0 && index != activeIndex && index <= tabNavigationLinks.length){
-    		tabNavigationLinks[activeIndex].classList.remove('is-active');
-    		tabNavigationLinks[index].classList.add('is-active');
+  function clickHandlerSetup(link, index) {
+    link.addEventListener("click", function(e) {
+      e.preventDefault();
+      goToTab(index);
+    })
+  }
 
-    		tabContentContainers[activeIndex].classList.remove('is-active');
-    		tabContentContainers[index].classList.add('is-active');
+  function goToTab(index) {
+    if (index >= 0 && index != activeIndex && index <= tabNavigationLinks.length) {
+      tabNavigationLinks[activeIndex].classList.remove('is-active');
+      tabNavigationLinks[index].classList.add('is-active');
 
-    		if (marker){
-    			setMarker(tabNavigationLinks[index]);
-    		}
+      tabContentContainers[activeIndex].classList.remove('is-active');
+      tabContentContainers[index].classList.add('is-active');
 
-    		activeIndex = index;
-    	}
+      if (marker) {
+        setMarker(tabNavigationLinks[index]);
+      }
+
+      activeIndex = index;
     }
+  }
 
-    function createNavMarker(){
-    	var marker = document.createElement("div");
-    	marker.classList.add("c-tab-nav-marker");
-    	tabNavigation.appendChild(marker);
-    	return marker;
-    }
+  function createNavMarker() {
+    var marker = document.createElement("div");
+    marker.classList.add("c-tab-nav-marker");
+    tabNavigation.appendChild(marker);
+    return marker;
+  }
 
-    function setMarker(element){
-        marker.style.left = element.offsetLeft +"px";
-        marker.style.width = element.offsetWidth + "px";
-    }
+  function setMarker(element) {
+    marker.style.left = element.offsetLeft + "px";
+    marker.style.width = element.offsetWidth + "px";
+  }
 
-    return {
-    	init: init,
-    	goToTab: goToTab
-    }
+  return {
+    init: init,
+    goToTab: goToTab
+  }
 }
 
 
 var m = new Tabs({
-	el: "#tabs",
-	marker: true
+  el: "#tabs",
+  marker: true
 });
 
 m.init();
 
 
-function showTable(){
+function showTable() {
   $.ajax({
     url: "../backend/selects/getFitxaPersonal.php",
     type: "GET",
@@ -117,7 +117,7 @@ function showTable(){
   });
 }
 
-function showProvinces(){
+function showProvinces() {
   $.ajax({
     url: "../backend/selects/getProvinces.php",
     type: "GET",
@@ -127,10 +127,13 @@ function showProvinces(){
       let provincias = [];
       for (var i = 0; i < myJSON.length; i++) {
         let province = myJSON[i].prov_name;
-        provincias.push(province);
+        let id = myJSON[i].id;
+        provincias.push("(Id:" + id + ") " + province);
       }
-      $( "#provincias" ).autocomplete({
-        source: provincias
+      $("#provincias").kendoAutoComplete({
+        filter: "contains",
+        dataSource: provincias,
+        placeholder: "Selecciona una provincia...",
       });
     },
     error: function() {
@@ -139,7 +142,7 @@ function showProvinces(){
   });
 }
 
-function showComarcas(){
+function showComarcas() {
   $.ajax({
     url: "../backend/selects/getComarcas.php",
     type: "GET",
@@ -149,10 +152,13 @@ function showComarcas(){
       let comarcas = [];
       for (var i = 0; i < myJSON.length; i++) {
         let comarca = myJSON[i].comar_name;
-        comarcas.push(comarca);
+        let id = myJSON[i].id;
+        comarcas.push("(Id:" + id + ") " + comarca);
       }
-      $( "#comarcas" ).autocomplete({
-        source: comarcas
+      $("#comarcas").kendoAutoComplete({
+        filter: "contains",
+        dataSource: comarcas,
+        placeholder: "Selecciona una comarca...",
       });
     },
     error: function() {
@@ -161,7 +167,7 @@ function showComarcas(){
   });
 }
 
-function showMunisipalitys(){
+function showMunisipalitys() {
   $.ajax({
     url: "../backend/selects/getMunisipalitys.php",
     type: "GET",
@@ -171,10 +177,13 @@ function showMunisipalitys(){
       let munisipalitys = [];
       for (var i = 0; i < myJSON.length; i++) {
         let munisipality = myJSON[i].muni_name;
-        munisipalitys.push(munisipality);
+        let id = myJSON[i].id;
+        munisipalitys.push("(Id:" + id + ") " + munisipality);
       }
-      $( "#municipios" ).autocomplete({
-        source: munisipalitys
+      $("#municipios").kendoAutoComplete({
+        filter: "contains",
+        dataSource: munisipalitys,
+        placeholder: "Selecciona un municipi...",
       });
     },
     error: function() {
@@ -185,36 +194,109 @@ function showMunisipalitys(){
 
 
 
+function addFitxaPersonal() {
+  $("#addPersonalCard").click(function() {
+    console.log("entra fitxadd");
+    let nom = $("#addNom").val();
+    let cognom = $("#addCognom").val();
+    let dni = $("#addDni").val();
+    let genere = $("#addGenere").val();
+    let idioma = document.querySelector('input[name="idioma"]:checked').value;
+    let idioma_s = document.querySelector('input[name="idioma_s"]:checked').value;
+    //if ==0 return null
+    let dataNaixemement = $("#addDataNaixement").val();
+    let adreca = $("#addAdreca").val();
+    let tipusHabitatge = $("#addTipus_habitatge").val();
+    let titularitatHab = document.querySelector('input[name="titularitat"]:checked').value;
+    let provincia = $("#provincias").val();
+    provincia = provincia.split('(Id:').pop().split(')')[0];
+    let comarca = $("#comarcas").val();
+    comarca = comarca.split('(Id:').pop().split(')')[0];
+    let municipi = $("#municipios").val();
+    municipi = municipi.split('(Id:').pop().split(')')[0];
+    let telFixe = $("#addTel_fijo").val();
+    let telMovil = $("#addMovil").val();
+    let telTreball = $("#addTelTreball").val();
+    if (nom != "" && cognom != "" && dni != "" && genere != "" && dataNaixemement != "" && adreca != "" && tipusHabitatge != "" && !isNaN(provincia) && !isNaN(comarca) && !isNaN(municipi) && !isNaN(telFixe) && !isNaN(telMovil) && !isNaN(telTreball)) {
+      $("#addUserBtn").click(function() {
+        $.ajax({
+          url: "../backend/inserts/insertPersonalCard.php",
+          data: {
+            sName: nom,
+            sSurname: cognom,
+            sGender: genere,
+            iLanguage: idioma,
+            sBirthdate: dataNaixemement,
+            sDninie: dni,
+            iProvince: provincia,
+            iComarca: comarca,
+            iMunicipality: municipi,
+            sAddress: adreca,
+            sTypeHouse: tipusHabitatge,
+            iOwnership: titularitatHab,
+            sPhone: telFixe,
+            sMobilePhone: telMovil,
+            sWorkPhone: telTreball
+          },
+          type: "GET",
+          cache: false,
+          success: function(response) {
+            let myJSON = JSON.parse(response);
+            showTable();
+            goToFpList();
 
-function goToFpList(){
+            if (parseInt(myJSON.codigoError) != 0) {
+              console.log(myJSON.observaciones + " - " + myJSON.codigoError + " - " + myJSON.descError);
+            }
+          },
+          error: function() {
+            alert("Error en la consulta");
+          }
+        });
+      });
+    } else {
+      //Funcion de eror al añadir fitxa personal
+      alert("Error: Dades mal introduïdes")
+    }
+  });
+
+}
+
+
+
+function goToFpList() {
   showTable();
   $("#pageFp").hide();
   $("#tableFitxaPersonal").show();
   $("#addFp").hide();
 }
 
-function goToAddFp(){
+function goToAddFp() {
   showComarcas();
   showProvinces();
   showMunisipalitys();
+  $('input:radio[name=idioma][value=1]').click();
+  $('input:radio[name=idioma_s][value=0]').click();
+  $('input:radio[name=titularitat][value=1]').click();
   $("#pageFp").hide();
   $("#tableFitxaPersonal").hide();
   $("#addFp").show();
+  addFitxaPersonal();
 }
 
-function goToFp(){
+function goToFp() {
   $("#pageFp").show();
   $("#tableFitxaPersonal").hide();
   $("#addFp").hide();
 }
 
 
-function showFitxaPersonal(id, name, surname,dninie, province){
-  let html="<tr><td>"+id+"</td><td>"+name+"</td><td>"+surname+"</td><td>"+dninie+"</td><td>"+province+"</td><td><button id='fitxaPersonal"+id+"' type='button' class='fitxaPersonal btn btn-info'>Fitxa Completa</button><button type='button' id='deleteCardId"+id+"' class='deletecard btn btn-danger' data-toggle='modal' data-target='#deletecardmodal'>Eliminar</button></td></tr>";
+function showFitxaPersonal(id, name, surname, dninie, province) {
+  let html = "<tr><td>" + id + "</td><td>" + name + "</td><td>" + surname + "</td><td>" + dninie + "</td><td>" + province + "</td><td><button id='fitxaPersonal" + id + "' type='button' class='fitxaPersonal btn btn-info'>Fitxa Completa</button><button type='button' id='deleteCardId" + id + "' class='deletecard btn btn-danger' data-toggle='modal' data-target='#deletecardmodal'>Eliminar</button></td></tr>";
   $("#fitxaPersonalTable").append(html);
 }
 
-function mostrarCardListener(){
+function mostrarCardListener() {
   $(".fitxaPersonal").click(function(event) {
     let id = this.id;
     $.ajax({
@@ -285,7 +367,7 @@ function eliminarCardListener() {
 }
 
 
-function deleteCard(idCard){
+function deleteCard(idCard) {
   console.log(idCard);
   $.ajax({
     url: "../backend/delete/deleteFitxaPersonal.php",
