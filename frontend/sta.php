@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
     <!-- <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css"> -->
+
     <link rel="stylesheet" href="css/kendoTheme.css">
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="css/initPage.css">
@@ -86,7 +87,7 @@
         </div>
         <div class="row">
           <div class="col-lg-6">
-            <input type="text" class="form-control" name="dni_usuario"/>
+            <input id="dni_usuario"/>
           </div>
           <div class="col lg-6">
             <input type="text" class="form-control" name="situacion"/>
@@ -108,12 +109,25 @@
         </div>
         <div class="row">
           <div class="col-lg-3">
+            <ul>
+                <li>
+                  Servei TF
+                  <span class="k-switch k-widget k-switch-off" role="switch" tabindex="0" aria-checked="false" aria-label="Servei TF">
+                    <input data-role="switch" id="mail-switch" aria-label="Servei TF" type="checkbox"/>
+                  <span class="k-switch-container">
+                    <span class="k-switch-label-on">SI</span>
+                    <span class="k-switch-label-off">NO</span>
+                    <span class="k-switch-handle"></span>
+                  </span>
+                </span>
+                </li>
 
+              <li>Servei TCR <input id="servicios" aria-label="Servei TCR" /></li>
+              <li>Servei CC <input id="servicios" aria-label="Servei CC" /></li>
+            </ul>
           </div>
           <div class="col lg-3">
-            <input id="servicios" aria-label="Servei TF" />
-            <input id="servicios" aria-label="Servei TCR" />
-            <input id="servicios" aria-label="Servei CC" />
+
           </div>
         </div>
         <div class="row">
