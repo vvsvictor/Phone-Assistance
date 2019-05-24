@@ -218,7 +218,7 @@ function addFitxaPersonal() {
     let telMovil = $("#addMovil").val();
     let telTreball = $("#addTelTreball").val();
     if (nom != "" && cognom != "" && dni != "" && genere != "" && dataNaixemement != "" && adreca != "" && tipusHabitatge != "" && !isNaN(provincia) && !isNaN(comarca) && !isNaN(municipi) && !isNaN(telFixe) && !isNaN(telMovil) && !isNaN(telTreball)) {
-      $("#addUserBtn").click(function() {
+        console.log("entraclick");
         $.ajax({
           url: "../backend/inserts/insertPersonalCard.php",
           data: {
@@ -226,6 +226,7 @@ function addFitxaPersonal() {
             sSurname: cognom,
             sGender: genere,
             iLanguage: idioma,
+            iLanguageSigne: idioma_s,
             sBirthdate: dataNaixemement,
             sDninie: dni,
             iProvince: provincia,
@@ -241,6 +242,7 @@ function addFitxaPersonal() {
           type: "GET",
           cache: false,
           success: function(response) {
+            console.log("entra dades");
             let myJSON = JSON.parse(response);
             showTable();
             goToFpList();
@@ -253,7 +255,7 @@ function addFitxaPersonal() {
             alert("Error en la consulta");
           }
         });
-      });
+
     } else {
       //Funcion de eror al añadir fitxa personal
       alert("Error: Dades mal introduïdes")
