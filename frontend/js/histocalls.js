@@ -14,11 +14,11 @@ function showTable(){
       $("#histoCallsTable").html("");
       for (var i = 0; i < myJSON.length; i++) {
         let id = myJSON[i].id;
-        //let dni = myJSON[i].name;
-        //let name = myJSON[i].address;
+        let dni = myJSON[i].user_dninif;
         let date = myJSON[i].call_date;
         let state = myJSON[i].call_state;
-        showHistoCall(id, dni, name, date, state);
+        let type = myJSON[i].call_type;
+        showHistoCall(id, dni, date, state, type);
       }
       $('#dtHistocalls').DataTable();
     },
@@ -30,6 +30,6 @@ function showTable(){
 
 
 function showHistoCall(id, dni, name, date, state){
-  let html="<tr><td>"+id+"</td><td>"+dni+"</td><td>"+name+"</td><td>"+date+"</td><td>"+state+"</td><td><button id='fitxaPersonal"+id+"' type='button' class='btn btn-info'>Fitxa Completa</button></td></tr>";
+  let html="<tr><td>"+id+"</td><td>"+dni+"</td><td>"+date+"</td><td>"+state+"</td><td>"+type+"</td><td><button id='histoCall"+id+"' type='button' class='btn btn-info'>Fitxa Completa</button></td></tr>";
   $("#histoCallsTable").append(html);
 }
