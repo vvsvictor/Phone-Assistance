@@ -2,7 +2,8 @@ $(document).ready(function() {
   $('.dataTables_length').addClass('bs-select');
   goToFpList();
   $("#showFormPF").click(function() {
-    console.log("entra goto");
+    //neteja inputs
+    cleanInputs();
     goToAddFp();
 
   });
@@ -196,7 +197,6 @@ function showMunisipalitys() {
 
 function addFitxaPersonal() {
   $("#addPersonalCard").click(function() {
-    console.log("entra fitxadd");
     let nom = $("#addNom").val();
     let cognom = $("#addCognom").val();
     let dni = $("#addDni").val();
@@ -290,6 +290,23 @@ function goToFp() {
   $("#pageFp").show();
   $("#tableFitxaPersonal").hide();
   $("#addFp").hide();
+}
+
+function cleanInputs(){
+  //Neteja de camps
+  let nom = $("#addNom").val('');
+  let cognom = $("#addCognom").val('');
+  let dni = $("#addDni").val('');
+  let genere = $("#addGenere").val('');
+  let dataNaixemement = $("#addDataNaixement").val('');
+  let adreca = $("#addAdreca").val('');
+  let tipusHabitatge = $("#addTipus_habitatge").val('');
+  let provincia = $("#provincias").val('');
+  let comarca = $("#comarcas").val('');
+  let municipi = $("#municipios").val('');
+  let telFixe = $("#addTel_fijo").val('');
+  let telMovil = $("#addMovil").val('');
+  let telTreball = $("#addTelTreball").val('');
 }
 
 
