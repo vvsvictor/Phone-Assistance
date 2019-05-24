@@ -1,10 +1,18 @@
-.sidebar {
+		.sidebar {
 			width:18%;
 			display: inline-block;
 			margin-left: 10%;
 			background: #40514E;
 			color: #E4F9F5;
 		}
+
+		.marginBtn{
+			margin-top: 10px;
+			margin-bottom: 10px;
+			margin-right: 10px;
+			margin-left: 10px;
+		}
+
 
 		.sidebar-top { position: relative; }
 

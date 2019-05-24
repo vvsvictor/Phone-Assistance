@@ -307,11 +307,20 @@ function cleanInputs(){
   let telFixe = $("#addTel_fijo").val('');
   let telMovil = $("#addMovil").val('');
   let telTreball = $("#addTelTreball").val('');
+  $("#resNom").html('');
+  $("#resCognom").html('');
+  $("#resCarrer").html('');
+  $("#resCodiPostal").html('');
+  $("#resTel").html('');
+  $("#resHorari").html('');
+  $("#resData").html('');
+  $("#resPrioritat").html('');
+  $("#resRao").html('');
 }
 
 
 function showFitxaPersonal(id, name, surname, dninie, province) {
-  let html = "<tr><td>" + id + "</td><td>" + name + "</td><td>" + surname + "</td><td>" + dninie + "</td><td>" + province + "</td><td><button id='fitxaPersonal" + id + "' type='button' class='fitxaPersonal btn btn-info'>Fitxa Completa</button><button type='button' id='deleteCardId" + id + "' class='deletecard btn btn-danger' data-toggle='modal' data-target='#deletecardmodal'>Eliminar</button></td></tr>";
+  let html = "<tr><td>" + id + "</td><td>" + name + "</td><td>" + surname + "</td><td>" + dninie + "</td><td>" + province + "</td><td><button id='fitxaPersonal" + id + "' type='button' class='fitxaPersonal btn btn-info marginBtn'>Fitxa Completa</button><button type='button' id='deleteCardId" + id + "' class='deletecard btn btn-danger marginBtn' data-toggle='modal' data-target='#deletecardmodal'>Eliminar</button></td></tr>";
   $("#fitxaPersonalTable").append(html);
 }
 
@@ -360,6 +369,31 @@ function mostrarCardListener() {
           $("#fpmobile_phone").html(mobile_phone);
           $("#fpwork_phone").html(mobile_phone);
           goToFp();
+          $.ajax({
+            url: "../backend/selects/getResponsible.php",
+            type: "GET",
+            cache: false,
+            success: function(response) {
+              let myJSON = JSON.parse(response);
+              for (let i = 0; i < myJSON.length; i++) {
+                if (myJSON[i].user_dninif==dninie) {
+                  $("#resNom").html(myJSON[i].name);
+                  $("#resCognom").html(myJSON[i].surname);
+                  $("#resCarrer").html(myJSON[i].address);
+                  $("#resCodiPostal").html(myJSON[i].post_code);
+                  $("#resTel").html(myJSON[i].contact_phone);
+                  $("#resHorari").html(myJSON[i].preferable_hour);
+                  $("#resData").html(myJSON[i].date_responsible);
+                  $("#resPrioritat").html(myJSON[i].priority);
+                  $("#resRao").html(myJSON[i].reason);
+                }
+              }
+
+            },
+            error: function() {
+              console.log('No hi ha responsable');
+            }
+          });
 
 
         }

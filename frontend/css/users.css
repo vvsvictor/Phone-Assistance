@@ -1,6 +1,4 @@
-/**
-  Component
-**/
+
 
 label {
     width: 100%;
@@ -30,4 +28,11 @@ label {
 .card-input-element:checked + .card-input {
      box-shadow: 0 0 3px 3px #11999e;
      border-radius: 5px;
+ }
+ 
+ .marginBtn{
+   margin-top: 10px;
+   margin-bottom: 10px;
+   margin-right: 10px;
+   margin-left: 10px;
  }

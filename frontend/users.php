@@ -69,7 +69,7 @@ include '..\backend\includeAdmin.php';
 
 
     <div class="container" id="usersList">
-      <button id="showFormBtn" type="button" class="btn btn-primary">Afegir</button>
+      <button id="showFormBtn" type="button" class="btn btn-primary marginBtn">Afegir</button>
       <table id="dtUsuaris" class="table table-striped table-bordered" cellspacing="0" width="100%">
         <thead>
           <tr>

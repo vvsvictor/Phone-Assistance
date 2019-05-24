@@ -61,7 +61,7 @@ include '..\backend\include.php';
         <li class="nav-item">
           <p class="navbar-text paddingr paddingRight" style="color: #e4f9f5;">
             <?php
-            //echo 'Hola, '.$_SESSION['user']['username'].'  ';
+            echo 'Hola, '.$_SESSION['user']['username'].'  ';
             ?>
             &nbsp;
             &nbsp;
@@ -76,16 +76,16 @@ include '..\backend\include.php';
     </div>
   </nav>
   <div class="container">
-    <div id="addFp" class="container_add">
-      <button id="returnPF" type="button" class="btn btn-primary"><i class="fa fa-reply"></i></button>
+    <div id="addFp">
+      <button id="returnPF" type="button" class="btn btn-primary marginBtn"><i class="fa fa-reply"></i> Tornar enrere</button>
       <br>
       <br>
       <div class="row">
         <div class="col-lg-6">
-          <label for="nom">NOM</label>
+          <label for="nom">Nom</label>
         </div>
         <div class="col lg-6">
-          <label for="cognom">COGNOM</label>
+          <label for="cognom">Cognom</label>
         </div>
       </div>
       <div class="row">
@@ -102,7 +102,7 @@ include '..\backend\include.php';
           <label for="dni">DNI</label>
         </div>
         <div class="col lg-6">
-          <label for="genere">GENERE</label>
+          <label for="genere">Gènere</label>
         </div>
       </div>
       <div class="row">
@@ -116,10 +116,10 @@ include '..\backend\include.php';
       <br>
       <div class="row">
         <div class="col-lg-6">
-          <label for="idioma">IDIOMA</label>
+          <label for="idioma">Idioma</label>
         </div>
         <div class="col lg-6">
-          <label for="idioma_signes">IDIOMA DE SIGNES</label>
+          <label for="idioma_signes">Idioma de signes</label>
         </div>
       </div>
       <div class="row">
@@ -145,10 +145,10 @@ include '..\backend\include.php';
       <br>
       <div class="row">
         <div class="col-lg-6">
-          <label for="data_naixament">DATA DE NAIXEMENT</label>
+          <label for="data_naixament">Data de naixement</label>
         </div>
         <div class="col lg-6">
-          <label for="adresa">ADREÇA</label>
+          <label for="adresa">Adreça</label>
         </div>
       </div>
       <div class="row">
@@ -162,10 +162,10 @@ include '..\backend\include.php';
       <br>
       <div class="row">
         <div class="col-lg-6">
-          <label for="tipus_habitatge">TIPUS D'HABITATGE</label>
+          <label for="tipus_habitatge">Tipus d'habitatge</label>
         </div>
         <div class="col lg-6">
-          <label for="titularitat">TITULARITAT DE L'HABITATGE</label>
+          <label for="titularitat">Titularitat de l'habitatge</label>
         </div>
       </div>
       <div class="row">
@@ -182,10 +182,10 @@ include '..\backend\include.php';
       <br>
       <div class="row">
         <div class="col-lg-6">
-          <label for="provincias">PROVINCIA</label>
+          <label for="provincias">Provincia</label>
         </div>
         <div class="col lg-6">
-          <label for="comarcas">COMARCA</label>
+          <label for="comarcas">Comarca</label>
         </div>
       </div>
       <div class="row">
@@ -203,10 +203,10 @@ include '..\backend\include.php';
       <br>
       <div class="row">
         <div class="col-lg-6">
-          <label for="municipios">MUNICIPIS</label>
+          <label for="municipios">Municipis</label>
         </div>
         <div class="col lg-6">
-          <label for="tel_fijo">TELÈFON FIXE</label>
+          <label for="tel_fijo">Telèfon fixe</label>
         </div>
       </div>
       <div class="row">
@@ -222,10 +222,10 @@ include '..\backend\include.php';
       <br>
       <div class="row">
         <div class="col-lg-6">
-          <label for="movil">TELÈFON MÓVIL</label>
+          <label for="movil">Telèfon Movil</label>
         </div>
         <div class="col lg-6">
-          <label for="tel_treball">TELÈFON TREBALL</label>
+          <label for="tel_treball">Telèfon Treball</label>
         </div>
       </div>
       <div class="row">
@@ -243,7 +243,7 @@ include '..\backend\include.php';
       </div>
     </div>
     <div id="tableFitxaPersonal">
-      <button id="showFormPF" type="button" class="btn btn-primary"><i class="fas fa-plus-circle"></i></button>
+      <button id="showFormPF" type="button" class="btn btn-primary marginBtn"><i class="fas fa-plus"></i> Afegir</button>
       <table id="dtFitxaPersonal" class="table table-striped table-bordered" cellspacing="0" width="100%">
         <thead>
           <tr>
@@ -442,22 +442,22 @@ include '..\backend\include.php';
                   <h1 class="heading"> Dades</h1>
                   <div class="info">
                     <p class="sub-heading">Nom</p>
-                    <p class="duration">Nati</p>
+                    <p id="resNom" class="duration">Nati</p>
                     <p></p>
                   </div>
                   <div class="info">
                     <p class="sub-heading">Cognoms</p>
-                    <p class="duration">Novo</p>
+                    <p id="resCognom" class="duration">Novo</p>
                     <p></p>
                   </div>
                   <div class="info">
                     <p class="sub-heading">Carrer</p>
-                    <p class="duration">Alcudia nº 23 3º 1ª</p>
+                    <p id="resCarrer" class="duration">Alcudia nº 23 3º 1ª</p>
                     <p></p>
                   </div>
                   <div class="info">
                     <p class="sub-heading">Codí Postal</p>
-                    <p class="duration">08029</p>
+                    <p id="resCodiPostal" class="duration">08029</p>
                     <p></p>
                   </div>
                 </div>
@@ -468,22 +468,22 @@ include '..\backend\include.php';
                   <h1 class="heading">Contacte</h1>
                   <div class="info">
                     <p class="sub-heading">Telèfon</p>
-                    <p class="duration">937764012</p>
+                    <p id="resTel" class="duration">937764012</p>
                     <p></p>
                   </div>
                   <div class="info">
                     <p class="sub-heading">Horari</p>
-                    <p class="duration">8h - 14h</p>
+                    <p id="resHorari" class="duration">8h - 14h</p>
                     <p></p>
                   </div>
                   <div class="info">
                     <p class="sub-heading">Data</p>
-                    <p class="duration">01-04-2017</p>
+                    <p id="resData" class="duration">01-04-2017</p>
                     <p></p>
                   </div>
                   <div class="info">
                     <p class="sub-heading">Prioritat</p>
-                    <p class="duration">Alta</p>
+                    <p id="resPrioritat" class="duration">Alta</p>
                     <p></p>
                   </div>
                 </div>
@@ -493,7 +493,7 @@ include '..\backend\include.php';
                 <div class="contacto">
                   <h1 class="heading">Raó</h1>
                   <div class="info">
-                    <p class="duration">Familiar de primer grau</p>
+                    <p id="resRao" class="duration">Familiar de primer grau</p>
                     <p></p>
                   </div>
                 </div>
