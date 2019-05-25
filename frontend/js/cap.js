@@ -258,6 +258,7 @@ function showTable() {
       $('#dtCap').DataTable();
       modCapListener();
       eliminarCapListener();
+      mostrarCapListener();
     },
     error: function() {
       console.log('No hi han caps');
@@ -271,6 +272,18 @@ function showCap(id, name, address, phone, schedule) {
   let html;
   html = "<tr><td>" + id + "</td><td>" + name + "</td><td>" + address + "</td><td>" + phone + "</td><td>" + schedule + "</td><td><button id='fitxaCaps" + id + "' type='button' class='fitxaCaps btn btn-info marginBtn'><i class='fa fa-file'></i></button><button type='button' id='deleteCapId" + id + "' class='deletecap btn btn-danger' data-toggle='modal' data-target='#deletecapmodal'><i class='fa fa-trash'></i></button></td></tr>";
   $("#capTable").append(html);
+}
+
+function goToCap() {
+  $("#pageCAP").show();
+  $("#tableCAP").hide();
+  $("#addCAP").hide();
+}
+
+function mostrarCapListener(){
+  $(".fitxaCaps").click(function(event) {
+    goToCap();
+  });
 }
 
 

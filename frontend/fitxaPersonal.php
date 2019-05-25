@@ -229,7 +229,7 @@ include '..\backend\include.php';
       <div id="tabs" class="c-tabs">
         <div class="c-tabs-nav">
           <a href="#" class="c-tabs-nav__link is-active">Fitxa Personal</a>
-          <a href="#" class="c-tabs-nav__link">CAP / Mutua</a>
+          <a href="#" class="c-tabs-nav__link">Mutua</a>
           <a href="#" class="c-tabs-nav__link">Responsable</a>
           <a href="#" class="c-tabs-nav__link">STA</a>
           <a href="#" class="c-tabs-nav__link">Trucades</a>
@@ -319,38 +319,8 @@ include '..\backend\include.php';
         <div class="c-tab">
           <div class="c-tab__content">
             <div class="container_caps">
-              <div class="content2">
-                <div class="direccion">
-                  <h1 class="heading"> CAP</h1>
-                  <div class="info">
-                    <p class="sub-heading">Nom</p>
-                    <p class="duration">Nom_CAP</p>
-                    <p></p>
-                  </div>
-                  <div class="info">
-                    <p class="sub-heading">Comarca</p>
-                    <p class="duration">Barcelonès</p>
-                    <p></p>
-                  </div>
-                  <div class="info">
-                    <p class="sub-heading">Adreça</p>
-                    <p class="duration">Carrer Alcudia nº 23 3º 1ª</p>
-                    <p></p>
-                  </div>
-                  <div class="info">
-                    <p class="sub-heading">Telèfon</p>
-                    <p class="duration">93 458 669 72</p>
-                    <p></p>
-                  </div>
-                  <div class="info">
-                    <p class="sub-heading">Horari</p>
-                    <p class="duration">9h - 21h</p>
-                    <p></p>
-                  </div>
-                </div>
-              </div>
 
-              <div class="content2a">
+              <div class="content3">
                 <div class="contacto">
                   <h1 class="heading">MUTUA</h1>
                   <div class="info">
