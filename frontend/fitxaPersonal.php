@@ -311,6 +311,22 @@ include '..\backend\include.php';
                     </div>
                   </div>
                 </div>
+
+                <div class="content3">
+                  <div class="contacto">
+                    <h1 class="heading">IDIOMES</h1>
+                    <div class="info">
+                      <p class="sub-heading">Idioma</p>
+                      <p id="fplanguage" class="duration">Castella</p>
+                      <p></p>
+                    </div>
+                    <div class="info">
+                      <p class="sub-heading">Idioma de signes</p>
+                      <p id="fpsignlanguage"  class="duration">Castella</p>
+                      <p></p>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
