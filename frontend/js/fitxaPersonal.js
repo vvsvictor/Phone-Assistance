@@ -273,8 +273,11 @@ function addFitxaPersonal() {
     let municipi = $("#municipios").val();
     municipi = municipi.split('(Id:').pop().split(')')[0];
     let telFixe = $("#addTel_fijo").val();
+    telFixe = telFixe.replace(/\s/g, '');
     let telMovil = $("#addMovil").val();
+    telMovil = telMovil.replace(/\s/g, '');
     let telTreball = $("#addTelTreball").val();
+    telTreball = telTreball.replace(/\s/g, '');
     if (nom != "" && cognom != "" && dni != "" && genere != "" && dataNaixemement != "" && adreca != "" && tipusHabitatge != "" && !isNaN(provincia) && !isNaN(comarca) && !isNaN(municipi) && !isNaN(telFixe) && !isNaN(telMovil) && !isNaN(telTreball)) {
         if (idioma=="Altre") {
           //insertar nou idioma
