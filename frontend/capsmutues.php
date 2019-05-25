@@ -100,29 +100,16 @@
         <div class="row">
           <div class="col-lg-6">
             <label for="tel_cap">TELÈFON</label>
-          </div>
-          <div class="col lg-6">
-            <label for="horari_cap">HORARI</label>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-lg-6">
             <input type="text" class="form-control" name="tel_cap"/>
           </div>
           <div class="col lg-6">
+            <label for="horari_cap">HORARI</label>
             <input type="text" class="form-control" name="horari_cap"/>
           </div>
         </div>
         <div class="row">
           <div class="col-lg-6">
             MUTUES
-          </div>
-          <div class="col lg-6">
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-lg-6">
-            <!-- <input id="mutues"/> -->
             <select id="required" multiple="multiple" data-placeholder="Select attendees...">
                 <option>Steven White</option>
                 <option>Nancy King</option>
