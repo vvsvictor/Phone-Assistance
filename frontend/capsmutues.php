@@ -156,16 +156,10 @@
         <div class="row">
           <div class="col-lg-6">
             <label for="nom_cap">NOM DEL DOCTOR</label>
-          </div>
-          <div class="col lg-6">
-            <label for="direccio_cap">COGNOMS DEL DOCTOR</label>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-lg-6">
             <input type="text" class="form-control" name="nom_doctor"/>
           </div>
           <div class="col lg-6">
+            <label for="direccio_cap">COGNOMS DEL DOCTOR</label>
             <input type="text" class="form-control" name="direccio_doctor"/>
           </div>
         </div>
@@ -173,31 +167,11 @@
         <div class="row">
           <div class="col-lg-6">
             <label for="genere_doc">GENERE</label>
-          </div>
-          <div class="col lg-6">
-            <label for="especialització">ESPECIALITZACIÓ</label>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-lg-6">
             <input type="text" class="form-control" name="genere"/>
           </div>
           <div class="col lg-6">
+            <label for="especialització">ESPECIALITZACIÓ</label>
             <input id="especialitzacions"/>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-lg-6">
-            <label for="mutues">CAP</label>
-          </div>
-          <div class="col lg-6">
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-lg-6">
-            <input id="caps"/>
-          </div>
-          <div class="col lg-6">
           </div>
         </div>
       </div>
