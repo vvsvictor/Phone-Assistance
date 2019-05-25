@@ -73,6 +73,7 @@
       <table id="dtHistocalls" class="table table-striped table-bordered" cellspacing="0" width="100%">
         <thead>
           <tr>
+            <th class="th-sm">Id</th>
             <th class="th-sm">DNI</th>
             <th class="th-sm">Data</th>
             <th class="th-sm">Estat de la trucada</th>
@@ -83,6 +84,7 @@
         <tbody id="histoCallsTable"></tbody>
         <tfoot>
           <tr>
+            <th>Id</th>
             <th>DNI</th>
             <th>Data</th>
             <th>Estat de la trucada</th>
