@@ -9,7 +9,6 @@ $(document).ready(function() {
     alert("Attendees:\n\nRequired: " + required.value() + "\nOptional: " + optional.value());
   });
 
-
   goToCapList();
   $('.dataTables_length').addClass('bs-select');
   showTable();
@@ -275,14 +274,46 @@ function showCap(id, name, address, phone, schedule) {
 }
 
 function goToCap() {
-  $("#pageCAP").show();
-  $("#tableCAP").hide();
+  $("#pageCAPS").show();
+  $("#tableCaps").hide();
   $("#addCAP").hide();
 }
 
 function mostrarCapListener(){
   $(".fitxaCaps").click(function(event) {
-    goToCap();
+    let idbtn = this.id;
+    idbtn = idbtn.replace("fitxaCaps", "");
+    $.ajax({
+      url: "../backend/selects/getCap.php",
+      type: "GET",
+      cache: false,
+      success: function(response) {
+        console.log("entra");
+        let myJSON = JSON.parse(response);
+        console.log(response);
+        $("#cname").html("");
+        $("#caddress").html("");
+        $("#cphone").html("");
+        $("#cschedule").html("");
+        for (var i = 0; i < myJSON.length; i++) {
+          if ( i == (idbtn-1)){
+            let id = myJSON[i].id;
+            let name = myJSON[i].name;
+            let address = myJSON[i].address;
+            let phone = myJSON[i].phone;
+            let schedule = myJSON[i].schedule;
+            $("#cname").html(name);
+            $("#caddress").html(address);
+            $("#cphone").html(phone);
+            $("#cschedule").html(schedule);
+            goToCap();
+          }
+        }
+      },
+      error: function(){
+        console.log('No hi ha CAPS');
+      }
+    });
   });
 }
 
