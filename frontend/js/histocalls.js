@@ -9,7 +9,6 @@ function showTable(){
     type: "GET",
     cache: false,
     success: function(response) {
-      console.log(response);
       let myJSON = JSON.parse(response);
       console.log(myJSON);
       $("#histoCallsTable").html("");
