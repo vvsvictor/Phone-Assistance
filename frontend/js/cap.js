@@ -120,10 +120,12 @@ function goToAddCap() {
 function goToAddDoctor() {
   $("#tableCaps").hide();
   $("#addDoctor").show();
+  $("#pageCAPS").hide();
+
 }
 
 function addCapListener() {
-  $("#showFormBtn").click(function() {
+  $("#showFormBtn").click(function(pageCAPS) {
     $("#name").val('')
     $("#address").val('');
     $("#phone").val('');
@@ -172,7 +174,6 @@ function goToCapList() {
   $("#tableCaps").show();
   $("#addCap").hide();
   $("#addDoctor").hide();
-  $("#tbDoctors").hide();
 }
 
 function modCapListener() {

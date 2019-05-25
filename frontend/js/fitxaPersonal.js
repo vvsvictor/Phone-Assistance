@@ -7,12 +7,19 @@ $(document).ready(function() {
     goToAddFp();
 
   });
+  $("#modFormPF").click(function() {
+    goToModFP()
+  });
   $("#returnPF").click(function() {
     goToFpList();
   });
   $("#returnPF2").click(function() {
     goToFpList();
   });
+  $("#returnPF3").click(function() {
+    goToFpList();
+  });
+
   //kendo / jquery functions
   $(".opciones").checkboxradio();
   $(".datepicker").kendoDatePicker();
@@ -398,13 +405,19 @@ function addFitxaPersonal() {
 
 }
 
-
+function goToModFP() {
+  $("#pageFp").hide();
+  $("#modpageFp").show();
+  $("#tableFitxaPersonal").hide();
+  $("#addFp").hide();
+}
 
 function goToFpList() {
   showTable();
   $("#pageFp").hide();
   $("#tableFitxaPersonal").show();
   $("#addFp").hide();
+  $("#modpageFp").hide();
 }
 
 function goToAddFp() {
