@@ -288,7 +288,6 @@ function mostrarCapListener(){
         success: function(response) {
           console.log("entra");
           let myJSON = JSON.parse(response);
-          console.log(response);
           $("#cname").html("");
           $("#caddress").html("");
           $("#cphone").html("");
@@ -310,19 +309,24 @@ function mostrarCapListener(){
                 type: "GET",
                 cache: false,
                 success: function(response) {
+                  console.log("Doctor "+response);
                   let myJSON = JSON.parse(response);
+                  console.log("Medics "+response);
+                  $("#tbDoctors").html("");
                   for (var i = 0; i < myJSON.length; i++) {
                     if (idbtn == myJSON[i].id_cap){
                       let id = myJSON[i].id;
                       let name = myJSON[i].name;
                       let surname = myJSON[i].surname;
                       let gender = myJSON[i].gender;
-                      let specialization_id = myJSON[i].specialization_id;
+                      let specialization = myJSON[i].specialization;
+                      showMedicos(id,name,surname,gender,specialization);
                     }
                   }
+                  $('#tableDoctors').DataTable();
                 },
                 error: function() {
-                  console.log('No hi han metges');
+                  console.log('No hi han Doctors');
                 }
               });
             }
@@ -335,9 +339,9 @@ function mostrarCapListener(){
   });
 }
 
-function showMedicos(id,name,surname,gender,med_specialization) {
+function showMedicos(id,name,surname,gender,specialization) {
   let html;
-  html = "<tr><td>" + id + "</td><td>" + name + "</td><td>" + surname + "</td><td>" + gender + "</td><td>" + med_specialization + "</td><td></td></tr>";
+  html = "<tr><td>" + id + "</td><td>" + name + "</td><td>" + surname + "</td><td>" + gender + "</td><td>" + specialization + "</td><td></td></tr>";
   console.log(html)
   $("#tbDoctors").append(html);
 }
