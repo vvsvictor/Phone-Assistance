@@ -247,27 +247,22 @@
                   <h1 class="heading"> CAP</h1>
                   <div class="info">
                     <p class="sub-heading">Nom</p>
-                    <p class="duration">Nom_CAP</p>
-                    <p></p>
-                  </div>
-                  <div class="info">
-                    <p class="sub-heading">Comarca</p>
-                    <p class="duration">Barcelonès</p>
+                    <p id="cname" class="duration">Nom_CAP</p>
                     <p></p>
                   </div>
                   <div class="info">
                     <p class="sub-heading">Adreça</p>
-                    <p class="duration">Carrer Alcudia nº 23 3º 1ª</p>
+                    <p id="caddress" class="duration">Carrer Alcudia nº 23 3º 1ª</p>
                     <p></p>
                   </div>
                   <div class="info">
                     <p class="sub-heading">Telèfon</p>
-                    <p class="duration">93 458 669 72</p>
+                    <p id="cphone" class="duration">93 458 669 72</p>
                     <p></p>
                   </div>
                   <div class="info">
                     <p class="sub-heading">Horari</p>
-                    <p class="duration">9h - 21h</p>
+                    <p id="cschedule" class="duration">9h - 21h</p>
                     <p></p>
                   </div>
                 </div>
