@@ -6,7 +6,6 @@ $(document).ready(function() {
     cleanInputs();
     goToAddFp();
 
-
   });
   $("#returnPF").click(function() {
     goToFpList();
@@ -17,7 +16,7 @@ $(document).ready(function() {
   //kendo / jquery functions
   $(".opciones").checkboxradio();
   $(".datepicker").kendoDatePicker();
-  $(".dropDown").kendoDropDownList();
+
 
 
 });
@@ -166,6 +165,7 @@ function showLanguages(){
       html+="<option>Altre</option>";
       $("#addIdioma").html(html);
       $("#addIdioma").kendoDropDownList();
+      $("#addGenere").kendoDropDownList();
       $("#addIdiomaAltre").hide();
     },
     error: function() {
@@ -253,7 +253,9 @@ function addFitxaPersonal() {
     let cognom = $("#addCognom").val();
     let dni = $("#addDni").val();
     let genere = $("#addGenere").val();
-    let idioma = document.querySelector('input[name="idioma"]:checked').value;
+    let idioma = $("#addIdioma").val();
+    idioma = idioma.split('(Id:').pop().split(')')[0];
+    let nouIdioma = $("#addIdiomaAltre").val();
     let idioma_s = document.querySelector('input[name="idioma_s"]:checked').value;
     //if ==0 return null
     let dataNaixemement = $("#addDataNaixement").val();
@@ -270,43 +272,116 @@ function addFitxaPersonal() {
     let telMovil = $("#addMovil").val();
     let telTreball = $("#addTelTreball").val();
     if (nom != "" && cognom != "" && dni != "" && genere != "" && dataNaixemement != "" && adreca != "" && tipusHabitatge != "" && !isNaN(provincia) && !isNaN(comarca) && !isNaN(municipi) && !isNaN(telFixe) && !isNaN(telMovil) && !isNaN(telTreball)) {
-        console.log("entraclick");
-        $.ajax({
-          url: "../backend/inserts/insertPersonalCard.php",
-          data: {
-            sName: nom,
-            sSurname: cognom,
-            sGender: genere,
-            iLanguage: idioma,
-            iLanguageSigne: idioma_s,
-            sBirthdate: dataNaixemement,
-            sDninie: dni,
-            iProvince: provincia,
-            iComarca: comarca,
-            iMunicipality: municipi,
-            sAddress: adreca,
-            sTypeHouse: tipusHabitatge,
-            iOwnership: titularitatHab,
-            sPhone: telFixe,
-            sMobilePhone: telMovil,
-            sWorkPhone: telTreball
-          },
-          type: "GET",
-          cache: false,
-          success: function(response) {
-            console.log("entra dades");
-            let myJSON = JSON.parse(response);
-            showTable();
-            goToFpList();
+        if (idioma=="Altre") {
+          //insertar nou idioma
+          $.ajax({
+            url: "../backend/inserts/insertIdioma.php",
+            data: {
+              sName: nouIdioma
+            },
+            type: "GET",
+            cache: false,
+            success: function(response) {
+              let myJSON = JSON.parse(response);
+              $.ajax({
+                url: "../backend/selects/getLanguages.php",
+                type: "GET",
+                cache: false,
+                success: function(response) {
+                  let myJSON = JSON.parse(response);
+                  for (let i = 0; i < myJSON.length; i++) {
+                    if (myJSON[i].language_name ==nouIdioma) {
+                      idioma = myJSON[i].id;
+                      $.ajax({
+                        url: "../backend/inserts/insertPersonalCard.php",
+                        data: {
+                          sName: nom,
+                          sSurname: cognom,
+                          sGender: genere,
+                          iLanguage: idioma,
+                          iLanguageSigne: idioma_s,
+                          sBirthdate: dataNaixemement,
+                          sDninie: dni,
+                          iProvince: provincia,
+                          iComarca: comarca,
+                          iMunicipality: municipi,
+                          sAddress: adreca,
+                          sTypeHouse: tipusHabitatge,
+                          iOwnership: titularitatHab,
+                          sPhone: telFixe,
+                          sMobilePhone: telMovil,
+                          sWorkPhone: telTreball
+                        },
+                        type: "GET",
+                        cache: false,
+                        success: function(response) {
+                          console.log("entra dades");
+                          let myJSON = JSON.parse(response);
+                          showTable();
+                          goToFpList();
 
-            if (parseInt(myJSON.codigoError) != 0) {
-              console.log(myJSON.observaciones + " - " + myJSON.codigoError + " - " + myJSON.descError);
+                          if (parseInt(myJSON.codigoError) != 0) {
+                            console.log(myJSON.observaciones + " - " + myJSON.codigoError + " - " + myJSON.descError);
+                          }
+                        },
+                        error: function() {
+                          alert("Error en la consulta");
+                        }
+                      });
+                    }
+                  }
+
+                },
+                error: function() {
+                  console.log('No hi ha responsable');
+                }
+              });
+              if (parseInt(myJSON.codigoError) != 0) {
+                console.log(myJSON.observaciones + " - " + myJSON.codigoError + " - " + myJSON.descError);
+              }
+            },
+
+          });
+        }else{
+          $.ajax({
+            url: "../backend/inserts/insertPersonalCard.php",
+            data: {
+              sName: nom,
+              sSurname: cognom,
+              sGender: genere,
+              iLanguage: idioma,
+              iLanguageSigne: idioma_s,
+              sBirthdate: dataNaixemement,
+              sDninie: dni,
+              iProvince: provincia,
+              iComarca: comarca,
+              iMunicipality: municipi,
+              sAddress: adreca,
+              sTypeHouse: tipusHabitatge,
+              iOwnership: titularitatHab,
+              sPhone: telFixe,
+              sMobilePhone: telMovil,
+              sWorkPhone: telTreball
+            },
+            type: "GET",
+            cache: false,
+            success: function(response) {
+              console.log("entra dades");
+              let myJSON = JSON.parse(response);
+              showTable();
+              goToFpList();
+
+              if (parseInt(myJSON.codigoError) != 0) {
+                console.log(myJSON.observaciones + " - " + myJSON.codigoError + " - " + myJSON.descError);
+              }
+            },
+            error: function() {
+              alert("Error en la consulta");
             }
-          },
-          error: function() {
-            alert("Error en la consulta");
-          }
-        });
+          });
+        }
+
+
 
     } else {
       //Funcion de eror al añadir fitxa personal
