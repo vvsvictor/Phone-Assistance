@@ -268,6 +268,7 @@ function showTable() {
 function showCap(id, name, address, phone, schedule) {
   let html;
   html = "<tr><td>" + id + "</td><td>" + name + "</td><td>" + address + "</td><td>" + phone + "</td><td>" + schedule + "</td><td><button id='fitxaCaps" + id + "' type='button' class='fitxaCaps btn btn-info marginBtn'><i class='fa fa-file'></i></button><button type='button' id='deleteCapId" + id + "' class='deletecap btn btn-danger' data-toggle='modal' data-target='#deletecapmodal'><i class='fa fa-trash'></i></button></td></tr>";
+  console.log("HTML caps a insertar "+html)
   $("#capTable").append(html);
 }
 
@@ -309,7 +310,6 @@ function mostrarCapListener(){
                 type: "GET",
                 cache: false,
                 success: function(response) {
-                  console.log("Doctor "+response);
                   let myJSON = JSON.parse(response);
                   console.log("Medics "+response);
                   $("#tbDoctors").html("");
@@ -341,8 +341,7 @@ function mostrarCapListener(){
 
 function showMedicos(id,name,surname,gender,specialization) {
   let html;
-  html = "<tr><td>" + id + "</td><td>" + name + "</td><td>" + surname + "</td><td>" + gender + "</td><td>" + specialization + "</td><td></td></tr>";
-  console.log(html)
+  html = "<tr><td>" + id + "</td><td>" + name + "</td><td>" + surname + "</td><td>" + gender + "</td><td>" + specialization + "</td><td><button id='fitxaCaps" + id + "' type='button' class='fitxaCaps btn btn-info marginBtn'><i class='fa fa-file'></i></button><button type='button' id='deleteCapId" + id + "' class='deletecap btn btn-danger' data-toggle='modal' data-target='#deletecapmodal'><i class='fa fa-trash'></i></button></td></tr>";
   $("#tbDoctors").append(html);
 }
 
