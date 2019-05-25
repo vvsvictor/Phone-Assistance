@@ -227,6 +227,92 @@
         </table>
     </div>
   </div>
+  <div id="pageCAPS">
+
+    <section id="page">
+      <button id="returnCAPF" type="button" class="btn btn-primary"><i class="fa fa-reply"></i></button>
+      <div id="tabs" class="c-tabs">
+        <div class="c-tabs-nav">
+          <a href="#" class="c-tabs-nav__link is-active">Info CAP</a>
+          <a href="#" class="c-tabs-nav__link">Doctors</a>
+          <div class="c-tab-nav-marker"></div>
+        </div>
+        <!-- CAPS -->
+        <div class="c-tab">
+          <div class="c-tab__content">
+            <div class="container_caps">
+              <div class="content3">
+                <div class="direccion">
+                  <h1 class="heading"> CAP</h1>
+                  <div class="info">
+                    <p class="sub-heading">Nom</p>
+                    <p class="duration">Nom_CAP</p>
+                    <p></p>
+                  </div>
+                  <div class="info">
+                    <p class="sub-heading">Comarca</p>
+                    <p class="duration">Barcelonès</p>
+                    <p></p>
+                  </div>
+                  <div class="info">
+                    <p class="sub-heading">Adreça</p>
+                    <p class="duration">Carrer Alcudia nº 23 3º 1ª</p>
+                    <p></p>
+                  </div>
+                  <div class="info">
+                    <p class="sub-heading">Telèfon</p>
+                    <p class="duration">93 458 669 72</p>
+                    <p></p>
+                  </div>
+                  <div class="info">
+                    <p class="sub-heading">Horari</p>
+                    <p class="duration">9h - 21h</p>
+                    <p></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- DOCTORS -->
+        <div class="c-tab">
+          <div class="c-tab__content">
+            <div class="container_doctors">
+              <div class="content3">
+                <div id="tableFitxaPersonal">
+                  <button id="showFormDoctor" type="button" class="btn btn-primary"><i class="fa fa-plus"></i>Afegir Doctor</button>
+                  <table id="dtFitxaPersonal" class="table table-striped table-bordered" cellspacing="0" width="100%">
+                    <thead>
+                      <tr>
+                        <th class="th-sm">Id</th>
+                        <th class="th-sm">Nom</th>
+                        <th class="th-sm">Cognom</th>
+                        <th class="th-sm">DNI</th>
+                        <th class="th-sm">Provincia</th>
+                        <th class="th-sm"></th>
+                      </tr>
+                    </thead>
+                    <tbody id="fitxaPersonalTable"></tbody>
+                    <tfoot>
+                      <tr>
+                        <th>Id</th>
+                        <th>Nom</th>
+                        <th>Cognom</th>
+                        <th>DNI</th>
+                        <th>Provincia</th>
+                        <th></th>
+                      </tr>
+                    </tfoot>
+                  </table>
+                </div>
+            </div>
+          </div>
+        </div>
+        <!-- STA -->
+      </div>
+    </section>
+  </div>
+
     <!-- Div afegir  cap -->
     <!-- <div class="container" id="addCap">
       <button id="showListBtn" type="button" class="btn btn-primary">Tornar a la llista</button>
