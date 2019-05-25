@@ -6,6 +6,10 @@
 			color: #E4F9F5;
 		}
 
+		.maxWidth{
+			width: 100%;
+		}
+
 		.marginBtn{
 			margin-top: 10px;
 			margin-bottom: 10px;

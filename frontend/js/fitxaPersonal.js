@@ -13,9 +13,10 @@ $(document).ready(function() {
   $("#returnPF2").click(function() {
     goToFpList();
   });
-  //jquery functions
+  //kendo / jquery functions
   $(".opciones").checkboxradio();
   $(".datepicker").kendoDatePicker();
+  $("#addGenere").kendoDropDownList();
 });
 
 function Tabs(options) {

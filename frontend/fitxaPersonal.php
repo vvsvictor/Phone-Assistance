@@ -110,7 +110,18 @@ include '..\backend\include.php';
           <input id="addDni" type="text" class="form-control" name="dni"/>
         </div>
         <div class="col lg-6">
-          <input id="addGenere" type="text" class="form-control" name="genere"/>
+          <select id="addGenere" style="width: 100%;" class="maxWidth">
+            <option>Dona</option>
+            <option>Home</option>
+            <option>Intersexual</option>
+            <option>Intersexual Home</option>
+            <option>Intersexual Dona</option>
+            <option>Transsexual</option>
+            <option>Transsexual Dona</option>
+            <option>Transsexual Home</option>
+          </select>
+
+          <!-- <input id="addGenere" type="text" class="form-control" name="genere"/> -->
         </div>
       </div>
       <br>
