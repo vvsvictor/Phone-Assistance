@@ -9,6 +9,7 @@ function showTable(){
     type: "GET",
     cache: false,
     success: function(response) {
+      console.log(response);
       let myJSON = JSON.parse(response);
       console.log(myJSON);
       $("#histoCallsTable").html("");
@@ -22,7 +23,7 @@ function showTable(){
       $('#dtHistocalls').DataTable();
     },
     error: function() {
-      console.log('No hi han clients');
+      console.log('No hi han trucades');
     }
   });
 }
