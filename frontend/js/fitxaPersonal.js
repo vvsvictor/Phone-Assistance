@@ -435,6 +435,7 @@ function cleanInputs(){
   let telFixe = $("#addTel_fijo").val('');
   let telMovil = $("#addMovil").val('');
   let telTreball = $("#addTelTreball").val('');
+  $("#addIdiomaAltre").val('');
   $("#resNom").html('');
   $("#resCognom").html('');
   $("#resCarrer").html('');
