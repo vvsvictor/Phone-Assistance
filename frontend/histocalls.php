@@ -97,6 +97,27 @@
 
     </div>
 
+    <!--Modal Delete product-->
+    <div class="modal fade" id="deletecallmodal" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Eliminar Trucada</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>Vols eliminar la trucada?</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" id="deleteCallDef" class="btn btn-danger" data-dismiss="modal">Eliminar</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Tancar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
 
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -105,6 +126,6 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.0/js/mdb.min.js"></script>
     <script type="text/javascript" src="js/jquery.dataTables.min.js"></script>
     <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
-    <script src="js/fitxaPersonal.js" type="text/javascript"></script>
+    <script src="js/histocalls.js" type="text/javascript"></script>
   </body>
 </html>
