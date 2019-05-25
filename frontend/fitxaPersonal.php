@@ -260,7 +260,17 @@ include '..\backend\include.php';
                     </div>
                     <div class="info">
                       <p class="sub-heading">Data de naixement</p>
-                      <p id="fpbirthdate" class="duration">10-04-1912</p>
+                      <p id="fpbirthdate" class="duration"></p>
+                      <p></p>
+                    </div>
+                    <div class="info">
+                      <p class="sub-heading">Idioma</p>
+                      <p id="fpidioma" class="duration"></p>
+                      <p></p>
+                    </div>
+                    <div class="info">
+                      <p class="sub-heading">Idioma de signes</p>
+                      <p id="fpidioma_s" class="duration"></p>
                       <p></p>
                     </div>
                   </div>
@@ -312,21 +322,6 @@ include '..\backend\include.php';
                   </div>
                 </div>
 
-                <div class="content3">
-                  <div class="contacto">
-                    <h1 class="heading">IDIOMES</h1>
-                    <div class="info">
-                      <p class="sub-heading">Idioma</p>
-                      <p id="fplanguage" class="duration">Castella</p>
-                      <p></p>
-                    </div>
-                    <div class="info">
-                      <p class="sub-heading">Idioma de signes</p>
-                      <p id="fpsignlanguage"  class="duration">Castella</p>
-                      <p></p>
-                    </div>
-                  </div>
-                </div>
               </div>
             </div>
           </div>
@@ -338,10 +333,10 @@ include '..\backend\include.php';
 
               <div class="content3">
                 <div class="contacto">
-                  <h1 class="heading">MUTUA</h1>
+                  <h1 class="heading">Mutua</h1>
                   <div class="info">
                     <p class="sub-heading">Nom</p>
-                    <p class="duration">Mutua 1</p>
+                    <p id="fpmutua" class="duration">Mutua 1</p>
                     <p></p>
                   </div>
                 </div>
@@ -427,37 +422,37 @@ include '..\backend\include.php';
                   <h1 class="heading">Serveis Contractats</h1>
                   <div class="info">
                     <p class="sub-heading">Telèfon Fixe</p>
-                    <p class="duration">Alta</p>
+                    <input id="tf_service" type="checkbox" class="notifications-switch" aria-label="Notifications Switch" checked="unchecked" disabled/>
                     <p></p>
                   </div>
                   <div class="info">
                     <p class="sub-heading">Terminal de Control Remot</p>
-                    <p class="duration">Baixa</p>
+                    <input id="tcr_service" type="checkbox" class="notifications-switch" aria-label="Notifications Switch" disabled/>
                     <p></p>
                   </div>
                   <div class="info">
                     <p class="sub-heading">Custòdia de Claus</p>
-                    <p class="duration">Baixa Temporal</p>
+                    <input id="cc_service" type="checkbox" class="notifications-switch" aria-label="Notifications Switch" checked="checked" disabled/>
                     <p></p>
                   </div>
                   <div class="info">
                     <p class="sub-heading">Terminal Mòbil</p>
-                    <p class="duration">Alta</p>
+                    <input id="tm_service" type="checkbox" class="notifications-switch" aria-label="Notifications Switch" checked="checked" disabled/>
                     <p></p>
                   </div>
                   <div class="info">
                     <p class="sub-heading">Teleassistència Mòbil</p>
-                    <p class="duration">Alta</p>
+                    <input id="tam_service" type="checkbox" class="notifications-switch" aria-label="Notifications Switch" checked="checked" disabled/>
                     <p></p>
                   </div>
                   <div class="info">
                     <p class="sub-heading">GPS</p>
-                    <p class="duration">Alta</p>
+                    <input id="gps_service" type="checkbox" class="notifications-switch" aria-label="Notifications Switch" checked="checked" disabled/>
                     <p></p>
                   </div>
                   <div class="info">
                     <p class="sub-heading">UMT</p>
-                    <p class="duration">Baixa</p>
+                    <input id="umt_service" type="checkbox" class="notifications-switch" aria-label="Notifications Switch" checked="checked" disabled/>
                     <p></p>
                   </div>
                 </div>

@@ -6,6 +6,15 @@
 			color: #E4F9F5;
 		}
 
+		.k-switch-on .k-switch-container {
+    color: white;
+    background-color: #11999e;
+}
+.k-switch-off .k-switch-container {
+color: white;
+background-color: black;
+}
+
 		.maxWidth{
 			width: 100%;
 		}
