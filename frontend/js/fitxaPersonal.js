@@ -6,6 +6,7 @@ $(document).ready(function() {
     cleanInputs();
     goToAddFp();
 
+
   });
   $("#returnPF").click(function() {
     goToFpList();
@@ -16,7 +17,9 @@ $(document).ready(function() {
   //kendo / jquery functions
   $(".opciones").checkboxradio();
   $(".datepicker").kendoDatePicker();
-  $("#addGenere").kendoDropDownList();
+  $(".dropDown").kendoDropDownList();
+
+
 });
 
 function Tabs(options) {
@@ -135,6 +138,8 @@ function showProvinces() {
         let id = myJSON[i].id;
         provincias.push("(Id:" + id + ") " + province);
       }
+      $("#divComarcas").hide();
+      $("#divMunicipios").hide();
       $("#provincias").kendoAutoComplete({
         filter: "contains",
         dataSource: provincias,
@@ -145,6 +150,49 @@ function showProvinces() {
       console.log('No hi han provincies');
     }
   });
+}
+
+function showLanguages(){
+  $.ajax({
+    url: "../backend/selects/getLanguages.php",
+    type: "GET",
+    cache: false,
+    success: function(response) {
+      let myJSON = JSON.parse(response);
+      html="";
+      for (let i = 0; i < myJSON.length; i++) {
+        html+='<option>(Id:'+myJSON[i].id+") "+myJSON[i].language_name+'</option>';
+      }
+      html+="<option>Altre</option>";
+      $("#addIdioma").html(html);
+      $("#addIdioma").kendoDropDownList();
+      $("#addIdiomaAltre").hide();
+    },
+    error: function() {
+      console.log('No hi han llenguatges');
+    }
+  });
+}
+
+function altreListener() {
+  let e = document.getElementById("addIdioma");
+  let text = e.options[e.selectedIndex].value;
+  console.log(text);
+  if (text=='Altre') {
+    $("#addIdiomaAltre").show();
+  }else{
+    $("#addIdiomaAltre").hide();
+  }
+}
+
+function provinciasListener(){
+  if ($(provincias).val().includes("Barcelona")) {
+    $("#divComarcas").show();
+    $("#divMunicipios").show();
+  }else{
+    $("#divComarcas").hide();
+    $("#divMunicipios").hide();
+  }
 }
 
 function showComarcas() {
@@ -281,6 +329,7 @@ function goToAddFp() {
   showComarcas();
   showProvinces();
   showMunisipalitys();
+  showLanguages();
   $('input:radio[name=idioma][value=1]').click();
   $('input:radio[name=idioma_s][value=0]').click();
   $('input:radio[name=titularitat][value=1]').click();

@@ -76,23 +76,17 @@ include '..\backend\include.php';
     </div>
   </nav>
   <div class="container">
-    <div id="addFp">
+    <div id="addFp" class="form">
       <button id="returnPF" type="button" class="btn btn-primary marginBtn"><i class="fa fa-reply"></i> Tornar enrere</button>
       <br>
       <br>
       <div class="row">
         <div class="col-lg-6">
           <label for="nom">Nom</label>
-        </div>
+          <input id="addNom" type="text" class="form-control" name="nom"/>
+        </div><br>
         <div class="col lg-6">
           <label for="cognom">Cognom</label>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-lg-6">
-          <input id="addNom" type="text" class="form-control" name="nom"/>
-        </div>
-        <div class="col lg-6">
           <input id="addCognom" type="text" class="form-control" name="cognom"/>
         </div>
       </div>
@@ -100,17 +94,11 @@ include '..\backend\include.php';
       <div class="row">
         <div class="col-lg-6">
           <label for="dni">DNI</label>
-        </div>
+          <input id="addDni" type="text" class="form-control" name="dni"/>
+        </div><br>
         <div class="col lg-6">
           <label for="genere">Gènere</label>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-lg-6">
-          <input id="addDni" type="text" class="form-control" name="dni"/>
-        </div>
-        <div class="col lg-6">
-          <select id="addGenere" style="width: 100%;" class="maxWidth">
+          <select id="addGenere" style="width: 100%;" class="maxWidth dropDown">
             <option>Dona</option>
             <option>Home</option>
             <option>Intersexual</option>
@@ -120,29 +108,17 @@ include '..\backend\include.php';
             <option>Transsexual Dona</option>
             <option>Transsexual Home</option>
           </select>
-
-          <!-- <input id="addGenere" type="text" class="form-control" name="genere"/> -->
         </div>
       </div>
       <br>
       <div class="row">
         <div class="col-lg-6">
           <label for="idioma">Idioma</label>
+          <select onchange="altreListener()" id="addIdioma" style="width: 100%;" class="maxWidth"></select>&nbsp;
+          <input id="addIdiomaAltre" type="text" class="form-control" placeholder="Idioma">
         </div>
         <div class="col lg-6">
-          <label for="idioma_signes">Idioma de signes</label>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-lg-6">
-          <label for="catala_i">Català</label>
-          <input value="1" type="radio" class="opciones" name="idioma" id="catala_i">
-          <label for="castella_i">Castellà</label>
-          <input value="2" type="radio" class="opciones" name="idioma" id="castella_i">
-          <label for="angles_i">Anglès</label>
-          <input value="3" type="radio" class="opciones" name="idioma" id="angles_i">
-        </div>
-        <div class="col-lg-6">
+          <label for="idioma_s">Idioma de signes</label><br>
           <label for="catala_is">Català</label>
           <input value="1" type="radio" class="opciones" name="idioma_s" id="catala_is">
           <label for="castella_is">Castellà</label>
@@ -156,17 +132,11 @@ include '..\backend\include.php';
       <br>
       <div class="row">
         <div class="col-lg-6">
-          <label for="data_naixament">Data de naixement</label>
+          <label for="data_naixament" >Data de naixement</label>
+          <input id="addDataNaixement" type="text" class="datepicker" style="width: 100%;"/>
         </div>
         <div class="col lg-6">
           <label for="adresa">Adreça</label>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-lg-6">
-          <input id="addDataNaixement" type="text" class="datepicker"/>
-        </div>
-        <div class="col lg-6">
           <input id="addAdreca" type="text" class="form-control" name="adreça"/>
         </div>
       </div>
@@ -194,39 +164,21 @@ include '..\backend\include.php';
       <div class="row">
         <div class="col-lg-6">
           <label for="provincias">Provincia</label>
+          <input style="width: 100%;" id="provincias" onchange="provinciasListener()"/>
         </div>
-        <div class="col lg-6">
+        <div class="col lg-6" id="divComarcas">
           <label for="comarcas">Comarca</label>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-lg-6">
-          <div class="ui-widget">
-            <input id="provincias"/>
-          </div>
-        </div>
-        <div class="col lg-6">
-          <div class="ui-widget">
-            <input id="comarcas"/>
-          </div>
+          <input style="width: 100%;" id="comarcas"/>
         </div>
       </div>
       <br>
       <div class="row">
-        <div class="col-lg-6">
+        <div class="col-lg-6" id="divMunicipios">
           <label for="municipios">Municipis</label>
+          <input style="width: 100%;" id="municipios"/>
         </div>
         <div class="col lg-6">
           <label for="tel_fijo">Telèfon fixe</label>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-lg-6">
-          <div class="ui-widget">
-            <input id="municipios"/>
-          </div>
-        </div>
-        <div class="col lg-6">
           <input id="addTel_fijo" type="text" class="form-control" name="tel_fijo"/>
         </div>
       </div>
@@ -234,16 +186,10 @@ include '..\backend\include.php';
       <div class="row">
         <div class="col-lg-6">
           <label for="movil">Telèfon Movil</label>
-        </div>
-        <div class="col lg-6">
-          <label for="tel_treball">Telèfon Treball</label>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-lg-6">
           <input id="addMovil" type="text" class="form-control" name="movil"/>
         </div>
         <div class="col lg-6">
+          <label for="tel_treball">Telèfon Treball</label>
           <input id="addTelTreball" type="text" class="form-control" name="tel_treball"/>
         </div>
       </div><br>
