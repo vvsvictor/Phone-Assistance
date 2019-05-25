@@ -488,171 +488,166 @@ function mostrarCardListener() {
         $("#fpwork_phone").html("");
         for (var i = 0; i < myJSON.length; i++) {
           if (idbtn == myJSON[i].id) {
-
-          
-          let id = myJSON[i].id;
-          let name = myJSON[i].name;
-          let surname = myJSON[i].surname;
-          let dninie = myJSON[i].dninie;
-          let birthdate = myJSON[i].birthdate;
-          let province = myJSON[i].province;
-          let comarca = myJSON[i].comarca;
-          let municipality = myJSON[i].municipality;
-          let address = myJSON[i].address;
-          let phone = myJSON[i].phone;
-          let mobile_phone = myJSON[i].mobile_phone;
-          let work_phone = myJSON[i].work_phone;
-          let language_name = myJSON[i].language;
-          let signlanguage_name = myJSON[i].sign_language;
-          $("#fpname").html(name);
-          $("#fpsurname").html(surname);
-          $("#fpdninie").html(dninie);
-          $("#fpbirthdate").html(birthdate);
-          $("#fpidioma").html(language_name);
-          $("#fpidioma_s").html(signlanguage_name);
-          $("#fpprovince").html(province);
-          $("#fpcomarca").html(comarca);
-          $("#fpmunicipality").html(municipality);
-          $("#fpaddress").html(address);
-          $("#fpphone").html(phone);
-          $("#fpmobile_phone").html(mobile_phone);
-          $("#fpwork_phone").html(mobile_phone);
-          goToFp();
-          $.ajax({
-            url: "../backend/selects/getResponsible.php",
-            type: "GET",
-            cache: false,
-            success: function(response) {
-              let myJSON = JSON.parse(response);
-              for (let i = 0; i < myJSON.length; i++) {
-                if (myJSON[i].user_dninif==dninie) {
-                  $("#resNom").html(myJSON[i].name);
-                  $("#resCognom").html(myJSON[i].surname);
-                  $("#resCarrer").html(myJSON[i].address);
-                  $("#resCodiPostal").html(myJSON[i].post_code);
-                  $("#resTel").html(myJSON[i].contact_phone);
-                  $("#resHorari").html(myJSON[i].preferable_hour);
-                  $("#resData").html(myJSON[i].date_responsible);
-                  $("#resPrioritat").html(myJSON[i].priority);
-                  $("#resRao").html(myJSON[i].reason);
-                }
-              }
-
-            },
-            error: function() {
-              console.log('No hi ha responsable');
-            }
-          });
-          $.ajax({
-            url: "../backend/selects/getHealthInsurance.php",
-            type: "GET",
-            cache: false,
-            success: function(response) {
-              let myJSON = JSON.parse(response);
-              for (let i = 0; i < myJSON.length; i++) {
-                if (myJSON[i].user_dninif==dninie) {
-                  $("#fpmutua").html(myJSON[i].insurance_name);
-                }
-              }
-            },
-            error: function() {
-              console.log('No hi ha responsable');
-            }
-          });
-          $.ajax({
-            url: "../backend/selects/getSta.php",
-            type: "GET",
-            cache: false,
-            success: function(response) {
-              let myJSON = JSON.parse(response);
-              for (let i = 0; i < myJSON.length; i++) {
-                if (myJSON[i].user_dninif==dninie) {
-                  if (myJSON[i].tf_service==1) {
-                    $("#tf_service").kendoSwitch({
-                      checked: true
-                    });
-                  }else{
-                    $("#tf_service").kendoSwitch({
-                      checked: false
-                    });
-                  }
-
-
-                  if (myJSON[i].tcr_service==1) {
-                    $("#tcr_service").kendoSwitch({
-                      checked: true
-                    });
-                  }else{
-                    $("#tcr_service").kendoSwitch({
-                      checked: false
-                    });
-                  }
-
-
-                  if (myJSON[i].cc_service==1) {
-                    $("#cc_service").kendoSwitch({
-                      checked: true
-                    });
-                  }else{
-                    $("#cc_service").kendoSwitch({
-                      checked: false
-                    });
-                  }
-
-
-                  if (myJSON[i].tm_service==1) {
-                    $("#tm_service").kendoSwitch({
-                      checked: true
-                    });
-                  }else{
-                    $("#tm_service").kendoSwitch({
-                      checked: false
-                    });
-                  }
-
-
-                  if (myJSON[i].tam_service==1) {
-                    $("#tam_service").kendoSwitch({
-                      checked: true
-                    });
-                  }else{
-                    $("#tam_service").kendoSwitch({
-                      checked: false
-                    });
-                  }
-
-
-                  if (myJSON[i].gps_service==1) {
-                    $("#gps_service").kendoSwitch({
-                      checked: true
-                    });
-                  }else{
-                    $("#gps_service").kendoSwitch({
-                      checked: false
-                    });
-                  }
-
-                  if (myJSON[i].umt_service==1) {
-                    $("#umt_service").kendoSwitch({
-                      checked: true
-                    });
-                  }else{
-                    $("#umt_service").kendoSwitch({
-                      checked: false
-                    });
+            let id = myJSON[i].id;
+            let name = myJSON[i].name;
+            let surname = myJSON[i].surname;
+            let dninie = myJSON[i].dninie;
+            let birthdate = myJSON[i].birthdate;
+            let province = myJSON[i].province;
+            let comarca = myJSON[i].comarca;
+            let municipality = myJSON[i].municipality;
+            let address = myJSON[i].address;
+            let phone = myJSON[i].phone;
+            let mobile_phone = myJSON[i].mobile_phone;
+            let work_phone = myJSON[i].work_phone;
+            let language_name = myJSON[i].language;
+            let signlanguage_name = myJSON[i].sign_language;
+            $("#fpname").html(name);
+            $("#fpsurname").html(surname);
+            $("#fpdninie").html(dninie);
+            $("#fpbirthdate").html(birthdate);
+            $("#fpidioma").html(language_name);
+            $("#fpidioma_s").html(signlanguage_name);
+            $("#fpprovince").html(province);
+            $("#fpcomarca").html(comarca);
+            $("#fpmunicipality").html(municipality);
+            $("#fpaddress").html(address);
+            $("#fpphone").html(phone);
+            $("#fpmobile_phone").html(mobile_phone);
+            $("#fpwork_phone").html(mobile_phone);
+            goToFp();
+            $.ajax({
+              url: "../backend/selects/getResponsible.php",
+              type: "GET",
+              cache: false,
+              success: function(response) {
+                let myJSON = JSON.parse(response);
+                for (let i = 0; i < myJSON.length; i++) {
+                  if (myJSON[i].user_dninif==dninie) {
+                    $("#resNom").html(myJSON[i].name);
+                    $("#resCognom").html(myJSON[i].surname);
+                    $("#resCarrer").html(myJSON[i].address);
+                    $("#resCodiPostal").html(myJSON[i].post_code);
+                    $("#resTel").html(myJSON[i].contact_phone);
+                    $("#resHorari").html(myJSON[i].preferable_hour);
+                    $("#resData").html(myJSON[i].date_responsible);
+                    $("#resPrioritat").html(myJSON[i].priority);
+                    $("#resRao").html(myJSON[i].reason);
                   }
                 }
+
+              },
+              error: function() {
+                console.log('No hi ha responsable');
               }
-            },
-            error: function() {
-              console.log('No hi ha responsable');
-            }
-          });
+            });
+            $.ajax({
+              url: "../backend/selects/getHealthInsurance.php",
+              type: "GET",
+              cache: false,
+              success: function(response) {
+                let myJSON = JSON.parse(response);
+                for (let i = 0; i < myJSON.length; i++) {
+                  if (myJSON[i].user_dninif==dninie) {
+                    $("#fpmutua").html(myJSON[i].insurance_name);
+                  }
+                }
+              },
+              error: function() {
+                console.log('No hi ha responsable');
+              }
+            });
+            $.ajax({
+              url: "../backend/selects/getSta.php",
+              type: "GET",
+              cache: false,
+              success: function(response) {
+                let myJSON = JSON.parse(response);
+                for (let i = 0; i < myJSON.length; i++) {
+                  if (myJSON[i].user_dninif==dninie) {
+                    if (myJSON[i].tf_service==1) {
+                      $("#tf_service").kendoSwitch({
+                        checked: true
+                      });
+                    }else{
+                      $("#tf_service").kendoSwitch({
+                        checked: false
+                      });
+                    }
 
 
+                    if (myJSON[i].tcr_service==1) {
+                      $("#tcr_service").kendoSwitch({
+                        checked: true
+                      });
+                    }else{
+                      $("#tcr_service").kendoSwitch({
+                        checked: false
+                      });
+                    }
+
+
+                    if (myJSON[i].cc_service==1) {
+                      $("#cc_service").kendoSwitch({
+                        checked: true
+                      });
+                    }else{
+                      $("#cc_service").kendoSwitch({
+                        checked: false
+                      });
+                    }
+
+
+                    if (myJSON[i].tm_service==1) {
+                      $("#tm_service").kendoSwitch({
+                        checked: true
+                      });
+                    }else{
+                      $("#tm_service").kendoSwitch({
+                        checked: false
+                      });
+                    }
+
+
+                    if (myJSON[i].tam_service==1) {
+                      $("#tam_service").kendoSwitch({
+                        checked: true
+                      });
+                    }else{
+                      $("#tam_service").kendoSwitch({
+                        checked: false
+                      });
+                    }
+
+
+                    if (myJSON[i].gps_service==1) {
+                      $("#gps_service").kendoSwitch({
+                        checked: true
+                      });
+                    }else{
+                      $("#gps_service").kendoSwitch({
+                        checked: false
+                      });
+                    }
+
+                    if (myJSON[i].umt_service==1) {
+                      $("#umt_service").kendoSwitch({
+                        checked: true
+                      });
+                    }else{
+                      $("#umt_service").kendoSwitch({
+                        checked: false
+                      });
+                    }
+                  }
+                }
+              },
+              error: function() {
+                console.log('No hi ha responsable');
+              }
+            });
+          }
         }
-      }
-
       },
       error: function() {
         console.log('No hi han clients');

@@ -275,27 +275,27 @@
           <div class="c-tab__content">
             <div class="container_doctors">
               <div class="content3">
-                <div id="tableFitxaPersonal">
+                <div id="tableDoctors">
                   <button id="showFormDoctor" type="button" class="btn btn-primary"><i class="fa fa-plus"></i>Afegir Doctor</button>
-                  <table id="dtFitxaPersonal" class="table table-striped table-bordered" cellspacing="0" width="100%">
+                  <table id="dtDoctor" class="table table-striped table-bordered" cellspacing="0" width="100%">
                     <thead>
                       <tr>
                         <th class="th-sm">Id</th>
                         <th class="th-sm">Nom</th>
                         <th class="th-sm">Cognom</th>
-                        <th class="th-sm">DNI</th>
-                        <th class="th-sm">Provincia</th>
+                        <th class="th-sm">Genere</th>
+                        <th class="th-sm">Especialització</th>
                         <th class="th-sm"></th>
                       </tr>
                     </thead>
-                    <tbody id="fitxaPersonalTable"></tbody>
+                    <tbody id="tbDoctors"></tbody>
                     <tfoot>
                       <tr>
                         <th>Id</th>
                         <th>Nom</th>
                         <th>Cognom</th>
-                        <th>DNI</th>
-                        <th>Provincia</th>
+                        <th>Genere</th>
+                        <th>Especialització</th>
                         <th></th>
                       </tr>
                     </tfoot>

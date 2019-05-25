@@ -234,8 +234,6 @@ function modCapListener() {
     });
 
   });
-
-
 }
 
 function showTable() {
@@ -263,7 +261,6 @@ function showTable() {
       console.log('No hi han caps');
     }
   });
-
 }
 
 
@@ -281,40 +278,67 @@ function goToCap() {
 
 function mostrarCapListener(){
   $(".fitxaCaps").click(function(event) {
-    let idbtn = this.id;
-    idbtn = idbtn.replace("fitxaCaps", "");
-    $.ajax({
-      url: "../backend/selects/getCap.php",
-      type: "GET",
-      cache: false,
-      success: function(response) {
-        console.log("entra");
-        let myJSON = JSON.parse(response);
-        console.log(response);
-        $("#cname").html("");
-        $("#caddress").html("");
-        $("#cphone").html("");
-        $("#cschedule").html("");
-        for (var i = 0; i < myJSON.length; i++) {
-          if ( i == (idbtn-1)){
-            let id = myJSON[i].id;
-            let name = myJSON[i].name;
-            let address = myJSON[i].address;
-            let phone = myJSON[i].phone;
-            let schedule = myJSON[i].schedule;
-            $("#cname").html(name);
-            $("#caddress").html(address);
-            $("#cphone").html(phone);
-            $("#cschedule").html(schedule);
-            goToCap();
+      let idbtn = this.id;
+      idbtn = idbtn.replace("fitxaCaps", "");
+      $.ajax({
+        url: "../backend/selects/getCap.php",
+        type: "GET",
+        cache: false,
+        success: function(response) {
+          console.log("entra");
+          let myJSON = JSON.parse(response);
+          console.log(response);
+          $("#cname").html("");
+          $("#caddress").html("");
+          $("#cphone").html("");
+          $("#cschedule").html("");
+          for (var i = 0; i < myJSON.length; i++) {
+            if (idbtn == myJSON[i].id){
+              let id = myJSON[i].id;
+              let name = myJSON[i].name;
+              let address = myJSON[i].address;
+              let phone = myJSON[i].phone;
+              let schedule = myJSON[i].schedule;
+              $("#cname").html(name);
+              $("#caddress").html(address);
+              $("#cphone").html(phone);
+              $("#cschedule").html(schedule);
+              goToCap();
+              $.ajax({
+                url: "../backend/selects/getDoctors.php",
+                type: "GET",
+                cache: false,
+                success: function(response) {
+                  let myJSON = JSON.parse(response);
+                  for (var i = 0; i < myJSON.length; i++) {
+                    if (idbtn == myJSON[i].id_cap){
+                      let id = myJSON[i].id;
+                      let name = myJSON[i].name;
+                      let surname = myJSON[i].surname;
+                      let gender = myJSON[i].gender;
+                      let specialization_id = myJSON[i].specialization_id;
+                    }
+                  }
+                },
+                error: function() {
+                  console.log('No hi han metges');
+                }
+              });
+            }
           }
-        }
       },
       error: function(){
         console.log('No hi ha CAPS');
       }
     });
   });
+}
+
+function showMedicos(id,name,surname,gender,med_specialization) {
+  let html;
+  html = "<tr><td>" + id + "</td><td>" + name + "</td><td>" + surname + "</td><td>" + gender + "</td><td>" + med_specialization + "</td><td></td></tr>";
+  console.log(html)
+  $("#tbDoctors").append(html);
 }
 
 
