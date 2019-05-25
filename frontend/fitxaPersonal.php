@@ -173,18 +173,18 @@ include '..\backend\include.php';
         </div>
         <div class="col-lg-6">
           <label for="tel_fijo">Telèfon fixe</label>
-          <input id="addTel_fijo" type="text" class="form-control" name="tel_fijo"/>
+          <input id="addTel_fijo" type="text" class="phoneMask form-control" name="tel_fijo"/>
         </div>
       </div>
       <br>
       <div class="row">
         <div class="col-lg-6">
           <label for="movil">Telèfon Movil</label>
-          <input id="addMovil" type="text" class="form-control" name="movil"/>
+          <input id="addMovil" type="text" class="phoneMask form-control" name="movil"/>
         </div>&nbsp;
         <div class="col-lg-6">
           <label for="tel_treball">Telèfon Treball</label>
-          <input id="addTelTreball" type="text" class="form-control" name="tel_treball"/>
+          <input id="addTelTreball" type="text" class="phoneMask form-control" name="tel_treball"/>
         </div>
       </div><br>
       <div class="row">

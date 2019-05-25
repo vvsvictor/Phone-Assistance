@@ -16,6 +16,10 @@ $(document).ready(function() {
   //kendo / jquery functions
   $(".opciones").checkboxradio();
   $(".datepicker").kendoDatePicker();
+  $(".phoneMask").kendoMaskedTextBox({
+    mask: "000 000 000"
+  });
+
 
 
 
