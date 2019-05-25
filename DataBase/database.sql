@@ -261,13 +261,6 @@ INSERT into comarcas (comar_name) VALUES ("Urgell");
 INSERT into comarcas (comar_name) VALUES ("Vallès Occidental");
 INSERT into comarcas (comar_name) VALUES ("Vallès Oriental");
 
-/*Insert type call_history type by default*/
-insert into call_state (call_type) values ("Acabada");
-insert into call_type (call_type)values ("Emergencia");
-insert into incall_type (incall_type) values ("Si");
-insert into outcall_type (outcall_type) values ("No");
-insert into call_history (user_dninif,call_date,call_type,outcall_type,incall_type,call_state,teleoperator_solution) values ("68951118Q", "2019-10-25", 1, 1, 1, 1, "morir");
-
 /*Insert type municipality type by default*/
 INSERT into MUNISIPALITYS (muni_name) VALUES ("Barcelona");
 INSERT into MUNISIPALITYS (muni_name) VALUES ("Badalona");
@@ -285,3 +278,10 @@ INSERT into STA (user_dninif, actual_situation, hiring_date, tf_service, tcr_ser
 
 /*Insert RESPONSIBLE for the client by default*/
 INSERT into RESPONSIBLE (user_dninif, priority, name, surname, address, post_code, contact_phone, preferable_hour, date_responsible, reason) VALUES ("68951118Q", "ALTA", "TEST", "TESTED", "calle falsa 559", "15667", "987654125", "17:10h - 21h", "22-05-2019", "porque si");
+
+/*Insert type call_history type by default*/
+insert into call_state (call_type) values ("Acabada");
+insert into call_type (call_type)values ("Emergencia");
+insert into incall_type (incall_type) values ("Si");
+insert into outcall_type (outcall_type) values ("No");
+insert into call_history (user_dninif,call_date,call_type,outcall_type,incall_type,call_state,teleoperator_solution) values ("68951118Q", "2019-10-25", 1, 1, 1, 1, "morir");
