@@ -84,8 +84,8 @@ include '..\backend\include.php';
         <div class="col-lg-6">
           <label for="nom">Nom</label>
           <input id="addNom" type="text" class="form-control" name="nom"/>
-        </div><br>
-        <div class="col lg-6">
+        </div>
+        <div class="col-lg-6">
           <label for="cognom">Cognom</label>
           <input id="addCognom" type="text" class="form-control" name="cognom"/>
         </div>
@@ -95,8 +95,8 @@ include '..\backend\include.php';
         <div class="col-lg-6">
           <label for="dni">DNI</label>
           <input id="addDni" type="text" class="form-control" name="dni"/>
-        </div><br>
-        <div class="col lg-6">
+        </div>
+        <div class="col-lg-6">
           <label for="genere">Gènere</label>
           <select id="addGenere" style="width: 100%;" class="maxWidth dropDown">
             <option>Dona</option>
@@ -117,7 +117,7 @@ include '..\backend\include.php';
           <select onchange="altreListener()" id="addIdioma" style="width: 100%;" class="maxWidth"></select>&nbsp;
           <input id="addIdiomaAltre" type="text" class="form-control" placeholder="Idioma">
         </div>
-        <div class="col lg-6">
+        <div class="col-lg-6">
           <label for="idioma_s">Idioma de signes</label><br>
           <label for="catala_is">Català</label>
           <input value="1" type="radio" class="opciones" name="idioma_s" id="catala_is">
@@ -135,7 +135,7 @@ include '..\backend\include.php';
           <label for="data_naixament" >Data de naixement</label>
           <input id="addDataNaixement" type="text" class="datepicker" style="width: 100%;"/>
         </div>
-        <div class="col lg-6">
+        <div class="col-lg-6">
           <label for="adresa">Adreça</label>
           <input id="addAdreca" type="text" class="form-control" name="adreça"/>
         </div>
@@ -144,16 +144,10 @@ include '..\backend\include.php';
       <div class="row">
         <div class="col-lg-6">
           <label for="tipus_habitatge">Tipus d'habitatge</label>
-        </div>
-        <div class="col lg-6">
-          <label for="titularitat">Titularitat de l'habitatge</label>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-lg-6">
           <input id="addTipus_habitatge" type="text" class="form-control" name="tipus_habitatge"/>
         </div>
-        <div class="col lg-6">
+        <div class="col-lg-6">
+          <label for="titularitat">Titularitat de l'habitatge</label><br>
           <label for="propietari">Propietari</label>
           <input value="1" type="radio" class="opciones" name="titularitat" id="propietari">
           <label for="arrendatari">Arrendatari</label>
@@ -166,7 +160,7 @@ include '..\backend\include.php';
           <label for="provincias">Provincia</label>
           <input style="width: 100%;" id="provincias" onchange="provinciasListener()"/>
         </div>
-        <div class="col lg-6" id="divComarcas">
+        <div class="col-lg-6" id="divComarcas">
           <label for="comarcas">Comarca</label>
           <input style="width: 100%;" id="comarcas"/>
         </div>
@@ -177,7 +171,7 @@ include '..\backend\include.php';
           <label for="municipios">Municipis</label>
           <input style="width: 100%;" id="municipios"/>
         </div>
-        <div class="col lg-6">
+        <div class="col-lg-6">
           <label for="tel_fijo">Telèfon fixe</label>
           <input id="addTel_fijo" type="text" class="form-control" name="tel_fijo"/>
         </div>
@@ -187,8 +181,8 @@ include '..\backend\include.php';
         <div class="col-lg-6">
           <label for="movil">Telèfon Movil</label>
           <input id="addMovil" type="text" class="form-control" name="movil"/>
-        </div>
-        <div class="col lg-6">
+        </div>&nbsp;
+        <div class="col-lg-6">
           <label for="tel_treball">Telèfon Treball</label>
           <input id="addTelTreball" type="text" class="form-control" name="tel_treball"/>
         </div>
@@ -231,7 +225,7 @@ include '..\backend\include.php';
   <div id="pageFp">
 
     <section id="page">
-      <button id="returnPF2" type="button" class="btn btn-primary"><i class="fa fa-reply"></i></button>
+      <button id="returnPF2" type="button" class="btn btn-primary"><i class="fa fa-reply"></i> Tornar Enrere</button>
       <div id="tabs" class="c-tabs">
         <div class="c-tabs-nav">
           <a href="#" class="c-tabs-nav__link is-active">Fitxa Personal</a>
