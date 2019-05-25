@@ -80,17 +80,19 @@
         <br>
         <div class="row">
           <div class="col-lg-6">
-            <label for="nom_cap">NOM DEL CAP</label>
+
           </div>
           <div class="col lg-6">
-            <label for="direccio_cap">DIRECCIÓ</label>
+
           </div>
         </div>
         <div class="row">
           <div class="col-lg-6">
+            <label for="nom_cap">NOM DEL CAP</label>
             <input type="text" class="form-control" name="nom_cap"/>
           </div>
           <div class="col lg-6">
+            <label for="direccio_cap">DIRECCIÓ</label>
             <input type="text" class="form-control" name="direccio_cap"/>
           </div>
         </div>
@@ -201,7 +203,6 @@
       </div>
       <div id="tableCaps">
         <button id="showFormCAP" type="button" class="btn btn-primary"><i class="fa fa-plus"></i>Afegir CAP</button>
-        <button id="showFormDoctor" type="button" class="btn btn-primary"><i class="fa fa-plus"></i>Afegir Doctor</button>
         <table id="dtCap" class="table table-striped table-bordered" cellspacing="0" width="100%">
           <thead>
             <tr>
