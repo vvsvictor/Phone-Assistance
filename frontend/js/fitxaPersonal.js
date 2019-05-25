@@ -487,6 +487,9 @@ function mostrarCardListener() {
         $("#fpmobile_phone").html("");
         $("#fpwork_phone").html("");
         for (var i = 0; i < myJSON.length; i++) {
+          if (idbtn == myJSON[i].id) {
+
+          
           let id = myJSON[i].id;
           let name = myJSON[i].name;
           let surname = myJSON[i].surname;
@@ -646,8 +649,9 @@ function mostrarCardListener() {
             }
           });
 
-          
+
         }
+      }
 
       },
       error: function() {
