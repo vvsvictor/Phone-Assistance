@@ -646,13 +646,7 @@ function mostrarCardListener() {
             }
           });
 
-
-              },
-              error: function() {
-                console.log('No hi ha responsable');
-              }
-            });
-          }
+          
         }
 
       },
