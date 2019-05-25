@@ -113,7 +113,7 @@
         </div>
         <div class="row">
           <div class="col-lg-6">
-            Mutues
+            MUTUES
           </div>
           <div class="col lg-6">
           </div>
@@ -230,7 +230,7 @@
   <div id="pageCAPS">
 
     <section id="page">
-      <button id="returnCAPF" type="button" class="btn btn-primary"><i class="fa fa-reply"></i></button>
+      <button id="returnCAP2" type="button" class="btn btn-primary"><i class="fa fa-reply"></i></button>
       <div id="tabs" class="c-tabs">
         <div class="c-tabs-nav">
           <a href="#" class="c-tabs-nav__link is-active">Info CAP</a>

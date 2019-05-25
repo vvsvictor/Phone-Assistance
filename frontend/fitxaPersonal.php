@@ -274,11 +274,11 @@ include '..\backend\include.php';
   <div id="pageFp">
 
     <section id="page">
-      <button id="returnPF" type="button" class="btn btn-primary"><i class="fa fa-reply"></i></button>
+      <button id="returnPF2" type="button" class="btn btn-primary"><i class="fa fa-reply"></i></button>
       <div id="tabs" class="c-tabs">
         <div class="c-tabs-nav">
           <a href="#" class="c-tabs-nav__link is-active">Fitxa Personal</a>
-          <a href="#" class="c-tabs-nav__link">CAPS</a>
+          <a href="#" class="c-tabs-nav__link">CAP / Mutua</a>
           <a href="#" class="c-tabs-nav__link">Responsable</a>
           <a href="#" class="c-tabs-nav__link">STA</a>
           <a href="#" class="c-tabs-nav__link">Trucades</a>
@@ -401,35 +401,15 @@ include '..\backend\include.php';
 
               <div class="content2a">
                 <div class="contacto">
-                  <h1 class="heading">Doctor/a</h1>
+                  <h1 class="heading">MUTUA</h1>
                   <div class="info">
                     <p class="sub-heading">Nom</p>
-                    <p class="duration">Pedro</p>
-                    <p></p>
-                  </div>
-                  <div class="info">
-                    <p class="sub-heading">Cognoms</p>
-                    <p class="duration">Hernandez Torres</p>
-                    <p></p>
-                  </div>
-                  <div class="info">
-                    <p class="sub-heading">Sexe</p>
-                    <p class="duration">Home</p>
-                    <p></p>
-                  </div>
-                  <div class="info">
-                    <p class="sub-heading">Especialització</p>
-                    <p class="duration">Capçalera</p>
+                    <p class="duration">Mutua 1</p>
                     <p></p>
                   </div>
                 </div>
               </div>
 
-              <div class="content3">
-                <div class="contacto">
-                  <h1 class="heading">Ubicació</h1>
-                </div>
-              </div>
             </div>
           </div>
         </div>

@@ -23,6 +23,9 @@ $(document).ready(function() {
   $("#returnCAP").click(function() {
     goToCapList();
   });
+  $("#returnCAP2").click(function() {
+    goToCapList();
+  });
   $("#returnDoctor").click(function() {
     goToCapList();
   });

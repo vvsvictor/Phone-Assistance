@@ -10,6 +10,9 @@ $(document).ready(function() {
   $("#returnPF").click(function() {
     goToFpList();
   });
+  $("#returnPF2").click(function() {
+    goToFpList();
+  });
   //jquery functions
   $(".opciones").checkboxradio();
   $(".datepicker").kendoDatePicker();
