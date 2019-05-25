@@ -239,6 +239,7 @@ include '..\backend\include.php';
         <div class="c-tab is-active">
           <div class="c-tab__content">
             <div class="container_ficha">
+              <button id="modFormPF" type="button" class="btn btn-primary marginBtn"> Modificar</button>
               <div class="container">
                 <div class="content">
                   <div class="direccion">
@@ -468,6 +469,263 @@ include '..\backend\include.php';
       </div>
     </section>
   </div>
+
+  <div id="modpageFp">
+
+    <section id="page">
+      <button id="returnPF3" type="button" class="btn btn-primary"><i class="fa fa-reply"></i> Tornar Enrere</button>
+      <div id="tabs" class="c-tabs">
+        <div class="c-tabs-nav">
+          <a href="#" class="c-tabs-nav__link is-active">Fitxa Personal</a>
+          <a href="#" class="c-tabs-nav__link">Mutua</a>
+          <a href="#" class="c-tabs-nav__link">Responsable</a>
+          <a href="#" class="c-tabs-nav__link">STA</a>
+          <a href="#" class="c-tabs-nav__link">Trucades</a>
+          <div class="c-tab-nav-marker"></div>
+        </div>
+        <!-- FICHA PERSONAL-->
+        <div class="c-tab is-active">
+          <div class="c-tab__content">
+            <div class="container_ficha">
+              <div class="container">
+                <div class="content">
+                  <div class="direccion">
+                    <h1 class="heading"> Dades</h1>
+                    <div class="info">
+                      <p class="sub-heading">Nom</p>
+                      <input id="modNom" type="text" class="form-control" name="nom"/>
+                      <p></p>
+                    </div>
+                    <div class="info">
+                      <p class="sub-heading">Cognoms</p>
+                      <input id="modCognom" type="text" class="form-control" name="cognom"/>
+                      <p></p>
+                    </div>
+                    <div class="info">
+                      <p class="sub-heading">DNI</p>
+                      <input id="modDni" type="text" class="form-control" name="dni"/>
+                      <p></p>
+                    </div>
+                    <div class="info">
+                      <p class="sub-heading">Data de naixement</p>
+                      <input id="modDataNaixement" type="text" class="datepicker" style="width: 100%;"/>
+                      <p></p>
+                    </div>
+                    <div class="info">
+                      <p class="sub-heading">Idioma</p>
+                      <select onchange="altreListener()" id="addIdioma" style="width: 100%;" class="maxWidth"></select>&nbsp;
+                      <input id="addIdiomaAltre" type="text" class="form-control" placeholder="Idioma">
+                      <p></p>
+                    </div>
+                    <div class="info">
+                      <p class="sub-heading">Idioma de signes</p>
+                      <label for="idioma_s">Idioma de signes</label><br>
+                      <label for="catala_is">Català</label>
+                      <input value="1" type="radio" class="opciones" name="idioma_s" id="catala_is">
+                      <label for="castella_is">Castellà</label>
+                      <input value="2" type="radio" class="opciones" name="idioma_s" id="castella_is">
+                      <label for="angles_is">Anglès</label>
+                      <input value="3" type="radio" class="opciones" name="idioma_s" id="angles_is">
+                      <label for="no_is">No</label>
+                      <input value="0" type="radio" class="opciones" name="idioma_s" id="no_is">
+                      <p></p>
+                    </div>
+                  </div>
+                </div>
+                <div class="content">
+                  <div class="direccion">
+                    <h1 class="heading"> Direcció</h1>
+                    <div class="info">
+                      <p class="sub-heading">Provincia</p>
+                      <input style="width: 100%;" id="provincias" onchange="provinciasListener()"/>
+                      <p></p>
+                    </div>
+                    <div class="info">
+                      <p class="sub-heading">Comarca</p>
+                      <input style="width: 100%;" id="comarcas"/>
+                      <p></p>
+                    </div>
+                    <div class="info">
+                      <p class="sub-heading">Municipi</p>
+                      <input style="width: 100%;" id="municipios"/>
+                      <p></p>
+                    </div>
+                    <div class="info">
+                      <p class="sub-heading">Carrer</p>
+                      <input id="modAdreca" type="text" class="form-control" name="adreça"/>
+                      <p></p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="content">
+                  <div class="contacto">
+                    <h1 class="heading">Contacte</h1>
+                    <div class="info">
+                      <p class="sub-heading">Telèfon fixe</p>
+                      <input id="modTel_fijo" type="text" class="phoneMask form-control" name="tel_fijo"/>
+                      <p></p>
+                    </div>
+                    <div class="info">
+                      <p class="sub-heading">Telèfon móvil</p>
+                      <input id="modMovil" type="text" class="phoneMask form-control" name="movil"/>
+                      <p></p>
+                    </div>
+                    <div class="info">
+                      <p class="sub-heading">Telèfon treball</p>
+                      <input id="addTelTreball" type="text" class="phoneMask form-control" name="tel_treball"/>
+                      <p></p>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- CAPS -->
+        <div class="c-tab">
+          <div class="c-tab__content">
+            <div class="container_caps">
+
+              <div class="content3">
+                <div class="contacto">
+                  <h1 class="heading">Mutua</h1>
+                  <div class="info">
+                    <p class="sub-heading">Nom</p>
+                    <p id="fpmutua" class="duration">Mutua 1</p>
+                    <p></p>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <!-- RESPONSABLE -->
+        <div class="c-tab">
+          <div class="c-tab__content">
+            <div class="container_responsible">
+              <div class="content2">
+                <div class="direccion">
+                  <h1 class="heading"> Dades</h1>
+                  <div class="info">
+                    <p class="sub-heading">Nom</p>
+                    <p id="resNom" class="duration">Nati</p>
+                    <p></p>
+                  </div>
+                  <div class="info">
+                    <p class="sub-heading">Cognoms</p>
+                    <p id="resCognom" class="duration">Novo</p>
+                    <p></p>
+                  </div>
+                  <div class="info">
+                    <p class="sub-heading">Carrer</p>
+                    <p id="resCarrer" class="duration">Alcudia nº 23 3º 1ª</p>
+                    <p></p>
+                  </div>
+                  <div class="info">
+                    <p class="sub-heading">Codí Postal</p>
+                    <p id="resCodiPostal" class="duration">08029</p>
+                    <p></p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="content2a">
+                <div class="contacto">
+                  <h1 class="heading">Contacte</h1>
+                  <div class="info">
+                    <p class="sub-heading">Telèfon</p>
+                    <p id="resTel" class="duration">937764012</p>
+                    <p></p>
+                  </div>
+                  <div class="info">
+                    <p class="sub-heading">Horari</p>
+                    <p id="resHorari" class="duration">8h - 14h</p>
+                    <p></p>
+                  </div>
+                  <div class="info">
+                    <p class="sub-heading">Data</p>
+                    <p id="resData" class="duration">01-04-2017</p>
+                    <p></p>
+                  </div>
+                  <div class="info">
+                    <p class="sub-heading">Prioritat</p>
+                    <p id="resPrioritat" class="duration">Alta</p>
+                    <p></p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="content3">
+                <div class="contacto">
+                  <h1 class="heading">Raó</h1>
+                  <div class="info">
+                    <p id="resRao" class="duration">Familiar de primer grau</p>
+                    <p></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- STA -->
+        <div class="c-tab">
+          <div class="c-tab__content">
+            <div class="container_sta">
+              <div class="content3">
+                <div class="contacto">
+                  <h1 class="heading">Serveis Contractats</h1>
+                  <div class="info">
+                    <p class="sub-heading">Telèfon Fixe</p>
+                    <input id="tf_service" type="checkbox" class="notifications-switch" aria-label="Notifications Switch" checked="unchecked" disabled/>
+                    <p></p>
+                  </div>
+                  <div class="info">
+                    <p class="sub-heading">Terminal de Control Remot</p>
+                    <input id="tcr_service" type="checkbox" class="notifications-switch" aria-label="Notifications Switch" disabled/>
+                    <p></p>
+                  </div>
+                  <div class="info">
+                    <p class="sub-heading">Custòdia de Claus</p>
+                    <input id="cc_service" type="checkbox" class="notifications-switch" aria-label="Notifications Switch" checked="checked" disabled/>
+                    <p></p>
+                  </div>
+                  <div class="info">
+                    <p class="sub-heading">Terminal Mòbil</p>
+                    <input id="tm_service" type="checkbox" class="notifications-switch" aria-label="Notifications Switch" checked="checked" disabled/>
+                    <p></p>
+                  </div>
+                  <div class="info">
+                    <p class="sub-heading">Teleassistència Mòbil</p>
+                    <input id="tam_service" type="checkbox" class="notifications-switch" aria-label="Notifications Switch" checked="checked" disabled/>
+                    <p></p>
+                  </div>
+                  <div class="info">
+                    <p class="sub-heading">GPS</p>
+                    <input id="gps_service" type="checkbox" class="notifications-switch" aria-label="Notifications Switch" checked="checked" disabled/>
+                    <p></p>
+                  </div>
+                  <div class="info">
+                    <p class="sub-heading">UMT</p>
+                    <input id="umt_service" type="checkbox" class="notifications-switch" aria-label="Notifications Switch" checked="checked" disabled/>
+                    <p></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- LLAMADAS -->
+        <div class="c-tab">
+          <div class="c-tab__content">
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
 
 
   <!--Modal Delete product-->
