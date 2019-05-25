@@ -462,13 +462,16 @@ function showFitxaPersonal(id, name, surname, dninie, province) {
 
 function mostrarCardListener() {
   $(".fitxaPersonal").click(function(event) {
-    let id = this.id;
+    let idbtn = this.id;
+    idbtn = idbtn.replace("fitxaPersonal", "");
+    console.log("ID "+idbtn);
     $.ajax({
       url: "../backend/selects/getFitxaPersonal.php",
       type: "GET",
       cache: false,
       success: function(response) {
         let myJSON = JSON.parse(response);
+        console.log(response);
         $("#fpname").html("");
         $("#fpsurname").html("");
         $("#fpdninie").html("");
@@ -481,57 +484,59 @@ function mostrarCardListener() {
         $("#fpmobile_phone").html("");
         $("#fpwork_phone").html("");
         for (var i = 0; i < myJSON.length; i++) {
-          let id = myJSON[i].id;
-          let name = myJSON[i].name;
-          let surname = myJSON[i].surname;
-          let dninie = myJSON[i].dninie;
-          let birthdate = myJSON[i].birthdate;
-          let province = myJSON[i].province;
-          let comarca = myJSON[i].comarca;
-          let municipality = myJSON[i].municipality;
-          let address = myJSON[i].address;
-          let phone = myJSON[i].phone;
-          let mobile_phone = myJSON[i].mobile_phone;
-          let work_phone = myJSON[i].work_phone;
-          $("#fpname").html(name);
-          $("#fpsurname").html(surname);
-          $("#fpdninie").html(dninie);
-          $("#fpbirthdate").html(birthdate);
-          $("#fpprovince").html(province);
-          $("#fpcomarca").html(comarca);
-          $("#fpmunicipality").html(municipality);
-          $("#fpaddress").html(address);
-          $("#fpphone").html(phone);
-          $("#fpmobile_phone").html(mobile_phone);
-          $("#fpwork_phone").html(mobile_phone);
-          goToFp();
-          $.ajax({
-            url: "../backend/selects/getResponsible.php",
-            type: "GET",
-            cache: false,
-            success: function(response) {
-              let myJSON = JSON.parse(response);
-              for (let i = 0; i < myJSON.length; i++) {
-                if (myJSON[i].user_dninif==dninie) {
-                  $("#resNom").html(myJSON[i].name);
-                  $("#resCognom").html(myJSON[i].surname);
-                  $("#resCarrer").html(myJSON[i].address);
-                  $("#resCodiPostal").html(myJSON[i].post_code);
-                  $("#resTel").html(myJSON[i].contact_phone);
-                  $("#resHorari").html(myJSON[i].preferable_hour);
-                  $("#resData").html(myJSON[i].date_responsible);
-                  $("#resPrioritat").html(myJSON[i].priority);
-                  $("#resRao").html(myJSON[i].reason);
+          console.log("ID "+idbtn);
+          if (i == (idbtn-1)) {
+            let id = myJSON[i].id;
+            console.log(id);
+            let name = myJSON[i].name;
+            let surname = myJSON[i].surname;
+            let dninie = myJSON[i].dninie;
+            let birthdate = myJSON[i].birthdate;
+            let province = myJSON[i].province;
+            let comarca = myJSON[i].comarca;
+            let municipality = myJSON[i].municipality;
+            let address = myJSON[i].address;
+            let phone = myJSON[i].phone;
+            let mobile_phone = myJSON[i].mobile_phone;
+            let work_phone = myJSON[i].work_phone;
+            $("#fpname").html(name);
+            $("#fpsurname").html(surname);
+            $("#fpdninie").html(dninie);
+            $("#fpbirthdate").html(birthdate);
+            $("#fpprovince").html(province);
+            $("#fpcomarca").html(comarca);
+            $("#fpmunicipality").html(municipality);
+            $("#fpaddress").html(address);
+            $("#fpphone").html(phone);
+            $("#fpmobile_phone").html(mobile_phone);
+            $("#fpwork_phone").html(mobile_phone);
+            goToFp();
+            $.ajax({
+              url: "../backend/selects/getResponsible.php",
+              type: "GET",
+              cache: false,
+              success: function(response) {
+                let myJSON = JSON.parse(response);
+                for (let i = 0; i < myJSON.length; i++) {
+                  if (myJSON[i].user_dninif==dninie) {
+                    $("#resNom").html(myJSON[i].name);
+                    $("#resCognom").html(myJSON[i].surname);
+                    $("#resCarrer").html(myJSON[i].address);
+                    $("#resCodiPostal").html(myJSON[i].post_code);
+                    $("#resTel").html(myJSON[i].contact_phone);
+                    $("#resHorari").html(myJSON[i].preferable_hour);
+                    $("#resData").html(myJSON[i].date_responsible);
+                    $("#resPrioritat").html(myJSON[i].priority);
+                    $("#resRao").html(myJSON[i].reason);
+                  }
                 }
+
+              },
+              error: function() {
+                console.log('No hi ha responsable');
               }
-
-            },
-            error: function() {
-              console.log('No hi ha responsable');
-            }
-          });
-
-
+            });
+          }
         }
 
       },
