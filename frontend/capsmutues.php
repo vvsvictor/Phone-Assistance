@@ -158,7 +158,7 @@
           </div>
           <div class="col lg-6">
             <label for="especialització">ESPECIALITZACIÓ</label>
-            <input id="especialitzacions"/>
+            <input id="especialitzacions" style="width: 100%"/>
           </div>
         </div>
       </div>

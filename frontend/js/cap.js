@@ -172,6 +172,7 @@ function goToCapList() {
   $("#tableCaps").show();
   $("#addCap").hide();
   $("#addDoctor").hide();
+  $("#tbDoctors").hide();
 }
 
 function modCapListener() {
