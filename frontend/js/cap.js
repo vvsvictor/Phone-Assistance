@@ -319,11 +319,11 @@ function mostrarCapListener(){
                       let name = myJSON[i].name;
                       let surname = myJSON[i].surname;
                       let gender = myJSON[i].gender;
-                      let specialization = myJSON[i].specialization;
+                      let specialization = myJSON[i].med_specialization;
                       showMedicos(id,name,surname,gender,specialization);
                     }
                   }
-                  $('#tableDoctors').DataTable();
+                  $('#dtDoctor').DataTable();
                 },
                 error: function() {
                   console.log('No hi han Doctors');
