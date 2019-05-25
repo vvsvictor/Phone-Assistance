@@ -463,13 +463,16 @@ function showFitxaPersonal(id, name, surname, dninie, province) {
 
 function mostrarCardListener() {
   $(".fitxaPersonal").click(function(event) {
-    let id = this.id;
+    let idbtn = this.id;
+    idbtn = idbtn.replace("fitxaPersonal", "");
+    console.log("ID "+idbtn);
     $.ajax({
       url: "../backend/selects/getFitxaPersonal.php",
       type: "GET",
       cache: false,
       success: function(response) {
         let myJSON = JSON.parse(response);
+        console.log(response);
         $("#fpname").html("");
         $("#fpsurname").html("");
         $("#fpdninie").html("");
@@ -644,6 +647,12 @@ function mostrarCardListener() {
           });
 
 
+              },
+              error: function() {
+                console.log('No hi ha responsable');
+              }
+            });
+          }
         }
 
       },
