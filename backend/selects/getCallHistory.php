@@ -38,7 +38,7 @@
       $resultIncall = mysqli_query($conexion, $consultaIncall);
       if (mysqli_num_rows($resultIncall) > 0) {
         while ($rowIncall = mysqli_fetch_assoc($resultIncall)) {
-          $sJSON .= '"outcall_type":"'. $rowState["outcall_type"].'"},';
+          $sJSON .= '"incall_type":"'. $rowState["incall_type"].'"},';
         }
       }
   }
