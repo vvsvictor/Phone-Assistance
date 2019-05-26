@@ -185,7 +185,7 @@ function showTable(){
         showResponsible(id,user_dninif,priority,name,surname);
       }
       $('#dtResponsible').DataTable();
-      eliminarStaListener();
+      eliminarResponsibleListener();
     },
     error: function() {
       console.log('No hi han clients');
@@ -227,28 +227,29 @@ function showTable(){
 
 
 function showResponsible(id,user_dninif,priority,name,surname){
-  let html="<tr><td>"+id+"</td><td>"+user_dninif+"</td><td>"+priority+"</td><td>"+name+"</td><td>"+surname+"</td><td><button id='sta"+id+"' type='button' class='btn btn-info'>Fitxa Completa</button><button type='button' id='deleteStaId"+id+"' class='deleteSta btn btn-danger' data-toggle='modal' data-target='#deleteStamodal'>Eliminar</button></td></tr>";
+  let html="<tr><td>"+id+"</td><td>"+user_dninif+"</td><td>"+priority+"</td><td>"+name+"</td><td>"+surname+"</td><td><button id='sta"+id+"' type='button' class='btn btn-info'>Fitxa Completa</button><button type='button' id='deleteResponsibleId" + id + "' class='deleteResponsible btn btn-danger' data-toggle='modal' data-target='#deleteResponsiblemodal'>Eliminar</button></td></tr>";
   $("#responsibleTable").append(html);
 }
 
-function eliminarStaListener() {
-  let idSta;
-  $(".deleteSta").click(function(event) {
-    idSta = this.id;
-    idSta = idSta.replace("deleteStaId", "");
-    console.log("The id sta is: " + idSta);
-    $("#deleteStaDef").click(function(event) {
-      deleteSta(idSta);
+function eliminarResponsibleListener() {
+  let idResponsible;
+  $(".deleteResponsible").click(function(event) {
+    idResponsible = this.id;
+    idResponsible = idResponsible.replace("deleteResponsibleId", "");
+    console.log("The id Responsible is: " + idResponsible);
+    $("#deleteResponsibleDef").click(function(event) {
+      console.log("The Button Responsible is: " + idResponsible);
+      deleteResponsible(idResponsible);
     });
   });
 }
 
-function deleteSta(idSta){
-  console.log("The id2 sta is: " + idSta);
+function deleteResponsible(idResponsible){
+  console.log("The id2 Responsible is: " + idResponsible);
   $.ajax({
-    url: "../backend/delete/deleteSta.php",
+    url: "../backend/delete/deleteResponsible.php",
     data: {
-      id: idSta
+      id: idResponsible
     },
     type: "GET",
     cache: false,

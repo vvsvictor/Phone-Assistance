@@ -232,7 +232,6 @@
           <a href="#" class="c-tabs-nav__link ">Contacte</a>
           <div class="c-tab-nav-marker"></div>
         </div>
-
           <!-- RESPONSABLE : DADES -->
           <div class="c-tab">
             <div class="c-tab__content">
@@ -300,7 +299,6 @@
         </div>
       </section>
     </div>
-
   </div>
 </div>
 </div>
@@ -308,28 +306,26 @@
 </section>
 </div>
 
-<!--Modal Delete STA-->
-<div class="modal fade" id="deleteStamodal" tabindex="-1" role="dialog">
+<!--Modal Delete deleteResponsible-->
+<div class="modal fade" id="deleteResponsiblemodal" tabindex="-1" role="dialog">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title">Eliminar les dades STA de l'usuari</h5>
+        <h5 class="modal-title">Eliminar Responsable</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-        <p>Vols eliminar les dades STA de l'usuari?</p>
+        <p>Vols eliminar les dades del Responsable?</p>
       </div>
       <div class="modal-footer">
-        <button type="button" id="deleteStaDef" class="btn btn-danger" data-dismiss="modal">Eliminar</button>
+        <button type="button" id="deleteResponsibleDef" class="btn btn-danger" data-dismiss="modal">Eliminar</button>
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Tancar</button>
       </div>
     </div>
   </div>
 </div>
-
-
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
