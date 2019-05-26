@@ -99,7 +99,23 @@
 
     </div>
 
-    <!-- FICHA PERSONAL-->
+    <!-- Div afegir call -->
+    <div class="container" id="addCall">
+      <button id="showListBtn" type="button" class="btn btn-primary">Tornar a la llista</button>
+      <form id="formCall">
+        <div class="form-group">
+          <label for="dni">Dni Usuari</label>
+          <input type="email" class="form-control" id="dni" placeholder="Dni Usuari">
+        </div>
+        <div class="form-group row">
+          <div class="col-sm-10">
+            <button id="addCallBtn" type="button" class="btn btn-primary">Afegir Trucada</button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <!-- Historial Trucades -->
     <div class="c-tab is-active">
       <div class="c-tab__content">
         <div class="container_ficha">
@@ -109,17 +125,17 @@
                 <h1 class="heading"> Dades</h1>
                 <div class="info">
                   <p class="sub-heading">Dni Usuari</p>
-                  <p id="fpndni" class="duration">Gimena</p>
+                  <p id="fpndni" class="duration"></p>
                   <p></p>
                 </div>
                 <div class="info">
                   <p class="sub-heading">Data Trucada</p>
-                  <p id="fpdata" class="duration">del Carmen Ortega</p>
+                  <p id="fpdata" class="duration"></p>
                   <p></p>
                 </div>
                 <div class="info">
                   <p class="sub-heading">Tipus de Trucada</p>
-                  <p id="fptype" class="duration">30762309F</p>
+                  <p id="fptype" class="duration"></p>
                   <p></p>
                 </div>
                 <div class="info">
