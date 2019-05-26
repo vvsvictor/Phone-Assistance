@@ -147,49 +147,50 @@
         <br>
         <div class="row">
           <div class="col-lg-6">
-            <label for="nom_cap">NOM DEL DOCTOR</label>
+            <label for="dni_usuari">DNI</label>
           </div>
           <div class="col lg-6">
-            <label for="direccio_cap">COGNOMS DEL DOCTOR</label>
+            <label for="prioritat">PRIORITAT</label>
+            <input type="text" class="form-control" name="prioritat"/>
           </div>
         </div>
         <div class="row">
           <div class="col-lg-6">
-            <input type="text" class="form-control" name="nom_doctor"/>
+            <label for="nom_responsable">NOM</label>
+            <input type="text" class="form-control" name="nom_responsable"/>
           </div>
           <div class="col lg-6">
-            <input type="text" class="form-control" name="direccio_doctor"/>
+            <label for="cognoms_responsable">COGNOMS</label>
+            <input type="text" class="form-control" name="cognoms_responsable"/>
           </div>
         </div>
         <br>
         <div class="row">
           <div class="col-lg-6">
-            <label for="genere_doc">GENERE</label>
+            <label for="adreca_responsable">ADREÇA</label>
+            <input type="text" class="form-control" name="adreca_responsable"/>
           </div>
           <div class="col lg-6">
-            <label for="especialització">ESPECIALITZACIÓ</label>
+            <label for="cp_responsable">CODI POSTAL</label>
+            <input type="text" class="form-control" name="cp_responsable"/>
           </div>
         </div>
         <div class="row">
           <div class="col-lg-6">
-            <input type="text" class="form-control" name="genere"/>
+            <label for="tel_responsable">TELEFON</label>
+            <input type="text" class="form-control" name="tel_responsable"/>
           </div>
           <div class="col lg-6">
-            <input id="especialitzacions"/>
+            <label for="especialització">HORA PREFERIBLE</label>
           </div>
         </div>
         <div class="row">
           <div class="col-lg-6">
-            <label for="mutues">CAP</label>
+            <label for="especialització">DATA CONTACTE</label>
           </div>
           <div class="col lg-6">
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-lg-6">
-            <input id="caps"/>
-          </div>
-          <div class="col lg-6">
+            <label for="especialització">RAÓ</label>
+            <textarea></textarea>
           </div>
         </div>
       </div>
