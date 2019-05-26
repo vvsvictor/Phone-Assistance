@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <?php
 include '..\backend\include.php';
-//include '..\backend\includeAll.php';
 //Obliga al usuario a ser un determinado tipo de usuario para poder entrar en la pagina.En caso de no ser posible por no estar logueado o no ser el tipo de usuario permitido, redirige a la pagina de login.
 ?>
 <html lang="es" dir="ltr">
@@ -43,7 +42,6 @@ include '..\backend\include.php';
           </li>';
         }
         ?>
-
         <li class="nav-item active">
           <a class="nav-link" href="#" style="color: #e4f9f5;">Fitxa personal<span class="sr-only">(current)</span></a>
         </li>
@@ -219,11 +217,9 @@ include '..\backend\include.php';
         </tfoot>
       </table>
     </div>
-
   </div>
   <br><br>
   <div id="pageFp">
-
     <section id="page">
       <button id="returnPF2" type="button" class="btn btn-primary"><i class="fa fa-reply"></i> Tornar Enrere</button>
       <div id="tabs" class="c-tabs">
@@ -257,6 +253,11 @@ include '..\backend\include.php';
                     <div class="info">
                       <p class="sub-heading">DNI</p>
                       <p id="fpdninie" class="duration">30762309F</p>
+                      <p></p>
+                    </div>
+                    <div class="info">
+                      <p class="sub-heading">Genere</p>
+                      <p id="fpgender" class="duration">Genere</p>
                       <p></p>
                     </div>
                     <div class="info">
@@ -301,7 +302,6 @@ include '..\backend\include.php';
                     </div>
                   </div>
                 </div>
-
                 <div class="content">
                   <div class="contacto">
                     <h1 class="heading">Contacte</h1>
@@ -331,7 +331,6 @@ include '..\backend\include.php';
         <div class="c-tab">
           <div class="c-tab__content">
             <div class="container_caps">
-
               <div class="content3">
                 <div class="contacto">
                   <h1 class="heading">Mutua</h1>
@@ -342,7 +341,6 @@ include '..\backend\include.php';
                   </div>
                 </div>
               </div>
-
             </div>
           </div>
         </div>
@@ -375,7 +373,6 @@ include '..\backend\include.php';
                   </div>
                 </div>
               </div>
-
               <div class="content2a">
                 <div class="contacto">
                   <h1 class="heading">Contacte</h1>
@@ -469,9 +466,7 @@ include '..\backend\include.php';
       </div>
     </section>
   </div>
-
   <div id="modpageFp">
-
     <section id="page">
       <button id="returnPF3" type="button" class="btn btn-primary"><i class="fa fa-reply"></i> Tornar Enrere</button>
       <div id="tabs" class="c-tabs">
@@ -502,8 +497,8 @@ include '..\backend\include.php';
                       <p></p>
                     </div>
                     <div class="info">
-                      <p class="sub-heading">DNI</p>
-                      <input id="modDni" type="text" class="form-control" name="dni"/>
+                      <p class="sub-heading">Genere</p>
+                      <input id="modgenere" type="text" class="form-control" name="genere"/>
                       <p></p>
                     </div>
                     <div class="info">
@@ -519,7 +514,7 @@ include '..\backend\include.php';
                     </div>
                     <div class="info">
                       <p class="sub-heading">Idioma de signes</p>
-                      <label for="idioma_s">Idioma de signes</label><br>
+                      <!-- <label for="idioma_s">Idioma de signes</label><br> -->
                       <label for="catala_is">Català</label>
                       <input value="1" type="radio" class="opciones" name="idioma_s" id="catala_is">
                       <label for="castella_is">Castellà</label>
@@ -557,7 +552,6 @@ include '..\backend\include.php';
                     </div>
                   </div>
                 </div>
-
                 <div class="content">
                   <div class="contacto">
                     <h1 class="heading">Contacte</h1>
@@ -578,7 +572,6 @@ include '..\backend\include.php';
                     </div>
                   </div>
                 </div>
-
               </div>
             </div>
           </div>
@@ -587,7 +580,6 @@ include '..\backend\include.php';
         <div class="c-tab">
           <div class="c-tab__content">
             <div class="container_caps">
-
               <div class="content3">
                 <div class="contacto">
                   <h1 class="heading">Mutua</h1>
@@ -598,7 +590,6 @@ include '..\backend\include.php';
                   </div>
                 </div>
               </div>
-
             </div>
           </div>
         </div>
@@ -631,7 +622,6 @@ include '..\backend\include.php';
                   </div>
                 </div>
               </div>
-
               <div class="content2a">
                 <div class="contacto">
                   <h1 class="heading">Contacte</h1>
@@ -657,7 +647,6 @@ include '..\backend\include.php';
                   </div>
                 </div>
               </div>
-
               <div class="content3">
                 <div class="contacto">
                   <h1 class="heading">Raó</h1>
@@ -725,9 +714,6 @@ include '..\backend\include.php';
       </div>
     </section>
   </div>
-
-
-
   <!--Modal Delete product-->
   <div class="modal fade" id="deletecardmodal" tabindex="-1" role="dialog">
     <div class="modal-dialog" role="document">

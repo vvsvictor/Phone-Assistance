@@ -66,8 +66,6 @@ include '..\backend\includeAdmin.php';
         </ul>
       </div>
     </nav>
-
-
     <div class="container" id="usersList">
       <button id="showFormBtn" type="button" class="btn btn-primary marginBtn">Afegir</button>
       <table id="dtUsuaris" class="table table-striped table-bordered" cellspacing="0" width="100%">
@@ -91,9 +89,7 @@ include '..\backend\includeAdmin.php';
           </tr>
         </tfoot>
       </table>
-
     </div>
-
     <!-- Div afegir usuari -->
     <div class="container" id="addUser">
       <button id="showListBtn" type="button" class="btn btn-primary">Tornar a la llista</button>
@@ -131,7 +127,6 @@ include '..\backend\includeAdmin.php';
             </div>
         </div>
         </fieldset>
-
         <div class="form-group row">
           <div class="col-sm-10">
             <button id="addUserBtn" type="button" class="btn btn-primary">Afegir usuari</button>
@@ -139,8 +134,6 @@ include '..\backend\includeAdmin.php';
         </div>
       </form>
     </div>
-
-
     <!-- Div modificar usuari -->
     <div class="container" id="modUserDiv">
       <button id="showListBtnMod" type="button" class="btn btn-primary">Tornar a la llista</button>
@@ -182,7 +175,6 @@ include '..\backend\includeAdmin.php';
             </div>
         </div>
         </fieldset>
-
         <div class="form-group row">
           <div class="col-sm-10">
             <button id="modUserBtn" type="button" class="btn btn-primary">Modificar usuari</button>
@@ -190,8 +182,6 @@ include '..\backend\includeAdmin.php';
         </div>
       </form>
     </div>
-
-
     <!--Modal Delete product-->
     <div class="modal fade" id="deleteproductmodal" tabindex="-1" role="dialog">
       <div class="modal-dialog" role="document">

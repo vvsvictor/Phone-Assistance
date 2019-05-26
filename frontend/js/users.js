@@ -51,7 +51,6 @@ function addUserListener() {
   });
 }
 
-
 function goToUsersList(){
   $('#modUserDiv').hide();
   $('#addUser').hide();
@@ -61,7 +60,6 @@ function goToUsersList(){
 function modUserListener() {
   $(".moduser").click(function() {
     let idUser = this.id;
-
     $.ajax({
       url: "../backend/selects/getUsers.php",
       type: "GET",
@@ -121,10 +119,7 @@ function modUserListener() {
         console.log('No hi han clients');
       }
     });
-
   });
-
-
 }
 
 function showTable() {
@@ -153,7 +148,6 @@ function showTable() {
 
 }
 
-
 function showUser(id, username, usertype) {
   let html;
   if (usertype != 0) {
@@ -165,7 +159,6 @@ function showUser(id, username, usertype) {
   $("#usuarisTable").append(html);
 }
 
-
 function eliminarUsuariListener() {
   let idUser;
   $(".deleteuser").click(function(event) {
@@ -176,7 +169,6 @@ function eliminarUsuariListener() {
     });
   });
 }
-
 
 function deleteUser(idUser) {
   $.ajax({
