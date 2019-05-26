@@ -161,18 +161,49 @@ $(document).ready(function () {
     m.init();
 
 function showTable(){
+  //get Responables and fill the table
   $.ajax({
-    url: "../backend/selects/getSta.php",
+    url: "../backend/selects/getResponsible.php",
     type: "GET",
     cache: false,
     success: function(response) {
       let myJSON = JSON.parse(response);
       console.log(myJSON);
-      $("#staTable").html("");
+      $("#responsibleTable").html("");
       for (var i = 0; i < myJSON.length; i++) {
         let id = myJSON[i].id;
         let user_dninif = myJSON[i].user_dninif;
-        let actual_situation = myJSON[i].actual_situation;
+        let priority = myJSON[i].priority;
+        let name = myJSON[i].name;
+        let surname = myJSON[i].surname;
+        let address = myJSON[i].address;
+        let post_code = myJSON[i].post_code;
+        let contact_phone = myJSON[i].contact_phone;
+        let preferable_hour = myJSON[i].preferable_hour;
+        let date_responsible = myJSON[i].date_responsible;
+        let reason = myJSON[i].reason;
+        showResponsible(id,user_dninif,priority,name,surname);
+      }
+      $('#dtResponsible').DataTable();
+      eliminarStaListener();
+    },
+    error: function() {
+      console.log('No hi han clients');
+    }
+  });
+  /*Get STA AJAX
+  $.ajax({
+    url: "../backend/selects/getResponsible.php",
+    type: "GET",
+    cache: false,
+    success: function(response) {
+      let myJSON = JSON.parse(response);
+      console.log(myJSON);
+      $("#responsibleTable").html("");
+      for (var i = 0; i < myJSON.length; i++) {
+        let id = myJSON[i].id;
+        let user_dninif = myJSON[i].user_dninif;
+        let priority = myJSON[i].priority;
         let hiring_date = myJSON[i].hiring_date;
         let tf_service = myJSON[i].tf_service;
         let tcr_service = myJSON[i].tcr_service;
@@ -181,22 +212,23 @@ function showTable(){
         let tam_service = myJSON[i].tam_service;
         let gps_service = myJSON[i].gps_service;
         let umt_service = myJSON[i].umt_service;
-        showSta(id, user_dninif,actual_situation, hiring_date);
+        showResponsible(id, user_dninif,actual_situation, hiring_date);
       }
-      $('#dtSta').DataTable();
+      $('#dtResponsible').DataTable();
       eliminarStaListener();
     },
     error: function() {
       console.log('No hi han clients');
     }
   });
+  */
 
 }
 
 
-function showSta(id, dni,situation, date){
-  let html="<tr><td>"+id+"</td><td>"+dni+"</td><td>"+situation+"</td><td>"+date+"</td><td><button id='sta"+id+"' type='button' class='btn btn-info'>Fitxa Completa</button><button type='button' id='deleteStaId"+id+"' class='deleteSta btn btn-danger' data-toggle='modal' data-target='#deleteStamodal'>Eliminar</button></td></tr>";
-  $("#staTable").append(html);
+function showResponsible(id,user_dninif,priority,name,surname){
+  let html="<tr><td>"+id+"</td><td>"+user_dninif+"</td><td>"+priority+"</td><td>"+name+"</td><td>"+surname+"</td><td><button id='sta"+id+"' type='button' class='btn btn-info'>Fitxa Completa</button><button type='button' id='deleteStaId"+id+"' class='deleteSta btn btn-danger' data-toggle='modal' data-target='#deleteStamodal'>Eliminar</button></td></tr>";
+  $("#responsibleTable").append(html);
 }
 
 function eliminarStaListener() {

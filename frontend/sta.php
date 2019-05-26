@@ -195,26 +195,28 @@
         </div>
       </div>
 
-      <div id="tableSTA">
+      <div id="tableResponsible">
         <button id="showFormSTA" type="button" class="btn btn-primary"><i class="fa fa-plus"></i>Afegir STA</button>
         <button id="showFormResponsible" type="button" class="btn btn-primary"><i class="fa fa-plus"></i>Afegir Responsable</button>
-      <table id="dtSta" class="table table-striped table-bordered" cellspacing="0" width="100%">
+      <table id="dtResponsible" class="table table-striped table-bordered" cellspacing="0" width="100%">
         <thead>
           <tr>
             <th class="th-sm">Id</th>
             <th class="th-sm">DNI</th>
-            <th class="th-sm">Situació</th>
-            <th class="th-sm">Data</th>
+            <th class="th-sm">Prioritat</th>
+            <th class="th-sm">Nom</th>
+            <th class="th-sm">Cognom</th>
             <th class="th-sm"></th>
           </tr>
         </thead>
-        <tbody id="staTable"></tbody>
+        <tbody id="responsibleTable"></tbody>
         <tfoot>
           <tr>
             <th>Id</th>
             <th>DNI</th>
-            <th>Situació</th>
-            <th>Data</th>
+            <th>Prioritat</th>
+            <th>Nom</th>
+            <th>Cognom</th>
             <th></th>
           </tr>
         </tfoot>
