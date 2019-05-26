@@ -346,6 +346,27 @@
       </div>
     </div>
 
+    <!--Modal Delete dr-->
+    <div class="modal fade" id="deletedrmodal" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Eliminar Doctor/a</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>Vols eliminar el doctor/a?</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" id="deleteDrDef" class="btn btn-danger" data-dismiss="modal">Eliminar</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Tancar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 

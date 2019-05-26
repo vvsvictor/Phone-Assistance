@@ -323,6 +323,7 @@ function mostrarCapListener(){
                       let specialization = myJSON[i].med_specialization;
                       showMedicos(id,name,surname,gender,specialization);
                     }
+                    eliminarDrListener();
                   }
                   $('#dtDoctor').DataTable();
                 },
@@ -342,7 +343,7 @@ function mostrarCapListener(){
 
 function showMedicos(id,name,surname,gender,specialization) {
   let html;
-  html = "<tr><td>" + id + "</td><td>" + name + "</td><td>" + surname + "</td><td>" + gender + "</td><td>" + specialization + "</td><td><button id='fitxaCaps" + id + "' type='button' class='fitxaCaps btn btn-info marginBtn'><i class='fa fa-file'></i></button><button type='button' id='deleteCapId" + id + "' class='deletecap btn btn-danger' data-toggle='modal' data-target='#deletecapmodal'><i class='fa fa-trash'></i></button></td></tr>";
+  html = "<tr><td>" + id + "</td><td>" + name + "</td><td>" + surname + "</td><td>" + gender + "</td><td>" + specialization + "</td><td><button id='fitxaCaps" + id + "' type='button' class='fitxaCaps btn btn-info marginBtn'><i class='fa fa-file'></i></button><button type='button' id='deleteDrId" + id + "' class='deletedr btn btn-danger' data-toggle='modal' data-target='#deletedrmodal'><i class='fa fa-trash'></i>Eliminar</button></td></tr>";
   $("#tbDoctors").append(html);
 }
 
@@ -359,9 +360,41 @@ function eliminarCapListener() {
   });
 }
 
+function eliminarDrListener(){
+  let idDoctor;
+  $(".deletedr").click(function(event) {
+    idDr = this.id;
+    idDr = idDr.replace("deleteDrId", "");
+    $("#deleteDrDef").click(function(event) {
+      deleteDr(idDr);
+    });
+  });
+}
+
+function deleteDr(idDr){
+  $.ajax({
+    url: "../backend/delete/deleteDoctors.php",
+    data: {
+      id: idDr
+    },
+    type: "GET",
+    cache: false,
+    success: function(response) {
+      var myJSON = JSON.parse(response);
+      console.log("Success JSON" + myJSON.codigoError);
+      
+      if (parseInt(myJSON.codigoError) != 0) {
+
+      }
+    },
+    error: function() {
+      alert("Error en la consulta");
+    }
+  });
+}
+
 
 function deleteCap(idCap) {
-  console.log("The id cap2 is: " + idCap);
   $.ajax({
     url: "../backend/delete/deleteCap.php",
     data: {
