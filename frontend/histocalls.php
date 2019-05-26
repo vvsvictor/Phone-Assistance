@@ -99,6 +99,51 @@
 
     </div>
 
+    <!-- FICHA PERSONAL-->
+    <div class="c-tab is-active">
+      <div class="c-tab__content">
+        <div class="container_ficha">
+          <div class="container">
+            <div class="content">
+              <div class="direccion">
+                <h1 class="heading"> Dades</h1>
+                <div class="info">
+                  <p class="sub-heading">Dni Usuari</p>
+                  <p id="fpndni" class="duration">Gimena</p>
+                  <p></p>
+                </div>
+                <div class="info">
+                  <p class="sub-heading">Data Trucada</p>
+                  <p id="fpdata" class="duration">del Carmen Ortega</p>
+                  <p></p>
+                </div>
+                <div class="info">
+                  <p class="sub-heading">Tipus de Trucada</p>
+                  <p id="fptype" class="duration">30762309F</p>
+                  <p></p>
+                </div>
+                <div class="info">
+                  <p class="sub-heading">Estat de trucada</p>
+                  <p id="fpstate" class="duration"></p>
+                  <p></p>
+                </div>
+                <div class="info">
+                  <p class="sub-heading">Truca usuari</p>
+                  <p id="fpincall" class="duration"></p>
+                  <p></p>
+                </div>
+                <div class="info">
+                  <p class="sub-heading">Truca teleassistent</p>
+                  <p id="fpoutcall" class="duration"></p>
+                  <p></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!--Modal Delete product-->
     <div class="modal fade" id="deletecallmodal" tabindex="-1" role="dialog">
       <div class="modal-dialog" role="document">
