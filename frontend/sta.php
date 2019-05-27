@@ -104,23 +104,30 @@
         </div>
         <br>
         <div class="row">
-          <div class="col-lg-3">
-              Servei TF <input data-role="switch" id="serveitf" aria-label="Servei TF" type="checkbox"/>
-              <br>
-              Servei TCR <input data-role="switch" id="serveitcr" aria-label="Servei TF" type="checkbox"/>
-              <br>
-              Servei CC <input data-role="switch" id="serveicc" aria-label="Servei TF" type="checkbox"/>
-          </div>
-          <div class="col lg-3">
-
-          </div>
-        </div>
-        <div class="row">
           <div class="col-lg-6">
-
+            <div class="row">
+              Servei TF &nbsp; <input data-role="switch" id="serveitf" aria-label="Servei TF" type="checkbox"/>
+            </div>
+            <div class="row">
+              Servei TCR &nbsp; <input data-role="switch" id="serveitcr" aria-label="Servei TF" type="checkbox"/>
+            </div>
+            <div class="row">
+              Servei CC &nbsp; <input data-role="switch" id="serveicc" aria-label="Servei TF" type="checkbox"/>
+            </div>
           </div>
           <div class="col lg-6">
-
+            <div class="row">
+              Servei TM &nbsp; <input data-role="switch" id="serveitm" aria-label="Servei TF" type="checkbox"/>
+            </div>
+            <div class="row">
+              Servei TAM &nbsp; <input data-role="switch" id="serveitam" aria-label="Servei TF" type="checkbox"/>
+            </div>
+            <div class="row">
+              Servei GPS &nbsp; <input data-role="switch" id="serveigps" aria-label="Servei TF" type="checkbox"/>
+            </div>
+            <div class="row">
+              Servei UMT &nbsp; <input data-role="switch" id="serveiumt" aria-label="Servei TF" type="checkbox"/>
+            </div>
           </div>
         </div>
       </div>
