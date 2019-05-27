@@ -142,7 +142,12 @@ include '..\backend\include.php';
       <div class="row">
         <div class="col-lg-6">
           <label for="tipus_habitatge">Tipus d'habitatge</label>
-          <input id="addTipus_habitatge" type="text" class="form-control" name="tipus_habitatge"/>
+          <select id="addTipus_habitatge" style="width: 100%;" class="maxWidth dropDown">
+            <option>Casa</option>
+            <option>Pis</option>
+            <option>Torre</option>
+            <option>Masia</option>
+          </select>
         </div>
         <div class="col-lg-6">
           <label for="titularitat">Titularitat de l'habitatge</label><br>
@@ -469,13 +474,14 @@ include '..\backend\include.php';
   <div id="modpageFp">
     <section id="page">
       <button id="returnPF3" type="button" class="btn btn-primary"><i class="fa fa-reply"></i> Tornar Enrere</button>
+      <button id="saveModFP" type="button" class="btn btn-primary"><i class="fas fa-save"></i> Guardar</button>
       <div id="tabs" class="c-tabs">
         <div class="c-tabs-nav">
           <a href="#" class="c-tabs-nav__link is-active">Fitxa Personal</a>
-          <a href="#" class="c-tabs-nav__link">Mutua</a>
+          <!-- <a href="#" class="c-tabs-nav__link">Mutua</a>
           <a href="#" class="c-tabs-nav__link">Responsable</a>
           <a href="#" class="c-tabs-nav__link">STA</a>
-          <a href="#" class="c-tabs-nav__link">Trucades</a>
+          <a href="#" class="c-tabs-nav__link">Trucades</a> -->
           <div class="c-tab-nav-marker"></div>
         </div>
         <!-- FICHA PERSONAL-->

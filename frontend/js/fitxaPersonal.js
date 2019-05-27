@@ -26,7 +26,7 @@ $(document).ready(function() {
   $(".phoneMask").kendoMaskedTextBox({
     mask: "000 000 000"
   });
-
+  $("#addTipus_habitatge").kendoDropDownList();
 
 
 
@@ -259,7 +259,9 @@ function showMunisipalitys() {
 function addFitxaPersonal() {
   $("#addPersonalCard").click(function() {
     let nom = $("#addNom").val();
+    nom = uppercase(nom)
     let cognom = $("#addCognom").val();
+    cognom = uppercase(cognom)
     let dni = $("#addDni").val();
     let genere = $("#addGenere").val();
     let idioma = $("#addIdioma").val();
@@ -283,7 +285,7 @@ function addFitxaPersonal() {
     telMovil = telMovil.replace(/\s/g, '');
     let telTreball = $("#addTelTreball").val();
     telTreball = telTreball.replace(/\s/g, '');
-    if (nom != "" && cognom != "" && dni != "" && genere != "" && dataNaixemement != "" && adreca != "" && tipusHabitatge != "" && !isNaN(provincia) && !isNaN(comarca) && !isNaN(municipi) && !isNaN(telFixe) && !isNaN(telMovil) && !isNaN(telTreball)) {
+    if (isNaN(nom) && isNaN(cognom) && nom != "" && cognom != "" && dni != "" && genere != "" && dataNaixemement != "" && adreca != "" && tipusHabitatge != "" && !isNaN(provincia) && !isNaN(comarca) && !isNaN(municipi) && !isNaN(telFixe) && !isNaN(telMovil) && !isNaN(telTreball)) {
         if (idioma=="Altre") {
           //insertar nou idioma
           $.ajax({
@@ -403,6 +405,16 @@ function addFitxaPersonal() {
 
 }
 
+function uppercase(str){
+  var array1 = str.split(' ');
+  var newarray1 = [];
+
+  for(var x = 0; x < array1.length; x++){
+      newarray1.push(array1[x].charAt(0).toUpperCase()+array1[x].slice(1));
+  }
+  return newarray1.join(' ');
+}
+
 function goToModFP() {
   $("#pageFp").hide();
   $("#modpageFp").show();
@@ -505,6 +517,7 @@ function mostrarCardListener() {
             let dninie = myJSON[i].dninie;
             let gender = myJSON[i].gender;
             let birthdate = myJSON[i].birthdate;
+            birthdate = birthdate.replace("-", "/");
             let province = myJSON[i].province;
             let comarca = myJSON[i].comarca;
             let municipality = myJSON[i].municipality;
