@@ -117,25 +117,27 @@
         <br>
         <div class="row">
           <div class="col-lg-6">
-            <label for="nom_cap">NOM DEL DOCTOR</label>
-            <input type="text" class="form-control" name="nom_doctor"/>
+            <label for="nom_cap">Nom del doctor/a</label>
+            <input id="addNameDr" type="text" class="form-control" name="nom_doctor"/>
           </div>
           <div class="col lg-6">
-            <label for="direccio_cap">COGNOMS DEL DOCTOR</label>
-            <input type="text" class="form-control" name="direccio_doctor"/>
+            <label for="direccio_cap">Cognoms del doctor/a</label>
+            <input id="addSurnameDr" type="text" class="form-control" name="direccio_doctor"/>
           </div>
         </div>
         <br>
         <div class="row">
           <div class="col-lg-6">
-            <label for="genere_doc">GENERE</label>
-            <input type="text" class="form-control" name="genere"/>
+            <label for="genere_doc">Gènere</label>
+            <input id="addGenereDr" type="text" class="form-control" name="genere"/>
           </div>
           <div class="col lg-6">
-            <label for="especialització">ESPECIALITZACIÓ</label>
-            <input id="especialitzacions" style="width: 100%"/>
+            <label for="especialització">Especialització</label>
+            <select id="especialitzacions" style="width: 100%;" >
+            </select>
           </div>
         </div>
+        <button id="addDoctorBtn" type="button" class="btn btn-primary">Afegir Doctor</button>
       </div>
       <div id="tableCaps">
         <button id="showFormCAP" type="button" class="btn btn-primary"><i class="fa fa-plus"></i>Afegir CAP</button>
@@ -166,7 +168,7 @@
   </div>
   <div id="pageCAPS">
     <section id="page">
-      <button id="returnCAP2" type="button" class="btn btn-primary"><i class="fa fa-reply"></i></button>
+      <button id="returnCAP2" type="button" class="btn btn-primary"><i class="fa fa-reply"></i> Tornar enrere</button>
       <div id="tabs" class="c-tabs">
         <div class="c-tabs-nav">
           <a href="#" class="c-tabs-nav__link is-active">Info CAP</a>
@@ -180,6 +182,11 @@
               <div class="content3">
                 <div class="direccion">
                   <h1 class="heading"> CAP</h1>
+                  <div class="info">
+                    <p class="sub-heading">Id</p>
+                    <p id="cid" class="duration">Id_cap</p>
+                    <p></p>
+                  </div>
                   <div class="info">
                     <p class="sub-heading">Nom</p>
                     <p id="cname" class="duration">Nom_CAP</p>

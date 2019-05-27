@@ -116,9 +116,65 @@ function goToAddCap() {
 }
 
 function goToAddDoctor() {
+  $.ajax({
+    url: "../backend/selects/getMedSpecialization.php",
+    type: "GET",
+    cache: false,
+    success: function(response) {
+      console.log(response);
+      let myJSON = JSON.parse(response);
+      console.log(myJSON);
+      let html = '';
+      for (let i = 0; i < myJSON.length; i++) {
+        html+='<option>(Id:'+myJSON[i].id+') '+myJSON[i].med_specialization+'</option>';
+      }
+      $("#especialitzacions").html(html);
+      $("#especialitzacions").kendoDropDownList();
+
+    },
+    error: function() {
+      console.log('No hi han Doctors');
+    }
+  });
+
   $("#tableCaps").hide();
   $("#addDoctor").show();
   $("#pageCAPS").hide();
+
+  //on click
+  $("#addDoctorBtn").click(function() {
+    let especialitzacio = $("#especialitzacions").val();
+    especialitzacio = especialitzacio.split('(Id:').pop().split(')')[0];
+    let nom = $("#addNameDr").val();
+    let cognom = $("#addSurnameDr").val();
+    let gender = $("#addGenereDr").val();
+    let idcap =$("#cid").html();
+    $.ajax({
+      url: "../backend/inserts/insertDoctors.php",
+      data: {
+        sName: nom,
+        sSurname:cognom,
+        sGender: gender,
+        iSpecializacionId: especialitzacio,
+        iIdCap: idcap
+      },
+      type: "GET",
+      cache: false,
+      success: function(response) {
+        var myJSON = JSON.parse(response);
+        //Mostrar taula doctors
+
+        if (parseInt(myJSON.codigoError) != 0) {
+          console.log(myJSON.observaciones + " - " + myJSON.codigoError + " - " + myJSON.descError);
+        }
+      },
+      error: function() {
+        alert("Error en la consulta");
+      }
+    });
+  });
+
+
 
 }
 
@@ -289,6 +345,7 @@ function mostrarCapListener(){
         success: function(response) {
           console.log("entra");
           let myJSON = JSON.parse(response);
+          $("#cid").html("");
           $("#cname").html("");
           $("#caddress").html("");
           $("#cphone").html("");
@@ -300,6 +357,7 @@ function mostrarCapListener(){
               let address = myJSON[i].address;
               let phone = myJSON[i].phone;
               let schedule = myJSON[i].schedule;
+              $("#cid").html(id);
               $("#cname").html(name);
               $("#caddress").html(address);
               $("#cphone").html(phone);
