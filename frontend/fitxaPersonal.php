@@ -246,6 +246,11 @@ include '..\backend\include.php';
                   <div class="direccion">
                     <h1 class="heading"> Dades</h1>
                     <div class="info">
+                      <p class="sub-heading">DNI</p>
+                      <p id="fpdninie" class="duration">30762309F</p>
+                      <p></p>
+                    </div>
+                    <div class="info">
                       <p class="sub-heading">Nom</p>
                       <p id="fpname" class="duration">Gimena</p>
                       <p></p>
@@ -253,11 +258,6 @@ include '..\backend\include.php';
                     <div class="info">
                       <p class="sub-heading">Cognoms</p>
                       <p id="fpsurname" class="duration">del Carmen Ortega</p>
-                      <p></p>
-                    </div>
-                    <div class="info">
-                      <p class="sub-heading">DNI</p>
-                      <p id="fpdninie" class="duration">30762309F</p>
                       <p></p>
                     </div>
                     <div class="info">
@@ -305,6 +305,16 @@ include '..\backend\include.php';
                       <p id="fpaddress" class="duration">Alcudia nº 23 3º 1ª</p>
                       <p></p>
                     </div>
+                    <div class="info">
+                      <p class="sub-heading">Tipus d'habitatge</p>
+                      <p id="fpaddress" class="duration">Pis</p>
+                      <p></p>
+                    </div>
+                    <div class="info">
+                      <p class="sub-heading">Titularitat de l'habitatge</p>
+                      <p id="fpaddress" class="duration">Arrendatari</p>
+                      <p></p>
+                    </div>
                   </div>
                 </div>
                 <div class="content">
@@ -327,7 +337,6 @@ include '..\backend\include.php';
                     </div>
                   </div>
                 </div>
-
               </div>
             </div>
           </div>
