@@ -75,7 +75,7 @@ include '..\backend\include.php';
   </nav>
   <div class="container">
     <div id="addFp" class="form">
-      <button id="returnPF" type="button" class="btn btn-primary marginBtn"><i class="fa fa-reply"></i> Tornar enrere</button>
+      <button id="returnPF" type="button" class="btn btn-primary marginTop"><i class="fa fa-reply"></i> Tornar enrere</button>
       <br>
       <br>
       <div class="row">
@@ -206,7 +206,7 @@ include '..\backend\include.php';
       </div>
     </div>
     <div id="tableFitxaPersonal">
-      <button id="showFormPF" type="button" class="btn btn-primary marginBtn"><i class="fas fa-plus"></i> Afegir</button>
+      <button id="showFormPF" type="button" class="btn btn-primary marginTop"><i class="fas fa-plus"></i> Afegir</button>
       <table id="dtFitxaPersonal" class="table table-striped table-bordered" cellspacing="0" width="100%">
         <thead>
           <tr>
@@ -235,7 +235,7 @@ include '..\backend\include.php';
   <br><br>
   <div id="pageFp">
     <section id="page">
-      <button id="returnPF2" type="button" class="btn btn-primary"><i class="fa fa-reply"></i> Tornar Enrere</button>
+      <button id="returnPF2" type="button" class="btn btn-primary marginTop"><i class="fa fa-reply"></i> Tornar Enrere</button>
       <div id="tabs" class="c-tabs">
         <div class="c-tabs-nav">
           <a href="#" class="c-tabs-nav__link is-active">Fitxa Personal</a>
@@ -249,7 +249,7 @@ include '..\backend\include.php';
         <div class="c-tab is-active">
           <div class="c-tab__content">
             <div class="container_ficha">
-              <button id="modFormPF" type="button" class="btn btn-primary marginBtn"> Modificar</button>
+              <button id="modFormPF" type="button" class="btn btn-primary marginBtn leftMargin"> Modificar</button>
               <div class="container">
                 <div class="content">
                   <div class="direccion">
@@ -491,7 +491,7 @@ include '..\backend\include.php';
   </div>
   <div id="modpageFp">
     <section id="page">
-      <button id="returnPF3" type="button" class="btn btn-primary"><i class="fa fa-reply"></i> Tornar Enrere</button>
+      <button id="returnPF3" type="button" class="btn btn-primary marginTop"><i class="fa fa-reply"></i> Tornar Enrere</button>
       <div id="tabs" class="c-tabs">
         <div class="c-tabs-nav">
           <a href="#" class="c-tabs-nav__link is-active">Fitxa Personal</a>
