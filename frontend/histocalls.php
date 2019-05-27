@@ -15,7 +15,7 @@
     <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.0/css/mdb.min.css" rel="stylesheet"> -->
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css">
     <!-- <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css"> -->
-
+    <link rel="stylesheet" href="css/kendoTheme.css">
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="css/initPage.css">
   </head>
@@ -69,7 +69,8 @@
         </ul>
       </div>
     </nav>
-    <div class="container">
+    <div class="container" id="callList">
+      <button id="showFormBtn" type="button" class="btn btn-primary marginBtn">Afegir</button>
       <table id="dtHistocalls" class="table table-striped table-bordered" cellspacing="0" width="100%">
         <thead>
           <tr>
@@ -93,30 +94,51 @@
       </table>
     </div>
 
+    <!--Formulario Añadir Trucades -->
     <div class="container">
-
-    </div>
-
-    <!-- Div afegir call -->
-    <div class="container" id="addCall">
-      <button id="showListBtn" type="button" class="btn btn-primary">Tornar a la llista</button>
-      <form id="formCall">
-        <div class="form-group">
-          <label for="dni">Dni Usuari</label>
-          <input type="email" class="form-control" id="dni" placeholder="Dni Usuari">
-        </div>
-        <div class="form-group row">
-          <div class="col-sm-10">
-            <button id="addCallBtn" type="button" class="btn btn-primary">Afegir Trucada</button>
+      <div id="addCall" class="container_add">
+        <button id="returnCalls" type="button" class="btn btn-primary"><i class="fa fa-reply">Tornar a la llista</i></button>
+        <br>
+        <br>
+        <div class="row">
+          <div class="col-lg-6">
+            <label for="dni_usuari">DNI</label>
+            <input id="dni_usuari" style="width: 100%;" />
+          </div>
+          <div class="col lg-6">
+            <label for="data_trucada">DATA DE LA TRUCADA</label>
+            <input id="data_trucada" title="datepicker" style="width: 100%"/>
           </div>
         </div>
-      </form>
-    </div>
+        <br>
+        <div class="row">
+          <div class="col-lg-6">
+            <label for="type_call">TIPUS TRUCADA</label>
+            <input id="type_call" />
+          </div>
+          <div class="col lg-6" id="out_in_select">
+            <label for="outcall">SITUACIÓ</label>
+            <input id="outcall" />
+            <input id="incall" />
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="col-lg-6">
+            <label for="state_call">ESTAT DE LA TRUCADA</label>
+            <input id="state_call" />
+          </div>
+          <div class="col lg-6">
+            <label for="rao">SOLUCIÓ TELEOPERADOR</label>
+            <textarea class="form-control" id="rao" rows="3"></textarea>
+          </div>
+        </div>
+      </div>
 
     <!-- Historial Trucades -->
     <div class="c-tab is-active">
       <div class="c-tab__content">
-        <div class="container_ficha">
+        <div class="container_ficha" id="modCallDiv">
           <div class="container">
             <div class="content">
               <div class="direccion">
@@ -188,5 +210,6 @@
     <script type="text/javascript" src="js/jquery.dataTables.min.js"></script>
     <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
     <script src="js/histocalls.js" type="text/javascript"></script>
+    <script src="http://kendo.cdn.telerik.com/2019.2.514/js/kendo.all.min.js"></script>
   </body>
 </html>

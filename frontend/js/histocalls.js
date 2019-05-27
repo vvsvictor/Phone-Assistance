@@ -1,13 +1,58 @@
 $(document).ready(function () {
   $('.dataTables_length').addClass('bs-select');
   showTable();
+  gotoModCall();
   addCallListener();
+
+  $("#dni_usuari").kendoAutoComplete({
+                        filter: "startswith",
+                        placeholder: "Selecciona el DNI corresponent...",
+    });
+  $("#data_trucada").kendoDatePicker({
+      format: "d/M/yyyy",
+      min: new Date(2000,0,1)
+    });
+  $("#type_call").kendoComboBox({
+       dataSource: ["Item1", "Item2"],
+       value: "Item1"
+  });
+
+  $("#outcall").kendoComboBox({
+       dataSource: ["Item1", "Item2"],
+       value: "Item1"
+  });
+
+  $("#incall").kendoComboBox({
+       dataSource: ["Item1", "Item2"],
+       value: "Item1"
+  });
+
+  $("#state_call").kendoComboBox({
+       dataSource: ["Item1", "Item2"],
+       value: "Item1"
+  });
+
+  $("#returnCalls").click(function() {
+    goToCallList();
+  });
+
+
 });
 
-function gotoModUser() {
-  $('#modCallDiv').show();
+
+
+$("#outcall").hide();
+$("#incall").hide();
+$("#out_in_select").hide();
+
+function gotoModCall() {
+  $('#modCallDiv').hide();
   $('#addCall').hide();
-  $("#callList").hide();
+  $("#callList").show();
+}
+
+function returnCall(){
+  returnCalls
 }
 
 function addCallListener() {
@@ -37,8 +82,9 @@ function addCallListener() {
       success: function(response) {
         let myJSON = JSON.parse(response);
         showTable();
-        $('#addCall').hide();
-        $("#callList").show();
+        $('#callList').hide();
+        $("#addCall").show();
+        goToCallList();
 
         if (parseInt(myJSON.codigoError) != 0) {
           console.log(myJSON.observaciones + " - " + myJSON.codigoError + " - " + myJSON.descError);
