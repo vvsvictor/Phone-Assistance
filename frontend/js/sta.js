@@ -1,22 +1,26 @@
 $(document).ready(function () {
-  $("#datepicker").kendoDatePicker({
+  $("#data_contacte").kendoDatePicker({
     format: "d/M/yyyy"
   });
-  $("#timepicker").kendoTimePicker({
-    format: "H:mm"
+  $("#hora_preferible").kendoTimePicker({
+    format: "H:mm",
+    interval: 15,
+    dateInput: false
   });
+  $("#dni_usuari").kendoAutoComplete({
+                        filter: "startswith",
+                        placeholder: "Selecciona el DNI corresponent...",
+                    });
   $('.dataTables_length').addClass('bs-select');
   goToSTAList();
   showTable();
   $("#showFormSTA").click(function() {
     goToAddSTA();
-  $("#mail-switch").kendoSwitch({
-            messages: {
-                checked: "SI",
-                unchecked: "NO"
-            }
-        });
+  $("#serveitf").kendoSwitch();
+  $("#serveitcr").kendoSwitch();
+  $("#serveicc").kendoSwitch();
   });
+  $("#addSituacio").kendoDropDownList();
   $("#showFormResponsible").click(function() {
     goToAddResponsible();
   });

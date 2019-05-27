@@ -81,51 +81,35 @@
         <div class="row">
           <div class="col-lg-6">
             <label for="dni_usuario">DNI USUARI</label>
+            <input id="dni_usuari" style="width: 100%;" />
           </div>
           <div class="col lg-6">
             <label for="situacion">SITUACIÓ ACTUAL</label>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-lg-6">
-            <input id="dni_usuario"/>
-          </div>
-          <div class="col lg-6">
-            <input type="text" class="form-control" name="situacion"/>
+            <select id="addSituacio" style="width: 100%;" class="maxWidth dropDown">
+              <option>Alta</option>
+              <option>Baixa</option>
+              <option>Baixa Temporal</option>
+              <option>Baixa Definitiva</option>
+            </select>
           </div>
         </div>
         <br>
         <div class="row">
           <div class="col-lg-6">
             <label for="tel_cap">DATA EXPIRACIÓ</label>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-lg-6">
-            <input class="datepicker" style="width: 100%"/>
+            <input id="datepicker" style="width: 100%"/>
           </div>
           <div class="col lg-6">
-
           </div>
         </div>
+        <br>
         <div class="row">
           <div class="col-lg-3">
-            <ul>
-                <li>
-                  Servei TF
-                  <span class="k-switch k-widget k-switch-off" role="switch" tabindex="0" aria-checked="false" aria-label="Servei TF">
-                    <input data-role="switch" id="mail-switch" aria-label="Servei TF" type="checkbox"/>
-                  <span class="k-switch-container">
-                    <span class="k-switch-label-on">SI</span>
-                    <span class="k-switch-label-off">NO</span>
-                    <span class="k-switch-handle"></span>
-                  </span>
-                </span>
-                </li>
-
-              <li>Servei TCR <input id="servicios" aria-label="Servei TCR" /></li>
-              <li>Servei CC <input id="servicios" aria-label="Servei CC" /></li>
-            </ul>
+              Servei TF <input data-role="switch" id="serveitf" aria-label="Servei TF" type="checkbox"/>
+              <br>
+              Servei TCR <input data-role="switch" id="serveitcr" aria-label="Servei TF" type="checkbox"/>
+              <br>
+              Servei CC <input data-role="switch" id="serveicc" aria-label="Servei TF" type="checkbox"/>
           </div>
           <div class="col lg-3">
 
@@ -148,12 +132,14 @@
         <div class="row">
           <div class="col-lg-6">
             <label for="dni_usuari">DNI</label>
+            <input id="dni_usuari" style="width: 100%;" />
           </div>
           <div class="col lg-6">
             <label for="prioritat">PRIORITAT</label>
             <input type="text" class="form-control" name="prioritat"/>
           </div>
         </div>
+        <br>
         <div class="row">
           <div class="col-lg-6">
             <label for="nom_responsable">NOM</label>
@@ -175,6 +161,7 @@
             <input type="text" class="form-control" name="cp_responsable"/>
           </div>
         </div>
+        <br>
         <div class="row">
           <div class="col-lg-6">
             <label for="tel_responsable">TELEFON</label>
@@ -182,13 +169,14 @@
           </div>
           <div class="col lg-6">
             <label for="hora_preferible">HORA PREFERIBLE</label>
-            <input id="timepicker" title="timepicker" style="width: 100%;" />
+            <input id="hora_preferible" title="timepicker" style="width: 100%;" />
           </div>
         </div>
+        <br>
         <div class="row">
           <div class="col-lg-6">
             <label for="data_contacte">DATA CONTACTE</label>
-            <input id="datepicker" title="datepicker" style="width: 100%"/>
+            <input id="data_contacte" title="datepicker" style="width: 100%"/>
           </div>
           <div class="col lg-6">
             <label for="rao">RAÓ</label>

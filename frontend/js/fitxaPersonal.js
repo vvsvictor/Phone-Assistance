@@ -17,17 +17,19 @@ $(document).ready(function() {
     goToFpList();
   });
   $("#returnPF3").click(function() {
-    goToFpList();
+    goToFp();
   });
 
   //kendo / jquery functions
   $(".opciones").checkboxradio();
-  $(".datepicker").kendoDatePicker();
+  $(".datepicker").kendoDatePicker({
+    format: "d/M/yyyy"
+  });
   $(".phoneMask").kendoMaskedTextBox({
     mask: "000 000 000"
   });
   $("#addTipus_habitatge").kendoDropDownList();
-
+  $("#addTipus").kendoDropDownList();
 
 
 });
@@ -344,7 +346,6 @@ function addFitxaPersonal() {
                       });
                     }
                   }
-
                 },
                 error: function() {
                   console.log('No hi ha responsable');
@@ -394,15 +395,11 @@ function addFitxaPersonal() {
             }
           });
         }
-
-
-
     } else {
       //Funcion de eror al añadir fitxa personal
       alert("Error: Dades mal introduïdes")
     }
   });
-
 }
 
 function uppercase(str){
