@@ -57,6 +57,78 @@ function goToCallList(){
   $("#callList").show();
 }
 
+function modCallListener() {
+  $(".modcall").click(function() {
+    let idCall = this.id;
+
+    $.ajax({
+      url: "../backend/selects/getCallHistory.php",
+      type: "GET",
+      cache: false,
+      success: function(response) {
+        let myJSON = JSON.parse(response);
+        for (let i = 0; i < myJSON.length; i++) {
+          let id = myJSON[i].id;
+          let dni = myJSON[i].user_dninif;
+          let callDate = myJSON[i].call_date;
+          let callType = myJSON[i].call_type;
+          let outcallType = myJSON[i].outcall_type;
+          let incallType = myJSON[i].incall_type;
+          let callState = myJSON[i].call_state;
+          let teleoperatorSolution = myJSON[i].teleoperator_solution;
+          console.log(id);
+          console.log(idCall);
+          if ("modCallId" + id == idCall) {
+            $("#modDni").val(dni);
+            $("#modCallDate").val(callDate);
+            $("#modCallType").val(callType);
+            $("#modOutcallType").val(outcallType);
+            $("#modIncallType").val(incallType);
+            $("#modCallState").val(callState);
+            $("#modTeleoperatorSolution").val(teleoperatorSolution);
+          }
+            gotoModCall();
+            //Botó tornar enrrere
+            $("#showListBtnMod").click(function() {
+              goToCallList();
+            });
+            //Click al botó modificar usuari
+            $("#modCallBtn").click(function() {
+              $.ajax({
+                url: "../backend/updates/histocalls.php",
+                data: {
+                  sDni:$("#user_dninif").val(''),
+                  sCallDate:$("#call_date").val(''),
+                  iCallType:$("#call_type").val(''),
+                  iOutcallType:$("#outcall_type").val(''),
+                  iIncallType:$("#incall_type").val(''),
+                  iCallState:$("#call_state").val(''),
+                  sTeleoperatorSolution:$("#teleoperator_solution").val('')
+                },
+                type: "GET",
+                cache: false,
+                success: function(response) {
+                  let myJSON = JSON.parse(response);
+                  //reload users
+                  showTable();
+                  goToCallList();
+                },
+                error: function() {
+                  alert("Error en la consulta");
+                }
+              });
+            });
+          }
+      },
+      error: function() {
+        console.log('No hi han clients');
+      }
+    });
+
+  });
+
+
+}
 
 function showTable(){
   $.ajax({
