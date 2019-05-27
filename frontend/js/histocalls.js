@@ -147,6 +147,7 @@ function showTable(){
         showHistoCall(id, dni, date, type);
       }
       $('#dtHistocalls').DataTable();
+      eliminarCallListener();
     },
     error: function() {
       console.log('No hi han trucades');
@@ -163,6 +164,7 @@ function showHistoCall(id, dni, date, type){
 function eliminarCallListener() {
   let idCall;
   $(".deletecall").click(function(event) {
+    console.log("The id call is: " + idCall);
     idCall = this.id;
     idCall = idCall.replace("deleteCallId", "");
     console.log("The id call is: " + idCall);
