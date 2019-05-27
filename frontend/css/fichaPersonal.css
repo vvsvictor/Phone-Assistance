@@ -5,6 +5,12 @@
 			background: #40514E;
 			color: #E4F9F5;
 		}
+		.marginTop{
+			margin-top: 10px;
+			margin-bottom: 10px;
+		}
+
+
 
 		.k-switch-on .k-switch-container {
     color: white;
@@ -170,6 +176,8 @@
      transition: all 0.5s ease-out;
    }
 
+
+
 .ui-autocomplete {
 	max-height: 100px;
 	overflow-y: auto;
@@ -178,4 +186,7 @@
 
 * html .ui-autocomplete {
 	height: 100px;
+}
+.leftMargin{
+	margin-left: 32px;
 }
