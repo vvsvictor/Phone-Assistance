@@ -140,7 +140,7 @@
           </div>
         </div>
       </div>
-      <!--Formulario Añadir Doctores -->
+      <!--Formulario Añadir Responsable -->
       <div id="addResponsible" class="container_add">
         <button id="returnResponsible" type="button" class="btn btn-primary"><i class="fa fa-reply"></i></button>
         <br>
@@ -181,16 +181,18 @@
             <input type="text" class="form-control" name="tel_responsable"/>
           </div>
           <div class="col lg-6">
-            <label for="especialització">HORA PREFERIBLE</label>
+            <label for="hora_preferible">HORA PREFERIBLE</label>
+            <input id="timepicker" title="timepicker" style="width: 100%;" />
           </div>
         </div>
         <div class="row">
           <div class="col-lg-6">
-            <label for="especialització">DATA CONTACTE</label>
+            <label for="data_contacte">DATA CONTACTE</label>
+            <input id="datepicker" title="datepicker" style="width: 100%"/>
           </div>
           <div class="col lg-6">
-            <label for="especialització">RAÓ</label>
-            <textarea></textarea>
+            <label for="rao">RAÓ</label>
+            <textarea class="form-control" id="rao" rows="3"></textarea>
           </div>
         </div>
       </div>

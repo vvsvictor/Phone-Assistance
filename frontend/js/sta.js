@@ -1,5 +1,10 @@
 $(document).ready(function () {
-  $(".datepicker").kendoDatePicker();
+  $("#datepicker").kendoDatePicker({
+    format: "d/M/yyyy"
+  });
+  $("#timepicker").kendoTimePicker({
+    format: "H:mm"
+  });
   $('.dataTables_length').addClass('bs-select');
   goToSTAList();
   showTable();
@@ -27,17 +32,20 @@ $(document).ready(function () {
 
   function goToSTAList() {
     $('#addSTA').hide();
-    $("#tableSTA").show();
     $("#addResponsible").hide();
+    $("#pageResponsable").hide();
+    $("#tableResponsible").show();
   }
 
   function goToAddSTA() {
-    $("#tableSTA").hide();
+    $("#tableResponsible").hide();
+    $("#pageResponsable").hide();
     $("#addSTA").show();
   }
 
   function goToAddResponsible() {
-    $("#tableSTA").hide();
+    $("#tableResponsible").hide();
+    $("#pageResponsable").hide();
     $("#addResponsible").show();
   }
 

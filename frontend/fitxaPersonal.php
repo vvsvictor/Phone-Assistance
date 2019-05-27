@@ -515,14 +515,14 @@ include '..\backend\include.php';
                     <div class="info">
                       <p class="sub-heading">Idioma de signes</p>
                       <!-- <label for="idioma_s">Idioma de signes</label><br> -->
-                      <label for="catala_is">Català</label>
-                      <input value="1" type="radio" class="opciones" name="idioma_s" id="catala_is">
-                      <label for="castella_is">Castellà</label>
-                      <input value="2" type="radio" class="opciones" name="idioma_s" id="castella_is">
-                      <label for="angles_is">Anglès</label>
-                      <input value="3" type="radio" class="opciones" name="idioma_s" id="angles_is">
-                      <label for="no_is">No</label>
-                      <input value="0" type="radio" class="opciones" name="idioma_s" id="no_is">
+                      <label for="modcatala_is">Català</label>
+                      <input value="1" type="radio" class="opciones" name="modidioma_s" id="modcatala_is">
+                      <label for="modcastella_is">Castellà</label>
+                      <input value="2" type="radio" class="opciones" name="modidioma_s" id="modcastella_is">
+                      <label for="modangles_is">Anglès</label>
+                      <input value="3" type="radio" class="opciones" name="modidioma_s" id="modangles_is">
+                      <label for="modno_is">No</label>
+                      <input value="0" type="radio" class="opciones" name="modidioma_s" id="modno_is">
                       <p></p>
                     </div>
                   </div>
