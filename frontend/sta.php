@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="css/kendoTheme.css">
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="css/sta.css">
+    <link rel="stylesheet" href="css/dataTable.css">
     <link rel="stylesheet" href="css/initPage.css">
   </head>
   <body class="addFont">
