@@ -579,12 +579,12 @@ include '..\backend\include.php';
                       <p></p>
                     </div>
                     <div class="info">
-                      <p class="sub-heading">Carrer</p>
+                      <p class="sub-heading">Tipus d'habitatge'</p>
                       <input id="modtype_house" type="text" class="form-control" name="type_house"/>
                       <p></p>
                     </div>
                     <div class="info">
-                      <p class="sub-heading">Carrer</p>
+                      <p class="sub-heading">Titularitat de l'habitatge</p>
                       <input id="modownership" type="text" class="form-control" name="ownership"/>
                       <p></p>
                     </div>
