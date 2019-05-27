@@ -9,7 +9,7 @@
   $iIdCap = $_GET["iIdCap"];
 
 
-  $consulta="INSERT INTO DOCTORS (name, surname, gender, specializacion_id, id_cap) VALUES ('".$sName."','".$sSurname."','".$sGender."','".$iSpecializacionId."','".$iIdCap."')";
+  $consulta="INSERT INTO DOCTORS (name, surname, gender, specialization_id, id_cap) VALUES ('".$sName."','".$sSurname."','".$sGender."',".$iSpecializacionId.",".$iIdCap.")";
   $hacerConsulta=mysqli_query($conexion, $consulta);
 
 
