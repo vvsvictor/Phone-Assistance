@@ -721,7 +721,7 @@ function mostrarCardListener(id) {
       }
     });
 }
-
+/*
 function modCardListener() {
   //Falta enlazarlo al boton modificar
     let idUser = this.id;
@@ -809,7 +809,7 @@ function modCardListener() {
       }
     });
 }
-
+*/
 function eliminarCardListener() {
   let idCard;
   $(".deletecard").click(function(event) {
