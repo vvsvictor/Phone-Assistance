@@ -554,6 +554,7 @@ function mostrarCardListener(id) {
             $("#moddninie").val(dninie);
             $("#modgenere").val(gender);
             $("#modDataNaixement").val(birthdate);
+            $("#modprovince").val(province);
             $("#modComarcas").val(comarca);
             $("#modMunicipios").val(municipality);
             $("#modAdreca").val(address);

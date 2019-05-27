@@ -560,17 +560,17 @@ include '..\backend\include.php';
                     <h1 class="heading"> Direcció</h1>
                     <div class="info">
                       <p class="sub-heading">Provincia</p>
-                      <input style="width: 100%;" id="provincias" onchange="provinciasListener()"/>
+                      <input id="modprovince" type="text" class="form-control" name="provincias"/>
                       <p></p>
                     </div>
                     <div class="info">
                       <p class="sub-heading">Comarca</p>
-                      <input style="width: 100%;" id="comarcas"/>
+                      <input id="modComarcas" type="text" class="form-control" name="comarcas"/>
                       <p></p>
                     </div>
                     <div class="info">
                       <p class="sub-heading">Municipi</p>
-                      <input style="width: 100%;" id="municipios"/>
+                      <input id="modMunicipios" type="text" class="form-control" name="municipios"/>
                       <p></p>
                     </div>
                     <div class="info">
