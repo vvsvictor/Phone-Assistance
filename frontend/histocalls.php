@@ -76,7 +76,6 @@
             <th class="th-sm">Id</th>
             <th class="th-sm">DNI</th>
             <th class="th-sm">Data</th>
-            <th class="th-sm">Estat de la trucada</th>
             <th class="th-sm">Tipus de trucada</th>
             <th class="th-sm"></th>
           </tr>
@@ -87,7 +86,6 @@
             <th>Id</th>
             <th>DNI</th>
             <th>Data</th>
-            <th>Estat de la trucada</th>
             <th>Tipus de trucada</th>
             <th></th>
           </tr>
