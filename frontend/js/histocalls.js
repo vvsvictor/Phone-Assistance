@@ -143,8 +143,8 @@ function showTable(){
         let id = myJSON[i].id;
         let dni = myJSON[i].user_dninif;
         let date = myJSON[i].call_date;
-        let state = myJSON[i].call_state;
-        showHistoCall(id, dni, date, state);
+        let type = myJSON[i].call_type;
+        showHistoCall(id, dni, date, type);
       }
       $('#dtHistocalls').DataTable();
     },
@@ -154,8 +154,8 @@ function showTable(){
   });
 }
 
-function showHistoCall(id, dni, date, state){
-  let html="<tr><td>"+id+"</td><td>"+dni+"</td><td>"+date+"</td><td>"+state+"</td><td><button id='histoCall" + id + "' type='button' class='histoCall btn btn-info marginBtn'>Fitxa Completa</button><button type='button' id='deleteCallId" + id + "' class='deletecall btn btn-danger marginBtn' data-toggle='modal' data-target='#deletecallmodal'>Eliminar</button></td></tr>";
+function showHistoCall(id, dni, date, type){
+  let html="<tr><td>"+id+"</td><td>"+dni+"</td><td>"+date+"</td><td>"+type+"</td><td><button id='histoCall" + id + "' type='button' class='histoCall btn btn-info marginBtn'>Fitxa Completa</button><button type='button' id='deleteCallId" + id + "' class='deletecall btn btn-danger marginBtn' data-toggle='modal' data-target='#deletecallmodal'>Eliminar</button></td></tr>";
   $("#histoCallsTable").append(html);
 }
 

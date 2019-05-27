@@ -75,7 +75,6 @@ include '..\backend\includeAdmin.php';
             <th class="th-sm">Usuari</th>
             <th class="th-sm">Tipus d'usuari</th>
             <th class="th-sm"></th>
-            <th class="th-sm"></th>
           </tr>
         </thead>
         <tbody id="usuarisTable"></tbody>
@@ -84,7 +83,6 @@ include '..\backend\includeAdmin.php';
             <th>Id</th>
             <th>Usuari</th>
             <th>Tipus d'usuari</th>
-            <th></th>
             <th></th>
           </tr>
         </tfoot>
