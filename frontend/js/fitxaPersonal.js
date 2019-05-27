@@ -554,11 +554,12 @@ function mostrarCardListener(id) {
             $("#moddninie").val(dninie);
             $("#modgenere").val(gender);
             $("#modDataNaixement").val(birthdate);
+            $("#modprovince").val(province);
             $("#modComarcas").val(comarca);
             $("#modMunicipios").val(municipality);
             $("#modAdreca").val(address);
-            //$("#modtype_house").val(type_house);
-            //$("#modownership").val(ownership);
+            $("#modtype_house").val(type_house);
+            $("#modownership").val(ownership);
             $("#modTel_fijo").val(phone);
             $("#modMovil").val(mobile_phone);
             $("#modTelTreball").val(work_phone);

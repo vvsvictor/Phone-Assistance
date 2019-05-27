@@ -151,9 +151,9 @@ function showTable() {
 function showUser(id, username, usertype) {
   let html;
   if (usertype != 0) {
-    html = "<tr><td>" + id + "</td><td>" + username + "</td><td>Alumne</td><td><button type='button' id='deleteUserId" + id + "' class='deleteuser btn btn-danger' data-toggle='modal' data-target='#deleteproductmodal'>Eliminar</button><button type='button' id='modUserId" + id + "' class='btn btn-primary moduser'>Modificar</button></td></tr>";
+    html = "<tr><td>" + id + "</td><td>" + username + "</td><td>Alumne</td><td><button type='button' id='deleteUserId" + id + "' class='deleteuser btn btn-danger marginBtn' data-toggle='modal' data-target='#deleteproductmodal'>Eliminar</button><button type='button' id='modUserId" + id + "' class='btn btn-primary moduser marginBtn'>Modificar</button></td></tr>";
   } else {
-    html = "<tr><td>" + id + "</td><td>" + username + "</td><td>Professor</td><td><button type='button' class='btn btn-danger' disabled>Eliminar</button><button type='button' id='modUserId" + id + "' class='btn btn-primary moduser'>Modificar</button></td></tr>";
+    html = "<tr><td>" + id + "</td><td>" + username + "</td><td>Professor</td><td><button type='button' class='btn btn-danger marginBtn' disabled>Eliminar</button><button type='button' id='modUserId" + id + "' class='btn btn-primary moduser marginBtn'>Modificar</button></td></tr>";
   }
 
   $("#usuarisTable").append(html);
