@@ -492,6 +492,7 @@ include '..\backend\include.php';
   <div id="modpageFp">
     <section id="page">
       <button id="returnPF3" type="button" class="btn btn-primary marginTop"><i class="fa fa-reply"></i> Tornar Enrere</button>
+      <button id="modFormFP2" type="button" class="btn btn-primary marginTop"><i class="fa fa-reply"></i> Guarda</button>
       <div id="tabs" class="c-tabs">
         <div class="c-tabs-nav">
           <a href="#" class="c-tabs-nav__link is-active">Fitxa Personal</a>

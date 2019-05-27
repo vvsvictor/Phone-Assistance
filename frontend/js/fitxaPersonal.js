@@ -20,6 +20,10 @@ $(document).ready(function() {
     goToFp();
   });
 
+  $("#modFormFP2").click(function() {
+    modCardListener();
+  });
+
   //kendo / jquery functions
   $(".opciones").checkboxradio();
   $(".datepicker").kendoDatePicker({
@@ -717,10 +721,9 @@ function mostrarCardListener(id) {
       }
     });
 }
-/*
+
 function modCardListener() {
   //Falta enlazarlo al boton modificar
-  $(".modFormPF").click(function() {
     let idUser = this.id;
     $.ajax({
       url: "../backend/selects/getFitxaPersonal.php",
@@ -805,9 +808,7 @@ function modCardListener() {
         console.log('No hi han clients');
       }
     });
-  });
 }
-*/
 
 function eliminarCardListener() {
   let idCard;
