@@ -135,7 +135,7 @@
         </div>
       </div>
 
-    <!-- Historial Trucades -->
+    <!-- Historial Trucades Modificar -->
     <div class="c-tab is-active">
       <div class="c-tab__content">
         <div class="container_ficha" id="modCallDiv">

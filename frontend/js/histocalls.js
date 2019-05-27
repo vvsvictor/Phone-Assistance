@@ -12,24 +12,21 @@ $(document).ready(function () {
       format: "d/M/yyyy",
       min: new Date(2000,0,1)
     });
+
   $("#type_call").kendoComboBox({
-       dataSource: ["Item1", "Item2"],
-       value: "Item1"
+       dataSource: ["Item1", "Item2"]
   });
 
   $("#outcall").kendoComboBox({
-       dataSource: ["Item1", "Item2"],
-       value: "Item1"
+       dataSource: ["Item1", "Item2"]
   });
 
   $("#incall").kendoComboBox({
-       dataSource: ["Item1", "Item2"],
-       value: "Item1"
+       dataSource: ["Item1", "Item2"]
   });
 
   $("#state_call").kendoComboBox({
-       dataSource: ["Item1", "Item2"],
-       value: "Item1"
+       dataSource: ["Item1", "Item2"]
   });
 
   $("#returnCalls").click(function() {
