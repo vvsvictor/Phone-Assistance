@@ -16,10 +16,11 @@
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css">
     <!-- <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css"> -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
-    <link rel="stylesheet" href="http://kendo.cdn.telerik.com/2019.2.514/styles/kendo.flat.min.css" />
+    <!-- <link rel="stylesheet" href="http://kendo.cdn.telerik.com/2019.2.514/styles/kendo.flat.min.css" /> -->
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="css/initPage.css">
     <link rel="stylesheet" href="css/dataTable.css">
+    <link rel="stylesheet" href="css/kendoTheme.css">
     <link rel="stylesheet" href="css/caps.css">
   </head>
   <body class="addFont">
@@ -75,7 +76,7 @@
     <div class="container">
       <!-- Formulario Añadir CAPS -->
       <div id="addCap" class="container_add">
-        <button id="returnCAP" type="button" class="btn btn-primary"><i class="fa fa-reply"></i></button>
+        <button id="returnCAP" type="button" class="btn btn-primary"><i class="fa fa-reply"></i> Tornar enrere</button>
         <br>
         <br>
         <div class="row">
@@ -88,56 +89,30 @@
         </div>
         <div class="row">
           <div class="col-lg-6">
-            <label for="nom_cap">NOM DEL CAP</label>
-            <input type="text" class="form-control" name="nom_cap"/>
+            <label for="nom_cap">Nom del cap</label>
+            <input id="addNom" type="text" class="form-control" name="nom_cap"/>
           </div>
           <div class="col lg-6">
-            <label for="direccio_cap">DIRECCIÓ</label>
-            <input type="text" class="form-control" name="direccio_cap"/>
+            <label for="direccio_cap">Direcció</label>
+            <input id="addDireccio" type="text" class="form-control" name="direccio_cap"/>
           </div>
         </div>
         <br>
         <div class="row">
           <div class="col-lg-6">
-            <label for="tel_cap">TELÈFON</label>
-            <input type="text" class="form-control" name="tel_cap"/>
+            <label for="tel_cap">Telèfon</label>
+            <input id="addTel" type="text" class="form-control phoneMask" name="tel_cap"/>
           </div>
           <div class="col lg-6">
-            <label for="horari_cap">HORARI</label>
-            <input type="text" class="form-control" name="horari_cap"/>
+            <label for="horari_cap">Horari</label>
+            <input id="addHorari" type="text" class="form-control" name="horari_cap"/>
           </div>
-        </div>
-        <div class="row">
-          <div class="col-lg-6">
-            MUTUES
-            <select id="required" multiple="multiple" data-placeholder="Select attendees...">
-                <option>Steven White</option>
-                <option>Nancy King</option>
-                <option>Nancy Davolio</option>
-                <option>Robert Davolio</option>
-                <option>Michael Leverling</option>
-                <option>Andrew Callahan</option>
-                <option>Michael Suyama</option>
-                <option selected>Anne King</option>
-                <option>Laura Peacock</option>
-                <option>Robert Fuller</option>
-                <option>Janet White</option>
-                <option>Nancy Leverling</option>
-                <option>Robert Buchanan</option>
-                <option>Anne Davolio</option>
-                <option>Andrew Suyama</option>
-                <option>Nige Buchanan</option>
-                <option>Laura Fuller</option>
-            </select>
-
-          </div>
-          <div class="col lg-6">
-          </div>
-        </div>
+        </div><br>
+        <button id="addCapBtn" type="button" class="btn btn-primary">Afegir CAP</button>
       </div>
       <!--Formulario Añadir Doctores -->
       <div id="addDoctor" class="container_add">
-        <button id="returnDoctor" type="button" class="btn btn-primary"><i class="fa fa-reply"></i></button>
+        <button id="returnDoctor" type="button" class="btn btn-primary"><i class="fa fa-reply"></i> Tornar enrere</button>
         <br>
         <br>
         <div class="row">

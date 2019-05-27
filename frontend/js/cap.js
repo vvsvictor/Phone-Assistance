@@ -1,9 +1,6 @@
 $(document).ready(function() {
   //Multiselect
   var required = $("#required").kendoMultiSelect().data("kendoMultiSelect");
-  var optional = $("#optional").kendoMultiSelect({
-    autoClose: false
-  }).data("kendoMultiSelect");
 
   $("#get").click(function() {
     alert("Attendees:\n\nRequired: " + required.value() + "\nOptional: " + optional.value());
@@ -12,7 +9,7 @@ $(document).ready(function() {
   goToCapList();
   $('.dataTables_length').addClass('bs-select');
   showTable();
-  addCapListener();
+
   $("#showFormCAP").click(function() {
     goToAddCap();
   });
@@ -115,6 +112,7 @@ function gotoModCap() {
 function goToAddCap() {
   $("#tableCaps").hide();
   $("#addCap").show();
+  addCapListener();
 }
 
 function goToAddDoctor() {
@@ -125,45 +123,46 @@ function goToAddDoctor() {
 }
 
 function addCapListener() {
-  $("#showFormBtn").click(function(pageCAPS) {
-    $("#name").val('')
-    $("#address").val('');
-    $("#phone").val('');
-    $("#schedule").val('');
+    $(".phoneMask").kendoMaskedTextBox({
+    mask: "000 000 000"
+    });
+    $("#addnom").val('')
+    $("#addDireccio").val('');
+    $("#addHorari").val('');
+    $("#addTel").val('');
     $("#capList").hide();
     $('#addCap').show();
     $("#showListBtn").click(function() {
       goToCapList();
     });
-  });
 
+    $("#addCapBtn").click(function() {
+      let tel =$("#addTel").val();
+      tel= tel.replace(/\s/g, '');
+      $.ajax({
+        url: "../backend/inserts/insertCap.php",
+        data: {
+          sName: $("#addNom").val(),
+          sAddress: $("#addDireccio").val(),
+          iPhone: tel,
+          sSchedule: $("#addHorari").val()
+        },
+        type: "GET",
+        cache: false,
+        success: function(response) {
+          var myJSON = JSON.parse(response);
+          goToCapList();
+          showTable();
 
-  $("#addCapBtn").click(function() {
-    $.ajax({
-      url: "../backend/inserts/insertCap.php",
-      data: {
-        sName: $("#name").val(''),
-        sAddress: $("#address").val(''),
-        iPhone: $("#phone").val(''),
-        sSchedule: $("#schedule").val('')
-      },
-      type: "GET",
-      cache: false,
-      success: function(response) {
-        var myJSON = JSON.parse(response);
-        showTable();
-        $('#addCap').hide();
-        $("#capList").show();
-
-        if (parseInt(myJSON.codigoError) != 0) {
-          console.log(myJSON.observaciones + " - " + myJSON.codigoError + " - " + myJSON.descError);
+          if (parseInt(myJSON.codigoError) != 0) {
+            console.log(myJSON.observaciones + " - " + myJSON.codigoError + " - " + myJSON.descError);
+          }
+        },
+        error: function() {
+          alert("Error en la consulta");
         }
-      },
-      error: function() {
-        alert("Error en la consulta");
-      }
+      });
     });
-  });
 }
 
 function goToCapList() {
@@ -382,7 +381,7 @@ function deleteDr(idDr){
     success: function(response) {
       var myJSON = JSON.parse(response);
       console.log("Success JSON" + myJSON.codigoError);
-      
+
       if (parseInt(myJSON.codigoError) != 0) {
 
       }
