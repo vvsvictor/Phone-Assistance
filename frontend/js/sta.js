@@ -1,9 +1,11 @@
 $(document).ready(function () {
-  $("#datepicker").kendoDatePicker({
+  $("#data_contacte").kendoDatePicker({
     format: "d/M/yyyy"
   });
-  $("#timepicker").kendoTimePicker({
-    format: "H:mm"
+  $("#hora_preferible").kendoTimePicker({
+    format: "H:mm",
+    interval: 15,
+    dateInput: false
   });
   $("#dni_usuari").kendoAutoComplete({
                         filter: "startswith",
@@ -15,6 +17,8 @@ $(document).ready(function () {
   $("#showFormSTA").click(function() {
     goToAddSTA();
   $("#serveitf").kendoSwitch();
+  $("#serveitcr").kendoSwitch();
+  $("#serveicc").kendoSwitch();
   });
   $("#addSituacio").kendoDropDownList();
   $("#showFormResponsible").click(function() {

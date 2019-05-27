@@ -29,7 +29,7 @@ $(document).ready(function() {
     mask: "000 000 000"
   });
   $("#addTipus_habitatge").kendoDropDownList();
-
+  $("#addTipus").kendoDropDownList();
 
 
 });

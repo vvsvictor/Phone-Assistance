@@ -134,20 +134,29 @@ include '..\backend\include.php';
           <input id="addDataNaixement" type="text" class="datepicker" style="width: 100%;"/>
         </div>
         <div class="col-lg-6">
-          <label for="adresa">Adreça</label>
-          <input id="addAdreca" type="text" class="form-control" name="adreça"/>
+          <label for="adresa">Adreça</label><br>
+          <div class="row"  style="margin-left:1%">
+              <select id="addTipus" class="maxWidth dropDown" style="width: 15%;">
+                <option>C/</option>
+                <option>Av.</option>
+                <option>Pg.</option>
+                <option>Ptge.</option>
+                <option>Rbla.</option>
+                <option>Rda.</option>
+                <option>V.</option>
+              </select>
+              <input id="addAdreca" type="text" class="form-control" name="adresa" placeholder="Nom adreça" style="width: 30%; margin-left:2%;"/>
+              <input id="addPis" type="text" class="form-control" name="pis" placeholder="Pis" style="width: 12%; margin-left:2%;"/>
+              <input id="addPorta" type="text" class="form-control" name="porta" placeholder="Porta" style="width: 12%;  margin-left:2%;"/>
+              <input id="addEscala" type="text" class="form-control" name="porta" placeholder="Esc." style="width: 12%;  margin-left:2%;"/>
+            </div>
         </div>
       </div>
       <br>
       <div class="row">
         <div class="col-lg-6">
           <label for="tipus_habitatge">Tipus d'habitatge</label>
-          <select id="addTipus_habitatge" style="width: 100%;" class="maxWidth dropDown">
-            <option>Casa</option>
-            <option>Pis</option>
-            <option>Torre</option>
-            <option>Masia</option>
-          </select>
+          <input id="addTipus_habitatge" type="text" class="form-control" name="tipus_habitatge"/>
         </div>
         <div class="col-lg-6">
           <label for="titularitat">Titularitat de l'habitatge</label><br>
@@ -474,14 +483,13 @@ include '..\backend\include.php';
   <div id="modpageFp">
     <section id="page">
       <button id="returnPF3" type="button" class="btn btn-primary"><i class="fa fa-reply"></i> Tornar Enrere</button>
-      <button id="saveModFP" type="button" class="btn btn-primary"><i class="fas fa-save"></i> Guardar</button>
       <div id="tabs" class="c-tabs">
         <div class="c-tabs-nav">
           <a href="#" class="c-tabs-nav__link is-active">Fitxa Personal</a>
-          <!-- <a href="#" class="c-tabs-nav__link">Mutua</a>
+          <a href="#" class="c-tabs-nav__link">Mutua</a>
           <a href="#" class="c-tabs-nav__link">Responsable</a>
           <a href="#" class="c-tabs-nav__link">STA</a>
-          <a href="#" class="c-tabs-nav__link">Trucades</a> -->
+          <a href="#" class="c-tabs-nav__link">Trucades</a>
           <div class="c-tab-nav-marker"></div>
         </div>
         <!-- FICHA PERSONAL-->
@@ -538,17 +546,17 @@ include '..\backend\include.php';
                     <h1 class="heading"> Direcció</h1>
                     <div class="info">
                       <p class="sub-heading">Provincia</p>
-                      <input style="width: 100%;" id="modProvincias" onchange="provinciasListener()"/>
+                      <input style="width: 100%;" id="provincias" onchange="provinciasListener()"/>
                       <p></p>
                     </div>
                     <div class="info">
                       <p class="sub-heading">Comarca</p>
-                      <input style="width: 100%;" id="modComarcas"/>
+                      <input style="width: 100%;" id="comarcas"/>
                       <p></p>
                     </div>
                     <div class="info">
                       <p class="sub-heading">Municipi</p>
-                      <input style="width: 100%;" id="modMunicipios"/>
+                      <input style="width: 100%;" id="municipios"/>
                       <p></p>
                     </div>
                     <div class="info">

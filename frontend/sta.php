@@ -105,9 +105,11 @@
         <br>
         <div class="row">
           <div class="col-lg-3">
-            Servei TF <input data-role="switch" id="serveitf" aria-label="Servei TF" type="checkbox"/>
-            Servei TCR <input data-role="switch" id="serveitcr" aria-label="Servei TF" type="checkbox"/>
-            Servei CC <input data-role="switch" id="serveitcr" aria-label="Servei TF" type="checkbox"/>
+              Servei TF <input data-role="switch" id="serveitf" aria-label="Servei TF" type="checkbox"/>
+              <br>
+              Servei TCR <input data-role="switch" id="serveitcr" aria-label="Servei TF" type="checkbox"/>
+              <br>
+              Servei CC <input data-role="switch" id="serveicc" aria-label="Servei TF" type="checkbox"/>
           </div>
           <div class="col lg-3">
 
@@ -167,14 +169,14 @@
           </div>
           <div class="col lg-6">
             <label for="hora_preferible">HORA PREFERIBLE</label>
-            <input id="timepicker" title="timepicker" style="width: 100%;" />
+            <input id="hora_preferible" title="timepicker" style="width: 100%;" />
           </div>
         </div>
         <br>
         <div class="row">
           <div class="col-lg-6">
             <label for="data_contacte">DATA CONTACTE</label>
-            <input id="datepicker" title="datepicker" style="width: 100%"/>
+            <input id="data_contacte" title="datepicker" style="width: 100%"/>
           </div>
           <div class="col lg-6">
             <label for="rao">RAÓ</label>
