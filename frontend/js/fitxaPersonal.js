@@ -557,8 +557,8 @@ function mostrarCardListener(id) {
             $("#modComarcas").val(comarca);
             $("#modMunicipios").val(municipality);
             $("#modAdreca").val(address);
-            //$("#modtype_house").val(type_house);
-            //$("#modownership").val(ownership);
+            $("#modtype_house").val(type_house);
+            $("#modownership").val(ownership);
             $("#modTel_fijo").val(phone);
             $("#modMovil").val(mobile_phone);
             $("#modTelTreball").val(work_phone);

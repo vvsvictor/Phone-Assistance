@@ -316,12 +316,12 @@ include '..\backend\include.php';
                     </div>
                     <div class="info">
                       <p class="sub-heading">Tipus d'habitatge</p>
-                      <p id="fpaddress" class="duration">Pis</p>
+                      <p id="fptype_house" class="duration">Pis</p>
                       <p></p>
                     </div>
                     <div class="info">
                       <p class="sub-heading">Titularitat de l'habitatge</p>
-                      <p id="fpaddress" class="duration">Arrendatari</p>
+                      <p id="fpownership" class="duration">Arrendatari</p>
                       <p></p>
                     </div>
                   </div>
@@ -510,6 +510,11 @@ include '..\backend\include.php';
                   <div class="direccion">
                     <h1 class="heading"> Dades</h1>
                     <div class="info">
+                      <p class="sub-heading">DNI</p>
+                      <input id="moddninie" type="text" class="form-control" name="dni" disabled/>
+                      <p></p>
+                    </div>
+                    <div class="info">
                       <p class="sub-heading">Nom</p>
                       <input id="modNom" type="text" class="form-control" name="nom"/>
                       <p></p>
@@ -531,8 +536,8 @@ include '..\backend\include.php';
                     </div>
                     <div class="info">
                       <p class="sub-heading">Idioma</p>
-                      <select onchange="altreListener()" id="addIdioma" style="width: 100%;" class="maxWidth"></select>&nbsp;
-                      <input id="addIdiomaAltre" type="text" class="form-control" placeholder="Idioma">
+                      <select onchange="altreListener()" id="modIdioma" style="width: 100%;" class="maxWidth"></select>&nbsp;
+                      <input id="modIdiomaAltre" type="text" class="form-control" placeholder="Idioma">
                       <p></p>
                     </div>
                     <div class="info">
@@ -573,6 +578,16 @@ include '..\backend\include.php';
                       <input id="modAdreca" type="text" class="form-control" name="adreça"/>
                       <p></p>
                     </div>
+                    <div class="info">
+                      <p class="sub-heading">Carrer</p>
+                      <input id="modtype_house" type="text" class="form-control" name="type_house"/>
+                      <p></p>
+                    </div>
+                    <div class="info">
+                      <p class="sub-heading">Carrer</p>
+                      <input id="modownership" type="text" class="form-control" name="ownership"/>
+                      <p></p>
+                    </div>
                   </div>
                 </div>
                 <div class="content">
@@ -590,7 +605,7 @@ include '..\backend\include.php';
                     </div>
                     <div class="info">
                       <p class="sub-heading">Telèfon treball</p>
-                      <input id="addTelTreball" type="text" class="phoneMask form-control" name="tel_treball"/>
+                      <input id="modTelTreball" type="text" class="phoneMask form-control" name="tel_treball"/>
                       <p></p>
                     </div>
                   </div>
