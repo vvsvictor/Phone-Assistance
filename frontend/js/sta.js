@@ -5,18 +5,18 @@ $(document).ready(function () {
   $("#timepicker").kendoTimePicker({
     format: "H:mm"
   });
+  $("#dni_usuari").kendoAutoComplete({
+                        filter: "startswith",
+                        placeholder: "Selecciona el DNI corresponent...",
+                    });
   $('.dataTables_length').addClass('bs-select');
   goToSTAList();
   showTable();
   $("#showFormSTA").click(function() {
     goToAddSTA();
-  $("#mail-switch").kendoSwitch({
-            messages: {
-                checked: "SI",
-                unchecked: "NO"
-            }
-        });
+  $("#serveitf").kendoSwitch();
   });
+  $("#addSituacio").kendoDropDownList();
   $("#showFormResponsible").click(function() {
     goToAddResponsible();
   });

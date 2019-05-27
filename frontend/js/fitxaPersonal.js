@@ -22,7 +22,9 @@ $(document).ready(function() {
 
   //kendo / jquery functions
   $(".opciones").checkboxradio();
-  $(".datepicker").kendoDatePicker();
+  $(".datepicker").kendoDatePicker({
+    format: "d/M/yyyy"
+  });
   $(".phoneMask").kendoMaskedTextBox({
     mask: "000 000 000"
   });
