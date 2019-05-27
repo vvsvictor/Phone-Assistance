@@ -532,17 +532,17 @@ include '..\backend\include.php';
                     <h1 class="heading"> Direcció</h1>
                     <div class="info">
                       <p class="sub-heading">Provincia</p>
-                      <input style="width: 100%;" id="provincias" onchange="provinciasListener()"/>
+                      <input style="width: 100%;" id="modProvincias" onchange="provinciasListener()"/>
                       <p></p>
                     </div>
                     <div class="info">
                       <p class="sub-heading">Comarca</p>
-                      <input style="width: 100%;" id="comarcas"/>
+                      <input style="width: 100%;" id="modComarcas"/>
                       <p></p>
                     </div>
                     <div class="info">
                       <p class="sub-heading">Municipi</p>
-                      <input style="width: 100%;" id="municipios"/>
+                      <input style="width: 100%;" id="modMunicipios"/>
                       <p></p>
                     </div>
                     <div class="info">
