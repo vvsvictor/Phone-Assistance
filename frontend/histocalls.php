@@ -17,6 +17,7 @@
     <!-- <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css"> -->
     <link rel="stylesheet" href="css/kendoTheme.css">
     <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="css/dataTable.css">
     <link rel="stylesheet" href="css/initPage.css">
   </head>
   <body class="addFont">
