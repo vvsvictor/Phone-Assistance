@@ -148,7 +148,6 @@ function showTable() {
       }
       $('#dtFitxaPersonal').DataTable();
       eliminarCardListener();
-      mostrarCardListener();
     },
     error: function() {
       console.log('No hi han clients');
@@ -497,11 +496,14 @@ function cleanInputs(){
 function showFitxaPersonal(id, name, surname, dninie, province) {
   let html = "<tr><td>" + id + "</td><td>" + name + "</td><td>" + surname + "</td><td>" + dninie + "</td><td>" + province + "</td><td><button id='fitxaPersonal" + id + "' type='button' class='fitxaPersonal btn btn-info marginBtn'>Fitxa Completa</button><button type='button' id='deleteCardId" + id + "' class='deletecard btn btn-danger marginBtn' data-toggle='modal' data-target='#deletecardmodal'>Eliminar</button></td></tr>";
   $("#fitxaPersonalTable").append(html);
+
+  $(".fitxaPersonal").click(function() {
+    mostrarCardListener($(this).attr('id'));
+  });
 }
 
-function mostrarCardListener() {
-  $(".fitxaPersonal").click(function(event) {
-    let idbtn = this.id;
+function mostrarCardListener(id) {
+    let idbtn = id;
     idbtn = idbtn.replace("fitxaPersonal", "");
     console.log("ID "+idbtn);
     $.ajax({
@@ -533,11 +535,13 @@ function mostrarCardListener() {
             let dninie = myJSON[i].dninie;
             let gender = myJSON[i].gender;
             let birthdate = myJSON[i].birthdate;
-            birthdate = birthdate.replace("-", "/");
+            birthdate = birthdate.replace(/-/g, "/");
             let province = myJSON[i].province;
             let comarca = myJSON[i].comarca;
             let municipality = myJSON[i].municipality;
             let address = myJSON[i].address;
+            let type_house = myJSON[i].type_house;
+            let ownership = myJSON[i].ownership;
             let phone = myJSON[i].phone;
             let mobile_phone = myJSON[i].mobile_phone;
             let mobile_phone_arr = mobile_phone.split("");
@@ -547,16 +551,18 @@ function mostrarCardListener() {
             let signlanguage_name = myJSON[i].sign_language;
             $("#modNom").val(name);
             $("#modCognom").val(surname);
+            $("#moddninie").val(dninie);
             $("#modgenere").val(gender);
             $("#modDataNaixement").val(birthdate);
-            modProvincias
-            modComarcas
-            modMunicipios
-            modAdreca
-            $("#modTel_fijo").val();
-
-
-
+            $("#modprovince").val(province);
+            $("#modComarcas").val(comarca);
+            $("#modMunicipios").val(municipality);
+            $("#modAdreca").val(address);
+            $("#modtype_house").val(type_house);
+            $("#modownership").val(ownership);
+            $("#modTel_fijo").val(phone);
+            $("#modMovil").val(mobile_phone);
+            $("#modTelTreball").val(work_phone);
             $("#fpname").html(name);
             $("#fpsurname").html(surname);
             $("#fpdninie").html(dninie);
@@ -568,9 +574,11 @@ function mostrarCardListener() {
             $("#fpcomarca").html(comarca);
             $("#fpmunicipality").html(municipality);
             $("#fpaddress").html(address);
+            $("#fptype_house").val(type_house);
+            $("#fpownership").val(ownership);
             $("#fpphone").html(phone);
             $("#fpmobile_phone").html(mobile_phone);
-            $("#fpwork_phone").html(mobile_phone);
+            $("#fpwork_phone").html(work_phone);
             goToFp();
             $.ajax({
               url: "../backend/selects/getResponsible.php",
@@ -591,7 +599,6 @@ function mostrarCardListener() {
                     $("#resRao").html(myJSON[i].reason);
                   }
                 }
-
               },
               error: function() {
                 console.log('No hi ha responsable');
@@ -709,10 +716,8 @@ function mostrarCardListener() {
         console.log('No hi han clients');
       }
     });
-
-  });
 }
-
+/*
 function modCardListener() {
   //Falta enlazarlo al boton modificar
   $(".modFormPF").click(function() {
@@ -755,11 +760,10 @@ function modCardListener() {
             $("#modwork_phone").html(mobile_phone);
             goToModFP()
           }
-            /*//Botó tornar enrrere no echo.
+            ///Botó tornar enrrere no echo.
             $("#showListBtnMod").click(function() {
               goToUsersList();
             });
-            */
             //Click al botó modificar usuari
             $("#modUserBtn").click(function() {
               $.ajax({
@@ -803,6 +807,7 @@ function modCardListener() {
     });
   });
 }
+*/
 
 function eliminarCardListener() {
   let idCard;

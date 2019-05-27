@@ -75,7 +75,7 @@ include '..\backend\include.php';
   </nav>
   <div class="container">
     <div id="addFp" class="form">
-      <button id="returnPF" type="button" class="btn btn-primary marginBtn"><i class="fa fa-reply"></i> Tornar enrere</button>
+      <button id="returnPF" type="button" class="btn btn-primary marginTop"><i class="fa fa-reply"></i> Tornar enrere</button>
       <br>
       <br>
       <div class="row">
@@ -206,7 +206,7 @@ include '..\backend\include.php';
       </div>
     </div>
     <div id="tableFitxaPersonal">
-      <button id="showFormPF" type="button" class="btn btn-primary marginBtn"><i class="fas fa-plus"></i> Afegir</button>
+      <button id="showFormPF" type="button" class="btn btn-primary marginTop"><i class="fas fa-plus"></i> Afegir</button>
       <table id="dtFitxaPersonal" class="table table-striped table-bordered" cellspacing="0" width="100%">
         <thead>
           <tr>
@@ -235,7 +235,7 @@ include '..\backend\include.php';
   <br><br>
   <div id="pageFp">
     <section id="page">
-      <button id="returnPF2" type="button" class="btn btn-primary"><i class="fa fa-reply"></i> Tornar Enrere</button>
+      <button id="returnPF2" type="button" class="btn btn-primary marginTop"><i class="fa fa-reply"></i> Tornar Enrere</button>
       <div id="tabs" class="c-tabs">
         <div class="c-tabs-nav">
           <a href="#" class="c-tabs-nav__link is-active">Fitxa Personal</a>
@@ -249,7 +249,7 @@ include '..\backend\include.php';
         <div class="c-tab is-active">
           <div class="c-tab__content">
             <div class="container_ficha">
-              <button id="modFormPF" type="button" class="btn btn-primary marginBtn"> Modificar</button>
+              <button id="modFormPF" type="button" class="btn btn-primary marginBtn leftMargin"> Modificar</button>
               <div class="container">
                 <div class="content">
                   <div class="direccion">
@@ -316,12 +316,12 @@ include '..\backend\include.php';
                     </div>
                     <div class="info">
                       <p class="sub-heading">Tipus d'habitatge</p>
-                      <p id="fpaddress" class="duration">Pis</p>
+                      <p id="fptype_house" class="duration">Pis</p>
                       <p></p>
                     </div>
                     <div class="info">
                       <p class="sub-heading">Titularitat de l'habitatge</p>
-                      <p id="fpaddress" class="duration">Arrendatari</p>
+                      <p id="fpownership" class="duration">Arrendatari</p>
                       <p></p>
                     </div>
                   </div>
@@ -491,7 +491,7 @@ include '..\backend\include.php';
   </div>
   <div id="modpageFp">
     <section id="page">
-      <button id="returnPF3" type="button" class="btn btn-primary"><i class="fa fa-reply"></i> Tornar Enrere</button>
+      <button id="returnPF3" type="button" class="btn btn-primary marginTop"><i class="fa fa-reply"></i> Tornar Enrere</button>
       <div id="tabs" class="c-tabs">
         <div class="c-tabs-nav">
           <a href="#" class="c-tabs-nav__link is-active">Fitxa Personal</a>
@@ -509,6 +509,11 @@ include '..\backend\include.php';
                 <div class="content">
                   <div class="direccion">
                     <h1 class="heading"> Dades</h1>
+                    <div class="info">
+                      <p class="sub-heading">DNI</p>
+                      <input id="moddninie" type="text" class="form-control" name="dni" disabled/>
+                      <p></p>
+                    </div>
                     <div class="info">
                       <p class="sub-heading">Nom</p>
                       <input id="modNom" type="text" class="form-control" name="nom"/>
@@ -531,8 +536,8 @@ include '..\backend\include.php';
                     </div>
                     <div class="info">
                       <p class="sub-heading">Idioma</p>
-                      <select onchange="altreListener()" id="addIdioma" style="width: 100%;" class="maxWidth"></select>&nbsp;
-                      <input id="addIdiomaAltre" type="text" class="form-control" placeholder="Idioma">
+                      <select onchange="altreListener()" id="modIdioma" style="width: 100%;" class="maxWidth"></select>&nbsp;
+                      <input id="modIdiomaAltre" type="text" class="form-control" placeholder="Idioma">
                       <p></p>
                     </div>
                     <div class="info">
@@ -555,22 +560,32 @@ include '..\backend\include.php';
                     <h1 class="heading"> Direcció</h1>
                     <div class="info">
                       <p class="sub-heading">Provincia</p>
-                      <input style="width: 100%;" id="provincias" onchange="provinciasListener()"/>
+                      <input id="modprovince" type="text" class="form-control" name="provincias"/>
                       <p></p>
                     </div>
                     <div class="info">
                       <p class="sub-heading">Comarca</p>
-                      <input style="width: 100%;" id="comarcas"/>
+                      <input id="modComarcas" type="text" class="form-control" name="comarcas"/>
                       <p></p>
                     </div>
                     <div class="info">
                       <p class="sub-heading">Municipi</p>
-                      <input style="width: 100%;" id="municipios"/>
+                      <input id="modMunicipios" type="text" class="form-control" name="municipios"/>
                       <p></p>
                     </div>
                     <div class="info">
                       <p class="sub-heading">Carrer</p>
                       <input id="modAdreca" type="text" class="form-control" name="adreça"/>
+                      <p></p>
+                    </div>
+                    <div class="info">
+                      <p class="sub-heading">Tipus d'habitatge'</p>
+                      <input id="modtype_house" type="text" class="form-control" name="type_house"/>
+                      <p></p>
+                    </div>
+                    <div class="info">
+                      <p class="sub-heading">Titularitat de l'habitatge</p>
+                      <input id="modownership" type="text" class="form-control" name="ownership"/>
                       <p></p>
                     </div>
                   </div>
@@ -590,7 +605,7 @@ include '..\backend\include.php';
                     </div>
                     <div class="info">
                       <p class="sub-heading">Telèfon treball</p>
-                      <input id="addTelTreball" type="text" class="phoneMask form-control" name="tel_treball"/>
+                      <input id="modTelTreball" type="text" class="phoneMask form-control" name="tel_treball"/>
                       <p></p>
                     </div>
                   </div>

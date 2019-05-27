@@ -14,7 +14,7 @@ include '..\backend\includeAdmin.php';
     <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.0/css/mdb.min.css" rel="stylesheet"> -->
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css">
     <!-- <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css"> -->
-
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="css/initPage.css">
     <link rel="stylesheet" href="css/dataTable.css">
@@ -67,7 +67,7 @@ include '..\backend\includeAdmin.php';
       </div>
     </nav>
     <div class="container" id="usersList">
-      <button id="showFormBtn" type="button" class="btn btn-primary marginBtn">Afegir</button>
+      <button id="showFormBtn" type="button" class="btn btn-primary marginTop"><i class="fas fa-plus"></i> Afegir</button>
       <table id="dtUsuaris" class="table table-striped table-bordered" cellspacing="0" width="100%">
         <thead>
           <tr>
@@ -90,7 +90,7 @@ include '..\backend\includeAdmin.php';
     </div>
     <!-- Div afegir usuari -->
     <div class="container" id="addUser">
-      <button id="showListBtn" type="button" class="btn btn-primary">Tornar a la llista</button>
+      <button id="showListBtn" type="button" class="btn btn-primary marginTop"><i class="fa fa-reply"></i> Tornar a la llista</button>
       <form id="formUser">
         <div class="form-group">
           <label for="username">Nom d'usuari</label>
@@ -134,7 +134,7 @@ include '..\backend\includeAdmin.php';
     </div>
     <!-- Div modificar usuari -->
     <div class="container" id="modUserDiv">
-      <button id="showListBtnMod" type="button" class="btn btn-primary">Tornar a la llista</button>
+      <button id="showListBtnMod" type="button" class="btn btn-primary marginTop"><i class="fa fa-reply"></i> Tornar a la llista</button>
       <form id="formModUser">
         <div class="form-group">
           <label for="modId">ID</label>
