@@ -19,6 +19,10 @@ $(document).ready(function () {
   $("#serveitf").kendoSwitch();
   $("#serveitcr").kendoSwitch();
   $("#serveicc").kendoSwitch();
+  $("#serveitm").kendoSwitch();
+  $("#serveitam").kendoSwitch();
+  $("#serveigps").kendoSwitch();
+  $("#serveiumt").kendoSwitch();
   });
   $("#addSituacio").kendoDropDownList();
   $("#showFormResponsible").click(function() {
