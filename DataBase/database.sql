@@ -203,12 +203,12 @@ INSERT into users (username,password,usertype) VALUES ("normal_user","bemen3",1)
 
 /*Insert languages by default*/
 INSERT into languages (language_name) VALUES ("Català");
-INSERT into languages (language_name) VALUES ("Castellano");
+INSERT into languages (language_name) VALUES ("Castellà");
 INSERT into languages (language_name) VALUES ("English");
 
 /*Insert sign_languages by default*/
 INSERT into sign_languages (language_name) VALUES ("Català");
-INSERT into sign_languages (language_name) VALUES ("Castellano");
+INSERT into sign_languages (language_name) VALUES ("Castellà");
 INSERT into sign_languages (language_name) VALUES ("English");
 
 /*Insert provinces by default*/
