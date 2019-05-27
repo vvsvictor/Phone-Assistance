@@ -281,7 +281,7 @@ INSERT into RESPONSIBLE (user_dninif, priority, name, surname, address, post_cod
 
 /*Insert type call_history type by default*/
 insert into call_state (call_type) values ("Acabada");
-insert into call_type (call_type)values ("Emergencia");
-insert into incall_type (incall_type) values ("Si");
-insert into outcall_type (outcall_type) values ("No");
+insert into call_type (call_type)values ("Entrant");
+insert into incall_type (incall_type) values ("Emergencia");
+insert into outcall_type (outcall_type) values ("Emergencia");
 insert into call_history (user_dninif,call_date,call_type,outcall_type,incall_type,call_state,teleoperator_solution) values ("68951118Q", "2019-10-25", 1, 1, 1, 1, "morir");

@@ -156,7 +156,7 @@ include '..\backend\include.php';
       <div class="row">
         <div class="col-lg-6">
           <label for="tipus_habitatge">Tipus d'habitatge</label>
-          <input id="addTipus_habitatge" type="text" class="form-control" name="tipus_habitatge"/>
+          <input id="addTipus_habitatge" style="width: 100%;"/>
         </div>
         <div class="col-lg-6">
           <label for="titularitat">Titularitat de l'habitatge</label><br>

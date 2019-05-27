@@ -28,7 +28,26 @@ $(document).ready(function() {
   $(".phoneMask").kendoMaskedTextBox({
     mask: "000 000 000"
   });
-  $("#addTipus_habitatge").kendoDropDownList();
+  $("#addTipus_habitatge").kendoDropDownTree({
+                placeholder: "Selecciona el tipus d'habitatge ...",
+                height: "auto",
+                dataSource: [
+                    {
+                        text: "Cases", items: [
+                            { text: "Casa Duplex" },
+                            { text: "Mansió" },
+                            { text: "Xalet" }
+                        ]
+                    },
+                    {
+                        text: "Pisos", items: [
+                            { text: "Pis" },
+                            { text: "Atic" },
+                            { text: "Baix" }
+                        ]
+                    }
+                ]
+            });
   $("#addTipus").kendoDropDownList();
 
 
