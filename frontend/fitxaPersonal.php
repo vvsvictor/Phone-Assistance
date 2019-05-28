@@ -512,6 +512,10 @@ include '..\backend\include.php';
                   <div class="direccion">
                     <h1 class="heading"> Dades</h1>
                     <div class="info">
+                      <input id="modId" type="hidden" class="form-control" name="id" disabled/>
+                      <p></p>
+                    </div>
+                    <div class="info">
                       <p class="sub-heading">DNI</p>
                       <input id="moddninie" type="text" class="form-control" name="dni" disabled/>
                       <p></p>

@@ -560,6 +560,7 @@ function mostrarCardListener(id) {
             let work_phone = myJSON[i].work_phone;
             let language_name = myJSON[i].language;
             let signlanguage_name = myJSON[i].sign_language;
+            $("#modId").val(idbtn);
             $("#modNom").val(name);
             $("#modCognom").val(surname);
             $("#moddninie").val(dninie);
@@ -734,19 +735,19 @@ function modCardListener() {
     $.ajax({
       url: "../backend/updates/fichaPersonal.php",
       data:{
-        sDninie: $("#moddninie").val(),
+        id: $("#modId").val(),
         sName: $("#modNom").val(),
         sSurname: $("#modCognom").val(),
         sGender: "Home",//$("#modgenere").val(),
-        iLanguage: 0, //$("#1").val(),
-        iSignLanguage: 0, //$("#").val(),
+        iLanguage: 1, //$("#1").val(),
+        iSignLanguage: 1, //$("#").val(),
         sBirthDate: $("#modDataNaixement").val(),
-        iProvince: $("#modprovince").val(),
-        iComarca: $("#modComarcas").val(),
-        iMunicipality: $("#modMunicipios").val(),
+        iProvince: 1, //$("#modprovince").val(),
+        iComarca: 1, //$("#modComarcas").val(),
+        iMunicipality:1,//$("#modMunicipios").val(),
         sAddress: $("#modAdreca").val(),
         sTypeHouse: $("#modtype_house").val(),
-        iOwnership: $("#modownership").val(),
+        iOwnership: 1,//$("#modownership").val(),
         sPhone: $("#modTel_fijo").val(),
         sMobilePhone: $("#modMovil").val(),
         sWorkPhone: "" //$("#modTelTreball").val()
