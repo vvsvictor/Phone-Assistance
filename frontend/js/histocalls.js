@@ -32,15 +32,22 @@ $(document).ready(function () {
 });
 
 
-
-$("#outcall").hide();
-$("#incall").hide();
-$("#out_in_select").hide();
-
 function gotoModCall() {
   $('#modCallDiv').hide();
   $('#addCall').hide();
   $("#callList").show();
+}
+
+function callTypeListener(){
+  if ($(provincias).val().includes("Entrant")) {
+    $("#call_type").show();
+    $("#entry_type").show();
+    $("#exit_type").hide();
+  }else{
+    $("#call_type").show();
+    $("#exit_type").show();
+    $("#entry_type").hide();
+  }
 }
 
 function returnCall(){
@@ -69,7 +76,7 @@ function addCallListener() {
           filter: "startswith",
           placeholder: "Selecciona un DNI..."
         });
-
+        $("#call_type").hide();
         $("#data").val('');
         $("#type").val('');
         $("#state").val('');

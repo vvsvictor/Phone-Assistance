@@ -156,7 +156,7 @@ include '..\backend\include.php';
       <div class="row">
         <div class="col-lg-6">
           <label for="tipus_habitatge">Tipus d'habitatge</label>
-          <input id="addTipus_habitatge" style="width: 100%;"/>
+          <input id="addTipus_habitatge" name="tipusHabitatge" style="width: 100%;"/>
         </div>
         <div class="col-lg-6">
           <label for="titularitat">Titularitat de l'habitatge</label><br>
@@ -206,7 +206,6 @@ include '..\backend\include.php';
       </div>
     </div>
     <div id="tableFitxaPersonal">
-      <br/>
       <button id="showFormPF" type="button" class="btn btn-primary marginTop"><i class="fas fa-plus"></i> Afegir</button>
       <table id="dtFitxaPersonal" class="table table-striped table-bordered" cellspacing="0" width="100%">
         <thead>
@@ -528,16 +527,7 @@ include '..\backend\include.php';
                     </div>
                     <div class="info">
                       <p class="sub-heading">Genere</p>
-                      <select id="modGenere" style="width: 100%;" class="maxWidth dropDown">
-                        <option>Dona</option>
-                        <option>Home</option>
-                        <option>Intersexual</option>
-                        <option>Intersexual Home</option>
-                        <option>Intersexual Dona</option>
-                        <option>Transsexual</option>
-                        <option>Transsexual Dona</option>
-                        <option>Transsexual Home</option>
-                      </select>
+                      <input id="modgenere" type="text" class="form-control" name="genere"/>
                       <p></p>
                     </div>
                     <div class="info">
@@ -547,7 +537,8 @@ include '..\backend\include.php';
                     </div>
                     <div class="info">
                       <p class="sub-heading">Idioma</p>
-                      <select id="modifIdioma" style="width: 100%;" class="maxWidth"></select>&nbsp;
+                      <select onchange="altreListener()" id="modIdioma" style="width: 100%;" class="maxWidth"></select>&nbsp;
+                      <input id="modIdiomaAltre" type="text" class="form-control" placeholder="Idioma">
                       <p></p>
                     </div>
                     <div class="info">

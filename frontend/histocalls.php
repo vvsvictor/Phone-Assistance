@@ -115,34 +115,20 @@
         <div class="row">
           <div class="col-lg-6">
             <label for="addtype_call">Tipus trucada</label><br>
-            <input id="addtype_call" style="width: 100%"/>
+            <input id="addtype_call" style="width: 100%" onchange="callTypeListener()"/>
           </div>
           <div class="col lg-6" id="out_in_select">
-            <label for="outcall">Situació</label>
-            <input id="outcall" />
-            <input id="incall" />
           </div>
         </div>
         <br>
-        <div class="row">
-          <div class="col-lg-6">
+        <div class="row" id="call_type">
+          <div class="col-lg-6" id="entry_type">
             <label for="addentrant_call">Tipus de trucada entrant</label><br>
             <input id="addentrant_call" style="width: 100%"/>
           </div>
-          <div class="col lg-6">
+          <div class="col lg-6" id="exit_type">
             <label for="addsortint_call">Tipus de trucada sortint/a</label><br>
             <input id="addentrant_call" style="width: 100%"/>
-          </div>
-        </div>
-        <br>
-        <div class="row">
-          <div class="col-lg-6">
-            <label for="addsubentrant_call">Subtipus de trucada entrant</label><br>
-            <input id="addsubentrant_call" style="width: 100%"/>
-          </div>
-          <div class="col lg-6">
-            <label for="addsubsortint_call">Subtipus de trucada sortint/a</label><br>
-            <input id="addsubsortint_call" style="width: 100%"/>
           </div>
         </div>
         <br>
