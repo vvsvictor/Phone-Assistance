@@ -141,6 +141,7 @@
         </div>
         <button id="addDoctorBtn" type="button" class="btn btn-primary marginTop">Afegir Doctor</button>
       </div>
+
       <div id="tableCaps">
         <br/>
         <button id="showFormCAP" type="button" class="btn btn-primary marginTop"><i class="fa fa-plus"></i> Afegir CAP</button>
