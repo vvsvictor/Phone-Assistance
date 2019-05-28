@@ -62,11 +62,12 @@ function addCallListener() {
         }
         $("#adddni_usuari").val('');
         console.log(dnis);
+
         $("#adddni_usuari").kendoAutoComplete({
+          maxSelectedItems: 1,
           dataSource: dnis,
           filter: "startswith",
-          placeholder: "Selecciona un DNI...",
-          separator: ", "
+          placeholder: "Selecciona un DNI..."
         });
 
         $("#data").val('');
@@ -124,6 +125,16 @@ function addCallListener() {
           error: function() {
           console.log('No hi han estats de trucades');
         }
+    });
+    //Si la trucada es entrant mostrar els tipus de trucada
+    $( "#addtype_call" ).change(function() {
+      if (addtype_call==1) {
+        //Trucada entrant
+        
+      }else{
+        //Trucada sortint
+      }
+      // Check input( $( this ).val() ) for validity here
     });
     $("#showListBtn").click(function() {
       goToCallList();

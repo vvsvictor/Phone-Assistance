@@ -289,6 +289,7 @@ INSERT into RESPONSIBLE (user_dninif, priority, name, surname, address, post_cod
 /*Insert type call_history type by default*/
 insert into call_state (call_type) values ("Acabada");
 insert into call_type (call_type)values ("Entrant");
+insert into call_type (call_type)values ("Sortint");
 insert into incall_type (incall_type, subclass) values ("Trucada d’alarma","Emergències sanitàries");
 insert into incall_type (incall_type, subclass) values ("Trucada d’alarma","Emergències socials");
 insert into incall_type (incall_type, subclass) values ("Trucada d’alarma","Emergències per crisi de soledat o angoixa");

@@ -126,12 +126,54 @@
         <br>
         <div class="row">
           <div class="col-lg-6">
+            <label for="addentrant_call">Tipus de trucada entrant</label><br>
+            <input id="addentrant_call" />
+          </div>
+          <div class="col lg-6">
+            <label for="addsortint_call">Tipus de trucada sortint/a</label><br>
+            <input id="addentrant_call" />
+          </div>
+        </div><br>
+        <div class="row">
+          <div class="col-lg-6">
+            <label for="addsubentrant_call">Subtipus de trucada entrant</label><br>
+            <input id="addsubentrant_call" />
+          </div>
+          <div class="col lg-6">
+            <label for="addsubsortint_call">Subtipus de trucada sortint/a</label><br>
+            <input id="addsubsortint_call" />
+          </div>
+        </div>
+        <div id="addAbsencia" class="row">
+          <div class="col-lg-6">
+            <label for="add_dataabs">Data d'absència</label><br>
+            <input class="datePickerKendo"  id="add_dataabs" />
+          </div>
+          <div class="col lg-6">
+            <label for="add_datatornada">Data de previsió de la tornada a l'habitatge</label><br>
+            <input class="datePickerKendo" id="add_datatornada" />
+          </div>
+        </div><br>
+        <div class="row">
+          <div class="col-lg-6">
             <label for="addstate_call">Estat de la Trucada</label><br>
             <input id="addstate_call" />
           </div>
           <div class="col lg-6">
-            <label for="rao">Solució teleoperador/a</label>
+            <label for="rao">Solució teleoperador/a</label><br>
             <textarea class="form-control" id="rao" rows="3"></textarea>
+          </div>
+        </div><br>
+        <div id="trucadaassesor" class="row">
+          <div class="col-lg-6">
+            <label for="addmotiuass">Motiu d'assessorament</label><br>
+            <input id="addstate_call" /><br>
+            <label for="addmotiuass">Descripció</label><br>
+            <input id="addstate_call" />
+          </div>
+          <div class="col lg-6">
+            <label for="rao">Destinatari/ària</label>
+            <select class="form-control" id="destinatari"></select>
           </div>
         </div><br>
         <button id="addCallBtn" type="button" class="btn btn-primary">Afegir Trucada</button>
