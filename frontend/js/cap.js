@@ -325,7 +325,7 @@ function showTable() {
 
 function showCap(id, name, address, phone, schedule) {
   let html;
-  html = "<tr><td>" + id + "</td><td>" + name + "</td><td>" + address + "</td><td>" + phone + "</td><td>" + schedule + "</td><td><button id='fitxaCaps" + id + "' type='button' class='fitxaCaps btn btn-info marginBtn'><i class='fa fa-file'></i></button><button type='button' id='deleteCapId" + id + "' class='deletecap btn btn-danger' data-toggle='modal' data-target='#deletecapmodal'><i class='fa fa-trash'></i></button></td></tr>";
+  html = "<tr><td>" + id + "</td><td>" + name + "</td><td>" + address + "</td><td>" + phone + "</td><td>" + schedule + "</td><td><button id='fitxaCaps" + id + "' type='button' class='fitxaCaps btn btn-info marginBtn'><i class='fa fa-file'></i> Més informació</button><button type='button' id='deleteCapId" + id + "' class='deletecap btn btn-danger marginBtn' data-toggle='modal' data-target='#deletecapmodal'><i class='fa fa-trash'></i> Eliminar</button></td></tr>";
   console.log("HTML caps a insertar "+html)
   $("#capTable").append(html);
 }
