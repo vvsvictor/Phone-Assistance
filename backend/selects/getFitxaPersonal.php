@@ -13,7 +13,7 @@
       $resultLlenguatge = mysqli_query($conexion, $consultaLlenguatge);
       if (mysqli_num_rows($resultLlenguatge) > 0) {
         while ($rowLlenguatge = mysqli_fetch_assoc($resultLlenguatge)) {
-          $sJSON .= '"language":"'. $rowLlenguatge["language_name"].'", ';
+          $sJSON .= '"language":"'. utf8_encode($rowLlenguatge["language_name"]).'", ';
         }
       }
 

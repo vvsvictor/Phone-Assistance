@@ -109,12 +109,12 @@
             <input id="addHorari" type="text" class="form-control" name="horari_cap"/>
           </div>
         </div><br>
-        <button id="addCapBtn" type="button" class="btn btn-primary">Afegir CAP</button>
+        <button id="addCapBtn" type="button" class="btn btn-primary marginTop"> Afegir CAP</button><br>
       </div>
 
       <!--Formulario Añadir Doctores -->
       <div id="addDoctor" class="container_add">
-        <button id="returnDoctor" type="button" class="btn btn-primary"><i class="fa fa-reply"></i> Tornar enrere</button>
+        <button id="returnDoctor" type="button" class="btn btn-primary marginTop"><i class="fa fa-reply"></i> Tornar enrere</button>
         <br>
         <br>
         <div class="row">
@@ -139,11 +139,12 @@
             </select>
           </div>
         </div>
-        <button id="addDoctorBtn" type="button" class="btn btn-primary">Afegir Doctor</button>
+        <button id="addDoctorBtn" type="button" class="btn btn-primary marginTop">Afegir Doctor</button>
       </div>
       <div id="tableCaps">
         <br/>
-        <button id="showFormCAP" type="button" class="btn btn-primary"><i class="fa fa-plus"></i>Afegir CAP</button>
+        <button id="showFormCAP" type="button" class="btn btn-primary marginTop"><i class="fa fa-plus"></i> Afegir CAP</button>
+
         <table id="dtCap" class="table table-striped table-bordered" cellspacing="0" width="100%">
           <thead>
             <tr>
@@ -171,7 +172,7 @@
   </div>
   <div id="pageCAPS">
     <section id="page">
-      <button id="returnCAP2" type="button" class="btn btn-primary"><i class="fa fa-reply"></i> Tornar enrere</button>
+      <button id="returnCAP2" type="button" class="btn btn-primary marginTop"><i class="fa fa-reply"></i> Tornar enrere</button>
       <div id="tabs" class="c-tabs">
         <div class="c-tabs-nav">
           <a href="#" class="c-tabs-nav__link is-active">Info CAP</a>
@@ -179,7 +180,7 @@
           <div class="c-tab-nav-marker"></div>
         </div>
         <!-- CAPS -->
-        <div class="c-tab">
+        <div class="c-tab is-active">
           <div class="c-tab__content">
             <div class="container_caps">
               <div class="content3">
@@ -221,7 +222,7 @@
             <div class="container_doctors">
               <div class="content3">
                 <div id="tableDoctors">
-                  <button id="showFormDoctor" type="button" class="btn btn-primary"><i class="fa fa-plus"></i>Afegir Doctor</button>
+                  <button id="showFormDoctor" type="button" class="btn btn-primary marginTop"><i class="fa fa-plus"></i> Afegir Doctor</button>
                   <table id="dtDoctor" class="table table-striped table-bordered" cellspacing="0" width="100%">
                     <thead>
                       <tr>

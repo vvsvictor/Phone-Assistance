@@ -59,6 +59,8 @@ $(document).ready(function() {
 
 });
 
+let switchload = false;
+
 function Tabs(options) {
 
   var tabs = document.querySelector(options.el);
@@ -636,7 +638,8 @@ function mostrarCardListener(id) {
               success: function(response) {
                 let myJSON = JSON.parse(response);
                 for (let i = 0; i < myJSON.length; i++) {
-                  if (myJSON[i].user_dninif==dninie) {
+                  if (myJSON[i].user_dninif==dninie && switchload==false) {
+                    switchload=true;
                     if (myJSON[i].tf_service==1) {
                       $("#tf_service").kendoSwitch({
                         checked: true
