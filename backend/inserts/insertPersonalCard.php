@@ -24,7 +24,6 @@
   }else{
     $consulta="INSERT INTO PERSONAL_CARD (name, surname, gender, language, sign_language, birthdate, dninie, province, comarca, municipality, address, type_house, ownership, phone, mobile_phone, work_phone) VALUES ('".$sName."','".$sSurname."','".$sGender."','".$iLanguage."','".$iLanguageSigne."','".$sBirthdate."','".$sDninie."','".$iProvince."','".$iComarca."','".$iMunicipality."','".$sAddress."','".$sTypeHouse."','".$iOwnership."','".$sPhone."','".$sMobilePhone."','".$sWorkPhone."')";
   }
-  echo $consulta;
   $hacerConsulta=mysqli_query($conexion, $consulta);
 
   $sJSON = "";
