@@ -115,7 +115,7 @@
         <div class="row">
           <div class="col-lg-6">
             <label for="addtype_call">Tipus trucada</label><br>
-            <input id="addtype_call" />
+            <input id="addtype_call" style="width: 100%"/>
           </div>
           <div class="col lg-6" id="out_in_select">
             <label for="outcall">Situació</label>
@@ -127,54 +127,63 @@
         <div class="row">
           <div class="col-lg-6">
             <label for="addentrant_call">Tipus de trucada entrant</label><br>
-            <input id="addentrant_call" />
+            <input id="addentrant_call" style="width: 100%"/>
           </div>
           <div class="col lg-6">
             <label for="addsortint_call">Tipus de trucada sortint/a</label><br>
-            <input id="addentrant_call" />
+            <input id="addentrant_call" style="width: 100%"/>
           </div>
-        </div><br>
+        </div>
+        <br>
         <div class="row">
           <div class="col-lg-6">
             <label for="addsubentrant_call">Subtipus de trucada entrant</label><br>
-            <input id="addsubentrant_call" />
+            <input id="addsubentrant_call" style="width: 100%"/>
           </div>
           <div class="col lg-6">
             <label for="addsubsortint_call">Subtipus de trucada sortint/a</label><br>
-            <input id="addsubsortint_call" />
+            <input id="addsubsortint_call" style="width: 100%"/>
           </div>
         </div>
+        <br>
         <div id="addAbsencia" class="row">
           <div class="col-lg-6">
             <label for="add_dataabs">Data d'absència</label><br>
-            <input class="datePickerKendo"  id="add_dataabs" />
+            <input class="datePickerKendo"  id="add_dataabs" style="width: 100%"/>
           </div>
           <div class="col lg-6">
             <label for="add_datatornada">Data de previsió de la tornada a l'habitatge</label><br>
-            <input class="datePickerKendo" id="add_datatornada" />
+            <input class="datePickerKendo" id="add_datatornada" style="width: 100%"/>
           </div>
-        </div><br>
+        </div>
+        <br>
         <div class="row">
           <div class="col-lg-6">
             <label for="addstate_call">Estat de la Trucada</label><br>
-            <input id="addstate_call" />
+            <input id="addstate_call" style="width: 100%"/>
           </div>
           <div class="col lg-6">
             <label for="rao">Solució teleoperador/a</label><br>
             <textarea class="form-control" id="rao" rows="3"></textarea>
           </div>
-        </div><br>
+        </div>
+        <br>
         <div id="trucadaassesor" class="row">
           <div class="col-lg-6">
             <label for="addmotiuass">Motiu d'assessorament</label><br>
-            <input id="addstate_call" /><br>
-            <label for="addmotiuass">Descripció</label><br>
-            <input id="addstate_call" />
+            <input id="addstate_call" style="width: 100%"/><br>
           </div>
           <div class="col lg-6">
-            <label for="rao">Destinatari/ària</label>
-            <select class="form-control" id="destinatari"></select>
+            <label for="addmotiuass">Descripció</label><br>
+            <input id="addstate_call" style="width: 100%"/>
           </div>
+        </div>
+        <br>
+        <div id="destinatari" class="row">
+            <div class="col-lg-6">
+              <label for="rao">Destinatari/ària</label>
+              <select class="form-control" id="destinatari" style="width: 100%"></select>
+            </div>
         </div><br>
         <button id="addCallBtn" type="button" class="btn btn-primary">Afegir Trucada</button>
       </div>
