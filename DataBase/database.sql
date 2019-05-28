@@ -159,13 +159,15 @@ CREATE TABLE CALL_TYPE(
 
 CREATE TABLE INCALL_TYPE(
 	id int not null auto_increment,
-	incall_type varchar(50) unique,
+	incall_type varchar(50),
+  subclass varchar(50) unique,
 	primary key (id)
 );
 
 CREATE TABLE OUTCALL_TYPE(
 	id int not null auto_increment,
-	outcall_type varchar(50) unique,
+	outcall_type varchar(50),
+  subclass varchar(50) unique,
 	primary key (id)
 );
 
@@ -185,6 +187,11 @@ CREATE TABLE CALL_HISTORY(
   incall_type int, /*Table INCALL_TYPE*/
   call_state int, /*Table CALL_STATE*/
   teleoperator_solution text,
+  date_of_absence date,
+  return_date date,
+  reason_for_advice text,
+  description text,
+  Destiny_advice varchar(50),
   primary key(id),
   FOREIGN key (user_dninif) REFERENCES PERSONAL_CARD(dninie),
   FOREIGN key (call_type) REFERENCES CALL_TYPE(id),
@@ -282,6 +289,15 @@ INSERT into RESPONSIBLE (user_dninif, priority, name, surname, address, post_cod
 /*Insert type call_history type by default*/
 insert into call_state (call_type) values ("Acabada");
 insert into call_type (call_type)values ("Entrant");
-insert into incall_type (incall_type) values ("Emergencia");
-insert into outcall_type (outcall_type) values ("Emergencia");
+insert into incall_type (incall_type, subclass) values ("Trucada d’alarma","Emergències sanitàries");
+insert into incall_type (incall_type, subclass) values ("Trucada d’alarma","Emergències socials");
+insert into incall_type (incall_type, subclass) values ("Trucada d’alarma","Emergències per crisi de soledat o angoixa");
+insert into incall_type (incall_type, subclass) values ("Trucada d’alarma","Alarma sense resposta");
+insert into incall_type (incall_type, subclass) values ("Trucada d’informació", "Trucada per error");
+insert into incall_type (incall_type, subclass) values ("Trucada d’informació", "Modificació de dades");
+insert into incall_type (incall_type, subclass) values ("Trucada d'informació", "Absències o estades temporals");
+insert into incall_type (incall_type) values ("Trucada d'assessorament");
+insert into outcall_type (outcall_type) values ("Trucada d’agenda");
+insert into outcall_type (outcall_type) values ("Trucada de seguiment");
+insert into outcall_type (outcall_type) values ("Trucada d’agenda preventiva");
 insert into call_history (user_dninif,call_date,call_type,outcall_type,incall_type,call_state,teleoperator_solution) values ("68951118Q", "2019-10-25", 1, 1, 1, 1, "morir");
