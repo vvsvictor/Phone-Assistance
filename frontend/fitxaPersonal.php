@@ -527,7 +527,16 @@ include '..\backend\include.php';
                     </div>
                     <div class="info">
                       <p class="sub-heading">Genere</p>
-                      <input id="modgenere" type="text" class="form-control" name="genere"/>
+                      <select id="modGenere" style="width: 100%;" class="maxWidth dropDown">
+                        <option>Dona</option>
+                        <option>Home</option>
+                        <option>Intersexual</option>
+                        <option>Intersexual Home</option>
+                        <option>Intersexual Dona</option>
+                        <option>Transsexual</option>
+                        <option>Transsexual Dona</option>
+                        <option>Transsexual Home</option>
+                      </select>
                       <p></p>
                     </div>
                     <div class="info">
@@ -537,8 +546,7 @@ include '..\backend\include.php';
                     </div>
                     <div class="info">
                       <p class="sub-heading">Idioma</p>
-                      <select onchange="altreListener()" id="modIdioma" style="width: 100%;" class="maxWidth"></select>&nbsp;
-                      <input id="modIdiomaAltre" type="text" class="form-control" placeholder="Idioma">
+                      <select id="modifIdioma" style="width: 100%;" class="maxWidth"></select>&nbsp;
                       <p></p>
                     </div>
                     <div class="info">
