@@ -291,6 +291,13 @@ INSERT INTO med_specialization (med_specialization)VALUES("Oftalmologia");
 INSERT INTO med_specialization (med_specialization)VALUES("Cirugia");
 INSERT INTO med_specialization (med_specialization)VALUES("Ginecologia");
 
+/*Insert CAPS by default*/
+INSERT INTO cap (name, address, phone, schedule) VALUES ("Atenció continuada Consultori local Tuixent ", "CR ÚNIC, S/N 25717 JOSA I TUIXÉN ", 973370039, "De dl. a dv., de 15 a 8h i ds., dg. i festius, 24h. ");
+INSERT INTO cap (name, address, phone, schedule) VALUES ("Atenció continuada CAP La Seu d'Urgell ", "PS JOAN BRUDIEU, 8 25700 LA SEU D'URGELL ", 973350470, "De dl. a dv., de 20 a 8h i ds., dg. i festius, 24h. ");
+INSERT INTO cap (name, address, phone, schedule) VALUES ("Atenció continuada CAP Oliana ", "CR GIRONA, 8 25790 OLIANA ", 973463022, "De dl. a dv., de 20 a 8h i ds., dg. i festius, 24h. ");
+INSERT INTO cap (name, address, phone, schedule) VALUES ("Atenció continuada CAP El Pont de Suert ", "CR CANALETA, S/N 25520 EL PONT DE SUERT ", 973691159, "De dl. a dv., de 20 a 8h i ds., dg. i festius, 24h. ");
+INSERT INTO cap (name, address, phone, schedule) VALUES ("Atenció continuada CAP Bellver de Cerdanya ", "AV PERE SICART, 1 25720 BELLVER DE CERDANYA ", 973510315, "De dl. a dv., de 15 a 8h i ds., dg. i festius, 24h. ");
+
 /*Insert DOCTORS by default*/
 INSERT INTO doctors (name,surname,gender,specialization_id,id_cap)VALUES("Marc","Cardona","Home",1,1);
 INSERT INTO doctors (name,surname,gender,specialization_id,id_cap)VALUES("Maria","Marturina","Dona",3,1);
