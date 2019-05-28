@@ -20,9 +20,9 @@
         <img src="images/PA-Logo.png" class="logo"></img>
     </div>
   	<div class="container col-xl-6 col-md-8 col-sm-10 rounded-left">
-  		<h1>BENVINGUT</h1>
+  		<h1>BENVINGUT/DA</h1>
   		<form class="form" id="formLg">
-  			<input type="text" name="userInput" id="userInput" placeholder="Usuari" required>
+  			<input type="text" name="userInput" id="userInput" placeholder="Usuari/ària" required>
   			<input type="password" name="passwordInput" id="passwordInput" placeholder="Contrasenya" required>
   			<div id="loginInput" class="button">Connectar-se</div>
   		</form>
