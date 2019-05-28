@@ -73,6 +73,7 @@
         </ul>
       </div>
     </nav>
+
     <div class="container">
       <!-- Formulario Añadir STA -->
       <div id="addSTA" class="container_add">
@@ -81,7 +82,7 @@
         <br>
         <div class="row">
           <div class="col-lg-6">
-            <label for="dni_usuario">DNI USUARI</label>
+            <label for="dni_usuari">DNI USUARI</label>
             <input id="dni_usuari" style="width: 100%;" />
           </div>
           <div class="col lg-6">
@@ -97,8 +98,8 @@
         <br>
         <div class="row">
           <div class="col-lg-6">
-            <label for="tel_cap">DATA EXPIRACIÓ</label>
-            <input id="datepicker" style="width: 100%"/>
+            <label for="data_contacte">DATA EXPIRACIÓ</label>
+            <input id="data_contacte" style="width: 100%"/>
           </div>
           <div class="col lg-6">
           </div>
@@ -132,6 +133,7 @@
           </div>
         </div>
       </div>
+
       <!--Formulario Añadir Responsable -->
       <div id="addResponsible" class="container_add">
         <button id="returnResponsible" type="button" class="btn btn-primary"><i class="fa fa-reply"></i></button>
@@ -139,12 +141,15 @@
         <br>
         <div class="row">
           <div class="col-lg-6">
-            <label for="dni_usuari">DNI</label>
-            <input id="dni_usuari" style="width: 100%;" />
+            <label for="dninie_usuari">DNI</label>
+            <input id="dninie_usuari" style="width: 100%;" />
           </div>
-          <div class="col lg-6">
-            <label for="prioritat">PRIORITAT</label>
-            <input type="text" class="form-control" name="prioritat"/>
+          <div class="col-lg-6">
+            <label for="addPrioritat">PRIORITAT</label>
+            <select id="addPrioritat" style="width: 100%;" class="maxWidth dropDown">
+              <option>Alta</option>
+              <option>Mitjana</option>
+              <option>Baixa</option>
           </div>
         </div>
         <br>
@@ -153,7 +158,7 @@
             <label for="nom_responsable">NOM</label>
             <input type="text" class="form-control" name="nom_responsable"/>
           </div>
-          <div class="col lg-6">
+          <div class="col-lg-6">
             <label for="cognoms_responsable">COGNOMS</label>
             <input type="text" class="form-control" name="cognoms_responsable"/>
           </div>
@@ -164,7 +169,7 @@
             <label for="adreca_responsable">ADREÇA</label>
             <input type="text" class="form-control" name="adreca_responsable"/>
           </div>
-          <div class="col lg-6">
+          <div class="col-lg-6">
             <label for="cp_responsable">CODI POSTAL</label>
             <input type="text" class="form-control" name="cp_responsable"/>
           </div>
@@ -175,7 +180,7 @@
             <label for="tel_responsable">TELEFON</label>
             <input type="text" class="form-control" name="tel_responsable"/>
           </div>
-          <div class="col lg-6">
+          <div class="col-lg-6">
             <label for="hora_preferible">HORA PREFERIBLE</label>
             <input id="hora_preferible" title="timepicker" style="width: 100%;" />
           </div>
@@ -183,10 +188,10 @@
         <br>
         <div class="row">
           <div class="col-lg-6">
-            <label for="data_contacte">DATA CONTACTE</label>
-            <input id="data_contacte" title="datepicker" style="width: 100%"/>
+            <label for="data_contact">DATA CONTACTE</label>
+            <input id="data_contact" class="datePickerKendo" title="datepicker" style="width: 100%"/>
           </div>
-          <div class="col lg-6">
+          <div class="col-lg-6">
             <label for="rao">RAÓ</label>
             <textarea class="form-control" id="rao" rows="3"></textarea>
           </div>
@@ -194,6 +199,7 @@
       </div>
 
       <div id="tableResponsible">
+        <br/>
         <button id="showFormSTA" type="button" class="btn btn-primary"><i class="fa fa-plus"></i>Afegir STA</button>
         <button id="showFormResponsible" type="button" class="btn btn-primary"><i class="fa fa-plus"></i>Afegir Responsable</button>
       <table id="dtResponsible" class="table table-striped table-bordered" cellspacing="0" width="100%">
@@ -253,7 +259,7 @@
                       <p></p>
                     </div>
                     <div class="info">
-                      <p class="sub-heading">Codí Postal</p>
+                      <p class="sub-heading">Codi Postal</p>
                       <p id="resCodiPostal" class="duration">08029</p>
                       <p></p>
                     </div>

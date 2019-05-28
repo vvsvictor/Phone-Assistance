@@ -2,15 +2,18 @@ $(document).ready(function () {
   $("#data_contacte").kendoDatePicker({
     format: "d/M/yyyy"
   });
+  $(".datePickerKendo").kendoDatePicker({
+      format: "d/M/yyyy"
+    });
   $("#hora_preferible").kendoTimePicker({
     format: "H:mm",
     interval: 15,
     dateInput: false
   });
-  $("#dni_usuari").kendoAutoComplete({
-                        filter: "startswith",
-                        placeholder: "Selecciona el DNI corresponent...",
-                    });
+
+  $("#addPrioritat").kendoComboBox({
+  });
+
   $('.dataTables_length').addClass('bs-select');
   goToSTAList();
   showTable();
@@ -46,12 +49,14 @@ $(document).ready(function () {
   }
 
   function goToAddSTA() {
+    showDni();
     $("#tableResponsible").hide();
     $("#pageResponsable").hide();
     $("#addSTA").show();
   }
 
   function goToAddResponsible() {
+    showDni();
     $("#tableResponsible").hide();
     $("#pageResponsable").hide();
     $("#addResponsible").show();
@@ -98,6 +103,37 @@ $(document).ready(function () {
 
 });
   */
+  function showDni() {
+    $.ajax({
+      url: "../backend/selects/getFitxaPersonal.php",
+      type: "GET",
+      cache: false,
+      success: function(response) {
+        let myJSON = JSON.parse(response);
+        let dni = [];
+        for (var i = 0; i < myJSON.length; i++) {
+          let dninie = myJSON[i].dninie;
+          let id = myJSON[i].id;
+          dni.push("(Id:" + id + ") " + dninie);
+        }
+        $("#dni_usuari").kendoAutoComplete({
+          filter: "contains",
+          dataSource: dni,
+          placeholder: "Selecciona un DNI...",
+        });
+
+        $("#dninie_usuari").kendoAutoComplete({
+          filter: "contains",
+          dataSource: dni,
+          placeholder: "Selecciona un DNI...",
+        });
+
+      },
+      error: function() {
+        console.log('No hi han dnis');
+      }
+    });
+  }
 
 
     function Tabs(options) {
@@ -243,9 +279,45 @@ function showTable(){
 
 
 function showResponsible(id,user_dninif,priority,name,surname){
-  let html="<tr><td>"+id+"</td><td>"+user_dninif+"</td><td>"+priority+"</td><td>"+name+"</td><td>"+surname+"</td><td><button id='sta"+id+"' type='button' class='btn btn-info'>Fitxa Completa</button><button type='button' id='deleteResponsibleId" + id + "' class='deleteResponsible btn btn-danger' data-toggle='modal' data-target='#deleteResponsiblemodal'>Eliminar</button></td></tr>";
+  let html="<tr><td>"+id+"</td><td>"+user_dninif+"</td><td>"+priority+"</td><td>"+name+"</td><td>"+surname+"</td><td><button id='sta"+id+"' type='button' class='sta btn btn-info'>Fitxa Completa</button><button type='button' id='deleteResponsibleId" + id + "' class='deleteResponsible btn btn-danger' data-toggle='modal' data-target='#deleteResponsiblemodal'>Eliminar</button></td></tr>";
   $("#responsibleTable").append(html);
+
+  $(".sta").click(function() {
+    console.log("aqui1");
+    mostrarCardListener($(this).attr('id'));
+    console.log("aqui");
+  });
 }
+
+function mostrarCardListener(id) {
+    let idbtn = id;
+    idbtn = idbtn.replace("Responsable", "");
+    console.log("ID "+idbtn);
+    $.ajax({
+      url: "../backend/selects/getResponsible.php",
+      type: "GET",
+      cache: false,
+      success: function(response) {
+        let myJSON = JSON.parse(response);
+        for (let i = 0; i < myJSON.length; i++) {
+          if (idbtn == myJSON[i].id) {
+            $("#resNom").html(myJSON[i].name);
+            $("#resCognom").html(myJSON[i].surname);
+            $("#resCarrer").html(myJSON[i].address);
+            $("#resCodiPostal").html(myJSON[i].post_code);
+            $("#resTel").html(myJSON[i].contact_phone);
+            $("#resHorari").html(myJSON[i].preferable_hour);
+            $("#resData").html(myJSON[i].date_responsible);
+            $("#resPrioritat").html(myJSON[i].priority);
+            $("#resRao").html(myJSON[i].reason);
+          }
+        }
+      },
+      error: function() {
+        console.log('No hi ha responsable');
+      }
+      });
+  }
 
 function eliminarResponsibleListener() {
   let idResponsible;

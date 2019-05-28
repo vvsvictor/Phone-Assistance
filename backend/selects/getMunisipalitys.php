@@ -16,7 +16,7 @@
   $sJSON = rtrim($sJSON,",");
   $sJSON.=']';
 
-  echo $sJSON;
+  echo utf8_decode($sJSON);
 
   mysqli_close($conexion);
 
