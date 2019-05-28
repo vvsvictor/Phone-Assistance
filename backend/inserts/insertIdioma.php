@@ -1,16 +1,15 @@
 <?php
 
   include ("../inc/usarBD.php");
-  $id = $_GET["id"];
 
-  $consulta="DELETE FROM DOCTORS WHERE id_cap=".$id;
+  $sName = $_GET["sName"];
+
+
+  $consulta="INSERT INTO languages (language_name) VALUES ('".$sName."')";
   $hacerConsulta=mysqli_query($conexion, $consulta);
 
-  $consulta="DELETE FROM CAP WHERE id=".$id;
-  $hacerConsulta=mysqli_query($conexion, $consulta);
-
-
-  $sJSON = "[{";
+  $sJSON = "";
+  $sJSON .= "{";
 
   if ($hacerConsulta){
 	  $sJSON .= '"codigoError": 0,';
@@ -22,7 +21,7 @@
 	  $sJSON .= '"observaciones": "KO!"';
   }
 
-  $sJSON .= "}]";
+  $sJSON .= "}";
 
   echo $sJSON;
 

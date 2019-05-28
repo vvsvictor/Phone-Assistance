@@ -51,7 +51,6 @@ function addUserListener() {
   });
 }
 
-
 function goToUsersList(){
   $('#modUserDiv').hide();
   $('#addUser').hide();
@@ -61,7 +60,6 @@ function goToUsersList(){
 function modUserListener() {
   $(".moduser").click(function() {
     let idUser = this.id;
-
     $.ajax({
       url: "../backend/selects/getUsers.php",
       type: "GET",
@@ -121,10 +119,7 @@ function modUserListener() {
         console.log('No hi han clients');
       }
     });
-
   });
-
-
 }
 
 function showTable() {
@@ -153,18 +148,16 @@ function showTable() {
 
 }
 
-
 function showUser(id, username, usertype) {
   let html;
   if (usertype != 0) {
-    html = "<tr><td>" + id + "</td><td>" + username + "</td><td>Alumne</td><td><button type='button' id='deleteUserId" + id + "' class='deleteuser btn btn-danger' data-toggle='modal' data-target='#deleteproductmodal'>Eliminar</button></td><td><button type='button' id='modUserId" + id + "' class='btn btn-primary moduser'>Modificar</button></td></tr>";
+    html = "<tr><td>" + id + "</td><td>" + username + "</td><td>Alumne</td><td><button type='button' id='deleteUserId" + id + "' class='deleteuser btn btn-danger marginBtn' data-toggle='modal' data-target='#deleteproductmodal'>Eliminar</button><button type='button' id='modUserId" + id + "' class='btn btn-primary moduser marginBtn'>Modificar</button></td></tr>";
   } else {
-    html = "<tr><td>" + id + "</td><td>" + username + "</td><td>Professor</td><td><button type='button' class='btn btn-danger' disabled>Eliminar</button></td><td><button type='button' id='modUserId" + id + "' class='btn btn-primary moduser'>Modificar</button></td></tr>";
+    html = "<tr><td>" + id + "</td><td>" + username + "</td><td>Professor</td><td><button type='button' class='btn btn-danger marginBtn' disabled>Eliminar</button><button type='button' id='modUserId" + id + "' class='btn btn-primary moduser marginBtn'>Modificar</button></td></tr>";
   }
 
   $("#usuarisTable").append(html);
 }
-
 
 function eliminarUsuariListener() {
   let idUser;
@@ -176,7 +169,6 @@ function eliminarUsuariListener() {
     });
   });
 }
-
 
 function deleteUser(idUser) {
   $.ajax({

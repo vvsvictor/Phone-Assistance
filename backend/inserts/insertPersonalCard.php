@@ -6,6 +6,7 @@
   $sSurname = $_GET["sSurname"];
   $sGender = $_GET["sGender"];
   $iLanguage = $_GET["iLanguage"];
+  $iLanguageSigne = $_GET["iLanguageSigne"];
   $sBirthdate = $_GET["sBirthdate"];
   $sDninie = $_GET["sDninie"];
   $iProvince = $_GET["iProvince"];
@@ -18,9 +19,12 @@
   $sMobilePhone = $_GET["sMobilePhone"];
   $sWorkPhone = $_GET["sWorkPhone"];
 
-  $consulta="INSERT INTO PERSONAL_CARD (name, surname, gender, language, birthdate, dninie, province, comarca, municipality, address, type_house, ownership, phone, mobile_phone, work_phone) VALUES ('".$sName."','".$sSurname."','".$sGender."','".$iLanguage."','".$sBirthdate."','".$sDninie."','".$iProvince."','".$iComarca."','".$iMunicipality."','".$sAddress."','".$sTypeHouse."','".$iOwnership."','".$sPhone."','".$sMobilePhone."','".$sWorkPhone."')";
+  if ($iLanguageSigne == 0) {
+    $consulta="INSERT INTO PERSONAL_CARD (name, surname, gender, language, birthdate, dninie, province, comarca, municipality, address, type_house, ownership, phone, mobile_phone, work_phone) VALUES ('".$sName."','".$sSurname."','".$sGender."','".$iLanguage."','".$sBirthdate."','".$sDninie."','".$iProvince."','".$iComarca."','".$iMunicipality."','".$sAddress."','".$sTypeHouse."','".$iOwnership."','".$sPhone."','".$sMobilePhone."','".$sWorkPhone."')";
+  }else{
+    $consulta="INSERT INTO PERSONAL_CARD (name, surname, gender, language, sign_language, birthdate, dninie, province, comarca, municipality, address, type_house, ownership, phone, mobile_phone, work_phone) VALUES ('".$sName."','".$sSurname."','".$sGender."','".$iLanguage."','".$iLanguageSigne."','".$sBirthdate."','".$sDninie."','".$iProvince."','".$iComarca."','".$iMunicipality."','".$sAddress."','".$sTypeHouse."','".$iOwnership."','".$sPhone."','".$sMobilePhone."','".$sWorkPhone."')";
+  }
   $hacerConsulta=mysqli_query($conexion, $consulta);
-
 
   $sJSON = "";
   $sJSON .= "{";

@@ -37,7 +37,7 @@
       $resultComarcas = mysqli_query($conexion, $consultaComarcas);
       if (mysqli_num_rows($resultComarcas) > 0) {
         while ($rowComarcas = mysqli_fetch_assoc($resultComarcas)) {
-          $sJSON .= '"comarca":"'. $rowComarcas["comar_name"].'", ';
+          $sJSON .= '"comarca":"'. utf8_encode($rowComarcas["comar_name"]).'", ';
         }
       }
 

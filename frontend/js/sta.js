@@ -1,7 +1,62 @@
 $(document).ready(function () {
-
+  $("#data_contacte").kendoDatePicker({
+    format: "d/M/yyyy"
+  });
+  $("#hora_preferible").kendoTimePicker({
+    format: "H:mm",
+    interval: 15,
+    dateInput: false
+  });
+  $("#dni_usuari").kendoAutoComplete({
+                        filter: "startswith",
+                        placeholder: "Selecciona el DNI corresponent...",
+                    });
   $('.dataTables_length').addClass('bs-select');
+  goToSTAList();
   showTable();
+  $("#showFormSTA").click(function() {
+    goToAddSTA();
+  $("#serveitf").kendoSwitch();
+  $("#serveitcr").kendoSwitch();
+  $("#serveicc").kendoSwitch();
+  $("#serveitm").kendoSwitch();
+  $("#serveitam").kendoSwitch();
+  $("#serveigps").kendoSwitch();
+  $("#serveiumt").kendoSwitch();
+  });
+  $("#addSituacio").kendoDropDownList();
+  $("#showFormResponsible").click(function() {
+    goToAddResponsible();
+  });
+  $("#returnSTA").click(function() {
+    goToSTAList();
+  });
+  $("#returnResponsible").click(function() {
+    goToSTAList();
+  });
+  $("#returnResponsible2").click(function() {
+    goToSTAList();
+  });
+
+  function goToSTAList() {
+    $('#addSTA').hide();
+    $("#addResponsible").hide();
+    $("#pageResponsable").hide();
+    $("#tableResponsible").show();
+  }
+
+  function goToAddSTA() {
+    $("#tableResponsible").hide();
+    $("#pageResponsable").hide();
+    $("#addSTA").show();
+  }
+
+  function goToAddResponsible() {
+    $("#tableResponsible").hide();
+    $("#pageResponsable").hide();
+    $("#addResponsible").show();
+  }
+
   //$( "#showFormBtn" ).click(function() {
     //$("#username").val('')
     //$("#password").val('');
@@ -45,19 +100,126 @@ $(document).ready(function () {
   */
 
 
+    function Tabs(options) {
+
+      var tabs = document.querySelector(options.el);
+      var initCalled = false;
+      var tabNavigation = tabs.querySelector(".c-tabs-nav");
+      var tabNavigationLinks = tabs.querySelectorAll(".c-tabs-nav__link");
+      var tabContentContainers = tabs.querySelectorAll(".c-tab");
+
+      var marker = options.marker ? createNavMarker() : false;
+
+      var activeIndex = 0;
+
+      function init() {
+        if (!initCalled) {
+          initCalled = true;
+
+          for (var i = 0; i < tabNavigationLinks.length; i++) {
+            var link = tabNavigationLinks[i];
+            clickHandlerSetup(link, i)
+          }
+
+          if (marker) {
+            setMarker(tabNavigationLinks[activeIndex]);
+          }
+        }
+      }
+
+      function clickHandlerSetup(link, index) {
+        link.addEventListener("click", function(e) {
+          e.preventDefault();
+          goToTab(index);
+        })
+      }
+
+      function goToTab(index) {
+        if (index >= 0 && index != activeIndex && index <= tabNavigationLinks.length) {
+          tabNavigationLinks[activeIndex].classList.remove('is-active');
+          tabNavigationLinks[index].classList.add('is-active');
+
+          tabContentContainers[activeIndex].classList.remove('is-active');
+          tabContentContainers[index].classList.add('is-active');
+
+          if (marker) {
+            setMarker(tabNavigationLinks[index]);
+          }
+
+          activeIndex = index;
+        }
+      }
+
+      function createNavMarker() {
+        var marker = document.createElement("div");
+        marker.classList.add("c-tab-nav-marker");
+        tabNavigation.appendChild(marker);
+        return marker;
+      }
+
+      function setMarker(element) {
+        marker.style.left = element.offsetLeft + "px";
+        marker.style.width = element.offsetWidth + "px";
+      }
+
+      return {
+        init: init,
+        goToTab: goToTab
+      }
+    }
+
+
+    var m = new Tabs({
+      el: "#tabs",
+      marker: true
+    });
+
+    m.init();
+
 function showTable(){
+  //get Responables and fill the table
   $.ajax({
-    url: "../backend/selects/getSta.php",
+    url: "../backend/selects/getResponsible.php",
     type: "GET",
     cache: false,
     success: function(response) {
       let myJSON = JSON.parse(response);
       console.log(myJSON);
-      $("#staTable").html("");
+      $("#responsibleTable").html("");
       for (var i = 0; i < myJSON.length; i++) {
         let id = myJSON[i].id;
         let user_dninif = myJSON[i].user_dninif;
-        let actual_situation = myJSON[i].actual_situation;
+        let priority = myJSON[i].priority;
+        let name = myJSON[i].name;
+        let surname = myJSON[i].surname;
+        let address = myJSON[i].address;
+        let post_code = myJSON[i].post_code;
+        let contact_phone = myJSON[i].contact_phone;
+        let preferable_hour = myJSON[i].preferable_hour;
+        let date_responsible = myJSON[i].date_responsible;
+        let reason = myJSON[i].reason;
+        showResponsible(id,user_dninif,priority,name,surname);
+      }
+      $('#dtResponsible').DataTable();
+      eliminarResponsibleListener();
+    },
+    error: function() {
+      console.log('No hi han clients');
+    }
+  });
+  /*Get STA AJAX
+  $.ajax({
+    url: "../backend/selects/getResponsible.php",
+    type: "GET",
+    cache: false,
+    success: function(response) {
+      let myJSON = JSON.parse(response);
+      console.log(myJSON);
+      $("#responsibleTable").html("");
+      for (var i = 0; i < myJSON.length; i++) {
+        let id = myJSON[i].id;
+        let user_dninif = myJSON[i].user_dninif;
+        let priority = myJSON[i].priority;
         let hiring_date = myJSON[i].hiring_date;
         let tf_service = myJSON[i].tf_service;
         let tcr_service = myJSON[i].tcr_service;
@@ -66,42 +228,44 @@ function showTable(){
         let tam_service = myJSON[i].tam_service;
         let gps_service = myJSON[i].gps_service;
         let umt_service = myJSON[i].umt_service;
-        showSta(id, user_dninif,actual_situation, hiring_date);
+        showResponsible(id, user_dninif,actual_situation, hiring_date);
       }
-      $('#dtSta').DataTable();
+      $('#dtResponsible').DataTable();
       eliminarStaListener();
     },
     error: function() {
       console.log('No hi han clients');
     }
   });
+  */
 
 }
 
 
-function showSta(id, dni,situation, date){
-  let html="<tr><td>"+id+"</td><td>"+dni+"</td><td>"+situation+"</td><td>"+date+"</td><td><button id='sta"+id+"' type='button' class='btn btn-info'>Fitxa Completa</button><button type='button' id='deleteStaId"+id+"' class='deleteSta btn btn-danger' data-toggle='modal' data-target='#deleteStamodal'>Eliminar</button></td></tr>";
-  $("#staTable").append(html);
+function showResponsible(id,user_dninif,priority,name,surname){
+  let html="<tr><td>"+id+"</td><td>"+user_dninif+"</td><td>"+priority+"</td><td>"+name+"</td><td>"+surname+"</td><td><button id='sta"+id+"' type='button' class='btn btn-info'>Fitxa Completa</button><button type='button' id='deleteResponsibleId" + id + "' class='deleteResponsible btn btn-danger' data-toggle='modal' data-target='#deleteResponsiblemodal'>Eliminar</button></td></tr>";
+  $("#responsibleTable").append(html);
 }
 
-function eliminarStaListener() {
-  let idSta;
-  $(".deleteSta").click(function(event) {
-    idSta = this.id;
-    idSta = idSta.replace("deleteStaId", "");
-    console.log("The id sta is: " + idSta);
-    $("#deleteStaDef").click(function(event) {
-      deleteSta(idSta);
+function eliminarResponsibleListener() {
+  let idResponsible;
+  $(".deleteResponsible").click(function(event) {
+    idResponsible = this.id;
+    idResponsible = idResponsible.replace("deleteResponsibleId", "");
+    console.log("The id Responsible is: " + idResponsible);
+    $("#deleteResponsibleDef").click(function(event) {
+      console.log("The Button Responsible is: " + idResponsible);
+      deleteResponsible(idResponsible);
     });
   });
 }
 
-function deleteSta(idSta){
-  console.log("The id2 sta is: " + idSta);
+function deleteResponsible(idResponsible){
+  console.log("The id2 Responsible is: " + idResponsible);
   $.ajax({
-    url: "../backend/delete/deleteSta.php",
+    url: "../backend/delete/deleteResponsible.php",
     data: {
-      id: idSta
+      id: idResponsible
     },
     type: "GET",
     cache: false,

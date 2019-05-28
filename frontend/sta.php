@@ -14,9 +14,13 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.0/css/mdb.min.css" rel="stylesheet"> -->
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
     <!-- <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css"> -->
 
+    <link rel="stylesheet" href="css/kendoTheme.css">
     <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="css/sta.css">
+    <link rel="stylesheet" href="css/dataTable.css">
     <link rel="stylesheet" href="css/initPage.css">
   </head>
   <body class="addFont">
@@ -33,7 +37,7 @@
           <?php
           if ($_SESSION['user']['usertype'] == 0) {
             echo '<li class="nav-item">
-              <a class="nav-link" href="users.php" style="color: #40514e;">Usuaris</a>
+              <a class="nav-link" href="users.php" style="color: #40514e;">Usuaris/es</a>
             </li>';
           }
            ?>
@@ -70,55 +74,256 @@
       </div>
     </nav>
     <div class="container">
-      <table id="dtSta" class="table table-striped table-bordered" cellspacing="0" width="100%">
+      <!-- Formulario Añadir STA -->
+      <div id="addSTA" class="container_add">
+        <button id="returnSTA" type="button" class="btn btn-primary"><i class="fa fa-reply"></i></button>
+        <br>
+        <br>
+        <div class="row">
+          <div class="col-lg-6">
+            <label for="dni_usuario">DNI USUARI</label>
+            <input id="dni_usuari" style="width: 100%;" />
+          </div>
+          <div class="col lg-6">
+            <label for="situacion">SITUACIÓ ACTUAL</label>
+            <select id="addSituacio" style="width: 100%;" class="maxWidth dropDown">
+              <option>Alta</option>
+              <option>Baixa</option>
+              <option>Baixa Temporal</option>
+              <option>Baixa Definitiva</option>
+            </select>
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="col-lg-6">
+            <label for="tel_cap">DATA EXPIRACIÓ</label>
+            <input id="datepicker" style="width: 100%"/>
+          </div>
+          <div class="col lg-6">
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="row">
+              Servei TF &nbsp; <input data-role="switch" id="serveitf" aria-label="Servei TF" type="checkbox"/>
+            </div>
+            <div class="row">
+              Servei TCR &nbsp; <input data-role="switch" id="serveitcr" aria-label="Servei TF" type="checkbox"/>
+            </div>
+            <div class="row">
+              Servei CC &nbsp; <input data-role="switch" id="serveicc" aria-label="Servei TF" type="checkbox"/>
+            </div>
+          </div>
+          <div class="col lg-6">
+            <div class="row">
+              Servei TM &nbsp; <input data-role="switch" id="serveitm" aria-label="Servei TF" type="checkbox"/>
+            </div>
+            <div class="row">
+              Servei TAM &nbsp; <input data-role="switch" id="serveitam" aria-label="Servei TF" type="checkbox"/>
+            </div>
+            <div class="row">
+              Servei GPS &nbsp; <input data-role="switch" id="serveigps" aria-label="Servei TF" type="checkbox"/>
+            </div>
+            <div class="row">
+              Servei UMT &nbsp; <input data-role="switch" id="serveiumt" aria-label="Servei TF" type="checkbox"/>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--Formulario Añadir Responsable -->
+      <div id="addResponsible" class="container_add">
+        <button id="returnResponsible" type="button" class="btn btn-primary"><i class="fa fa-reply"></i></button>
+        <br>
+        <br>
+        <div class="row">
+          <div class="col-lg-6">
+            <label for="dni_usuari">DNI</label>
+            <input id="dni_usuari" style="width: 100%;" />
+          </div>
+          <div class="col lg-6">
+            <label for="prioritat">PRIORITAT</label>
+            <input type="text" class="form-control" name="prioritat"/>
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="col-lg-6">
+            <label for="nom_responsable">NOM</label>
+            <input type="text" class="form-control" name="nom_responsable"/>
+          </div>
+          <div class="col lg-6">
+            <label for="cognoms_responsable">COGNOMS</label>
+            <input type="text" class="form-control" name="cognoms_responsable"/>
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="col-lg-6">
+            <label for="adreca_responsable">ADREÇA</label>
+            <input type="text" class="form-control" name="adreca_responsable"/>
+          </div>
+          <div class="col lg-6">
+            <label for="cp_responsable">CODI POSTAL</label>
+            <input type="text" class="form-control" name="cp_responsable"/>
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="col-lg-6">
+            <label for="tel_responsable">TELEFON</label>
+            <input type="text" class="form-control" name="tel_responsable"/>
+          </div>
+          <div class="col lg-6">
+            <label for="hora_preferible">HORA PREFERIBLE</label>
+            <input id="hora_preferible" title="timepicker" style="width: 100%;" />
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="col-lg-6">
+            <label for="data_contacte">DATA CONTACTE</label>
+            <input id="data_contacte" title="datepicker" style="width: 100%"/>
+          </div>
+          <div class="col lg-6">
+            <label for="rao">RAÓ</label>
+            <textarea class="form-control" id="rao" rows="3"></textarea>
+          </div>
+        </div>
+      </div>
+
+      <div id="tableResponsible">
+        <button id="showFormSTA" type="button" class="btn btn-primary"><i class="fa fa-plus"></i>Afegir STA</button>
+        <button id="showFormResponsible" type="button" class="btn btn-primary"><i class="fa fa-plus"></i>Afegir Responsable</button>
+      <table id="dtResponsible" class="table table-striped table-bordered" cellspacing="0" width="100%">
         <thead>
           <tr>
             <th class="th-sm">Id</th>
             <th class="th-sm">DNI</th>
-            <th class="th-sm">Situació</th>
-            <th class="th-sm">Data</th>
+            <th class="th-sm">Prioritat</th>
+            <th class="th-sm">Nom</th>
+            <th class="th-sm">Cognom</th>
             <th class="th-sm"></th>
           </tr>
         </thead>
-        <tbody id="staTable"></tbody>
+        <tbody id="responsibleTable"></tbody>
         <tfoot>
           <tr>
             <th>Id</th>
             <th>DNI</th>
-            <th>Situació</th>
-            <th>Data</th>
+            <th>Prioritat</th>
+            <th>Nom</th>
+            <th>Cognom</th>
             <th></th>
           </tr>
         </tfoot>
       </table>
     </div>
-
-    <div class="container">
-
-    </div>
-
-    <!--Modal Delete STA-->
-    <div class="modal fade" id="deleteStamodal" tabindex="-1" role="dialog">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title">Eliminar les dades STA de l'usuari</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
+  </div>
+  <div id="pageResponsable">
+    <section id="page">
+      <button id="returnResponsible2" type="button" class="btn btn-primary"><i class="fa fa-reply"></i></button>
+      <div id="tabs" class="c-tabs">
+        <div class="c-tabs-nav">
+          <a href="#" class="c-tabs-nav__link is-active">Dades</a>
+          <a href="#" class="c-tabs-nav__link ">Contacte</a>
+          <div class="c-tab-nav-marker"></div>
+        </div>
+          <!-- RESPONSABLE : DADES -->
+          <div class="c-tab">
+            <div class="c-tab__content">
+              <div class="container_responsible">
+                <div class="content3">
+                  <div class="direccion">
+                    <h1 class="heading"> Dades</h1>
+                    <div class="info">
+                      <p class="sub-heading">Nom</p>
+                      <p id="resNom" class="duration">Nati</p>
+                      <p></p>
+                    </div>
+                    <div class="info">
+                      <p class="sub-heading">Cognoms</p>
+                      <p id="resCognom" class="duration">Novo</p>
+                      <p></p>
+                    </div>
+                    <div class="info">
+                      <p class="sub-heading">Carrer</p>
+                      <p id="resCarrer" class="duration">Alcudia nº 23 3º 1ª</p>
+                      <p></p>
+                    </div>
+                    <div class="info">
+                      <p class="sub-heading">Codí Postal</p>
+                      <p id="resCodiPostal" class="duration">08029</p>
+                      <p></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="modal-body">
-            <p>Vols eliminar les dades STA de l'usuari?</p>
-          </div>
-          <div class="modal-footer">
-            <button type="button" id="deleteStaDef" class="btn btn-danger" data-dismiss="modal">Eliminar</button>
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Tancar</button>
+          <!-- RESPONSABLE : CONTACTE -->
+          <div class="c-tab">
+            <div class="c-tab__content">
+              <div class="container_responsible">
+                <div class="content3">
+                  <div class="contacto">
+                    <h1 class="heading">Contacte</h1>
+                    <div class="info">
+                      <p class="sub-heading">Telèfon</p>
+                      <p id="resTel" class="duration">937764012</p>
+                      <p></p>
+                    </div>
+                    <div class="info">
+                      <p class="sub-heading">Horari</p>
+                      <p id="resHorari" class="duration">8h - 14h</p>
+                      <p></p>
+                    </div>
+                    <div class="info">
+                      <p class="sub-heading">Data</p>
+                      <p id="resData" class="duration">01-04-2017</p>
+                      <p></p>
+                    </div>
+                    <div class="info">
+                      <p class="sub-heading">Prioritat</p>
+                      <p id="resPrioritat" class="duration">Alta</p>
+                      <p></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
+      </section>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+</section>
+</div>
+
+<!--Modal Delete deleteResponsible-->
+<div class="modal fade" id="deleteResponsiblemodal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Eliminar Responsable</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Vols eliminar les dades del Responsable?</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" id="deleteResponsibleDef" class="btn btn-danger" data-dismiss="modal">Eliminar</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Tancar</button>
       </div>
     </div>
-
-
+  </div>
+</div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
@@ -126,6 +331,7 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.0/js/mdb.min.js"></script>
     <script type="text/javascript" src="js/jquery.dataTables.min.js"></script>
     <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
+    <script src="http://kendo.cdn.telerik.com/2019.2.514/js/kendo.all.min.js"></script>
     <script src="js/sta.js" type="text/javascript"></script>
   </body>
 </html>

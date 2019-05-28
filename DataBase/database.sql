@@ -159,13 +159,15 @@ CREATE TABLE CALL_TYPE(
 
 CREATE TABLE INCALL_TYPE(
 	id int not null auto_increment,
-	incall_type varchar(50) unique,
+	incall_type varchar(50),
+  subclass varchar(50) unique,
 	primary key (id)
 );
 
 CREATE TABLE OUTCALL_TYPE(
 	id int not null auto_increment,
-	outcall_type varchar(50) unique,
+	outcall_type varchar(50),
+  subclass varchar(50) unique,
 	primary key (id)
 );
 
@@ -185,6 +187,11 @@ CREATE TABLE CALL_HISTORY(
   incall_type int, /*Table INCALL_TYPE*/
   call_state int, /*Table CALL_STATE*/
   teleoperator_solution text,
+  date_of_absence date,
+  return_date date,
+  reason_for_advice text,
+  description text,
+  Destiny_advice varchar(50),
   primary key(id),
   FOREIGN key (user_dninif) REFERENCES PERSONAL_CARD(dninie),
   FOREIGN key (call_type) REFERENCES CALL_TYPE(id),
@@ -203,12 +210,12 @@ INSERT into users (username,password,usertype) VALUES ("normal_user","bemen3",1)
 
 /*Insert languages by default*/
 INSERT into languages (language_name) VALUES ("Català");
-INSERT into languages (language_name) VALUES ("Castellano");
+INSERT into languages (language_name) VALUES ("Castellà");
 INSERT into languages (language_name) VALUES ("English");
 
 /*Insert sign_languages by default*/
 INSERT into sign_languages (language_name) VALUES ("Català");
-INSERT into sign_languages (language_name) VALUES ("Castellano");
+INSERT into sign_languages (language_name) VALUES ("Castellà");
 INSERT into sign_languages (language_name) VALUES ("English");
 
 /*Insert provinces by default*/
@@ -278,3 +285,20 @@ INSERT into STA (user_dninif, actual_situation, hiring_date, tf_service, tcr_ser
 
 /*Insert RESPONSIBLE for the client by default*/
 INSERT into RESPONSIBLE (user_dninif, priority, name, surname, address, post_code, contact_phone, preferable_hour, date_responsible, reason) VALUES ("68951118Q", "ALTA", "TEST", "TESTED", "calle falsa 559", "15667", "987654125", "17:10h - 21h", "22-05-2019", "porque si");
+
+/*Insert type call_history type by default*/
+insert into call_state (call_type) values ("Acabada");
+insert into call_type (call_type)values ("Entrant");
+insert into call_type (call_type)values ("Sortint");
+insert into incall_type (incall_type, subclass) values ("Trucada d’alarma","Emergències sanitàries");
+insert into incall_type (incall_type, subclass) values ("Trucada d’alarma","Emergències socials");
+insert into incall_type (incall_type, subclass) values ("Trucada d’alarma","Emergències per crisi de soledat o angoixa");
+insert into incall_type (incall_type, subclass) values ("Trucada d’alarma","Alarma sense resposta");
+insert into incall_type (incall_type, subclass) values ("Trucada d’informació", "Trucada per error");
+insert into incall_type (incall_type, subclass) values ("Trucada d’informació", "Modificació de dades");
+insert into incall_type (incall_type, subclass) values ("Trucada d'informació", "Absències o estades temporals");
+insert into incall_type (incall_type) values ("Trucada d'assessorament");
+insert into outcall_type (outcall_type) values ("Trucada d’agenda");
+insert into outcall_type (outcall_type) values ("Trucada de seguiment");
+insert into outcall_type (outcall_type) values ("Trucada d’agenda preventiva");
+insert into call_history (user_dninif,call_date,call_type,outcall_type,incall_type,call_state,teleoperator_solution) values ("68951118Q", "2019-10-25", 1, 1, 1, 1, "morir");

@@ -15,8 +15,9 @@
     <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.0/css/mdb.min.css" rel="stylesheet"> -->
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css">
     <!-- <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css"> -->
-
+    <link rel="stylesheet" href="css/kendoTheme.css">
     <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="css/dataTable.css">
     <link rel="stylesheet" href="css/initPage.css">
   </head>
   <body class="addFont">
@@ -69,32 +70,179 @@
         </ul>
       </div>
     </nav>
-    <div class="container">
+    <div class="container" id="callList">
+      <button id="showFormBtn" type="button" class="btn btn-primary marginBtn">Afegir</button>
       <table id="dtHistocalls" class="table table-striped table-bordered" cellspacing="0" width="100%">
         <thead>
           <tr>
+            <th class="th-sm">Id</th>
             <th class="th-sm">DNI</th>
-            <th class="th-sm">Nom</th>
             <th class="th-sm">Data</th>
-            <th class="th-sm">Estat de la trucada</th>
+            <th class="th-sm">Tipus de trucada</th>
             <th class="th-sm"></th>
           </tr>
         </thead>
         <tbody id="histoCallsTable"></tbody>
         <tfoot>
           <tr>
+            <th>Id</th>
             <th>DNI</th>
-            <th>Nom</th>
             <th>Data</th>
-            <th>Estat de la trucada</th>
+            <th>Tipus de trucada</th>
             <th></th>
           </tr>
         </tfoot>
       </table>
     </div>
 
+    <!--Formulario Añadir Trucades -->
     <div class="container">
+      <div id="addCall" class="container_add">
+        <button id="returnCalls" type="button" class="btn btn-primary"><i class="fa fa-reply"></i>Tornar a la llista</button>
+        <br>
+        <br>
+        <div class="row">
+          <div class="col-lg-6">
+            <label for="adddni_usuari">DNI</label>
+            <input id="adddni_usuari" style="width: 100%;" />
+          </div>
+          <div class="col lg-6">
+            <label for="adddata_trucada">Data de la trucada</label>
+            <input id="adddata_trucada" class="datePickerKendo" title="datepicker" style="width: 100%"/>
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="col-lg-6">
+            <label for="addtype_call">Tipus trucada</label><br>
+            <input id="addtype_call" />
+          </div>
+          <div class="col lg-6" id="out_in_select">
+            <label for="outcall">Situació</label>
+            <input id="outcall" />
+            <input id="incall" />
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="col-lg-6">
+            <label for="addentrant_call">Tipus de trucada entrant</label><br>
+            <input id="addentrant_call" />
+          </div>
+          <div class="col lg-6">
+            <label for="addsortint_call">Tipus de trucada sortint/a</label><br>
+            <input id="addentrant_call" />
+          </div>
+        </div><br>
+        <div class="row">
+          <div class="col-lg-6">
+            <label for="addsubentrant_call">Subtipus de trucada entrant</label><br>
+            <input id="addsubentrant_call" />
+          </div>
+          <div class="col lg-6">
+            <label for="addsubsortint_call">Subtipus de trucada sortint/a</label><br>
+            <input id="addsubsortint_call" />
+          </div>
+        </div>
+        <div id="addAbsencia" class="row">
+          <div class="col-lg-6">
+            <label for="add_dataabs">Data d'absència</label><br>
+            <input class="datePickerKendo"  id="add_dataabs" />
+          </div>
+          <div class="col lg-6">
+            <label for="add_datatornada">Data de previsió de la tornada a l'habitatge</label><br>
+            <input class="datePickerKendo" id="add_datatornada" />
+          </div>
+        </div><br>
+        <div class="row">
+          <div class="col-lg-6">
+            <label for="addstate_call">Estat de la Trucada</label><br>
+            <input id="addstate_call" />
+          </div>
+          <div class="col lg-6">
+            <label for="rao">Solució teleoperador/a</label><br>
+            <textarea class="form-control" id="rao" rows="3"></textarea>
+          </div>
+        </div><br>
+        <div id="trucadaassesor" class="row">
+          <div class="col-lg-6">
+            <label for="addmotiuass">Motiu d'assessorament</label><br>
+            <input id="addstate_call" /><br>
+            <label for="addmotiuass">Descripció</label><br>
+            <input id="addstate_call" />
+          </div>
+          <div class="col lg-6">
+            <label for="rao">Destinatari/ària</label>
+            <select class="form-control" id="destinatari"></select>
+          </div>
+        </div><br>
+        <button id="addCallBtn" type="button" class="btn btn-primary">Afegir Trucada</button>
+      </div>
 
+    <!-- Historial Trucades Modificar -->
+    <div class="c-tab is-active">
+      <div class="c-tab__content">
+        <div class="container_ficha" id="modCallDiv">
+          <div class="container">
+            <div class="content">
+              <div class="direccion">
+                <h1 class="heading"> Dades</h1>
+                <div class="info">
+                  <p class="sub-heading">Dni Usuari</p>
+                  <p id="fpndni" class="duration"></p>
+                  <p></p>
+                </div>
+                <div class="info">
+                  <p class="sub-heading">Data Trucada</p>
+                  <p id="fpdata" class="duration"></p>
+                  <p></p>
+                </div>
+                <div class="info">
+                  <p class="sub-heading">Tipus de Trucada</p>
+                  <p id="fptype" class="duration"></p>
+                  <p></p>
+                </div>
+                <div class="info">
+                  <p class="sub-heading">Estat de trucada</p>
+                  <p id="fpstate" class="duration"></p>
+                  <p></p>
+                </div>
+                <div class="info">
+                  <p class="sub-heading">Truca usuari</p>
+                  <p id="fpincall" class="duration"></p>
+                  <p></p>
+                </div>
+                <div class="info">
+                  <p class="sub-heading">Truca teleassistent</p>
+                  <p id="fpoutcall" class="duration"></p>
+                  <p></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--Modal Delete product-->
+    <div class="modal fade" id="deletecallmodal" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Eliminar Trucada</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>Vols eliminar la trucada?</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" id="deleteCallDef" class="btn btn-danger" data-dismiss="modal">Eliminar</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Tancar</button>
+          </div>
+        </div>
+      </div>
     </div>
 
 
@@ -105,6 +253,7 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.0/js/mdb.min.js"></script>
     <script type="text/javascript" src="js/jquery.dataTables.min.js"></script>
     <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
-    <script src="js/fitxaPersonal.js" type="text/javascript"></script>
+    <script src="js/histocalls.js" type="text/javascript"></script>
+    <script src="http://kendo.cdn.telerik.com/2019.2.514/js/kendo.all.min.js"></script>
   </body>
 </html>

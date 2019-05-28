@@ -14,7 +14,7 @@ include '..\backend\includeAdmin.php';
     <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.0/css/mdb.min.css" rel="stylesheet"> -->
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css">
     <!-- <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css"> -->
-
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="css/initPage.css">
     <link rel="stylesheet" href="css/dataTable.css">
@@ -33,7 +33,7 @@ include '..\backend\includeAdmin.php';
             <a class="nav-link" href="index.php" style="color: #40514e;">Inici </a>
           </li>
           <li class="nav-item active">
-            <a class="nav-link" href="users.php" style="color: #e4f9f5;">Usuaris<span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="users.php" style="color: #e4f9f5;">Usuaris/es<span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item active">
             <a class="nav-link" href="fitxaPersonal.php" style="color: #40514e;">Fitxa personal</a>
@@ -66,17 +66,14 @@ include '..\backend\includeAdmin.php';
         </ul>
       </div>
     </nav>
-
-
     <div class="container" id="usersList">
-      <button id="showFormBtn" type="button" class="btn btn-primary">Afegir</button>
+      <button id="showFormBtn" type="button" class="btn btn-primary marginTop"><i class="fas fa-plus"></i> Afegir</button>
       <table id="dtUsuaris" class="table table-striped table-bordered" cellspacing="0" width="100%">
         <thead>
           <tr>
             <th class="th-sm">Id</th>
-            <th class="th-sm">Usuari</th>
-            <th class="th-sm">Tipus d'usuari</th>
-            <th class="th-sm"></th>
+            <th class="th-sm">Usuari/a</th>
+            <th class="th-sm">Tipus d'usuari/a</th>
             <th class="th-sm"></th>
           </tr>
         </thead>
@@ -84,22 +81,19 @@ include '..\backend\includeAdmin.php';
         <tfoot>
           <tr>
             <th>Id</th>
-            <th>Usuari</th>
-            <th>Tipus d'usuari</th>
-            <th></th>
+            <th>Usuari/a</th>
+            <th>Tipus d'usuari/a</th>
             <th></th>
           </tr>
         </tfoot>
       </table>
-
     </div>
-
     <!-- Div afegir usuari -->
     <div class="container" id="addUser">
-      <button id="showListBtn" type="button" class="btn btn-primary">Tornar a la llista</button>
+      <button id="showListBtn" type="button" class="btn btn-primary marginTop"><i class="fa fa-reply"></i> Tornar a la llista</button>
       <form id="formUser">
         <div class="form-group">
-          <label for="username">Nom d'usuari</label>
+          <label for="username">Nom d'usuari/a</label>
           <input type="email" class="form-control" id="username" placeholder="Nom d'usuari">
         </div>
         <div class="form-group">
@@ -107,7 +101,7 @@ include '..\backend\includeAdmin.php';
           <input type="password" class="form-control" id="password" placeholder="Contrasenya" autocomplete="password">
         </div>
         <fieldset class="form-group">
-          Tipus d'usuari
+          Tipus d'usuari/a
           <div class="row">
             <div class="col-md-4 col-lg-4 col-sm-4">
               <label>
@@ -131,34 +125,31 @@ include '..\backend\includeAdmin.php';
             </div>
         </div>
         </fieldset>
-
         <div class="form-group row">
           <div class="col-sm-10">
-            <button id="addUserBtn" type="button" class="btn btn-primary">Afegir usuari</button>
+            <button id="addUserBtn" type="button" class="btn btn-primary">Afegir usuari/a</button>
           </div>
         </div>
       </form>
     </div>
-
-
     <!-- Div modificar usuari -->
     <div class="container" id="modUserDiv">
-      <button id="showListBtnMod" type="button" class="btn btn-primary">Tornar a la llista</button>
+      <button id="showListBtnMod" type="button" class="btn btn-primary marginTop"><i class="fa fa-reply"></i> Tornar a la llista</button>
       <form id="formModUser">
         <div class="form-group">
           <label for="modId">ID</label>
           <input type="text" class="form-control" id="modId" placeholder="Id" disabled>
         </div>
         <div class="form-group">
-          <label for="username">Nom d'usuari</label>
-          <input type="email" class="form-control" id="modUsername" placeholder="Nom d'usuari">
+          <label for="username">Nom d'usuari/a</label>
+          <input type="email" class="form-control" id="modUsername" placeholder="Nom d'usuari/a">
         </div>
         <div class="form-group">
           <label for="password">Contrasenya</label>
           <input type="password" class="form-control" id="modPassword" placeholder="Contrasenya" autocomplete="password">
         </div>
         <fieldset class="form-group">
-          Tipus d'usuari
+          Tipus d'usuari/a
           <div class="row">
             <div class="col-md-4 col-lg-4 col-sm-4">
               <label>
@@ -182,28 +173,25 @@ include '..\backend\includeAdmin.php';
             </div>
         </div>
         </fieldset>
-
         <div class="form-group row">
           <div class="col-sm-10">
-            <button id="modUserBtn" type="button" class="btn btn-primary">Modificar usuari</button>
+            <button id="modUserBtn" type="button" class="btn btn-primary">Modificar usuari/a</button>
           </div>
         </div>
       </form>
     </div>
-
-
     <!--Modal Delete product-->
     <div class="modal fade" id="deleteproductmodal" tabindex="-1" role="dialog">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title">Eliminar usuari</h5>
+            <h5 class="modal-title">Eliminar usuari/a</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
           <div class="modal-body">
-            <p>Vols eliminar el usuari?</p>
+            <p>Vols eliminar el/la usuari/a?</p>
           </div>
           <div class="modal-footer">
             <button type="button" id="deleteUserDef" class="btn btn-danger" data-dismiss="modal">Eliminar</button>

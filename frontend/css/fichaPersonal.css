@@ -1,10 +1,39 @@
-.sidebar {
+		.sidebar {
 			width:18%;
 			display: inline-block;
 			margin-left: 10%;
 			background: #40514E;
 			color: #E4F9F5;
 		}
+		.marginTop{
+			margin-top: 10px;
+			margin-bottom: 10px;
+		}
+
+
+
+		.k-switch-on .k-switch-container {
+    color: white;
+    background-color: #11999e;
+		}
+
+		.k-switch-off .k-switch-container {
+		color: white;
+		background-color: black;
+		}
+
+		.maxWidth{
+			width: 100%;
+		}
+
+		.marginBtn{
+			margin-top: 10px;
+			margin-bottom: 10px;
+			margin-right: 10px;
+			margin-left: 10px;
+		}
+
+
 
 		.sidebar-top { position: relative; }
 
@@ -147,6 +176,8 @@
      transition: all 0.5s ease-out;
    }
 
+
+
 .ui-autocomplete {
 	max-height: 100px;
 	overflow-y: auto;
@@ -155,4 +186,7 @@
 
 * html .ui-autocomplete {
 	height: 100px;
+}
+.leftMargin{
+	margin-left: 32px;
 }
