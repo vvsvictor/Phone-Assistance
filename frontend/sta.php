@@ -237,7 +237,7 @@
           <div class="c-tab-nav-marker"></div>
         </div>
           <!-- RESPONSABLE : DADES -->
-          <div class="c-tab">
+          <div class="c-tab is-active">
             <div class="c-tab__content">
               <div class="container_responsible">
                 <div class="content3">
