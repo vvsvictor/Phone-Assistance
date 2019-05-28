@@ -4,13 +4,8 @@ $(document).ready(function () {
   gotoModCall();
   addCallListener();
 
-  $("#dni_usuari").kendoAutoComplete({
-                        filter: "startswith",
-                        placeholder: "Selecciona el DNI corresponent...",
-    });
-  $("#data_trucada").kendoDatePicker({
-      format: "d/M/yyyy",
-      min: new Date(2000,0,1)
+  $(".datePickerKendo").kendoDatePicker({
+      format: "d/M/yyyy"
     });
 
   $("#type_call").kendoComboBox({
@@ -54,33 +49,103 @@ function returnCall(){
 
 function addCallListener() {
   $("#showFormBtn").click(function() {
-    $("#dni").val('');
-    $("#data").val('');
-    $("#type").val('');
-    $("#state").val('');
-    $("#callList").hide();
-    $('#addCall').show();
+    //Ajax mostrar dnis
+    $.ajax({
+      url: "../backend/selects/getFitxaPersonal.php",
+      type: "GET",
+      cache: false,
+      success: function(response) {
+        let myJSON = JSON.parse(response);
+        let dnis = [];
+        for (var i = 0; i < myJSON.length; i++) {
+          dnis.push(myJSON[i].dninie)
+        }
+        $("#adddni_usuari").val('');
+        console.log(dnis);
+        $("#adddni_usuari").kendoAutoComplete({
+          dataSource: dnis,
+          filter: "startswith",
+          placeholder: "Selecciona un DNI...",
+          separator: ", "
+        });
+
+        $("#data").val('');
+        $("#type").val('');
+        $("#state").val('');
+        $("#callList").hide();
+        $('#addCall').show();
+      },
+      error: function() {
+        console.log('No hi han clients');
+      }
+    });
+    //Ajax mostrar tipus TRUCADA
+    $.ajax({
+      url: "../backend/selects/getCallType.php",
+      type: "GET",
+      cache: false,
+      success: function(response) {
+        let myJSON = JSON.parse(response);
+        let tipustrucada = [];
+        for (var i = 0; i < myJSON.length; i++) {
+          tipustrucada.push({ text: myJSON[i].call_type , value: myJSON[i].id});
+        }
+        $("#addtype_call").val('');
+        console.log(tipustrucada);
+        $("#addtype_call").kendoComboBox({
+          dataTextField: "text",
+          dataValueField: "value",
+          dataSource: tipustrucada
+        });
+      },
+      error: function() {
+        console.log('No hi han tipus de trucades');
+      }
+    });
+    //Ajax mostrar estat de la TRUCADA
+    $.ajax({
+      url: "../backend/selects/getCallState.php",
+      type: "GET",
+      cache: false,
+      success: function(response) {
+        let myJSON = JSON.parse(response);
+        let estattrucada = [];
+        for (var i = 0; i < myJSON.length; i++) {
+          estattrucada.push({ text: myJSON[i].call_type , value: myJSON[i].id});
+        }
+        $("#addstate_call").val('');
+        console.log(estattrucada);
+        $("#addstate_call").kendoComboBox({
+          dataTextField: "text",
+          dataValueField: "value",
+          dataSource: estattrucada
+        });
+        },
+          error: function() {
+          console.log('No hi han estats de trucades');
+        }
+    });
     $("#showListBtn").click(function() {
       goToCallList();
     });
+
   });
 
   $("#addCallBtn").click(function() {
+    //Faltan comprovaciones de input correcto
     $.ajax({
       url: "../backend/inserts/insertCallHistory.php",
       data: {
-        sDni: $("#dni").val(),
-        sData: $("#data").val(),
-        iType: $("#type").val(),
-        iState: $("#state").val()
+        sDni: $("#adddni_usuari").val(),
+        sCallDate: $("#adddata_trucada").val(),
+        iCallType: $("#addtype_call").val(),
+        iState: $("#addstate_call").val()
       },
       type: "GET",
       cache: false,
       success: function(response) {
         let myJSON = JSON.parse(response);
         showTable();
-        $('#callList').hide();
-        $("#addCall").show();
         goToCallList();
 
         if (parseInt(myJSON.codigoError) != 0) {
@@ -92,6 +157,8 @@ function addCallListener() {
       }
     });
   });
+
+
 }
 
 function goToCallList(){
@@ -140,9 +207,9 @@ function modCallListener() {
               $.ajax({
                 url: "../backend/updates/histocalls.php",
                 data: {
-                  sDni:$("#user_dninif").val(''),
-                  sCallDate:$("#call_date").val(''),
-                  iCallType:$("#call_type").val(''),
+                  sDni:$("#user_dninif").val(),
+                  sCallDate:$("#call_date").val(),
+                  iCallType:$("#call_type").value(),
                   iOutcallType:$("#outcall_type").val(''),
                   iIncallType:$("#incall_type").val(''),
                   iCallState:$("#call_state").val(''),

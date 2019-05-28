@@ -98,27 +98,27 @@
     <!--Formulario Añadir Trucades -->
     <div class="container">
       <div id="addCall" class="container_add">
-        <button id="returnCalls" type="button" class="btn btn-primary"><i class="fa fa-reply">Tornar a la llista</i></button>
+        <button id="returnCalls" type="button" class="btn btn-primary"><i class="fa fa-reply"></i>Tornar a la llista</button>
         <br>
         <br>
         <div class="row">
           <div class="col-lg-6">
-            <label for="dni_usuari">DNI</label>
-            <input id="dni_usuari" style="width: 100%;" />
+            <label for="adddni_usuari">DNI</label>
+            <input id="adddni_usuari" style="width: 100%;" />
           </div>
           <div class="col lg-6">
-            <label for="data_trucada">DATA DE LA TRUCADA</label>
-            <input id="data_trucada" title="datepicker" style="width: 100%"/>
+            <label for="adddata_trucada">Data de la trucada</label>
+            <input id="adddata_trucada" class="datePickerKendo" title="datepicker" style="width: 100%"/>
           </div>
         </div>
         <br>
         <div class="row">
           <div class="col-lg-6">
-            <label for="type_call">TIPUS TRUCADA</label>
-            <input id="type_call" />
+            <label for="addtype_call">Tipus trucada</label><br>
+            <input id="addtype_call" />
           </div>
           <div class="col lg-6" id="out_in_select">
-            <label for="outcall">SITUACIÓ</label>
+            <label for="outcall">Situació</label>
             <input id="outcall" />
             <input id="incall" />
           </div>
@@ -126,14 +126,15 @@
         <br>
         <div class="row">
           <div class="col-lg-6">
-            <label for="state_call">ESTAT DE LA TRUCADA</label>
-            <input id="state_call" />
+            <label for="addstate_call">Estat de la Trucada</label><br>
+            <input id="addstate_call" />
           </div>
           <div class="col lg-6">
-            <label for="rao">SOLUCIÓ TELEOPERADOR</label>
+            <label for="rao">Solució teleoperador/a</label>
             <textarea class="form-control" id="rao" rows="3"></textarea>
           </div>
-        </div>
+        </div><br>
+        <button id="addCallBtn" type="button" class="btn btn-primary">Afegir Trucada</button>
       </div>
 
     <!-- Historial Trucades Modificar -->

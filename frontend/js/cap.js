@@ -25,6 +25,10 @@ $(document).ready(function() {
   $("#returnDoctor").click(function() {
     goToCapList();
   });
+  //Kendo phone phoneMask
+  $(".phoneMask").kendoMaskedTextBox({
+  mask: "000 000 000"
+  });
 });
 
 function Tabs(options) {
@@ -179,9 +183,7 @@ function goToAddDoctor() {
 }
 
 function addCapListener() {
-    $(".phoneMask").kendoMaskedTextBox({
-    mask: "000 000 000"
-    });
+
     $("#addnom").val('')
     $("#addDireccio").val('');
     $("#addHorari").val('');

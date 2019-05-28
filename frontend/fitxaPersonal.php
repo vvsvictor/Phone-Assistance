@@ -38,7 +38,7 @@ include '..\backend\include.php';
         <?php
         if ($_SESSION['user']['usertype'] == 0) {
           echo '<li class="nav-item">
-          <a class="nav-link" href="users.php" style="color: #40514e;">Usuaris</a>
+          <a class="nav-link" href="users.php" style="color: #40514e;">Usuaris/es</a>
           </li>';
         }
         ?>
@@ -492,7 +492,7 @@ include '..\backend\include.php';
   <div id="modpageFp">
     <section id="page">
       <button id="returnPF3" type="button" class="btn btn-primary marginTop"><i class="fa fa-reply"></i> Tornar Enrere</button>
-      <button id="modFormFP2" type="button" class="btn btn-primary marginTop"><i class="fa fa-reply"></i> Guarda</button>
+      <button id="modFormFP2" type="button" class="btn btn-primary marginTop"><i class="fas fa-save"></i> Guarda</button>
       <div id="tabs" class="c-tabs">
         <div class="c-tabs-nav">
           <a href="#" class="c-tabs-nav__link is-active">Fitxa Personal</a>

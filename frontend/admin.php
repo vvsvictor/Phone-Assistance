@@ -29,7 +29,7 @@ include '..\backend\includeAdmin.php';
              <a class="nav-link" href="index.php" style="color: #e4f9f5;">Inici <span class="sr-only">(current)</span></a>
            </li>
            <li class="nav-item">
-             <a class="nav-link" href="users.php" style="color: #40514e;">Usuaris</a>
+             <a class="nav-link" href="users.php" style="color: #40514e;">Usuaris/es</a>
            </li>
            <li class="nav-item">
              <a class="nav-link" href="fitxaPersonal.php" style="color: #40514e;">Fitxa personal</a>
@@ -71,7 +71,7 @@ include '..\backend\includeAdmin.php';
              </a>
              <div class="card-img-overlay">
               <a class="nohyperlinkcss" href="users.php">
-               <h4 class="card-title"><strong>Usuaris</strong></h4>
+               <h4 class="card-title"><strong>Usuaris/es</strong></h4>
               </a>
              </div>
            </div>
