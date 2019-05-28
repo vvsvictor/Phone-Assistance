@@ -327,6 +327,8 @@ function showTable() {
       modCapListener();
       eliminarCapListener();
       mostrarCapListener();
+      $('#loaddiv').removeClass('hidden');
+      $('#loader').hide();
     },
     error: function() {
       console.log('No hi han caps');
