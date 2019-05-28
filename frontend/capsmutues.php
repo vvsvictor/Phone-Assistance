@@ -73,6 +73,7 @@
         </ul>
       </div>
     </nav>
+
     <div class="container">
       <!-- Formulario Añadir CAPS -->
       <div id="addCap" class="container_add">
@@ -110,6 +111,7 @@
         </div><br>
         <button id="addCapBtn" type="button" class="btn btn-primary">Afegir CAP</button>
       </div>
+
       <!--Formulario Añadir Doctores -->
       <div id="addDoctor" class="container_add">
         <button id="returnDoctor" type="button" class="btn btn-primary"><i class="fa fa-reply"></i> Tornar enrere</button>
@@ -140,6 +142,7 @@
         <button id="addDoctorBtn" type="button" class="btn btn-primary">Afegir Doctor</button>
       </div>
       <div id="tableCaps">
+        <br/>
         <button id="showFormCAP" type="button" class="btn btn-primary"><i class="fa fa-plus"></i>Afegir CAP</button>
         <table id="dtCap" class="table table-striped table-bordered" cellspacing="0" width="100%">
           <thead>
