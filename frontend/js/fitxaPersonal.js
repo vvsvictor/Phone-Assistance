@@ -301,8 +301,9 @@ function addFitxaPersonal() {
     let idioma_s = document.querySelector('input[name="idioma_s"]:checked').value;
     //if ==0 return null
     let dataNaixemement = $("#addDataNaixement").val();
-    let adreca = $("#addAdreca").val();
-    let tipusHabitatge = $("#addTipus_habitatge").val();
+    let adreca = $("#addTipus").val()+' '+$("#addAdreca").val()+' '+$("#addPis").val()+' '+$("#addPorta").val()+' '+$("#addEscala").val();
+    let kendotipusHabitatge = $("#addTipus_habitatge").data("kendoDropDownTree");
+    let tipusHabitatge = kendotipusHabitatge.value().text;
     let titularitatHab = document.querySelector('input[name="titularitat"]:checked').value;
     let provincia = $("#provincias").val();
     provincia = provincia.split('(Id:').pop().split(')')[0];
