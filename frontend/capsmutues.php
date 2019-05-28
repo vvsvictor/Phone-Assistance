@@ -114,7 +114,7 @@
 
       <!--Formulario Añadir Doctores -->
       <div id="addDoctor" class="container_add">
-        <button id="returnDoctor" type="button" class="btn btn-primary"><i class="fa fa-reply"></i> Tornar enrere</button>
+        <button id="returnDoctor" type="button" class="btn btn-primary marginTop"><i class="fa fa-reply"></i> Tornar enrere</button>
         <br>
         <br>
         <div class="row">
@@ -139,7 +139,7 @@
             </select>
           </div>
         </div>
-        <button id="addDoctorBtn" type="button" class="btn btn-primary">Afegir Doctor</button>
+        <button id="addDoctorBtn" type="button" class="btn btn-primary marginTop">Afegir Doctor</button>
       </div>
       <div id="tableCaps">
         <br/>
@@ -172,7 +172,7 @@
   </div>
   <div id="pageCAPS">
     <section id="page">
-      <button id="returnCAP2" type="button" class="btn btn-primary"><i class="fa fa-reply"></i> Tornar enrere</button>
+      <button id="returnCAP2" type="button" class="btn btn-primary marginTop"><i class="fa fa-reply"></i> Tornar enrere</button>
       <div id="tabs" class="c-tabs">
         <div class="c-tabs-nav">
           <a href="#" class="c-tabs-nav__link is-active">Info CAP</a>
@@ -222,7 +222,7 @@
             <div class="container_doctors">
               <div class="content3">
                 <div id="tableDoctors">
-                  <button id="showFormDoctor" type="button" class="btn btn-primary"><i class="fa fa-plus"></i>Afegir Doctor</button>
+                  <button id="showFormDoctor" type="button" class="btn btn-primary marginTop"><i class="fa fa-plus"></i> Afegir Doctor</button>
                   <table id="dtDoctor" class="table table-striped table-bordered" cellspacing="0" width="100%">
                     <thead>
                       <tr>

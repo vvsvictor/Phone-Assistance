@@ -166,8 +166,9 @@ function goToAddDoctor() {
       cache: false,
       success: function(response) {
         var myJSON = JSON.parse(response);
-        //Mostrar taula doctors
-
+        //Mostrar taula cap
+        $("#addDoctor").hide();
+        mostrarCap();
         if (parseInt(myJSON.codigoError) != 0) {
           console.log(myJSON.observaciones + " - " + myJSON.codigoError + " - " + myJSON.descError);
         }
@@ -400,6 +401,68 @@ function mostrarCapListener(){
   });
 }
 
+
+function mostrarCap(){
+  let idbtn = $("#cid").html();
+  $.ajax({
+    url: "../backend/selects/getCap.php",
+    type: "GET",
+    cache: false,
+    success: function(response) {
+      console.log("entra");
+      let myJSON = JSON.parse(response);
+      $("#cid").html("");
+      $("#cname").html("");
+      $("#caddress").html("");
+      $("#cphone").html("");
+      $("#cschedule").html("");
+      for (var i = 0; i < myJSON.length; i++) {
+        if (idbtn == myJSON[i].id){
+          let id = myJSON[i].id;
+          let name = myJSON[i].name;
+          let address = myJSON[i].address;
+          let phone = myJSON[i].phone;
+          let schedule = myJSON[i].schedule;
+          $("#cid").html(id);
+          $("#cname").html(name);
+          $("#caddress").html(address);
+          $("#cphone").html(phone);
+          $("#cschedule").html(schedule);
+          goToCap();
+          $.ajax({
+            url: "../backend/selects/getDoctors.php",
+            type: "GET",
+            cache: false,
+            success: function(response) {
+              let myJSON = JSON.parse(response);
+              console.log("Medics "+response);
+              $("#tbDoctors").html("");
+              for (var i = 0; i < myJSON.length; i++) {
+                if (idbtn == myJSON[i].id_cap){
+                  let id = myJSON[i].id;
+                  let name = myJSON[i].name;
+                  let surname = myJSON[i].surname;
+                  let gender = myJSON[i].gender;
+                  let specialization = myJSON[i].med_specialization;
+                  showMedicos(id,name,surname,gender,specialization);
+                }
+                eliminarDrListener();
+              }
+              $('#dtDoctor').DataTable();
+            },
+            error: function() {
+              console.log('No hi han Doctors');
+            }
+          });
+        }
+      }
+  },
+  error: function(){
+    console.log('No hi ha CAPS');
+  }
+});
+}
+
 function showMedicos(id,name,surname,gender,specialization) {
   let html;
   html = "<tr><td>" + id + "</td><td>" + name + "</td><td>" + surname + "</td><td>" + gender + "</td><td>" + specialization + "</td><td><button id='fitxaCaps" + id + "' type='button' class='fitxaCaps btn btn-info marginBtn'><i class='fa fa-file'></i></button><button type='button' id='deleteDrId" + id + "' class='deletedr btn btn-danger' data-toggle='modal' data-target='#deletedrmodal'><i class='fa fa-trash'></i>Eliminar</button></td></tr>";
@@ -441,7 +504,7 @@ function deleteDr(idDr){
     success: function(response) {
       var myJSON = JSON.parse(response);
       console.log("Success JSON" + myJSON.codigoError);
-
+      mostrarCap();
       if (parseInt(myJSON.codigoError) != 0) {
 
       }
