@@ -144,7 +144,7 @@
 
       <!--Formulario Modificar Doctores -->
       <div id="modDoctor" class="container_add">
-        <button id="returnDoctor" type="button" class="btn btn-primary marginTop"><i class="fa fa-reply"></i> Tornar enrere</button>
+        <button id="returnDoctorMod" type="button" class="btn btn-primary marginTop"><i class="fa fa-reply"></i> Tornar enrere</button>
         <br>
         <br>
         <div class="row">

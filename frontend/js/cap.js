@@ -343,9 +343,10 @@ function showCap(id, name, address, phone, schedule) {
 }
 
 function goToCap() {
-  $("#pageCAPS").show();
   $("#tableCaps").hide();
+  $("#modDoctor").hide();
   $("#addCAP").hide();
+  $("#pageCAPS").show();
 
 }
 
@@ -525,19 +526,21 @@ function modDrListener(){
             $("#modNameDr").val(myJSON[i].name);
             $("#modSurnameDr").val(myJSON[i].surname);
             $("#modGenereDr").val(myJSON[i].gender);
-            let especialitzacio = $("#modespecialitzacions").val();
-            //obtenció de la especialitzacio
-            especialitzacio = especialitzacio.split('(Id:').pop().split(')')[0];
           }
         }
         mostrarEspecialitzacions();
 
         gotoModDr();
+
+        $("#returnDoctorMod").click(function(event) {
+          goToCap();
+        });
         $("#modDoctorBtn").click(function(event) {
           let name = $("#modNameDr").val();
           let surname = $("#modSurnameDr").val();
           let gender = $("#modGenereDr").val();
           let especialitzacio = $("#modespecialitzacions").val();
+          especialitzacio = especialitzacio.split('(Id:').pop().split(')')[0];
           let idCap= $("#cid").html();
           modificarDr(idDr, name, surname, gender, especialitzacio, idCap);
         });
@@ -570,6 +573,7 @@ function modificarDr(id, name, surname, gender, especialitzacio, idcap){
         let myJSON = JSON.parse(response);
         //reload users
         mostrarCap();
+        goToCap();
       },
       error: function() {
         alert("Error en la consulta");
