@@ -286,6 +286,16 @@ INSERT into STA (user_dninif, actual_situation, hiring_date, tf_service, tcr_ser
 /*Insert RESPONSIBLE for the client by default*/
 INSERT into RESPONSIBLE (user_dninif, priority, name, surname, address, post_code, contact_phone, preferable_hour, date_responsible, reason) VALUES ("68951118Q", "ALTA", "TEST", "TESTED", "calle falsa 559", "15667", "987654125", "17:10h - 21h", "22-05-2019", "porque si");
 
+/*Insert MED_SPECIALIZATION by default*/
+INSERT INTO med_specialization (med_specialization)VALUES("Oftalmologia");
+INSERT INTO med_specialization (med_specialization)VALUES("Cirugia");
+INSERT INTO med_specialization (med_specialization)VALUES("Ginecologia");
+
+/*Insert DOCTORS by default*/
+INSERT INTO doctors (name,surname,gender,specialization_id,id_cap)VALUES("Marc","Cardona","Home",1,1);
+INSERT INTO doctors (name,surname,gender,specialization_id,id_cap)VALUES("Maria","Marturina","Dona",3,1);
+INSERT INTO doctors (name,surname,gender,specialization_id,id_cap)VALUES("David","Laruna","Home",2,1);
+
 /*Insert type call_history type by default*/
 insert into call_state (call_type) values ("Acabada");
 insert into call_type (call_type)values ("Entrant");
