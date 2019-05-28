@@ -41,12 +41,25 @@ $(document).ready(function () {
     goToFitxaList();
   });
 
+
+
+  });
   function goToFitxaList() {
     $('#addSTA').hide();
     $("#addResponsible").hide();
     $("#pageTables").hide();
     $("#pageView").hide();
     $("#tableFitxaPersonal").show();
+  }
+
+  function showAllInfo(){
+    $(".fitxaPersonal").click(function() {
+
+    });
+  }
+
+  function goToShowAll(){
+    
   }
 
   function goToAddSTA() {
@@ -62,8 +75,6 @@ $(document).ready(function () {
     $("#pageResponsable").hide();
     $("#addResponsible").show();
   }
-
-  });
   function showDni() {
       $.ajax({
         url: "../backend/selects/getFitxaPersonal.php",
@@ -141,7 +152,7 @@ function showResponsible(id,user_dninif,priority,name,surname){
 }
 
 function showSta(id){
-  let html="<tr><td>"+id+"</td><td>"++"</td><td>"++"</td><td>"++"</td><td>"+surname+"</td><td><button id='sta"+id+"' type='button' class='sta btn btn-info'>Fitxa Completa</button><button type='button' id='deleteResponsibleId" + id + "' class='deleteResponsible btn btn-danger' data-toggle='modal' data-target='#deleteResponsiblemodal'>Eliminar</button></td></tr>";
+  let html="<tr><td>"+id+"</td><td>"+"</td><td>"+"</td><td>"+"</td><td>"+surname+"</td><td><button id='sta"+id+"' type='button' class='sta btn btn-info'>Fitxa Completa</button><button type='button' id='deleteResponsibleId" + id + "' class='deleteResponsible btn btn-danger' data-toggle='modal' data-target='#deleteResponsiblemodal'>Eliminar</button></td></tr>";
   $("#staTable").append(html);
 
   $(".sta").click(function() {

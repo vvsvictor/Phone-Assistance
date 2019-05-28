@@ -226,15 +226,29 @@
     </div>
   </div>
 
+  <!--Pagina Tota la info-->
   <div id="pageTables">
     <section id="page">
       <button id="returnCAP2" type="button" class="btn btn-primary marginTop"><i class="fa fa-reply"></i> Tornar enrere</button>
       <div id="tabs" class="c-tabs">
         <div class="c-tabs-nav">
-          <a href="#" class="c-tabs-nav__link is-active">STA</a>
-          <a href="#" class="c-tabs-nav__link">Responsible</a>
+          <a href="#" class="c-tabs-nav__link is-active">Fitxa bàsica</a>
+          <a href="#" class="c-tabs-nav__link ">STA</a>
+          <a href="#" class="c-tabs-nav__link">Responsables</a>
           <div class="c-tab-nav-marker"></div>
         </div>
+        <!--Informació bàsica-->
+        <div class="c-tab is-active">
+          <div class="c-tab__content">
+            <div class="container_sta">
+              <div class="content3">
+                <div id="basicInfo">
+                  
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
         <!-- STA -->
         <div class="c-tab">
           <div class="c-tab__content">
