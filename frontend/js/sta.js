@@ -59,7 +59,7 @@ $(document).ready(function () {
   }
 
   function goToShowAll(){
-    
+
   }
 
   function goToAddSTA() {

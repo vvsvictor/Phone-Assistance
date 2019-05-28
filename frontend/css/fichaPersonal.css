@@ -251,3 +251,31 @@
     height: 5em;
   }
 }
+.ui-button{
+	background-color: #11999e;
+	color: #e4f9f5;
+}
+.ui-button:hover{
+	background-color: #11999e;
+	color: #30e3ca;
+}
+.ui-button.ui-state-active{
+	background-color: #30e3ca;
+	border: #30e3ca;
+	color: #40514E;
+}
+.ui-button.ui-state-active:hover{
+	background-color: #30e3ca;
+	border: #30e3ca;
+	color: #11999e;
+}
+.ui-icon-background, .ui-state-active .ui-icon-background{
+	border: #40514E;
+}
+.btn-primary{
+	background-color: #11999e;
+	border: #30e3ca;
+}
+.btn-primary:hover{
+	background-color: #30e3ca;
+}

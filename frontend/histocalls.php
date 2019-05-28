@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="css/dataTable.css">
     <link rel="stylesheet" href="css/initPage.css">
+    <link rel="stylesheet" href="css/callHistory.css">
   </head>
   <body class="addFont">
     <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #11999E;">
