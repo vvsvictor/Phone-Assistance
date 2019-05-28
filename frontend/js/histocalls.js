@@ -126,13 +126,106 @@ function addCallListener() {
           console.log('No hi han estats de trucades');
         }
     });
+    //Ajax mostrar tipus de trucada entrant
+    $.ajax({
+      url: "../backend/selects/getInCallType.php",
+      type: "GET",
+      cache: false,
+      success: function(response) {
+        let myJSON = JSON.parse(response);
+        let allIncallType = [];
+        let incallType = [];
+        let allsubclass1 = [];
+        let allsubclass2 = [];
+        let allsubclass3 = [];
+        for (let i = 0; i < myJSON.length; i++) {
+          allIncallType.push({ text: myJSON[i].incall_type , value: myJSON[i].id});
+          if (myJSON[i].incallType == 'Trucada d’alarma') {
+            allsubclass1.push({ text: myJSON[i].subclass , value: myJSON[i].id});
+          }else if (myJSON[i].incallType == 'Trucada d’informació') {
+            allsubclass2.push({ text: myJSON[i].subclass , value: myJSON[i].id});
+          }else{
+            allsubclass3.push({ text: myJSON[i].subclass , value: myJSON[i].id});
+          }
+        }
+        for (let i = 0; i < allIncallType.length; i++) {
+          let existeix = false;
+          for (let j = 0; i < incallType.length; i++) {
+            if (allIncallType[i].text == incallType[j].text) {
+              existeix = true;
+            }
+          }
+          if (!existeix) {
+            incallType.push(allIncallType)
+          }
+        }
+        $("#addentrant_call").val('');
+        $("#addsubentrant_call").val('');
+        $("#addentrant_call").kendoComboBox({
+          dataTextField: "text",
+          dataValueField: "value",
+          dataSource: allIncallType
+        });
+
+        },
+          error: function() {
+          console.log('No hi han estats de trucades');
+        }
+    });
+    //En principi amagar tot
+    $('#addentrant_call').hide();
+    $('#addsubentrant_call').hide();
+    $('#addsortint_call').hide();
+    $('#addsubsortint_call').hide();
     //Si la trucada es entrant mostrar els tipus de trucada
     $( "#addtype_call" ).change(function() {
-      if (addtype_call==1) {
-        //Trucada entrant
-        
+      if ($("#addtype_call").val()==1) {
+        //Trucada entrant amagar sortnts
+        $('#addentrant_call').show();
+        $('#addsubentrant_call').hide();
+        $('#addsubentrant_calllab').hide();
+        $('#addsortint_call').hide();
+        $('#addsortint_calllab').hide();
+        $('#addsubsortint_call').hide();
+        $('#addsubsortint_calllab').hide();
+        $("#addentrant_call").kendoComboBox({
+          dataTextField: "text",
+          dataValueField: "value",
+          dataSource: allsubclass1
+        });
+        //Al modificar la trucada entrant
+        $('#addentrant_call').change(function(){
+          if ($('#addentrant_call').val()=="Trucada d'alarma") {
+            $("#addsubentrant_call").kendoComboBox({
+              dataTextField: "text",
+              dataValueField: "value",
+              dataSource: allsubclass1
+            });
+          }else if ($('#addentrant_call').val()=="Trucada d'informació") {
+            $("#addsubentrant_call").kendoComboBox({
+              dataTextField: "text",
+              dataValueField: "value",
+              dataSource: allsubclass2
+            });
+          }else{
+            $("#addsubentrant_call").kendoComboBox({
+              dataTextField: "text",
+              dataValueField: "value",
+              dataSource: allsubclass3
+            });
+          }
+        });
+
       }else{
         //Trucada sortint
+        $('#addentrant_call').hide();
+        $('#addentrant_calllab').hide();
+        $('#addsubentrant_call').hide();
+        $('#addsubentrant_calllab').hide();
+        $('#addsortint_call').show();
+        $('#addsubsortint_call').hide();
+        $('#addsubsortint_calllab').hide();
+
       }
       // Check input( $( this ).val() ) for validity here
     });

@@ -117,30 +117,25 @@
             <label for="addtype_call">Tipus trucada</label><br>
             <input id="addtype_call" />
           </div>
-          <div class="col lg-6" id="out_in_select">
-            <label for="outcall">Situació</label>
-            <input id="outcall" />
-            <input id="incall" />
-          </div>
         </div>
         <br>
         <div class="row">
           <div class="col-lg-6">
-            <label for="addentrant_call">Tipus de trucada entrant</label><br>
+            <label id="addentrant_calllab" for="addentrant_call">Tipus de trucada entrant</label><br>
             <input id="addentrant_call" />
           </div>
           <div class="col lg-6">
-            <label for="addsortint_call">Tipus de trucada sortint/a</label><br>
-            <input id="addentrant_call" />
+            <label id="addsortint_calllab" for="addsortint_call">Tipus de trucada sortint/a</label><br>
+            <input id="addsortint_call" />
           </div>
         </div><br>
         <div class="row">
           <div class="col-lg-6">
-            <label for="addsubentrant_call">Subtipus de trucada entrant</label><br>
+            <label id="addsubentrant_calllab" for="addsubentrant_call">Subtipus de trucada entrant</label><br>
             <input id="addsubentrant_call" />
           </div>
           <div class="col lg-6">
-            <label for="addsubsortint_call">Subtipus de trucada sortint/a</label><br>
+            <label id="addsubsortint_calllab" for="addsubsortint_call">Subtipus de trucada sortint/a</label><br>
             <input id="addsubsortint_call" />
           </div>
         </div>
