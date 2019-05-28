@@ -9,6 +9,7 @@ $(document).ready(function() {
   });
   $("#modFormPF").click(function() {
     goToModFP();
+    showLanguages();
   });
   $("#returnPF").click(function() {
     goToFpList();
@@ -22,6 +23,7 @@ $(document).ready(function() {
 
   $("#modFormFP2").click(function() {
     modCardListener();
+
   });
 
   //kendo / jquery functions
@@ -194,13 +196,18 @@ function showLanguages(){
     success: function(response) {
       let myJSON = JSON.parse(response);
       html="";
+      html2="";
       for (let i = 0; i < myJSON.length; i++) {
         html+='<option>(Id:'+myJSON[i].id+") "+myJSON[i].language_name+'</option>';
+        html2+='<option>(Id:'+myJSON[i].id+") "+myJSON[i].language_name+'</option>';
       }
       html+="<option>Altre</option>";
       $("#addIdioma").html(html);
+      $("#modifIdioma").html(html2);
       $("#addIdioma").kendoDropDownList();
+      $("#modifIdioma").kendoDropDownList();
       $("#addGenere").kendoDropDownList();
+      $("#modGenere").kendoDropDownList();
       $("#addIdiomaAltre").hide();
     },
     error: function() {
