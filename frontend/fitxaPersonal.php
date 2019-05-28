@@ -243,7 +243,6 @@ include '..\backend\include.php';
           <a href="#" class="c-tabs-nav__link">Mutua</a>
           <a href="#" class="c-tabs-nav__link">Responsable</a>
           <a href="#" class="c-tabs-nav__link">STA</a>
-          <a href="#" class="c-tabs-nav__link">Trucades</a>
           <div class="c-tab-nav-marker"></div>
         </div>
         <!-- FICHA PERSONAL-->
@@ -482,11 +481,6 @@ include '..\backend\include.php';
             </div>
           </div>
         </div>
-        <!-- LLAMADAS -->
-        <div class="c-tab">
-          <div class="c-tab__content">
-          </div>
-        </div>
       </div>
     </section>
   </div>
@@ -497,10 +491,6 @@ include '..\backend\include.php';
       <div id="tabs" class="c-tabs">
         <div class="c-tabs-nav">
           <a href="#" class="c-tabs-nav__link is-active">Fitxa Personal</a>
-          <a href="#" class="c-tabs-nav__link">Mutua</a>
-          <a href="#" class="c-tabs-nav__link">Responsable</a>
-          <a href="#" class="c-tabs-nav__link">STA</a>
-          <a href="#" class="c-tabs-nav__link">Trucades</a>
           <div class="c-tab-nav-marker"></div>
         </div>
         <!-- FICHA PERSONAL-->
@@ -752,11 +742,6 @@ include '..\backend\include.php';
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-        <!-- LLAMADAS -->
-        <div class="c-tab">
-          <div class="c-tab__content">
           </div>
         </div>
       </div>
