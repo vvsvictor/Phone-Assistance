@@ -74,7 +74,7 @@
       </div>
     </nav>
 
-    <div class="container">
+  <div class="container">
       <!-- Formulario Añadir STA -->
       <div id="addSTA" class="container_add">
         <button id="returnSTA" type="button" class="btn btn-primary"><i class="fa fa-reply"></i></button>
@@ -198,27 +198,25 @@
         </div>
       </div>
 
-      <div id="tableResponsible">
+      <div id="tableFitxaPersonal">
         <br/>
         <button id="showFormSTA" type="button" class="btn btn-primary"><i class="fa fa-plus"></i>Afegir STA</button>
         <button id="showFormResponsible" type="button" class="btn btn-primary"><i class="fa fa-plus"></i>Afegir Responsable</button>
-      <table id="dtResponsible" class="table table-striped table-bordered" cellspacing="0" width="100%">
+      <table id="dtFitxaPersonal" class="table table-striped table-bordered" cellspacing="0" width="100%">
         <thead>
           <tr>
             <th class="th-sm">Id</th>
             <th class="th-sm">DNI</th>
-            <th class="th-sm">Prioritat</th>
             <th class="th-sm">Nom</th>
             <th class="th-sm">Cognom</th>
             <th class="th-sm"></th>
           </tr>
         </thead>
-        <tbody id="responsibleTable"></tbody>
+        <tbody id="fitxaPersonalTable"></tbody>
         <tfoot>
           <tr>
             <th>Id</th>
             <th>DNI</th>
-            <th>Prioritat</th>
             <th>Nom</th>
             <th>Cognom</th>
             <th></th>
@@ -227,7 +225,89 @@
       </table>
     </div>
   </div>
-  <div id="pageResponsable">
+
+  <div id="pageTables">
+    <section id="page">
+      <button id="returnCAP2" type="button" class="btn btn-primary marginTop"><i class="fa fa-reply"></i> Tornar enrere</button>
+      <div id="tabs" class="c-tabs">
+        <div class="c-tabs-nav">
+          <a href="#" class="c-tabs-nav__link is-active">STA</a>
+          <a href="#" class="c-tabs-nav__link">Responsible</a>
+          <div class="c-tab-nav-marker"></div>
+        </div>
+        <!-- STA -->
+        <div class="c-tab">
+          <div class="c-tab__content">
+            <div class="container_sta">
+              <div class="content3">
+                <div id="tableSTA">
+                  <button id="showFormSTA" type="button" class="btn btn-primary marginTop"><i class="fa fa-plus"></i> Afegir Doctor</button>
+                  <table id="dtSTA" class="table table-striped table-bordered" cellspacing="0" width="100%">
+                    <thead>
+                      <tr>
+                        <th class="th-sm">Id</th>
+                        <th class="th-sm">DNI</th>
+                        <th class="th-sm">Situació Actual</th>
+                        <th class="th-sm">Data Expiració</th>
+                        <th class="th-sm"></th>
+                      </tr>
+                    </thead>
+                    <tbody id="tbSTA"></tbody>
+                    <tfoot>
+                      <tr>
+                        <th>Id</th>
+                        <th>DNI</th>
+                        <th>Situació Actual</th>
+                        <th>Data Expiració</th>
+                        <th></th>
+                      </tr>
+                    </tfoot>
+                  </table>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Responsible -->
+      <div class="c-tab">
+        <div class="c-tab__content">
+          <div class="container_responsible">
+            <div class="content3">
+              <div id="tableSTA">
+                <button id="showFormResponsible" type="button" class="btn btn-primary marginTop"><i class="fa fa-plus"></i> Afegir Doctor</button>
+                <table id="dtResponsible" class="table table-striped table-bordered" cellspacing="0" width="100%">
+                  <thead>
+                    <tr>
+                      <th class="th-sm">Id</th>
+                      <th class="th-sm">DNI</th>
+                      <th class="th-sm">Prioritat</th>
+                      <th class="th-sm">Nom</th>
+                      <th class="th-sm">Cognom</th>
+                      <th class="th-sm"></th>
+                    </tr>
+                  </thead>
+                  <tbody id="tbSTA"></tbody>
+                  <tfoot>
+                    <tr>
+                      <th>Id</th>
+                      <th>DNI</th>
+                      <th>Prioritat</th>
+                      <th>Nom</th>
+                      <th>Cognom</th>
+                      <th></th>
+                    </tr>
+                  </tfoot>
+                </table>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  </div>
+
+  <div id="pageView">
     <section id="page">
       <button id="returnResponsible2" type="button" class="btn btn-primary"><i class="fa fa-reply"></i></button>
       <div id="tabs" class="c-tabs">
@@ -237,7 +317,7 @@
           <div class="c-tab-nav-marker"></div>
         </div>
           <!-- RESPONSABLE : DADES -->
-          <div class="c-tab">
+          <div class="c-tab is-active">
             <div class="c-tab__content">
               <div class="container_responsible">
                 <div class="content3">
@@ -304,11 +384,6 @@
       </section>
     </div>
   </div>
-</div>
-</div>
-</div>
-</section>
-</div>
 
 <!--Modal Delete deleteResponsible-->
 <div class="modal fade" id="deleteResponsiblemodal" tabindex="-1" role="dialog">

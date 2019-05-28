@@ -23,7 +23,7 @@ $(document).ready(function() {
     goToCapList();
   });
   $("#returnDoctor").click(function() {
-    goToCapList();
+    mostrarCap();
   });
   //Kendo phone phoneMask
   $(".phoneMask").kendoMaskedTextBox({
@@ -111,15 +111,19 @@ function gotoModCap() {
   $('#modCapDiv').show();
   $('#addCap').hide();
   $("#capList").hide();
+  $("#modDoctor").hide();
+  $("#pageCAPS").hide();
+
 }
 
 function goToAddCap() {
   $("#tableCaps").hide();
   $("#addCap").show();
+  $("#modDoctor").hide();
   addCapListener();
 }
 
-function goToAddDoctor() {
+function mostrarEspecialitzacions(){
   $.ajax({
     url: "../backend/selects/getMedSpecialization.php",
     type: "GET",
@@ -133,13 +137,19 @@ function goToAddDoctor() {
         html+='<option>(Id:'+myJSON[i].id+') '+myJSON[i].med_specialization+'</option>';
       }
       $("#especialitzacions").html(html);
+      $("#modespecialitzacions").html(html);
       $("#especialitzacions").kendoDropDownList();
+      $("#modespecialitzacions").kendoDropDownList();
 
     },
     error: function() {
       console.log('No hi han Doctors');
     }
   });
+}
+
+function goToAddDoctor() {
+  mostrarEspecialitzacions()
 
   $("#tableCaps").hide();
   $("#addDoctor").show();
@@ -166,8 +176,9 @@ function goToAddDoctor() {
       cache: false,
       success: function(response) {
         var myJSON = JSON.parse(response);
-        //Mostrar taula doctors
-
+        //Mostrar taula cap
+        $("#addDoctor").hide();
+        mostrarCap();
         if (parseInt(myJSON.codigoError) != 0) {
           console.log(myJSON.observaciones + " - " + myJSON.codigoError + " - " + myJSON.descError);
         }
@@ -225,6 +236,7 @@ function addCapListener() {
 
 function goToCapList() {
   $('#pageCAPS').hide();
+  $("#modDoctor").hide();
   $('#modCapDiv').hide();
   $('#addCap').hide();
   $("#capList").show();
@@ -325,7 +337,7 @@ function showTable() {
 
 function showCap(id, name, address, phone, schedule) {
   let html;
-  html = "<tr><td>" + id + "</td><td>" + name + "</td><td>" + address + "</td><td>" + phone + "</td><td>" + schedule + "</td><td><button id='fitxaCaps" + id + "' type='button' class='fitxaCaps btn btn-info marginBtn'><i class='fa fa-file'></i></button><button type='button' id='deleteCapId" + id + "' class='deletecap btn btn-danger' data-toggle='modal' data-target='#deletecapmodal'><i class='fa fa-trash'></i></button></td></tr>";
+  html = "<tr><td>" + id + "</td><td>" + name + "</td><td>" + address + "</td><td>" + phone + "</td><td>" + schedule + "</td><td><button id='fitxaCaps" + id + "' type='button' class='fitxaCaps btn btn-info marginBtn'><i class='fa fa-file'></i> Més informació</button><button type='button' id='deleteCapId" + id + "' class='deletecap btn btn-danger marginBtn' data-toggle='modal' data-target='#deletecapmodal'><i class='fa fa-trash'></i> Eliminar</button></td></tr>";
   console.log("HTML caps a insertar "+html)
   $("#capTable").append(html);
 }
@@ -334,6 +346,7 @@ function goToCap() {
   $("#pageCAPS").show();
   $("#tableCaps").hide();
   $("#addCAP").hide();
+
 }
 
 function mostrarCapListener(){
@@ -385,6 +398,7 @@ function mostrarCapListener(){
                     eliminarDrListener();
                   }
                   $('#dtDoctor').DataTable();
+                  modDrListener();
                 },
                 error: function() {
                   console.log('No hi han Doctors');
@@ -400,9 +414,71 @@ function mostrarCapListener(){
   });
 }
 
+
+function mostrarCap(){
+  let idbtn = $("#cid").html();
+  $.ajax({
+    url: "../backend/selects/getCap.php",
+    type: "GET",
+    cache: false,
+    success: function(response) {
+      console.log("entra");
+      let myJSON = JSON.parse(response);
+      $("#cid").html("");
+      $("#cname").html("");
+      $("#caddress").html("");
+      $("#cphone").html("");
+      $("#cschedule").html("");
+      for (var i = 0; i < myJSON.length; i++) {
+        if (idbtn == myJSON[i].id){
+          let id = myJSON[i].id;
+          let name = myJSON[i].name;
+          let address = myJSON[i].address;
+          let phone = myJSON[i].phone;
+          let schedule = myJSON[i].schedule;
+          $("#cid").html(id);
+          $("#cname").html(name);
+          $("#caddress").html(address);
+          $("#cphone").html(phone);
+          $("#cschedule").html(schedule);
+          goToCap();
+          $.ajax({
+            url: "../backend/selects/getDoctors.php",
+            type: "GET",
+            cache: false,
+            success: function(response) {
+              let myJSON = JSON.parse(response);
+              console.log("Medics "+response);
+              $("#tbDoctors").html("");
+              for (var i = 0; i < myJSON.length; i++) {
+                if (idbtn == myJSON[i].id_cap){
+                  let id = myJSON[i].id;
+                  let name = myJSON[i].name;
+                  let surname = myJSON[i].surname;
+                  let gender = myJSON[i].gender;
+                  let specialization = myJSON[i].med_specialization;
+                  showMedicos(id,name,surname,gender,specialization);
+                }
+                eliminarDrListener();
+              }
+              $('#dtDoctor').DataTable();
+            },
+            error: function() {
+              console.log('No hi han Doctors');
+            }
+          });
+        }
+      }
+  },
+  error: function(){
+    console.log('No hi ha CAPS');
+  }
+});
+}
+
 function showMedicos(id,name,surname,gender,specialization) {
   let html;
-  html = "<tr><td>" + id + "</td><td>" + name + "</td><td>" + surname + "</td><td>" + gender + "</td><td>" + specialization + "</td><td><button id='fitxaCaps" + id + "' type='button' class='fitxaCaps btn btn-info marginBtn'><i class='fa fa-file'></i></button><button type='button' id='deleteDrId" + id + "' class='deletedr btn btn-danger' data-toggle='modal' data-target='#deletedrmodal'><i class='fa fa-trash'></i>Eliminar</button></td></tr>";
+  html = "<tr><td>" + id + "</td><td>" + name + "</td><td>" + surname + "</td><td>" + gender + "</td><td>" + specialization + "</td><td><button id='modDr" + id + "' type='button' class='modDr btn btn-info marginBtn'>Modificar Dr</button><button type='button' id='deleteDrId" + id + "' class='deletedr btn btn-danger' data-toggle='modal' data-target='#deletedrmodal'><i class='fa fa-trash'></i> Eliminar</button></td></tr>";
   $("#tbDoctors").append(html);
 }
 
@@ -417,6 +493,88 @@ function eliminarCapListener() {
       deleteCap(idCap);
     });
   });
+}
+
+function gotoModDr(){
+  $('#modCapDiv').hide();
+  $('#addCap').hide();
+  $("#capList").hide();
+  $("#modDoctor").show();
+  $("#pageCAPS").hide();
+}
+
+function modDrListener(){
+  let idDr;
+  console.log('entramoddrrr');
+  $(".modDr").click(function(event) {
+    console.log('entra click');
+
+    idDr = this.id;
+    idDr = idDr.replace("modDr", "");
+    //obtenció de les dades del doctor
+    $.ajax({
+      url: "../backend/selects/getDoctors.php",
+      type: "GET",
+      cache: false,
+      success: function(response) {
+        console.log(response);
+        let myJSON = JSON.parse(response);
+        for (let i = 0; i < myJSON.length; i++) {
+          if (myJSON[i].id == idDr) {
+            $("#modIdDr").val(myJSON[i].id);
+            $("#modNameDr").val(myJSON[i].name);
+            $("#modSurnameDr").val(myJSON[i].surname);
+            $("#modGenereDr").val(myJSON[i].gender);
+            let especialitzacio = $("#modespecialitzacions").val();
+            //obtenció de la especialitzacio
+            especialitzacio = especialitzacio.split('(Id:').pop().split(')')[0];
+          }
+        }
+        mostrarEspecialitzacions();
+
+        gotoModDr();
+        $("#modDoctorBtn").click(function(event) {
+          let name = $("#modNameDr").val();
+          let surname = $("#modSurnameDr").val();
+          let gender = $("#modGenereDr").val();
+          let especialitzacio = $("#modespecialitzacions").val();
+          let idCap= $("#cid").html();
+          modificarDr(idDr, name, surname, gender, especialitzacio, idCap);
+        });
+
+      },
+      error: function() {
+        console.log('No hi han Doctors');
+      }
+    });
+    $("#deleteDrDef").click(function(event) {
+      deleteDr(idDr);
+    });
+  });
+}
+
+function modificarDr(id, name, surname, gender, especialitzacio, idcap){
+    $.ajax({
+      url: "../backend/updates/doctors.php",
+      data: {
+        id:id,
+        sName: name,
+        sSurname: surname,
+        sGender: gender,
+        specialization_id: especialitzacio,
+        cap:idcap
+      },
+      type: "GET",
+      cache: false,
+      success: function(response) {
+        let myJSON = JSON.parse(response);
+        //reload users
+        mostrarCap();
+      },
+      error: function() {
+        alert("Error en la consulta");
+      }
+    });
 }
 
 function eliminarDrListener(){
@@ -441,7 +599,7 @@ function deleteDr(idDr){
     success: function(response) {
       var myJSON = JSON.parse(response);
       console.log("Success JSON" + myJSON.codigoError);
-
+      mostrarCap();
       if (parseInt(myJSON.codigoError) != 0) {
 
       }

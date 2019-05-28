@@ -242,7 +242,6 @@ include '..\backend\include.php';
           <a href="#" class="c-tabs-nav__link">Mutua</a>
           <a href="#" class="c-tabs-nav__link">Responsable</a>
           <a href="#" class="c-tabs-nav__link">STA</a>
-          <a href="#" class="c-tabs-nav__link">Trucades</a>
           <div class="c-tab-nav-marker"></div>
         </div>
         <!-- FICHA PERSONAL-->
@@ -481,11 +480,6 @@ include '..\backend\include.php';
             </div>
           </div>
         </div>
-        <!-- LLAMADAS -->
-        <div class="c-tab">
-          <div class="c-tab__content">
-          </div>
-        </div>
       </div>
     </section>
   </div>
@@ -496,10 +490,6 @@ include '..\backend\include.php';
       <div id="tabs" class="c-tabs">
         <div class="c-tabs-nav">
           <a href="#" class="c-tabs-nav__link is-active">Fitxa Personal</a>
-          <a href="#" class="c-tabs-nav__link">Mutua</a>
-          <a href="#" class="c-tabs-nav__link">Responsable</a>
-          <a href="#" class="c-tabs-nav__link">STA</a>
-          <a href="#" class="c-tabs-nav__link">Trucades</a>
           <div class="c-tab-nav-marker"></div>
         </div>
         <!-- FICHA PERSONAL-->
@@ -510,6 +500,10 @@ include '..\backend\include.php';
                 <div class="content">
                   <div class="direccion">
                     <h1 class="heading"> Dades</h1>
+                    <div class="info">
+                      <input id="modId" type="hidden" class="form-control" name="id" disabled/>
+                      <p></p>
+                    </div>
                     <div class="info">
                       <p class="sub-heading">DNI</p>
                       <input id="moddninie" type="text" class="form-control" name="dni" disabled/>
@@ -743,11 +737,6 @@ include '..\backend\include.php';
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-        <!-- LLAMADAS -->
-        <div class="c-tab">
-          <div class="c-tab__content">
           </div>
         </div>
       </div>

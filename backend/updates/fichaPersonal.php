@@ -1,6 +1,6 @@
 <?php
-
   include ("../inc/usarBD.php");
+
   $id = $_GET["id"];
   $sName = $_GET["sName"];
   $sSurname = $_GET["sSurname"];
@@ -19,8 +19,10 @@
   $sWorkPhone = $_GET["sWorkPhone"];
 
 
+  $consulta="UPDATE personal_card SET name='".$sName."', surname='".$sSurname."', gender='".$sGender."', language=".$iLanguage.", sign_language=".$iSignLanguage.", birthdate='".$sBirthDate."', province=".$iProvince.", comarca=".$iComarca.", municipality=".$iMunicipality.", address='".$sAddress."', type_house='".$sTypeHouse."', ownership=".$iOwnership.", phone='".$sPhone."', mobile_phone='".$sMobilePhone."', work_phone='".$sWorkPhone."' WHERE id=".$id;
 
-  $consulta="UPDATE personal_card SET name='".$sName."', surname='".$sSurname."', gender='".$sGender."', language='".$iLanguage."', sign_language='".$iSignLanguage."', birthdate='".$sBirthDate."', province='".$iProvince."', comarca='".$iComarca."', municipality='".$iMunicipality."', address='".$sAddress."', type_house='".$sTypeHouse."', ownership='".$iOwnership."', phone='".$sPhone."', mobile_phone='".$sMobilePhone."', work_phone='".$sWorkPhone."' WHERE id=".$id;
+  echo $consulta;
+
   $hacerConsulta=mysqli_query($conexion, $consulta);
 
   $sJSON = "[{";

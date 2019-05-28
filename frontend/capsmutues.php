@@ -109,12 +109,12 @@
             <input id="addHorari" type="text" class="form-control" name="horari_cap"/>
           </div>
         </div><br>
-        <button id="addCapBtn" type="button" class="btn btn-primary">Afegir CAP</button>
+        <button id="addCapBtn" type="button" class="btn btn-primary marginTop"> Afegir CAP</button><br>
       </div>
 
       <!--Formulario Añadir Doctores -->
       <div id="addDoctor" class="container_add">
-        <button id="returnDoctor" type="button" class="btn btn-primary"><i class="fa fa-reply"></i> Tornar enrere</button>
+        <button id="returnDoctor" type="button" class="btn btn-primary marginTop"><i class="fa fa-reply"></i> Tornar enrere</button>
         <br>
         <br>
         <div class="row">
@@ -134,16 +134,60 @@
             <input id="addGenereDr" type="text" class="form-control" name="genere"/>
           </div>
           <div class="col lg-6">
-            <label for="especialització">Especialització</label>
+            <label for="especialitzacions">Especialització</label>
             <select id="especialitzacions" style="width: 100%;" >
             </select>
           </div>
         </div>
-        <button id="addDoctorBtn" type="button" class="btn btn-primary">Afegir Doctor</button>
+        <button id="addDoctorBtn" type="button" class="btn btn-primary marginTop">Afegir Doctor</button>
       </div>
+
+      <!--Formulario Modificar Doctores -->
+      <div id="modDoctor" class="container_add">
+        <button id="returnDoctor" type="button" class="btn btn-primary marginTop"><i class="fa fa-reply"></i> Tornar enrere</button>
+        <br>
+        <br>
+        <div class="row">
+          <div class="col-lg-6">
+            <label for="nom_cap">Id doctor/a</label>
+            <input id="modIdDr" type="text" class="form-control" name="id_doctor" disabled/>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-6">
+            <label for="modNameDr">Nom del doctor/a</label>
+            <input id="modNameDr" type="text" class="form-control" name="nom_doctor"/>
+          </div>
+          <div class="col lg-6">
+            <label for="modSurnameDr">Cognoms del doctor/a</label>
+            <input id="modSurnameDr" type="text" class="form-control" name="cognoms_doctor"/>
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="col-lg-6">
+            <label for="modGenereDr">Gènere</label>
+            <input id="modGenereDr" type="text" class="form-control" name="genere"/>
+          </div>
+          <div class="col lg-6">
+            <label for="modespecialitzacions">Especialització</label>
+            <select id="modespecialitzacions" style="width: 100%;" >
+            </select>
+          </div>
+        </div>
+        <button id="modDoctorBtn" type="button" class="btn btn-primary marginTop">Modificar Doctor</button>
+      </div>
+
+
+
+
+
+
+
       <div id="tableCaps">
         <br/>
-        <button id="showFormCAP" type="button" class="btn btn-primary"><i class="fa fa-plus"></i>Afegir CAP</button>
+        <button id="showFormCAP" type="button" class="btn btn-primary marginTop"><i class="fa fa-plus"></i> Afegir CAP</button>
+
         <table id="dtCap" class="table table-striped table-bordered" cellspacing="0" width="100%">
           <thead>
             <tr>
@@ -171,7 +215,7 @@
   </div>
   <div id="pageCAPS">
     <section id="page">
-      <button id="returnCAP2" type="button" class="btn btn-primary"><i class="fa fa-reply"></i> Tornar enrere</button>
+      <button id="returnCAP2" type="button" class="btn btn-primary marginTop"><i class="fa fa-reply"></i> Tornar enrere</button>
       <div id="tabs" class="c-tabs">
         <div class="c-tabs-nav">
           <a href="#" class="c-tabs-nav__link is-active">Info CAP</a>
@@ -179,7 +223,7 @@
           <div class="c-tab-nav-marker"></div>
         </div>
         <!-- CAPS -->
-        <div class="c-tab">
+        <div class="c-tab is-active">
           <div class="c-tab__content">
             <div class="container_caps">
               <div class="content3">
@@ -221,7 +265,7 @@
             <div class="container_doctors">
               <div class="content3">
                 <div id="tableDoctors">
-                  <button id="showFormDoctor" type="button" class="btn btn-primary"><i class="fa fa-plus"></i>Afegir Doctor</button>
+                  <button id="showFormDoctor" type="button" class="btn btn-primary marginTop"><i class="fa fa-plus"></i> Afegir Doctor</button>
                   <table id="dtDoctor" class="table table-striped table-bordered" cellspacing="0" width="100%">
                     <thead>
                       <tr>
