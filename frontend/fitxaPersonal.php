@@ -73,6 +73,8 @@ include '..\backend\include.php';
       </ul>
     </div>
   </nav>
+  <div id="loader" class="loader">Loading...</div>
+  <div id="loaddiv" class="hidden">
   <div class="container">
     <div id="addFp" class="form">
       <button id="returnPF" type="button" class="btn btn-primary marginTop"><i class="fa fa-reply"></i> Tornar enrere</button>
@@ -762,7 +764,7 @@ include '..\backend\include.php';
       </div>
     </div>
   </div>
-
+</div>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>

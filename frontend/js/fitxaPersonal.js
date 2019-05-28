@@ -156,6 +156,8 @@ function showTable() {
       }
       $('#dtFitxaPersonal').DataTable();
       eliminarCardListener();
+      $('#loaddiv').removeClass('hidden');
+      $('#loader').hide();
     },
     error: function() {
       console.log('No hi han clients');
