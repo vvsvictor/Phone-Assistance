@@ -134,13 +134,56 @@
             <input id="addGenereDr" type="text" class="form-control" name="genere"/>
           </div>
           <div class="col lg-6">
-            <label for="especialització">Especialització</label>
+            <label for="especialitzacions">Especialització</label>
             <select id="especialitzacions" style="width: 100%;" >
             </select>
           </div>
         </div>
         <button id="addDoctorBtn" type="button" class="btn btn-primary marginTop">Afegir Doctor</button>
       </div>
+
+      <!--Formulario Modificar Doctores -->
+      <div id="modDoctor" class="container_add">
+        <button id="returnDoctor" type="button" class="btn btn-primary marginTop"><i class="fa fa-reply"></i> Tornar enrere</button>
+        <br>
+        <br>
+        <div class="row">
+          <div class="col-lg-6">
+            <label for="nom_cap">Id doctor/a</label>
+            <input id="modIdDr" type="text" class="form-control" name="id_doctor" disabled/>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-6">
+            <label for="modNameDr">Nom del doctor/a</label>
+            <input id="modNameDr" type="text" class="form-control" name="nom_doctor"/>
+          </div>
+          <div class="col lg-6">
+            <label for="modSurnameDr">Cognoms del doctor/a</label>
+            <input id="modSurnameDr" type="text" class="form-control" name="cognoms_doctor"/>
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="col-lg-6">
+            <label for="modGenereDr">Gènere</label>
+            <input id="modGenereDr" type="text" class="form-control" name="genere"/>
+          </div>
+          <div class="col lg-6">
+            <label for="modespecialitzacions">Especialització</label>
+            <select id="modespecialitzacions" style="width: 100%;" >
+            </select>
+          </div>
+        </div>
+        <button id="modDoctorBtn" type="button" class="btn btn-primary marginTop">Modificar Doctor</button>
+      </div>
+
+
+
+
+
+
+
       <div id="tableCaps">
         <br/>
         <button id="showFormCAP" type="button" class="btn btn-primary marginTop"><i class="fa fa-plus"></i> Afegir CAP</button>
