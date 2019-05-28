@@ -206,6 +206,7 @@ include '..\backend\include.php';
       </div>
     </div>
     <div id="tableFitxaPersonal">
+      <br/>
       <button id="showFormPF" type="button" class="btn btn-primary marginTop"><i class="fas fa-plus"></i> Afegir</button>
       <table id="dtFitxaPersonal" class="table table-striped table-bordered" cellspacing="0" width="100%">
         <thead>

@@ -67,6 +67,7 @@ include '..\backend\includeAdmin.php';
       </div>
     </nav>
     <div class="container" id="usersList">
+      <br/>
       <button id="showFormBtn" type="button" class="btn btn-primary marginTop"><i class="fas fa-plus"></i> Afegir</button>
       <table id="dtUsuaris" class="table table-striped table-bordered" cellspacing="0" width="100%">
         <thead>
