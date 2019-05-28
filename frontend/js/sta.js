@@ -103,6 +103,12 @@ $(document).ready(function () {
 
 });
   */
+  function goToResp() {
+    $("#pageResponsable").show();
+    $("#addSTA").hide();
+    $("#addResponsible").hide();
+  }
+  
   function showDni() {
     $.ajax({
       url: "../backend/selects/getFitxaPersonal.php",
@@ -283,15 +289,13 @@ function showResponsible(id,user_dninif,priority,name,surname){
   $("#responsibleTable").append(html);
 
   $(".sta").click(function() {
-    console.log("aqui1");
     mostrarCardListener($(this).attr('id'));
-    console.log("aqui");
   });
 }
 
 function mostrarCardListener(id) {
     let idbtn = id;
-    idbtn = idbtn.replace("Responsable", "");
+    idbtn = idbtn.replace("sta", "");
     console.log("ID "+idbtn);
     $.ajax({
       url: "../backend/selects/getResponsible.php",
@@ -299,17 +303,42 @@ function mostrarCardListener(id) {
       cache: false,
       success: function(response) {
         let myJSON = JSON.parse(response);
+        $("#resNom").html("");
+        $("#resCognom").html("");
+        $("#resCarrer").html("");
+        $("#resCodiPostal").html("");
+        $("#resTel").html("");
+        $("#resHorari").html("");
+        $("#resData").html("");
+        $("#resPrioritat").html("");
+        $("#resRao").html("");
         for (let i = 0; i < myJSON.length; i++) {
+                      console.log("aqui");
+                      console.log(myJSON[i].id);
+                      console.log(idbtn);
           if (idbtn == myJSON[i].id) {
-            $("#resNom").html(myJSON[i].name);
-            $("#resCognom").html(myJSON[i].surname);
-            $("#resCarrer").html(myJSON[i].address);
-            $("#resCodiPostal").html(myJSON[i].post_code);
-            $("#resTel").html(myJSON[i].contact_phone);
-            $("#resHorari").html(myJSON[i].preferable_hour);
-            $("#resData").html(myJSON[i].date_responsible);
-            $("#resPrioritat").html(myJSON[i].priority);
-            $("#resRao").html(myJSON[i].reason);
+                        console.log("aqui2");
+            let id = myJSON[i].id;
+            let name = myJSON[i].name;
+            let surname = myJSON[i].surname;
+            let address = myJSON[i].address;
+            let post_code = myJSON[i].post_code;
+            let contact_phone = myJSON[i].contact_phone;
+            let preferable_hour = myJSON[i].preferable_hour;
+            let data_responsible = myJSON[i].date_responsible;
+            data_responsible = data_responsible.replace(/-/g, "/");
+            let priority = myJSON[i].priority;
+            let reason = myJSON[i].reason;
+            $("#resNom").html(name);
+            $("#resCognom").html(surname);
+            $("#resCarrer").html(address);
+            $("#resCodiPostal").html(post_code);
+            $("#resTel").html(contact_phone);
+            $("#resHorari").html(preferable_hour);
+            $("#resData").html(data_responsible);
+            $("#resPrioritat").html(priority);
+            $("#resRao").html(reason);
+            goToResp();
           }
         }
       },
