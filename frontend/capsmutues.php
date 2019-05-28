@@ -109,7 +109,7 @@
             <input id="addHorari" type="text" class="form-control" name="horari_cap"/>
           </div>
         </div><br>
-        <button id="addCapBtn" type="button" class="btn btn-primary">Afegir CAP</button>
+        <button id="addCapBtn" type="button" class="btn btn-primary marginTop"> Afegir CAP</button><br>
       </div>
 
       <!--Formulario Añadir Doctores -->
@@ -143,7 +143,8 @@
       </div>
       <div id="tableCaps">
         <br/>
-        <button id="showFormCAP" type="button" class="btn btn-primary"><i class="fa fa-plus"></i>Afegir CAP</button>
+        <button id="showFormCAP" type="button" class="btn btn-primary marginTop"><i class="fa fa-plus"></i> Afegir CAP</button>
+
         <table id="dtCap" class="table table-striped table-bordered" cellspacing="0" width="100%">
           <thead>
             <tr>
@@ -179,7 +180,7 @@
           <div class="c-tab-nav-marker"></div>
         </div>
         <!-- CAPS -->
-        <div class="c-tab">
+        <div class="c-tab is-active">
           <div class="c-tab__content">
             <div class="container_caps">
               <div class="content3">
