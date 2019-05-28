@@ -517,14 +517,12 @@ function showFitxaPersonal(id, name, surname, dninie, province) {
 function mostrarCardListener(id) {
     let idbtn = id;
     idbtn = idbtn.replace("fitxaPersonal", "");
-    console.log("ID "+idbtn);
     $.ajax({
       url: "../backend/selects/getFitxaPersonal.php",
       type: "GET",
       cache: false,
       success: function(response) {
         let myJSON = JSON.parse(response);
-        console.log(response);
         $("#fpname").html("");
         $("#fpsurname").html("");
         $("#fpdninie").html("");
@@ -541,7 +539,6 @@ function mostrarCardListener(id) {
         $("#fpwork_phone").html("");
         for (var i = 0; i < myJSON.length; i++) {
           if (idbtn == myJSON[i].id) {
-            let id = myJSON[i].id;
             let name = myJSON[i].name;
             let surname = myJSON[i].surname;
             let dninie = myJSON[i].dninie;
@@ -729,95 +726,42 @@ function mostrarCardListener(id) {
       }
     });
 }
-/*
+
 function modCardListener() {
-  //Falta enlazarlo al boton modificar
-    let idUser = this.id;
     $.ajax({
-      url: "../backend/selects/getFitxaPersonal.php",
+      url: "../backend/updates/fichaPersonal.php",
+      data:{
+        sDninie: $("#moddninie").val(),
+        sName: $("#modNom").val(),
+        sSurname: $("#modCognom").val(),
+        sGender: "Home",//$("#modgenere").val(),
+        iLanguage: 0, //$("#1").val(),
+        iSignLanguage: 0, //$("#").val(),
+        sBirthDate: $("#modDataNaixement").val(),
+        iProvince: $("#modprovince").val(),
+        iComarca: $("#modComarcas").val(),
+        iMunicipality: $("#modMunicipios").val(),
+        sAddress: $("#modAdreca").val(),
+        sTypeHouse: $("#modtype_house").val(),
+        iOwnership: $("#modownership").val(),
+        sPhone: $("#modTel_fijo").val(),
+        sMobilePhone: $("#modMovil").val(),
+        sWorkPhone: "" //$("#modTelTreball").val()
+      },
       type: "GET",
       cache: false,
       success: function(response) {
+        console.log("Response1 "+ response);
         let myJSON = JSON.parse(response);
-        for (let i = 0; i < myJSON.length; i++) {
-          if ($('#fpdninie').val() == myJSON[i].dninie) {
-            let id = myJSON[i].id;
-            let name = myJSON[i].name;
-            let surname = myJSON[i].surname;
-            let dninie = myJSON[i].dninie;
-            let gender = myJSON[i].gender;
-            let birthdate = myJSON[i].birthdate;
-            let province = myJSON[i].province;
-            let comarca = myJSON[i].comarca;
-            let municipality = myJSON[i].municipality;
-            let address = myJSON[i].address;
-            let phone = myJSON[i].phone;
-            let mobile_phone = myJSON[i].mobile_phone;
-            let work_phone = myJSON[i].work_phone;
-            let language_name = myJSON[i].language;
-            let signlanguage_name = myJSON[i].sign_language;
-            $("#modname").html(name);
-            $("#modsurname").html(surname);
-            $("#modgenere").html(gender);
-            //$("#modbirthdate").html(birthdate);
-            //$("#modidioma").html(language_name);
-            //$("#modidioma_s").html(signlanguage_name);
-            $("#modprovince").html(province);
-            $("#modcomarca").html(comarca);
-            $("#modmunicipality").html(municipality);
-            $("#modaddress").html(address);
-            $("#modphone").html(phone);
-            $("#modmobile_phone").html(mobile_phone);
-            $("#modwork_phone").html(mobile_phone);
-            goToModFP()
-          }
-            ///Botó tornar enrrere no echo.
-            $("#showListBtnMod").click(function() {
-              goToUsersList();
-            });
-            //Click al botó modificar usuari
-            $("#modUserBtn").click(function() {
-              $.ajax({
-                url: "../backend/updates/fitxaPersonal.php",
-                data: {
-                  id: id,
-                  sName: $('#modNom').val(),
-                  sSurname: $('#modCognom').val(),
-                  sGender: $('#modgenere').val(),
-                  //iLanguage: $('#modUsername').val(),
-                  //iSignLanguage: $('#modUsername').val(),
-                  sBirthDate: $('#modDataNaixement').val(),
-                  iProvince: $('#modUsername').val(),
-                  iComarca: $('#modUsername').val(),
-                  iMunicipality: $('#modUsername').val(),
-                  sAddress: $('#modAdreca').val(),
-                  //sTypeHouse $('#modUsername').val(),
-                  //iOwnership $('#modUsername').val(),
-                  sPhone: $('#modTel_fijo').val(),
-                  sMobilePhone: $('#modMovil').val(),
-                  sWorkPhone: $('#addTelTreball').val()
-                },
-                type: "GET",
-                cache: false,
-                success: function(response) {
-                  let myJSON = JSON.parse(response);
-                  //reload users
-                  showTable();
-                  goToUsersList();
-                },
-                error: function() {
-                  alert("Error en la consulta");
-                }
-              });
-            });
-          }
+        console.log("Response2" + response);
+        goToFp();
       },
       error: function() {
-        console.log('No hi han clients');
+        console.log('Error al actualitzar les dades');
       }
     });
 }
-*/
+
 function eliminarCardListener() {
   let idCard;
   $(".deletecard").click(function(event) {
