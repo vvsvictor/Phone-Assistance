@@ -132,8 +132,17 @@ $(document).ready(function () {
 
 
 function showResponsible(id,user_dninif,priority,name,surname){
-  let html="<tr><td>"+id+"</td><td>"+user_dninif+"</td><td>"+priority+"</td><td>"+name+"</td><td>"+surname+"</td><td><button id='sta"+id+"' type='button' class='sta btn btn-info'>Fitxa Completa</button><button type='button' id='deleteResponsibleId" + id + "' class='deleteResponsible btn btn-danger' data-toggle='modal' data-target='#deleteResponsiblemodal'>Eliminar</button></td></tr>";
-  $("#fitxaTable").append(html);
+  let html="<tr><td>"+id+"</td><td>"+user_dninif+"</td><td>"+priority+"</td><td>"+name+"</td><td>"+surname+"</td><td><button id='responsible"+id+"' type='button' class='responsible btn btn-info'>Fitxa Completa</button><button type='button' id='deleteResponsibleId" + id + "' class='deleteResponsible btn btn-danger' data-toggle='modal' data-target='#deleteResponsiblemodal'>Eliminar</button></td></tr>";
+  $("#responsibleTable").append(html);
+
+  $(".responsible").click(function() {
+    mostrarCardListener();
+  });
+}
+
+function showSta(id){
+  let html="<tr><td>"+id+"</td><td>"++"</td><td>"++"</td><td>"++"</td><td>"+surname+"</td><td><button id='sta"+id+"' type='button' class='sta btn btn-info'>Fitxa Completa</button><button type='button' id='deleteResponsibleId" + id + "' class='deleteResponsible btn btn-danger' data-toggle='modal' data-target='#deleteResponsiblemodal'>Eliminar</button></td></tr>";
+  $("#staTable").append(html);
 
   $(".sta").click(function() {
     mostrarCardListener();
@@ -142,7 +151,7 @@ function showResponsible(id,user_dninif,priority,name,surname){
 
 function mostrarCardListener() {
     let idbtn = this.id;
-    idbtn = idbtn.replace("fitxaPersonal", "");
+    idbtn = idbtn.replace("responsible", "");
     console.log("ID "+idbtn);
     $.ajax({
       url: "../backend/selects/getResponsible.php",
@@ -216,6 +225,46 @@ function mostrarCardListener() {
       });
   }
 
+function addSTA() {
+}
+
+function addResponsible() {
+}
+
+function eliminarStaListener() {
+  let idSta;
+  $(".deleteSta").click(function(event) {
+    idSta = this.id;
+    idSta = idSta.replace("deleteStaId", "");
+    console.log("The id sta is: " + idSta);
+    $("#deleteStaDef").click(function(event) {
+      console.log("The Button sta is: " + idSta);
+      deleteSta(idSta);
+    });
+  });
+}
+
+function deleteSta(idSta){
+  console.log("The id2 Sta is: " + idSta);
+  $.ajax({
+    url: "../backend/delete/deleteSta.php",
+    data: {
+      id: idSta
+    },
+    type: "GET",
+    cache: false,
+    success: function(response) {
+      var myJSON = JSON.parse(response);
+      if (parseInt(myJSON.codigoError) != 0) {
+        showTableSta();
+      }
+    },
+    error: function() {
+      alert("Error en la consulta");
+    }
+  });
+}
+
 function eliminarResponsibleListener() {
   let idResponsible;
   $(".deleteResponsible").click(function(event) {
@@ -241,7 +290,7 @@ function deleteResponsible(idResponsible){
     success: function(response) {
       var myJSON = JSON.parse(response);
       if (parseInt(myJSON.codigoError) != 0) {
-        showTable();
+        showTableResponsible();
       }
     },
     error: function() {
