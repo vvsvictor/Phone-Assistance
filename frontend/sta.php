@@ -237,7 +237,7 @@
           <div class="c-tab-nav-marker"></div>
         </div>
         <!--Informació bàsica-->
-        <div class="c-tab">
+        <div class="c-tab is-active">
           <div class="c-tab__content">
             <div class="container_sta">
               <div class="content3">
@@ -280,12 +280,19 @@
                   <div class="info">
                     <p class="sub-heading">Situació actual</p>
                     <p id="staActualS" class="duration"></p>
+                    <div id="staActualSModDiv">
+                      <select id="staActualSMod" style="width: 100%;" >
+                      </select>
+                    </div>
 
                     <p></p>
                   </div>
                   <div class="info">
                     <p class="sub-heading">Data de contractació</p>
                     <p id="staHDate" class="duration"></p>
+                    <div id="staHDateModDiv">
+                      <input id="staHDateMod" value="" class="datePickerKendo" title="datepicker" style="width: 100%" />
+                    </div>
                     <p></p>
                   </div>
                   <div class="info">
@@ -340,10 +347,9 @@
                   <thead>
                     <tr>
                       <th class="th-sm">Id</th>
-                      <th class="th-sm">DNI</th>
-                      <th class="th-sm">Prioritat</th>
                       <th class="th-sm">Nom</th>
                       <th class="th-sm">Cognom</th>
+                      <th class="th-sm">Prioritat</th>
                       <th class="th-sm"></th>
                     </tr>
                   </thead>
@@ -351,10 +357,9 @@
                   <tfoot>
                     <tr>
                       <th>Id</th>
-                      <th>DNI</th>
-                      <th>Prioritat</th>
                       <th>Nom</th>
                       <th>Cognom</th>
+                      <th>Prioritat</th>
                       <th></th>
                     </tr>
                   </tfoot>

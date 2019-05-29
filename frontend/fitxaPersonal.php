@@ -243,7 +243,6 @@ include '..\backend\include.php';
           <a href="#" class="c-tabs-nav__link is-active">Fitxa Personal</a>
           <a href="#" class="c-tabs-nav__link">Mutua</a>
           <a href="#" class="c-tabs-nav__link">Responsable</a>
-          <a href="#" class="c-tabs-nav__link">STA</a>
           <div class="c-tab-nav-marker"></div>
         </div>
         <!-- FICHA PERSONAL-->
@@ -428,53 +427,6 @@ include '..\backend\include.php';
                   <h1 class="heading">Raó</h1>
                   <div class="info">
                     <p id="resRao" class="duration">Familiar de primer grau</p>
-                    <p></p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- STA -->
-        <div class="c-tab">
-          <div class="c-tab__content">
-            <div class="container_sta">
-              <div class="content3">
-                <div class="contacto">
-                  <h1 class="heading">Serveis Contractats</h1>
-                  <div class="info">
-                    <p class="sub-heading">Telèfon Fixe</p>
-                    <input id="tf_service" type="checkbox" class="notifications-switch" aria-label="Notifications Switch" checked="unchecked" disabled/>
-                    <p></p>
-                  </div>
-                  <div class="info">
-                    <p class="sub-heading">Terminal de Control Remot</p>
-                    <input id="tcr_service" type="checkbox" class="notifications-switch" aria-label="Notifications Switch" disabled/>
-                    <p></p>
-                  </div>
-                  <div class="info">
-                    <p class="sub-heading">Custòdia de Claus</p>
-                    <input id="cc_service" type="checkbox" class="notifications-switch" aria-label="Notifications Switch" checked="checked" disabled/>
-                    <p></p>
-                  </div>
-                  <div class="info">
-                    <p class="sub-heading">Terminal Mòbil</p>
-                    <input id="tm_service" type="checkbox" class="notifications-switch" aria-label="Notifications Switch" checked="checked" disabled/>
-                    <p></p>
-                  </div>
-                  <div class="info">
-                    <p class="sub-heading">Teleassistència Mòbil</p>
-                    <input id="tam_service" type="checkbox" class="notifications-switch" aria-label="Notifications Switch" checked="checked" disabled/>
-                    <p></p>
-                  </div>
-                  <div class="info">
-                    <p class="sub-heading">GPS</p>
-                    <input id="gps_service" type="checkbox" class="notifications-switch" aria-label="Notifications Switch" checked="checked" disabled/>
-                    <p></p>
-                  </div>
-                  <div class="info">
-                    <p class="sub-heading">UMT</p>
-                    <input id="umt_service" type="checkbox" class="notifications-switch" aria-label="Notifications Switch" checked="checked" disabled/>
                     <p></p>
                   </div>
                 </div>
@@ -687,53 +639,6 @@ include '..\backend\include.php';
                   <h1 class="heading">Raó</h1>
                   <div class="info">
                     <p id="resRao" class="duration">Familiar de primer grau</p>
-                    <p></p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- STA -->
-        <div class="c-tab">
-          <div class="c-tab__content">
-            <div class="container_sta">
-              <div class="content3">
-                <div class="contacto">
-                  <h1 class="heading">Serveis Contractats</h1>
-                  <div class="info">
-                    <p class="sub-heading">Telèfon Fixe</p>
-                    <input id="tf_service" type="checkbox" class="notifications-switch" aria-label="Notifications Switch" checked="unchecked" disabled/>
-                    <p></p>
-                  </div>
-                  <div class="info">
-                    <p class="sub-heading">Terminal de Control Remot</p>
-                    <input id="tcr_service" type="checkbox" class="notifications-switch" aria-label="Notifications Switch" disabled/>
-                    <p></p>
-                  </div>
-                  <div class="info">
-                    <p class="sub-heading">Custòdia de Claus</p>
-                    <input id="cc_service" type="checkbox" class="notifications-switch" aria-label="Notifications Switch" checked="checked" disabled/>
-                    <p></p>
-                  </div>
-                  <div class="info">
-                    <p class="sub-heading">Terminal Mòbil</p>
-                    <input id="tm_service" type="checkbox" class="notifications-switch" aria-label="Notifications Switch" checked="checked" disabled/>
-                    <p></p>
-                  </div>
-                  <div class="info">
-                    <p class="sub-heading">Teleassistència Mòbil</p>
-                    <input id="tam_service" type="checkbox" class="notifications-switch" aria-label="Notifications Switch" checked="checked" disabled/>
-                    <p></p>
-                  </div>
-                  <div class="info">
-                    <p class="sub-heading">GPS</p>
-                    <input id="gps_service" type="checkbox" class="notifications-switch" aria-label="Notifications Switch" checked="checked" disabled/>
-                    <p></p>
-                  </div>
-                  <div class="info">
-                    <p class="sub-heading">UMT</p>
-                    <input id="umt_service" type="checkbox" class="notifications-switch" aria-label="Notifications Switch" checked="checked" disabled/>
                     <p></p>
                   </div>
                 </div>

@@ -59,7 +59,7 @@ $(document).ready(function() {
 
 });
 
-let switchload = false;
+
 
 function Tabs(options) {
 
@@ -627,96 +627,6 @@ function mostrarCardListener(id) {
                 for (let i = 0; i < myJSON.length; i++) {
                   if (myJSON[i].user_dninif==dninie) {
                     $("#fpmutua").html(myJSON[i].insurance_name);
-                  }
-                }
-              },
-              error: function() {
-                console.log('No hi ha responsable');
-              }
-            });
-            $.ajax({
-              url: "../backend/selects/getSta.php",
-              type: "GET",
-              cache: false,
-              success: function(response) {
-                let myJSON = JSON.parse(response);
-                for (let i = 0; i < myJSON.length; i++) {
-                  if (myJSON[i].user_dninif==dninie && switchload==false) {
-                    switchload=true;
-                    if (myJSON[i].tf_service==1) {
-                      $("#tf_service").kendoSwitch({
-                        checked: true
-                      });
-                    }else{
-                      $("#tf_service").kendoSwitch({
-                        checked: false
-                      });
-                    }
-
-
-                    if (myJSON[i].tcr_service==1) {
-                      $("#tcr_service").kendoSwitch({
-                        checked: true
-                      });
-                    }else{
-                      $("#tcr_service").kendoSwitch({
-                        checked: false
-                      });
-                    }
-
-
-                    if (myJSON[i].cc_service==1) {
-                      $("#cc_service").kendoSwitch({
-                        checked: true
-                      });
-                    }else{
-                      $("#cc_service").kendoSwitch({
-                        checked: false
-                      });
-                    }
-
-
-                    if (myJSON[i].tm_service==1) {
-                      $("#tm_service").kendoSwitch({
-                        checked: true
-                      });
-                    }else{
-                      $("#tm_service").kendoSwitch({
-                        checked: false
-                      });
-                    }
-
-
-                    if (myJSON[i].tam_service==1) {
-                      $("#tam_service").kendoSwitch({
-                        checked: true
-                      });
-                    }else{
-                      $("#tam_service").kendoSwitch({
-                        checked: false
-                      });
-                    }
-
-
-                    if (myJSON[i].gps_service==1) {
-                      $("#gps_service").kendoSwitch({
-                        checked: true
-                      });
-                    }else{
-                      $("#gps_service").kendoSwitch({
-                        checked: false
-                      });
-                    }
-
-                    if (myJSON[i].umt_service==1) {
-                      $("#umt_service").kendoSwitch({
-                        checked: true
-                      });
-                    }else{
-                      $("#umt_service").kendoSwitch({
-                        checked: false
-                      });
-                    }
                   }
                 }
               },

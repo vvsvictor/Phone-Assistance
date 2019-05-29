@@ -27,7 +27,20 @@ $(document).ready(function () {
   $("#serveigps").kendoSwitch();
   $("#serveiumt").kendoSwitch();
   });
+
   $("#addSituacio").kendoDropDownList();
+  $("#staActualSMod").kendoDropDownList({
+    dataSource: [
+      { id: "Alta", name: "Alta" },
+      { id: "Baixa Temporal", name: "Baixa Temporal" },
+      { id: "Baixa Definitiva", name: "Baixa Definitiva" }
+    ],
+    dataTextField: "name",
+    dataValueField: "id"
+  });
+
+  $("#dropdownlist").kendoDropDownList();
+
   $("#showFormResponsible").click(function() {
     goToAddResponsible();
   });
@@ -151,7 +164,7 @@ m.init();
           console.log(myJSON);
           //Clean FP
           $("#fpid").html('');
-          $("#fpdni").html('');
+          $("#fpDNI").html('');
           $("#fpnom").html('');
           $("#fpcognom").html('');
           for (var i = 0; i < myJSON.length; i++) {
@@ -159,7 +172,7 @@ m.init();
               console.log('entra fp'+ idFP);
               $("#fpid").html(idFP);
               dniSelected = myJSON[i].dninie;
-              $("#fpdni").html(myJSON[i].dninie);
+              $("#fpDNI").html(myJSON[i].dninie);
               $("#fpnom").html(myJSON[i].name);
               $("#fpcognom").html(myJSON[i].surname);
             }
@@ -179,8 +192,16 @@ m.init();
               let myJSON = JSON.parse(response);
               for (let i = 0; i < myJSON.length; i++) {
                 if (myJSON[i].user_dninif==dniSelected ) {
-                  $('#staActualS').html(myJSON[i].actual_situation)
-                  $('#staHDate').html(myJSON[i].hiring_date)
+                  $('#staActualS').html(myJSON[i].actual_situation);
+                  if (myJSON[i].actual_situation=="Alta") {
+                    $("#staActualSMod").data("kendoDropDownList").select(0);
+                  }else if (myJSON[i].actual_situation=="Baixa Temporal") {
+                    $("#staActualSMod").data("kendoDropDownList").select(1);
+                  }else{
+                    $("#staActualSMod").data("kendoDropDownList").select(2);
+                  }
+                  $('#staHDate').html(myJSON[i].hiring_date);
+                  $('#staHDateMod').val(myJSON[i].hiring_date);
 
                   if (myJSON[i].tf_service==1) {
                     $("#tf_service").data("kendoSwitch").check(true);
@@ -234,7 +255,31 @@ m.init();
 
             },
             error: function() {
-              console.log('No hi ha responsable');
+              console.log('No hi ha STA');
+            }
+          });
+          //Ajax mostrar responsables
+          $.ajax({
+            url: "../backend/selects/getResponsible.php",
+            type: "GET",
+            cache: false,
+            success: function(response) {
+              $("#tbResponsible").html("");
+              let myJSON = JSON.parse(response);
+              for (let i = 0; i < myJSON.length; i++) {
+                if (myJSON[i].user_dninif==$("#fpDNI").html()) {
+                  let id = myJSON[i].id;
+                  let prioritat = myJSON[i].priority;
+                  let nom = myJSON[i].name;
+                  let cognom = myJSON[i].surname;
+                  showTableResponsibles(id, prioritat, nom, cognom);
+                }
+              }
+              $('#dtResponsible').DataTable();
+
+            },
+            error: function() {
+              console.log('No hi han Resposables');
             }
           });
         },
@@ -252,8 +297,16 @@ m.init();
     //Amagar botó guardar per defecte
     $('#saveSTA').hide();
     $('#modSTA').show();
+    $("#staHDateModDiv").hide();
+    $("#staActualSModDiv").hide();
+    $("#staHDate").show();
+    $("#staActualS").show();
     //Al click modificar mostrar guardar, amagar modificar
     $("#modSTA").click(function() {
+      $("#staHDateModDiv").show();
+      $("#staActualSModDiv").show();
+      $("#staHDate").hide();
+      $("#staActualS").hide();
       $('#modSTA').hide();
       $('#saveSTA').show();
       //funcio habilitar botons
@@ -304,12 +357,14 @@ m.init();
           umt = 0;
         }
         //AJAX Update dades
+        let actual_situation_mod;
+        let sActual_situation_mod;
         $.ajax({
           url: "../backend/updates/sta.php",
           data:{
-            sActual_situation: $("#staActualS").html(),
-            sHiring_date: $("#staHDate").html(),
-            sUser_dninif: $("#fpdni").html(),
+            sActual_situation: $("#staActualSMod").val(),
+            sHiring_date: $("#staHDateMod").val(),
+            sUser_dninif: $("#fpDNI").html(),
             iTf_service: tf,
             iTcr_service: tcr,
             iCc_service: cc,
@@ -322,6 +377,9 @@ m.init();
           cache: false,
           success: function(response) {
             let myJSON = JSON.parse(response);
+            //Mostrar les noves dades
+            $("#staActualS").html($("#staActualSMod").val())
+            $("#staHDate").html($("#staHDateMod").val())
             //tornar a amagar els camps
             disableSTASwitch();
             modSTAListener();
@@ -333,6 +391,11 @@ m.init();
 
       });
     });
+  }
+
+  function showTableResponsibles(id, prioritat, nom, cognom){
+    let html = "<tr><td>" + id + "</td><td>" + prioritat + "</td><td>" + nom + "</td><td>" + cognom + "</td><td><button id='responsibleId" + id + "' type='button' class='responsible btn btn-info marginBtn'>Fitxa Completa</button><button type='button' id='deleteCardId" + id + "' class='deletecard btn btn-danger marginBtn' data-toggle='modal' data-target='#deletecardmodal'>Eliminar</button></td></tr>";
+    $("#tbResponsible").append(html);
   }
 
   function enableSTASwitch(){
