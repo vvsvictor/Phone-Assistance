@@ -71,6 +71,8 @@
         </ul>
       </div>
     </nav>
+    <div id="loader" class="loader">Loading...</div>
+    <div id="loaddiv" class="hidden">
     <div class="container" id="callList">
       <button id="showFormBtn" type="button" class="btn btn-primary marginBtn">Afegir</button>
       <table id="dtHistocalls" class="table table-striped table-bordered" cellspacing="0" width="100%">
@@ -240,7 +242,8 @@
         </div>
       </div>
     </div>
-
+  </div>
+</div>
 
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>

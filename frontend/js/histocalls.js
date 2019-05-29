@@ -368,7 +368,11 @@ function showTable(){
         showHistoCall(id, dni, date, type);
       }
       $('#dtHistocalls').DataTable();
+      $('#loaddiv').removeClass('hidden');
+      $('#loader').hide();
       eliminarCallListener();
+
+
     },
     error: function() {
       console.log('No hi han trucades');
@@ -379,6 +383,7 @@ function showTable(){
 function showHistoCall(id, dni, date, type){
   let html="<tr><td>"+id+"</td><td>"+dni+"</td><td>"+date+"</td><td>"+type+"</td><td><button id='histoCall" + id + "' type='button' class='histoCall btn btn-info marginBtn'>Fitxa Completa</button><button type='button' id='deleteCallId" + id + "' class='deletecall btn btn-danger marginBtn' data-toggle='modal' data-target='#deletecallmodal'>Eliminar</button></td></tr>";
   $("#histoCallsTable").append(html);
+
 }
 
 

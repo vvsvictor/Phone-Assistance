@@ -139,7 +139,8 @@ function showTable() {
       $('#dtUsuaris').DataTable();
       modUserListener();
       eliminarUsuariListener();
-
+      $('#loaddiv').removeClass('hidden');
+      $('#loader').hide();
     },
     error: function() {
       console.log('No hi han clients');

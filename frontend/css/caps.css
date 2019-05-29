@@ -193,7 +193,7 @@
     top: 0;
   }
 }
-.hidden { display: none; }
+
 .c-tab-nav-marker {
   min-height: 4px;
   background-color: #40514E;
@@ -202,7 +202,7 @@
   transition: all 0.5s ease-out;
 }
 
-
+.hidden { display: none; }
 /*Loader*/
 .loader,
 .loader:before,

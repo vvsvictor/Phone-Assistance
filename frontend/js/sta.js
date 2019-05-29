@@ -123,6 +123,8 @@ $(document).ready(function () {
           let surname = myJSON[i].surname;
 
           showFitxaPersonal(id, name, surname, dninie);
+          $('#loaddiv').removeClass('hidden');
+          $('#loader').hide();
         }
         $('#dtFitxaPersonal').DataTable();
       },
