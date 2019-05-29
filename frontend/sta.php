@@ -230,7 +230,7 @@
   <!--Pagina Tota la info-->
   <div id="pageTables">
     <section id="page">
-      <button id="returnCAP2" type="button" class="btn btn-primary marginTop"><i class="fa fa-reply"></i> Tornar enrere</button>
+      <button id="returnFP" type="button" class="btn btn-primary marginTop"><i class="fa fa-reply"></i> Tornar enrere</button>
       <div id="tabs" class="c-tabs">
         <div class="c-tabs-nav">
           <a href="#" class="c-tabs-nav__link is-active">Fitxa bàsica</a>
@@ -241,10 +241,30 @@
         <!--Informació bàsica-->
         <div class="c-tab is-active">
           <div class="c-tab__content">
-            <div class="container_sta">
-              <div class="content3">
-                <div id="basicInfo">
-
+            <div class="container_fitxa">
+              <div class="container">
+                <div class="content">
+                  <h1 class="heading"> Fitxa bàsica</h1>
+                  <div class="info">
+                    <p class="sub-heading">ID</p>
+                    <p id="fpid" class="duration"></p>
+                    <p></p>
+                  </div>
+                  <div class="info">
+                    <p class="sub-heading">DNI</p>
+                    <p id="fpdni" class="duration"></p>
+                    <p></p>
+                  </div>
+                  <div class="info">
+                    <p class="sub-heading">Nom</p>
+                    <p id="fpnom" class="duration"></p>
+                    <p></p>
+                  </div>
+                  <div class="info">
+                    <p class="sub-heading">Cognom</p>
+                    <p id="fpcognom" class="duration"></p>
+                    <p></p>
+                  </div>
                 </div>
             </div>
           </div>
@@ -254,32 +274,46 @@
         <div class="c-tab">
           <div class="c-tab__content">
             <div class="container_sta">
-              <div class="content3">
-                <div id="tableSTA">
-                  <button id="showFormSTA" type="button" class="btn btn-primary marginTop"><i class="fa fa-plus"></i> Afegir Doctor</button>
-                  <table id="dtSTA" class="table table-striped table-bordered" cellspacing="0" width="100%">
-                    <thead>
-                      <tr>
-                        <th class="th-sm">Id</th>
-                        <th class="th-sm">DNI</th>
-                        <th class="th-sm">Situació Actual</th>
-                        <th class="th-sm">Data Expiració</th>
-                        <th class="th-sm"></th>
-                      </tr>
-                    </thead>
-                    <tbody id="tbSTA"></tbody>
-                    <tfoot>
-                      <tr>
-                        <th>Id</th>
-                        <th>DNI</th>
-                        <th>Situació Actual</th>
-                        <th>Data Expiració</th>
-                        <th></th>
-                      </tr>
-                    </tfoot>
-                  </table>
+              <<div class="content3">
+                <div class="contacto">
+                  <h1 class="heading">Serveis Contractats</h1>
+                  <div class="info">
+                    <p class="sub-heading">Telèfon Fixe</p>
+                    <input id="tf_service" type="checkbox" class="notifications-switch" aria-label="Notifications Switch" checked="unchecked" disabled/>
+                    <p></p>
+                  </div>
+                  <div class="info">
+                    <p class="sub-heading">Terminal de Control Remot</p>
+                    <input id="tcr_service" type="checkbox" class="notifications-switch" aria-label="Notifications Switch" disabled/>
+                    <p></p>
+                  </div>
+                  <div class="info">
+                    <p class="sub-heading">Custòdia de Claus</p>
+                    <input id="cc_service" type="checkbox" class="notifications-switch" aria-label="Notifications Switch" checked="checked" disabled/>
+                    <p></p>
+                  </div>
+                  <div class="info">
+                    <p class="sub-heading">Terminal Mòbil</p>
+                    <input id="tm_service" type="checkbox" class="notifications-switch" aria-label="Notifications Switch" checked="checked" disabled/>
+                    <p></p>
+                  </div>
+                  <div class="info">
+                    <p class="sub-heading">Teleassistència Mòbil</p>
+                    <input id="tam_service" type="checkbox" class="notifications-switch" aria-label="Notifications Switch" checked="checked" disabled/>
+                    <p></p>
+                  </div>
+                  <div class="info">
+                    <p class="sub-heading">GPS</p>
+                    <input id="gps_service" type="checkbox" class="notifications-switch" aria-label="Notifications Switch" checked="checked" disabled/>
+                    <p></p>
+                  </div>
+                  <div class="info">
+                    <p class="sub-heading">UMT</p>
+                    <input id="umt_service" type="checkbox" class="notifications-switch" aria-label="Notifications Switch" checked="checked" disabled/>
+                    <p></p>
+                  </div>
                 </div>
-            </div>
+              </div>
           </div>
         </div>
       </div>
@@ -289,7 +323,7 @@
         <div class="c-tab__content">
           <div class="container_responsible">
             <div class="content3">
-              <div id="tableSTA">
+              <div id="tableResponsible">
                 <button id="showFormResponsible" type="button" class="btn btn-primary marginTop"><i class="fa fa-plus"></i> Afegir Doctor</button>
                 <table id="dtResponsible" class="table table-striped table-bordered" cellspacing="0" width="100%">
                   <thead>
@@ -302,7 +336,7 @@
                       <th class="th-sm"></th>
                     </tr>
                   </thead>
-                  <tbody id="tbSTA"></tbody>
+                  <tbody id="tbResponsible"></tbody>
                   <tfoot>
                     <tr>
                       <th>Id</th>
