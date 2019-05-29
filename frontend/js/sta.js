@@ -255,7 +255,31 @@ m.init();
 
             },
             error: function() {
-              console.log('No hi ha responsable');
+              console.log('No hi ha STA');
+            }
+          });
+          //Ajax mostrar responsables
+          $.ajax({
+            url: "../backend/selects/getResponsible.php",
+            type: "GET",
+            cache: false,
+            success: function(response) {
+              $("#tbResponsible").html("");
+              let myJSON = JSON.parse(response);
+              for (let i = 0; i < myJSON.length; i++) {
+                if (myJSON[i].user_dninif==$("#fpDNI").html()) {
+                  let id = myJSON[i].id;
+                  let prioritat = myJSON[i].priority;
+                  let nom = myJSON[i].name;
+                  let cognom = myJSON[i].surname;
+                  showTableResponsibles(id, prioritat, nom, cognom);
+                }
+              }
+              $('#dtResponsible').DataTable();
+
+            },
+            error: function() {
+              console.log('No hi han Resposables');
             }
           });
         },
@@ -367,6 +391,11 @@ m.init();
 
       });
     });
+  }
+
+  function showTableResponsibles(id, prioritat, nom, cognom){
+    let html = "<tr><td>" + id + "</td><td>" + prioritat + "</td><td>" + nom + "</td><td>" + cognom + "</td><td><button id='responsibleId" + id + "' type='button' class='responsible btn btn-info marginBtn'>Fitxa Completa</button><button type='button' id='deleteCardId" + id + "' class='deletecard btn btn-danger marginBtn' data-toggle='modal' data-target='#deletecardmodal'>Eliminar</button></td></tr>";
+    $("#tbResponsible").append(html);
   }
 
   function enableSTASwitch(){

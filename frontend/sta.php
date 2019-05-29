@@ -348,9 +348,9 @@
                     <tr>
                       <th class="th-sm">Id</th>
                       <th class="th-sm">DNI</th>
-                      <th class="th-sm">Prioritat</th>
                       <th class="th-sm">Nom</th>
                       <th class="th-sm">Cognom</th>
+                      <th class="th-sm">Prioritat</th>
                       <th class="th-sm"></th>
                     </tr>
                   </thead>
@@ -359,9 +359,9 @@
                     <tr>
                       <th>Id</th>
                       <th>DNI</th>
-                      <th>Prioritat</th>
                       <th>Nom</th>
                       <th>Cognom</th>
+                      <th>Prioritat</th>
                       <th></th>
                     </tr>
                   </tfoot>
