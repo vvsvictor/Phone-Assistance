@@ -31,7 +31,7 @@ $(document).ready(function () {
     dataTextField: "name",
     dataValueField: "id"
   });
-  $("showFormBtn").click(function(){
+  $("#showFormBtn").click(function(){
     gotoAddCall();
   });
   $("#addentrant_call").kendoDropDownTree({
@@ -99,7 +99,8 @@ $(document).ready(function () {
 function gotoAddCall(){
   showDni();
   showCalls();
-  $('#modCallDiv').hide();
+  showStateCall();
+  $('#call_type').hide();
   $('#addCall').show();
   $("#callList").hide();
 }
@@ -127,12 +128,14 @@ function returnCall(){
   returnCalls
 }
 
-<<<<<<< HEAD
+
 function mostrarCallListener() {
-=======
+
+}
+
 function addCallListener() {
   $("#addCallbtn").click(function() {
->>>>>>> 0db8e9a4b1e2ccfc8dfe405a058724059fa69166
+
 
   });
 }
@@ -228,8 +231,6 @@ function addCallListener() {
         data: {
           $sCallDate:data_trucada,
           $iCallType:tipus_trucada,
-          $iOutcallType:,
-          $iIncallType:,
           $iCallState:estat_trucada,
           $sTeleoperatorSolution:motiu
         },

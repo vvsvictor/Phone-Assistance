@@ -132,7 +132,7 @@
           </div>
           <div class="col lg-6" id="exit_type">
             <label for="addsortint_call">Tipus de trucada sortint</label><br>
-            <input id="addsortint_call" style="width: 100%"/>
+            <input id="addsortint_call" style="width: 50%"/>
           </div>
         </div>
         <br>
