@@ -299,7 +299,6 @@ function addFitxaPersonal() {
     idioma = idioma.split('(Id:').pop().split(')')[0];
     let nouIdioma = $("#addIdiomaAltre").val();
     let idioma_s = document.querySelector('input[name="idioma_s"]:checked').value;
-    //if ==0 return null
     let dataNaixemement = $("#addDataNaixement").val();
     let adreca = $("#addTipus").val()+' '+$("#addAdreca").val()+' '+$("#addPis").val()+' '+$("#addPorta").val()+' '+$("#addEscala").val();
     let kendotipusHabitatge = $("#addTipus_habitatge").data("kendoDropDownTree");

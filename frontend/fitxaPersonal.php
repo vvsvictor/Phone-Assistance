@@ -242,7 +242,6 @@ include '..\backend\include.php';
         <div class="c-tabs-nav">
           <a href="#" class="c-tabs-nav__link is-active">Fitxa Personal</a>
           <a href="#" class="c-tabs-nav__link">Mutua</a>
-          <a href="#" class="c-tabs-nav__link">Responsable</a>
           <div class="c-tab-nav-marker"></div>
         </div>
         <!-- FICHA PERSONAL-->
@@ -367,73 +366,6 @@ include '..\backend\include.php';
             </div>
           </div>
         </div>
-        <!-- RESPONSABLE -->
-        <div class="c-tab">
-          <div class="c-tab__content">
-            <div class="container_responsible">
-              <div class="content2">
-                <div class="direccion">
-                  <h1 class="heading"> Dades</h1>
-                  <div class="info">
-                    <p class="sub-heading">Nom</p>
-                    <p id="resNom" class="duration">Nati</p>
-                    <p></p>
-                  </div>
-                  <div class="info">
-                    <p class="sub-heading">Cognoms</p>
-                    <p id="resCognom" class="duration">Novo</p>
-                    <p></p>
-                  </div>
-                  <div class="info">
-                    <p class="sub-heading">Carrer</p>
-                    <p id="resCarrer" class="duration">Alcudia nº 23 3º 1ª</p>
-                    <p></p>
-                  </div>
-                  <div class="info">
-                    <p class="sub-heading">Codí Postal</p>
-                    <p id="resCodiPostal" class="duration">08029</p>
-                    <p></p>
-                  </div>
-                </div>
-              </div>
-              <div class="content2a">
-                <div class="contacto">
-                  <h1 class="heading">Contacte</h1>
-                  <div class="info">
-                    <p class="sub-heading">Telèfon</p>
-                    <p id="resTel" class="duration">937764012</p>
-                    <p></p>
-                  </div>
-                  <div class="info">
-                    <p class="sub-heading">Horari</p>
-                    <p id="resHorari" class="duration">8h - 14h</p>
-                    <p></p>
-                  </div>
-                  <div class="info">
-                    <p class="sub-heading">Data</p>
-                    <p id="resData" class="duration">01-04-2017</p>
-                    <p></p>
-                  </div>
-                  <div class="info">
-                    <p class="sub-heading">Prioritat</p>
-                    <p id="resPrioritat" class="duration">Alta</p>
-                    <p></p>
-                  </div>
-                </div>
-              </div>
-
-              <div class="content3">
-                <div class="contacto">
-                  <h1 class="heading">Raó</h1>
-                  <div class="info">
-                    <p id="resRao" class="duration">Familiar de primer grau</p>
-                    <p></p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   </div>
@@ -486,7 +418,7 @@ include '..\backend\include.php';
                     <div class="info">
                       <p class="sub-heading">Idioma</p>
                       <select onchange="altreListener()" id="modIdioma" style="width: 100%;" class="maxWidth"></select>&nbsp;
-                      <input id="modIdiomaAltre" type="text" class="form-control" placeholder="Idioma">
+                      <input id="addIdiomaAltre" type="text" class="form-control" placeholder="Idioma">
                       <p></p>
                     </div>
                     <div class="info">
@@ -514,12 +446,12 @@ include '..\backend\include.php';
                     </div>
                     <div class="info">
                       <p class="sub-heading">Comarca</p>
-                      <input id="modComarcas" type="text" class="form-control" name="comarcas"/>
+                      <input style="width: 100%;" id="modcomarcas"/>
                       <p></p>
                     </div>
                     <div class="info">
                       <p class="sub-heading">Municipi</p>
-                      <input id="modMunicipios" type="text" class="form-control" name="municipios"/>
+                      <input style="width: 100%;" id="modmunicipios"/>
                       <p></p>
                     </div>
                     <div class="info">
@@ -529,7 +461,7 @@ include '..\backend\include.php';
                     </div>
                     <div class="info">
                       <p class="sub-heading">Tipus d'habitatge'</p>
-                      <input id="modtype_house" type="text" class="form-control" name="type_house"/>
+                      <input id="modTipus_habitatge" name="tipusHabitatge" style="width: 100%;"/>
                       <p></p>
                     </div>
                     <div class="info">
@@ -573,72 +505,6 @@ include '..\backend\include.php';
                   <div class="info">
                     <p class="sub-heading">Nom</p>
                     <p id="fpmutua" class="duration">Mutua 1</p>
-                    <p></p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- RESPONSABLE -->
-        <div class="c-tab">
-          <div class="c-tab__content">
-            <div class="container_responsible">
-              <div class="content2">
-                <div class="direccion">
-                  <h1 class="heading"> Dades</h1>
-                  <div class="info">
-                    <p class="sub-heading">Nom</p>
-                    <p id="resNom" class="duration">Nati</p>
-                    <p></p>
-                  </div>
-                  <div class="info">
-                    <p class="sub-heading">Cognoms</p>
-                    <p id="resCognom" class="duration">Novo</p>
-                    <p></p>
-                  </div>
-                  <div class="info">
-                    <p class="sub-heading">Carrer</p>
-                    <p id="resCarrer" class="duration">Alcudia nº 23 3º 1ª</p>
-                    <p></p>
-                  </div>
-                  <div class="info">
-                    <p class="sub-heading">Codí Postal</p>
-                    <p id="resCodiPostal" class="duration">08029</p>
-                    <p></p>
-                  </div>
-                </div>
-              </div>
-              <div class="content2a">
-                <div class="contacto">
-                  <h1 class="heading">Contacte</h1>
-                  <div class="info">
-                    <p class="sub-heading">Telèfon</p>
-                    <p id="resTel" class="duration">937764012</p>
-                    <p></p>
-                  </div>
-                  <div class="info">
-                    <p class="sub-heading">Horari</p>
-                    <p id="resHorari" class="duration">8h - 14h</p>
-                    <p></p>
-                  </div>
-                  <div class="info">
-                    <p class="sub-heading">Data</p>
-                    <p id="resData" class="duration">01-04-2017</p>
-                    <p></p>
-                  </div>
-                  <div class="info">
-                    <p class="sub-heading">Prioritat</p>
-                    <p id="resPrioritat" class="duration">Alta</p>
-                    <p></p>
-                  </div>
-                </div>
-              </div>
-              <div class="content3">
-                <div class="contacto">
-                  <h1 class="heading">Raó</h1>
-                  <div class="info">
-                    <p id="resRao" class="duration">Familiar de primer grau</p>
                     <p></p>
                   </div>
                 </div>
