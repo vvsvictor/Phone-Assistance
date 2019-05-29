@@ -148,14 +148,6 @@ function mostrarCallListener() {
 
 }
 
-<<<<<<< HEAD
-=======
-function addCallListener() {
-  $("#addCallbtn").click(function() {
-
-  });
-}
->>>>>>> ebb2e1d763409e1263c88f4eddc84d018febd5e6
 
   function showDni() {
       $.ajax({
@@ -240,44 +232,80 @@ function addCallListener() {
       let dni = $("#adddni_usuari").val();
       dni = dni.split('(Id:').pop().split(')')[0];
       let data_trucada = $("#adddata_trucada").val();
-      let tipus_trucada = $("#addtype_list").val();
       let estat_trucada = $("#addstate_call").val();
-      let incall = $("#addentrant_call").data("kendoDropDownList").value();
-      let outcall = $("#addsortint_call").data("kendoDropDownTree").value();
+>>>>>>> 22c8eeaf3c7b2f416e67063dbf0c860d957714a9
       let solucio = $("#rao").val();
       let motiu = $("#addMotiu").val();
       let descripcio = $("#addDescription").val();
       let destinatari = $("#addDestinatari").val();
-      $.ajax({
-        url: "../backend/inserts/insertCallHistory.php",
-        data: {
-          $sDniNif: dni,
-          $sCallDate:data_trucada,
-          $iCallType:tipus_trucada,
-          $iCallState:estat_trucada,
-          iOutcallType:outcall,
-          iIncallType:incall,
-          $sTeleoperatorSolution:solucio,
-          $sReasonAdvice: motiu,
-          $sDescription: descripcio,
-          $sDestinyAdvice: destinatari
-        },
-        type: "GET",
-        cache: false,
-        success: function(response) {
-          console.log("entra dades");
-          console.log(response);
-          let myJSON = JSON.parse(response);
-          showTable();
-          goToCallList();
-          if (parseInt(myJSON.codigoError) != 0) {
-            console.log(myJSON.observaciones + " - " + myJSON.codigoError + " - " + myJSON.descError);
+      if ($("#addtype_list").val()=="Entrant") {
+        //Tipus de trucada entrant
+        let incall = $("#addentrant_call").data("kendoDropDownTree").value().text;
+        $.ajax({
+          url: "../backend/inserts/insertCallHistory.php",
+          data: {
+            $sDniNif: dni,
+            $sCallDate:data_trucada,
+            $iCallType:tipus_trucada,
+            $iCallState:estat_trucada,
+            iOutcallType:outcall,
+            iIncallType:incall,
+            $sTeleoperatorSolution:solucio,
+            $sReasonAdvice: motiu,
+            $sDescription: descripcio,
+            $sDestinyAdvice: destinatari
+          },
+          type: "GET",
+          cache: false,
+          success: function(response) {
+            console.log("entra dades");
+            console.log(response);
+            let myJSON = JSON.parse(response);
+            showTable();
+            goToCallList();
+            if (parseInt(myJSON.codigoError) != 0) {
+              console.log(myJSON.observaciones + " - " + myJSON.codigoError + " - " + myJSON.descError);
+            }
+          },
+          error: function() {
+            alert("Error en la consulta");
           }
-        },
-        error: function() {
-          alert("Error en la consulta");
-        }
-      });
+        });
+      }else{
+        let outcall = $("#addsortint_call").data("kendoDropDownTree").value().text;
+        $.ajax({
+          url: "../backend/inserts/insertCallHistory.php",
+          data: {
+            $sDniNif: dni,
+            $sCallDate:data_trucada,
+            $iCallType:tipus_trucada,
+            $iCallState:estat_trucada,
+            iOutcallType:outcall,
+            iIncallType:incall,
+            $sTeleoperatorSolution:solucio,
+            $sReasonAdvice: motiu,
+            $sDescription: descripcio,
+            $sDestinyAdvice: destinatari
+          },
+          type: "GET",
+          cache: false,
+          success: function(response) {
+            console.log("entra dades");
+            console.log(response);
+            let myJSON = JSON.parse(response);
+            showTable();
+            goToCallList();
+            if (parseInt(myJSON.codigoError) != 0) {
+              console.log(myJSON.observaciones + " - " + myJSON.codigoError + " - " + myJSON.descError);
+            }
+          },
+          error: function() {
+            alert("Error en la consulta");
+          }
+        });
+      }
+
+
   });
 }
 
