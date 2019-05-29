@@ -45,6 +45,9 @@ $(document).ready(function () {
 
   });
 
+  //Variable global switchloader (Evita recargar el switch)
+  let switchload=false;
+
 //tabs
 function Tabs(options) {
 
@@ -138,23 +141,28 @@ m.init();
     $(".fitxaPersonal").click(function() {
       let idFP = this.id;
       idFP = idFP.replace("fitxaPersonal", "");
+      //AJAX mostrar info
       $.ajax({
         url: "../backend/selects/getFitxaPersonal.php",
         type: "GET",
         cache: false,
         success: function(response) {
           let myJSON = JSON.parse(response);
+          let dniSelected;
+          console.log(myJSON);
           //Clean FP
-          $("#fpid").val('');
-          $("#fpdni").val('');
-          $("#fpnom").val('');
-          $("#fpcognom").val('');
+          $("#fpid").html('');
+          $("#fpdni").html('');
+          $("#fpnom").html('');
+          $("#fpcognom").html('');
           for (var i = 0; i < myJSON.length; i++) {
             if (myJSON[i].id==idFP) {
-              $("#fpid").val(idFP);
-              $("#fpdni").val(myJSON[i].dninie);
-              $("#fpnom").val(myJSON[i].name);
-              $("#fpcognom").val(myJSON[i].surname);
+              console.log('entra fp'+ idFP);
+              $("#fpid").html(idFP);
+              dniSelected = myJSON[i].dninie;
+              $("#fpdni").html(myJSON[i].dninie);
+              $("#fpnom").html(myJSON[i].name);
+              $("#fpcognom").html(myJSON[i].surname);
             }
           }
           //Anar a mostrar info
@@ -163,14 +171,212 @@ m.init();
           $("#returnFP").click(function() {
             goToFitxaList();
           });
+          //AJAX Mostrar switch
+          $.ajax({
+            url: "../backend/selects/getSta.php",
+            type: "GET",
+            cache: false,
+            success: function(response) {
+              let myJSON = JSON.parse(response);
+              for (let i = 0; i < myJSON.length; i++) {
+                if (myJSON[i].user_dninif==dniSelected && switchload==false) {
+                  switchload=true;
+                  $('#staActualS').html(myJSON[i].actual_situation)
+                  $('#staHDate').html(myJSON[i].hiring_date)
+
+                  if (myJSON[i].tf_service==1) {
+                    $("#tf_service").kendoSwitch({
+                      checked: true
+                    });
+                  }else{
+                    $("#tf_service").kendoSwitch({
+                      checked: false
+                    });
+                  }
 
 
+                  if (myJSON[i].tcr_service==1) {
+                    $("#tcr_service").kendoSwitch({
+                      checked: true
+                    });
+                  }else{
+                    $("#tcr_service").kendoSwitch({
+                      checked: false
+                    });
+                  }
+
+
+                  if (myJSON[i].cc_service==1) {
+                    $("#cc_service").kendoSwitch({
+                      checked: true
+                    });
+                  }else{
+                    $("#cc_service").kendoSwitch({
+                      checked: false
+                    });
+                  }
+
+
+                  if (myJSON[i].tm_service==1) {
+                    $("#tm_service").kendoSwitch({
+                      checked: true
+                    });
+                  }else{
+                    $("#tm_service").kendoSwitch({
+                      checked: false
+                    });
+                  }
+
+
+                  if (myJSON[i].tam_service==1) {
+                    $("#tam_service").kendoSwitch({
+                      checked: true
+                    });
+                  }else{
+                    $("#tam_service").kendoSwitch({
+                      checked: false
+                    });
+                  }
+
+
+                  if (myJSON[i].gps_service==1) {
+                    $("#gps_service").kendoSwitch({
+                      checked: true
+                    });
+                  }else{
+                    $("#gps_service").kendoSwitch({
+                      checked: false
+                    });
+                  }
+
+                  if (myJSON[i].umt_service==1) {
+                    $("#umt_service").kendoSwitch({
+                      checked: true
+                    });
+                  }else{
+                    $("#umt_service").kendoSwitch({
+                      checked: false
+                    });
+                  }
+                }
+              }
+              //Amagar botó guardar per defecte
+              $('#saveSTA').hide();
+              //Al click modificar mostrar guardar, amagar modificar
+              $("#modSTA").click(function() {
+                $('#modSTA').hide();
+                $('#saveSTA').show();
+                //funcio habilitar botons
+                enableSTASwitch();
+                $("#saveSTA").click(function() {
+                  //Guardar Switch estat sta
+                  //obtenció dels estats del switch
+                  let tf;
+                  if ($("#tf_service").data("kendoSwitch").options.checked) {
+                    tf = 1;
+                  }else{
+                    tf = 0;
+                  }
+                  let tcr;
+                  if ($("#tcr_service").data("kendoSwitch").options.checked) {
+                    tcr = 1;
+                  }else{
+                    tcr = 0;
+                  }
+                  let cc;
+                  if ($("#cc_service").data("kendoSwitch").options.checked) {
+                    cc = 1;
+                  }else{
+                    cc = 0;
+                  }
+                  let tm;
+                  if ($("#tm_service").data("kendoSwitch").options.checked) {
+                    tm = 1;
+                  }else{
+                    tm = 0;
+                  }
+                  let tam;
+                  if ($("#tam_service").data("kendoSwitch").options.checked) {
+                    tam = 1;
+                  }else{
+                    tam = 0;
+                  }
+                  let gps;
+                  if ($("#gps_service").data("kendoSwitch").options.checked) {
+                    gps = 1;
+                  }else{
+                    gps = 0;
+                  }
+                  let umt;
+                  if ($("#umt_service").data("kendoSwitch").options.checked) {
+                    umt = 1;
+                  }else{
+                    umt = 0;
+                  }
+                  //AJAX Update dades
+                  $.ajax({
+                    url: "../backend/updates/sta.php",
+                    data:{
+                      sActual_situation: $("#staActualS").html(),
+                      sHiring_date: $("#staHDate").html(),
+                      sUser_dninif: $("#fpdni").html(),
+                      iTf_service: tf,
+                      iTcr_service: tcr,
+                      iCc_service: cc,
+                      iTm_service: tm,
+                      iTam_service: tam,
+                      iGps_service: gps,
+                      iUmt_service: umt
+                    },
+                    type: "GET",
+                    cache: false,
+                    success: function(response) {
+                      let myJSON = JSON.parse(response);
+                      //tornar a amagar els camps
+
+                    },
+                    error: function() {
+                      console.log('Error al actualitzar les dades');
+                    }
+                  });
+
+                });
+              });
+
+
+            },
+            error: function() {
+              console.log('No hi ha responsable');
+            }
+          });
         },
         error: function() {
           console.log('No hi han provincies');
         }
       });
+
+
     });
+  }
+
+  function enableSTASwitch(){
+    $("#tf_service").data("kendoSwitch").enable(true);
+    $("#tcr_service").data("kendoSwitch").enable(true);
+    $("#cc_service").data("kendoSwitch").enable(true);
+    $("#tm_service").data("kendoSwitch").enable(true);
+    $("#tam_service").data("kendoSwitch").enable(true);
+    $("#gps_service").data("kendoSwitch").enable(true);
+    $("#umt_service").data("kendoSwitch").enable(true);
+  }
+
+  function disableSTASwitch(){
+    $("#tf_service").data("kendoSwitch").enable(false);
+    $("#tcr_service").data("kendoSwitch").enable(false);
+    $("#cc_service").data("kendoSwitch").enable(false);
+    $("#tm_service").data("kendoSwitch").enable(false);
+    $("#tam_service").data("kendoSwitch").enable(false);
+    $("#gps_service").data("kendoSwitch").enable(false);
+    $("#umt_service").data("kendoSwitch").enable(false);
   }
 
   function goToShowAll(){

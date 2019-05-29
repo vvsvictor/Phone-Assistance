@@ -1,7 +1,6 @@
 <?php
 
   include ("../inc/usarBD.php");
-  $id = $_GET["id"];
   $sUser_dninif = $_GET["sUser_dninif"];
   $sActual_situation = $_GET["sActual_situation"];
   $sHiring_date = $_GET["sHiring_date"];
@@ -14,7 +13,7 @@
   $iUmt_service = $_GET["iUmt_service"];
 
 
-  $consulta="UPDATE sta SET user_dninif='".$sUser_dninif."', actual_situation='".$sActual_situation."', hiring_date='".$sHiring_date."', tf_service='".$iTf_service."', tcr_service='".$iTcr_service."', cc_service='".$iCc_service."', tm_service='".$iTm_service."', tam_service='".$iTam_service."', gps_service='".$iGps_service."', umt_service='".$iUmt_service."' WHERE id=".$id;
+  $consulta="UPDATE sta SET actual_situation='".$sActual_situation."', hiring_date='".$sHiring_date."', tf_service='".$iTf_service."', tcr_service='".$iTcr_service."', cc_service='".$iCc_service."', tm_service='".$iTm_service."', tam_service='".$iTam_service."', gps_service='".$iGps_service."', umt_service='".$iUmt_service."' WHERE user_dninif='".$sUser_dninif."'";
   $hacerConsulta=mysqli_query($conexion, $consulta);
 
   $sJSON = "[{";

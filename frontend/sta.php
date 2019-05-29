@@ -240,8 +240,8 @@
         <div class="c-tab is-active">
           <div class="c-tab__content">
             <div class="container_fitxa">
-              <div class="container">
-                <div class="content">
+              <div class="content3">
+                <div class="contacto">
                   <h1 class="heading"> Fitxa bàsica</h1>
                   <div class="info">
                     <p class="sub-heading">ID</p>
@@ -275,6 +275,18 @@
               <div class="content3">
                 <div class="contacto">
                   <h1 class="heading">Serveis Contractats</h1>
+                  <button id="modSTA" type="button" class="btn btn-primary marginTop">Modificar</button>
+                  <button id="saveSTA" type="button" class="btn btn-primary marginTop">Guardar</button>
+                  <div class="info">
+                    <p class="sub-heading">Situació actual</p>
+                    <p id="staActualS" class="duration"></p>
+                    <p></p>
+                  </div>
+                  <div class="info">
+                    <p class="sub-heading">Data de contractació</p>
+                    <p id="staHDate" class="duration"></p>
+                    <p></p>
+                  </div>
                   <div class="info">
                     <p class="sub-heading">Telèfon Fixe</p>
                     <input id="tf_service" type="checkbox" class="notifications-switch" aria-label="Notifications Switch" checked="unchecked" disabled/>
