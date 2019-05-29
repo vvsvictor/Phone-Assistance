@@ -101,8 +101,9 @@ $(document).ready(function () {
 });
 
 function otherCallsListener(){
-  var option = $("#addsortint_call").data("kendoDropDownList").select();
-  if (option == 13){
+  console.log('othercall');
+  let option = $("#addsortint_call").data("kendoDropDownTree").text();
+  if (option == "Altres"){
     $('#addOtherCalls').show();
   }else{
     $('#addOtherCalls').hide();
@@ -117,6 +118,7 @@ function gotoAddCall(){
   $('#addCall').show();
   $("#callList").hide();
   $('#addOtherCalls').hide();
+  $("#addsortint_call").data("kendoDropDownTree").bind("change", otherCallsListener);
 }
 
 function gotoModCall() {
@@ -146,11 +148,14 @@ function mostrarCallListener() {
 
 }
 
+<<<<<<< HEAD
+=======
 function addCallListener() {
   $("#addCallbtn").click(function() {
 
   });
 }
+>>>>>>> ebb2e1d763409e1263c88f4eddc84d018febd5e6
 
   function showDni() {
       $.ajax({
@@ -233,12 +238,17 @@ function addCallListener() {
   function addCall(){
     $("#addCallBtn").click(function() {
       let dni = $("#adddni_usuari").val();
+      dni = dni.split('(Id:').pop().split(')')[0];
       let data_trucada = $("#adddata_trucada").val();
       let tipus_trucada = $("#addtype_list").val();
-      let data_absencia = $("#add_dataabs").val();
       let estat_trucada = $("#addstate_call").val();
+<<<<<<< HEAD
       let incall = $("#addentrant_call").data("kendoDropDownTree").value().text;
       let outcall = $("#addsortint_call").data("kendoDropDownTree").value().text;
+=======
+      let incall = $("#addentrant_call").data("kendoDropDownList").value();
+      let outcall = $("#addsortint_call").data("kendoDropDownTree").value();
+>>>>>>> 57e24573a4fa4030c57b178f9715016865508eed
       let solucio = $("#rao").val();
       let motiu = $("#addMotiu").val();
       let descripcio = $("#addDescription").val();

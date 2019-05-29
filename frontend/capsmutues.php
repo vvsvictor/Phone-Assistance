@@ -140,7 +140,7 @@
               </select>
             </div>
           </div>
-          <button id="addDoctorBtn" type="button" class="btn btn-primary marginTop">Afegir Doctor</button>
+          <button id="addDoctorBtn" type="button" class="btn btn-primary marginTop">Afegir Doctor/a</button>
         </div>
 
         <!--Formulario Modificar Doctores -->
@@ -266,7 +266,7 @@
               <div class="container_doctors">
                 <div class="content3">
                   <div id="tableDoctors">
-                    <button id="showFormDoctor" type="button" class="btn btn-primary marginTop"><i class="fa fa-plus"></i> Afegir Doctor</button>
+                    <button id="showFormDoctor" type="button" class="btn btn-primary marginTop"><i class="fa fa-plus"></i> Afegir Doctor/a</button>
                     <table id="dtDoctor" class="table table-striped table-bordered" cellspacing="0" width="100%">
                       <thead>
                         <tr>

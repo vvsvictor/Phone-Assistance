@@ -269,7 +269,26 @@ INSERT into comarcas (comar_name) VALUES ("Vallès Oriental");
 
 /*Insert type municipality type by default*/
 INSERT into MUNISIPALITYS (muni_name) VALUES ("Barcelona");
+INSERT into MUNISIPALITYS (muni_name) VALUES ("L'Hospitalet de Llobregat");
 INSERT into MUNISIPALITYS (muni_name) VALUES ("Badalona");
+INSERT into MUNISIPALITYS (muni_name) VALUES ("Terrassa");
+INSERT into MUNISIPALITYS (muni_name) VALUES ("Sabadell");
+INSERT into MUNISIPALITYS (muni_name) VALUES ("Mataró");
+INSERT into MUNISIPALITYS (muni_name) VALUES ("Santa Coloma de Gramenet");
+INSERT into MUNISIPALITYS (muni_name) VALUES ("Sant Cugat del Vallès");
+INSERT into MUNISIPALITYS (muni_name) VALUES ("Cornellà de Llobregat");
+INSERT into MUNISIPALITYS (muni_name) VALUES ("Sant Boi de Llobregat");
+INSERT into MUNISIPALITYS (muni_name) VALUES ("Rubí");
+INSERT into MUNISIPALITYS (muni_name) VALUES ("Manresa");
+INSERT into MUNISIPALITYS (muni_name) VALUES ("Vilanova i la Geltrú");
+INSERT into MUNISIPALITYS (muni_name) VALUES ("Viladecans");
+INSERT into MUNISIPALITYS (muni_name) VALUES ("Castelldefels");
+INSERT into MUNISIPALITYS (muni_name) VALUES ("El Prat de Llobregat");
+INSERT into MUNISIPALITYS (muni_name) VALUES ("Granollers");
+INSERT into MUNISIPALITYS (muni_name) VALUES ("Cerdanyola del Vallès");
+INSERT into MUNISIPALITYS (muni_name) VALUES ("Mollet del Vallès");
+INSERT into MUNISIPALITYS (muni_name) VALUES ("Esplugues de Llobregat");
+INSERT into MUNISIPALITYS (muni_name) VALUES ("Sant Feliu de Llobregat");
 INSERT into MUNISIPALITYS (muni_name) VALUES ("Sant Adrià del Besós");
 
 /*Insert type ownership type by default*/
