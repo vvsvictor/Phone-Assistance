@@ -280,6 +280,7 @@
                   <div class="info">
                     <p class="sub-heading">Situació actual</p>
                     <p id="staActualS" class="duration"></p>
+
                     <p></p>
                   </div>
                   <div class="info">
