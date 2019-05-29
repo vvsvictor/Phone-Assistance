@@ -238,7 +238,7 @@ function addCallListener() {
       let data_absencia = $("#add_dataabs").val();
       let estat_trucada = $("#addstate_call").val();
       let incall = $("#addentrant_call").data("kendoDropDownTree").value().text;
-      let outcall = $("#addentrant_call").data("kendoDropDownTree").value().text;
+      let outcall = $("#addsortint_call").data("kendoDropDownTree").value().text;
       let solucio = $("#rao").val();
       let motiu = $("#addMotiu").val();
       let descripcio = $("#addDescription").val();
