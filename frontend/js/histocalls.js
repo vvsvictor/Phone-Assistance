@@ -100,8 +100,9 @@ $(document).ready(function () {
 });
 
 function otherCallsListener(){
-  var option = $("#addsortint_call").data("kendoDropDownList").select();
-  if (option == 13){
+  console.log('othercall');
+  let option = $("#addsortint_call").data("kendoDropDownTree").text();
+  if (option == "Altres"){
     $('#addOtherCalls').show();
   }else{
     $('#addOtherCalls').hide();
