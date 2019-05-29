@@ -69,7 +69,7 @@ function returnCall(){
 }
 
 function mostrarCallListener() {
-  
+
   });
 }
 
@@ -151,31 +151,10 @@ function mostrarCallListener() {
     $("#addCallBtn").click(function() {
       let dni = $("#adddni_usuari").val();
       let data_trucada = $("#adddata_trucada").val();
-      let idioma = $("#addIdioma").val();
-      //Faltan comprovaciones de input correcto
-      $.ajax({
-        url: "../backend/inserts/insertCallHistory.php",
-        data: {
-          sDni: $("#adddni_usuari").val(),
-          sCallDate: $("#adddata_trucada").val(),
-          iCallType: $("#addtype_call").val(),
-          iState: $("#addstate_call").val()
-        },
-        type: "GET",
-        cache: false,
-        success: function(response) {
-          let myJSON = JSON.parse(response);
-          showTable();
-          goToCallList();
+      let tipus_trucada = $("#addtype_list").val();
+      let data_absencia = $("#add_dataabs").val();
+      let data_absencia = $("#add_dataabs").val();
 
-          if (parseInt(myJSON.codigoError) != 0) {
-            console.log(myJSON.observaciones + " - " + myJSON.codigoError + " - " + myJSON.descError);
-          }
-        },
-        error: function() {
-          alert("Error en la consulta");
-        }
-    });
   });
 }
 
