@@ -187,8 +187,6 @@ CREATE TABLE CALL_HISTORY(
   incall_type int, /*Table INCALL_TYPE*/
   call_state int, /*Table CALL_STATE*/
   teleoperator_solution text,
-  date_of_absence date,
-  return_date date,
   reason_for_advice text,
   description text,
   Destiny_advice varchar(50),

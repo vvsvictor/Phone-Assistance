@@ -126,13 +126,14 @@
         </div>
         <br>
         <div class="row" id="call_type">
-          <div class="col-lg-6" id="entry_type">
+          <div class="col-lg-12" id="entry_type">
             <label for="addentrant_call">Tipus de trucada entrant</label><br>
             <input id="addentrant_call" style="width: 100%"/>
           </div>
-          <div class="col lg-6" id="exit_type">
+          <div class="col lg-12" id="exit_type">
             <label for="addsortint_call">Tipus de trucada sortint</label><br>
-            <input id="addsortint_call" style="width: 50%"/>
+            <input onchange="otherCallsListener()" id="addsortint_call" style="width: 100%"/>
+            <input id="addOtherCalls" type="text" class="form-control" placeholder="Idioma">
           </div>
         </div>
         <br>
