@@ -755,15 +755,16 @@ function eliminarResponsibleListener() {
   let idResponsible;
   $("#deleteResponsibleBtn").click(function(event) {
     idResponsible = $("#idres").html();
-    $("#deleteResponsibleDef").click(function(event) {
-      console.log("The Button Responsible is: " + idResponsible);
+    $('#deleteResponsiblemodal').modal('show')
+    $("#deleteResponsibleDef").click(function(event) {;
       deleteResponsible(idResponsible);
+
+
     });
   });
 }
 
 function deleteResponsible(idResponsible){
-  console.log("The id2 Responsible is: " + idResponsible);
   $.ajax({
     url: "../backend/delete/deleteResponsible.php",
     data: {
@@ -774,7 +775,11 @@ function deleteResponsible(idResponsible){
     success: function(response) {
       var myJSON = JSON.parse(response);
       if (parseInt(myJSON.codigoError) != 0) {
-        showTableResponsible();
+
+        mostrarResponsablesTable();
+        showAllInfo();
+        goToShowAll();
+        
       }
     },
     error: function() {
