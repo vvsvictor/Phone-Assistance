@@ -25,29 +25,37 @@ function addUserListener() {
   });
 
   $("#addUserBtn").click(function() {
-    $.ajax({
-      url: "../backend/inserts/insertUsuari.php",
-      data: {
-        sUsername: $("#username").val(),
-        sPassword: $("#password").val(),
-        iUserType: $('input[name=usertype]:checked', '#formUser').val()
-      },
-      type: "GET",
-      cache: false,
-      success: function(response) {
-        let myJSON = JSON.parse(response);
-        showTable();
-        $('#addUser').hide();
-        $("#usersList").show();
+    let username =$("#username").val();
+    let password = $("#password").val()
+    if (username!="" && password.length>6) {
+      $.ajax({
+        url: "../backend/inserts/insertUsuari.php",
+        data: {
+          sUsername: $("#username").val(),
+          sPassword: $("#password").val(),
+          iUserType: $('input[name=usertype]:checked', '#formUser').val()
+        },
+        type: "GET",
+        cache: false,
+        success: function(response) {
+          let myJSON = JSON.parse(response);
+          showTable();
+          $('#addUser').hide();
+          $("#usersList").show();
 
-        if (parseInt(myJSON.codigoError) != 0) {
-          console.log(myJSON.observaciones + " - " + myJSON.codigoError + " - " + myJSON.descError);
+          if (parseInt(myJSON.codigoError) != 0) {
+            console.log(myJSON.observaciones + " - " + myJSON.codigoError + " - " + myJSON.descError);
+          }
+        },
+        error: function() {
+          alert("Error en la consulta");
         }
-      },
-      error: function() {
-        alert("Error en la consulta");
-      }
-    });
+      });
+    }else{
+      //Control de validació
+      alert("Hi han camps incorrectes")
+    }
+
   });
 }
 

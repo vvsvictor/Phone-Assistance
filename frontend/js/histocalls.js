@@ -4,10 +4,6 @@ $(document).ready(function () {
   gotoModCall();
   addCallListener();
 
-  $("#showFormBtn").click(function(){
-    gotoAddCall();
-  });
-
   $(".datePickerKendo").kendoDatePicker({
       format: "d/M/yyyy"
     });
@@ -36,6 +32,69 @@ $(document).ready(function () {
     dataTextField: "name",
     dataValueField: "id"
   });
+  $("showFormBtn").click(function(){
+    gotoAddCall();
+  });
+  $("#addentrant_call").kendoDropDownTree({
+    placeholder: "Selecciona el tipus de trucada entrant ...",
+    height: "auto",
+    dataSource: [
+        {
+            text: "Trucada d'alarma", items: [
+                { text: "Emergències sanitàries" },
+                { text: "Emergències socials" },
+                { text: "Emergències per crisi de soledat o angoixa"},
+                { text: "Alarma sense resposta" }
+            ]
+        },
+        {
+            text: "Trucada d'informació", items: [
+                { text: "Trucada per error" },
+                { text: "Modificació de dades" },
+                { text: "Absencies" },
+                { text: "Estades Temporals", items: [
+                  { text: "Data d'absència"},
+                  { text: "Data de previsió de la tornada a l'habitatge"}
+                ]}
+            ]
+        },
+        {
+          text: "Soletat"
+        },
+        {
+          text: "De reclamació"
+        }
+      ]
+  });
+  $("#addentrant_call").kendoDropDownTree({
+          placeholder: "Selecciona el tipus de trucada sortint ...",
+          height: "auto",
+          dataSource: [
+              {
+                  text: "Trucada d'agenda", items: [
+                      { text: "Recordartori de medicació" },
+                      { text: "Recordartori de visites mèdiques" },
+                      { text: "Felicitació"},
+                      { text: "Agenda tècnica" }
+                  ]
+              },
+              {
+                  text: "Trucada de seguiment", items: [
+                      { text: "Seguidament del regés a la llar de la persona usuària" },
+                      { text: "Seguiment del procés de dol" },
+                      { text: "Seguiment després de l'alta hospitalària" },
+                  ]
+              },
+              {
+                  text: "Trucada d'agenda preventiva" items: [
+                      { text: "Condicions ambientals" },
+                      { text: "Seguretat de la via" },
+                      { text: "Campanyes de vacunacio"},
+                      { text: "Altres"}
+                  ]
+              }
+          ]
+    });
 });
 
 function gotoAddCall(){
@@ -71,9 +130,7 @@ function returnCall(){
 
 function addCallListener() {
   $("#addCallbtn").click(function() {
-    let dni = $("#adddni_usuari").val();
-    let data_trucada = $("#adddata_trucada").val();
-    let idioma = $("#addIdioma").val();
+
   });
 }
 
@@ -177,7 +234,7 @@ function addCallListener() {
       }
     });
   });
-
+}
 
 function goToCallList(){
   $('#modCallDiv').hide();
