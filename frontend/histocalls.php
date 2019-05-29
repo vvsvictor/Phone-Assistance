@@ -162,7 +162,12 @@
         <div id="destinatari" class="row">
             <div class="col-lg-6">
               <label for="rao">Destinatari/ària</label>
-              <select class="form-control" id="destinatari" style="width: 100%"></select>
+              <label for="genere">Gènere</label>
+              <select id="addDestinatari" style="width: 100%;" class="maxWidth dropDown">
+                <option>Familiar directe</option>
+                <option>Cuidador/a formal</option>
+                <option>Cuidador/a informal</option>
+              </select>
             </div>
         </div><br>
         <button id="addCallBtn" type="button" class="btn btn-primary">Afegir Trucada</button>
