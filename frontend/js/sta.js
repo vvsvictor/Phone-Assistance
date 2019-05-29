@@ -260,89 +260,7 @@ m.init();
                   }
                 }
               }
-              //Amagar botó guardar per defecte
-              $('#saveSTA').hide();
-              //Al click modificar mostrar guardar, amagar modificar
-              $("#modSTA").click(function() {
-                $('#modSTA').hide();
-                $('#saveSTA').show();
-                //funcio habilitar botons
-                enableSTASwitch();
-                $("#saveSTA").click(function() {
-                  //Guardar Switch estat sta
-                  //obtenció dels estats del switch
-                  let tf;
-                  if ($("#tf_service").data("kendoSwitch").options.checked) {
-                    tf = 1;
-                  }else{
-                    tf = 0;
-                  }
-                  let tcr;
-                  if ($("#tcr_service").data("kendoSwitch").options.checked) {
-                    tcr = 1;
-                  }else{
-                    tcr = 0;
-                  }
-                  let cc;
-                  if ($("#cc_service").data("kendoSwitch").options.checked) {
-                    cc = 1;
-                  }else{
-                    cc = 0;
-                  }
-                  let tm;
-                  if ($("#tm_service").data("kendoSwitch").options.checked) {
-                    tm = 1;
-                  }else{
-                    tm = 0;
-                  }
-                  let tam;
-                  if ($("#tam_service").data("kendoSwitch").options.checked) {
-                    tam = 1;
-                  }else{
-                    tam = 0;
-                  }
-                  let gps;
-                  if ($("#gps_service").data("kendoSwitch").options.checked) {
-                    gps = 1;
-                  }else{
-                    gps = 0;
-                  }
-                  let umt;
-                  if ($("#umt_service").data("kendoSwitch").options.checked) {
-                    umt = 1;
-                  }else{
-                    umt = 0;
-                  }
-                  //AJAX Update dades
-                  $.ajax({
-                    url: "../backend/updates/sta.php",
-                    data:{
-                      sActual_situation: $("#staActualS").html(),
-                      sHiring_date: $("#staHDate").html(),
-                      sUser_dninif: $("#fpdni").html(),
-                      iTf_service: tf,
-                      iTcr_service: tcr,
-                      iCc_service: cc,
-                      iTm_service: tm,
-                      iTam_service: tam,
-                      iGps_service: gps,
-                      iUmt_service: umt
-                    },
-                    type: "GET",
-                    cache: false,
-                    success: function(response) {
-                      let myJSON = JSON.parse(response);
-                      //tornar a amagar els camps
-
-                    },
-                    error: function() {
-                      console.log('Error al actualitzar les dades');
-                    }
-                  });
-
-                });
-              });
-
+              modSTAListener();
 
             },
             error: function() {
@@ -356,6 +274,94 @@ m.init();
       });
 
 
+    });
+  }
+
+
+  function modSTAListener(){
+    //Amagar botó guardar per defecte
+    $('#saveSTA').hide();
+    $('#modSTA').show();
+    //Al click modificar mostrar guardar, amagar modificar
+    $("#modSTA").click(function() {
+      $('#modSTA').hide();
+      $('#saveSTA').show();
+      //funcio habilitar botons
+      enableSTASwitch();
+      $("#saveSTA").click(function() {
+        //Guardar Switch estat sta
+        //obtenció dels estats del switch
+        let tf;
+        if ($("#tf_service").data("kendoSwitch").check()) {
+          tf = 1;
+        }else{
+          tf = 0;
+        }
+        let tcr;
+        if ($("#tcr_service").data("kendoSwitch").check()) {
+          tcr = 1;
+        }else{
+          tcr = 0;
+        }
+        let cc;
+        if ($("#cc_service").data("kendoSwitch").check()) {
+          cc = 1;
+        }else{
+          cc = 0;
+        }
+        let tm;
+        if ($("#tm_service").data("kendoSwitch").check()) {
+          tm = 1;
+        }else{
+          tm = 0;
+        }
+        let tam;
+        if ($("#tam_service").data("kendoSwitch").check()) {
+          tam = 1;
+        }else{
+          tam = 0;
+        }
+        let gps;
+        if ($("#gps_service").data("kendoSwitch").check()) {
+          gps = 1;
+        }else{
+          gps = 0;
+        }
+        let umt;
+        if ($("#umt_service").data("kendoSwitch").check()) {
+          umt = 1;
+        }else{
+          umt = 0;
+        }
+        //AJAX Update dades
+        $.ajax({
+          url: "../backend/updates/sta.php",
+          data:{
+            sActual_situation: $("#staActualS").html(),
+            sHiring_date: $("#staHDate").html(),
+            sUser_dninif: $("#fpdni").html(),
+            iTf_service: tf,
+            iTcr_service: tcr,
+            iCc_service: cc,
+            iTm_service: tm,
+            iTam_service: tam,
+            iGps_service: gps,
+            iUmt_service: umt
+          },
+          type: "GET",
+          cache: false,
+          success: function(response) {
+            let myJSON = JSON.parse(response);
+            //tornar a amagar els camps
+            disableSTASwitch();
+            modSTAListener();
+          },
+          error: function() {
+            console.log('Error al actualitzar les dades');
+          }
+        });
+
+      });
     });
   }
 
