@@ -120,13 +120,13 @@ include '..\backend\include.php';
         <div class="col-lg-6">
           <label for="idioma_s">Idioma de signes</label><br>
           <label for="catala_is">Català</label>
-          <input value="1" type="radio" class="opciones" name="idioma_s" id="catala_is">
+          <input value="2" type="radio" class="opciones" name="idioma_s" id="catala_is">
           <label for="castella_is">Castellà</label>
-          <input value="2" type="radio" class="opciones" name="idioma_s" id="castella_is">
+          <input value="3" type="radio" class="opciones" name="idioma_s" id="castella_is">
           <label for="angles_is">Anglès</label>
-          <input value="3" type="radio" class="opciones" name="idioma_s" id="angles_is">
+          <input value="4" type="radio" class="opciones" name="idioma_s" id="angles_is">
           <label for="no_is">No</label>
-          <input value="0" type="radio" class="opciones" name="idioma_s" id="no_is">
+          <input value="1" type="radio" class="opciones" name="idioma_s" id="no_is">
         </div>
       </div>
       <br>
@@ -407,7 +407,16 @@ include '..\backend\include.php';
                     </div>
                     <div class="info">
                       <p class="sub-heading">Genere</p>
-                      <input id="modgenere" type="text" class="form-control" name="genere"/>
+                      <select id="modGenere" style="width: 100%;" class="maxWidth dropDown">
+                        <option>Dona</option>
+                        <option>Home</option>
+                        <option>Intersexual</option>
+                        <option>Intersexual Home</option>
+                        <option>Intersexual Dona</option>
+                        <option>Transsexual</option>
+                        <option>Transsexual Dona</option>
+                        <option>Transsexual Home</option>
+                      </select>
                       <p></p>
                     </div>
                     <div class="info">
@@ -417,21 +426,20 @@ include '..\backend\include.php';
                     </div>
                     <div class="info">
                       <p class="sub-heading">Idioma</p>
-                      <select onchange="altreListener()" id="modIdioma" style="width: 100%;" class="maxWidth"></select>&nbsp;
-                      <input id="addIdiomaAltre" type="text" class="form-control" placeholder="Idioma">
+                      <select onchange="modaltreListener()" id="modIdioma" style="width: 100%;" class="maxWidth"></select>&nbsp;
+                      <input id="modIdiomaAltre" type="text" class="form-control" placeholder="Idioma">
                       <p></p>
                     </div>
                     <div class="info">
-                      <p class="sub-heading">Idioma de signes</p>
-                      <!-- <label for="idioma_s">Idioma de signes</label><br> -->
+                      <p class="sub-heading">Idioma de Signes</p>
                       <label for="modcatala_is">Català</label>
-                      <input value="1" type="radio" class="opciones" name="modidioma_s" id="modcatala_is">
+                      <input value="2" type="radio" class="opciones" name="modidioma_s" id="modcatala_is">
                       <label for="modcastella_is">Castellà</label>
-                      <input value="2" type="radio" class="opciones" name="modidioma_s" id="modcastella_is">
+                      <input value="3" type="radio" class="opciones" name="modidioma_s" id="modcastella_is">
                       <label for="modangles_is">Anglès</label>
-                      <input value="3" type="radio" class="opciones" name="modidioma_s" id="modangles_is">
+                      <input value="4" type="radio" class="opciones" name="modidioma_s" id="modangles_is">
                       <label for="modno_is">No</label>
-                      <input value="0" type="radio" class="opciones" name="modidioma_s" id="modno_is">
+                      <input value="1" type="radio" class="opciones" name="modidioma_s" id="modno_is">
                       <p></p>
                     </div>
                   </div>
@@ -441,7 +449,7 @@ include '..\backend\include.php';
                     <h1 class="heading"> Direcció</h1>
                     <div class="info">
                       <p class="sub-heading">Provincia</p>
-                      <input id="modprovince" type="text" class="form-control" name="provincias"/>
+                      <input style="width: 100%;" id="modprovincias"/>
                       <p></p>
                     </div>
                     <div class="info">
@@ -461,12 +469,22 @@ include '..\backend\include.php';
                     </div>
                     <div class="info">
                       <p class="sub-heading">Tipus d'habitatge'</p>
-                      <input id="modTipus_habitatge" name="tipusHabitatge" style="width: 100%;"/>
+                      <select id="modTipusHabitatge" class="maxWidth dropDown" style="width: 100%;">
+                        <option>Casa Duplex</option>
+                        <option>Mansio</option>
+                        <option>Xalet</option>
+                        <option>Pis</option>
+                        <option>Atic</option>
+                        <option>Baix</option>
+                      </select>
                       <p></p>
                     </div>
                     <div class="info">
                       <p class="sub-heading">Titularitat de l'habitatge</p>
-                      <input id="modownership" type="text" class="form-control" name="ownership"/>
+                      <label for="modpropietari">Propietari</label>
+                      <input value="1" type="radio" class="opciones" name="modtitularitat" id="modpropietari">
+                      <label for="modarrendatari">Arrendatari</label>
+                      <input value="2" type="radio" class="opciones" name="modtitularitat" id="modarrendatari">
                       <p></p>
                     </div>
                   </div>
