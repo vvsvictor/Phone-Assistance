@@ -237,12 +237,12 @@
           <div class="c-tab-nav-marker"></div>
         </div>
         <!--Informació bàsica-->
-        <div class="c-tab is-active">
+        <div class="c-tab">
           <div class="c-tab__content">
-            <div class="container_fitxa">
+            <div class="container_sta">
               <div class="content3">
                 <div class="contacto">
-                  <h1 class="heading"> Fitxa bàsica</h1>
+                  <h1 class="heading">Fitxa bàsica</h1>
                   <div class="info">
                     <p class="sub-heading">ID</p>
                     <p id="fpid" class="duration"></p>
@@ -250,21 +250,21 @@
                   </div>
                   <div class="info">
                     <p class="sub-heading">DNI</p>
-                    <p id="fpdni" class="duration"></p>
+                    <p id="fpDNI" class="duration"></p>
                     <p></p>
                   </div>
                   <div class="info">
-                    <p class="sub-heading">Nom</p>
+                    <p class="sub-heading">NOM</p>
                     <p id="fpnom" class="duration"></p>
                     <p></p>
                   </div>
                   <div class="info">
-                    <p class="sub-heading">Cognom</p>
+                    <p class="sub-heading">COGNOM</p>
                     <p id="fpcognom" class="duration"></p>
                     <p></p>
                   </div>
                 </div>
-            </div>
+              </div>
           </div>
         </div>
       </div>
@@ -372,84 +372,6 @@
       </div>
     </div>
   </section>
-  </div>
-
-  <div id="pageView">
-    <section id="page">
-      <button id="returnResponsible2" type="button" class="btn btn-primary"><i class="fa fa-reply"></i></button>
-      <div id="tabs" class="c-tabs">
-        <div class="c-tabs-nav">
-          <a href="#" class="c-tabs-nav__link is-active">Dades</a>
-          <a href="#" class="c-tabs-nav__link ">Contacte</a>
-          <div class="c-tab-nav-marker"></div>
-        </div>
-          <!-- RESPONSABLE : DADES -->
-          <div class="c-tab is-active">
-            <div class="c-tab__content">
-              <div class="container_responsible">
-                <div class="content3">
-                  <div class="direccion">
-                    <h1 class="heading"> Dades</h1>
-                    <div class="info">
-                      <p class="sub-heading">Nom</p>
-                      <p id="resNom" class="duration">Nati</p>
-                      <p></p>
-                    </div>
-                    <div class="info">
-                      <p class="sub-heading">Cognoms</p>
-                      <p id="resCognom" class="duration">Novo</p>
-                      <p></p>
-                    </div>
-                    <div class="info">
-                      <p class="sub-heading">Carrer</p>
-                      <p id="resCarrer" class="duration">Alcudia nº 23 3º 1ª</p>
-                      <p></p>
-                    </div>
-                    <div class="info">
-                      <p class="sub-heading">Codi Postal</p>
-                      <p id="resCodiPostal" class="duration">08029</p>
-                      <p></p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- RESPONSABLE : CONTACTE -->
-          <div class="c-tab">
-            <div class="c-tab__content">
-              <div class="container_responsible">
-                <div class="content3">
-                  <div class="contacto">
-                    <h1 class="heading">Contacte</h1>
-                    <div class="info">
-                      <p class="sub-heading">Telèfon</p>
-                      <p id="resTel" class="duration">937764012</p>
-                      <p></p>
-                    </div>
-                    <div class="info">
-                      <p class="sub-heading">Horari</p>
-                      <p id="resHorari" class="duration">8h - 14h</p>
-                      <p></p>
-                    </div>
-                    <div class="info">
-                      <p class="sub-heading">Data</p>
-                      <p id="resData" class="duration">01-04-2017</p>
-                      <p></p>
-                    </div>
-                    <div class="info">
-                      <p class="sub-heading">Prioritat</p>
-                      <p id="resPrioritat" class="duration">Alta</p>
-                      <p></p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-    </div>
   </div>
 
 <!--Modal Delete deleteResponsible-->
