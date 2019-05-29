@@ -92,9 +92,19 @@ $(document).ready(function () {
                       { text: "Altres"}
                   ]
               }
-          ]
+          ],
+          dataTextField: "text"
     });
 });
+
+function otherCallsListener(){
+  var option = $("#addsortint_call").data("kendoDropDownList").select();
+  if (option == 13){
+    $('#addOtherCalls').show();
+  }else{
+    $('#addOtherCalls').hide();
+  }
+}
 
 function gotoAddCall(){
   showDni();
@@ -103,6 +113,7 @@ function gotoAddCall(){
   $('#call_type').hide();
   $('#addCall').show();
   $("#callList").hide();
+  $('#addOtherCalls').hide();
 }
 
 function gotoModCall() {

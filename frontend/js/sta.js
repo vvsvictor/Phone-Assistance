@@ -58,10 +58,17 @@ $(document).ready(function () {
     mostrarResponsablesTable();
     showAllInfo();
     goToShowAll();
+    console.log('entra enrer');
   });
   $("#returnResponsible2").click(function() {
-    console.log('click return ');
-    goToFitxaList();
+    mostrarResponsablesTable();
+    showAllInfo();
+    goToShowAll();
+    console.log('entra enrer');
+  });
+  $("#returnResponsible3").click(function() {
+    $("#responsibleModDiv").hide();
+    $("#responsibleInfoDiv").show();
   });
   $(".notifications-switch").kendoSwitch();
 
@@ -161,6 +168,7 @@ m.init();
   }
 
   function showAllInfo(){
+    $("#responsibleModDiv").hide();
     $(".fitxaPersonal").click(function() {
       let idFP = this.id;
       idFP = idFP.replace("fitxaPersonal", "");
@@ -271,6 +279,7 @@ m.init();
           });
           //Ajax mostrar responsables
           mostrarResponsablesTable();
+
           //Ajax afegir responsable
           $("#addResponsibleBtn").click(function() {
             //Afegir validació de camps aqui
@@ -371,6 +380,15 @@ m.init();
           $("#hourres").html('');
           $("#dateres").html('');
           $("#reasonres").html('');
+          $("#priresMod").val('');
+          $("#nomresMod").val('');
+          $("#cognomresMod").val('');
+          $("#direccioresMod").val('');
+          $("#cpresMod").val('');
+          $("#telresMod").val('');
+          $("#hourresMod").val('');
+          $("#dateresMod").val('');
+          $("#reasonresMod").val('');
           for (let i = 0; i < myJSON.length; i++) {
             if (myJSON[i].id==idres) {
               //obtenció de les dades
@@ -395,15 +413,74 @@ m.init();
               $("#hourres").html(horaPref);
               $("#dateres").html(dateres);
               $("#reasonres").html(reason);
+              $("#priresMod").val(prioritat);
+              $("#nomresMod").val(nom);
+              $("#cognomresMod").val(cognom);
+              $("#direccioresMod").val(address);
+              $("#cpresMod").val(reason);
+              $("#telresMod").val(tel);
+              $("#hourresMod").val(horaPref);
+              $("#dateresMod").val(dateres);
+              $("#reasonresMod").val(reason);
             }
           }
           goToShowResponsible();
           eliminarResponsibleListener();
+          modificarResponsibleListener();
         },
         error: function() {
           console.log('No hi han Resposables');
         }
       });
+    });
+  }
+
+  function modificarResponsibleListener(){
+    $("#responsibleModBtn").click(function() {
+      $("#responsibleModDiv").show();
+      $("#responsibleInfoDiv").hide();
+      //Click guardar
+      $("#ModResponsibleBtn").click(function() {
+        //Obtenció de les dades
+        let id = $("#idres").html();
+        let prioritat = $("#priresMod").val();
+        let nom = $("#nomresMod").val();
+        let cognom = $("#cognomresMod").val();
+        let direccio = $("#direccioresMod").val();
+        let cp = $("#cpresMod").val();
+        let tel = $("#telresMod").val();
+        let hour = $("#hourresMod").val();
+        let date = $("#dateresMod").val();
+        let reason = $("#reasonresMod").val();
+        //Funció ajax actualitzar
+        $.ajax({
+          url: "../backend/updates/responsible.php",
+          data:{
+            id: id,
+            sPrority: prioritat,
+            sName: nom,
+            sSurname: cognom,
+            sAddress: direccio, //$("#").val(),
+            sPostcode: cp,
+            sContact_phone: tel, //$("#modprovince").val(),
+            sPreferable_hour: hour, //$("#modComarcas").val(),
+            sDate_responsible: date,//$("#modMunicipios").val(),
+            sReason: reason
+          },
+          type: "GET",
+          cache: false,
+          success: function(response) {
+            //redirect
+            mostrarResponsablesTable();
+            showAllInfo();
+            goToShowAll();
+          },
+          error: function() {
+            console.log('Error al actualitzar les dades');
+          }
+        });
+      });
+
     });
   }
 
@@ -561,6 +638,7 @@ m.init();
     $("#tableResponsible").hide();
     $("#responsibleInfoDiv").hide();
     $("#addResponsible").show();
+
   }
 
 function goToShowResponsible(){
@@ -569,6 +647,7 @@ function goToShowResponsible(){
   $("#tableResponsible").hide();
   $("#responsibleInfoDiv").show();
   $("#addResponsible").hide();
+  $("#responsibleModDiv").hide();
 }
 
   function showDni() {
@@ -779,7 +858,7 @@ function deleteResponsible(idResponsible){
         mostrarResponsablesTable();
         showAllInfo();
         goToShowAll();
-        
+
       }
     },
     error: function() {

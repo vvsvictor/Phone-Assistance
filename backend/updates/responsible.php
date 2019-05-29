@@ -2,8 +2,7 @@
 
   include ("../inc/usarBD.php");
   $id = $_GET["id"];
-  $sUser_dninif = $_GET["sUser_dninif"];
-  $sPrority = $_GET["$sPrority"];
+  $sPrority = $_GET["sPrority"];
   $sName = $_GET["sName"];
   $sSurname = $_GET["sSurname"];
   $sAddress = $_GET["sAddress"];
@@ -14,7 +13,7 @@
   $sReason = $_GET["sReason"];
 
 
-  $consulta="UPDATE responsible SET user_dninif='".$sUser_dninif."', priority='".$sPrority."', name='".$sName."', surname='".$sSurname."', address='".$sAddress."', post_code='".$sPostcode."', contact_phone='".$sContact_phone."', preferable_hour='".$sPreferable_hour."', reason='".$sReason."' WHERE id=".$id;
+  $consulta="UPDATE responsible SET  priority='".$sPrority."', name='".$sName."', surname='".$sSurname."', address='".$sAddress."', post_code='".$sPostcode."', contact_phone='".$sContact_phone."', preferable_hour='".$sPreferable_hour."', reason='".$sReason."' WHERE id=".$id;
   $hacerConsulta=mysqli_query($conexion, $consulta);
 
   $sJSON = "[{";
