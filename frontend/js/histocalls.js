@@ -238,8 +238,8 @@ function addCallListener() {
       let tipus_trucada = $("#addtype_list").val();
       let data_absencia = $("#add_dataabs").val();
       let estat_trucada = $("#addstate_call").val();
-      let incall = $("#addentrant_call").val();
-      let outcall = $("#addsortint_call").val();
+      let incall = $("#addentrant_call").data("kendoDropDownList").select();
+      let outcall = $("#addsortint_call").data("kendoDropDownList").select();
       let solucio = $("#rao").val();
       let motiu = $("#addMotiu").val();
       let descripcio = $("#addDescription").val();
@@ -247,6 +247,7 @@ function addCallListener() {
       $.ajax({
         url: "../backend/inserts/insertCallHistory.php",
         data: {
+          $sDniNif: dni,
           $sCallDate:data_trucada,
           $iCallType:tipus_trucada,
           $iCallState:estat_trucada,

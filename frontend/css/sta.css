@@ -249,4 +249,5 @@ background-color: black;
 }
 .k-autocomplete .k-input, .k-dateinput-wrap .k-input, .k-dropdown-wrap .k-input, .k-picker-wrap .k-input, .k-multiselect-wrap .k-input, .k-numeric-wrap .k-input {
     background-color: white;
+    color: black;
 }

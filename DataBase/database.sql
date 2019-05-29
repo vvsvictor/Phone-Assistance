@@ -317,4 +317,4 @@ insert into incall_type (incall_type) values ("Trucada d'assessorament");
 insert into outcall_type (outcall_type) values ("Trucada d’agenda");
 insert into outcall_type (outcall_type) values ("Trucada de seguiment");
 insert into outcall_type (outcall_type) values ("Trucada d’agenda preventiva");
-insert into call_history (user_dninif,call_date,call_type,outcall_type,incall_type,call_state,teleoperator_solution) values ("68951118Q", "2019-10-25", 1, 1, 1, 1, "morir");
+insert into call_history (user_dninif,call_date, call_type, outcall_type, incall_type, call_state, teleoperator_solution, reason_for_advice, description, Destiny_advice) values ("68951118Q", "2019-10-25", 1, 1, 1, 1, "Hola","Es troba malament","Es troba malament","Familiar");

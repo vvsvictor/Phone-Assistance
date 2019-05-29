@@ -33,7 +33,7 @@ include '..\backend\includeAdmin.php';
             <a class="nav-link" href="index.php" style="color: #40514e;">Inici </a>
           </li>
           <li class="nav-item active">
-            <a class="nav-link" href="users.php" style="color: #e4f9f5;">Usuaris/es<span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="users.php" style="color: #e4f9f5;">Usuaris/àries<span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item active">
             <a class="nav-link" href="fitxaPersonal.php" style="color: #40514e;">Fitxa personal</a>

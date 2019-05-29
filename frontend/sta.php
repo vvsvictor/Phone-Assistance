@@ -37,7 +37,7 @@
           <?php
           if ($_SESSION['user']['usertype'] == 0) {
             echo '<li class="nav-item">
-              <a class="nav-link" href="users.php" style="color: #40514e;">Usuaris/es</a>
+              <a class="nav-link" href="users.php" style="color: #40514e;">Usuaris/àries</a>
             </li>';
           }
            ?>
@@ -285,9 +285,9 @@
                   <thead>
                     <tr>
                       <th class="th-sm">Id</th>
+                      <th class="th-sm">Prioritat</th>
                       <th class="th-sm">Nom</th>
                       <th class="th-sm">Cognom</th>
-                      <th class="th-sm">Prioritat</th>
                       <th class="th-sm"></th>
                     </tr>
                   </thead>
@@ -295,9 +295,9 @@
                   <tfoot>
                     <tr>
                       <th>Id</th>
-                      <th>Nom</th>
-                      <th>Cognom</th>
                       <th>Prioritat</th>
+                      <th>Nom</th>
+                      <th>Cognom</th>  
                       <th></th>
                     </tr>
                   </tfoot>
