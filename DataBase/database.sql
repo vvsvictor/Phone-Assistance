@@ -214,6 +214,7 @@ INSERT into languages (language_name) VALUES ("Castellà");
 INSERT into languages (language_name) VALUES ("English");
 
 /*Insert sign_languages by default*/
+INSERT INTO sign_languages (id, language_name) VALUES (1, "No");
 INSERT into sign_languages (language_name) VALUES ("Català");
 INSERT into sign_languages (language_name) VALUES ("Castellà");
 INSERT into sign_languages (language_name) VALUES ("English");

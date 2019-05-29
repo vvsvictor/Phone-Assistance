@@ -120,13 +120,13 @@ include '..\backend\include.php';
         <div class="col-lg-6">
           <label for="idioma_s">Idioma de signes</label><br>
           <label for="catala_is">Català</label>
-          <input value="1" type="radio" class="opciones" name="idioma_s" id="catala_is">
+          <input value="2" type="radio" class="opciones" name="idioma_s" id="catala_is">
           <label for="castella_is">Castellà</label>
-          <input value="2" type="radio" class="opciones" name="idioma_s" id="castella_is">
+          <input value="3" type="radio" class="opciones" name="idioma_s" id="castella_is">
           <label for="angles_is">Anglès</label>
-          <input value="3" type="radio" class="opciones" name="idioma_s" id="angles_is">
+          <input value="4" type="radio" class="opciones" name="idioma_s" id="angles_is">
           <label for="no_is">No</label>
-          <input value="0" type="radio" class="opciones" name="idioma_s" id="no_is">
+          <input value="1" type="radio" class="opciones" name="idioma_s" id="no_is">
         </div>
       </div>
       <br>
@@ -426,21 +426,20 @@ include '..\backend\include.php';
                     </div>
                     <div class="info">
                       <p class="sub-heading">Idioma</p>
-                      <select onchange="altreListener()" id="modIdioma" style="width: 100%;" class="maxWidth"></select>&nbsp;
-                      <input id="addIdiomaAltre" type="text" class="form-control" placeholder="modIdioma">
+                      <select onchange="modaltreListener()" id="modIdioma" style="width: 100%;" class="maxWidth"></select>&nbsp;
+                      <input id="modIdiomaAltre" type="text" class="form-control" placeholder="Idioma">
                       <p></p>
                     </div>
                     <div class="info">
-                      <p class="sub-heading">Idioma de signes</p>
-                      <!-- <label for="idioma_s">Idioma de signes</label><br> -->
+                      <p class="sub-heading">Idioma de Signes</p>
                       <label for="modcatala_is">Català</label>
-                      <input value="1" type="radio" class="opciones" name="modidioma_s" id="modcatala_is">
+                      <input value="2" type="radio" class="opciones" name="modidioma_s" id="modcatala_is">
                       <label for="modcastella_is">Castellà</label>
-                      <input value="2" type="radio" class="opciones" name="modidioma_s" id="modcastella_is">
+                      <input value="3" type="radio" class="opciones" name="modidioma_s" id="modcastella_is">
                       <label for="modangles_is">Anglès</label>
-                      <input value="3" type="radio" class="opciones" name="modidioma_s" id="modangles_is">
+                      <input value="4" type="radio" class="opciones" name="modidioma_s" id="modangles_is">
                       <label for="modno_is">No</label>
-                      <input value="0" type="radio" class="opciones" name="modidioma_s" id="modno_is">
+                      <input value="1" type="radio" class="opciones" name="modidioma_s" id="modno_is">
                       <p></p>
                     </div>
                   </div>
