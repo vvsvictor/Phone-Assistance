@@ -73,7 +73,7 @@
         </ul>
       </div>
     </nav>
-    <div id="loader" class="loader">Loading...</div>
+    <div id="loader" class="loader"></div>
     <div id="loaddiv" class="hidden">
       <div class="container">
         <!-- Formulario Añadir CAPS -->

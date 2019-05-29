@@ -2,7 +2,6 @@
 
   include ("../inc/usarBD.php");
 
-  $iUserVinculationId = $_GET["iUserVinculationId"];
   $sUserDninie = $_GET["sUserDninie"];
   $sPriority = $_GET["sPriority"];
   $sName = $_GET["sName"];
@@ -14,7 +13,7 @@
   $sDateResponsible = $_GET["sDateResponsible"];
   $sReason = $_GET["sReason"];
 
-  $consulta="INSERT INTO RESPONSIBLE (user_vinculation_id, user_dninif, priority, name, surname, address, post_code, contact_phone, preferable_hour, date_responsible, reason) VALUES ('".$iUserVinculationId."','".$sUserDninie."','".$sPriority."','".$sName."','".$sSurname."','".$sAddress."','".$sPostCode."','".$sContactPhone."','".$sPreferablePhone."','".$sDateResponsible."','".$sReason."')";
+  $consulta="INSERT INTO RESPONSIBLE (user_dninif, priority, name, surname, address, post_code, contact_phone, preferable_hour, date_responsible, reason) VALUES ('".$sUserDninie."','".$sPriority."','".$sName."','".$sSurname."','".$sAddress."','".$sPostCode."','".$sContactPhone."','".$sPreferablePhone."','".$sDateResponsible."','".$sReason."')";
   $hacerConsulta=mysqli_query($conexion, $consulta);
 
 

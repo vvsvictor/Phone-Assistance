@@ -55,7 +55,8 @@ $(document).ready(function () {
     goToFitxaList();
   });
   $("#returnResponsible").click(function() {
-    console.log('click return ');
+    mostrarResponsablesTable();
+    showAllInfo();
     goToShowAll();
   });
   $("#returnResponsible2").click(function() {
@@ -154,6 +155,7 @@ m.init();
     $('#addSTA').hide();
     $("#addResponsible").hide();
     $("#pageTables").hide();
+    $("#responsibleInfoDiv").hide();
     $("#pageView").hide();
     $("#tableFitxaPersonal").show();
   }
@@ -268,28 +270,46 @@ m.init();
             }
           });
           //Ajax mostrar responsables
-          $.ajax({
-            url: "../backend/selects/getResponsible.php",
-            type: "GET",
-            cache: false,
-            success: function(response) {
-              $("#tbResponsible").html("");
-              let myJSON = JSON.parse(response);
-              for (let i = 0; i < myJSON.length; i++) {
-                if (myJSON[i].user_dninif==$("#fpDNI").html()) {
-                  let id = myJSON[i].id;
-                  let prioritat = myJSON[i].priority;
-                  let nom = myJSON[i].name;
-                  let cognom = myJSON[i].surname;
-                  showTableResponsibles(id, prioritat, nom, cognom);
-                }
+          mostrarResponsablesTable();
+          //Ajax afegir responsable
+          $("#addResponsibleBtn").click(function() {
+            //Afegir validació de camps aqui
+            let sUserDninie = $("#fpDNI").html();
+            let sPriority = $("#addPrioritat").val();
+            let sName = $("#nom_responsableAdd").val();
+            let sSurname = $("#cognoms_responsableAdd").val();
+            let sAddress = $("#adreca_responsableAdd").val();
+            let sPostCode = $("#cp_responsableAdd").val();
+            let sContactPhone = $("#tel_responsableAdd").val();
+            let sPreferablePhone = $("#hora_preferibleAdd").val();
+            let sDateResponsible = $("#data_contactAdd").val();
+            let sReason = $("#raoAdd").val();
+            $.ajax({
+              url: "../backend/inserts/insertResponsible.php",
+              data: {
+                sUserDninie: sUserDninie,
+                sPriority: sPriority,
+                sName: sName,
+                sSurname: sSurname,
+                sAddress: sAddress,
+                sPostCode: sPostCode,
+                sContactPhone: sContactPhone,
+                sPreferablePhone: sPreferablePhone,
+                sDateResponsible: sDateResponsible,
+                sReason: sReason
+              },
+              type: "GET",
+              cache: false,
+              success: function(response) {
+                //Reload all
+                mostrarResponsablesTable();
+                showAllInfo();
+                goToShowAll();
+              },
+              error: function() {
+                alert("Error en la consulta");
               }
-              $('#dtResponsible').DataTable();
-
-            },
-            error: function() {
-              console.log('No hi han Resposables');
-            }
+            });
           });
         },
         error: function() {
@@ -298,6 +318,81 @@ m.init();
       });
 
 
+    });
+  }
+
+  function mostrarResponsablesTable(){
+    $.ajax({
+      url: "../backend/selects/getResponsible.php",
+      type: "GET",
+      cache: false,
+      success: function(response) {
+        $("#tbResponsible").html("");
+        let myJSON = JSON.parse(response);
+        for (let i = 0; i < myJSON.length; i++) {
+          if (myJSON[i].user_dninif==$("#fpDNI").html()) {
+            let id = myJSON[i].id;
+            let prioritat = myJSON[i].priority;
+            let nom = myJSON[i].name;
+            let cognom = myJSON[i].surname;
+            showTableResponsibles(id, prioritat, nom, cognom);
+          }
+        }
+        $('#dtResponsible').DataTable();
+        //Seleccionar responsable listener
+        showInfoResponsible();
+      },
+      error: function() {
+        console.log('No hi han Resposables');
+      }
+    });
+  }
+
+  function showInfoResponsible(){
+    $(".responsible").click(function() {
+      idres = this.id;
+      idres = idres.replace("responsibleId", "");
+      //Obtenció de la informació del responsable
+      $.ajax({
+        url: "../backend/selects/getResponsible.php",
+        type: "GET",
+        cache: false,
+        success: function(response) {
+          $("#tbResponsible").html("");
+          let myJSON = JSON.parse(response);
+          for (let i = 0; i < myJSON.length; i++) {
+            if (myJSON[i].id==idres) {
+              //obtenció de les dades
+              let id = myJSON[i].id;
+              let prioritat = myJSON[i].priority;
+              let nom = myJSON[i].name;
+              let cognom = myJSON[i].surname;
+              let address = myJSON[i].address;
+              let cp = myJSON[i].post_code;
+              let tel = myJSON[i].contact_phone;
+              let horaPref = myJSON[i].preferable_hour;
+              let dateres = myJSON[i].date_responsible;
+              let reason = myJSON[i].reason;
+              //Actualitzar info
+              $("#idres").html(id);
+              $("#prires").html(prioritat);
+              $("#nomres").html(nom);
+              $("#cognomres").html(cognom);
+              $("#direcciores").html(address);
+              $("#cpres").html(cp);
+              $("#telres").html(tel);
+              $("#hourres").html(horaPref);
+              $("#dateres").html(dateres);
+              $("#reasonres").html(reason);
+            }
+          }
+          goToShowResponsible();
+          eliminarResponsibleListener();
+        },
+        error: function() {
+          console.log('No hi han Resposables');
+        }
+      });
     });
   }
 
@@ -403,7 +498,7 @@ m.init();
   }
 
   function showTableResponsibles(id, prioritat, nom, cognom){
-    let html = "<tr><td>" + id + "</td><td>" + prioritat + "</td><td>" + nom + "</td><td>" + cognom + "</td><td><button id='responsibleId" + id + "' type='button' class='responsible btn btn-info marginBtn'>Fitxa Completa</button><button type='button' id='deleteCardId" + id + "' class='deletecard btn btn-danger marginBtn' data-toggle='modal' data-target='#deletecardmodal'>Eliminar</button></td></tr>";
+    let html = "<tr><td>" + id + "</td><td>" + prioritat + "</td><td>" + nom + "</td><td>" + cognom + "</td><td><button id='responsibleId" + id + "' type='button' class='responsible btn btn-info marginBtn'>Fitxa Completa</button></td></tr>";
     $("#tbResponsible").append(html);
   }
 
@@ -433,6 +528,7 @@ m.init();
     $("#pageTables").hide();
     $("#pageView").hide();
     $("#tableFitxaPersonal").hide();
+    $("#responsibleInfoDiv").hide();
     $("#pageTables").show();
     $("#tableResponsible").show();
 
@@ -443,6 +539,7 @@ m.init();
     showDni();
     $("#tableFitxaPersonal").hide();
     $("#pageResponsable").hide();
+    $("#responsibleInfoDiv").hide();
     $("#addSTA").show();
   }
 
@@ -451,8 +548,18 @@ m.init();
     $("#tableFitxaPersonal").hide();
     $("#pageResponsable").hide();
     $("#tableResponsible").hide();
+    $("#responsibleInfoDiv").hide();
     $("#addResponsible").show();
   }
+
+function goToShowResponsible(){
+  $("#tableFitxaPersonal").hide();
+  $("#pageResponsable").hide();
+  $("#tableResponsible").hide();
+  $("#responsibleInfoDiv").show();
+  $("#addResponsible").hide();
+}
+
   function showDni() {
       $.ajax({
         url: "../backend/selects/getFitxaPersonal.php",
@@ -583,31 +690,7 @@ function mostrarCardListener() {
             $("#resPrioritat").html(priority);
             $("#resRao").html(reason);
             goToResp();
-            $.ajax({
-              url: "../backend/selects/getResponsible.php",
-              type: "GET",
-              cache: false,
-              success: function(response) {
-                let myJSON = JSON.parse(response);
-                console.log("Medics "+response);
-                $("#tbDoctors").html("");
-                for (var i = 0; i < myJSON.length; i++) {
-                  if (idbtn == myJSON[i].id_cap){
-                    let id = myJSON[i].id;
-                    let name = myJSON[i].name;
-                    let surname = myJSON[i].surname;
-                    let gender = myJSON[i].gender;
-                    let specialization = myJSON[i].med_specialization;
-                    showMedicos(id,name,surname,gender,specialization);
-                  }
-                  eliminarDrListener();
-                }
-                $('#dtDoctor').DataTable();
-              },
-              error: function() {
-                console.log('No hi han Doctors');
-              }
-            });
+
           }
         }
       },
@@ -659,10 +742,8 @@ function deleteSta(idSta){
 
 function eliminarResponsibleListener() {
   let idResponsible;
-  $(".deleteResponsible").click(function(event) {
-    idResponsible = this.id;
-    idResponsible = idResponsible.replace("deleteResponsibleId", "");
-    console.log("The id Responsible is: " + idResponsible);
+  $("#deleteResponsibleBtn").click(function(event) {
+    idResponsible = $("#idres").html();
     $("#deleteResponsibleDef").click(function(event) {
       console.log("The Button Responsible is: " + idResponsible);
       deleteResponsible(idResponsible);

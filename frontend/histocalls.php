@@ -71,7 +71,7 @@
         </ul>
       </div>
     </nav>
-    <div id="loader" class="loader">Loading...</div>
+    <div id="loader" class="loader"></div>
     <div id="loaddiv" class="hidden">
     <div class="container" id="callList">
       <button id="showFormBtn" type="button" class="btn btn-primary marginBtn">Afegir</button>
