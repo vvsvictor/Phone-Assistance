@@ -164,7 +164,7 @@ m.init();
           console.log(myJSON);
           //Clean FP
           $("#fpid").html('');
-          $("#fpdni").html('');
+          $("#fpDNI").html('');
           $("#fpnom").html('');
           $("#fpcognom").html('');
           for (var i = 0; i < myJSON.length; i++) {
@@ -172,7 +172,7 @@ m.init();
               console.log('entra fp'+ idFP);
               $("#fpid").html(idFP);
               dniSelected = myJSON[i].dninie;
-              $("#fpdni").html(myJSON[i].dninie);
+              $("#fpDNI").html(myJSON[i].dninie);
               $("#fpnom").html(myJSON[i].name);
               $("#fpcognom").html(myJSON[i].surname);
             }
@@ -340,7 +340,7 @@ m.init();
           data:{
             sActual_situation: $("#staActualSMod").val(),
             sHiring_date: $("#staHDateMod").val(),
-            sUser_dninif: $("#fpdni").html(),
+            sUser_dninif: $("#fpDNI").html(),
             iTf_service: tf,
             iTcr_service: tcr,
             iCc_service: cc,
