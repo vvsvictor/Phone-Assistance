@@ -86,7 +86,7 @@ $(document).ready(function () {
                   ]
               },
               {
-                  text: "Trucada d'agenda preventiva" items: [
+                  text: "Trucada d'agenda preventiva", items: [
                       { text: "Condicions ambientals" },
                       { text: "Seguretat de la via" },
                       { text: "Campanyes de vacunacio"},
@@ -183,6 +183,7 @@ function addCallListener() {
         }
       });
     }
+
     function showStateCall(){
       $.ajax({
         url: "../backend/selects/getCallState.php",
