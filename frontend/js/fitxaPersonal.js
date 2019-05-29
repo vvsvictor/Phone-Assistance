@@ -1,4 +1,3 @@
-//$("#modGenere").data("kendoDropDownList").value('Home')
 $(document).ready(function() {
   $('.dataTables_length').addClass('bs-select');
   goToFpList();
@@ -56,8 +55,6 @@ $(document).ready(function() {
             });
   $("#addTipus").kendoDropDownList();
 });
-
-
 
 function Tabs(options) {
   var tabs = document.querySelector(options.el);
@@ -126,14 +123,12 @@ function Tabs(options) {
   }
 }
 
-
 var m = new Tabs({
   el: "#tabs",
   marker: true
 });
 
 m.init();
-
 
 function showTable() {
   $.ajax({
@@ -388,7 +383,7 @@ function modLanguages(){
   });
 }
 
-  function modaltreListener() {
+function modaltreListener() {
     let e = document.getElementById("modIdioma");
     let text = e.options[e.selectedIndex].value;
     console.log(text);
@@ -684,11 +679,12 @@ function mostrarCardListener(id) {
             $("#modNom").val(name);
             $("#modCognom").val(surname);
             $("#moddninie").val(dninie);
-            $("#modgenere").val(gender);
+            $("#modGenere").val(gender);
             $("#modDataNaixement").val(birthdate);
             $("#modprovince").val(province);
             $("#modComarcas").val(comarca);
             $("#modMunicipios").val(municipality);
+            //$("#modMunicipios").data("kendoAutoComplete").value("new value");
             $("#modAdreca").val(address);
             $("#modtype_house").val(type_house);
             $("#modownership").val(ownership);
