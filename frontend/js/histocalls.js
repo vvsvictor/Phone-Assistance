@@ -2,7 +2,6 @@ $(document).ready(function () {
   $('.dataTables_length').addClass('bs-select');
   showTable();
   gotoModCall();
-  addCallListener();
 
   $("#showFormBtn").click(function(){
     gotoAddCall();
@@ -69,11 +68,8 @@ function returnCall(){
   returnCalls
 }
 
-function addCallListener() {
-  $("#addCallbtn").click(function() {
-    let dni = $("#adddni_usuari").val();
-    let data_trucada = $("#adddata_trucada").val();
-    let idioma = $("#addIdioma").val();
+function mostrarCallListener() {
+  
   });
 }
 
@@ -151,32 +147,37 @@ function addCallListener() {
       });
     }
 
-  $("#addCallBtn").click(function() {
-    //Faltan comprovaciones de input correcto
-    $.ajax({
-      url: "../backend/inserts/insertCallHistory.php",
-      data: {
-        sDni: $("#adddni_usuari").val(),
-        sCallDate: $("#adddata_trucada").val(),
-        iCallType: $("#addtype_call").val(),
-        iState: $("#addstate_call").val()
-      },
-      type: "GET",
-      cache: false,
-      success: function(response) {
-        let myJSON = JSON.parse(response);
-        showTable();
-        goToCallList();
+  function addCall(){
+    $("#addCallBtn").click(function() {
+      let dni = $("#adddni_usuari").val();
+      let data_trucada = $("#adddata_trucada").val();
+      let idioma = $("#addIdioma").val();
+      //Faltan comprovaciones de input correcto
+      $.ajax({
+        url: "../backend/inserts/insertCallHistory.php",
+        data: {
+          sDni: $("#adddni_usuari").val(),
+          sCallDate: $("#adddata_trucada").val(),
+          iCallType: $("#addtype_call").val(),
+          iState: $("#addstate_call").val()
+        },
+        type: "GET",
+        cache: false,
+        success: function(response) {
+          let myJSON = JSON.parse(response);
+          showTable();
+          goToCallList();
 
-        if (parseInt(myJSON.codigoError) != 0) {
-          console.log(myJSON.observaciones + " - " + myJSON.codigoError + " - " + myJSON.descError);
+          if (parseInt(myJSON.codigoError) != 0) {
+            console.log(myJSON.observaciones + " - " + myJSON.codigoError + " - " + myJSON.descError);
+          }
+        },
+        error: function() {
+          alert("Error en la consulta");
         }
-      },
-      error: function() {
-        alert("Error en la consulta");
-      }
     });
   });
+}
 
 
 function goToCallList(){
