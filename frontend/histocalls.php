@@ -131,7 +131,7 @@
             <input id="addentrant_call" style="width: 100%"/>
           </div>
           <div class="col lg-6" id="exit_type">
-            <label for="addsortint_call">Tipus de trucada sortint/a</label><br>
+            <label for="addsortint_call">Tipus de trucada sortint</label><br>
             <input id="addsortint_call" style="width: 100%"/>
           </div>
         </div>
