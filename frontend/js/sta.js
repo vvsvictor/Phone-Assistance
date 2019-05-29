@@ -126,8 +126,6 @@ m.init();
 
 
 
-
-
   function goToFitxaList() {
     $('#addSTA').hide();
     $("#addResponsible").hide();
@@ -138,11 +136,50 @@ m.init();
 
   function showAllInfo(){
     $(".fitxaPersonal").click(function() {
+      let idFP = this.id;
+      idFP = idFP.replace("fitxaPersonal", "");
+      $.ajax({
+        url: "../backend/selects/getFitxaPersonal.php",
+        type: "GET",
+        cache: false,
+        success: function(response) {
+          let myJSON = JSON.parse(response);
+          //Clean FP
+          $("#fpid").val('');
+          $("#fpdni").val('');
+          $("#fpnom").val('');
+          $("#fpcognom").val('');
+          for (var i = 0; i < myJSON.length; i++) {
+            if (myJSON[i].id==idFP) {
+              $("#fpid").val(idFP);
+              $("#fpdni").val(myJSON[i].dninie);
+              $("#fpnom").val(myJSON[i].name);
+              $("#fpcognom").val(myJSON[i].surname);
+            }
+          }
+          //Anar a mostrar info
+          goToShowAll();
+          //Tornar enrrere listener
+          $("#returnFP").click(function() {
+            goToFitxaList();
+          });
 
+
+        },
+        error: function() {
+          console.log('No hi han provincies');
+        }
+      });
     });
   }
 
   function goToShowAll(){
+    $('#addSTA').hide();
+    $("#addResponsible").hide();
+    $("#pageTables").hide();
+    $("#pageView").hide();
+    $("#tableFitxaPersonal").hide();
+    $("#pageTables").show();
 
   }
 
@@ -211,6 +248,7 @@ m.init();
           $('#loader').hide();
         }
         $('#dtFitxaPersonal').DataTable();
+        showAllInfo();
       },
       error: function() {
         console.log('No hi han clients');
@@ -222,9 +260,9 @@ m.init();
     let html = "<tr><td>" + id + "</td><td>" + dninie + "</td><td>" + name + "</td><td>" + surname + "</td><td><button id='fitxaPersonal" + id + "' type='button' class='fitxaPersonal btn btn-info marginBtn'>Més Informació</button></td></tr>";
     $("#fitxaPersonalTable").append(html);
 
-    $(".fitxaPersonal").click(function() {
+    /*$(".fitxaPersonal").click(function() {
       mostrarCardListener($(this).attr('id'));
-    });
+    });*/
   }
 
 

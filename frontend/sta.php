@@ -201,8 +201,6 @@
 
       <div id="tableFitxaPersonal">
         <br/>
-        <button id="showFormSTA" type="button" class="btn btn-primary"><i class="fa fa-plus"></i>Afegir STA</button>
-        <button id="showFormResponsible" type="button" class="btn btn-primary"><i class="fa fa-plus"></i>Afegir Responsable</button>
       <table id="dtFitxaPersonal" class="table table-striped table-bordered" cellspacing="0" width="100%">
         <thead>
           <tr>
@@ -274,7 +272,7 @@
         <div class="c-tab">
           <div class="c-tab__content">
             <div class="container_sta">
-              <<div class="content3">
+              <div class="content3">
                 <div class="contacto">
                   <h1 class="heading">Serveis Contractats</h1>
                   <div class="info">
@@ -324,7 +322,7 @@
           <div class="container_responsible">
             <div class="content3">
               <div id="tableResponsible">
-                <button id="showFormResponsible" type="button" class="btn btn-primary marginTop"><i class="fa fa-plus"></i> Afegir Doctor</button>
+                <button id="showFormResponsible" type="button" class="btn btn-primary marginTop"><i class="fa fa-plus"></i> Afegir Responsable</button>
                 <table id="dtResponsible" class="table table-striped table-bordered" cellspacing="0" width="100%">
                   <thead>
                     <tr>
