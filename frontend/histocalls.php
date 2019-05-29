@@ -117,7 +117,7 @@
         <br>
         <div class="row">
           <div class="col-lg-6">
-            <label for="addtype_call">Tipus trucada</label><br>
+            <label for="addtype_list">Tipus trucada</label><br>
             <select id="addtype_list" style="width: 100%;" class="maxWidth dropDown" onchange="callTypeListener()">
             </select>
           </div>

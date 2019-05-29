@@ -2,7 +2,6 @@ $(document).ready(function () {
   $('.dataTables_length').addClass('bs-select');
   showTable();
   gotoModCall();
-  addCallListener();
 
   $(".datePickerKendo").kendoDatePicker({
       format: "d/M/yyyy"
@@ -128,8 +127,12 @@ function returnCall(){
   returnCalls
 }
 
+<<<<<<< HEAD
+function mostrarCallListener() {
+=======
 function addCallListener() {
   $("#addCallbtn").click(function() {
+>>>>>>> 0db8e9a4b1e2ccfc8dfe405a058724059fa69166
 
   });
 }
@@ -209,33 +212,46 @@ function addCallListener() {
       });
     }
 
-  $("#addCallBtn").click(function() {
-    //Faltan comprovaciones de input correcto
-    $.ajax({
-      url: "../backend/inserts/insertCallHistory.php",
-      data: {
-        sDni: $("#adddni_usuari").val(),
-        sCallDate: $("#adddata_trucada").val(),
-        iCallType: $("#addtype_call").val(),
-        iState: $("#addstate_call").val()
-      },
-      type: "GET",
-      cache: false,
-      success: function(response) {
-        let myJSON = JSON.parse(response);
-        showTable();
-        goToCallList();
+  function addCall(){
+    $("#addCallBtn").click(function() {
+      let dni = $("#adddni_usuari").val();
+      let data_trucada = $("#adddata_trucada").val();
+      let tipus_trucada = $("#addtype_list").val();
+      let data_absencia = $("#add_dataabs").val();
+      let estat_trucada = $("#addstate_call").val();
+      let solucio = $("#rao").val();
+      let motiu = $("#addMotiu").val();
+      let descripcio = $("#addDescription").val();
+      let destinatari = $("#destinatari").val();
+      $.ajax({
+        url: "../backend/inserts/insertCallHistory.php",
+        data: {
+          $sCallDate:data_trucada,
+          $iCallType:tipus_trucada,
+          $iOutcallType:,
+          $iIncallType:,
+          $iCallState:estat_trucada,
+          $sTeleoperatorSolution:motiu
+        },
+        type: "GET",
+        cache: false,
+        success: function(response) {
+          console.log("entra dades");
+          let myJSON = JSON.parse(response);
+          showTable();
+          goToFpList();
 
-        if (parseInt(myJSON.codigoError) != 0) {
-          console.log(myJSON.observaciones + " - " + myJSON.codigoError + " - " + myJSON.descError);
+          if (parseInt(myJSON.codigoError) != 0) {
+            console.log(myJSON.observaciones + " - " + myJSON.codigoError + " - " + myJSON.descError);
+          }
+        },
+        error: function() {
+          alert("Error en la consulta");
         }
-      },
-      error: function() {
-        alert("Error en la consulta");
-      }
-    });
+      });
   });
 }
+
 
 function goToCallList(){
   $('#modCallDiv').hide();
