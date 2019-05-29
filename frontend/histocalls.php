@@ -132,8 +132,8 @@
           </div>
           <div class="col lg-12" id="exit_type">
             <label for="addsortint_call">Tipus de trucada sortint</label><br>
-            <input onchange="otherCallsListener()" id="addsortint_call" style="width: 100%"/>
-            <input id="addOtherCalls" type="text" class="form-control" placeholder="Idioma">
+            <input onchange="otherCallsListener()" id="addsortint_call" style="width: 100%"/><br>
+            <input id="addOtherCalls" type="text" class="form-control" placeholder="Altre trucada sortint...">
           </div>
         </div>
         <br>

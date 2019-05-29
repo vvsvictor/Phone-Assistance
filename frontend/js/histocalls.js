@@ -118,6 +118,7 @@ function gotoAddCall(){
   $('#addCall').show();
   $("#callList").hide();
   $('#addOtherCalls').hide();
+  $("#addsortint_call").data("kendoDropDownTree").bind("change", otherCallsListener);
 }
 
 function gotoModCall() {
@@ -148,12 +149,6 @@ function mostrarCallListener() {
 
 }
 
-function addCallListener() {
-  $("#addCallbtn").click(function() {
-
-
-  });
-}
 
   function showDni() {
       $.ajax({
@@ -235,12 +230,12 @@ function addCallListener() {
   function addCall(){
     $("#addCallBtn").click(function() {
       let dni = $("#adddni_usuari").val();
+      dni = dni.split('(Id:').pop().split(')')[0];
       let data_trucada = $("#adddata_trucada").val();
       let tipus_trucada = $("#addtype_list").val();
-      let data_absencia = $("#add_dataabs").val();
       let estat_trucada = $("#addstate_call").val();
-      let incall = $("#addentrant_call").data("kendoDropDownList");
-      let outcall = $("#addsortint_call").data("kendoDropDownList");
+      let incall = $("#addentrant_call").data("kendoDropDownList").value();
+      let outcall = $("#addsortint_call").data("kendoDropDownTree").value();
       let solucio = $("#rao").val();
       let motiu = $("#addMotiu").val();
       let descripcio = $("#addDescription").val();
