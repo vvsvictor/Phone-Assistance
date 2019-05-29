@@ -118,7 +118,8 @@
         <div class="row">
           <div class="col-lg-6">
             <label for="addtype_call">Tipus trucada</label><br>
-            <input id="addtype_call" style="width: 100%" onchange="callTypeListener()"/>
+            <select id="addtype_list" style="width: 100%;" class="maxWidth dropDown" onchange="callTypeListener()">
+            </select>
           </div>
           <div class="col lg-6" id="out_in_select">
           </div>
@@ -131,7 +132,7 @@
           </div>
           <div class="col lg-6" id="exit_type">
             <label for="addsortint_call">Tipus de trucada sortint/a</label><br>
-            <input id="addentrant_call" style="width: 100%"/>
+            <input id="addsortint_call" style="width: 100%"/>
           </div>
         </div>
         <br>
@@ -159,12 +160,12 @@
         <br>
         <div id="trucadaassesor" class="row">
           <div class="col-lg-6">
-            <label for="addmotiuass">Motiu d'assessorament</label><br>
-            <input id="addstate_call" style="width: 100%"/><br>
+            <label for="addMotiu">Motiu d'assessorament</label><br>
+            <textarea class="form-control" id="addMotiu" rows="3"></textarea>
           </div>
           <div class="col lg-6">
-            <label for="addmotiuass">Descripció</label><br>
-            <input id="addstate_call" style="width: 100%"/>
+            <label for="addDescription">Descripció</label><br>
+            <textarea class="form-control" id="addDescription" rows="3"></textarea>
           </div>
         </div>
         <br>

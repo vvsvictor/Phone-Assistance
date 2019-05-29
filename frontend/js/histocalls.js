@@ -8,10 +8,6 @@ $(document).ready(function () {
       format: "d/M/yyyy"
     });
 
-  $("#type_call").kendoComboBox({
-       dataSource: ["Item1", "Item2"]
-  });
-
   $("#outcall").kendoComboBox({
        dataSource: ["Item1", "Item2"]
   });
@@ -28,7 +24,14 @@ $(document).ready(function () {
     goToCallList();
   });
 
-
+  $("#addtype_list").kendoDropDownList({
+    dataSource: [
+      {id: "Entrant" , name: "Entrant"},
+      {id: "Sortint" , name: "Sortint"}
+    ],
+    dataTextField: "name",
+    dataValueField: "id"
+  });
 });
 
 
@@ -39,7 +42,9 @@ function gotoModCall() {
 }
 
 function callTypeListener(){
-  if ($(provincias).val().includes("Entrant")) {
+  var type = $("#addtype_list").data("kendoDropDownList").select();
+  console.log(type);
+  if (type == 0) {
     $("#call_type").show();
     $("#entry_type").show();
     $("#exit_type").hide();
