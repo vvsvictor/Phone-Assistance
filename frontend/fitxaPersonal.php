@@ -166,6 +166,10 @@ include '..\backend\include.php';
           <input value="1" type="radio" class="opciones" name="titularitat" id="propietari">
           <label for="arrendatari">Arrendatari</label>
           <input value="2" type="radio" class="opciones" name="titularitat" id="arrendatari">
+          <label for="pis_proofi">Pis de protecció oficial</label>
+          <input value="3" type="radio" class="opciones" name="titularitat" id="pis_proofi">
+          <label for="habit_pro">habitatge protegit</label>
+          <input value="4" type="radio" class="opciones" name="titularitat" id="habit_pro">
         </div>
       </div>
       <br>
@@ -485,6 +489,10 @@ include '..\backend\include.php';
                       <input value="1" type="radio" class="opciones" name="modtitularitat" id="modpropietari">
                       <label for="modarrendatari">Arrendatari</label>
                       <input value="2" type="radio" class="opciones" name="modtitularitat" id="modarrendatari">
+                      <label for="pis_proofi">Pis de protecció oficial</label>
+                      <input value="3" type="radio" class="opciones" name="titularitat" id="modpis_proofi">
+                      <label for="habit_pro">habitatge protegit</label>
+                      <input value="4" type="radio" class="opciones" name="titularitat" id="modhabit_pro">
                       <p></p>
                     </div>
                   </div>
