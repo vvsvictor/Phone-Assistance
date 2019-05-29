@@ -280,12 +280,19 @@
                   <div class="info">
                     <p class="sub-heading">Situació actual</p>
                     <p id="staActualS" class="duration"></p>
+                    <div id="staActualSModDiv">
+                      <select id="staActualSMod" style="width: 100%;" >
+                      </select>
+                    </div>
 
                     <p></p>
                   </div>
                   <div class="info">
                     <p class="sub-heading">Data de contractació</p>
                     <p id="staHDate" class="duration"></p>
+                    <div id="staHDateModDiv">
+                      <input id="staHDateMod" value="" class="datePickerKendo" title="datepicker" style="width: 100%" />
+                    </div>
                     <p></p>
                   </div>
                   <div class="info">

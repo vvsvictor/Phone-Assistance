@@ -27,7 +27,20 @@ $(document).ready(function () {
   $("#serveigps").kendoSwitch();
   $("#serveiumt").kendoSwitch();
   });
+
   $("#addSituacio").kendoDropDownList();
+  $("#staActualSMod").kendoDropDownList({
+    dataSource: [
+      { id: "Alta", name: "Alta" },
+      { id: "Baixa Temporal", name: "Baixa Temporal" },
+      { id: "Baixa Definitiva", name: "Baixa Definitiva" }
+    ],
+    dataTextField: "name",
+    dataValueField: "id"
+  });
+
+  $("#dropdownlist").kendoDropDownList();
+
   $("#showFormResponsible").click(function() {
     goToAddResponsible();
   });
@@ -179,8 +192,16 @@ m.init();
               let myJSON = JSON.parse(response);
               for (let i = 0; i < myJSON.length; i++) {
                 if (myJSON[i].user_dninif==dniSelected ) {
-                  $('#staActualS').html(myJSON[i].actual_situation)
-                  $('#staHDate').html(myJSON[i].hiring_date)
+                  $('#staActualS').html(myJSON[i].actual_situation);
+                  if (myJSON[i].actual_situation=="Alta") {
+                    $("#staActualSMod").data("kendoDropDownList").select(0);
+                  }else if (myJSON[i].actual_situation=="Baixa Temporal") {
+                    $("#staActualSMod").data("kendoDropDownList").select(1);
+                  }else{
+                    $("#staActualSMod").data("kendoDropDownList").select(2);
+                  }
+                  $('#staHDate').html(myJSON[i].hiring_date);
+                  $('#staHDateMod').val(myJSON[i].hiring_date);
 
                   if (myJSON[i].tf_service==1) {
                     $("#tf_service").data("kendoSwitch").check(true);
@@ -252,8 +273,16 @@ m.init();
     //Amagar botó guardar per defecte
     $('#saveSTA').hide();
     $('#modSTA').show();
+    $("#staHDateModDiv").hide();
+    $("#staActualSModDiv").hide();
+    $("#staHDate").show();
+    $("#staActualS").show();
     //Al click modificar mostrar guardar, amagar modificar
     $("#modSTA").click(function() {
+      $("#staHDateModDiv").show();
+      $("#staActualSModDiv").show();
+      $("#staHDate").hide();
+      $("#staActualS").hide();
       $('#modSTA').hide();
       $('#saveSTA').show();
       //funcio habilitar botons
@@ -304,11 +333,13 @@ m.init();
           umt = 0;
         }
         //AJAX Update dades
+        let actual_situation_mod;
+        let sActual_situation_mod;
         $.ajax({
           url: "../backend/updates/sta.php",
           data:{
-            sActual_situation: $("#staActualS").html(),
-            sHiring_date: $("#staHDate").html(),
+            sActual_situation: $("#staActualSMod").val(),
+            sHiring_date: $("#staHDateMod").val(),
             sUser_dninif: $("#fpdni").html(),
             iTf_service: tf,
             iTcr_service: tcr,
@@ -322,6 +353,9 @@ m.init();
           cache: false,
           success: function(response) {
             let myJSON = JSON.parse(response);
+            //Mostrar les noves dades
+            $("#staActualS").html($("#staActualSMod").val())
+            $("#staHDate").html($("#staHDateMod").val())
             //tornar a amagar els camps
             disableSTASwitch();
             modSTAListener();
