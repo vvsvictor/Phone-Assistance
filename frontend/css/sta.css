@@ -102,6 +102,11 @@
  padding-top: 40px;
 }
 
+.marginTop{
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
 .c-tabs-nav {
  list-style: none;
  padding: 0;
