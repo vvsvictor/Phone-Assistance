@@ -233,6 +233,7 @@ function mostrarCallListener() {
       dni = dni.split('(Id:').pop().split(')')[0];
       let data_trucada = $("#adddata_trucada").val();
       let estat_trucada = $("#addstate_call").val();
+>>>>>>> 22c8eeaf3c7b2f416e67063dbf0c860d957714a9
       let solucio = $("#rao").val();
       let motiu = $("#addMotiu").val();
       let descripcio = $("#addDescription").val();

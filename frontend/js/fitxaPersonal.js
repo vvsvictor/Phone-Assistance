@@ -684,7 +684,6 @@ function mostrarCardListener(id) {
             $("#modprovince").val(province);
             $("#modComarcas").val(comarca);
             $("#modMunicipios").val(municipality);
-            //$("#modMunicipios").data("kendoAutoComplete").value("new value");
             $("#modAdreca").val(address);
             $("#modtype_house").val(type_house);
             $("#modownership").val(ownership);
