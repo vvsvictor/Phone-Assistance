@@ -144,7 +144,6 @@ function showTable() {
     type: "GET",
     cache: false,
     success: function(response) {
-      console.log("Show table AJAX "+response)
       let myJSON = JSON.parse(response);
       $("#fitxaPersonalTable").html("");
       for (var i = 0; i < myJSON.length; i++) {
@@ -584,6 +583,7 @@ function mostrarCardListener(id) {
             $("#fpgender").html(gender);
             $("#fpbirthdate").html(birthdate);
             $("#fpidioma").html(language_name);
+            console.log("Sign language n" + i + " es " +sign_language)
             $("#fpidioma_s").html(sign_language);
             $("#fpprovince").html(province);
             $("#fpcomarca").html(comarca);
