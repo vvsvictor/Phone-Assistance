@@ -407,7 +407,16 @@ include '..\backend\include.php';
                     </div>
                     <div class="info">
                       <p class="sub-heading">Genere</p>
-                      <input id="modgenere" type="text" class="form-control" name="genere"/>
+                      <select id="modGenere" style="width: 100%;" class="maxWidth dropDown">
+                        <option>Dona</option>
+                        <option>Home</option>
+                        <option>Intersexual</option>
+                        <option>Intersexual Home</option>
+                        <option>Intersexual Dona</option>
+                        <option>Transsexual</option>
+                        <option>Transsexual Dona</option>
+                        <option>Transsexual Home</option>
+                      </select>
                       <p></p>
                     </div>
                     <div class="info">
@@ -418,7 +427,7 @@ include '..\backend\include.php';
                     <div class="info">
                       <p class="sub-heading">Idioma</p>
                       <select onchange="altreListener()" id="modIdioma" style="width: 100%;" class="maxWidth"></select>&nbsp;
-                      <input id="addIdiomaAltre" type="text" class="form-control" placeholder="Idioma">
+                      <input id="addIdiomaAltre" type="text" class="form-control" placeholder="modIdioma">
                       <p></p>
                     </div>
                     <div class="info">
@@ -441,7 +450,7 @@ include '..\backend\include.php';
                     <h1 class="heading"> Direcció</h1>
                     <div class="info">
                       <p class="sub-heading">Provincia</p>
-                      <input id="modprovince" type="text" class="form-control" name="provincias"/>
+                      <input style="width: 100%;" id="modprovincias"/>
                       <p></p>
                     </div>
                     <div class="info">
@@ -461,12 +470,22 @@ include '..\backend\include.php';
                     </div>
                     <div class="info">
                       <p class="sub-heading">Tipus d'habitatge'</p>
-                      <input id="modTipus_habitatge" name="tipusHabitatge" style="width: 100%;"/>
+                      <select id="modTipusHabitatge" class="maxWidth dropDown" style="width: 100%;">
+                        <option>Casa Duplex</option>
+                        <option>Mansio</option>
+                        <option>Xalet</option>
+                        <option>Pis</option>
+                        <option>Atic</option>
+                        <option>Baix</option>
+                      </select>
                       <p></p>
                     </div>
                     <div class="info">
                       <p class="sub-heading">Titularitat de l'habitatge</p>
-                      <input id="modownership" type="text" class="form-control" name="ownership"/>
+                      <label for="modpropietari">Propietari</label>
+                      <input value="1" type="radio" class="opciones" name="modtitularitat" id="modpropietari">
+                      <label for="modarrendatari">Arrendatari</label>
+                      <input value="2" type="radio" class="opciones" name="modtitularitat" id="modarrendatari">
                       <p></p>
                     </div>
                   </div>

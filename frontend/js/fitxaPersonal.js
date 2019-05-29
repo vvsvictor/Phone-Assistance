@@ -287,6 +287,81 @@ function showMunisipalitys() {
   });
 }
 
+function modMunisipalitys() {
+  $.ajax({
+    url: "../backend/selects/getMunisipalitys.php",
+    type: "GET",
+    cache: false,
+    success: function(response) {
+      let myJSON = JSON.parse(response);
+      let munisipalitys = [];
+      for (var i = 0; i < myJSON.length; i++) {
+        let munisipality = myJSON[i].muni_name;
+        let id = myJSON[i].id;
+        munisipalitys.push("(Id:" + id + ") " + munisipality);
+      }
+      $("#modmunicipios").kendoAutoComplete({
+        filter: "contains",
+        dataSource: munisipalitys,
+        placeholder: "Selecciona un municipi...",
+      });
+    },
+    error: function() {
+      console.log('No hi han municipis');
+    }
+  });
+}
+
+function modProvinces() {
+  $.ajax({
+    url: "../backend/selects/getProvinces.php",
+    type: "GET",
+    cache: false,
+    success: function(response) {
+      let myJSON = JSON.parse(response);
+      let provincias = [];
+      for (var i = 0; i < myJSON.length; i++) {
+        let province = myJSON[i].prov_name;
+        let id = myJSON[i].id;
+        provincias.push("(Id:" + id + ") " + province);
+      }
+      $("#modprovincias").kendoAutoComplete({
+        filter: "contains",
+        dataSource: provincias,
+        placeholder: "Selecciona una provincia...",
+      });
+    },
+    error: function() {
+      console.log('No hi han provincies');
+    }
+  });
+}
+
+function modComarcas() {
+  $.ajax({
+    url: "../backend/selects/getComarcas.php",
+    type: "GET",
+    cache: false,
+    success: function(response) {
+      let myJSON = JSON.parse(response);
+      let comarcas = [];
+      for (var i = 0; i < myJSON.length; i++) {
+        let comarca = myJSON[i].comar_name;
+        let id = myJSON[i].id;
+        comarcas.push("(Id:" + id + ") " + comarca);
+      }
+      $("#modcomarcas").kendoAutoComplete({
+        filter: "contains",
+        dataSource: comarcas,
+        placeholder: "Selecciona una comarca...",
+      });
+    },
+    error: function() {
+      console.log('No hi han comarques');
+    }
+  });
+}
+
 function addFitxaPersonal() {
   $("#addPersonalCard").click(function() {
     let nom = $("#addNom").val();
@@ -442,6 +517,15 @@ function uppercase(str){
 }
 
 function goToModFP() {
+  modComarcas();
+  modProvinces()
+  modMunisipalitys();
+  //modLanguages();
+  $("#modGenere").kendoDropDownList();
+  $("#modTipusHabitatge").kendoDropDownList();
+  $('input:radio[name=modidioma][value=1]').click();
+  $('input:radio[name=modidioma_s][value=0]').click();
+  $('input:radio[name=modtitularitat][value=1]').click();
   $("#pageFp").hide();
   $("#modpageFp").show();
   $("#tableFitxaPersonal").hide();
@@ -651,21 +735,16 @@ function modCardListener() {
   let idioma_s = document.querySelector('input[name="modidioma_s"]:checked').value;
   let dataNaixemement = $("#modDataNaixement").val();
   let adreca = $("#modAdreca").val();
-  // $("#addTipus").val()+' '+$("#addAdreca").val()+' '+$("#addPis").val()+' '+$("#addPorta").val()+' '+$("#addEscala").val();
-  let tipusHabitatge = 1;
-  //let kendotipusHabitatge = $("#addTipus_habitatge").data("kendoDropDownTree");
+  let tipusHabitatge = $("#modTipusHabitatge").val();
+  //let kendotipusHabitatge = $("#modTipus_habitatge").data("kendoDropDownTree");
   //let tipusHabitatge = kendotipusHabitatge.value().text;
-  let titularitatHab = 1;
-  //let titularitatHab = document.querySelector('input[name="titularitat"]:checked').value;
-  let provincia = 1;
-  // let provincia = $("#modprovince").val();
-  // provincia = provincia.split('(Id:').pop().split(')')[0];
-  let comarca = 1;
-  // let comarca = $("#modComarcas").val();
-  // comarca = comarca.split('(Id:').pop().split(')')[0];
-  let municipi = 1;
-  // let municipi = $("#modMunicipios").val();
-  // municipi = municipi.split('(Id:').pop().split(')')[0];
+  let titularitatHab = document.querySelector('input[name="modtitularitat"]:checked').value;
+  let provincia = $("#modprovince").val();
+  provincia = provincia.split('(Id:').pop().split(')')[0];
+  let comarca = $("#modComarcas").val();
+  comarca = comarca.split('(Id:').pop().split(')')[0];
+  let municipi = $("#modMunicipios").val();
+  municipi = municipi.split('(Id:').pop().split(')')[0];
   let telFixe = $("#modTel_fijo").val();
   telFixe = telFixe.replace(/\s/g, '');
   let telMovil = $("#modMovil").val();
