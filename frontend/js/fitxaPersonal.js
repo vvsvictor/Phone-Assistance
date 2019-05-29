@@ -783,6 +783,7 @@ function modCardListener() {
   telMovil = telMovil.replace(/\s/g, '');
   let telTreball = $("#modTelTreball").val();
   telTreball = telTreball.replace(/\s/g, '');
+  if (nom != "" && cognom != "" && nouIdioma != "" && dataNaixemement != "" && provincia != "" && comarca != "" && municipi != "" && (telFixe != "" || telMovil != "" || telTreball)) {
     $.ajax({
       url: "../backend/updates/fichaPersonal.php",
       data:{
@@ -813,6 +814,10 @@ function modCardListener() {
         console.log('Error al actualitzar les dades');
       }
     });
+  }else{
+    alert("Hi ha camps sense informació.");
+  }
+
 }
 
 function eliminarCardListener() {
