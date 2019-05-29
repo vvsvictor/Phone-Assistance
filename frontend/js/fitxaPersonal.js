@@ -561,7 +561,7 @@ function mostrarCardListener(id) {
             mobile_phone = mobile_phone_arr[0]+mobile_phone_arr[1]+mobile_phone_arr[2]+" "+mobile_phone_arr[3]+mobile_phone_arr[4]+mobile_phone_arr[5]+" "+mobile_phone_arr[6]+mobile_phone_arr[7]+mobile_phone_arr[8];
             let work_phone = myJSON[i].work_phone;
             let language_name = myJSON[i].language;
-            let signlanguage_name = myJSON[i].sign_language;
+            let sign_language = myJSON[i].sign_language;
             $("#modId").val(idbtn);
             $("#modNom").val(name);
             $("#modCognom").val(surname);
@@ -583,7 +583,8 @@ function mostrarCardListener(id) {
             $("#fpgender").html(gender);
             $("#fpbirthdate").html(birthdate);
             $("#fpidioma").html(language_name);
-            $("#fpidioma_s").html(signlanguage_name);
+            console.log("Sign language n" + i + " es " +sign_language)
+            $("#fpidioma_s").html(sign_language);
             $("#fpprovince").html(province);
             $("#fpcomarca").html(comarca);
             $("#fpmunicipality").html(municipality);
