@@ -136,17 +136,6 @@
           </div>
         </div>
         <br>
-        <div id="addAbsencia" class="row">
-          <div class="col-lg-6">
-            <label for="add_dataabs">Data d'absència</label><br>
-            <input class="datePickerKendo"  id="add_dataabs" style="width: 100%"/>
-          </div>
-          <div class="col lg-6">
-            <label for="add_datatornada">Data de previsió de la tornada a l'habitatge</label><br>
-            <input class="datePickerKendo" id="add_datatornada" style="width: 100%"/>
-          </div>
-        </div>
-        <br>
         <div class="row">
           <div class="col-lg-6">
             <label for="addstate_call">Estat de la Trucada</label><br>
