@@ -360,6 +360,17 @@ m.init();
         success: function(response) {
           $("#tbResponsible").html("");
           let myJSON = JSON.parse(response);
+          //Netejar camps
+          $("#idres").html('');
+          $("#prires").html('');
+          $("#nomres").html('');
+          $("#cognomres").html('');
+          $("#direcciores").html('');
+          $("#cpres").html('');
+          $("#telres").html('');
+          $("#hourres").html('');
+          $("#dateres").html('');
+          $("#reasonres").html('');
           for (let i = 0; i < myJSON.length; i++) {
             if (myJSON[i].id==idres) {
               //obtenció de les dades
