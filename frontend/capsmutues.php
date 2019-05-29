@@ -37,7 +37,7 @@
           <?php
             if ($_SESSION['user']['usertype'] == 0) {
               echo '<li class="nav-item">
-                <a class="nav-link" href="users.php" style="color: #40514e;">Usuaris/es</a>
+                <a class="nav-link" href="users.php" style="color: #40514e;">Usuaris/àries</a>
               </li>';
             }
           ?>
@@ -78,7 +78,7 @@
       <div class="container">
         <!-- Formulario Añadir CAPS -->
         <div id="addCap" class="container_add">
-          <button id="returnCAP" type="button" class="btn btn-primary"><i class="fa fa-reply"></i> Tornar enrere</button>
+          <button id="returnCAP" type="button" class="btn btn-primary marginTop"><i class="fa fa-reply"></i> Tornar enrere</button>
           <br>
           <br>
           <div class="row">
@@ -115,7 +115,7 @@
 
         <!--Formulario Añadir Doctores -->
         <div id="addDoctor" class="container_add">
-          <button id="returnDoctor" type="button" class="btn btn-primary marginTop"><i class="fa fa-reply"></i> Tornar enrere</button>
+          <button id="returnDoctor" type="button" class="btn btn-primary marginTop"><i class="fa fa-reply"></i> Tornar Enrere</button>
           <br>
           <br>
           <div class="row">
