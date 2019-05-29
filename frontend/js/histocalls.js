@@ -32,8 +32,18 @@ $(document).ready(function () {
     dataTextField: "name",
     dataValueField: "id"
   });
+  $("showFormBtn").click(function(){
+    gotoAddCall();
+  });
 });
 
+function gotoAddCall(){
+  showDni();
+  showCalls();
+  $('#modCallDiv').hide();
+  $('#addCall').show();
+  $("#callList").hide();
+}
 
 function gotoModCall() {
   $('#modCallDiv').hide();
@@ -43,7 +53,6 @@ function gotoModCall() {
 
 function callTypeListener(){
   var type = $("#addtype_list").data("kendoDropDownList").select();
-  console.log(type);
   if (type == 0) {
     $("#call_type").show();
     $("#entry_type").show();
@@ -60,192 +69,84 @@ function returnCall(){
 }
 
 function addCallListener() {
-  $("#showFormBtn").click(function() {
-    //Ajax mostrar dnis
-    $.ajax({
-      url: "../backend/selects/getFitxaPersonal.php",
-      type: "GET",
-      cache: false,
-      success: function(response) {
-        let myJSON = JSON.parse(response);
-        let dnis = [];
-        for (var i = 0; i < myJSON.length; i++) {
-          dnis.push(myJSON[i].dninie)
-        }
-        $("#adddni_usuari").val('');
-        console.log(dnis);
-
-        $("#adddni_usuari").kendoAutoComplete({
-          maxSelectedItems: 1,
-          dataSource: dnis,
-          filter: "startswith",
-          placeholder: "Selecciona un DNI..."
-        });
-        $("#call_type").hide();
-        $("#data").val('');
-        $("#type").val('');
-        $("#state").val('');
-        $("#callList").hide();
-        $('#addCall').show();
-      },
-      error: function() {
-        console.log('No hi han clients');
-      }
-    });
-    //Ajax mostrar tipus TRUCADA
-    $.ajax({
-      url: "../backend/selects/getCallType.php",
-      type: "GET",
-      cache: false,
-      success: function(response) {
-        let myJSON = JSON.parse(response);
-        let tipustrucada = [];
-        for (var i = 0; i < myJSON.length; i++) {
-          tipustrucada.push({ text: myJSON[i].call_type , value: myJSON[i].id});
-        }
-        $("#addtype_call").val('');
-        console.log(tipustrucada);
-        $("#addtype_call").kendoComboBox({
-          dataTextField: "text",
-          dataValueField: "value",
-          dataSource: tipustrucada
-        });
-      },
-      error: function() {
-        console.log('No hi han tipus de trucades');
-      }
-    });
-    //Ajax mostrar estat de la TRUCADA
-    $.ajax({
-      url: "../backend/selects/getCallState.php",
-      type: "GET",
-      cache: false,
-      success: function(response) {
-        let myJSON = JSON.parse(response);
-        let estattrucada = [];
-        for (var i = 0; i < myJSON.length; i++) {
-          estattrucada.push({ text: myJSON[i].call_type , value: myJSON[i].id});
-        }
-        $("#addstate_call").val('');
-        console.log(estattrucada);
-        $("#addstate_call").kendoComboBox({
-          dataTextField: "text",
-          dataValueField: "value",
-          dataSource: estattrucada
-        });
-        },
-          error: function() {
-          console.log('No hi han estats de trucades');
-        }
-    });
-    //Ajax mostrar tipus de trucada entrant
-    $.ajax({
-      url: "../backend/selects/getInCallType.php",
-      type: "GET",
-      cache: false,
-      success: function(response) {
-        let myJSON = JSON.parse(response);
-        let allIncallType = [];
-        let incallType = [];
-        let allsubclass1 = [];
-        let allsubclass2 = [];
-        let allsubclass3 = [];
-        for (let i = 0; i < myJSON.length; i++) {
-          allIncallType.push({ text: myJSON[i].incall_type , value: myJSON[i].id});
-          if (myJSON[i].incallType == 'Trucada d’alarma') {
-            allsubclass1.push({ text: myJSON[i].subclass , value: myJSON[i].id});
-          }else if (myJSON[i].incallType == 'Trucada d’informació') {
-            allsubclass2.push({ text: myJSON[i].subclass , value: myJSON[i].id});
-          }else{
-            allsubclass3.push({ text: myJSON[i].subclass , value: myJSON[i].id});
-          }
-        }
-        for (let i = 0; i < allIncallType.length; i++) {
-          let existeix = false;
-          for (let j = 0; i < incallType.length; i++) {
-            if (allIncallType[i].text == incallType[j].text) {
-              existeix = true;
-            }
-          }
-          if (!existeix) {
-            incallType.push(allIncallType)
-          }
-        }
-        $("#addentrant_call").val('');
-        $("#addsubentrant_call").val('');
-        $("#addentrant_call").kendoComboBox({
-          dataTextField: "text",
-          dataValueField: "value",
-          dataSource: allIncallType
-        });
-
-        },
-          error: function() {
-          console.log('No hi han estats de trucades');
-        }
-    });
-    //En principi amagar tot
-    $('#addentrant_call').hide();
-    $('#addsubentrant_call').hide();
-    $('#addsortint_call').hide();
-    $('#addsubsortint_call').hide();
-    //Si la trucada es entrant mostrar els tipus de trucada
-    $( "#addtype_call" ).change(function() {
-      if ($("#addtype_call").val()==1) {
-        //Trucada entrant amagar sortnts
-        $('#addentrant_call').show();
-        $('#addsubentrant_call').hide();
-        $('#addsubentrant_calllab').hide();
-        $('#addsortint_call').hide();
-        $('#addsortint_calllab').hide();
-        $('#addsubsortint_call').hide();
-        $('#addsubsortint_calllab').hide();
-        $("#addentrant_call").kendoComboBox({
-          dataTextField: "text",
-          dataValueField: "value",
-          dataSource: allsubclass1
-        });
-        //Al modificar la trucada entrant
-        $('#addentrant_call').change(function(){
-          if ($('#addentrant_call').val()=="Trucada d'alarma") {
-            $("#addsubentrant_call").kendoComboBox({
-              dataTextField: "text",
-              dataValueField: "value",
-              dataSource: allsubclass1
-            });
-          }else if ($('#addentrant_call').val()=="Trucada d'informació") {
-            $("#addsubentrant_call").kendoComboBox({
-              dataTextField: "text",
-              dataValueField: "value",
-              dataSource: allsubclass2
-            });
-          }else{
-            $("#addsubentrant_call").kendoComboBox({
-              dataTextField: "text",
-              dataValueField: "value",
-              dataSource: allsubclass3
-            });
-          }
-        });
-
-      }else{
-        //Trucada sortint
-        $('#addentrant_call').hide();
-        $('#addentrant_calllab').hide();
-        $('#addsubentrant_call').hide();
-        $('#addsubentrant_calllab').hide();
-        $('#addsortint_call').show();
-        $('#addsubsortint_call').hide();
-        $('#addsubsortint_calllab').hide();
-
-      }
-      // Check input( $( this ).val() ) for validity here
-    });
-    $("#showListBtn").click(function() {
-      goToCallList();
-    });
-
+  $("#addCallbtn").click(function() {
+      
   });
+}
+
+  function showDni() {
+      $.ajax({
+        url: "../backend/selects/getFitxaPersonal.php",
+        type: "GET",
+        cache: false,
+        success: function(response) {
+          let myJSON = JSON.parse(response);
+          let dni = [];
+          for (var i = 0; i < myJSON.length; i++) {
+            let dninie = myJSON[i].dninie;
+            let id = myJSON[i].id;
+            dni.push("(Id:" + id + ") " + dninie);
+          }
+          $("#adddni_usuari").kendoAutoComplete({
+            filter: "contains",
+            dataSource: dni,
+            placeholder: "Selecciona un DNI...",
+          });
+
+        },
+        error: function() {
+          console.log('No hi han dnis');
+        }
+      });
+    }
+    function showCalls(){
+      $.ajax({
+        url: "../backend/selects/getCallType.php",
+        type: "GET",
+        cache: false,
+        success: function(response) {
+          let myJSON = JSON.parse(response);
+          let tipustrucada = [];
+          for (var i = 0; i < myJSON.length; i++) {
+            tipustrucada.push({ text: myJSON[i].call_type , value: myJSON[i].id});
+          }
+          $("#addtype_call").val('');
+          console.log(tipustrucada);
+          $("#addtype_call").kendoComboBox({
+            dataTextField: "text",
+            dataValueField: "value",
+            dataSource: tipustrucada
+          });
+        },
+        error: function() {
+          console.log('No hi han tipus de trucades');
+        }
+      });
+    }
+    function showStateCall(){
+      $.ajax({
+        url: "../backend/selects/getCallState.php",
+        type: "GET",
+        cache: false,
+        success: function(response) {
+          let myJSON = JSON.parse(response);
+          let estattrucada = [];
+          for (var i = 0; i < myJSON.length; i++) {
+            estattrucada.push({ text: myJSON[i].call_type , value: myJSON[i].id});
+          }
+          $("#addstate_call").val('');
+          console.log(estattrucada);
+          $("#addstate_call").kendoComboBox({
+            dataTextField: "text",
+            dataValueField: "value",
+            dataSource: estattrucada
+          });
+          },
+            error: function() {
+            console.log('No hi han estats de trucades');
+          }
+      });
+    }
 
   $("#addCallBtn").click(function() {
     //Faltan comprovaciones de input correcto
