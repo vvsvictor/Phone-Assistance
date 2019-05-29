@@ -348,6 +348,7 @@ function goToCap() {
   $("#tableCaps").hide();
   $("#modDoctor").hide();
   $("#addCAP").hide();
+  $("#addDoctor").hide();
   $("#pageCAPS").show();
 
 }
