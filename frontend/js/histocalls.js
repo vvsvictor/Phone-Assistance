@@ -4,6 +4,10 @@ $(document).ready(function () {
   gotoModCall();
   addCallListener();
 
+  $("#showFormBtn").click(function(){
+    gotoAddCall();
+  });
+
   $(".datePickerKendo").kendoDatePicker({
       format: "d/M/yyyy"
     });
@@ -31,9 +35,6 @@ $(document).ready(function () {
     ],
     dataTextField: "name",
     dataValueField: "id"
-  });
-  $("showFormBtn").click(function(){
-    gotoAddCall();
   });
 });
 
@@ -70,7 +71,9 @@ function returnCall(){
 
 function addCallListener() {
   $("#addCallbtn").click(function() {
-      
+    let dni = $("#adddni_usuari").val();
+    let data_trucada = $("#adddata_trucada").val();
+    let idioma = $("#addIdioma").val();
   });
 }
 
@@ -175,8 +178,6 @@ function addCallListener() {
     });
   });
 
-
-}
 
 function goToCallList(){
   $('#modCallDiv').hide();
