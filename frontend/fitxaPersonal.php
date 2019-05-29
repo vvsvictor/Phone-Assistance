@@ -418,7 +418,7 @@ include '..\backend\include.php';
                     <div class="info">
                       <p class="sub-heading">Idioma</p>
                       <select onchange="altreListener()" id="modIdioma" style="width: 100%;" class="maxWidth"></select>&nbsp;
-                      <input id="modIdiomaAltre" type="text" class="form-control" placeholder="Idioma">
+                      <input id="addIdiomaAltre" type="text" class="form-control" placeholder="Idioma">
                       <p></p>
                     </div>
                     <div class="info">
@@ -446,12 +446,12 @@ include '..\backend\include.php';
                     </div>
                     <div class="info">
                       <p class="sub-heading">Comarca</p>
-                      <input id="modComarcas" type="text" class="form-control" name="comarcas"/>
+                      <input style="width: 100%;" id="modcomarcas"/>
                       <p></p>
                     </div>
                     <div class="info">
                       <p class="sub-heading">Municipi</p>
-                      <input id="modMunicipios" type="text" class="form-control" name="municipios"/>
+                      <input style="width: 100%;" id="modmunicipios"/>
                       <p></p>
                     </div>
                     <div class="info">
@@ -461,7 +461,7 @@ include '..\backend\include.php';
                     </div>
                     <div class="info">
                       <p class="sub-heading">Tipus d'habitatge'</p>
-                      <input id="modtype_house" type="text" class="form-control" name="type_house"/>
+                      <input id="modTipus_habitatge" name="tipusHabitatge" style="width: 100%;"/>
                       <p></p>
                     </div>
                     <div class="info">
