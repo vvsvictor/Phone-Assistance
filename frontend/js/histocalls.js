@@ -153,8 +153,37 @@ function mostrarCallListener() {
       let data_trucada = $("#adddata_trucada").val();
       let tipus_trucada = $("#addtype_list").val();
       let data_absencia = $("#add_dataabs").val();
-      let data_absencia = $("#add_dataabs").val();
+      let estat_trucada = $("#addstate_call").val();
+      let solucio = $("#rao").val();
+      let motiu = $("#addMotiu").val();
+      let descripcio = $("#addDescription").val();
+      let destinatari = $("#destinatari").val();
+      $.ajax({
+        url: "../backend/inserts/insertCallHistory.php",
+        data: {
+          $sCallDate:data_trucada,
+          $iCallType:tipus_trucada,
+          $iOutcallType:,
+          $iIncallType:,
+          $iCallState:estat_trucada,
+          $sTeleoperatorSolution:motiu
+        },
+        type: "GET",
+        cache: false,
+        success: function(response) {
+          console.log("entra dades");
+          let myJSON = JSON.parse(response);
+          showTable();
+          goToFpList();
 
+          if (parseInt(myJSON.codigoError) != 0) {
+            console.log(myJSON.observaciones + " - " + myJSON.codigoError + " - " + myJSON.descError);
+          }
+        },
+        error: function() {
+          alert("Error en la consulta");
+        }
+      });
   });
 }
 
