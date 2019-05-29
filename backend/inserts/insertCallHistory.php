@@ -13,7 +13,7 @@
   $sDestinyAdvice = $_GET["sDestinyAdvice"];
 
 
-  $consulta="INSERT INTO CALL_HISTORY (user_dninif,call_date, call_type, outcall_type, incall_type, call_state, teleoperator_solution, reason_for_advice, description, Destiny_advice) VALUES ('".$sCallDate."','".$iCallType."','".$iOutcallType."','".$iIncallType."','".$iCallState."','".$sTeleoperatorSolution."','".$sReasonAdvice."','".$sDescription."','".$sDestinyAdvice."')";
+  $consulta="INSERT INTO CALL_HISTORY (user_dninif,call_date, call_type, outcall_type, incall_type, call_state, teleoperator_solution, reason_for_advice, description, Destiny_advice) VALUES ('".$sDniNif."','".$sCallDate."','".$iCallType."','".$iOutcallType."','".$iIncallType."','".$iCallState."','".$sTeleoperatorSolution."','".$sReasonAdvice."','".$sDescription."','".$sDestinyAdvice."')";
   $hacerConsulta=mysqli_query($conexion, $consulta);
 
 
