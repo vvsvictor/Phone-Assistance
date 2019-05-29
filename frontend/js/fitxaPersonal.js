@@ -1,3 +1,4 @@
+//$("#modGenere").data("kendoDropDownList").value('Home')
 $(document).ready(function() {
   $('.dataTables_length').addClass('bs-select');
   goToFpList();
