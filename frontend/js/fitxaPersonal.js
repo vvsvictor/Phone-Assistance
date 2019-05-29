@@ -595,6 +595,7 @@ function goToFp() {
   $("#pageFp").show();
   $("#tableFitxaPersonal").hide();
   $("#addFp").hide();
+  $("#modpageFp").hide();
 }
 
 function cleanInputs(){
@@ -809,9 +810,7 @@ function modCardListener() {
       type: "GET",
       cache: false,
       success: function(response) {
-        console.log("Response1 "+ response);
         let myJSON = JSON.parse(response);
-        console.log("Response2" + response);
         goToFp();
       },
       error: function() {
