@@ -66,7 +66,7 @@ include '..\backend\includeAdmin.php';
         </ul>
       </div>
     </nav>
-    <div id="loader" class="loader">Loading...</div>
+    <div id="loader" class="loader"></div>
     <div id="loaddiv" class="hidden">
     <div class="container" id="usersList">
       <br/>

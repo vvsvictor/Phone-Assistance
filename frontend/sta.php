@@ -73,7 +73,7 @@
         </ul>
       </div>
     </nav>
-    <div id="loader" class="loader">Loading...</div>
+    <div id="loader" class="loader"></div>
     <div id="loaddiv" class="hidden">
   <div class="container">
       <!-- Formulario Añadir STA -->
@@ -303,16 +303,69 @@
                   </tfoot>
                 </table>
               </div>
+              <!--Responsible all info-->
+              <div id="responsibleInfoDiv" class="responsibleInfo container_add contacto">
+                <button id="returnResponsible" type="button" class="btn btn-primary"><i class="fa fa-reply"></i> Tornar enrere</button>
+                <h1 class="heading">Informació del responsable</h1>
+                <div class="info">
+                  <p class="sub-heading">ID</p>
+                  <p id="idres" class="duration"></p>
+                  <p></p>
+                </div>
+                <div class="info">
+                  <p class="sub-heading">Prioritat</p>
+                  <p id="prires" class="duration"></p>
+                  <p></p>
+                </div>
+                <div class="info">
+                  <p class="sub-heading">Nom</p>
+                  <p id="nomres" class="duration"></p>
+                  <p></p>
+                </div>
+                <div class="info">
+                  <p class="sub-heading">Cognom</p>
+                  <p id="cognomres" class="duration"></p>
+                  <p></p>
+                </div>
+                <div class="info">
+                  <p class="sub-heading">Direcció</p>
+                  <p id="direcciores" class="duration"></p>
+                  <p></p>
+                </div>
+                <div class="info">
+                  <p class="sub-heading">Codi Postal</p>
+                  <p id="cpres" class="duration"></p>
+                  <p></p>
+                </div>
+                <div class="info">
+                  <p class="sub-heading">Telèfon</p>
+                  <p id="telres" class="duration"></p>
+                  <p></p>
+                </div>
+                <div class="info">
+                  <p class="sub-heading">Hora de preferència de trucada</p>
+                  <p id="hourres" class="duration"></p>
+                  <p></p>
+                </div>
+                <div class="info">
+                  <p class="sub-heading">Data de creació del responsable</p>
+                  <p id="dateres" class="duration"></p>
+                  <p></p>
+                </div>
+                <div class="info">
+                  <p class="sub-heading">Raó del responsable</p>
+                  <p id="reasonres" class="duration"></p>
+                  <p></p>
+                </div><br>
+                <button id="deleteResponsibleBtn" type="button" class="btn btn-danger">Eliminar</button>
+              </div>
+
               <!--Formulario Añadir Responsable -->
               <div id="addResponsible" class="container_add">
                 <button id="returnResponsible" type="button" class="btn btn-primary"><i class="fa fa-reply"></i> Tornar enrere</button>
                 <br>
                 <br>
                 <div class="row">
-                  <div class="col-lg-6">
-                    <label for="dninie_usuari">DNI</label>
-                    <input id="dninie_usuariAdd" style="width: 100%;" />
-                  </div>
                   <div class="col-lg-6">
                     <label for="addPrioritat">PRIORITAT</label>
                     <select id="addPrioritat" style="width: 100%;" class="maxWidth dropDown"></select>
@@ -322,29 +375,29 @@
                 <div class="row">
                   <div class="col-lg-6">
                     <label for="nom_responsableAdd">NOM</label>
-                    <input type="text" class="form-control" name="nom_responsable"/>
+                    <input type="text" class="form-control" id="nom_responsableAdd"/>
                   </div>
                   <div class="col-lg-6">
                     <label for="cognoms_responsableAdd">COGNOMS</label>
-                    <input type="text" class="form-control" name="cognoms_responsable"/>
+                    <input type="text" class="form-control" id="cognoms_responsableAdd"/>
                   </div>
                 </div>
                 <br>
                 <div class="row">
                   <div class="col-lg-6">
                     <label for="adreca_responsableAdd">ADREÇA</label>
-                    <input type="text" class="form-control" name="adreca_responsable"/>
+                    <input type="text" class="form-control" id="adreca_responsableAdd"/>
                   </div>
                   <div class="col-lg-6">
                     <label for="cp_responsableAdd">CODI POSTAL</label>
-                    <input type="text" class="form-control" name="cp_responsable"/>
+                    <input type="text" class="form-control" id="cp_responsableAdd"/>
                   </div>
                 </div>
                 <br>
                 <div class="row">
                   <div class="col-lg-6">
                     <label for="tel_responsableAdd">TELEFON</label>
-                    <input type="text" class="form-control" name="tel_responsableAdd"/>
+                    <input type="text" class="form-control" id="tel_responsableAdd"/>
                   </div>
                   <div class="col-lg-6">
                     <label for="hora_preferibleAdd">HORA PREFERIBLE</label>
