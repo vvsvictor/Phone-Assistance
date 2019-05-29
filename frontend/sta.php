@@ -135,69 +135,7 @@
         </div>
       </div>
 
-      <!--Formulario Añadir Responsable -->
-      <div id="addResponsible" class="container_add">
-        <button id="returnResponsible" type="button" class="btn btn-primary"><i class="fa fa-reply"></i></button>
-        <br>
-        <br>
-        <div class="row">
-          <div class="col-lg-6">
-            <label for="dninie_usuari">DNI</label>
-            <input id="dninie_usuari" style="width: 100%;" />
-          </div>
-          <div class="col-lg-6">
-            <label for="addPrioritat">PRIORITAT</label>
-            <select id="addPrioritat" style="width: 100%;" class="maxWidth dropDown">
-              <option>Alta</option>
-              <option>Mitjana</option>
-              <option>Baixa</option>
-          </div>
-        </div>
-        <br>
-        <div class="row">
-          <div class="col-lg-6">
-            <label for="nom_responsable">NOM</label>
-            <input type="text" class="form-control" name="nom_responsable"/>
-          </div>
-          <div class="col-lg-6">
-            <label for="cognoms_responsable">COGNOMS</label>
-            <input type="text" class="form-control" name="cognoms_responsable"/>
-          </div>
-        </div>
-        <br>
-        <div class="row">
-          <div class="col-lg-6">
-            <label for="adreca_responsable">ADREÇA</label>
-            <input type="text" class="form-control" name="adreca_responsable"/>
-          </div>
-          <div class="col-lg-6">
-            <label for="cp_responsable">CODI POSTAL</label>
-            <input type="text" class="form-control" name="cp_responsable"/>
-          </div>
-        </div>
-        <br>
-        <div class="row">
-          <div class="col-lg-6">
-            <label for="tel_responsable">TELEFON</label>
-            <input type="text" class="form-control" name="tel_responsable"/>
-          </div>
-          <div class="col-lg-6">
-            <label for="hora_preferible">HORA PREFERIBLE</label>
-            <input id="hora_preferible" title="timepicker" style="width: 100%;" />
-          </div>
-        </div>
-        <br>
-        <div class="row">
-          <div class="col-lg-6">
-            <label for="data_contact">DATA CONTACTE</label>
-            <input id="data_contact" class="datePickerKendo" title="datepicker" style="width: 100%"/>
-          </div>
-          <div class="col-lg-6">
-            <label for="rao">RAÓ</label>
-            <textarea class="form-control" id="rao" rows="3"></textarea>
-          </div>
-        </div>
-      </div>
+
 
       <div id="tableFitxaPersonal">
         <br/>
@@ -364,6 +302,67 @@
                     </tr>
                   </tfoot>
                 </table>
+              </div>
+              <!--Formulario Añadir Responsable -->
+              <div id="addResponsible" class="container_add">
+                <button id="returnResponsible" type="button" class="btn btn-primary"><i class="fa fa-reply"></i> Tornar enrere</button>
+                <br>
+                <br>
+                <div class="row">
+                  <div class="col-lg-6">
+                    <label for="dninie_usuari">DNI</label>
+                    <input id="dninie_usuariAdd" style="width: 100%;" />
+                  </div>
+                  <div class="col-lg-6">
+                    <label for="addPrioritat">PRIORITAT</label>
+                    <select id="addPrioritat" style="width: 100%;" class="maxWidth dropDown"></select>
+                  </div>
+                </div>
+                <br>
+                <div class="row">
+                  <div class="col-lg-6">
+                    <label for="nom_responsableAdd">NOM</label>
+                    <input type="text" class="form-control" name="nom_responsable"/>
+                  </div>
+                  <div class="col-lg-6">
+                    <label for="cognoms_responsableAdd">COGNOMS</label>
+                    <input type="text" class="form-control" name="cognoms_responsable"/>
+                  </div>
+                </div>
+                <br>
+                <div class="row">
+                  <div class="col-lg-6">
+                    <label for="adreca_responsableAdd">ADREÇA</label>
+                    <input type="text" class="form-control" name="adreca_responsable"/>
+                  </div>
+                  <div class="col-lg-6">
+                    <label for="cp_responsableAdd">CODI POSTAL</label>
+                    <input type="text" class="form-control" name="cp_responsable"/>
+                  </div>
+                </div>
+                <br>
+                <div class="row">
+                  <div class="col-lg-6">
+                    <label for="tel_responsableAdd">TELEFON</label>
+                    <input type="text" class="form-control" name="tel_responsableAdd"/>
+                  </div>
+                  <div class="col-lg-6">
+                    <label for="hora_preferibleAdd">HORA PREFERIBLE</label>
+                    <input id="hora_preferibleAdd" title="timepicker" style="width: 100%;" />
+                  </div>
+                </div>
+                <br>
+                <div class="row">
+                  <div class="col-lg-6">
+                    <label for="data_contactAdd">DATA CONTACTE</label>
+                    <input id="data_contactAdd" class="datePickerKendo" title="datepicker" style="width: 100%"/>
+                  </div>
+                  <div class="col-lg-6">
+                    <label for="rao">RAÓ</label>
+                    <textarea class="form-control" id="raoAdd" rows="3"></textarea>
+                  </div>
+                </div><br>
+                <button id="addResponsibleBtn" type="button" class="btn btn-primary">Afegir Responsable</button>
               </div>
           </div>
         </div>

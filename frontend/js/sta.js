@@ -5,13 +5,20 @@ $(document).ready(function () {
   $(".datePickerKendo").kendoDatePicker({
       format: "d/M/yyyy"
     });
-  $("#hora_preferible").kendoTimePicker({
+  $("#hora_preferibleAdd").kendoTimePicker({
     format: "H:mm",
     interval: 15,
     dateInput: false
   });
 
   $("#addPrioritat").kendoComboBox({
+    dataSource: [
+      {id: "Alta", name: "Alta"},
+      {id: "Mitjana", name: "Mitjana"},
+      {id: "Baixa", name: "Baixa"}
+    ],
+    dataTextField: "name",
+    dataValueField: "id"
   });
 
   $('.dataTables_length').addClass('bs-select');
@@ -48,9 +55,11 @@ $(document).ready(function () {
     goToFitxaList();
   });
   $("#returnResponsible").click(function() {
-    goToFitxaList();
+    console.log('click return ');
+    goToShowAll();
   });
   $("#returnResponsible2").click(function() {
+    console.log('click return ');
     goToFitxaList();
   });
   $(".notifications-switch").kendoSwitch();
@@ -425,6 +434,8 @@ m.init();
     $("#pageView").hide();
     $("#tableFitxaPersonal").hide();
     $("#pageTables").show();
+    $("#tableResponsible").show();
+
 
   }
 
@@ -439,6 +450,7 @@ m.init();
     showDni();
     $("#tableFitxaPersonal").hide();
     $("#pageResponsable").hide();
+    $("#tableResponsible").hide();
     $("#addResponsible").show();
   }
   function showDni() {
