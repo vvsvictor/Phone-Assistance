@@ -66,7 +66,7 @@ $(document).ready(function () {
         }
       ]
   });
-  $("#addentrant_call").kendoDropDownTree({
+  $("#addsortint_call").kendoDropDownTree({
           placeholder: "Selecciona el tipus de trucada sortint ...",
           height: "auto",
           dataSource: [
