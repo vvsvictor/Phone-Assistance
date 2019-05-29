@@ -250,10 +250,7 @@ function addCallListener() {
       });
   });
 }
-<<<<<<< HEAD
 
-=======
->>>>>>> 0db8e9a4b1e2ccfc8dfe405a058724059fa69166
 
 function goToCallList(){
   $('#modCallDiv').hide();
