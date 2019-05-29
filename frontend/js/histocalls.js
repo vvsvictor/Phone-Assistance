@@ -2,6 +2,7 @@ $(document).ready(function () {
   $('.dataTables_length').addClass('bs-select');
   showTable();
   gotoModCall();
+  addCall();
 
   $(".datePickerKendo").kendoDatePicker({
       format: "d/M/yyyy"
@@ -95,6 +96,7 @@ $(document).ready(function () {
           ],
           dataTextField: "text"
     });
+     $("#addDestinatari").kendoDropDownList();
 });
 
 function otherCallsListener(){
@@ -235,12 +237,12 @@ function addCallListener() {
       let tipus_trucada = $("#addtype_list").val();
       let data_absencia = $("#add_dataabs").val();
       let estat_trucada = $("#addstate_call").val();
-      let incall = $("#addentrant_call").val();
-      let outcall = $("#addsortint_call").val();
+      let incall = $("#addentrant_call").data("kendoDropDownList").select();;
+      let outcall = $("#addsortint_call").data("kendoDropDownList").select();;
       let solucio = $("#rao").val();
       let motiu = $("#addMotiu").val();
       let descripcio = $("#addDescription").val();
-      let destinatari = $("#destinatari").val();
+      let destinatari = $("#addDestinatari").val();
       $.ajax({
         url: "../backend/inserts/insertCallHistory.php",
         data: {
@@ -253,16 +255,15 @@ function addCallListener() {
           $sReasonAdvice: motiu,
           $sDescription: descripcio,
           $sDestinyAdvice: destinatari
-
         },
         type: "GET",
         cache: false,
         success: function(response) {
           console.log("entra dades");
+          console.log(response);
           let myJSON = JSON.parse(response);
           showTable();
-          goToFpList();
-
+          goToCallList();
           if (parseInt(myJSON.codigoError) != 0) {
             console.log(myJSON.observaciones + " - " + myJSON.codigoError + " - " + myJSON.descError);
           }

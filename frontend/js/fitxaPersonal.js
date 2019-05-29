@@ -203,11 +203,10 @@ function showLanguages(){
       }
       html+="<option>Altre</option>";
       $("#addIdioma").html(html);
-      $("#modifIdioma").html(html2);
+      $("#addifIdioma").html(html2);
       $("#addIdioma").kendoDropDownList();
-      $("#modifIdioma").kendoDropDownList();
+      $("#addifIdioma").kendoDropDownList();
       $("#addGenere").kendoDropDownList();
-      $("#modGenere").kendoDropDownList();
       $("#addIdiomaAltre").hide();
     },
     error: function() {
@@ -286,6 +285,119 @@ function showMunisipalitys() {
     }
   });
 }
+
+function modMunisipalitys() {
+  $.ajax({
+    url: "../backend/selects/getMunisipalitys.php",
+    type: "GET",
+    cache: false,
+    success: function(response) {
+      let myJSON = JSON.parse(response);
+      let munisipalitys = [];
+      for (var i = 0; i < myJSON.length; i++) {
+        let munisipality = myJSON[i].muni_name;
+        let id = myJSON[i].id;
+        munisipalitys.push("(Id:" + id + ") " + munisipality);
+      }
+      $("#modmunicipios").kendoAutoComplete({
+        filter: "contains",
+        dataSource: munisipalitys,
+        placeholder: "Selecciona un municipi...",
+      });
+    },
+    error: function() {
+      console.log('No hi han municipis');
+    }
+  });
+}
+
+function modProvinces() {
+  $.ajax({
+    url: "../backend/selects/getProvinces.php",
+    type: "GET",
+    cache: false,
+    success: function(response) {
+      let myJSON = JSON.parse(response);
+      let provincias = [];
+      for (var i = 0; i < myJSON.length; i++) {
+        let province = myJSON[i].prov_name;
+        let id = myJSON[i].id;
+        provincias.push("(Id:" + id + ") " + province);
+      }
+      $("#modprovincias").kendoAutoComplete({
+        filter: "contains",
+        dataSource: provincias,
+        placeholder: "Selecciona una provincia...",
+      });
+    },
+    error: function() {
+      console.log('No hi han provincies');
+    }
+  });
+}
+
+function modComarcas() {
+  $.ajax({
+    url: "../backend/selects/getComarcas.php",
+    type: "GET",
+    cache: false,
+    success: function(response) {
+      let myJSON = JSON.parse(response);
+      let comarcas = [];
+      for (var i = 0; i < myJSON.length; i++) {
+        let comarca = myJSON[i].comar_name;
+        let id = myJSON[i].id;
+        comarcas.push("(Id:" + id + ") " + comarca);
+      }
+      $("#modcomarcas").kendoAutoComplete({
+        filter: "contains",
+        dataSource: comarcas,
+        placeholder: "Selecciona una comarca...",
+      });
+    },
+    error: function() {
+      console.log('No hi han comarques');
+    }
+  });
+}
+
+function modLanguages(){
+  $.ajax({
+    url: "../backend/selects/getLanguages.php",
+    type: "GET",
+    cache: false,
+    success: function(response) {
+      let myJSON = JSON.parse(response);
+      html="";
+      html2="";
+      for (let i = 0; i < myJSON.length; i++) {
+        html+='<option>(Id:'+myJSON[i].id+") "+myJSON[i].language_name+'</option>';
+        html2+='<option>(Id:'+myJSON[i].id+") "+myJSON[i].language_name+'</option>';
+      }
+      html+="<option>Altre</option>";
+      $("#modIdioma").html(html);
+      $("#modifIdioma").html(html2);
+      $("#modIdioma").kendoDropDownList();
+      $("#modifIdioma").kendoDropDownList();
+      $("#modIdiomaAltre").hide();
+    },
+    error: function() {
+      console.log('No hi han llenguatges');
+    }
+  });
+}
+
+  function modaltreListener() {
+    let e = document.getElementById("modIdioma");
+    let text = e.options[e.selectedIndex].value;
+    console.log(text);
+    if (text=='Altre') {
+      $("#modIdiomaAltre").show();
+    }else{
+      $("#modIdiomaAltre").hide();
+      $("#modIdiomaAltre").val();
+    }
+  }
 
 function addFitxaPersonal() {
   $("#addPersonalCard").click(function() {
@@ -442,6 +554,15 @@ function uppercase(str){
 }
 
 function goToModFP() {
+  modComarcas();
+  modProvinces()
+  modMunisipalitys();
+  modLanguages();
+  $("#modGenere").kendoDropDownList();
+  $("#modTipusHabitatge").kendoDropDownList();
+  $('input:radio[name=modidioma][value=1]').click();
+  $('input:radio[name=modidioma_s][value=1]').click();
+  $('input:radio[name=modtitularitat][value=1]').click();
   $("#pageFp").hide();
   $("#modpageFp").show();
   $("#tableFitxaPersonal").hide();
@@ -462,7 +583,7 @@ function goToAddFp() {
   showMunisipalitys();
   showLanguages();
   $('input:radio[name=idioma][value=1]').click();
-  $('input:radio[name=idioma_s][value=0]').click();
+  $('input:radio[name=idioma_s][value=1]').click();
   $('input:radio[name=titularitat][value=1]').click();
   $("#pageFp").hide();
   $("#tableFitxaPersonal").hide();
@@ -474,6 +595,7 @@ function goToFp() {
   $("#pageFp").show();
   $("#tableFitxaPersonal").hide();
   $("#addFp").hide();
+  $("#modpageFp").hide();
 }
 
 function cleanInputs(){
@@ -644,28 +766,21 @@ function modCardListener() {
   nom = uppercase(nom);
   let cognom = $("#modCognom").val();
   cognom = uppercase(cognom);
-  let genere = $("#modgenere").val();
+  let genere = $("#modGenere").val();
   let idioma = $("#modIdioma").val();
-  //idioma = idioma.split('(Id:').pop().split(')')[0];
-  let nouIdioma = $("#addIdiomaAltre").val();
+  idioma = idioma.split('(Id:').pop().split(')')[0];
+  let nouIdioma = $("#modIdiomaAltre").val();
   let idioma_s = document.querySelector('input[name="modidioma_s"]:checked').value;
   let dataNaixemement = $("#modDataNaixement").val();
   let adreca = $("#modAdreca").val();
-  // $("#addTipus").val()+' '+$("#addAdreca").val()+' '+$("#addPis").val()+' '+$("#addPorta").val()+' '+$("#addEscala").val();
-  let tipusHabitatge = 1;
-  //let kendotipusHabitatge = $("#addTipus_habitatge").data("kendoDropDownTree");
-  //let tipusHabitatge = kendotipusHabitatge.value().text;
-  let titularitatHab = 1;
-  //let titularitatHab = document.querySelector('input[name="titularitat"]:checked').value;
-  let provincia = 1;
-  // let provincia = $("#modprovince").val();
-  // provincia = provincia.split('(Id:').pop().split(')')[0];
-  let comarca = 1;
-  // let comarca = $("#modComarcas").val();
-  // comarca = comarca.split('(Id:').pop().split(')')[0];
-  let municipi = 1;
-  // let municipi = $("#modMunicipios").val();
-  // municipi = municipi.split('(Id:').pop().split(')')[0];
+  let tipusHabitatge = $("#modTipusHabitatge").val();
+  let titularitatHab = document.querySelector('input[name="modtitularitat"]:checked').value;
+  let provincia = $("#modprovincias").val();
+  provincia = provincia.split('(Id:').pop().split(')')[0];
+  let comarca = $("#modcomarcas").val();
+  comarca = comarca.split('(Id:').pop().split(')')[0];
+  let municipi = $("#modmunicipios").val();
+  municipi = municipi.split('(Id:').pop().split(')')[0];
   let telFixe = $("#modTel_fijo").val();
   telFixe = telFixe.replace(/\s/g, '');
   let telMovil = $("#modMovil").val();
@@ -695,9 +810,7 @@ function modCardListener() {
       type: "GET",
       cache: false,
       success: function(response) {
-        console.log("Response1 "+ response);
         let myJSON = JSON.parse(response);
-        console.log("Response2" + response);
         goToFp();
       },
       error: function() {
