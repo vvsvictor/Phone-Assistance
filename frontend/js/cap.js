@@ -149,6 +149,10 @@ function mostrarEspecialitzacions(){
 }
 
 function goToAddDoctor() {
+  //Borrar camps
+  $("#addNameDr").val('');
+  $("#addSurnameDr").val('');
+  $("#addGenereDr").val('');
   mostrarEspecialitzacions()
 
   $("#tableCaps").hide();
@@ -157,36 +161,42 @@ function goToAddDoctor() {
 
   //on click
   $("#addDoctorBtn").click(function() {
+
     let especialitzacio = $("#especialitzacions").val();
     especialitzacio = especialitzacio.split('(Id:').pop().split(')')[0];
     let nom = $("#addNameDr").val();
     let cognom = $("#addSurnameDr").val();
     let gender = $("#addGenereDr").val();
     let idcap =$("#cid").html();
-    $.ajax({
-      url: "../backend/inserts/insertDoctors.php",
-      data: {
-        sName: nom,
-        sSurname:cognom,
-        sGender: gender,
-        iSpecializacionId: especialitzacio,
-        iIdCap: idcap
-      },
-      type: "GET",
-      cache: false,
-      success: function(response) {
-        var myJSON = JSON.parse(response);
-        //Mostrar taula cap
-        $("#addDoctor").hide();
-        mostrarCap();
-        if (parseInt(myJSON.codigoError) != 0) {
-          console.log(myJSON.observaciones + " - " + myJSON.codigoError + " - " + myJSON.descError);
+    if (nom!="" && cognom!="" && gender!="" && isNaN(gender) && isNaN(cognom) && isNaN(nom)) {
+      $.ajax({
+        url: "../backend/inserts/insertDoctors.php",
+        data: {
+          sName: nom,
+          sSurname:cognom,
+          sGender: gender,
+          iSpecializacionId: especialitzacio,
+          iIdCap: idcap
+        },
+        type: "GET",
+        cache: false,
+        success: function(response) {
+          var myJSON = JSON.parse(response);
+          //Mostrar taula cap
+          $("#addDoctor").hide();
+          mostrarCap();
+          if (parseInt(myJSON.codigoError) != 0) {
+            console.log(myJSON.observaciones + " - " + myJSON.codigoError + " - " + myJSON.descError);
+          }
+        },
+        error: function() {
+          alert("Error en la consulta");
         }
-      },
-      error: function() {
-        alert("Error en la consulta");
-      }
-    });
+      });
+    }else{
+      alert("Error: Hi han camps vuits i/o incorrectes");
+    }
+
   });
 
 
@@ -208,29 +218,37 @@ function addCapListener() {
     $("#addCapBtn").click(function() {
       let tel =$("#addTel").val();
       tel= tel.replace(/\s/g, '');
-      $.ajax({
-        url: "../backend/inserts/insertCap.php",
-        data: {
-          sName: $("#addNom").val(),
-          sAddress: $("#addDireccio").val(),
-          iPhone: tel,
-          sSchedule: $("#addHorari").val()
-        },
-        type: "GET",
-        cache: false,
-        success: function(response) {
-          var myJSON = JSON.parse(response);
-          goToCapList();
-          showTable();
+      let name = $("#addNom").val();
+      let direccio = $("#addDireccio").val();
+      let horari = $("#addHorari").val();
+      if (name!="" && direccio!="" && horari !="" && tel!="" && !isNaN(tel) && isNaN(name)) {
+        $.ajax({
+          url: "../backend/inserts/insertCap.php",
+          data: {
+            sName: name,
+            sAddress: direccio,
+            iPhone: tel,
+            sSchedule: horari
+          },
+          type: "GET",
+          cache: false,
+          success: function(response) {
+            var myJSON = JSON.parse(response);
+            goToCapList();
+            showTable();
 
-          if (parseInt(myJSON.codigoError) != 0) {
-            console.log(myJSON.observaciones + " - " + myJSON.codigoError + " - " + myJSON.descError);
+            if (parseInt(myJSON.codigoError) != 0) {
+              console.log(myJSON.observaciones + " - " + myJSON.codigoError + " - " + myJSON.descError);
+            }
+          },
+          error: function() {
+            alert("Error en la consulta");
           }
-        },
-        error: function() {
-          alert("Error en la consulta");
-        }
-      });
+        });
+      }else{
+        alert("Hi han camps vuits i/o incorrectes");
+      }
+
     });
 }
 

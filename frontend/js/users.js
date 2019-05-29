@@ -98,26 +98,35 @@ function modUserListener() {
             });
             //Click al botó modificar usuari
             $("#modUserBtn").click(function() {
-              $.ajax({
-                url: "../backend/updates/users.php",
-                data: {
-                  id: $('#modId').val(),
-                  sUsername: $('#modUsername').val(),
-                  sPassword: $('#modPassword').val(),
-                  iUserType: $('input[name=modUsertype]:checked', '#formModUser').val()
-                },
-                type: "GET",
-                cache: false,
-                success: function(response) {
-                  let myJSON = JSON.parse(response);
-                  //reload users
-                  showTable();
-                  goToUsersList();
-                },
-                error: function() {
-                  alert("Error en la consulta");
-                }
-              });
+              let id = $('#modId').val();
+              let username =$('#modUsername').val();
+              let password = $('#modPassword').val();
+              let usertype = $('input[name=modUsertype]:checked', '#formModUser').val();
+              if (username!="" && password.length>6 ) {
+                $.ajax({
+                  url: "../backend/updates/users.php",
+                  data: {
+                    id: id,
+                    sUsername: username,
+                    sPassword: password,
+                    iUserType: usertype
+                  },
+                  type: "GET",
+                  cache: false,
+                  success: function(response) {
+                    let myJSON = JSON.parse(response);
+                    //reload users
+                    showTable();
+                    goToUsersList();
+                  },
+                  error: function() {
+                    alert("Error en la consulta");
+                  }
+                });
+              }else{
+                alert("Hi han camps vuits o la longitud de la contrasenya és més petita de 6")
+              }
+
             });
 
           }
