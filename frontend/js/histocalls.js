@@ -97,7 +97,7 @@ $(document).ready(function () {
           dataTextField: "text",
           dataValueField: "id"
     });
-     $("#addDestinatari").kendoDropDownList();
+  $("#addDestinatari").kendoDropDownList();
 });
 
 function otherCallsListener(){
@@ -144,11 +144,18 @@ function returnCall(){
   returnCalls
 }
 
-
 function mostrarCallListener() {
 
 }
 
+<<<<<<< HEAD
+=======
+function addCallListener() {
+  $("#addCallbtn").click(function() {
+
+  });
+}
+>>>>>>> ebb2e1d763409e1263c88f4eddc84d018febd5e6
 
   function showDni() {
       $.ajax({
@@ -175,7 +182,8 @@ function mostrarCallListener() {
         }
       });
     }
-    function showCalls(){
+
+  function showCalls(){
       $.ajax({
         url: "../backend/selects/getCallType.php",
         type: "GET",
@@ -202,7 +210,7 @@ function mostrarCallListener() {
       });
     }
 
-    function showStateCall(){
+  function showStateCall(){
       $.ajax({
         url: "../backend/selects/getCallState.php",
         type: "GET",
