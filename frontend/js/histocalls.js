@@ -183,6 +183,8 @@ function addCallListener() {
             dataValueField: "value",
             dataSource: tipustrucada
           });
+
+          callTypeListener();
         },
         error: function() {
           console.log('No hi han tipus de trucades');
