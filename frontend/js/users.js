@@ -53,7 +53,7 @@ function addUserListener() {
       });
     }else{
       //Control de validació
-      alert("Hi han camps incorrectes")
+      alert("Hi han camps incorrectes o la contrasenya és menor a 6 caracters")
     }
 
   });

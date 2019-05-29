@@ -305,8 +305,10 @@
               </div>
               <!--Responsible all info-->
               <div id="responsibleInfoDiv" class="responsibleInfo container_add contacto">
-                <button id="returnResponsible" type="button" class="btn btn-primary"><i class="fa fa-reply"></i> Tornar enrere</button>
+
                 <h1 class="heading">Informació del responsable</h1>
+                <button id="returnResponsible" type="button" class="btn btn-primary"><i class="fa fa-reply"></i> Tornar enrere</button>
+                <button id="responsibleModBtn" type="button" class="btn btn-primary">Modificar</button>
                 <div class="info">
                   <p class="sub-heading">ID</p>
                   <p id="idres" class="duration"></p>
@@ -359,10 +361,63 @@
                 </div><br>
                 <button id="deleteResponsibleBtn" type="button" class="btn btn-danger">Eliminar</button>
               </div>
+              <!--Responsible all info-->
+              <div id="responsibleModDiv" class="responsibleInfo container_add contacto">
+
+                <h1 class="heading">Informació del responsable</h1>
+                <button id="returnResponsible3" type="button" class="btn btn-primary"><i class="fa fa-reply"></i> Tornar enrere</button>
+                <button id="ModResponsibleBtn" type="button" class="btn btn-primary">Guardar</button>
+                <div class="info">
+                  <p class="sub-heading">Prioritat</p>
+                  <input type="text" id="priresMod" />
+                  <p></p>
+                </div>
+                <div class="info">
+                  <p class="sub-heading">Nom</p>
+                  <input type="text" id="nomresMod" />
+                  <p></p>
+                </div>
+                <div class="info">
+                  <p class="sub-heading">Cognom</p>
+                  <input type="text" id="cognomresMod" />
+                  <p></p>
+                </div>
+                <div class="info">
+                  <p class="sub-heading">Direcció</p>
+                  <input type="text" id="direccioresMod" />
+                  <p></p>
+                </div>
+                <div class="info">
+                  <p class="sub-heading">Codi Postal</p>
+                  <input type="text" id="cpresMod" />
+                  <p></p>
+                </div>
+                <div class="info">
+                  <p class="sub-heading">Telèfon</p>
+                  <input type="text" id="telresMod" />
+                  <p></p>
+                </div>
+                <div class="info">
+                  <p class="sub-heading">Hora de preferència de trucada</p>
+                  <input type="text" id="hourresMod" />
+                  <p></p>
+                </div>
+                <div class="info">
+                  <p class="sub-heading">Data de creació del responsable</p>
+                  <input type="text" id="dateresMod" />
+                  <p></p>
+                </div>
+                <div class="info">
+                  <p class="sub-heading">Raó del responsable</p>
+                  <input type="text" id="reasonresMod" />
+                  <p></p>
+                </div><br>
+
+              </div>
 
               <!--Formulario Añadir Responsable -->
               <div id="addResponsible" class="container_add">
-                <button id="returnResponsible" type="button" class="btn btn-primary"><i class="fa fa-reply"></i> Tornar enrere</button>
+                <button id="returnResponsible2" type="button" class="btn btn-primary"><i class="fa fa-reply"></i> Tornar enrere</button>
                 <br>
                 <br>
                 <div class="row">

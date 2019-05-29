@@ -235,6 +235,8 @@ function addCallListener() {
       let tipus_trucada = $("#addtype_list").val();
       let data_absencia = $("#add_dataabs").val();
       let estat_trucada = $("#addstate_call").val();
+      let incall = $("#addentrant_call").val();
+      let outcall = $("#addsortint_call").val();
       let solucio = $("#rao").val();
       let motiu = $("#addMotiu").val();
       let descripcio = $("#addDescription").val();
@@ -245,7 +247,13 @@ function addCallListener() {
           $sCallDate:data_trucada,
           $iCallType:tipus_trucada,
           $iCallState:estat_trucada,
-          $sTeleoperatorSolution:motiu
+          iOutcallType:outcall,
+          iIncallType:incall,
+          $sTeleoperatorSolution:solucio,
+          $sReasonAdvice: motiu,
+          $sDescription: descripcio,
+          $sDestinyAdvice: destinatari
+
         },
         type: "GET",
         cache: false,
