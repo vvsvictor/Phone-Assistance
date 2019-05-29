@@ -23,7 +23,6 @@ $(document).ready(function() {
 
   $("#modFormFP2").click(function() {
     modCardListener();
-
   });
 
   //kendo / jquery functions
@@ -55,14 +54,11 @@ $(document).ready(function() {
                 ]
             });
   $("#addTipus").kendoDropDownList();
-
-
 });
 
 
 
 function Tabs(options) {
-
   var tabs = document.querySelector(options.el);
   var initCalled = false;
   var tabNavigation = tabs.querySelector(".c-tabs-nav");
@@ -583,7 +579,6 @@ function mostrarCardListener(id) {
             $("#fpgender").html(gender);
             $("#fpbirthdate").html(birthdate);
             $("#fpidioma").html(language_name);
-            console.log("Sign language n" + i + " es " +sign_language)
             $("#fpidioma_s").html(sign_language);
             $("#fpprovince").html(province);
             $("#fpcomarca").html(comarca);
@@ -645,25 +640,58 @@ function mostrarCardListener(id) {
 }
 
 function modCardListener() {
+  let id = $("#modId").val();
+  let nom = $("#modNom").val();
+  nom = uppercase(nom);
+  let cognom = $("#modCognom").val();
+  cognom = uppercase(cognom);
+  let genere = $("#modgenere").val();
+  let idioma = $("#modIdioma").val();
+  //idioma = idioma.split('(Id:').pop().split(')')[0];
+  let nouIdioma = $("#addIdiomaAltre").val();
+  let idioma_s = document.querySelector('input[name="modidioma_s"]:checked').value;
+  let dataNaixemement = $("#modDataNaixement").val();
+  let adreca = $("#modAdreca").val();
+  // $("#addTipus").val()+' '+$("#addAdreca").val()+' '+$("#addPis").val()+' '+$("#addPorta").val()+' '+$("#addEscala").val();
+  let tipusHabitatge = 1;
+  //let kendotipusHabitatge = $("#addTipus_habitatge").data("kendoDropDownTree");
+  //let tipusHabitatge = kendotipusHabitatge.value().text;
+  let titularitatHab = 1;
+  //let titularitatHab = document.querySelector('input[name="titularitat"]:checked').value;
+  let provincia = 1;
+  // let provincia = $("#modprovince").val();
+  // provincia = provincia.split('(Id:').pop().split(')')[0];
+  let comarca = 1;
+  // let comarca = $("#modComarcas").val();
+  // comarca = comarca.split('(Id:').pop().split(')')[0];
+  let municipi = 1;
+  // let municipi = $("#modMunicipios").val();
+  // municipi = municipi.split('(Id:').pop().split(')')[0];
+  let telFixe = $("#modTel_fijo").val();
+  telFixe = telFixe.replace(/\s/g, '');
+  let telMovil = $("#modMovil").val();
+  telMovil = telMovil.replace(/\s/g, '');
+  let telTreball = $("#modTelTreball").val();
+  telTreball = telTreball.replace(/\s/g, '');
     $.ajax({
       url: "../backend/updates/fichaPersonal.php",
       data:{
-        id: $("#modId").val(),
-        sName: $("#modNom").val(),
-        sSurname: $("#modCognom").val(),
-        sGender: "Home",//$("#modgenere").val(),
-        iLanguage: 1, //$("#1").val(),
-        iSignLanguage: 1, //$("#").val(),
-        sBirthDate: $("#modDataNaixement").val(),
-        iProvince: 1, //$("#modprovince").val(),
-        iComarca: 1, //$("#modComarcas").val(),
-        iMunicipality:1,//$("#modMunicipios").val(),
-        sAddress: $("#modAdreca").val(),
-        sTypeHouse: $("#modtype_house").val(),
-        iOwnership: 1,//$("#modownership").val(),
-        sPhone: $("#modTel_fijo").val(),
-        sMobilePhone: $("#modMovil").val(),
-        sWorkPhone: "" //$("#modTelTreball").val()
+        id: id,
+        sName: nom,
+        sSurname: cognom,
+        sGender: genere,
+        iLanguage: idioma,
+        iSignLanguage: idioma_s,
+        sBirthDate: dataNaixemement,
+        iProvince: provincia,
+        iComarca: comarca,
+        iMunicipality:municipi,
+        sAddress: adreca,
+        sTypeHouse: tipusHabitatge,
+        iOwnership: titularitatHab,
+        sPhone: telFixe,
+        sMobilePhone: telMovil,
+        sWorkPhone: telTreball
       },
       type: "GET",
       cache: false,
