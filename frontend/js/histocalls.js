@@ -246,6 +246,7 @@ function addCallListener() {
       $.ajax({
         url: "../backend/inserts/insertCallHistory.php",
         data: {
+          $sDniNif: dni,
           $sCallDate:data_trucada,
           $iCallType:tipus_trucada,
           $iCallState:estat_trucada,
