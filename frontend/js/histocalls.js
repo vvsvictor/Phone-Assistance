@@ -44,17 +44,17 @@ $(document).ready(function () {
     dataSource: [
         {
             text: "Trucada d'alarma", id: "Trucada d'alarma", items: [
-                { text: "Emergències sanitàries", id: "Emergències sanitàries" },
-                { text: "Emergències socials", id: "Emergències socials"},
-                { text: "Emergències per crisi de soledat o angoixa", id: "Emergències per crisi de soledat o angoixa"},
-                { text: "Alarma sense resposta", id: "Alarma sense resposta"}
+                { text: "Emergències sanitàries", id: 1 },
+                { text: "Emergències socials", id: 2},
+                { text: "Emergències per crisi de soledat o angoixa", id: 3},
+                { text: "Alarma sense resposta", id: 4}
             ]
         },
         {
             text: "Trucada d'informació", id: "Trucada d'informació" , items: [
-                { text: "Trucada per error", id: "Trucada per error" },
-                { text: "Modificació de dades", id: "Modificació de dades" },
-                { text: "Absencies", id: "Absencies" },
+                { text: "Trucada per error", id: 5 },
+                { text: "Modificació de dades", id: 6 },
+                { text: "Absencies", id: 7 },
                 { text: "Estades Temporals", id: "Estades Temporals", items: [
                   { text: "Data d'absència", id: "Data d'absència"},
                   { text: "Data de previsió de la tornada a l'habitatge", id: "Data de previsió de la tornada a l'habitatge"}
@@ -67,7 +67,9 @@ $(document).ready(function () {
         {
           text: "De reclamació", id: "De reclamació"
         }
-      ]
+      ],
+      dataTextField: "text",
+      dataValueField: "id"
   });
 
   $("#modentrant_call").kendoDropDownTree({
@@ -376,7 +378,7 @@ function mostrarCallListener() {
   function addCall(){
     $("#addCallBtn").click(function() {
       let dni = $("#adddni_usuari").val();
-      dni = dni.split('(Id:').pop().split(')')[0];
+      dni = dni.split(') ').pop();
       let data_trucada = $("#adddata_trucada").val();
       let estat_trucada = $("#addstate_call").val();
       let solucio = $("#rao").val();
@@ -385,20 +387,25 @@ function mostrarCallListener() {
       let destinatari = $("#addDestinatari").val();
       if ($("#addtype_list").val()=="Entrant") {
         //Tipus de trucada entrant
+<<<<<<< HEAD
         let incall = $("#addentrant_call").data("kendoDropDownTree").value().text;
         $.ajax({
           url: "../backend/inserts/insertCallHistory.php",
+=======
+        let incall = $("#addentrant_call").data("kendoDropDownTree").value();
+        $.ajax({
+          url: "../backend/inserts/insertInCall.php",
+>>>>>>> d9b0092271b79ac5376145ee06420d7a8ca5cf3f
           data: {
-            $sDniNif: dni,
-            $sCallDate:data_trucada,
-            $iCallType:tipus_trucada,
-            $iCallState:estat_trucada,
-            iOutcallType:outcall,
+            sDniNif: dni,
+            sCallDate:data_trucada,
+            iCallType:1,
+            iCallState:estat_trucada,
             iIncallType:incall,
-            $sTeleoperatorSolution:solucio,
-            $sReasonAdvice: motiu,
-            $sDescription: descripcio,
-            $sDestinyAdvice: destinatari
+            sTeleoperatorSolution:solucio,
+            sReasonAdvice: motiu,
+            sDescription: descripcio,
+            sDestinyAdvice: destinatari
           },
           type: "GET",
           cache: false,
@@ -417,20 +424,19 @@ function mostrarCallListener() {
           }
         });
       }else{
-        let outcall = $("#addsortint_call").data("kendoDropDownTree").value().text;
+        let outcall = $("#addsortint_call").data("kendoDropDownTree").value();
         $.ajax({
           url: "../backend/inserts/insertCallHistory.php",
           data: {
-            $sDniNif: dni,
-            $sCallDate:data_trucada,
-            $iCallType:tipus_trucada,
-            $iCallState:estat_trucada,
-            iOutcallType:outcall,
-            iIncallType:incall,
-            $sTeleoperatorSolution:solucio,
-            $sReasonAdvice: motiu,
-            $sDescription: descripcio,
-            $sDestinyAdvice: destinatari
+            sDniNif: dni,
+            sCallDate:data_trucada,
+            iCallType:2,
+            CallState:estat_trucada,
+            OutcallType:outcall,
+            sTeleoperatorSolution:solucio,
+            sReasonAdvice: motiu,
+            sDescription: descripcio,
+            sDestinyAdvice: destinatari
           },
           type: "GET",
           cache: false,
