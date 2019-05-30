@@ -240,7 +240,7 @@ function mostrarCallListener() {
       if ($("#addtype_list").val()=="Entrant") {
         //Tipus de trucada entrant
         let incall = $("#addentrant_call").data("kendoDropDownTree").value().text;
-
+        $.ajax({
           url: "../backend/inserts/insertCallHistory.php",
           data: {
             $sDniNif: dni,
