@@ -26,19 +26,19 @@
         }
       }
 
-      $consultaOutcall = 'SELECT outcall_type FROM outcall_type WHERE  id = (SELECT outcall_type from call_history where id = '.$row["id"].')';
+      $consultaOutcall = 'SELECT outcall_type, subclass FROM outcall_type WHERE  id = (SELECT outcall_type from call_history where id = '.$row["id"].')';
       $resultOutcall = mysqli_query($conexion, $consultaOutcall);
       if (mysqli_num_rows($resultOutcall) > 0) {
         while ($rowOutcall = mysqli_fetch_assoc($resultOutcall)) {
-          $sJSON .= '"outcall_type":"'. $rowOutcall["outcall_type"].'", ';
+          $sJSON .= '"outcall_type":"'. $rowOutcall["outcall_type"].',"outcall_subclass":"'. $row["subclass"].'", ';
         }
       }
 
-      $consultaIncall = 'SELECT incall_type FROM incall_type WHERE  id = (SELECT incall_type from call_history where id = '.$row["id"].')';
+      $consultaIncall = 'SELECT incall_type, subclass FROM incall_type WHERE  id = (SELECT incall_type from call_history where id = '.$row["id"].')';
       $resultIncall = mysqli_query($conexion, $consultaIncall);
       if (mysqli_num_rows($resultIncall) > 0) {
         while ($rowIncall = mysqli_fetch_assoc($resultIncall)) {
-          $sJSON .= '"incall_type":"'. $rowIncall["incall_type"].'"},';
+          $sJSON .= '"incall_type":"'. $rowIncall["incall_type"].',"incall_subclass":"'. $row["subclass"].'"},';
         }
       }
   }
