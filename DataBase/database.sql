@@ -350,4 +350,4 @@ insert into outcall_type (outcall_type, subclass) values ("Trucada d’agenda pr
 insert into outcall_type (outcall_type, subclass) values ("Trucada d’agenda preventiva", "Seguretat de la via");
 insert into outcall_type (outcall_type, subclass) values ("Trucada d’agenda preventiva", "Campanyes de vacunació");
 insert into outcall_type (outcall_type, subclass) values ("Trucada d’agenda preventiva", "Altres");
-insert into call_history (user_dninif,call_date, call_type, incall_type, call_state, teleoperator_solution, reason_for_advice, description, Destiny_advice) values ("68951118Q", "2019-10-25", 1, 0, 1, 1, "Anar al metge","Es troba malament","Es troba malament","Familiar");
+insert into call_history (user_dninif,call_date, call_type, incall_type, call_state, teleoperator_solution, reason_for_advice, description, Destiny_advice) values ("68951118Q", "2019-10-25", 1, 1, 1, "Anar al metge","Es troba malament","Es troba malament","Familiar");
