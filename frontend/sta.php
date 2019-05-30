@@ -374,27 +374,27 @@
                 </div>
                 <div class="info">
                   <p class="sub-heading">Nom</p>
-                  <input type="text" id="nomresMod" />
+                  <input type="text" id="nomresMod" style="width: 18%;" class="form-control" />
                   <p></p>
                 </div>
                 <div class="info">
                   <p class="sub-heading">Cognom</p>
-                  <input type="text" id="cognomresMod" />
+                  <input type="text" id="cognomresMod" style="width: 18%;" class="form-control" />
                   <p></p>
                 </div>
                 <div class="info">
                   <p class="sub-heading">Direcció</p>
-                  <input type="text" id="direccioresMod" />
+                  <input type="text" id="direccioresMod" style="width: 18%;" class="form-control" />
                   <p></p>
                 </div>
                 <div class="info">
                   <p class="sub-heading">Codi Postal</p>
-                  <input type="text" id="cpresMod" />
+                  <input type="text" id="cpresMod" style="width: 18%;" class="form-control" />
                   <p></p>
                 </div>
                 <div class="info">
                   <p class="sub-heading">Telèfon</p>
-                  <input type="text" id="telresMod" />
+                  <input type="text" id="telresMod" class="phoneMask form-control" style="width: 18%;" />
                   <p></p>
                 </div>
                 <div class="info">
@@ -409,7 +409,7 @@
                 </div>
                 <div class="info">
                   <p class="sub-heading">Raó del responsable</p>
-                  <input type="text" id="reasonresMod" />
+                  <input type="text" id="reasonresMod" style="width: 18%;" class="form-control" />
                   <p></p>
                 </div><br>
 
