@@ -108,6 +108,20 @@
             <input onchange="otherCallsListener()" id="addsortint_call" style="width: 100%"/><br>
             <input id="addOtherCalls" type="text" class="form-control" placeholder="Altre trucada sortint...">
           </div>
+        </div><br>
+        <div class="row">
+          <div id="divAbsencia" class="col-lg-6">
+            <label for="adddataabs">Data d'absència</label><br>
+            <input id="adddataabs" class="datePickerKendo" style="width: 100%"/>
+          </div>
+          <div id="divPrev" class="col lg-6">
+            <label for="adddataprev">Data de previsió de la tonada/a</label><br>
+            <input id="adddataprev" class="datePickerKendo" style="width: 100%"/>
+          </div>
+          <div id="divAltres" class="col lg-6">
+            <label for="addAltres">Solució teleoperador/a</label><br>
+            <input id="addAltres" style="width: 100%"/>
+          </div>
         </div>
         <br>
         <div class="row">

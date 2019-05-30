@@ -181,7 +181,10 @@ CREATE TABLE CALL_STATE (
 CREATE TABLE CALL_HISTORY(
   id int not null auto_increment,
   user_dninif varchar(255) not null, /*Table PERSONAL_CARD*/
-  call_date varchar(255) not null,
+  call_date date not null,
+  absence_date date,
+  return_date date,
+  other varchar(255),
   call_type int, /*Table CALL_TYPE*/
   outcall_type int, /*Table OUTCALL_TYPE*/
   incall_type int, /*Table INCALL_TYPE*/
@@ -331,8 +334,10 @@ insert into incall_type (incall_type, subclass) values ("Trucada d’alarma","Em
 insert into incall_type (incall_type, subclass) values ("Trucada d’alarma","Alarma sense resposta");
 insert into incall_type (incall_type, subclass) values ("Trucada d’informació", "Trucada per error");
 insert into incall_type (incall_type, subclass) values ("Trucada d’informació", "Modificació de dades");
-insert into incall_type (incall_type, subclass) values ("Trucada d'informació", "Absències o estades temporals");
-insert into incall_type (incall_type) values ("Trucada d'assessorament");
+insert into incall_type (incall_type, subclass) values ("Trucada d'informació", "Absències");
+insert into incall_type (incall_type, subclass) values ("Trucada d'informació", "Estada temporal");
+insert into incall_type (incall_type) values ("Soletat");
+insert into incall_type (incall_type) values ("Reclamació");
 insert into outcall_type (outcall_type, subclass) values ("Trucada d’agenda","Recordartori de medicació");
 insert into outcall_type (outcall_type, subclass) values ("Trucada d’agenda","Recordartori de visites mèdiques");
 insert into outcall_type (outcall_type, subclass) values ("Trucada d’agenda","Felicitació");
@@ -342,5 +347,6 @@ insert into outcall_type (outcall_type, subclass) values ("Trucada de seguiment"
 insert into outcall_type (outcall_type, subclass) values ("Trucada de seguiment", "Seguiment després de l’alta hospitalària");
 insert into outcall_type (outcall_type, subclass) values ("Trucada d’agenda preventiva", "Condicions ambientals");
 insert into outcall_type (outcall_type, subclass) values ("Trucada d’agenda preventiva", "Seguretat de la via");
-insert into outcall_type (outcall_type, subclass) values ("Trucada d’agenda preventiva", "Campanyes de vacunació i altres");
+insert into outcall_type (outcall_type, subclass) values ("Trucada d’agenda preventiva", "Campanyes de vacunació");
+insert into outcall_type (outcall_type, subclass) values ("Trucada d’agenda preventiva", "Altres");
 insert into call_history (user_dninif,call_date, call_type, outcall_type, incall_type, call_state, teleoperator_solution, reason_for_advice, description, Destiny_advice) values ("68951118Q", "2019-10-25", 1, 1, 1, 1, "Hola","Es troba malament","Es troba malament","Familiar");

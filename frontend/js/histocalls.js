@@ -3,10 +3,10 @@ $(document).ready(function () {
   $('.dataTables_length').addClass('bs-select');
   showTable();
   gotoModCall();
-  addCall();
+
 
   $(".datePickerKendo").kendoDatePicker({
-      format: "d/M/yyyy"
+      format: "yyyy/M/d"
     });
 
   $("#returnCalls").click(function() {
@@ -43,7 +43,7 @@ $(document).ready(function () {
     height: "auto",
     dataSource: [
         {
-            text: "Trucada d'alarma", id: "Trucada d'alarma", items: [
+            text: "Trucada d'alarma", id: "", items: [
                 { text: "Emergències sanitàries", id: 1 },
                 { text: "Emergències socials", id: 2},
                 { text: "Emergències per crisi de soledat o angoixa", id: 3},
@@ -51,21 +51,18 @@ $(document).ready(function () {
             ]
         },
         {
-            text: "Trucada d'informació", id: "Trucada d'informació" , items: [
+            text: "Trucada d'informació", id: "" , items: [
                 { text: "Trucada per error", id: 5 },
                 { text: "Modificació de dades", id: 6 },
-                { text: "Absencies", id: 7 },
-                { text: "Estades Temporals", id: "Estades Temporals", items: [
-                  { text: "Data d'absència", id: "Data d'absència"},
-                  { text: "Data de previsió de la tornada a l'habitatge", id: "Data de previsió de la tornada a l'habitatge"}
-                ]}
+                { text: "Absències", id: 7 },
+                { text: "Estades Temporals", id: 8}
             ]
         },
         {
-          text: "Soletat", id: "Soletat"
+          text: "Soletat", id: 9
         },
         {
-          text: "De reclamació", id: "De reclamació"
+          text: "De reclamació", id: 10
         }
       ],
       dataTextField: "text",
@@ -108,26 +105,26 @@ $(document).ready(function () {
           height: "auto",
           dataSource: [
               {
-                  text: "Trucada d'agenda", id: "Trucada d'agenda" , items: [
-                      { text: "Recordartori de medicació", id: "Recordartori de medicació" },
-                      { text: "Recordartori de visites mèdiques", id: "Recordartori de visites mèdiques" },
-                      { text: "Felicitació", id: "Felicitació"},
-                      { text: "Agenda tècnica", id: "Agenda tècnica" }
+                  text: "Trucada d'agenda", id: "" , items: [
+                      { text: "Recordartori de medicació", id: 1 },
+                      { text: "Recordartori de visites mèdiques", id: 2 },
+                      { text: "Felicitació", id: 3},
+                      { text: "Agenda tècnica", id: 4 }
                   ]
               },
               {
-                  text: "Trucada de seguiment", id: "Trucada de seguiment", items: [
-                      { text: "Seguidament del regés a la llar de la persona usuària", id: "Seguidament del regés a la llar de la persona usuària"},
-                      { text: "Seguiment del procés de dol", id: "Seguiment del procés de dol"},
-                      { text: "Seguiment després de l'alta hospitalària", id: "Seguiment després de l'alta hospitalària"},
+                  text: "Trucada de seguiment", id: "", items: [
+                      { text: "Seguidament del regés a la llar de la persona usuària", id: 5},
+                      { text: "Seguiment del procés de dol", id: 6},
+                      { text: "Seguiment després de l'alta hospitalària", id: 7},
                   ]
               },
               {
-                  text: "Trucada d'agenda preventiva", id: "Trucada d'agenda preventiva", items: [
-                      { text: "Condicions ambientals", id: "Condicions ambientals"},
-                      { text: "Seguretat de la via", id: "Seguretat de la via"},
-                      { text: "Campanyes de vacunacio", id: "Campanyes de vacunacio"},
-                      { text: "Altres", id: "Altres"}
+                  text: "Trucada d'agenda preventiva", id: "", items: [
+                      { text: "Condicions ambientals", id: 8},
+                      { text: "Seguretat de la via", id: 9},
+                      { text: "Campanyes de vacunacio", id: 10},
+                      { text: "Altres", id: 11}
                   ]
               }
           ],
@@ -167,6 +164,7 @@ $(document).ready(function () {
       });
   $("#addDestinatari").kendoDropDownList();
   $("#modaddressee").kendoDropDownList();
+  addCall();
 });
 
 function Tabs(options) {
@@ -375,24 +373,56 @@ function mostrarCallListener() {
       });
     }
 
+  function addAmagar(){
+    if ($("#addentrant_call").data("kendoDropDownTree").value()==8) {
+      $("#divAbsencia").show();
+      $("#divPrev").show();
+    }else{
+      $("#divAbsencia").hide();
+      $("#divPrev").hide();
+    }
+
+    if ($("#addsortint_call").data("kendoDropDownTree").value()==11) {
+      $("#divAltres").show();
+    }else{
+      $("#divAltres").hide();
+    }
+  }
+
   function addCall(){
+    $("#divAbsencia").hide();
+    $("#divPrev").hide();
+    $("#divAltres").hide();
+    $("#addentrant_call").data("kendoDropDownTree").bind("change", addAmagar);
+    $("#addsortint_call").data("kendoDropDownTree").bind("change", addAmagar);
     $("#addCallBtn").click(function() {
       let dni = $("#adddni_usuari").val();
       dni = dni.split(') ').pop();
       let data_trucada = $("#adddata_trucada").val();
       let estat_trucada = $("#addstate_call").val();
       let solucio = $("#rao").val();
+      let dateAbs = $("#adddataabs").val();
+      let datePrev = $("#adddataprev").val();
+      let altres = $("#addAltres").val();
       let motiu = $("#addMotiu").val();
       let descripcio = $("#addDescription").val();
       let destinatari = $("#addDestinatari").val();
       if ($("#addtype_list").val()=="Entrant") {
         //Tipus de trucada entrant
         let incall = $("#addentrant_call").data("kendoDropDownTree").value();
+        if (incall != 8) {
+          dateAbs="";
+          datePrev="";
+          altres ="";
+        }
         $.ajax({
           url: "../backend/inserts/insertInCall.php",
 
           data: {
             sDniNif: dni,
+            absence_date:dateAbs,
+            return_date: datePrev,
+            other: altres,
             sCallDate:data_trucada,
             iCallType:1,
             iCallState:estat_trucada,
@@ -420,10 +450,18 @@ function mostrarCallListener() {
         });
       }else{
         let outcall = $("#addsortint_call").data("kendoDropDownTree").value();
+        if (outcall!=11) {
+          dateAbs="";
+          datePrev="";
+          altres ="";
+        }
         $.ajax({
           url: "../backend/inserts/insertCallHistory.php",
           data: {
             sDniNif: dni,
+            absence_date:dateAbs,
+            return_date: datePrev,
+            other: altres,
             sCallDate:data_trucada,
             iCallType:2,
             CallState:estat_trucada,
