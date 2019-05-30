@@ -369,7 +369,7 @@
                 <button id="ModResponsibleBtn" type="button" class="btn btn-primary">Guardar</button>
                 <div class="info">
                   <p class="sub-heading">Prioritat</p>
-                  <select id="priresMod" style="width: 18%;" class="maxWidth dropDown"/>
+                  <select id="priresMod" style="width: 18%;"></select>
                   <p></p>
                 </div>
                 <div class="info">
