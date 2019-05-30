@@ -326,6 +326,7 @@ INSERT INTO doctors (name,surname,gender,specialization_id,id_cap)VALUES("David"
 
 /*Insert type call_history type by default*/
 insert into call_state (call_type) values ("Acabada");
+insert into call_state (call_type) values ("En procés");
 insert into call_type (call_type)values ("Entrant");
 insert into call_type (call_type)values ("Sortint");
 insert into incall_type (incall_type, subclass) values ("Trucada d’alarma","Emergències sanitàries");
