@@ -7,7 +7,7 @@
   if (mysqli_num_rows($result) > 0) {
     // output data of each row
     while($row = mysqli_fetch_assoc($result)) {
-      $sJSON .= '{"id":'. $row["id"].',"user_dninif":"'. $row["user_dninif"].'","call_date":"'. $row["call_date"].'","teleoperator_solution":"'. $row["teleoperator_solution"].'","reason_for_advice":"'. $row["reason_for_advice"].'","description":"'. $row["description"].'","Destiny_advice":"'. $row["Destiny_advice"].'", '  ;
+      $sJSON .= '{"id":'. $row["id"].',"user_dninif":"'. $row["user_dninif"].'","absence_date":"'. $row["absence_date"].'","return_date":"'. $row["return_date"].'","return_date":"'. $row["return_date"].'","other":"'. $row["other"].'","call_date":"'. $row["call_date"].'","teleoperator_solution":"'. $row["teleoperator_solution"].'","reason_for_advice":"'. $row["reason_for_advice"].'","description":"'. $row["description"].'","Destiny_advice":"'. $row["Destiny_advice"].'", '  ;
 
 
       $consultaType = 'SELECT call_type FROM call_type WHERE  id = (SELECT call_type from call_history where id = '.$row["id"].')';
@@ -26,19 +26,19 @@
         }
       }
 
-      $consultaOutcall = 'SELECT outcall_type FROM outcall_type WHERE  id = (SELECT outcall_type from call_history where id = '.$row["id"].')';
+      $consultaOutcall = 'SELECT outcall_type, subclass FROM outcall_type WHERE  id = (SELECT outcall_type from call_history where id = '.$row["id"].')';
       $resultOutcall = mysqli_query($conexion, $consultaOutcall);
       if (mysqli_num_rows($resultOutcall) > 0) {
         while ($rowOutcall = mysqli_fetch_assoc($resultOutcall)) {
-          $sJSON .= '"outcall_type":"'. $rowOutcall["outcall_type"].'", ';
+          $sJSON .= '"outcall_type":"'. $rowOutcall["outcall_type"].',"outcall_subclass":"'. $row["subclass"].'", ';
         }
       }
 
-      $consultaIncall = 'SELECT incall_type FROM incall_type WHERE  id = (SELECT incall_type from call_history where id = '.$row["id"].')';
+      $consultaIncall = 'SELECT incall_type, subclass FROM incall_type WHERE  id = (SELECT incall_type from call_history where id = '.$row["id"].')';
       $resultIncall = mysqli_query($conexion, $consultaIncall);
       if (mysqli_num_rows($resultIncall) > 0) {
         while ($rowIncall = mysqli_fetch_assoc($resultIncall)) {
-          $sJSON .= '"incall_type":"'. $rowIncall["incall_type"].'"},';
+          $sJSON .= '"incall_type":"'. $rowIncall["incall_type"].',"incall_subclass":"'. $row["subclass"].'"},';
         }
       }
   }

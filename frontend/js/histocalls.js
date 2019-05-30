@@ -241,16 +241,6 @@ var m = new Tabs({
 
 m.init();
 
-function otherCallsListener(){
-  console.log('othercall');
-  let option = $("#addsortint_call").data("kendoDropDownTree").text();
-  if (option == "Altres"){
-    $('#addOtherCalls').show();
-  }else{
-    $('#addOtherCalls').hide();
-  }
-}
-
 function gotoAddCall(){
   showDni();
   showCalls();
@@ -410,7 +400,8 @@ function mostrarCallListener() {
       if ($("#addtype_list").val()=="Entrant") {
         //Tipus de trucada entrant
         let incall = $("#addentrant_call").data("kendoDropDownTree").value();
-        if (incall != 8) {
+        let outcall = $("#addsortint_call").data("kendoDropDownTree").value();
+        if (incall != 8 && outcall != 13) {
           dateAbs="";
           datePrev="";
           altres ="";
@@ -616,17 +607,21 @@ function showHistoCall(id, dni, date, type){
 function mostrarCardListener(id) {
     let idbtn = id;
     idbtn = idbtn.replace("histoCall", "");
+    console.log("mostrar entrar modCardListener");
     $.ajax({
       url: "../backend/selects/getCallHistory.php",
       type: "GET",
       cache: false,
       success: function(response) {
+        
         let myJSON = JSON.parse(response);
         $("#fpdni").html("");
         $("#fpdata").html("");
         $("#fptype").html("");
         $("#fpin").html("");
         $("#fpout").html("");
+        $("#fpabs").html("");
+        $("#fpprev").html("");
         $("#fpstate").html("");
         $("#fpsolution").html("");
         $("#fpreason").html("");
@@ -636,6 +631,8 @@ function mostrarCardListener(id) {
           if (idbtn == myJSON[i].id) {
             let dninie = myJSON[i].user_dninif;
             let call_date = myJSON[i].call_date;
+            let absence_date = myJSON[i].absence_date;
+            let return_date = myJSON[i].return_date;
             let call_type = myJSON[i].call_type;
             let incall_type = myJSON[i].in_calltype;
             let outcall_type = myJSON[i].outcall_type;
@@ -649,6 +646,8 @@ function mostrarCardListener(id) {
             $("#fptype").val(call_type);
             $("#fpin").val(incall_type);
             $("#fpout").val(outcall_type);
+            $("#fpabs").val(absence_date);
+            $("#fpprev").val(return_date);
             $("#fpstate").val(call_state);
             $("#fpsolution").val(teleoperator_solution);
             $("#fpreason").val(reason_for_advice);
@@ -659,7 +658,7 @@ function mostrarCardListener(id) {
         }
       },
       error: function() {
-        console.log('No hi han clients');
+        console.log('No hi han trucades');
       }
     });
 }

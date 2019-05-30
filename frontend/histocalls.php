@@ -105,8 +105,7 @@
           </div>
           <div class="col lg-12" id="exit_type">
             <label for="addsortint_call">Tipus de trucada sortint</label><br>
-            <input onchange="otherCallsListener()" id="addsortint_call" style="width: 100%"/><br>
-            <input id="addOtherCalls" type="text" class="form-control" placeholder="Altre trucada sortint...">
+            <input id="addsortint_call" style="width: 100%"/><br>
           </div>
         </div><br>
         <div class="row">
@@ -115,12 +114,12 @@
             <input id="adddataabs" class="datePickerKendo" style="width: 100%"/>
           </div>
           <div id="divPrev" class="col lg-6">
-            <label for="adddataprev">Data de previsió de la tonada/a</label><br>
+            <label for="adddataprev">Data de previsió de la tornada</label><br>
             <input id="adddataprev" class="datePickerKendo" style="width: 100%"/>
           </div>
           <div id="divAltres" class="col lg-6">
-            <label for="addAltres">Solució teleoperador/a</label><br>
-            <input id="addAltres" style="width: 100%"/>
+            <label for="addAltres">Altres</label><br>
+            <input id="addAltres" type="text" class="form-control" style="width: 100%"/>
           </div>
         </div>
         <br>
@@ -222,6 +221,16 @@
                       <div class="info">
                         <p class="sub-heading">Tipus Sortint</p>
                         <p id="fpout" class="duration"></p>
+                        <p></p>
+                      </div>
+                      <div class="info">
+                        <p class="sub-heading">Data d'absència</p>
+                        <p id="fpabs" class="duration"></p>
+                        <p></p>
+                      </div>
+                      <div class="info">
+                        <p class="sub-heading">Data de previsió de la tornada</p>
+                        <p id="fpprev" class="duration"></p>
                         <p></p>
                       </div>
                       <div class="info">
