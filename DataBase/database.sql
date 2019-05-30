@@ -333,7 +333,14 @@ insert into incall_type (incall_type, subclass) values ("Trucada d’informació
 insert into incall_type (incall_type, subclass) values ("Trucada d’informació", "Modificació de dades");
 insert into incall_type (incall_type, subclass) values ("Trucada d'informació", "Absències o estades temporals");
 insert into incall_type (incall_type) values ("Trucada d'assessorament");
-insert into outcall_type (outcall_type) values ("Trucada d’agenda");
-insert into outcall_type (outcall_type) values ("Trucada de seguiment");
-insert into outcall_type (outcall_type) values ("Trucada d’agenda preventiva");
+insert into outcall_type (outcall_type, subclass) values ("Trucada d’agenda","Recordartori de medicació");
+insert into outcall_type (outcall_type, subclass) values ("Trucada d’agenda","Recordartori de visites mèdiques");
+insert into outcall_type (outcall_type, subclass) values ("Trucada d’agenda","Felicitació");
+insert into outcall_type (outcall_type, subclass) values ("Trucada d’agenda","Agenda tècnica");
+insert into outcall_type (outcall_type, subclass) values ("Trucada de seguiment", "Seguiment del regrés a la llar de la persona usuària");
+insert into outcall_type (outcall_type, subclass) values ("Trucada de seguiment", "Seguiment del procés de dol");
+insert into outcall_type (outcall_type, subclass) values ("Trucada de seguiment", "Seguiment després de l’alta hospitalària");
+insert into outcall_type (outcall_type, subclass) values ("Trucada d’agenda preventiva", "Condicions ambientals");
+insert into outcall_type (outcall_type, subclass) values ("Trucada d’agenda preventiva", "Seguretat de la via");
+insert into outcall_type (outcall_type, subclass) values ("Trucada d’agenda preventiva", "Campanyes de vacunació i altres");
 insert into call_history (user_dninif,call_date, call_type, outcall_type, incall_type, call_state, teleoperator_solution, reason_for_advice, description, Destiny_advice) values ("68951118Q", "2019-10-25", 1, 1, 1, 1, "Hola","Es troba malament","Es troba malament","Familiar");
