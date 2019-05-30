@@ -18,18 +18,25 @@
   $sPhone = $_GET["sPhone"];
   $sMobilePhone = $_GET["sMobilePhone"];
   $sWorkPhone = $_GET["sWorkPhone"];
+  $date = date('Y/m/d', time());
 
   if ($iLanguageSigne == 0) {
     $consulta="INSERT INTO PERSONAL_CARD (name, surname, gender, language, birthdate, dninie, province, comarca, municipality, address, type_house, ownership, phone, mobile_phone, work_phone) VALUES ('".$sName."','".$sSurname."','".$sGender."','".$iLanguage."','".$sBirthdate."','".$sDninie."','".$iProvince."','".$iComarca."','".$iMunicipality."','".$sAddress."','".$sTypeHouse."','".$iOwnership."','".$sPhone."','".$sMobilePhone."','".$sWorkPhone."')";
   }else{
     $consulta="INSERT INTO PERSONAL_CARD (name, surname, gender, language, sign_language, birthdate, dninie, province, comarca, municipality, address, type_house, ownership, phone, mobile_phone, work_phone) VALUES ('".$sName."','".$sSurname."','".$sGender."','".$iLanguage."','".$iLanguageSigne."','".$sBirthdate."','".$sDninie."','".$iProvince."','".$iComarca."','".$iMunicipality."','".$sAddress."','".$sTypeHouse."','".$iOwnership."','".$sPhone."','".$sMobilePhone."','".$sWorkPhone."')";
   }
+  echo $consulta;
   $hacerConsulta=mysqli_query($conexion, $consulta);
+  $consultaSTA = "INSERT INTO STA (user_dninif, actual_situation, hiring_date, tf_service, tcr_service, cc_service, tm_service, tam_service, gps_service, umt_service) VALUES ('".$sDninie."', 'Baixa', '".$date."',0,0,0,0,0,0,0)";
+  echo $consultaSTA;
+
+  $hacerConsultaSTA=mysqli_query($conexion, $consultaSTA);
+
 
   $sJSON = "";
   $sJSON .= "{";
 
-  if ($hacerConsulta){
+  if ($hacerConsulta && $hacerConsultaSTA){
 	  $sJSON .= '"codigoError": 0,';
 	  $sJSON .= '"descError": "",';
 	  $sJSON .= '"observaciones": "Todo OK"';
