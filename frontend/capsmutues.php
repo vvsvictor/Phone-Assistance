@@ -299,62 +299,6 @@
       </section>
     </div>
 
-      <!-- Div afegir  cap -->
-      <!-- <div class="container" id="addCap">
-        <button id="showListBtn" type="button" class="btn btn-primary">Tornar a la llista</button>
-        <form id="formCap">
-          <div class="form-group">
-            <label for="name">Nom del Cap</label>
-            <input type="email" class="form-control" id="name" placeholder="Nom del Cap">
-          </div>
-          <div class="form-group">
-            <label for="address">Adreça</label>
-            <input type="text" class="form-control" id="address" placeholder="Adreça">
-          </div>
-          <div class="form-group">
-            <label for="phone">Número de telèfon</label>
-            <input type="text" class="form-control" id="phone" placeholder="Número de telèfon">
-          </div>
-          <div class="form-group">
-            <label for="schedule">Horari</label>
-            <input type="text" class="form-control" id="schedule" placeholder="Horari">
-          </div>
-          <div class="form-group row">
-            <div class="col-sm-10">
-              <button id="addCapBtn" type="button" class="btn btn-primary">Afegir cap</button>
-            </div>
-          </div>
-        </form>
-      </div> -->
-
-      <!-- Div modificar usuari -->
-      <!-- <div class="container" id="modCapDiv">
-        <button id="showListBtnMod" type="button" class="btn btn-primary">Tornar a la llista</button>
-        <form id="formModCap">
-          <div class="form-group">
-            <label for="modName">Nom del Cap</label>
-            <input type="email" class="form-control" id="modName" placeholder="Nom del Cap">
-          </div>
-          <div class="form-group">
-            <label for="modAddress">Adreça</label>
-            <input type="text" class="form-control" id="modAddress" placeholder="Adreça">
-          </div>
-          <div class="form-group">
-            <label for="modPhone">Número de telèfon</label>
-            <input type="text" class="form-control" id="modPhone" placeholder="Número de telèfon">
-          </div>
-          <div class="form-group">
-            <label for="modSchedule">Horari</label>
-            <input type="text" class="form-control" id="modSchedule" placeholder="Horari">
-          </div>
-          <div class="form-group row">
-            <div class="col-sm-10">
-              <button id="modCapBtn" type="button" class="btn btn-primary">Modificar cap</button>
-            </div>
-          </div>
-        </form>
-      </div> -->
-
       <!--Modal Delete cap-->
       <div class="modal fade" id="deletecapmodal" tabindex="-1" role="dialog">
         <div class="modal-dialog" role="document">
