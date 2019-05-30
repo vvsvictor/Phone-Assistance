@@ -93,7 +93,7 @@ include '..\backend\include.php';
       <br>
       <div class="row">
         <div class="col-lg-6">
-          <label for="dni">DNI</label>
+          <label for="dni">DNI/NIE</label>
           <input id="addDni" type="text" class="form-control" name="dni"/>
         </div>
         <div class="col-lg-6">
@@ -219,7 +219,7 @@ include '..\backend\include.php';
             <th class="th-sm">Id</th>
             <th class="th-sm">Nom</th>
             <th class="th-sm">Cognom</th>
-            <th class="th-sm">DNI</th>
+            <th class="th-sm">DNI/NIE</th>
             <th class="th-sm">Provincia</th>
             <th class="th-sm"></th>
           </tr>
@@ -230,7 +230,7 @@ include '..\backend\include.php';
             <th>Id</th>
             <th>Nom</th>
             <th>Cognom</th>
-            <th>DNI</th>
+            <th>DNI/NIE</th>
             <th>Provincia</th>
             <th></th>
           </tr>
@@ -258,7 +258,7 @@ include '..\backend\include.php';
                   <div class="direccion">
                     <h1 class="heading"> Dades</h1>
                     <div class="info">
-                      <p class="sub-heading">DNI</p>
+                      <p class="sub-heading">DNI/NIE</p>
                       <p id="fpdninie" class="duration">30762309F</p>
                       <p></p>
                     </div>
@@ -395,7 +395,7 @@ include '..\backend\include.php';
                       <p></p>
                     </div>
                     <div class="info">
-                      <p class="sub-heading">DNI</p>
+                      <p class="sub-heading">DNI/NIE</p>
                       <input id="moddninie" type="text" class="form-control" name="dni" disabled/>
                       <p></p>
                     </div>
