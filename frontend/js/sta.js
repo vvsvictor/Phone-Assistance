@@ -88,7 +88,9 @@ $(document).ready(function () {
   });
   $(".notifications-switch").kendoSwitch();
 
-
+  $(".phoneMask").kendoMaskedTextBox({
+    mask: "000 000 000"
+  });
 
   });
 

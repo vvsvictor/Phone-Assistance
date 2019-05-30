@@ -394,7 +394,7 @@
                 </div>
                 <div class="info">
                   <p class="sub-heading">Telèfon</p>
-                  <input type="text" id="telresMod" />
+                  <input type="text" id="telresMod" class="phoneMask form-control" style="width: 18%;" />
                   <p></p>
                 </div>
                 <div class="info">
