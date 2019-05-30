@@ -56,7 +56,7 @@ include '..\backend\includeAdmin.php';
            </li>
            <li class="nav-item">
              <form class="form-inline my-2 my-lg-0">
-               <a href="exitLogin.php" class="btn btn-outline-light" role="button">Logout</a>
+               <a href="exitLogin.php" class="btn btn-outline-light" role="button">Sortir</a>
              </form>
            </li>
          </ul>
@@ -83,7 +83,7 @@ include '..\backend\includeAdmin.php';
              </a>
              <div class="card-img-overlay">
                <a class="nohyperlinkcss" href="fitxaPersonal.php">
-                 <h4 class="card-title"><strong>Fitxa Personal</strong></h4>
+                 <h4 class="card-title"><strong>Fitxa personal</strong></h4>
                </a>
              </div>
            </div>
