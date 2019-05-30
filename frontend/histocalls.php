@@ -71,31 +71,6 @@
     </nav>
     <div id="loader" class="loader"></div>
     <div id="loaddiv" class="hidden">
-    <div class="container" id="callList">
-      <button id="showFormBtn" type="button" class="btn btn-primary marginBtn">Afegir</button>
-      <table id="dtHistocalls" class="table table-striped table-bordered" cellspacing="0" width="100%">
-        <thead>
-          <tr>
-            <th class="th-sm">Id</th>
-            <th class="th-sm">DNI</th>
-            <th class="th-sm">Data</th>
-            <th class="th-sm">Tipus de trucada</th>
-            <th class="th-sm"></th>
-          </tr>
-        </thead>
-        <tbody id="histoCallsTable"></tbody>
-        <tfoot>
-          <tr>
-            <th>Id</th>
-            <th>DNI</th>
-            <th>Data</th>
-            <th>Tipus de trucada</th>
-            <th></th>
-          </tr>
-        </tfoot>
-      </table>
-    </div>
-
     <!--Formulario Añadir Trucades -->
     <div class="container">
       <div id="addCall" class="container_add">
@@ -160,7 +135,6 @@
         <div id="destinatari" class="row">
             <div class="col-lg-6">
               <label for="rao">Destinatari/ària</label>
-              <label for="genere">Gènere</label>
               <select id="addDestinatari" style="width: 100%;" class="maxWidth dropDown">
                 <option>Familiar directe</option>
                 <option>Cuidador/a formal</option>
@@ -169,52 +143,201 @@
             </div>
         </div><br>
         <button id="addCallBtn" type="button" class="btn btn-primary">Afegir Trucada</button>
-      </div>
+    </div>
 
-    <!-- Historial Trucades Modificar -->
-    <div class="c-tab is-active">
-      <div class="c-tab__content">
-        <div class="container_ficha" id="modCallDiv">
-          <div class="container">
-            <div class="content">
-              <div class="direccion">
-                <h1 class="heading"> Dades</h1>
-                <div class="info">
-                  <p class="sub-heading">Dni Usuari</p>
-                  <p id="fpndni" class="duration"></p>
-                  <p></p>
-                </div>
-                <div class="info">
-                  <p class="sub-heading">Data Trucada</p>
-                  <p id="fpdata" class="duration"></p>
-                  <p></p>
-                </div>
-                <div class="info">
-                  <p class="sub-heading">Tipus de Trucada</p>
-                  <p id="fptype" class="duration"></p>
-                  <p></p>
-                </div>
-                <div class="info">
-                  <p class="sub-heading">Estat de trucada</p>
-                  <p id="fpstate" class="duration"></p>
-                  <p></p>
-                </div>
-                <div class="info">
-                  <p class="sub-heading">Truca usuari</p>
-                  <p id="fpincall" class="duration"></p>
-                  <p></p>
-                </div>
-                <div class="info">
-                  <p class="sub-heading">Truca teleassistent</p>
-                  <p id="fpoutcall" class="duration"></p>
-                  <p></p>
+    <div class="container" id="callList">
+      <button id="showFormBtn" type="button" class="btn btn-primary marginBtn">Afegir</button>
+      <table id="dtHistocalls" class="table table-striped table-bordered" cellspacing="0" width="100%">
+        <thead>
+          <tr>
+            <th class="th-sm">Id</th>
+            <th class="th-sm">DNI</th>
+            <th class="th-sm">Data</th>
+            <th class="th-sm">Tipus de trucada</th>
+            <th class="th-sm"></th>
+          </tr>
+        </thead>
+        <tbody id="histoCallsTable"></tbody>
+        <tfoot>
+          <tr>
+            <th>Id</th>
+            <th>DNI</th>
+            <th>Data</th>
+            <th>Tipus de trucada</th>
+            <th></th>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+
+    <div class="container">
+      <div id="pageCalls">
+        <section id="page">
+          <button id="returnCall" type="button" class="btn btn-primary marginTop"><i class="fa fa-reply"></i> Tornar enrere</button>
+          <div id="tabs" class="c-tabs">
+            <div class="c-tabs-nav">
+              <a href="#" class="c-tabs-nav__link is-active">Informació Trucada</a>
+              <div class="c-tab-nav-marker"></div>
+            </div>
+            <div class="c-tab is-active">
+              <div class="c-tab__content">
+                <div class="container_caps">
+                  <div class="content">
+                    <div class="direccion">
+                      <h1 class="heading">TRUCADA</h1>
+                      <div class="info">
+                        <p class="sub-heading">DNI Usuari</p>
+                        <p id="fpdni" class="duration"></p>
+                        <p></p>
+                      </div>
+                      <div class="info">
+                        <p class="sub-heading">Data Trucada</p>
+                        <p id="fpdata" class="duration"></p>
+                        <p></p>
+                      </div>
+                      <div class="info">
+                        <p class="sub-heading">Tipus Trucada</p>
+                        <p id="fptype" class="duration"></p>
+                        <p></p>
+                      </div>
+                      <div class="info">
+                        <p class="sub-heading">Tipus Entrant</p>
+                        <p id="fpin" class="duration"></p>
+                        <p></p>
+                      </div>
+                      <div class="info">
+                        <p class="sub-heading">Tipus Sortint</p>
+                        <p id="fpout" class="duration"></p>
+                        <p></p>
+                      </div>
+                      <div class="info">
+                        <p class="sub-heading">Estat Trucada</p>
+                        <p id="fpstate" class="duration"></p>
+                        <p></p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="content2a">
+                    <div class="direccion">
+                      <h1 class="heading">INFORMACIÓ</h1>
+                      <div class="info">
+                        <p class="sub-heading">Solució teleoperador</p>
+                        <p id="fpsolution" class="duration"></p>
+                        <p></p>
+                      </div>
+                      <div class="info">
+                        <p class="sub-heading">Motiu d'assessorament</p>
+                        <p id="fpreason" class="duration"></p>
+                        <p></p>
+                      </div>
+                      <div class="info">
+                        <p class="sub-heading">Descripció</p>
+                        <p id="fpdescription" class="duration"></p>
+                        <p></p>
+                      </div>
+                      <div class="info">
+                        <p class="sub-heading">Desinatari/ària </p>
+                        <p id="fpaddressee" class="duration"></p>
+                        <p></p>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
+        </section>
       </div>
     </div>
+
+    <!-- Modificar Trucadas -->
+    <div class="container">
+      <div id="modpageCalls">
+        <section id="page">
+          <button id="returnCall2" type="button" class="btn btn-primary marginTop"><i class="fa fa-reply"></i> Tornar enrere</button>
+          <div id="tabs" class="c-tabs">
+            <div class="c-tabs-nav">
+              <a href="#" class="c-tabs-nav__link is-active">Informació Trucada</a>
+              <div class="c-tab-nav-marker"></div>
+            </div>
+            <div class="c-tab is-active">
+              <div class="c-tab__content">
+                <div class="container_caps">
+                  <div class="content">
+                    <div class="direccion">
+                      <h1 class="heading">TRUCADA</h1>
+                      <div class="info">
+                        <p class="sub-heading">DNI Usuari</p>
+                        <input id="modfdni" type="text" class="form-control" name="dni" disabled/>
+                        <p></p>
+                      </div>
+                      <div class="info">
+                        <p class="sub-heading">Data Trucada</p>
+                        <input id="moddata_trucada" class="datePickerKendo" title="datepicker" style="width: 100%"/>
+                        <p></p>
+                      </div>
+                      <div class="info">
+                        <p class="sub-heading">Tipus Trucada</p>
+                        <select id="modtype_list" style="width: 100%;" class="maxWidth dropDown">
+                        <p></p>
+                      </div>
+                      <div class="info">
+                        <p class="sub-heading">Tipus Entrant</p>
+                        <input id="modentrant_call" style="width: 100%"/>
+                        <p></p>
+                      </div>
+                      <div class="info">
+                        <p class="sub-heading">Tipus Sortint</p>
+                        <input onchange="otherCallsListener()" id="modsortint_call" style="width: 100%"/><br>
+                        <input id="addOtherCalls" type="text" class="form-control" placeholder="Altre trucada sortint...">
+                        <p></p>
+                      </div>
+                      <div class="info">
+                        <p class="sub-heading">Estat Trucada</p>
+                        <input id="modstate_call" style="width: 100%"/>
+                        <p></p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="content2a">
+                    <div class="direccion">
+                      <h1 class="heading">INFORMACIÓ</h1>
+                      <div class="info">
+                        <p class="sub-heading">Solució teleoperador</p>
+                        <textarea class="form-control" id="modsolution" rows="3"></textarea>
+                        <p></p>
+                      </div>
+                      <div class="info">
+                        <p class="sub-heading">Motiu d'assessorament</p>
+                        <textarea class="form-control" id="modreason" rows="3"></textarea>
+                        <p></p>
+                      </div>
+                      <div class="info">
+                        <p class="sub-heading">Descripció</p>
+                        <textarea class="form-control" id="moddescription" rows="3"></textarea>
+                        <p></p>
+                      </div>
+                      <div class="info">
+                        <p class="sub-heading">Desinatari/ària </p>
+                        <select id="modaddressee" style="width: 100%;" class="maxWidth dropDown">
+                          <option>Familiar directe</option>
+                          <option>Cuidador/a formal</option>
+                          <option>Cuidador/a informal</option>
+                        </select>
+                        <p></p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+
 
     <!--Modal Delete product-->
     <div class="modal fade" id="deletecallmodal" tabindex="-1" role="dialog">

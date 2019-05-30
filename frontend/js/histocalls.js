@@ -1,4 +1,5 @@
 $(document).ready(function () {
+  goToCallList();
   $('.dataTables_length').addClass('bs-select');
   showTable();
   gotoModCall();
@@ -8,19 +9,13 @@ $(document).ready(function () {
       format: "d/M/yyyy"
     });
 
-  $("#outcall").kendoComboBox({
-       dataSource: ["Item1", "Item2"]
-  });
-
-  $("#incall").kendoComboBox({
-       dataSource: ["Item1", "Item2"]
-  });
-
-  $("#state_call").kendoComboBox({
-       dataSource: ["Item1", "Item2"]
-  });
-
   $("#returnCalls").click(function() {
+    goToCallList();
+  });
+  $("#returnCall").click(function() {
+    goToCallList();
+  });
+  $("#returnCall2").click(function() {
     goToCallList();
   });
 
@@ -32,10 +27,50 @@ $(document).ready(function () {
     dataTextField: "name",
     dataValueField: "id"
   });
+  $("#modtype_list").kendoDropDownList({
+    dataSource: [
+      {id: "Entrant" , name: "Entrant"},
+      {id: "Sortint" , name: "Sortint"}
+    ],
+    dataTextField: "name",
+    dataValueField: "id"
+  });
   $("#showFormBtn").click(function(){
     gotoAddCall();
   });
   $("#addentrant_call").kendoDropDownTree({
+    placeholder: "Selecciona el tipus de trucada entrant ...",
+    height: "auto",
+    dataSource: [
+        {
+            text: "Trucada d'alarma", id: "Trucada d'alarma", items: [
+                { text: "Emergències sanitàries", id: "Emergències sanitàries" },
+                { text: "Emergències socials", id: "Emergències socials"},
+                { text: "Emergències per crisi de soledat o angoixa", id: "Emergències per crisi de soledat o angoixa"},
+                { text: "Alarma sense resposta", id: "Alarma sense resposta"}
+            ]
+        },
+        {
+            text: "Trucada d'informació", id: "Trucada d'informació" , items: [
+                { text: "Trucada per error", id: "Trucada per error" },
+                { text: "Modificació de dades", id: "Modificació de dades" },
+                { text: "Absencies", id: "Absencies" },
+                { text: "Estades Temporals", id: "Estades Temporals", items: [
+                  { text: "Data d'absència", id: "Data d'absència"},
+                  { text: "Data de previsió de la tornada a l'habitatge", id: "Data de previsió de la tornada a l'habitatge"}
+                ]}
+            ]
+        },
+        {
+          text: "Soletat", id: "Soletat"
+        },
+        {
+          text: "De reclamació", id: "De reclamació"
+        }
+      ]
+  });
+
+  $("#modentrant_call").kendoDropDownTree({
     placeholder: "Selecciona el tipus de trucada entrant ...",
     height: "auto",
     dataSource: [
@@ -97,8 +132,114 @@ $(document).ready(function () {
           dataTextField: "text",
           dataValueField: "id"
     });
+    $("#modsortint_call").kendoDropDownTree({
+            placeholder: "Selecciona el tipus de trucada sortint ...",
+            height: "auto",
+            dataSource: [
+                {
+                    text: "Trucada d'agenda", id: "Trucada d'agenda" , items: [
+                        { text: "Recordartori de medicació", id: "Recordartori de medicació" },
+                        { text: "Recordartori de visites mèdiques", id: "Recordartori de visites mèdiques" },
+                        { text: "Felicitació", id: "Felicitació"},
+                        { text: "Agenda tècnica", id: "Agenda tècnica" }
+                    ]
+                },
+                {
+                    text: "Trucada de seguiment", id: "Trucada de seguiment", items: [
+                        { text: "Seguidament del regés a la llar de la persona usuària", id: "Seguidament del regés a la llar de la persona usuària"},
+                        { text: "Seguiment del procés de dol", id: "Seguiment del procés de dol"},
+                        { text: "Seguiment després de l'alta hospitalària", id: "Seguiment després de l'alta hospitalària"},
+                    ]
+                },
+                {
+                    text: "Trucada d'agenda preventiva", id: "Trucada d'agenda preventiva", items: [
+                        { text: "Condicions ambientals", id: "Condicions ambientals"},
+                        { text: "Seguretat de la via", id: "Seguretat de la via"},
+                        { text: "Campanyes de vacunacio", id: "Campanyes de vacunacio"},
+                        { text: "Altres", id: "Altres"}
+                    ]
+                }
+            ],
+            dataTextField: "text",
+            dataValueField: "id"
+      });
   $("#addDestinatari").kendoDropDownList();
+  $("#modaddressee").kendoDropDownList();
 });
+
+function Tabs(options) {
+  var tabs = document.querySelector(options.el);
+  var initCalled = false;
+  var tabNavigation = tabs.querySelector(".c-tabs-nav");
+  var tabNavigationLinks = tabs.querySelectorAll(".c-tabs-nav__link");
+  var tabContentContainers = tabs.querySelectorAll(".c-tab");
+
+  var marker = options.marker ? createNavMarker() : false;
+
+  var activeIndex = 0;
+
+  function init() {
+    if (!initCalled) {
+      initCalled = true;
+
+      for (var i = 0; i < tabNavigationLinks.length; i++) {
+        var link = tabNavigationLinks[i];
+        clickHandlerSetup(link, i)
+      }
+
+      if (marker) {
+        setMarker(tabNavigationLinks[activeIndex]);
+      }
+    }
+  }
+
+  function clickHandlerSetup(link, index) {
+    link.addEventListener("click", function(e) {
+      e.preventDefault();
+      goToTab(index);
+    })
+  }
+
+  function goToTab(index) {
+    if (index >= 0 && index != activeIndex && index <= tabNavigationLinks.length) {
+      tabNavigationLinks[activeIndex].classList.remove('is-active');
+      tabNavigationLinks[index].classList.add('is-active');
+
+      tabContentContainers[activeIndex].classList.remove('is-active');
+      tabContentContainers[index].classList.add('is-active');
+
+      if (marker) {
+        setMarker(tabNavigationLinks[index]);
+      }
+
+      activeIndex = index;
+    }
+  }
+
+  function createNavMarker() {
+    var marker = document.createElement("div");
+    marker.classList.add("c-tab-nav-marker");
+    tabNavigation.appendChild(marker);
+    return marker;
+  }
+
+  function setMarker(element) {
+    marker.style.left = element.offsetLeft + "px";
+    marker.style.width = element.offsetWidth + "px";
+  }
+
+  return {
+    init: init,
+    goToTab: goToTab
+  }
+}
+
+var m = new Tabs({
+  el: "#tabs",
+  marker: true
+});
+
+m.init();
 
 function otherCallsListener(){
   console.log('othercall');
@@ -125,6 +266,11 @@ function gotoModCall() {
   $('#modCallDiv').hide();
   $('#addCall').hide();
   $("#callList").show();
+}
+
+function goToCall() {
+  $("#pageCalls").show();
+  $("#callList").hide();
 }
 
 function callTypeListener(){
@@ -240,7 +386,7 @@ function mostrarCallListener() {
       if ($("#addtype_list").val()=="Entrant") {
         //Tipus de trucada entrant
         let incall = $("#addentrant_call").data("kendoDropDownTree").value().text;
-
+        $.ajax({
           url: "../backend/inserts/insertCallHistory.php",
           data: {
             $sDniNif: dni,
@@ -313,6 +459,8 @@ function goToCallList(){
   $('#modCallDiv').hide();
   $('#addCall').hide();
   $("#callList").show();
+  $("#pageCalls").hide();
+  $("#modpageCalls").hide();
 }
 
 function modCallListener() {
@@ -421,6 +569,60 @@ function showHistoCall(id, dni, date, type){
   let html="<tr><td>"+id+"</td><td>"+dni+"</td><td>"+date+"</td><td>"+type+"</td><td><button id='histoCall" + id + "' type='button' class='histoCall btn btn-info marginBtn'>Fitxa Completa</button><button type='button' id='deleteCallId" + id + "' class='deletecall btn btn-danger marginBtn' data-toggle='modal' data-target='#deletecallmodal'>Eliminar</button></td></tr>";
   $("#histoCallsTable").append(html);
 
+  $(".histoCall").click(function() {
+    mostrarCardListener($(this).attr('id'));
+  });
+}
+
+function mostrarCardListener(id) {
+    let idbtn = id;
+    idbtn = idbtn.replace("histoCall", "");
+    $.ajax({
+      url: "../backend/selects/getCallHistory.php",
+      type: "GET",
+      cache: false,
+      success: function(response) {
+        let myJSON = JSON.parse(response);
+        $("#fpdni").html("");
+        $("#fpdata").html("");
+        $("#fptype").html("");
+        $("#fpin").html("");
+        $("#fpout").html("");
+        $("#fpstate").html("");
+        $("#fpsolution").html("");
+        $("#fpreason").html("");
+        $("#fpdescription").html("");
+        $("#fpaddressee").html("");
+        for (var i = 0; i < myJSON.length; i++) {
+          if (idbtn == myJSON[i].id) {
+            let dninie = myJSON[i].user_dninif;
+            let call_date = myJSON[i].call_date;
+            let call_type = myJSON[i].call_type;
+            let incall_type = myJSON[i].in_calltype;
+            let outcall_type = myJSON[i].outcall_type;
+            let call_state = myJSON[i].call_state;
+            let teleoperator_solution = myJSON[i].teleoperator_solution;
+            let reason_for_advice = myJSON[i].reason_for_advice;
+            let description = myJSON[i].description;
+            let destiny_advice = myJSON[i].Destiny_advice;
+            $("#fpdni").val(dninie);
+            $("#fpdata").val(call_date);
+            $("#fptype").val(call_type);
+            $("#fpin").val(incall_type);
+            $("#fpout").val(outcall_type);
+            $("#fpstate").val(call_state);
+            $("#fpsolution").val(teleoperator_solution);
+            $("#fpreason").val(reason_for_advice);
+            $("#fpdescription").val(description);
+            $("#fpaddressee").val(destiny_advice);
+            goToCall();
+          }
+        }
+      },
+      error: function() {
+        console.log('No hi han clients');
+      }
+    });
 }
 
 
