@@ -387,15 +387,15 @@ function mostrarCallListener() {
       let destinatari = $("#addDestinatari").val();
       if ($("#addtype_list").val()=="Entrant") {
         //Tipus de trucada entrant
-<<<<<<< HEAD
+
         let incall = $("#addentrant_call").data("kendoDropDownTree").value().text;
         $.ajax({
           url: "../backend/inserts/insertCallHistory.php",
-=======
+
         let incall = $("#addentrant_call").data("kendoDropDownTree").value();
         $.ajax({
           url: "../backend/inserts/insertInCall.php",
->>>>>>> d9b0092271b79ac5376145ee06420d7a8ca5cf3f
+
           data: {
             sDniNif: dni,
             sCallDate:data_trucada,
