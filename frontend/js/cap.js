@@ -23,7 +23,7 @@ $(document).ready(function() {
     goToCapList();
   });
   $("#returnDoctor").click(function() {
-    mostrarCap();
+    goToDoctorView()
   });
   //Kendo phone phoneMask
   $(".phoneMask").kendoMaskedTextBox({
@@ -147,6 +147,14 @@ function mostrarEspecialitzacions(){
     }
   });
 }
+
+
+function goToDoctorView(){
+  $("#tableDoctors").show();
+  $("#addDoctor").hide();
+  $("#pageCAPS").show();
+}
+
 
 function goToAddDoctor() {
   //Borrar camps

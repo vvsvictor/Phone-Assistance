@@ -11,6 +11,12 @@ $(document).ready(function () {
     dateInput: false
   });
 
+  $("#hourresMod").kendoTimePicker({
+    format: "H:mm",
+    interval: 15,
+    dateInput: false
+  });
+
   $("#addPrioritat").kendoComboBox({
     dataSource: [
       {id: "Alta", name: "Alta"},
@@ -41,6 +47,16 @@ $(document).ready(function () {
       { id: "Alta", name: "Alta" },
       { id: "Baixa Temporal", name: "Baixa Temporal" },
       { id: "Baixa Definitiva", name: "Baixa Definitiva" }
+    ],
+    dataTextField: "name",
+    dataValueField: "id"
+  });
+
+  $("#priresMod").kendoDropDownList({
+    dataSource: [
+      { id: "Alta", name: "Alta" },
+      { id: "Mitja", name: "Mitja" },
+      { id: "Baixa", name: "Baixa" }
     ],
     dataTextField: "name",
     dataValueField: "id"

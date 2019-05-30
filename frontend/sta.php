@@ -297,7 +297,7 @@
                       <th>Id</th>
                       <th>Prioritat</th>
                       <th>Nom</th>
-                      <th>Cognom</th>  
+                      <th>Cognom</th>
                       <th></th>
                     </tr>
                   </tfoot>
@@ -361,7 +361,7 @@
                 </div><br>
                 <button id="deleteResponsibleBtn" type="button" class="btn btn-danger">Eliminar</button>
               </div>
-              <!--Responsible all info-->
+              <!--Responsible all info modify-->
               <div id="responsibleModDiv" class="responsibleInfo container_add contacto">
 
                 <h1 class="heading">Informació del responsable</h1>
@@ -369,7 +369,7 @@
                 <button id="ModResponsibleBtn" type="button" class="btn btn-primary">Guardar</button>
                 <div class="info">
                   <p class="sub-heading">Prioritat</p>
-                  <input type="text" id="priresMod" />
+                  <select id="priresMod" style="width: 18%;" class="maxWidth dropDown"/>
                   <p></p>
                 </div>
                 <div class="info">
@@ -399,12 +399,12 @@
                 </div>
                 <div class="info">
                   <p class="sub-heading">Hora de preferència de trucada</p>
-                  <input type="text" id="hourresMod" />
+                  <input id="hourresMod" title="timepicker" style="width: 18%;" />
                   <p></p>
                 </div>
                 <div class="info">
                   <p class="sub-heading">Data de creació del responsable</p>
-                  <input type="text" id="dateresMod" />
+                  <input id="dateresMod" value="" class="datePickerKendo" title="datepicker" style="width: 18%" />
                   <p></p>
                 </div>
                 <div class="info">
