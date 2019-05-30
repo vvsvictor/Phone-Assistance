@@ -213,22 +213,27 @@
                         <p id="fptype" class="duration"></p>
                         <p></p>
                       </div>
-                      <div class="info">
+                      <div class="info" id="showInType">
                         <p class="sub-heading">Tipus Entrant</p>
                         <p id="fpin" class="duration"></p>
                         <p></p>
                       </div>
-                      <div class="info">
+                      <div class="info" id="showOutType">
                         <p class="sub-heading">Tipus Sortint</p>
                         <p id="fpout" class="duration"></p>
                         <p></p>
                       </div>
                       <div class="info">
+                        <p class="sub-heading">Subtipus</p>
+                        <p id="fpsinout" class="duration"></p>
+                        <p></p>
+                      </div>
+                      <div class="info" id="showDataAbs">
                         <p class="sub-heading">Data d'absència</p>
                         <p id="fpabs" class="duration"></p>
                         <p></p>
                       </div>
-                      <div class="info">
+                      <div class="info" id="showDataPrev">
                         <p class="sub-heading">Data de previsió de la tornada</p>
                         <p id="fpprev" class="duration"></p>
                         <p></p>

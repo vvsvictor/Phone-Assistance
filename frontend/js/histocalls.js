@@ -200,6 +200,7 @@ function Tabs(options) {
     })
   }
 
+
   function goToTab(index) {
     if (index >= 0 && index != activeIndex && index <= tabNavigationLinks.length) {
       tabNavigationLinks[activeIndex].classList.remove('is-active');
@@ -484,6 +485,15 @@ function mostrarCallListener() {
   });
 }
 
+function otherCallsListener(){
+  console.log('othercall');
+  let option = $("#addsortint_call").data("kendoDropDownTree").text();
+  if (option == "Altres"){
+    $('#addOtherCalls').show();
+  }else{
+    $('#addOtherCalls').hide();
+  }
+}
 
 function goToCallList(){
   $('#modCallDiv').hide();
@@ -563,7 +573,6 @@ function modCallListener() {
 
   });
 
-
 }
 
 function showTable(){
@@ -586,8 +595,6 @@ function showTable(){
       $('#loaddiv').removeClass('hidden');
       $('#loader').hide();
       eliminarCallListener();
-
-
     },
     error: function() {
       console.log('No hi han trucades');
@@ -613,13 +620,13 @@ function mostrarCardListener(id) {
       type: "GET",
       cache: false,
       success: function(response) {
-        
+        console.log(response);
         let myJSON = JSON.parse(response);
         $("#fpdni").html("");
         $("#fpdata").html("");
         $("#fptype").html("");
         $("#fpin").html("");
-        $("#fpout").html("");
+        $("#fpsinout").html("");
         $("#fpabs").html("");
         $("#fpprev").html("");
         $("#fpstate").html("");
@@ -628,31 +635,49 @@ function mostrarCardListener(id) {
         $("#fpdescription").html("");
         $("#fpaddressee").html("");
         for (var i = 0; i < myJSON.length; i++) {
+
           if (idbtn == myJSON[i].id) {
             let dninie = myJSON[i].user_dninif;
             let call_date = myJSON[i].call_date;
             let absence_date = myJSON[i].absence_date;
             let return_date = myJSON[i].return_date;
+            if(absence_date == "0000-00-00" && return_date == "0000-00-00"){
+              $("#showDataAbs").hide();
+              $("#showDataPrev").hide();
+            }else{
+              $("#fpabs").html(absence_date);
+              $("#fpprev").html(return_date);
+            }
             let call_type = myJSON[i].call_type;
-            let incall_type = myJSON[i].in_calltype;
+            let incall_type = myJSON[i].incall_type;
             let outcall_type = myJSON[i].outcall_type;
+            let incall_subclass = myJSON[i].incall_subclass;
+            let outcall_subclass = myJSON[i].outcall_subclass;
+            if (call_type = "Entrant"){
+              $("#showInType").show();
+              $("#showOutType").hide();
+              $('#fpin').html(incall_type);
+              $("#fpsinout").html(incall_subclass);
+            }else{
+              $("#showInType").hide();
+              $("#showOutType").show();
+              $('#fpout').html(outcall_type);
+              $("#fpsinout").html(outcall_subclass);
+            }
             let call_state = myJSON[i].call_state;
             let teleoperator_solution = myJSON[i].teleoperator_solution;
             let reason_for_advice = myJSON[i].reason_for_advice;
             let description = myJSON[i].description;
             let destiny_advice = myJSON[i].Destiny_advice;
-            $("#fpdni").val(dninie);
-            $("#fpdata").val(call_date);
-            $("#fptype").val(call_type);
-            $("#fpin").val(incall_type);
-            $("#fpout").val(outcall_type);
-            $("#fpabs").val(absence_date);
-            $("#fpprev").val(return_date);
-            $("#fpstate").val(call_state);
-            $("#fpsolution").val(teleoperator_solution);
-            $("#fpreason").val(reason_for_advice);
-            $("#fpdescription").val(description);
-            $("#fpaddressee").val(destiny_advice);
+            $("#fpdni").html(dninie);
+            $("#fpdata").html(call_date);
+            $("#fptype").html(call_type);
+            $('#fpin').html(incall_type);
+            $("#fpstate").html(call_state);
+            $("#fpsolution").html(teleoperator_solution);
+            $("#fpreason").html(reason_for_advice);
+            $("#fpdescription").html(description);
+            $("#fpaddressee").html(destiny_advice);
             goToCall();
           }
         }
