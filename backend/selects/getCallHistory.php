@@ -30,7 +30,7 @@
       $resultOutcall = mysqli_query($conexion, $consultaOutcall);
       if (mysqli_num_rows($resultOutcall) > 0) {
         while ($rowOutcall = mysqli_fetch_assoc($resultOutcall)) {
-          $sJSON .= '"outcall_type":"'. $rowOutcall["outcall_type"].',"outcall_subclass":"'. $row["subclass"].'", ';
+          $sJSON .= utf8_encode('"outcall_type":"'. $rowOutcall["outcall_type"].'","outcall_subclass":"'. $rowOutcall["subclass"].'"} ');
         }
       }
 
@@ -38,9 +38,10 @@
       $resultIncall = mysqli_query($conexion, $consultaIncall);
       if (mysqli_num_rows($resultIncall) > 0) {
         while ($rowIncall = mysqli_fetch_assoc($resultIncall)) {
-          $sJSON .= '"incall_type":"'. $rowIncall["incall_type"].',"incall_subclass":"'. $row["subclass"].'"},';
+          $sJSON .= utf8_encode('"incall_type":"'. $rowIncall["incall_type"].'","incall_subclass":"'. $rowIncall["subclass"].'"}');
         }
       }
+      $sJSON.=",";
   }
 }
 
