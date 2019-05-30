@@ -7,7 +7,7 @@
   if (mysqli_num_rows($result) > 0) {
     // output data of each row
     while($row = mysqli_fetch_assoc($result)) {
-      $sJSON .= '{"id":'. $row["id"].',"user_dninif":"'. $row["user_dninif"].'","call_date":"'. $row["call_date"].'","teleoperator_solution":"'. $row["teleoperator_solution"].'","reason_for_advice":"'. $row["reason_for_advice"].'","description":"'. $row["description"].'","Destiny_advice":"'. $row["Destiny_advice"].'", '  ;
+      $sJSON .= '{"id":'. $row["id"].',"user_dninif":"'. $row["user_dninif"].'","absence_date":"'. $row["absence_date"].'","return_date":"'. $row["return_date"].'","return_date":"'. $row["return_date"].'","other":"'. $row["other"].'","call_date":"'. $row["call_date"].'","teleoperator_solution":"'. $row["teleoperator_solution"].'","reason_for_advice":"'. $row["reason_for_advice"].'","description":"'. $row["description"].'","Destiny_advice":"'. $row["Destiny_advice"].'", '  ;
 
 
       $consultaType = 'SELECT call_type FROM call_type WHERE  id = (SELECT call_type from call_history where id = '.$row["id"].')';
