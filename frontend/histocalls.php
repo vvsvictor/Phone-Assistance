@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.0/css/mdb.min.css" rel="stylesheet"> -->
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
     <!-- <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css"> -->
     <link rel="stylesheet" href="css/kendoTheme.css">
     <link rel="stylesheet" href="index.css">
@@ -159,7 +160,7 @@
     </div>
 
     <div class="container" id="callList">
-      <button id="showFormBtn" type="button" class="marginTop btn btn-primary">Afegir</button>
+      <button id="showFormBtn" type="button" class="marginTop btn btn-primary"><i class="fas fa-plus"></i>Afegir</button>
       <table id="dtHistocalls" class="table table-striped table-bordered" cellspacing="0" width="100%">
         <thead>
           <tr>
