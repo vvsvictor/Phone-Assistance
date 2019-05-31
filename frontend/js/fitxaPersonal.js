@@ -2,10 +2,8 @@ $(document).ready(function() {
   $('.dataTables_length').addClass('bs-select');
   goToFpList();
   $("#showFormPF").click(function() {
-    //neteja inputs
     cleanInputs();
     goToAddFp();
-
   });
   $("#modFormPF").click(function() {
     goToModFP();
@@ -20,11 +18,38 @@ $(document).ready(function() {
   $("#returnPF3").click(function() {
     goToFp();
   });
-
   $("#modFormFP2").click(function() {
     modCardListener();
     //añadir id
   });
+  //kendo / jquery functions
+  $(".opciones").checkboxradio();
+  $(".datepicker").kendoDatePicker({
+    format: "d/M/yyyy"
+  });
+  $(".phoneMask").kendoMaskedTextBox({
+    mask: "000 000 000"
+  });
+  $("#addTipus_habitatge").kendoDropDownTree({
+                placeholder: "Selecciona el tipus d'habitatge ...",
+                height: "auto",
+                dataSource: [
+                    {
+                        text: "Casa", items: [
+                            { text: "Casa Duplex" },
+                            { text: "Mansió" },
+                            { text: "Xalet" }
+                        ]
+                    },
+                    {
+                        text: "Pis", items: [
+                            { text: "Atic" },
+                            { text: "Baix" }
+                        ]
+                    }
+                ]
+            });
+  $("#addTipus").kendoDropDownList();
 
   $('.addFp_validation').bootstrapValidator({
         feedbackIcons: {
@@ -109,35 +134,6 @@ $(document).ready(function() {
             }
           }
       });
-
-  //kendo / jquery functions
-  $(".opciones").checkboxradio();
-  $(".datepicker").kendoDatePicker({
-    format: "d/M/yyyy"
-  });
-  $(".phoneMask").kendoMaskedTextBox({
-    mask: "000 000 000"
-  });
-  $("#addTipus_habitatge").kendoDropDownTree({
-                placeholder: "Selecciona el tipus d'habitatge ...",
-                height: "auto",
-                dataSource: [
-                    {
-                        text: "Casa", items: [
-                            { text: "Casa Duplex" },
-                            { text: "Mansió" },
-                            { text: "Xalet" }
-                        ]
-                    },
-                    {
-                        text: "Pis", items: [
-                            { text: "Atic" },
-                            { text: "Baix" }
-                        ]
-                    }
-                ]
-            });
-  $("#addTipus").kendoDropDownList();
 });
 
 function Tabs(options) {

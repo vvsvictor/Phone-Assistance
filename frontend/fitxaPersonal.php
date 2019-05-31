@@ -72,7 +72,7 @@ include '..\backend\include.php';
   </nav>
   <div id="loader" class="loader"></div>
   <div id="loaddiv" class="hidden">
-  <div class="container">
+  <div class="container addFp_validation">
     <div id="addFp" class="form">
       <button id="returnPF" type="button" class="btn btn-primary marginTop"><i class="fa fa-reply"></i> Tornar enrere</button>
       <br>
@@ -386,7 +386,7 @@ include '..\backend\include.php';
         <div class="c-tab is-active">
           <div class="c-tab__content">
             <div class="container_ficha">
-              <div class="container">
+              <div class="container modfp_validation">
                 <div class="content">
                   <div class="direccion">
                     <h1 class="heading"> Dades</h1>
