@@ -43,6 +43,46 @@ $(document).ready(function() {
             }
         }
     });
+    $('.mod_form').bootstrapValidator({
+          feedbackIcons: {
+              valid: 'glyphicon glyphicon-ok',
+              invalid: 'glyphicon glyphicon-remove',
+          },
+          fields: {
+            modusername: {
+                validators: {
+                    notEmpty: {
+                        message: "El camp d'usuari no pot estar buit."
+                    },
+                    stringLength: {
+                        min: 3,
+                        max: 30,
+                        message: "El nom d'usuari te que ser entre 3 y 30 caracters de longitud."
+                    },
+                    regexp: {
+                        regexp: /^[a-zA-Z0-9_]+$/,
+                        message: "El nom d'usuari només pot consistir en número alfabètic i subratllat"
+                    }
+                }
+            },
+              modpassword: {
+                  validators: {
+                      notEmpty: {
+                          message: "La contrasenya no pot estar buida."
+                      },
+                      stringLength: {
+                          min: 6,
+                          max: 30,
+                          message: "La contrasenya te que ser entre 6 y 30 caracters de longitud."
+                      },
+                      regexp: {
+                          regexp: /^[a-zA-Z0-9_]+$/,
+                          message: "La contrasenya només pot consistir en número alfabètic i subratllat"
+                      }
+                  }
+              }
+          }
+      });
 });
 
 function gotoModUser() {

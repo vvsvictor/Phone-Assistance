@@ -134,7 +134,7 @@ include '..\backend\includeAdmin.php';
       </form>
     </div>
     <!-- Div modificar usuari -->
-    <div class="container" id="modUserDiv">
+    <div class="container mod_form" id="modUserDiv">
       <button id="showListBtnMod" type="button" class="btn btn-primary marginTop"><i class="fa fa-reply"></i> Tornar a la llista</button>
       <form id="formModUser">
         <div class="form-group">
@@ -143,11 +143,11 @@ include '..\backend\includeAdmin.php';
         </div>
         <div class="form-group">
           <label for="username">Nom d'usuari/a</label>
-          <input type="email" class="form-control" id="modUsername" placeholder="Nom d'usuari/a">
+          <input type="text" class="form-control" id="modUsername" placeholder="Nom d'usuari/a" name="modusername">
         </div>
         <div class="form-group">
           <label for="password">Contrasenya</label>
-          <input type="password" class="form-control" id="modPassword" placeholder="Contrasenya" autocomplete="password">
+          <input type="password" class="form-control" id="modPassword" placeholder="Contrasenya" autocomplete="password" name="modpassword">
         </div>
         <fieldset class="form-group">
           Tipus d'usuari/a
