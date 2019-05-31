@@ -144,7 +144,7 @@ include '..\backend\include.php';
           <input value="2" type="radio" class="opciones" name="titularitat" id="arrendatari">
           <label for="pisproofi">Pis de protecció oficial</label>
           <input value="3" type="radio" class="opciones" name="titularitat" id="pisproofi">
-          <label for="habitpro">habitatge protegit</label>
+          <label for="habitpro">Habitatge protegit</label>
           <input value="4" type="radio" class="opciones" name="titularitat" id="habitpro">
         </div>
       </div><br>
