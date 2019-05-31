@@ -61,7 +61,7 @@ CREATE TABLE PERSONAL_CARD(
   gender varchar(255),
   language int, /*Table LANGUAGES*/
   sign_language int, /*Table SIGN_LANGUAGES*/
-  birthdate varchar(255),
+  birthdate date,
   dninie varchar(50) unique,
   province int, /*Table PROVINCES*/
   comarca int, /*Table COMARCAS*/
@@ -72,6 +72,7 @@ CREATE TABLE PERSONAL_CARD(
   phone varchar(50),
   mobile_phone varchar(50),
   work_phone varchar(50),
+  form varchar(255),
   primary key(id),
   FOREIGN key (language) REFERENCES LANGUAGES(id),
   FOREIGN key (sign_language) REFERENCES SIGN_LANGUAGES(id),
@@ -326,6 +327,7 @@ INSERT INTO doctors (name,surname,gender,specialization_id,id_cap)VALUES("David"
 
 /*Insert type call_history type by default*/
 insert into call_state (call_type) values ("Acabada");
+insert into call_state (call_type) values ("En procés");
 insert into call_type (call_type)values ("Entrant");
 insert into call_type (call_type)values ("Sortint");
 insert into incall_type (incall_type, subclass) values ("Trucada d’alarma","Emergències sanitàries");
@@ -349,4 +351,4 @@ insert into outcall_type (outcall_type, subclass) values ("Trucada d’agenda pr
 insert into outcall_type (outcall_type, subclass) values ("Trucada d’agenda preventiva", "Seguretat de la via");
 insert into outcall_type (outcall_type, subclass) values ("Trucada d’agenda preventiva", "Campanyes de vacunació");
 insert into outcall_type (outcall_type, subclass) values ("Trucada d’agenda preventiva", "Altres");
-insert into call_history (user_dninif,call_date, call_type, outcall_type, incall_type, call_state, teleoperator_solution, reason_for_advice, description, Destiny_advice) values ("68951118Q", "2019-10-25", 1, 1, 1, 1, "Hola","Es troba malament","Es troba malament","Familiar");
+insert into call_history (user_dninif,call_date, call_type, incall_type, call_state, teleoperator_solution, reason_for_advice, description, Destiny_advice) values ("68951118Q", "2019-10-25", 1, 1, 1, "Anar al metge","Es troba malament","Es troba malament","Familiar");

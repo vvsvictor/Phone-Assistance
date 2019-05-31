@@ -16,10 +16,10 @@
   Usuari o contrasenya incorrecte
   </div>
   <div class="wrapper row">
-    <div class="annex-container col-xl-6 col-md-4 col-sm-2 text-center">
-        <img src="images/PA-Logo.png" class="logo"></img>
+    <div class="annex-container col-xl-6 col-md-6 col-sm-6">
+        <img src="images/PA-Logo.png" class="img-fluid" style="margin-top: 10%; margin-left: 20%"></img>
     </div>
-  	<div class="container col-xl-6 col-md-8 col-sm-10 rounded-left">
+  	<div class="container col-xl-6 col-md-6 col-sm-6 rounded-left">
   		<h1>BENVINGUT/DA</h1>
   		<form class="form" id="formLg">
   			<input type="text" name="userInput" id="userInput" placeholder="Usuari/ària" required>

@@ -116,6 +116,16 @@
 	display: inline-block;
 	vertical-align: top;
 }
+.marginTop{
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.marginBtn {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-right: 10px;
+  margin-left: 10px;
+}
 .content3 {
 	width: 85%;
 	margin-left: 7%;

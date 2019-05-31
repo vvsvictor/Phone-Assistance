@@ -63,7 +63,7 @@
           </li>
           <li class="nav-item">
             <form class="form-inline my-2 my-lg-0">
-              <a href="exitLogin.php" class="btn btn-outline-light" role="button">Logout</a>
+              <a href="exitLogin.php" class="btn btn-outline-light" role="button">Sortir</a>
             </form>
           </li>
         </ul>
@@ -159,7 +159,7 @@
     </div>
 
     <div class="container" id="callList">
-      <button id="showFormBtn" type="button" class="btn btn-primary marginBtn">Afegir</button>
+      <button id="showFormBtn" type="button" class="marginTop btn btn-primary">Afegir</button>
       <table id="dtHistocalls" class="table table-striped table-bordered" cellspacing="0" width="100%">
         <thead>
           <tr>
@@ -183,101 +183,102 @@
       </table>
     </div>
 
-    <div class="container">
-      <div id="pageCalls">
-        <section id="page">
-          <button id="returnCall" type="button" class="btn btn-primary marginTop"><i class="fa fa-reply"></i> Tornar enrere</button>
-          <div id="tabs" class="c-tabs">
-            <div class="c-tabs-nav">
-              <a href="#" class="c-tabs-nav__link is-active">Informació Trucada</a>
-              <div class="c-tab-nav-marker"></div>
-            </div>
-            <div class="c-tab is-active">
-              <div class="c-tab__content">
-                <div class="container_caps">
-                  <div class="content">
-                    <div class="direccion">
-                      <h1 class="heading">TRUCADA</h1>
-                      <div class="info">
-                        <p class="sub-heading">DNI Usuari</p>
-                        <p id="fpdni" class="duration"></p>
-                        <p></p>
-                      </div>
-                      <div class="info">
-                        <p class="sub-heading">Data Trucada</p>
-                        <p id="fpdata" class="duration"></p>
-                        <p></p>
-                      </div>
-                      <div class="info">
-                        <p class="sub-heading">Tipus Trucada</p>
-                        <p id="fptype" class="duration"></p>
-                        <p></p>
-                      </div>
-                      <div class="info" id="showInType">
-                        <p class="sub-heading">Tipus Entrant</p>
-                        <p id="fpin" class="duration"></p>
-                        <p></p>
-                      </div>
-                      <div class="info" id="showOutType">
-                        <p class="sub-heading">Tipus Sortint</p>
-                        <p id="fpout" class="duration"></p>
-                        <p></p>
-                      </div>
-                      <div class="info">
-                        <p class="sub-heading">Subtipus</p>
-                        <p id="fpsinout" class="duration"></p>
-                        <p></p>
-                      </div>
-                      <div class="info" id="showDataAbs">
-                        <p class="sub-heading">Data d'absència</p>
-                        <p id="fpabs" class="duration"></p>
-                        <p></p>
-                      </div>
-                      <div class="info" id="showDataPrev">
-                        <p class="sub-heading">Data de previsió de la tornada</p>
-                        <p id="fpprev" class="duration"></p>
-                        <p></p>
-                      </div>
-                      <div class="info">
-                        <p class="sub-heading">Estat Trucada</p>
-                        <p id="fpstate" class="duration"></p>
-                        <p></p>
-                      </div>
+  <div class="container">
+    <div id="pageCalls">
+      <section id="page">
+        <button id="returnCall" type="button" class="btn btn-primary marginTop"><i class="fa fa-reply"></i> Tornar enrere</button>
+        <div id="tabs" class="c-tabs">
+          <div class="c-tabs-nav">
+            <a href="#" class="c-tabs-nav__link is-active">Informació Trucada</a>
+            <div class="c-tab-nav-marker"></div>
+          </div>
+          <div class="c-tab is-active">
+            <div class="c-tab__content">
+              <div class="container_ficha">
+                <div class="container">
+                <div class="content">
+                  <div class="contacto">
+                    <h1 class="heading">TRUCADA</h1>
+                    <div class="info">
+                      <p class="sub-heading">DNI Usuari</p>
+                      <p id="fpdni" class="duration"></p>
+                      <p></p>
                     </div>
-                  </div>
-
-                  <div class="content2a">
-                    <div class="direccion">
-                      <h1 class="heading">INFORMACIÓ</h1>
-                      <div class="info">
-                        <p class="sub-heading">Solució teleoperador</p>
-                        <p id="fpsolution" class="duration"></p>
-                        <p></p>
-                      </div>
-                      <div class="info">
-                        <p class="sub-heading">Motiu d'assessorament</p>
-                        <p id="fpreason" class="duration"></p>
-                        <p></p>
-                      </div>
-                      <div class="info">
-                        <p class="sub-heading">Descripció</p>
-                        <p id="fpdescription" class="duration"></p>
-                        <p></p>
-                      </div>
-                      <div class="info">
-                        <p class="sub-heading">Desinatari/ària </p>
-                        <p id="fpaddressee" class="duration"></p>
-                        <p></p>
-                      </div>
+                    <div class="info">
+                      <p class="sub-heading">Data Trucada</p>
+                      <p id="fpdata" class="duration"></p>
+                      <p></p>
+                    </div>
+                    <div class="info">
+                      <p class="sub-heading">Tipus Trucada</p>
+                      <p id="fptype" class="duration"></p>
+                      <p></p>
+                    </div>
+                    <div class="info" id="showInType">
+                      <p class="sub-heading">Tipus Entrant</p>
+                      <p id="fpin" class="duration"></p>
+                      <p></p>
+                    </div>
+                    <div class="info" id="showOutType">
+                      <p class="sub-heading">Tipus Sortint</p>
+                      <p id="fpout" class="duration"></p>
+                      <p></p>
+                    </div>
+                    <div class="info">
+                      <p class="sub-heading">Subtipus</p>
+                      <p id="fpsinout" class="duration"></p>
+                      <p></p>
+                    </div>
+                    <div class="info" id="showDataAbs">
+                      <p class="sub-heading">Data d'absència</p>
+                      <p id="fpabs" class="duration"></p>
+                      <p></p>
+                    </div>
+                    <div class="info" id="showDataPrev">
+                      <p class="sub-heading">Data de previsió de la tornada</p>
+                      <p id="fpprev" class="duration"></p>
+                      <p></p>
+                    </div>
+                    <div class="info">
+                      <p class="sub-heading">Estat Trucada</p>
+                      <p id="fpstate" class="duration"></p>
+                      <p></p>
+                    </div>
+                </div>
+              </div>
+                <div class="content2a">
+                  <div class="direccion">
+                    <h1 class="heading">INFORMACIÓ</h1>
+                    <div class="info">
+                      <p class="sub-heading">Solució teleoperador</p>
+                      <p id="fpsolution" class="duration"></p>
+                      <p></p>
+                    </div>
+                    <div class="info">
+                      <p class="sub-heading">Motiu d'assessorament</p>
+                      <p id="fpreason" class="duration"></p>
+                      <p></p>
+                    </div>
+                    <div class="info">
+                      <p class="sub-heading">Descripció</p>
+                      <p id="fpdescription" class="duration"></p>
+                      <p></p>
+                    </div>
+                    <div class="info">
+                      <p class="sub-heading">Desinatari/ària </p>
+                      <p id="fpaddressee" class="duration"></p>
+                      <p></p>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
+            </div>
           </div>
-        </section>
-      </div>
+        </div>
+      </section>
     </div>
+  </div>
 
     <!-- Modificar Trucadas -->
     <div class="container">

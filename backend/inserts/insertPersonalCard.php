@@ -34,16 +34,28 @@
   $sMobilePhone = $_GET["sMobilePhone"];
   $sWorkPhone = $_GET["sWorkPhone"];
   $date = date('Y/m/d', time());
+  $mutua = $_GET["mutua"];
+  $form = $_GET["form"];
+  if ($form !="") {
+    $form = "'".$form."'";
+  }else{
+    $form = "NULL";
+  }
 
   if ($iLanguageSigne == 0) {
-    $consulta="INSERT INTO PERSONAL_CARD (name, surname, gender, language, birthdate, dninie, province, comarca, municipality, address, type_house, ownership, phone, mobile_phone, work_phone) VALUES ('".$sName."','".$sSurname."','".$sGender."','".$iLanguage."','".$sBirthdate."','".$sDninie."',".$iProvince.",".$iComarca.",".$iMunicipality.",'".$sAddress."','".$sTypeHouse."','".$iOwnership."','".$sPhone."','".$sMobilePhone."','".$sWorkPhone."')";
+    $consulta="INSERT INTO PERSONAL_CARD (name, surname, gender, language, birthdate, dninie, province, comarca, municipality, address, type_house, ownership, phone, mobile_phone, work_phone, form) VALUES ('".$sName."','".$sSurname."','".$sGender."','".$iLanguage."','".$sBirthdate."','".$sDninie."',".$iProvince.",".$iComarca.",".$iMunicipality.",'".$sAddress."','".$sTypeHouse."','".$iOwnership."','".$sPhone."','".$sMobilePhone."','".$sWorkPhone."',".$form.")";
   }else{
-    $consulta="INSERT INTO PERSONAL_CARD (name, surname, gender, language, sign_language, birthdate, dninie, province, comarca, municipality, address, type_house, ownership, phone, mobile_phone, work_phone) VALUES ('".$sName."','".$sSurname."','".$sGender."','".$iLanguage."','".$iLanguageSigne."','".$sBirthdate."','".$sDninie."',".$iProvince.",".$iComarca.",".$iMunicipality.",'".$sAddress."','".$sTypeHouse."','".$iOwnership."','".$sPhone."','".$sMobilePhone."','".$sWorkPhone."')";
+    $consulta="INSERT INTO PERSONAL_CARD (name, surname, gender, language, sign_language, birthdate, dninie, province, comarca, municipality, address, type_house, ownership, phone, mobile_phone, work_phone, form) VALUES ('".$sName."','".$sSurname."','".$sGender."','".$iLanguage."','".$iLanguageSigne."','".$sBirthdate."','".$sDninie."',".$iProvince.",".$iComarca.",".$iMunicipality.",'".$sAddress."','".$sTypeHouse."','".$iOwnership."','".$sPhone."','".$sMobilePhone."','".$sWorkPhone."',".$form.")";
   }
   $hacerConsulta=mysqli_query($conexion, $consulta);
   $consultaSTA = "INSERT INTO STA (user_dninif, actual_situation, hiring_date, tf_service, tcr_service, cc_service, tm_service, tam_service, gps_service, umt_service) VALUES ('".$sDninie."', 'Baixa', '".$date."',0,0,0,0,0,0,0)";
 
   $hacerConsultaSTA=mysqli_query($conexion, $consultaSTA);
+  if ($mutua !="") {
+    // Añadir mutua
+    $consultaMutua = "INSERT INTO HEALTH_INSURANCE (user_dninif, insurance_name) VALUES ('".$sDninie."', '".$mutua."')";
+    $hacerConsultaMutua=mysqli_query($conexion, $consultaMutua);
+  }
 
 
   $sJSON = "";

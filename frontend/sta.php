@@ -67,7 +67,7 @@
           </li>
           <li class="nav-item">
             <form class="form-inline my-2 my-lg-0">
-              <a href="exitLogin.php" class="btn btn-outline-light" role="button">Logout</a>
+              <a href="exitLogin.php" class="btn btn-outline-light" role="button">Sortir</a>
             </form>
           </li>
         </ul>
@@ -83,11 +83,11 @@
         <br>
         <div class="row">
           <div class="col-lg-6">
-            <label for="dni_usuari">DNI USUARI</label>
+            <label for="dni_usuari">DNI Usuari</label>
             <input id="dni_usuari" style="width: 100%;" />
           </div>
           <div class="col lg-6">
-            <label for="situacion">SITUACIÓ ACTUAL</label>
+            <label for="situacion">Situació Actual</label>
             <select id="addSituacio" style="width: 100%;" class="maxWidth dropDown">
               <option>Alta</option>
               <option>Baixa</option>
@@ -99,7 +99,7 @@
         <br>
         <div class="row">
           <div class="col-lg-6">
-            <label for="data_contacte">DATA EXPIRACIÓ</label>
+            <label for="data_contacte">Data Expiració</label>
             <input id="data_contacte" style="width: 100%"/>
           </div>
           <div class="col lg-6">
@@ -192,12 +192,12 @@
                     <p></p>
                   </div>
                   <div class="info">
-                    <p class="sub-heading">NOM</p>
+                    <p class="sub-heading">Nom</p>
                     <p id="fpnom" class="duration"></p>
                     <p></p>
                   </div>
                   <div class="info">
-                    <p class="sub-heading">COGNOM</p>
+                    <p class="sub-heading">Cognom</p>
                     <p id="fpcognom" class="duration"></p>
                     <p></p>
                   </div>
@@ -374,27 +374,27 @@
                 </div>
                 <div class="info">
                   <p class="sub-heading">Nom</p>
-                  <input type="text" id="nomresMod" />
+                  <input type="text" id="nomresMod" style="width: 18%;" class="form-control" />
                   <p></p>
                 </div>
                 <div class="info">
                   <p class="sub-heading">Cognom</p>
-                  <input type="text" id="cognomresMod" />
+                  <input type="text" id="cognomresMod" style="width: 18%;" class="form-control" />
                   <p></p>
                 </div>
                 <div class="info">
                   <p class="sub-heading">Direcció</p>
-                  <input type="text" id="direccioresMod" />
+                  <input type="text" id="direccioresMod" style="width: 18%;" class="form-control" />
                   <p></p>
                 </div>
                 <div class="info">
                   <p class="sub-heading">Codi Postal</p>
-                  <input type="text" id="cpresMod" />
+                  <input type="text" id="cpresMod" style="width: 18%;" class="form-control" />
                   <p></p>
                 </div>
                 <div class="info">
                   <p class="sub-heading">Telèfon</p>
-                  <input type="text" id="telresMod" />
+                  <input type="text" id="telresMod" class="phoneMask form-control" style="width: 18%;" />
                   <p></p>
                 </div>
                 <div class="info">
@@ -409,7 +409,7 @@
                 </div>
                 <div class="info">
                   <p class="sub-heading">Raó del responsable</p>
-                  <input type="text" id="reasonresMod" />
+                  <input type="text" id="reasonresMod" style="width: 18%;" class="form-control" />
                   <p></p>
                 </div><br>
 
@@ -422,51 +422,51 @@
                 <br>
                 <div class="row">
                   <div class="col-lg-6">
-                    <label for="addPrioritat">PRIORITAT</label>
+                    <label for="addPrioritat">Prioritat</label>
                     <select id="addPrioritat" style="width: 100%;" class="maxWidth dropDown"></select>
                   </div>
                 </div>
                 <br>
                 <div class="row">
                   <div class="col-lg-6">
-                    <label for="nom_responsableAdd">NOM</label>
+                    <label for="nom_responsableAdd">Nom</label>
                     <input type="text" class="form-control" id="nom_responsableAdd"/>
                   </div>
                   <div class="col-lg-6">
-                    <label for="cognoms_responsableAdd">COGNOMS</label>
+                    <label for="cognoms_responsableAdd">Cognoms</label>
                     <input type="text" class="form-control" id="cognoms_responsableAdd"/>
                   </div>
                 </div>
                 <br>
                 <div class="row">
                   <div class="col-lg-6">
-                    <label for="adreca_responsableAdd">ADREÇA</label>
+                    <label for="adreca_responsableAdd">Adreça</label>
                     <input type="text" class="form-control" id="adreca_responsableAdd"/>
                   </div>
                   <div class="col-lg-6">
-                    <label for="cp_responsableAdd">CODI POSTAL</label>
+                    <label for="cp_responsableAdd">Codi Postal</label>
                     <input type="text" class="form-control" id="cp_responsableAdd"/>
                   </div>
                 </div>
                 <br>
                 <div class="row">
                   <div class="col-lg-6">
-                    <label for="tel_responsableAdd">TELEFON</label>
+                    <label for="tel_responsableAdd">Telèfon</label>
                     <input type="text" class="form-control" id="tel_responsableAdd"/>
                   </div>
                   <div class="col-lg-6">
-                    <label for="hora_preferibleAdd">HORA PREFERIBLE</label>
+                    <label for="hora_preferibleAdd">Hora Preferible</label>
                     <input id="hora_preferibleAdd" title="timepicker" style="width: 100%;" />
                   </div>
                 </div>
                 <br>
                 <div class="row">
                   <div class="col-lg-6">
-                    <label for="data_contactAdd">DATA CONTACTE</label>
+                    <label for="data_contactAdd">Data Contacte</label>
                     <input id="data_contactAdd" class="datePickerKendo" title="datepicker" style="width: 100%"/>
                   </div>
                   <div class="col-lg-6">
-                    <label for="rao">RAÓ</label>
+                    <label for="rao">Raó</label>
                     <textarea class="form-control" id="raoAdd" rows="3"></textarea>
                   </div>
                 </div><br>
