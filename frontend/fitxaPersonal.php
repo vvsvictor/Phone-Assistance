@@ -401,7 +401,7 @@ include '..\backend\include.php';
                     </div>
                     <div class="info">
                       <p class="sub-heading">Nom</p>
-                      <input id="modNom" type="text" class="form-control" name="nom"/>
+                      <input id="modNom" type="text" class="form-control" name="modnom"/>
                       <p></p>
                     </div>
                     <div class="info">
