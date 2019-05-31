@@ -229,15 +229,19 @@
                       <p id="fpsinout" class="duration"></p>
                       <p></p>
                     </div>
-                    <div class="info" id="showDataAbs">
-                      <p class="sub-heading">Data d'absència</p>
-                      <p id="fpabs" class="duration"></p>
-                      <p></p>
+                    <div id="showDataAbs">
+                      <div class="info">
+                        <p class="sub-heading">Data d'absència</p>
+                        <p id="fpabs" class="duration"></p>
+                        <p></p>
+                      </div>
                     </div>
-                    <div class="info" id="showDataPrev">
-                      <p class="sub-heading">Data de previsió de la tornada</p>
-                      <p id="fpprev" class="duration"></p>
-                      <p></p>
+                    <div id="showDataPrev">
+                      <div class="info">
+                        <p class="sub-heading">Data de previsió de la tornada</p>
+                        <p id="fpprev" class="duration"></p>
+                        <p></p>
+                      </div>
                     </div>
                     <div class="info">
                       <p class="sub-heading">Estat Trucada</p>

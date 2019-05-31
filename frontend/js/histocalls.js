@@ -641,7 +641,7 @@ function mostrarCardListener(id) {
             let call_date = myJSON[i].call_date;
             let absence_date = myJSON[i].absence_date;
             let return_date = myJSON[i].return_date;
-            if(absence_date == "0000-00-00" && return_date == "0000-00-00"){
+            if(absence_date == "" && return_date == ""){
               $("#showDataAbs").hide();
               $("#showDataPrev").hide();
             }else{
