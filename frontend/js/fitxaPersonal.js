@@ -692,7 +692,6 @@ function mostrarCardListener(id) {
             let arrbirthdate = birthdate.split("/");
             birthdate = arrbirthdate[2]+"/"+arrbirthdate[1]+"/"+arrbirthdate[0];
             $("#modDataNaixement").val(birthdate);
-            //$("#modprovince").val(provinceGet);
             //Mostrar comarques
             $.ajax({
               url: "../backend/selects/getComarcas.php",
@@ -788,7 +787,6 @@ function mostrarCardListener(id) {
                 console.log('No hi han provincies');
               }
             });
-            //$("#modMunicipios").val(municipality);
             $("#modAdreca").val(address);
             $("#modtype_house").val(type_house);
             $("#modownership").val(ownership);
