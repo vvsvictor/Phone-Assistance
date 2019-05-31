@@ -337,7 +337,7 @@ function addFitxaPersonal() {
     let idioma_s = document.querySelector('input[name="idioma_s"]:checked').value;
     let dataNaixemement = $("#addDataNaixement").val();
     dataNaixemement = changeToSQLDate(dataNaixemement);
-    let adreca = $("#addTipus").val()+' '+$("#addAdreca").val()+' '+$("#addPis").val()+' '+$("#addPorta").val()+' '+$("#addEscala").val();
+    let adreca = $("#addTipus").val()+' '+$("#addAdreca").val()+' '+$("#addPis").val()+' '+$("#addPorta").val()+' '+$("#addEscala").val()+ ' '+$("#addCP");
 
     let kendotipusHabitatge = $("#addTipus_habitatge").data("kendoDropDownTree");
     let tipusHabitatge = kendotipusHabitatge.value().text;
