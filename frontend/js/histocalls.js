@@ -624,7 +624,7 @@ function showTable(){
 }
 
 function showHistoCall(id, dni, date, type){
-  let html="<tr><td>"+id+"</td><td>"+dni+"</td><td>"+date+"</td><td>"+type+"</td><td><button id='histoCall" + id + "' type='button' class='histoCall btn btn-info marginBtn'>Fitxa Completa</button><button type='button' id='deleteCallId" + id + "' class='deletecall btn btn-danger marginBtn' data-toggle='modal' data-target='#deletecallmodal'>Eliminar</button></td></tr>";
+  let html="<tr><td>"+id+"</td><td>"+dni+"</td><td>"+date+"</td><td>"+type+"</td><td><button id='histoCall" + id + "' type='button' class='histoCall btn btn-info marginBtn'><i class='fa fa-file'></i> Fitxa Completa</button><button type='button' id='deleteCallId" + id + "' class='deletecall btn btn-danger marginBtn' data-toggle='modal' data-target='#deletecallmodal'><i class='fa fa-trash'></i> Eliminar</button></td></tr>";
   $("#histoCallsTable").append(html);
 
   $(".histoCall").click(function() {
@@ -662,7 +662,7 @@ function mostrarCardListener(id) {
             let call_date = myJSON[i].call_date;
             let absence_date = myJSON[i].absence_date;
             let return_date = myJSON[i].return_date;
-            if(absence_date == "0000-00-00" && return_date == "0000-00-00"){
+            if(absence_date == "" && return_date == ""){
               $("#showDataAbs").hide();
               $("#showDataPrev").hide();
             }else{

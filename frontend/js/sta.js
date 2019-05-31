@@ -604,7 +604,7 @@ m.init();
   }
 
   function showTableResponsibles(id, prioritat, nom, cognom){
-    let html = "<tr><td>" + id + "</td><td>" + prioritat + "</td><td>" + nom + "</td><td>" + cognom + "</td><td><button id='responsibleId" + id + "' type='button' class='responsible btn btn-info marginBtn'>Fitxa Completa</button></td></tr>";
+    let html = "<tr><td>" + id + "</td><td>" + prioritat + "</td><td>" + nom + "</td><td>" + cognom + "</td><td><button id='responsibleId" + id + "' type='button' class='responsible btn btn-info marginBtn'><i class='fa fa-file'></i> Fitxa Completa</button></td></tr>";
     $("#tbResponsible").append(html);
   }
 
@@ -729,17 +729,14 @@ function goToShowResponsible(){
   }
 
   function showFitxaPersonal(id, name, surname, dninie) {
-    let html = "<tr><td>" + id + "</td><td>" + dninie + "</td><td>" + name + "</td><td>" + surname + "</td><td><button id='fitxaPersonal" + id + "' type='button' class='fitxaPersonal btn btn-info marginBtn'>Més Informació</button></td></tr>";
+    let html = "<tr><td>" + id + "</td><td>" + dninie + "</td><td>" + name + "</td><td>" + surname + "</td><td><button id='fitxaPersonal" + id + "' type='button' class='fitxaPersonal btn btn-info marginBtn'><i class='fa fa-file'></i> Més Informació</button></td></tr>";
     $("#fitxaPersonalTable").append(html);
 
-    /*$(".fitxaPersonal").click(function() {
-      mostrarCardListener($(this).attr('id'));
-    });*/
   }
 
 
 function showResponsible(id,user_dninif,priority,name,surname){
-  let html="<tr><td>"+id+"</td><td>"+user_dninif+"</td><td>"+priority+"</td><td>"+name+"</td><td>"+surname+"</td><td><button id='responsible"+id+"' type='button' class='responsible btn btn-info'>Fitxa Completa</button><button type='button' id='deleteResponsibleId" + id + "' class='deleteResponsible btn btn-danger' data-toggle='modal' data-target='#deleteResponsiblemodal'>Eliminar</button></td></tr>";
+  let html="<tr><td>"+id+"</td><td>"+user_dninif+"</td><td>"+priority+"</td><td>"+name+"</td><td>"+surname+"</td><td><button id='responsible"+id+"' type='button' class='responsible btn btn-info'><i class='fa fa-file'></i> Fitxa Completa</button><button type='button' id='deleteResponsibleId" + id + "' class='deleteResponsible btn btn-danger' data-toggle='modal' data-target='#deleteResponsiblemodal'><i class='fa fa-trash'></i> Eliminar</button></td></tr>";
   $("#responsibleTable").append(html);
 
   $(".responsible").click(function() {
@@ -748,7 +745,7 @@ function showResponsible(id,user_dninif,priority,name,surname){
 }
 
 function showSta(id){
-  let html="<tr><td>"+id+"</td><td>"+"</td><td>"+"</td><td>"+"</td><td>"+surname+"</td><td><button id='sta"+id+"' type='button' class='sta btn btn-info'>Fitxa Completa</button><button type='button' id='deleteResponsibleId" + id + "' class='deleteResponsible btn btn-danger' data-toggle='modal' data-target='#deleteResponsiblemodal'>Eliminar</button></td></tr>";
+  let html="<tr><td>"+id+"</td><td>"+"</td><td>"+"</td><td>"+"</td><td>"+surname+"</td><td><button id='sta"+id+"' type='button' class='sta btn btn-info'><i class='fa fa-file'></i> Fitxa Completa</button><button type='button' id='deleteResponsibleId" + id + "' class='deleteResponsible btn btn-danger' data-toggle='modal' data-target='#deleteResponsiblemodal'><i class='fa fa-trash'></i> Eliminar</button></td></tr>";
   $("#staTable").append(html);
 
   $(".sta").click(function() {

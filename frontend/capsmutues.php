@@ -180,14 +180,8 @@
         </div>
 
 
-
-
-
-
-
         <div id="tableCaps">
-          <br/>
-          <button id="showFormCAP" type="button" class="btn btn-primary marginTop"><i class="fa fa-plus"></i> Afegir CAP</button>
+          <button id="showFormCAP" type="button" class="btn btn-primary marginTop"><i class="fas fa-plus"></i> Afegir CAP</button>
 
           <table id="dtCap" class="table table-striped table-bordered" cellspacing="0" width="100%">
             <thead>

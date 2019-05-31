@@ -359,7 +359,7 @@
                   <p id="reasonres" class="duration"></p>
                   <p></p>
                 </div><br>
-                <button id="deleteResponsibleBtn" type="button" class="btn btn-danger">Eliminar</button>
+                <button id="deleteResponsibleBtn" type="button" class="btn btn-danger"><i class='fa fa-trash'></i> Eliminar</button>
               </div>
               <!--Responsible all info modify-->
               <div id="responsibleModDiv" class="responsibleInfo container_add contacto">
