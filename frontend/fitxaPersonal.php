@@ -503,7 +503,7 @@ include '..\backend\include.php';
                       <input value="2" type="radio" class="opciones" name="modtitularitat" id="modarrendatari">
                       <label for="modproofi">Pis de protecció oficial</label>
                       <input value="3" type="radio" class="opciones" name="modtitularitat" id="modproofi">
-                      <label for="modhpro">habitatge protegit</label>
+                      <label for="modhpro">Habitatge protegit</label>
                       <input value="4" type="radio" class="opciones" name="modtitularitat" id="modhpro">
                       <p></p>
                     </div>
