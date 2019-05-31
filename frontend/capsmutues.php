@@ -36,7 +36,6 @@
               echo '<li class="nav-item">
                 <a class="nav-link" href="users.php" style="color: #000000;">Usuaris/àries</a>
               </li>';
-              echo 'Hola, '.$_SESSION['user']['username'].'  ';
             }
           ?>
 

@@ -36,7 +36,6 @@
             echo '<li class="nav-item">
               <a class="nav-link" href="users.php" style="color: #000000;">Usuaris/àries</a>
             </li>';
-            echo 'Hola, '.$_SESSION['user']['username'].'  ';
           }
            ?>
 
@@ -55,7 +54,7 @@
         </ul>
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <p class="navbar-text paddingr paddingRight" style="color: #000000;">
+            <p class="navbar-text paddingr paddingRight" style="color: #e4f9f5;">
               <?php
               echo 'Hola, '.$_SESSION['user']['username'].'  ';
               ?>
