@@ -37,7 +37,7 @@ $(document).ready(function() {
                     },
                     regexp: {
                         regexp: /^[a-zA-Z0-9_]+$/,
-                        message: "El nom d'usuari només pot consistir en número alfabètic i subratllat"
+                        message: "La contrasenya només pot consistir en número alfabètic i subratllat"
                     }
                 }
             }
