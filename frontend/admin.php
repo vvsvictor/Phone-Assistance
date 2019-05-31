@@ -35,7 +35,7 @@ include '..\backend\includeAdmin.php';
              <a class="nav-link" href="fitxaPersonal.php" style="color: #000000;">Fitxa personal</a>
            </li>
            <li class="nav-item">
-             <a class="nav-link" href="capsmutues.php" style="color: #000000;">CAP - Mútues</a>
+             <a class="nav-link" href="capsmutues.php" style="color: #000000;">CAP</a>
            </li>
            <li class="nav-item">
              <a class="nav-link" href="sta.php" style="color: #000000;">STA - Responsables</a>
@@ -95,7 +95,7 @@ include '..\backend\includeAdmin.php';
              </a>
              <div class="card-img-overlay">
                <a class="nohyperlinkcss" href="capsmutues.php">
-                 <h4 class="card-title"><strong>CAP - Mútues</strong></h4>
+                 <h4 class="card-title"><strong>CAP</strong></h4>
                </a>
              </div>
            </div>

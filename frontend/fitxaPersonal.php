@@ -46,7 +46,7 @@ include '..\backend\include.php';
           <a class="nav-link" href="#" style="color: #FFFFFF;">Fitxa personal<span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="capsmutues.php" style="color: #000000;">CAP - Mútues</a>
+          <a class="nav-link" href="capsmutues.php" style="color: #000000;">CAP</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="sta.php" style="color: #000000;">STA - Responsables</a>
