@@ -165,10 +165,11 @@ include '..\backend\include.php';
                 <option>Rda.</option>
                 <option>V.</option>
               </select>
-              <input id="addAdreca" type="text" class="form-control" name="adresa" placeholder="Nom adreça" style="width: 30%; margin-left:2%;"/>
-              <input id="addPis" type="text" class="form-control" name="pis" placeholder="Pis" style="width: 12%; margin-left:2%;"/>
+              <input id="addAdreca" type="text" class="form-control" name="adresa" placeholder="Nom adreça" style="width: 25%; margin-left:2%;"/>
+              <input id="addPis" type="text" class="form-control" name="pis" placeholder="Pis" style="width: 9%; margin-left:2%;"/>
               <input id="addPorta" type="text" class="form-control" name="porta" placeholder="Porta" style="width: 12%;  margin-left:2%;"/>
               <input id="addEscala" type="text" class="form-control" name="porta" placeholder="Esc." style="width: 12%;  margin-left:2%;"/>
+              <input id="addCP" type="text" class="form-control" name="cp" placeholder="C.P." style="width: 14%;  margin-left:2%;"/>
             </div>
         </div>
       </div>
