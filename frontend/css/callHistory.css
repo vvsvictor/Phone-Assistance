@@ -99,19 +99,19 @@
 }
 
 .content {
-	width: 30%;
+	width: 40%;
 	margin-left: 2%;
 	display: inline-block;
 	vertical-align: top;
 }
 .content2 {
-	width: 40%;
+	width: 50%;
 	margin-left: 7%;
 	display: inline-block;
 	vertical-align: top;
 }
 .content2a {
-	width: 40%;
+	width: 50%;
 	margin-left: 5%;
 	display: inline-block;
 	vertical-align: top;
@@ -127,7 +127,7 @@
   margin-left: 10px;
 }
 .content3 {
-	width: 85%;
+	width: 100%;
 	margin-left: 7%;
 	display: inline-block;
 	vertical-align: top;
@@ -161,7 +161,7 @@
 }
 #page {
 
-	width: 75%;
+	width: 100%;
 	margin: 0 auto;
 	min-height: 100vh;
 	background-color: #E4F9F5;
