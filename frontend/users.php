@@ -95,7 +95,7 @@ include '..\backend\includeAdmin.php';
       <form id="formUser">
         <div class="form-group">
           <label for="username">Nom d'usuari/a</label>
-          <input type="email" class="form-control" id="username" placeholder="Nom d'usuari" name="username">
+          <input type="text" class="form-control" id="username" placeholder="Nom d'usuari" name="username">
         </div>
         <div class="form-group">
           <label for="password">Contrasenya</label>

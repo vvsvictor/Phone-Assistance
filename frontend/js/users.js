@@ -9,22 +9,22 @@ $(document).ready(function() {
             invalid: 'glyphicon glyphicon-remove',
         },
         fields: {
-            username: {
-                validators: {
-                    notEmpty: {
-                        message: "El camp d'usuari no pot estar buit."
-                    },
-                    stringLength: {
-                        min: 3,
-                        max: 30,
-                        message: "El nom d'usuari te que ser entre 3 y 30 caracters de longitud."
-                    },
-                    regexp: {
-                        regexp: /^[a-zA-Z0-9_]+$/,
-                        message: "El nom d'usuari només pot consistir en número alfabètic i subratllat"
-                    }
-                }
-            },
+          username: {
+              validators: {
+                  notEmpty: {
+                      message: "El camp d'usuari no pot estar buit."
+                  },
+                  stringLength: {
+                      min: 3,
+                      max: 30,
+                      message: "El nom d'usuari te que ser entre 3 y 30 caracters de longitud."
+                  },
+                  regexp: {
+                      regexp: /^[a-zA-Z0-9_]+$/,
+                      message: "El nom d'usuari només pot consistir en número alfabètic i subratllat"
+                  }
+              }
+          },
             password: {
                 validators: {
                     notEmpty: {
