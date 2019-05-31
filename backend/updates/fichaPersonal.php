@@ -10,7 +10,13 @@
   $sBirthDate = $_GET["sBirthDate"];
   $iProvince = $_GET["iProvince"];
   $iComarca = $_GET["iComarca"];
+  if ($iComarca=="") {
+    $iComarca="NULL";
+  }
   $iMunicipality = $_GET["iMunicipality"];
+  if ($iMunicipality=="") {
+    $iMunicipality="NULL";
+  }
   $sAddress = $_GET["sAddress"];
   $sTypeHouse = $_GET["sTypeHouse"];
   $iOwnership = $_GET["iOwnership"];
