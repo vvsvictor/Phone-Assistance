@@ -311,32 +311,37 @@ m.init();
             let sPreferablePhone = $("#hora_preferibleAdd").val();
             let sDateResponsible = $("#data_contactAdd").val();
             let sReason = $("#raoAdd").val();
-            $.ajax({
-              url: "../backend/inserts/insertResponsible.php",
-              data: {
-                sUserDninie: sUserDninie,
-                sPriority: sPriority,
-                sName: sName,
-                sSurname: sSurname,
-                sAddress: sAddress,
-                sPostCode: sPostCode,
-                sContactPhone: sContactPhone,
-                sPreferablePhone: sPreferablePhone,
-                sDateResponsible: sDateResponsible,
-                sReason: sReason
-              },
-              type: "GET",
-              cache: false,
-              success: function(response) {
-                //Reload all
-                mostrarResponsablesTable();
-                showAllInfo();
-                goToShowAll();
-              },
-              error: function() {
-                alert("Error en la consulta");
-              }
-            });
+            if (isNaN(sName) && isNaN(sSurname) && !isNaN(sPostCode) && !isNaN(sContactPhone)) {
+              $.ajax({
+                url: "../backend/inserts/insertResponsible.php",
+                data: {
+                  sUserDninie: sUserDninie,
+                  sPriority: sPriority,
+                  sName: sName,
+                  sSurname: sSurname,
+                  sAddress: sAddress,
+                  sPostCode: sPostCode,
+                  sContactPhone: sContactPhone,
+                  sPreferablePhone: sPreferablePhone,
+                  sDateResponsible: sDateResponsible,
+                  sReason: sReason
+                },
+                type: "GET",
+                cache: false,
+                success: function(response) {
+                  //Reload all
+                  mostrarResponsablesTable();
+                  showAllInfo();
+                  goToShowAll();
+                },
+                error: function() {
+                  alert("Error en la consulta");
+                }
+              });
+            }else{
+              alert("Hi han camps incorrectes i/o vuits")
+            }
+
           });
         },
         error: function() {
@@ -569,38 +574,50 @@ m.init();
         //AJAX Update dades
         let actual_situation_mod;
         let sActual_situation_mod;
-        $.ajax({
-          url: "../backend/updates/sta.php",
-          data:{
-            sActual_situation: $("#staActualSMod").val(),
-            sHiring_date: $("#staHDateMod").val(),
-            sUser_dninif: $("#fpDNI").html(),
-            iTf_service: tf,
-            iTcr_service: tcr,
-            iCc_service: cc,
-            iTm_service: tm,
-            iTam_service: tam,
-            iGps_service: gps,
-            iUmt_service: umt
-          },
-          type: "GET",
-          cache: false,
-          success: function(response) {
-            let myJSON = JSON.parse(response);
-            //Mostrar les noves dades
-            $("#staActualS").html($("#staActualSMod").val())
-            $("#staHDate").html($("#staHDateMod").val())
-            //tornar a amagar els camps
-            disableSTASwitch();
-            modSTAListener();
-          },
-          error: function() {
-            console.log('Error al actualitzar les dades');
-          }
-        });
+        let date = $("#staHDateMod").val();
+        if (isDateCorrect(date)) {
+          $.ajax({
+            url: "../backend/updates/sta.php",
+            data:{
+              sActual_situation: $("#staActualSMod").val(),
+              sHiring_date: date,
+              sUser_dninif: $("#fpDNI").html(),
+              iTf_service: tf,
+              iTcr_service: tcr,
+              iCc_service: cc,
+              iTm_service: tm,
+              iTam_service: tam,
+              iGps_service: gps,
+              iUmt_service: umt
+            },
+            type: "GET",
+            cache: false,
+            success: function(response) {
+              let myJSON = JSON.parse(response);
+              //Mostrar les noves dades
+              $("#staActualS").html($("#staActualSMod").val())
+              $("#staHDate").html($("#staHDateMod").val())
+              //tornar a amagar els camps
+              disableSTASwitch();
+              modSTAListener();
+            },
+            error: function() {
+              console.log('Error al actualitzar les dades');
+            }
+          });
+        }else{
+          alert("Data incorrecta")
+        }
+
 
       });
     });
+  }
+
+  function isDateCorrect(date){
+    let arraydate = date.split("/");
+    let newdate = arraydate[2]+"/"+ arraydate[1]+"/"+arraydate[0];
+    return !isNaN(Date.parse(newdate));
   }
 
   function showTableResponsibles(id, prioritat, nom, cognom){

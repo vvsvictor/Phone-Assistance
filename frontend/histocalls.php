@@ -161,7 +161,7 @@
     </div>
 
     <div class="container" id="callList">
-      <button id="showFormBtn" type="button" class="marginTop btn btn-primary"><i class="fas fa-plus"></i>Afegir</button>
+      <button id="showFormBtn" type="button" class="marginTop btn btn-primary"><i class="fas fa-plus"></i> Afegir</button>
       <table id="dtHistocalls" class="table table-striped table-bordered" cellspacing="0" width="100%">
         <thead>
           <tr>

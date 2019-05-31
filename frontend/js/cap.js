@@ -571,7 +571,12 @@ function modDrListener(){
           let especialitzacio = $("#modespecialitzacions").val();
           especialitzacio = especialitzacio.split('(Id:').pop().split(')')[0];
           let idCap= $("#cid").html();
-          modificarDr(idDr, name, surname, gender, especialitzacio, idCap);
+          if (name!="" && surname!="" && gender!="" && isNaN(name) && isNaN(surname) && isNaN(gender)) {
+            modificarDr(idDr, name, surname, gender, especialitzacio, idCap);
+          }else{
+            alert("Falten camps i/o són incorrectes")
+          }
+
         });
 
       },
