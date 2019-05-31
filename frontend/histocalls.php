@@ -74,23 +74,24 @@
     <!--Formulario Añadir Trucades -->
     <div class="container">
       <div id="addCall" class="container_add">
-        <button id="returnCalls" type="button" class="btn btn-primary"><i class="fa fa-reply"></i>Tornar a la llista</button>
+        <button id="returnCalls" type="button" class="marginTop btn btn-primary"><i class="fa fa-reply"></i>Tornar a la llista</button>
         <br>
-        <br>
+        (*) Camps Obligatòris
+        <br><br>
         <div class="row">
           <div class="col-lg-6">
-            <label for="adddni_usuari">DNI</label>
+            <label for="adddni_usuari">DNI *</label>
             <input id="adddni_usuari" style="width: 100%;" />
           </div>
           <div class="col lg-6">
-            <label for="adddata_trucada">Data de la trucada</label>
+            <label for="adddata_trucada">Data de la trucada *</label>
             <input id="adddata_trucada" class="datePickerKendo" title="datepicker" style="width: 100%"/>
           </div>
         </div>
         <br>
         <div class="row">
           <div class="col-lg-6">
-            <label for="addtype_list">Tipus trucada</label><br>
+            <label for="addtype_list">Tipus trucada *</label><br>
             <select id="addtype_list" style="width: 100%;" class="maxWidth dropDown" onchange="callTypeListener()">
             </select>
           </div>
@@ -100,11 +101,11 @@
         <br>
         <div class="row" id="call_type">
           <div class="col-lg-12" id="entry_type">
-            <label for="addentrant_call">Tipus de trucada entrant</label><br>
+            <label for="addentrant_call">Tipus de trucada entrant *</label><br>
             <input id="addentrant_call" style="width: 100%"/>
           </div>
           <div class="col lg-12" id="exit_type">
-            <label for="addsortint_call">Tipus de trucada sortint</label><br>
+            <label for="addsortint_call">Tipus de trucada sortint *</label><br>
             <input id="addsortint_call" style="width: 100%"/><br>
           </div>
         </div><br>
@@ -125,8 +126,8 @@
         <br>
         <div class="row">
           <div class="col-lg-6">
-            <label for="addstate_call">Estat de la Trucada</label><br>
-            <input id="addstate_call" style="width: 100%"/>
+            <label for="addstate_call">Estat de la Trucada *</label><br>
+            <input id="addstate_call" style="width: 100%"/><br>
           </div>
           <div class="col lg-6">
             <label for="rao">Solució teleoperador/a</label><br>
@@ -147,7 +148,7 @@
         <br>
         <div id="destinatari" class="row">
             <div class="col-lg-6">
-              <label for="rao">Destinatari/ària</label>
+              <label for="rao">Destinatari/ària *</label>
               <select id="addDestinatari" style="width: 100%;" class="maxWidth dropDown">
                 <option>Familiar directe</option>
                 <option>Cuidador/a formal</option>

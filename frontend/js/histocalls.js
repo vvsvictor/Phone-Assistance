@@ -243,6 +243,11 @@ var m = new Tabs({
 m.init();
 
 function gotoAddCall(){
+  $("#addMotiu").val('');
+  $("#addDescription").val('');
+  $("#rao").val('');
+  $("#adddni_usuari").val('');
+  $("#adddata_trucada").val('');
   showDni();
   showCalls();
   showStateCall();
@@ -250,6 +255,8 @@ function gotoAddCall(){
   $('#addCall').show();
   $("#callList").hide();
   $('#addOtherCalls').hide();
+
+  $("#addentrant_call").data("kendoDropDownTree").value('');
   $("#addsortint_call").data("kendoDropDownTree").bind("change", otherCallsListener);
 }
 
@@ -357,6 +364,7 @@ function mostrarCallListener() {
             dataValueField: "value",
             dataSource: estattrucada
           });
+          $("#addstate_call").data("kendoComboBox").value("");
           },
             error: function() {
             console.log('No hi han estats de trucades');
@@ -400,85 +408,94 @@ function mostrarCallListener() {
       let destinatari = $("#addDestinatari").val();
       if ($("#addtype_list").val()=="Entrant") {
         //Tipus de trucada entrant
-        let incall = $("#addentrant_call").data("kendoDropDownTree").value();
-        let outcall = $("#addsortint_call").data("kendoDropDownTree").value();
-        if (incall != 8 && outcall != 13) {
+        let incall = $("#addentrant_call").data("kendoDropDownTree").value().id;
+        if (incall != 8 && incall != 13) {
           dateAbs="";
           datePrev="";
           altres ="";
         }
-        $.ajax({
-          url: "../backend/inserts/insertInCall.php",
+        if (dni!="" && data_trucada!="" && incall!="" && estat_trucada!="" && incall!="") {
+          $.ajax({
+            url: "../backend/inserts/insertInCall.php",
 
-          data: {
-            sDniNif: dni,
-            absence_date:dateAbs,
-            return_date: datePrev,
-            other: altres,
-            sCallDate:data_trucada,
-            iCallType:1,
-            iCallState:estat_trucada,
-            iIncallType:incall,
-            sTeleoperatorSolution:solucio,
-            sReasonAdvice: motiu,
-            sDescription: descripcio,
-            sDestinyAdvice: destinatari
-          },
-          type: "GET",
-          cache: false,
-          success: function(response) {
-            console.log("entra dades");
-            console.log(response);
-            let myJSON = JSON.parse(response);
-            showTable();
-            goToCallList();
-            if (parseInt(myJSON.codigoError) != 0) {
-              console.log(myJSON.observaciones + " - " + myJSON.codigoError + " - " + myJSON.descError);
+            data: {
+              sDniNif: dni,
+              absence_date:dateAbs,
+              return_date: datePrev,
+              other: altres,
+              sCallDate:data_trucada,
+              iCallType:1,
+              iCallState:estat_trucada,
+              iIncallType:incall,
+              sTeleoperatorSolution:solucio,
+              sReasonAdvice: motiu,
+              sDescription: descripcio,
+              sDestinyAdvice: destinatari
+            },
+            type: "GET",
+            cache: false,
+            success: function(response) {
+              console.log("entra dades");
+              console.log(response);
+              let myJSON = JSON.parse(response);
+              showTable();
+              goToCallList();
+              if (parseInt(myJSON.codigoError) != 0) {
+                console.log(myJSON.observaciones + " - " + myJSON.codigoError + " - " + myJSON.descError);
+              }
+            },
+            error: function() {
+              alert("Error en la consulta");
             }
-          },
-          error: function() {
-            alert("Error en la consulta");
-          }
-        });
+          });
+        }else{
+          alert("Falten camps i/o són incorrectes");
+        }
+
       }else{
-        let outcall = $("#addsortint_call").data("kendoDropDownTree").value();
+        let outcall = $("#addsortint_call").data("kendoDropDownTree").value().id;
         if (outcall!=11) {
           dateAbs="";
           datePrev="";
           altres ="";
         }
-        $.ajax({
-          url: "../backend/inserts/insertCallHistory.php",
-          data: {
-            sDniNif: dni,
-            absence_date:dateAbs,
-            return_date: datePrev,
-            other: altres,
-            sCallDate:data_trucada,
-            iCallType:2,
-            CallState:estat_trucada,
-            OutcallType:outcall,
-            sTeleoperatorSolution:solucio,
-            sReasonAdvice: motiu,
-            sDescription: descripcio,
-            sDestinyAdvice: destinatari
-          },
-          type: "GET",
-          cache: false,
-          success: function(response) {
-            console.log("entra dades");
-            console.log(response);
-            let myJSON = JSON.parse(response);
-            showTable();
-            goToCallList();
-            if (parseInt(myJSON.codigoError) != 0) {
-              console.log(myJSON.observaciones + " - " + myJSON.codigoError + " - " + myJSON.descError);
+        if (dni!="" && data_trucada!="" && outcall!="" && estat_trucada!="" && outcall!="") {
+          $.ajax({
+            url: "../backend/inserts/insertCallHistory.php",
+            data: {
+              sDniNif: dni,
+              absence_date:dateAbs,
+              return_date: datePrev,
+              other: altres,
+              sCallDate:data_trucada,
+              iCallType:2,
+              CallState:estat_trucada,
+              OutcallType:outcall,
+              sTeleoperatorSolution:solucio,
+              sReasonAdvice: motiu,
+              sDescription: descripcio,
+              sDestinyAdvice: destinatari
+            },
+            type: "GET",
+            cache: false,
+            success: function(response) {
+              console.log("entra dades");
+              console.log(response);
+              let myJSON = JSON.parse(response);
+              showTable();
+              goToCallList();
+              if (parseInt(myJSON.codigoError) != 0) {
+                console.log(myJSON.observaciones + " - " + myJSON.codigoError + " - " + myJSON.descError);
+              }
+            },
+            error: function() {
+              alert("Error en la consulta");
             }
-          },
-          error: function() {
-            alert("Error en la consulta");
-          }
-        });
+          });
+        }else{
+          alert("Falten camps i/o són incorrectes");
+        }
+
       }
 
 

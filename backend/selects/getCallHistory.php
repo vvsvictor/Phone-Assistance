@@ -22,7 +22,7 @@
       $resultState = mysqli_query($conexion, $consultaState);
       if (mysqli_num_rows($resultState) > 0) {
         while ($rowState = mysqli_fetch_assoc($resultState)) {
-          $sJSON .= '"call_state":"'. $rowState["call_type"].'", ';
+          $sJSON .= utf8_encode('"call_state":"'. $rowState["call_type"].'", ');
         }
       }
 
