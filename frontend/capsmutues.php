@@ -24,7 +24,7 @@
     <link rel="stylesheet" href="css/caps.css">
   </head>
   <body class="addFont">
-    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #11999E;">
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #11999E; box-shadow: 2px 5px 10px #40514E;">
       <a class="navbar-brand" href="#"><img src="images/PA-Mini.png"/></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -32,27 +32,27 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link" href="index.php" style="color: #40514e;">Inici </a>
+            <a class="nav-link" href="index.php" style="color: #000000;">Inici </a>
           </li>
           <?php
             if ($_SESSION['user']['usertype'] == 0) {
               echo '<li class="nav-item">
-                <a class="nav-link" href="users.php" style="color: #40514e;">Usuaris/àries</a>
+                <a class="nav-link" href="users.php" style="color: #000000;">Usuaris/àries</a>
               </li>';
             }
           ?>
 
           <li class="nav-item">
-            <a class="nav-link" href="fitxaPersonal.php" style="color: #40514e;">Fitxa personal</a>
+            <a class="nav-link" href="fitxaPersonal.php" style="color: #000000;">Fitxa personal</a>
           </li>
           <li class="nav-item active">
             <a class="nav-link" href="#" style="color: #e4f9f5;">CAP - Mútues<span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="sta.php" style="color: #40514e;">STA - Responsables</a>
+            <a class="nav-link" href="sta.php" style="color: #000000;">STA - Responsables</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="histocalls.php" style="color: #40514e;">Historial de trucades</a>
+            <a class="nav-link" href="histocalls.php" style="color: #000000;">Historial de trucades</a>
           </li>
         </ul>
         <ul class="navbar-nav ml-auto">

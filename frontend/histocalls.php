@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="css/callHistory.css">
   </head>
   <body class="addFont">
-    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #11999E;">
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #11999E; box-shadow: 2px 5px 10px #40514E;">
       <a class="navbar-brand" href="index.php"><img src="images/PA-Mini.png"/></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -29,24 +29,24 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link" href="index.php" style="color: #40514e;">Inici </a>
+            <a class="nav-link" href="index.php" style="color: #000000;">Inici </a>
           </li>
           <?php
           if ($_SESSION['user']['usertype'] == 0) {
             echo '<li class="nav-item">
-              <a class="nav-link" href="users.php" style="color: #40514e;">Usuaris/àries</a>
+              <a class="nav-link" href="users.php" style="color: #000000;">Usuaris/àries</a>
             </li>';
           }
            ?>
 
           <li class="nav-item">
-            <a class="nav-link" href="fitxaPersonal.php" style="color: #40514e;">Fitxa personal</a>
+            <a class="nav-link" href="fitxaPersonal.php" style="color: #000000;">Fitxa personal</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="capsmutues.php" style="color: #40514e;">CAP - Mútues</a>
+            <a class="nav-link" href="capsmutues.php" style="color: #000000;">CAP - Mútues</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="sta.php" style="color: #40514e;">STA - Responsables</a>
+            <a class="nav-link" href="sta.php" style="color: #000000;">STA - Responsables</a>
           </li>
           <li class="nav-item active">
             <a class="nav-link" href="histocalls.php" style="color: #e4f9f5;">Historial de trucades<span class="sr-only">(current)</span></a>
@@ -75,23 +75,24 @@
     <!--Formulario Añadir Trucades -->
     <div class="container">
       <div id="addCall" class="container_add">
-        <button id="returnCalls" type="button" class="btn btn-primary"><i class="fa fa-reply"></i>Tornar a la llista</button>
+        <button id="returnCalls" type="button" class="marginTop btn btn-primary"><i class="fa fa-reply"></i>Tornar a la llista</button>
         <br>
-        <br>
+        (*) Camps Obligatòris
+        <br><br>
         <div class="row">
           <div class="col-lg-6">
-            <label for="adddni_usuari">DNI</label>
+            <label for="adddni_usuari">DNI *</label>
             <input id="adddni_usuari" style="width: 100%;" />
           </div>
           <div class="col lg-6">
-            <label for="adddata_trucada">Data de la trucada</label>
+            <label for="adddata_trucada">Data de la trucada *</label>
             <input id="adddata_trucada" class="datePickerKendo" title="datepicker" style="width: 100%"/>
           </div>
         </div>
         <br>
         <div class="row">
           <div class="col-lg-6">
-            <label for="addtype_list">Tipus trucada</label><br>
+            <label for="addtype_list">Tipus trucada *</label><br>
             <select id="addtype_list" style="width: 100%;" class="maxWidth dropDown" onchange="callTypeListener()">
             </select>
           </div>
@@ -101,11 +102,11 @@
         <br>
         <div class="row" id="call_type">
           <div class="col-lg-12" id="entry_type">
-            <label for="addentrant_call">Tipus de trucada entrant</label><br>
+            <label for="addentrant_call">Tipus de trucada entrant *</label><br>
             <input id="addentrant_call" style="width: 100%"/>
           </div>
           <div class="col lg-12" id="exit_type">
-            <label for="addsortint_call">Tipus de trucada sortint</label><br>
+            <label for="addsortint_call">Tipus de trucada sortint *</label><br>
             <input id="addsortint_call" style="width: 100%"/><br>
           </div>
         </div><br>
@@ -126,8 +127,8 @@
         <br>
         <div class="row">
           <div class="col-lg-6">
-            <label for="addstate_call">Estat de la Trucada</label><br>
-            <input id="addstate_call" style="width: 100%"/>
+            <label for="addstate_call">Estat de la Trucada *</label><br>
+            <input id="addstate_call" style="width: 100%"/><br>
           </div>
           <div class="col lg-6">
             <label for="rao">Solució teleoperador/a</label><br>
@@ -148,7 +149,7 @@
         <br>
         <div id="destinatari" class="row">
             <div class="col-lg-6">
-              <label for="rao">Destinatari/ària</label>
+              <label for="rao">Destinatari/ària *</label>
               <select id="addDestinatari" style="width: 100%;" class="maxWidth dropDown">
                 <option>Familiar directe</option>
                 <option>Cuidador/a formal</option>
@@ -230,15 +231,19 @@
                       <p id="fpsinout" class="duration"></p>
                       <p></p>
                     </div>
-                    <div class="info" id="showDataAbs">
-                      <p class="sub-heading">Data d'absència</p>
-                      <p id="fpabs" class="duration"></p>
-                      <p></p>
+                    <div id="showDataAbs">
+                      <div class="info">
+                        <p class="sub-heading">Data d'absència</p>
+                        <p id="fpabs" class="duration"></p>
+                        <p></p>
+                      </div>
                     </div>
-                    <div class="info" id="showDataPrev">
-                      <p class="sub-heading">Data de previsió de la tornada</p>
-                      <p id="fpprev" class="duration"></p>
-                      <p></p>
+                    <div id="showDataPrev">
+                      <div class="info">
+                        <p class="sub-heading">Data de previsió de la tornada</p>
+                        <p id="fpprev" class="duration"></p>
+                        <p></p>
+                      </div>
                     </div>
                     <div class="info">
                       <p class="sub-heading">Estat Trucada</p>

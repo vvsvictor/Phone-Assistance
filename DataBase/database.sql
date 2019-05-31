@@ -300,10 +300,10 @@ INSERT into OWNERSHIPS (owner_type) VALUES ("Propietari");
 INSERT into OWNERSHIPS (owner_type) VALUES ("Arrendatari");
 
 /*Insert client by default*/
-INSERT into PERSONAL_CARD (name,surname,gender,language,birthdate,dninie,province,comarca,address,type_house,ownership,phone,mobile_phone) VALUES ("Jordi","Martinez Garcia","Home",2,"17-05-1992","68951118Q",1,14,"carrer fals 123","casa",2,"9345625538","622856794");
+INSERT into PERSONAL_CARD (name,surname,gender,language,birthdate,dninie,province,comarca,address,type_house,ownership,phone,mobile_phone) VALUES ("Jordi","Martinez Garcia","Home",2,"1992-05-12","68951118Q",1,14,"carrer fals 123","casa",2,"9345625538","622856794");
 
 /*Insert STA for the client by default*/
-INSERT into STA (user_dninif, actual_situation, hiring_date, tf_service, tcr_service, cc_service, tm_service, tam_service, gps_service, umt_service) VALUES ("68951118Q","Alta","12-09-2018",0,1,1,0,1,1,1);
+INSERT into STA (user_dninif, actual_situation, hiring_date, tf_service, tcr_service, cc_service, tm_service, tam_service, gps_service, umt_service) VALUES ("68951118Q","Alta","2019-05-12",0,1,1,0,1,1,1);
 
 /*Insert RESPONSIBLE for the client by default*/
 INSERT into RESPONSIBLE (user_dninif, priority, name, surname, address, post_code, contact_phone, preferable_hour, date_responsible, reason) VALUES ("68951118Q", "Alta", "TEST", "TESTED", "calle falsa 559", "15667", "987654125", "17:10h - 21h", "22-05-2019", "porque si");
