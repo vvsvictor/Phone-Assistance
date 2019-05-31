@@ -159,7 +159,7 @@
     </div>
 
     <div class="container" id="callList">
-      <button id="showFormBtn" type="button" class="btn btn-primary marginBtn">Afegir</button>
+      <button id="showFormBtn" type="button" class="marginTop btn btn-primary">Afegir</button>
       <table id="dtHistocalls" class="table table-striped table-bordered" cellspacing="0" width="100%">
         <thead>
           <tr>
