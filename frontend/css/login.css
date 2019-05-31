@@ -26,3 +26,10 @@ div.well{
 .badLogin::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
   color: red;
 }
+
+.img-fluid{
+   display: block;
+   max-width:290px;
+   max-height:195px;
+   object-fit: contain;
+}

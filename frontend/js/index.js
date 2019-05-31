@@ -1,4 +1,15 @@
-
+$(document).ready(function() {
+		var $winwidth = $(window).width();
+		$("img.source-image").attr({
+			width: $winwidth
+		});
+		$(window).bind("resize", function(){
+			var $winwidth = $(window).width();
+			$(".img-fluid").attr({
+				width: $winwidth
+			});
+		 });
+	});
 //Funcion que corrobora los datos introducidos y redirige a la pagina establecida siempre que todo este correcto.
 function pdLogin() {
   $.ajax({
@@ -21,7 +32,7 @@ function pdLogin() {
             function() {
               $("#alertBadLogin").hide();
             }, 5000);
-        
+
       }
     },
     error: function() {
