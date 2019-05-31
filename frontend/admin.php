@@ -48,7 +48,7 @@ include '..\backend\includeAdmin.php';
            <li class="nav-item">
              <p class="navbar-text paddingr paddingRight" style="color: #e4f9f5;">
                <?php
-               echo 'Hola, '.$_SESSION['user']['username'].'  ';
+                echo 'Hola, '.$_SESSION['user']['username'].'  ';
                ?>
                &nbsp;
                &nbsp;
