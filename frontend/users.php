@@ -13,6 +13,7 @@ include '..\backend\includeAdmin.php';
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.bootstrapvalidator/0.5.2/css/bootstrapValidator.min.css"/>
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="css/initPage.css">
     <link rel="stylesheet" href="css/dataTable.css">
@@ -89,16 +90,16 @@ include '..\backend\includeAdmin.php';
       </table>
     </div>
     <!-- Div afegir usuari -->
-    <div class="container" id="addUser">
+    <div class="container contact_form" id="addUser">
       <button id="showListBtn" type="button" class="btn btn-primary marginTop"><i class="fa fa-reply"></i> Tornar a la llista</button>
       <form id="formUser">
         <div class="form-group">
           <label for="username">Nom d'usuari/a</label>
-          <input type="email" class="form-control" id="username" placeholder="Nom d'usuari">
+          <input type="email" class="form-control" id="username" placeholder="Nom d'usuari" name="username">
         </div>
         <div class="form-group">
           <label for="password">Contrasenya</label>
-          <input type="password" class="form-control" id="password" placeholder="Contrasenya" autocomplete="password">
+          <input type="password" class="form-control" id="password" placeholder="Contrasenya"  name="password" autocomplete="password">
         </div>
         <fieldset class="form-group">
           Tipus d'usuari/a
@@ -207,6 +208,7 @@ include '..\backend\includeAdmin.php';
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.0/js/mdb.min.js"></script>
     <script type="text/javascript" src="js/jquery.dataTables.min.js"></script>
     <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery.bootstrapvalidator/0.5.2/js/bootstrapValidator.min.js"></script>
     <script src="js/users.js" type="text/javascript"></script>
   </body>
 </html>

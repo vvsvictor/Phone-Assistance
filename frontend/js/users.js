@@ -3,6 +3,46 @@ $(document).ready(function() {
   $('.dataTables_length').addClass('bs-select');
   showTable();
   addUserListener();
+  $('.contact_form').bootstrapValidator({
+        feedbackIcons: {
+            valid: 'glyphicon glyphicon-ok',
+            invalid: 'glyphicon glyphicon-remove',
+        },
+        fields: {
+            username: {
+                validators: {
+                    notEmpty: {
+                        message: "El camp d'usuari no pot estar buit."
+                    },
+                    stringLength: {
+                        min: 3,
+                        max: 30,
+                        message: "El nom d'usuari te que ser entre 3 y 30 caracters de longitud."
+                    },
+                    regexp: {
+                        regexp: /^[a-zA-Z0-9_]+$/,
+                        message: "El nom d'usuari només pot consistir en número alfabètic i subratllat"
+                    }
+                }
+            },
+            password: {
+                validators: {
+                    notEmpty: {
+                        message: "La contrasenya no pot estar buida."
+                    },
+                    stringLength: {
+                        min: 6,
+                        max: 30,
+                        message: "La contrasenya te que ser entre 6 y 30 caracters de longitud."
+                    },
+                    regexp: {
+                        regexp: /^[a-zA-Z0-9_]+$/,
+                        message: "El nom d'usuari només pot consistir en número alfabètic i subratllat"
+                    }
+                }
+            }
+        }
+    });
 });
 
 function gotoModUser() {
