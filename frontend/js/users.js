@@ -107,7 +107,7 @@ function addUserListener() {
   $("#addUserBtn").click(function() {
     let username =$("#username").val();
     let password = $("#password").val()
-    if (username!="" && password.length>6) {
+    if (username!="" && password.length>=6) {
       $.ajax({
         url: "../backend/inserts/insertUsuari.php",
         data: {
@@ -182,7 +182,7 @@ function modUserListener() {
               let username =$('#modUsername').val();
               let password = $('#modPassword').val();
               let usertype = $('input[name=modUsertype]:checked', '#formModUser').val();
-              if (username!="" && password.length>6 ) {
+              if (username!="" && password.length>=6 ) {
                 $.ajax({
                   url: "../backend/updates/users.php",
                   data: {
