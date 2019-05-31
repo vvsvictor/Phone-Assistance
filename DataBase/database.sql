@@ -61,7 +61,7 @@ CREATE TABLE PERSONAL_CARD(
   gender varchar(255),
   language int, /*Table LANGUAGES*/
   sign_language int, /*Table SIGN_LANGUAGES*/
-  birthdate varchar(255),
+  birthdate date,
   dninie varchar(50) unique,
   province int, /*Table PROVINCES*/
   comarca int, /*Table COMARCAS*/
@@ -72,6 +72,7 @@ CREATE TABLE PERSONAL_CARD(
   phone varchar(50),
   mobile_phone varchar(50),
   work_phone varchar(50),
+  form varchar(255),
   primary key(id),
   FOREIGN key (language) REFERENCES LANGUAGES(id),
   FOREIGN key (sign_language) REFERENCES SIGN_LANGUAGES(id),

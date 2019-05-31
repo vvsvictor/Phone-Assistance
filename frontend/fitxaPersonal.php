@@ -79,25 +79,26 @@ include '..\backend\include.php';
     <div id="addFp" class="form">
       <button id="returnPF" type="button" class="btn btn-primary marginTop"><i class="fa fa-reply"></i> Tornar enrere</button>
       <br>
+      (*) Camps obligatoris<br>
       <br>
       <div class="row">
         <div class="col-lg-6">
-          <label for="nom">Nom</label>
+          <label for="nom">Nom *</label>
           <input id="addNom" type="text" class="form-control" name="nom"/>
         </div>
         <div class="col-lg-6">
-          <label for="cognom">Cognom</label>
+          <label for="cognom">Cognom *</label>
           <input id="addCognom" type="text" class="form-control" name="cognom"/>
         </div>
       </div>
       <br>
       <div class="row">
         <div class="col-lg-6">
-          <label for="dni">DNI/NIE</label>
+          <label for="dni">DNI/NIE *</label>
           <input id="addDni" type="text" class="form-control" name="dni"/>
         </div>
         <div class="col-lg-6">
-          <label for="genere">Gènere</label>
+          <label for="genere">Gènere *</label>
           <select id="addGenere" style="width: 100%;" class="maxWidth dropDown">
             <option>Dona</option>
             <option>Home</option>
@@ -113,12 +114,12 @@ include '..\backend\include.php';
       <br>
       <div class="row">
         <div class="col-lg-6">
-          <label for="idioma">Idioma</label>
+          <label for="idioma">Idioma *</label>
           <select onchange="altreListener()" id="addIdioma" style="width: 100%;" class="maxWidth"></select>&nbsp;
           <input id="addIdiomaAltre" type="text" class="form-control" placeholder="Idioma">
         </div>
         <div class="col-lg-6">
-          <label for="idioma_s">Idioma de signes</label><br>
+          <label for="idioma_s">Idioma de signes *</label><br>
           <label for="catala_is">Català</label>
           <input value="2" type="radio" class="opciones" name="idioma_s" id="catala_is">
           <label for="castella_is">Castellà</label>
@@ -132,11 +133,28 @@ include '..\backend\include.php';
       <br>
       <div class="row">
         <div class="col-lg-6">
-          <label for="data_naixament" >Data de naixement</label>
+          <label for="tipus_habitatge">Tipus d'habitatge *</label>
+          <input id="addTipus_habitatge" name="tipusHabitatge" style="width: 100%;"/>
+        </div>
+        <div class="col-lg-6">
+          <label for="titularitat">Titularitat de l'habitatge *</label><br>
+          <label for="propietari">Propietari</label>
+          <input value="1" type="radio" class="opciones" name="titularitat" id="propietari">
+          <label for="arrendatari">Arrendatari</label>
+          <input value="2" type="radio" class="opciones" name="titularitat" id="arrendatari">
+          <label for="pisproofi">Pis de protecció oficial</label>
+          <input value="3" type="radio" class="opciones" name="titularitat" id="pisproofi">
+          <label for="habitpro">habitatge protegit</label>
+          <input value="4" type="radio" class="opciones" name="titularitat" id="habitpro">
+        </div>
+      </div><br>
+      <div class="row">
+        <div class="col-lg-6">
+          <label for="data_naixament" >Data de naixement *</label>
           <input id="addDataNaixement" type="text" class="datepicker" style="width: 100%;"/>
         </div>
         <div class="col-lg-6">
-          <label for="adresa">Adreça</label><br>
+          <label for="adresa">Adreça *</label><br>
           <div class="row"  style="margin-left:1%">
               <select id="addTipus" class="maxWidth dropDown" style="width: 15%;">
                 <option>C/</option>
@@ -157,25 +175,7 @@ include '..\backend\include.php';
       <br>
       <div class="row">
         <div class="col-lg-6">
-          <label for="tipus_habitatge">Tipus d'habitatge</label>
-          <input id="addTipus_habitatge" name="tipusHabitatge" style="width: 100%;"/>
-        </div>
-        <div class="col-lg-6">
-          <label for="titularitat">Titularitat de l'habitatge</label><br>
-          <label for="propietari">Propietari</label>
-          <input value="1" type="radio" class="opciones" name="titularitat" id="propietari">
-          <label for="arrendatari">Arrendatari</label>
-          <input value="2" type="radio" class="opciones" name="titularitat" id="arrendatari">
-          <label for="pisproofi">Pis de protecció oficial</label>
-          <input value="3" type="radio" class="opciones" name="titularitat" id="pisproofi">
-          <label for="habitpro">habitatge protegit</label>
-          <input value="4" type="radio" class="opciones" name="titularitat" id="habitpro">
-        </div>
-      </div>
-      <br>
-      <div class="row">
-        <div class="col-lg-6">
-          <label for="provincias">Provincia</label>
+          <label for="provincias">Provincia *</label>
           <input style="width: 100%;" id="provincias" onchange="provinciasListener()"/>
         </div>
         <div class="col-lg-6" id="divComarcas">
@@ -203,6 +203,16 @@ include '..\backend\include.php';
         <div class="col-lg-6">
           <label for="tel_treball">Telèfon Treball</label>
           <input id="addTelTreball" type="text" class="phoneMask form-control" name="tel_treball"/>
+        </div>
+      </div><br>
+      <div class="row">
+        <div class="col-lg-6">
+          <label for="movil">Mutua</label>
+          <input id="addMutua" type="text" class="form-control" name="movil"/>
+        </div>&nbsp;
+        <div class="col-lg-6">
+          <label for="tel_treball">URL Google Forms</label>
+          <input id="addForm" type="text" class="form-control" name="tel_treball"/>
         </div>
       </div><br>
       <div class="row">
@@ -245,7 +255,6 @@ include '..\backend\include.php';
       <div id="tabs" class="c-tabs">
         <div class="c-tabs-nav">
           <a href="#" class="c-tabs-nav__link is-active">Fitxa Personal</a>
-          <a href="#" class="c-tabs-nav__link">Mutua</a>
           <div class="c-tab-nav-marker"></div>
         </div>
         <!-- FICHA PERSONAL-->
@@ -287,9 +296,19 @@ include '..\backend\include.php';
                       <p id="fpidioma" class="duration"></p>
                       <p></p>
                     </div>
-                    <div class="info">
+                    <div class="info" id="dividioma_s">
                       <p class="sub-heading">Idioma de signes</p>
                       <p id="fpidioma_s" class="duration"></p>
+                      <p></p>
+                    </div>
+                    <div class="info" id="divform">
+                      <p class="sub-heading">Formulari</p>
+                      <p id="fpform" class="duration"></p>
+                      <p></p>
+                    </div>
+                    <div class="info" id="divmutua">
+                      <p class="sub-heading">Mutua</p>
+                      <p id="fpmutua" class="duration"></p>
                       <p></p>
                     </div>
                   </div>
@@ -302,12 +321,12 @@ include '..\backend\include.php';
                       <p id="fpprovince" class="duration">Barcelona</p>
                       <p></p>
                     </div>
-                    <div class="info">
+                    <div class="info" id="divcomarca">
                       <p class="sub-heading">Comarca</p>
                       <p id="fpcomarca" class="duration">Barcelonès</p>
                       <p></p>
                     </div>
-                    <div class="info">
+                    <div class="info" id="divmunicipi">
                       <p class="sub-heading">Municipi</p>
                       <p id="fpmunicipality" class="duration">Barcelona</p>
                       <p></p>
@@ -332,38 +351,21 @@ include '..\backend\include.php';
                 <div class="content">
                   <div class="contacto">
                     <h1 class="heading">Contacte</h1>
-                    <div class="info">
+                    <div class="info" id="divphone">
                       <p class="sub-heading">Telèfon fixe</p>
                       <p id="fpphone" class="duration">937764012</p>
                       <p></p>
                     </div>
-                    <div class="info">
+                    <div class="info" id="divmobile_phone">
                       <p class="sub-heading">Telèfon móvil</p>
                       <p id="fpmobile_phone" class="duration">672750032</p>
                       <p></p>
                     </div>
-                    <div class="info">
+                    <div class="info" id="divwork_phone">
                       <p class="sub-heading">Telèfon treball</p>
                       <p id="fpwork_phone" class="duration">903412653</p>
                       <p></p>
                     </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- CAPS -->
-        <div class="c-tab">
-          <div class="c-tab__content">
-            <div class="container_caps">
-              <div class="content3">
-                <div class="contacto">
-                  <h1 class="heading">Mutua</h1>
-                  <div class="info">
-                    <p class="sub-heading">Nom</p>
-                    <p id="fpmutua" class="duration">Mutua 1</p>
-                    <p></p>
                   </div>
                 </div>
               </div>
@@ -444,6 +446,16 @@ include '..\backend\include.php';
                       <input value="4" type="radio" class="opciones" name="modidioma_s" id="modangles_is">
                       <label for="modno_is">No</label>
                       <input value="1" type="radio" class="opciones" name="modidioma_s" id="modno_is">
+                      <p></p>
+                    </div>
+                    <div class="info">
+                      <p class="sub-heading">URL Formulari</p>
+                      <input id="modForm" type="text" class="form-control" name="modForm"/>
+                      <p></p>
+                    </div>
+                    <div class="info">
+                      <p class="sub-heading">Mutua</p>
+                      <input id="modMutua" type="text" class="form-control" name="modMutua"/>
                       <p></p>
                     </div>
                   </div>
