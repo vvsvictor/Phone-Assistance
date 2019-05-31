@@ -24,8 +24,49 @@ $(document).ready(function() {
   $("#modFormFP2").click(function() {
     modCardListener();
     //añadir id
-
   });
+
+  $('.addFp_validation').bootstrapValidator({
+        feedbackIcons: {
+            valid: 'glyphicon glyphicon-ok',
+            invalid: 'glyphicon glyphicon-remove',
+        },
+        fields: {
+          nom: {
+              validators: {
+                  notEmpty: {
+                      message: "El camp nom no pot estar buit."
+                  },
+                  stringLength: {
+                      min: 3,
+                      message: "El nom te de ser de 3 caracters com a minim."
+                  }
+              }
+          },
+          cognom: {
+            validators: {
+                notEmpty: {
+                    message: "El cognom no pot estar buit."
+                },
+                stringLength: {
+                    min: 3,
+                    message: "El cognom te de ser de 3 caracters com a minim."
+                }
+              }
+          },
+          dni: {
+            validators: {
+              notEmpty: {
+                  message: "El dni no pot estar buit."
+              },
+              stringLength: {
+                  min: 9,
+                  message: "El dni te de ser de 9 caracters com a minim."
+              }
+            }
+          }
+        }
+    });
 
   //kendo / jquery functions
   $(".opciones").checkboxradio();
